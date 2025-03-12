@@ -16,6 +16,8 @@ The term **"Vibe Coding"** was coined by AI researcher Andrej Karpathy in Februa
 
 - [Vibe Coding Is The Future](https://www.youtube.com/watch?v=IACHfKmZMr8&t=1606s) - This podcast episode discusses "Vibe Coding," a term coined by Andrej Karpathy, referring to a coding style where developers embrace AI tools and iterate rapidly, potentially transforming the role of software engineers. The hosts, partners at Y Combinator, surveyed founders in their current batch to understand how AI is changing their workflows and the future of software engineering. The discussion highlights the shift towards product-focused engineering, the importance of taste and system thinking, and the evolving landscape of coding tools and models.
 
+- [How I use LLMs from Andrej Karpathy's YouTube Channel](https://www.youtube.com/watch?v=EWvNQjAaOHw) - This video provides a practical guide to using large language models (LLMs) like ChatGPT, focusing on real-world applications, available settings, and effective strategies for both personal and professional use. It covers various platforms, models, tools, and modalities to help viewers navigate the rapidly evolving LLM ecosystem.
+
 
 
 ## Contribution Guidelines
