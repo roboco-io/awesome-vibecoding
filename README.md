@@ -6,13 +6,15 @@ The term **"Vibe Coding"** was coined by AI researcher Andrej Karpathy in Februa
 
 ## Guide/Manual/Best Practices/Tutorials
 
-- [Here’s how I use LLMs to help me write code](https://simonwillison.net/2025/Mar/11/using-llms-for-code/#set-reasonable-expectations) ([Simon Willison’s Weblog](https://simonwillison.net/)): A blog by Simon Willison that offers strategies for using large language models (LLMs) in coding while setting realistic expectations.
+- [Vibe Coding Manual](https://www.reddit.com/r/ChatGPTCoding/comments/1j5l4xw/vibe_coding_manual/) - This Reddit post on the r/ChatGPTCoding subreddit explores the “Vibe Coding Manual,” offering insights into a novel coding approach powered by ChatGPT. It shares tips, examples, and personal experiences on how human-AI collaboration can lead to more intuitive and flexible programming methods, helping developers enhance their skills and discover creative solutions.
+
+- [Here’s how I use LLMs to help me write code](https://simonwillison.net/2025/Mar/11/using-llms-for-code/#set-reasonable-expectations) - A blog by Simon Willison that offers strategies for using large language models (LLMs) in coding while setting realistic expectations.
 
 
 ## YouTube
-- [Vibe Coding Tutorial and Best Practices](https://www.youtube.com/watch?v=YWwS911iLhg&t=907s): This video discusses "vibe coding," which involves using AI agents in coding environments like Cursor or Windsurf to automate the entire application development process. The speaker shares their experiences and best practices for maximizing the effectiveness of these AI agents, including specifying detailed instructions, utilizing rules to guide the AI's behavior, and navigating the limitations of current models. They also highlight the potential for increased coding accessibility and efficiency through these tools.
+- [Vibe Coding Tutorial and Best Practices](https://www.youtube.com/watch?v=YWwS911iLhg&t=907s) - This video discusses "vibe coding," which involves using AI agents in coding environments like Cursor or Windsurf to automate the entire application development process. The speaker shares their experiences and best practices for maximizing the effectiveness of these AI agents, including specifying detailed instructions, utilizing rules to guide the AI's behavior, and navigating the limitations of current models. They also highlight the potential for increased coding accessibility and efficiency through these tools.
 
-- [Vibe Coding Is The Future](https://www.youtube.com/watch?v=IACHfKmZMr8&t=1606s): This podcast episode discusses "Vibe Coding," a term coined by Andrej Karpathy, referring to a coding style where developers embrace AI tools and iterate rapidly, potentially transforming the role of software engineers. The hosts, partners at Y Combinator, surveyed founders in their current batch to understand how AI is changing their workflows and the future of software engineering. The discussion highlights the shift towards product-focused engineering, the importance of taste and system thinking, and the evolving landscape of coding tools and models.
+- [Vibe Coding Is The Future](https://www.youtube.com/watch?v=IACHfKmZMr8&t=1606s) - This podcast episode discusses "Vibe Coding," a term coined by Andrej Karpathy, referring to a coding style where developers embrace AI tools and iterate rapidly, potentially transforming the role of software engineers. The hosts, partners at Y Combinator, surveyed founders in their current batch to understand how AI is changing their workflows and the future of software engineering. The discussion highlights the shift towards product-focused engineering, the importance of taste and system thinking, and the evolving landscape of coding tools and models.
 
 
 
