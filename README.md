@@ -4,6 +4,12 @@
 
 The term **"Vibe Coding"** was coined by AI researcher Andrej Karpathy in February 2025. Karpathy described using advanced voice-recognition technologies such as *SuperWhisper* to interact passively with AI, relying entirely on AI's intuitive coding abilities. He emphasized a hands-off approach, primarily instructing and observing outcomes, and only intervening when necessary.
 
+## Projects
+
+- [OpenManus](https://github.com/mannaandpoem/OpenManus) - Manus is incredible, but OpenManus can achieve any idea without an Invite Code
+
+- [Cline](https://github.com/cline/cline) - Autonomous coding agent right in your IDE, capable of creating/editing files, executing commands, using the browser, and more with your permission every step of the way.
+
 ## Guide/Manual/Best Practices/Tutorials
 
 - [Vibe Coding Manual](https://www.reddit.com/r/ChatGPTCoding/comments/1j5l4xw/vibe_coding_manual/) - This Reddit post on the r/ChatGPTCoding subreddit explores the “Vibe Coding Manual,” offering insights into a novel coding approach powered by ChatGPT. It shares tips, examples, and personal experiences on how human-AI collaboration can lead to more intuitive and flexible programming methods, helping developers enhance their skills and discover creative solutions.
