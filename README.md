@@ -40,10 +40,6 @@ Contributions to enhance this repository are highly encouraged! Please follow th
 
 Together, let's build the ultimate curated resource for Vibe Coding enthusiasts!
 
-## Resources
-
-*(Coming soon: curated blogs, Reddit posts, YouTube videos, and more.)*
-
 ## License
 
 This work is dedicated to the public domain under the [CC0 1.0 Universal License](https://creativecommons.org/publicdomain/zero/1.0/).
