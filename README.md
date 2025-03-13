@@ -18,6 +18,7 @@ The term **"Vibe Coding"** was coined by AI researcher Andrej Karpathy in Februa
 
 - [How I use LLMs from Andrej Karpathy's YouTube Channel](https://www.youtube.com/watch?v=EWvNQjAaOHw) - This video provides a practical guide to using large language models (LLMs) like ChatGPT, focusing on real-world applications, available settings, and effective strategies for both personal and professional use. It covers various platforms, models, tools, and modalities to help viewers navigate the rapidly evolving LLM ecosystem.
 
+- [How Windsurf writes 90% of your code with an Agentic IDE - Kevin Hou, head of product engineering at Codium](https://www.youtube.com/watch?v=bVNNvWq6dKo) - This presentation introduces Windsurf, an AI agent-powered code editor developed by Codium. The speaker, Kevin from the product engineering team, highlights the principles behind Windsurf, focusing on its ability to understand and anticipate developer needs through a unified timeline, adapt to coding preferences via meta-learning, and scale its intelligence with advancements in AI models.
 
 
 ## Contribution Guidelines
