@@ -26,6 +26,8 @@ The term **"Vibe Coding"** was coined by AI researcher Andrej Karpathy in Februa
 
 - [How Windsurf writes 90% of your code with an Agentic IDE - Kevin Hou, head of product engineering at Codium](https://www.youtube.com/watch?v=bVNNvWq6dKo) - This presentation introduces Windsurf, an AI agent-powered code editor developed by Codium. The speaker, Kevin from the product engineering team, highlights the principles behind Windsurf, focusing on its ability to understand and anticipate developer needs through a unified timeline, adapt to coding preferences via meta-learning, and scale its intelligence with advancements in AI models.
 
+- [Vibecoding is Here - How AI is Changing How We Build Online](https://www.youtube.com/watch?v=xxA-M3HrKrc) - This content discusses the emerging trend of "vibe coding," where users, both technical and non-technical, instruct AI coding agents using natural language to generate applications and websites. It explores the companies involved, the scale of their growth, the capabilities of the tools, and the potential future direction of AI-assisted software development.
+
 
 ## Contribution Guidelines
 
