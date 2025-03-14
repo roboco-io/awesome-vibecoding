@@ -80,13 +80,19 @@ jobs:
               
               # Add language notice at the top
               if target_language == "Korean":
-                  notice = "# Awesome Vibe Coding (한국어)\n\n*Language: [English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md)*\n\n"
+                  notice = "# Awesome Vibe Coding (한국어)\n\n"
               elif target_language == "Japanese":
-                  notice = "# Awesome Vibe Coding (日本語)\n\n*Language: [English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md)*\n\n"
+                  notice = "# Awesome Vibe Coding (日本語)\n\n"
               
-              # Replace the first heading with our notice + original heading content
-              pattern = r'^# .*?$'
-              translated_content = re.sub(pattern, notice, translated_content, count=1, flags=re.MULTILINE)
+              # Replace the first heading and any existing language selection links
+              pattern = r'^# .*?$\n\n\*Language:.*?\*\n\n'
+              if re.search(pattern, translated_content, re.MULTILINE | re.DOTALL):
+                  # If language selection links already exist, just replace the heading
+                  translated_content = re.sub(pattern, notice + "*Language: [English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md)*\n\n", translated_content, count=1, flags=re.MULTILINE | re.DOTALL)
+              else:
+                  # If no language selection links exist, add them
+                  pattern = r'^# .*?$'
+                  translated_content = re.sub(pattern, notice + "*Language: [English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md)*\n\n", translated_content, count=1, flags=re.MULTILINE)
               
               # Write the translated content to the target file
               with open(target_file, 'w', encoding='utf-8') as f:
