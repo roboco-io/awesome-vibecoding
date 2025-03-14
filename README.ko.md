@@ -32,7 +32,7 @@
 
 - [바이브 코딩 매뉴얼](https://www.reddit.com/r/ChatGPTCoding/comments/1j5l4xw/vibe_coding_manual/) - 이 Reddit 게시물은 r/ChatGPTCoding 서브레딧에서 "바이브 코딩 매뉴얼"을 탐구하며, ChatGPT가 구동하는 새로운 코딩 접근 방식에 대한 통찰력을 제공합니다. 팁, 예제 및 개인 경험을 공유하며 인간-AI 협업이 더 직관적이고 유연한 프로그래밍 방법으로 이어질 수 있음을 보여줍니다. 이를 통해 개발자는 기술을 향상시키고 창의적인 솔루션을 발견할 수 있습니다.
 
-- [LLM을 사용하여 코드를 작성하는 방법](https://simonwillison.net/2025/Mar/11/using-llms-for-code/#set-reasonable-expectations) - Simon Willison의 블로그로, 코딩에 대규모 언어 모델(LLM)을 사용하는 전략을 제공하며 현실적인 기대를 설정합니다.
+- [LLM을 사용하여 코드를 작성하는 방법](https://simonwillison.net/2025/Mar/11/using-llms-for-code/#set-reasonable-expectations) - Simon Willison은 대규모 언어 모델(LLM)이 코드 작성, 검토, 설명과 같은 코딩 작업에 어떻게 도움이 될 수 있는지 살펴봅니다. 그는 잘 작동하는 프롬프트의 예를 강조하고 부정확하거나 불완전한 출력과 같은 한계와 위험에 대해 논의하며 개발자의 워크플로에 LLM을 통합하는 효과적인 방법에 대한 인사이트를 제공합니다. 또한 윌슨은 정확성을 보장하고 품질을 유지하기 위해 사람이 감독하는 것이 중요하다는 점을 강조하며 AI가 생성한 코드에 의존할 때 발생할 수 있는 잠재력과 어려움을 모두 설명합니다.
 
 ## YouTube
 - [바이브 코딩 튜토리얼 및 최고의 관행](https://www.youtube.com/watch?v=YWwS911iLhg&t=907s) - 이 비디오는 "바이브 코딩"에 대해 논의하며, Cursor나 Windsurf와 같은 코딩 환경에서 AI 에이전트를 사용하여 전체 애플리케이션 개발 프로세스를 자동화합니다. 연사는 이러한 AI 에이전트의 효과를 극대화하기 위한 최고의 관행을 공유하며, 자세한 지시사항을 명시하고, AI의 행동을 안내하는 규칙을 활용하며, 현재 모델의 한계를 탐색합니다. 또한 이러한 도구를 통해 코딩 접근성과 효율성이 증가할 수 있는 잠재력을 강조합니다.

@@ -32,10 +32,7 @@ The term **"Vibe Coding"** was coined by AI researcher Andrej Karpathy in Februa
 
 - [Vibe Coding Manual](https://www.reddit.com/r/ChatGPTCoding/comments/1j5l4xw/vibe_coding_manual/) - This Reddit post on the r/ChatGPTCoding subreddit explores the “Vibe Coding Manual,” offering insights into a novel coding approach powered by ChatGPT. It shares tips, examples, and personal experiences on how human-AI collaboration can lead to more intuitive and flexible programming methods, helping developers enhance their skills and discover creative solutions.
 
-- [Here’s how I use LLMs to help me write code](https://simonwillison.net/2025/Mar/11/using-llms-for-code/#set-reasonable-expectations) - A blog by Simon Willison that offers strategies for using large language models (LLMs) in coding while setting realistic expectations.
-
-- [Here’s how I use LLMs to help me write code](https://simonwillison.net/2025/Mar/11/using-llms-for-code/)
-
+- [Here’s how I use LLMs to help me write code](https://simonwillison.net/2025/Mar/11/using-llms-for-code/) - In his blog post, Simon Willison explores how large language models (LLMs) can help with coding tasks such as writing, reviewing, and explaining code. He highlights examples of prompts that work well, discusses the limitations and risks—such as incorrect or incomplete outputs—and provides insights into effective ways to integrate LLMs into a developer’s workflow. Willison also underscores the importance of human oversight to ensure accuracy and maintain quality, illustrating both the potential and the challenges of relying on AI-generated code.
 
 ## YouTube
 - [Vibe Coding Tutorial and Best Practices](https://www.youtube.com/watch?v=YWwS911iLhg&t=907s) - This video discusses "vibe coding," which involves using AI agents in coding environments like Cursor or Windsurf to automate the entire application development process. The speaker shares their experiences and best practices for maximizing the effectiveness of these AI agents, including specifying detailed instructions, utilizing rules to guide the AI's behavior, and navigating the limitations of current models. They also highlight the potential for increased coding accessibility and efficiency through these tools.

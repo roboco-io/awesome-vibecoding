@@ -32,9 +32,7 @@
 
 - [Vibe Coding Manual](https://www.reddit.com/r/ChatGPTCoding/comments/1j5l4xw/vibe_coding_manual/) - このRedditの投稿は、r/ChatGPTCodingのサブレディットで「Vibe Coding Manual」について探求しており、ChatGPTによって駆動される新しいコーディングアプローチについての洞察を提供します。人間とAIの協力がより直感的で柔軟なプログラミング方法につながる可能性があり、開発者がスキルを向上させ、創造的なソリューションを発見するのを助けるためのヒント、例、個人的な経験を共有しています。
 
-- [Here’s how I use LLMs to help me write code](https://simonwillison.net/2025/Mar/11/using-llms-for-code/#set-reasonable-expectations) - Simon Willisonによるブログで、コーディングにおいて大規模言語モデル（LLMs）を使用する戦略を提供し、現実的な期待を設定します。
-
-- [Here’s how I use LLMs to help me write code](https://simonwillison.net/2025/Mar/11/using-llms-for-code/)
+- [Here’s how I use LLMs to help me write code](https://simonwillison.net/2025/Mar/11/using-llms-for-code/) - Simon Willison氏のブログポストでは、大規模言語モデル（LLM）がコードの記述、レビュー、説明といったコーディング作業をどのように支援できるかを探求している。また、LLMを開発者のワークフローに統合する効果的な方法についての洞察も提供している。Willison氏はまた、正確性を確保し品質を維持するために人間が監視することの重要性を強調し、AIが生成したコードに依存することの可能性と課題の両方を示している。
 
 ## YouTube
 - [Vibe Coding Tutorial and Best Practices](https://www.youtube.com/watch?v=YWwS911iLhg&t=907s) - このビデオは、「vibe coding」について議論しており、CursorやWindsurfのようなコーディング環境でAIエージェントを使用してアプリケーション開発プロセス全体を自動化します。スピーカーは、これらのAIエージェントの効果を最大化するためのベストプラクティスを共有し、詳細な指示を指定し、AIの行動をガイドするルールを活用し、現在のモデルの制限をナビゲートする方法について説明します。また、これらのツールを通じてコーディングのアクセシビリティと効率が向上する可能性についても強調しています。
