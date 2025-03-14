@@ -11,8 +11,6 @@ on:
 jobs:
   translate:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -55,7 +53,9 @@ jobs:
           Follow these translation guidelines:
           - The target audience is tech professionals. Since this is a translated document, you should avoid excessive translation that deviates from the original. For quotes, use the English expression, but add the translation next to it. If a language translation is not standardized, use the English equivalent.
           - Maintain all markdown formatting, links, and code blocks exactly as they appear in the original.
-          - Keep technical terms, product names, and code snippets in English."""
+          - Keep technical terms, product names, and code snippets in English.
+          - When using bold markdown formatting (**) in Korean text, please add a space after the closing ** and before the next Korean character. For example, use '**볼드 텍스트** 다음 텍스트' instead of '**볼드 텍스트**다음 텍스트'. This ensures proper rendering in markdown.
+          """
               
               if target_language == "Korean":
                   user_message = f"Translate the following README.md content from English to Korean:\n\n{content}"

@@ -27,7 +27,12 @@ Follow these translation guidelines:
 - Please consider the user's request: """ + user_request
     
     if target_language == "Korean":
-        user_message = f"Translate the following README.md content from English to Korean:\n\n{content}"
+        user_message = f"""Translate the following README.md content from English to Korean:
+
+Important formatting note: When using bold markdown formatting (**) in Korean text, please add a space after the closing ** and before the next Korean character. For example, use '**볼드 텍스트** 다음 텍스트' instead of '**볼드 텍스트**다음 텍스트'. This ensures proper rendering in markdown.
+
+Content to translate:
+{content}"""
     elif target_language == "Japanese":
         user_message = f"Translate the following README.md content from English to Japanese:\n\n{content}"
     else:
