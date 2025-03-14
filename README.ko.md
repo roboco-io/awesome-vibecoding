@@ -60,4 +60,4 @@
 
 ## 라이선스
 
-이 작업은 [CC0 1.0 범용 라이선스](https://creativecommons.org/publicdomain/zero/1.0/)에 따라 공공 도메인에 헌정됩니다.
+이 작업은 [CC0 1.0 범용 라이선스](https://creativecommons.org/publicdomain/zero/1.0/)에 따라 퍼블릭 도메인으로 제공됩니다.
