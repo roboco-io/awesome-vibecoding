@@ -8,6 +8,10 @@ on:
       - 'README.md'
   workflow_dispatch:
 
+# Add permissions for GitHub Actions
+permissions:
+  contents: write
+
 jobs:
   translate:
     runs-on: ubuntu-latest
