@@ -1,5 +1,7 @@
 # Awesome Vibe Coding
 
+*Language: [English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md)*
+
 [Vibe Coding](https://en.wikipedia.org/wiki/Vibe_coding) is an AI-assisted programming approach where users simply describe their problem, and AI generates the necessary code without requiring the developer to deeply understand or engage with detailed code logic. Programmers entrust coding tasks to the AI's intuition ("vibes") and capabilities, often ignoring detailed implementations. This magical-like experience allows even inexperienced programmers to build software solutions previously requiring extensive development teams, challenging traditional assumptions of software engineering complexity.
 
 The term **"Vibe Coding"** was coined by AI researcher Andrej Karpathy in February 2025. Karpathy described using advanced voice-recognition technologies such as *SuperWhisper* to interact passively with AI, relying entirely on AI's intuitive coding abilities. He emphasized a hands-off approach, primarily instructing and observing outcomes, and only intervening when necessary.
@@ -13,6 +15,8 @@ The term **"Vibe Coding"** was coined by AI researcher Andrej Karpathy in Februa
 - [Cursor](https://www.cursor.com/) - Cursor is an AI-integrated code editor designed to accelerate and simplify software development. By combining intuitive editing features with advanced generative AI, Cursor empowers both new and experienced developers to write, debug, and refine code more efficiently
 
 - [Claude Code](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview) - Claude Code is a specialized variant of Anthropic’s Claude, designed to assist with code-related tasks through natural language interactions. By combining Claude’s advanced language capabilities with developer-centric features, Claude Code can generate, explain, and refine code to improve both productivity and software quality.
+
+- [Trae AI](https://www.futuretools.io/tools/trae-ai) - 
 
 - [AlphaCode](https://alphacode.deepmind.com/) - AlphaCode, developed by DeepMind, represents a significant milestone in the field of AI-driven coding. Designed to tackle competitive programming challenges, AlphaCode leverages advanced language models to interpret problem statements, generate high-quality code solutions, and perform reasoning steps akin to those of human programmers. 
 
@@ -30,6 +34,8 @@ The term **"Vibe Coding"** was coined by AI researcher Andrej Karpathy in Februa
 
 - [Here’s how I use LLMs to help me write code](https://simonwillison.net/2025/Mar/11/using-llms-for-code/#set-reasonable-expectations) - A blog by Simon Willison that offers strategies for using large language models (LLMs) in coding while setting realistic expectations.
 
+- [Here’s how I use LLMs to help me write code](https://simonwillison.net/2025/Mar/11/using-llms-for-code/)
+
 
 ## YouTube
 - [Vibe Coding Tutorial and Best Practices](https://www.youtube.com/watch?v=YWwS911iLhg&t=907s) - This video discusses "vibe coding," which involves using AI agents in coding environments like Cursor or Windsurf to automate the entire application development process. The speaker shares their experiences and best practices for maximizing the effectiveness of these AI agents, including specifying detailed instructions, utilizing rules to guide the AI's behavior, and navigating the limitations of current models. They also highlight the potential for increased coding accessibility and efficiency through these tools.
@@ -42,8 +48,7 @@ The term **"Vibe Coding"** was coined by AI researcher Andrej Karpathy in Februa
 
 - [Vibecoding is Here - How AI is Changing How We Build Online](https://www.youtube.com/watch?v=xxA-M3HrKrc) - This content discusses the emerging trend of "vibe coding," where users, both technical and non-technical, instruct AI coding agents using natural language to generate applications and websites. It explores the companies involved, the scale of their growth, the capabilities of the tools, and the potential future direction of AI-assisted software development.
 
-- [New tools for building agents with the API
-](https://www.youtube.com/watch?v=hciNKcLwSes) - OpenAI has launched new tools and APIs for developers to build reliable and useful agents, including the Web Search tool, File Search tool, and Computer Use tool, along with the new Responses API and Agents SDK. These tools aim to simplify the creation of complex, multi-step workflows required for effective agents. The new API and SDK provide developers with the building blocks needed to create agents that can perform tasks independently.
+- [New tools for building agents with the API](https://www.youtube.com/watch?v=hciNKcLwSes) - OpenAI has launched new tools and APIs for developers to build reliable and useful agents, including the Web Search tool, File Search tool, and Computer Use tool, along with the new Responses API and Agents SDK. These tools aim to simplify the creation of complex, multi-step workflows required for effective agents. The new API and SDK provide developers with the building blocks needed to create agents that can perform tasks independently.
 
 
 ## Contribution Guidelines
