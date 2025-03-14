@@ -1,9 +1,5 @@
 # Awesome Vibe Coding (한국어)
 
-*Language: [English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md)*
-
-
-
 *언어: [영어](README.md) | [한국어](README.ko.md) | [일본어](README.ja.md)*
 
 [![README 번역](https://github.com/roboco-io/awesome-vibecoding/actions/workflows/translate-readme.yml/badge.svg)](https://github.com/roboco-io/awesome-vibecoding/actions/workflows/translate-readme.yml)
