@@ -2,8 +2,6 @@
 
 *言語: [English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md)*
 
-[![Translate README](https://github.com/roboco-io/awesome-vibecoding/actions/workflows/translate-readme.yml/badge.svg)](https://github.com/roboco-io/awesome-vibecoding/actions/workflows/translate-readme.yml)
-
 [Vibe Coding](https://en.wikipedia.org/wiki/Vibe_coding) は、ユーザーが問題を単に説明するだけで、AIが必要なコードを生成し、開発者が詳細なコードロジックを深く理解したり関与したりする必要がない、AI支援のプログラミングアプローチです。プログラマーはコーディングタスクをAIの直感（"vibes"）と能力に委ね、しばしば詳細な実装を無視します。この魔法のような体験は、従来のソフトウェアエンジニアリングの複雑さに挑戦し、広範な開発チームを必要とするソフトウェアソリューションを構築することができるように、経験の浅いプログラマーにも可能にします。
 
 用語 **"Vibe Coding"** は、2025年2月にAI研究者のAndrej Karpathyによって造語されました。Karpathyは、*SuperWhisper* などの先進的な音声認識技術を使用してAIと受動的に対話し、完全にAIの直感的なコーディング能力に依存することを説明しました。彼は主に指示して結果を観察し、必要な場合にのみ介入するハンズオフアプローチを強調しました。
