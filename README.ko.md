@@ -1,0 +1,69 @@
+# Awesome Vibe Coding (한국어)
+
+*Language: [English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md)*
+
+
+
+*언어: [영어](README.md) | [한국어](README.ko.md) | [일본어](README.ja.md)*
+
+[![README 번역](https://github.com/roboco-io/awesome-vibecoding/actions/workflows/translate-readme.yml/badge.svg)](https://github.com/roboco-io/awesome-vibecoding/actions/workflows/translate-readme.yml)
+
+[바이브 코딩](https://en.wikipedia.org/wiki/Vibe_coding)은 사용자가 문제를 간단히 설명하면 AI가 필요한 코드를 생성하는 AI 보조 프로그래밍 접근 방식입니다. 개발자가 자세한 코드 로직을 깊이 이해하거나 참여할 필요 없이 프로그래머는 코딩 작업을 AI의 직관("바이브")과 능력에 맡깁니다. 이 마법 같은 경험은 경험이 부족한 프로그래머도 이전에는 광범위한 개발 팀이 필요했던 소프트웨어 솔루션을 구축할 수 있게 해주어 소프트웨어 엔지니어링의 복잡성에 대한 전통적인 가정에 도전합니다.
+
+**"바이브 코딩"**이라는 용어는 2025년 2월 AI 연구자 Andrej Karpathy에 의해 만들어졌습니다. Karpathy는 *SuperWhisper*와 같은 고급 음성 인식 기술을 사용하여 AI와 수동적으로 상호 작용하며 전적으로 AI의 직관적인 코딩 능력에 의존한다고 설명했습니다. 그는 주로 지시하고 결과를 관찰하며 필요할 때만 개입하는 손을 떼는 접근 방식을 강조했습니다.
+
+## 프로젝트/플랫폼/도구/서비스
+
+- [Github Copilot](https://github.com/features/copilot) - GitHub Copilot은 개발자를 지원하기 위해 실시간으로 코드와 전체 함수를 자동으로 제안하는 AI 구동 페어 프로그래머입니다. GitHub과 OpenAI가 협력하여 개발한 이 도구는 코드 편집기의 맥락을 해석하고 지능적이고 맥락을 고려한 제안을 제공하기 위해 고급 머신 러닝을 활용합니다.
+
+- [Windsurf](https://codeium.com/windsurf) - Codeium 산하에서 개발된 Windsurf는 코드 생성과 개발자 워크플로우를 최적화하기 위해 설계된 AI 구동 솔루션입니다. 고급 언어 모델을 활용하여 프로그래머가 코드를 만들고 다듬는 데 도움을 주며, 프로토타이핑과 생산 개발을 가속화하는 원활한 경험을 제공합니다.
+
+- [Cursor](https://www.cursor.com/) - Cursor는 소프트웨어 개발을 가속화하고 단순화하기 위해 설계된 AI 통합 코드 편집기입니다. 직관적인 편집 기능과 고급 생성 AI를 결합하여 Cursor는 새로운 개발자와 경험 많은 개발자 모두가 코드를 더 효율적으로 작성, 디버그 및 다듬을 수 있게 돕습니다.
+
+- [Claude Code](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview) - Claude Code는 자연어 상호 작용을 통해 코드 관련 작업을 지원하도록 설계된 Anthropic의 Claude의 특수 변형입니다. Claude의 고급 언어 기능과 개발자 중심 기능을 결합하여 Claude Code는 코드를 생성, 설명 및 다듬어 생산성과 소프트웨어 품질을 향상시킬 수 있습니다.
+
+- [Trae AI](https://www.futuretools.io/tools/trae-ai) -
+
+- [AlphaCode](https://alphacode.deepmind.com/) - DeepMind에서 개발한 AlphaCode는 AI 구동 코딩 분야의 중요한 이정표를 나타냅니다. 경쟁 프로그래밍 도전을 해결하기 위해 설계된 AlphaCode는 고급 언어 모델을 활용하여 문제 진술을 해석하고 고품질 코드 솔루션을 생성하며 인간 프로그래머와 유사한 추론 단계를 수행합니다.
+
+- [Replit Ghostwriter](https://replit.com/learn/intro-to-ghostwriter) - Replit Ghostwriter는 Replit 플랫폼에 통합된 AI 구동 코딩 보조 도구로, 모든 기술 수준의 개발자가 코드를 작성, 디버그 및 최적화하는 데 도움을 줍니다. 맥락 이해와 대화형 프롬프트를 결합하여 Ghostwriter는 소프트웨어 개발 프로세스를 간소화하고 빠른 프로토타이핑을 가능하게 합니다.
+
+- [OpenManus](https://github.com/mannaandpoem/OpenManus) - OpenManus는 학술 원고 생성 프로세스를 단순화하고 간소화하는 것을 목표로 하는 오픈 소스 프레임워크입니다. 현대적인 협업 기술과 사용자 정의 워크플로우를 통합하여 연구자, 작가 및 팀이 보다 효율적으로 잘 구성된 문서를 생산할 수 있도록 지원합니다.
+
+- [Cline](https://github.com/cline/cline) - Cline은 현대 개발 관행과 확장성에 중점을 둔 대화형 명령줄 환경을 제공하는 오픈 소스 프로젝트입니다. 전통적인 텍스트 기반 인터페이스의 강력함과 추가 도구를 결합하여 Cline은 개발자, 시스템 관리자 및 취미로 하는 사람들을 위해 생산성을 향상시키고 워크플로우를 간소화하는 것을 목표로 합니다.
+
+- [Duet AI for Google Workspace](https://workspace.google.com/blog/product-announcements/duet-ai?hl=en) - Duet AI는 Google이 설계한 협업적이고 AI 구동 솔루션으로, Google Workspace 내에서 생산성을 향상시키고 워크플로우를 간소화하는 것을 목표로 합니다. 생성 AI를 활용하여 Duet AI는 사용자가 다양한 작업을 처리할 수 있도록 돕습니다.
+
+## 가이드/매뉴얼/최고의 관행/튜토리얼/블로그
+
+- [바이브 코딩 매뉴얼](https://www.reddit.com/r/ChatGPTCoding/comments/1j5l4xw/vibe_coding_manual/) - 이 Reddit 게시물은 r/ChatGPTCoding 서브레딧에서 "바이브 코딩 매뉴얼"을 탐구하며, ChatGPT가 구동하는 새로운 코딩 접근 방식에 대한 통찰력을 제공합니다. 팁, 예제 및 개인 경험을 공유하며 인간-AI 협업이 더 직관적이고 유연한 프로그래밍 방법으로 이어질 수 있음을 보여줍니다. 이를 통해 개발자는 기술을 향상시키고 창의적인 솔루션을 발견할 수 있습니다.
+
+- [LLM을 사용하여 코드를 작성하는 방법](https://simonwillison.net/2025/Mar/11/using-llms-for-code/#set-reasonable-expectations) - Simon Willison의 블로그로, 코딩에 대규모 언어 모델(LLM)을 사용하는 전략을 제공하며 현실적인 기대를 설정합니다.
+
+## YouTube
+- [바이브 코딩 튜토리얼 및 최고의 관행](https://www.youtube.com/watch?v=YWwS911iLhg&t=907s) - 이 비디오는 "바이브 코딩"에 대해 논의하며, Cursor나 Windsurf와 같은 코딩 환경에서 AI 에이전트를 사용하여 전체 애플리케이션 개발 프로세스를 자동화합니다. 연사는 이러한 AI 에이전트의 효과를 극대화하기 위한 최고의 관행을 공유하며, 자세한 지시사항을 명시하고, AI의 행동을 안내하는 규칙을 활용하며, 현재 모델의 한계를 탐색합니다. 또한 이러한 도구를 통해 코딩 접근성과 효율성이 증가할 수 있는 잠재력을 강조합니다.
+
+- [바이브 코딩은 미래입니다](https://www.youtube.com/watch?v=IACHfKmZMr8&t=1606s) - 이 팟캐스트 에피소드는 Andrej Karpathy가 만든 용어인 "바이브 코딩"에 대해 논의하며, 개발자가 AI 도구를 활용하고 빠르게 반복하면서 소프트웨어 엔지니어의 역할을 변화시킬 수 있는 코딩 스타일을 언급합니다. Y Combinator의 파트너들은 AI가 워크플로우와 소프트웨어 엔지니어링의 미래를 어떻게 변화시키고 있는지 이해하기 위해 현재 배치의 창업자들을 조사했습니다. 이 논의는 제품 중심의 엔지니어링으로의 전환, 취향과 시스템 사고의 중요성 및 코딩 도구 및 모델의 변화하는 풍경을 강조합니다.
+
+- [Andrej Karpathy의 YouTube 채널에서 LLM을 사용하는 방법](https://www.youtube.com/watch?v=EWvNQjAaOHw) - 이 비디오는 ChatGPT와 같은 대규모 언어 모델(LLM)을 사용하는 실용적인 가이드를 제공하며, 개인 및 전문적인 사용을 위한 실제 애플리케이션, 사용 가능한 설정 및 효과적인 전략을 다룹니다. 다양한 플랫폼, 모델, 도구 및 모달리티를 통해 시청자가 빠르게 발전하는 LLM 생태계를 탐색할 수 있도록 돕습니다.
+
+- [Windsurf가 코드의 90%를 작성하는 방법 - Codium의 제품 엔지니어링 팀장 Kevin Hou](https://www.youtube.com/watch?v=bVNNvWq6dKo) - 이 프레젠테이션은 Codium에서 개발한 AI 에이전트 구동 코드 편집기인 Windsurf를 소개합니다. 제품 엔지니어링 팀의 Kevin은 Windsurf의 원칙에 초점을 맞추며, 통합된 타임라인을 통해 개발자의 요구를 이해하고 예측하고, 메타 학습을 통해 코딩 선호도에 적응하며, AI 모델의 발전과 함께 지능을 확장할 수 있는 능력을 강조합니다.
+
+- [바이브코딩이 여기에 있습니다 - AI가 온라인 구축 방식을 어떻게 변화시키는지](https://www.youtube.com/watch?v=xxA-M3HrKrc) - 이 콘텐츠는 사용자가 자연어를 사용하여 AI 코딩 에이전트에게 지시하여 애플리케이션과 웹사이트를 생성하도록 하는 "바이브 코딩"의 신흥 추세에 대해 논의합니다. 관련 회사들, 성장 규모, 도구의 기능 및 AI 보조 소프트웨어 개발의 잠재적인 미래 방향을 탐구합니다.
+
+- [API를 사용하여 에이전트를 구축하기 위한 새로운 도구](https://www.youtube.com/watch?v=hciNKcLwSes) - OpenAI는 개발자가 효과적인 에이전트를 구축하는 데 필요한 복잡하고 다단계 워크플로우를 간소화할 수 있는 새로운 도구 및 API를 출시했습니다. 새로운 API와 SDK는 개발자가 독립적으로 작업을 수행할 수 있는 에이전트를 만드는 데 필요한 구성 요소를 제공합니다.
+
+## 기여 가이드라인
+
+이 저장소를 향상시키기 위한 기여는 매우 환영합니다! 다음 간단한 가이드라인을 따라 주세요:
+
+1. **포크 & 브랜치 생성:** 이 저장소를 포크한 다음, 기능 브랜치를 생성하세요.
+2. **기여 추가:** 새로운 리소스 또는 기존 콘텐츠의 개선을 명확하게 문서화하세요.
+3. **커밋 & 푸시:** 변경 사항을 설명하는 커밋 메시지와 함께 커밋한 다음, GitHub에 브랜치를 푸시하세요.
+4. **풀 리퀘스트 생성:** 풀 리퀘스트를 열고 기여에 대해 명확하게 설명하세요.
+
+함께 바이브 코딩 애호가를 위한 최고의 큐레이션된 리소스를 구축합시다!
+
+## 라이선스
+
+이 작업은 [CC0 1.0 범용 라이선스](https://creativecommons.org/publicdomain/zero/1.0/)에 따라 공공 도메인에 헌정됩니다.
