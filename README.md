@@ -28,6 +28,8 @@ The term **"Vibe Coding"** was coined by AI researcher Andrej Karpathy in Februa
 
 - [Duet AI for Google Workspace](https://workspace.google.com/blog/product-announcements/duet-ai?hl=en) - Duet AI is a collaborative, AI-driven solution by Google designed to enhance productivity and streamline workflows within Google Workspace. By leveraging generative AI, Duet AI aims to help users handle a wide range of tasks
 
+- [Roo Code](https://github.com/RooVetGit/Roo-Code) - Roo Code is an AI-driven assistant that lives in your editor, streamlining the entire development process. Equipped with natural language understanding, it can read and write files directly in your workspace, run terminal commands, and even automate browser tasks. By integrating with any OpenAI-compatible or custom AI model, Roo Code offers a highly adaptable coding environment that supports various roles, from a flexible coding partner or system architect to specialized positions like QA engineer or product manager.
+
 ## Guides/Manual/Best Practices/Tutorials/Blogs
 
 - [Vibe Coding Manual](https://www.reddit.com/r/ChatGPTCoding/comments/1j5l4xw/vibe_coding_manual/) - This Reddit post on the r/ChatGPTCoding subreddit explores the “Vibe Coding Manual,” offering insights into a novel coding approach powered by ChatGPT. It shares tips, examples, and personal experiences on how human-AI collaboration can lead to more intuitive and flexible programming methods, helping developers enhance their skills and discover creative solutions.
@@ -47,6 +49,7 @@ The term **"Vibe Coding"** was coined by AI researcher Andrej Karpathy in Februa
 
 - [New tools for building agents with the API](https://www.youtube.com/watch?v=hciNKcLwSes) - OpenAI has launched new tools and APIs for developers to build reliable and useful agents, including the Web Search tool, File Search tool, and Computer Use tool, along with the new Responses API and Agents SDK. These tools aim to simplify the creation of complex, multi-step workflows required for effective agents. The new API and SDK provide developers with the building blocks needed to create agents that can perform tasks independently.
 
+- [Model Context Protocol (MCP): The Key To Agentic AI](https://www.youtube.com/watch?v=VChRPFUzJGA) - This video provides an overview of the Model Context Protocol (mCP), explaining what it is, why it's important, how it works, and how it compares to other protocols. mCP allows AI models, especially Large Language Models (LLMs), to access external context, such as databases or files, necessary to complete tasks. The presenter also demonstrates a practical example using an SQLite database server and Claude desktop.
 
 ## Contribution Guidelines
 

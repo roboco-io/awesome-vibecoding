@@ -28,6 +28,8 @@
 
 - [Duet AI for Google Workspace](https://workspace.google.com/blog/product-announcements/duet-ai?hl=en) - Duet AIは、Google Workspace内の生産性を向上させ、ワークフローを合理化するためにGoogleが設計した協力的なAI駆動ソリューションです。生成AIを活用することで、Duet AIはユーザーが幅広いタスクを処理するのを支援することを目指しています。
 
+- [Roo Code](https://github.com/RooVetGit/Roo-Code) - Roo Codeは、あなたのエディタに常駐し、開発プロセス全体を効率化するAI主導のアシスタントです。自然言語を理解し、ワークスペース内のファイルを直接読み書きしたり、ターミナルコマンドを実行したり、ブラウザタスクを自動化することもできます。OpenAI互換またはカスタムAIモデルと統合することで、Roo Codeは、柔軟なコーディングパートナーやシステムアーキテクトから、QAエンジニアやプロダクトマネージャーのような専門職まで、様々な役割をサポートする適応性の高いコーディング環境を提供します。
+
 ## ガイド/マニュアル/ベストプラクティス/チュートリアル/ブログ
 
 - [Vibe Coding Manual](https://www.reddit.com/r/ChatGPTCoding/comments/1j5l4xw/vibe_coding_manual/) - このRedditの投稿は、r/ChatGPTCodingのサブレディットで「Vibe Coding Manual」について探求しており、ChatGPTによって駆動される新しいコーディングアプローチについての洞察を提供します。人間とAIの協力がより直感的で柔軟なプログラミング方法につながる可能性があり、開発者がスキルを向上させ、創造的なソリューションを発見するのを助けるためのヒント、例、個人的な経験を共有しています。
@@ -46,6 +48,9 @@
 - [Vibecoding is Here - How AI is Changing How We Build Online](https://www.youtube.com/watch?v=xxA-M3HrKrc) - このコンテンツは、「vibe coding」という新興のトレンドについて議論しており、技術的および非技術的なユーザーが自然言語を使用してAIコーディングエージェントに指示し、アプリケーションやウェブサイトを生成することを含みます。関与している企業、成長の規模、ツールの能力、およびAI支援ソフトウェア開発の将来の方向性について探求しています。
 
 - [New tools for building agents with the API](https://www.youtube.com/watch?v=hciNKcLwSes) - OpenAIは、Web Searchツール、File Searchツール、Computer Useツールなど、開発者が信頼性の高い有用なエージェントを構築するための新しいツールとAPIを発表しました。これらのツールは、効果的なエージェントに必要な複雑なマルチステップワークフローの作成を簡素化することを目的としています。新しいAPIとSDKは、独立してタスクを実行できるエージェントを作成するために必要なビルディングブロックを開発者に提供します。
+
+- [Model Context Protocol (MCP): The Key To Agentic AI](https://www.youtube.com/watch?v=VChRPFUzJGA) - このビデオでは、モデルコンテキストプロトコル（mCP）の概要を説明し、mCPとは何か、なぜ重要なのか、どのように機能するのか、他のプロトコルとの比較について説明します。発表者はまた、SQLiteデータベース・サーバーとClaudeデスクトップを使用した実用的な例を実演する。
+
 
 ## 貢献ガイドライン
 
