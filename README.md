@@ -51,6 +51,8 @@ The term **"Vibe Coding"** was coined by AI researcher Andrej Karpathy in Februa
 
 - [Model Context Protocol (MCP): The Key To Agentic AI](https://www.youtube.com/watch?v=VChRPFUzJGA) - This video provides an overview of the Model Context Protocol (mCP), explaining what it is, why it's important, how it works, and how it compares to other protocols. mCP allows AI models, especially Large Language Models (LLMs), to access external context, such as databases or files, necessary to complete tasks. The presenter also demonstrates a practical example using an SQLite database server and Claude desktop.
 
+- [MCP causing a frenzy these days! I'll break it down for you in under 10 minutes](https://www.youtube.com/watch?v=EswVjHZMn74) - This content introduces the Model Context Protocol (mCP), a standardized way for AI applications to connect to external systems. It explains what mCP is, how it works, and how to build your own mCP server using the Python SDK, and connect it to apps like CLA and csor. The speaker believes that mCP is a valuable skill for developers to learn.
+
 ## Contribution Guidelines
 
 Contributions to enhance this repository are highly encouraged! Please follow these simple guidelines:
