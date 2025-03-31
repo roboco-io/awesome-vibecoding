@@ -1,10 +1,6 @@
 # Awesome Vibe Coding (日本語)
 
-*Language: [English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md)*
-
-
-
-*言語: [English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md)*
+*言語: [English](README.md) | [한국어](README.ko.md) | 日本語*
 
 [Vibe Coding](https://en.wikipedia.org/wiki/Vibe_coding)は、ユーザーが単に自分の問題を説明することで、AIが必要なコードを生成するAI支援プログラミングアプローチです。これにより、開発者は詳細なコードロジックを深く理解したり、関与したりする必要がありません。プログラマーはコーディングタスクをAIの直感（「バイブス」）と能力に委ね、詳細な実装を無視することがよくあります。この魔法のような体験により、経験のないプログラマーでも、以前は広範な開発チームを必要としたソフトウェアソリューションを構築できるようになり、ソフトウェア工学の複雑さに関する従来の仮定に挑戦します。
 

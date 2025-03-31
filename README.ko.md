@@ -1,10 +1,10 @@
 # Awesome Vibe Coding (한국어)
 
-*Language: [English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md)*
+*언어: [English](README.md) | 한국어 | [日本語](README.ja.md)*
 
 [Vibe Coding](https://en.wikipedia.org/wiki/Vibe_coding)는 사용자가 문제를 간단히 설명하면 AI가 필요한 코드를 생성하는 AI 지원 프로그래밍 접근 방식입니다. 이 과정에서 개발자는 코드 논리를 깊이 이해하거나 세부 사항에 관여할 필요가 없습니다. 프로그래머는 코딩 작업을 AI의 직관("vibes")과 능력에 맡기며, 종종 세부 구현을 무시합니다. 이러한 마법 같은 경험은 경험이 없는 프로그래머조차도 이전에 광범위한 개발 팀이 필요했던 소프트웨어 솔루션을 구축할 수 있게 하여 소프트웨어 공학의 복잡성에 대한 전통적인 가정을 도전합니다.
 
-**"Vibe Coding"**이라는 용어는 AI 연구자 Andrej Karpathy가 2025년 2월에 만들었습니다. Karpathy는 *SuperWhisper*와 같은 고급 음성 인식 기술을 사용하여 AI와 수동적으로 상호작용하며, AI의 직관적인 코딩 능력에 전적으로 의존한다고 설명했습니다. 그는 주로 지시하고 결과를 관찰하며, 필요할 때만 개입하는 비접촉식 접근 방식을 강조했습니다.
+**"Vibe Coding"** 이라는 용어는 AI 연구자 Andrej Karpathy가 2025년 2월에 만들었습니다. Karpathy는 *SuperWhisper*와 같은 고급 음성 인식 기술을 사용하여 AI와 수동적으로 상호작용하며, AI의 직관적인 코딩 능력에 전적으로 의존한다고 설명했습니다. 그는 주로 지시하고 결과를 관찰하며, 필요할 때만 개입하는 비접촉식 접근 방식을 강조했습니다.
 
 ## Projects/Platforms/Tools/Services
 
@@ -57,9 +57,9 @@
 
 ## Contribution Guidelines
 
-이 리포지토리를 향상시키기 위한 기여를 적극 권장합니다! 다음 간단한 지침을 따르십시오:
+이 리포지토리를 향상시키기 위한 여러분의 기여를 적극 환영 합니다! 다음 간단한 지침을 살펴보세요:
 
-1. **Fork & Create Branch:** 이 리포지토리를 포크한 후, 기능 브랜치를 만듭니다.
+1. **Fork & Create Branch:** 이 리포지토리를 포크한 후, 기능(Feature) 브랜치를 만듭니다.
 2. **Add Your Contributions:** 새로운 리소스나 기존 콘텐츠의 개선 사항을 명확하게 문서화합니다.
 3. **Commit & Push:** 설명적인 커밋 메시지와 함께 변경 사항을 커밋한 후, GitHub에 브랜치를 푸시합니다.
 4. **Create Pull Request:** 풀 리퀘스트를 열고 기여 내용을 명확하게 설명합니다.
