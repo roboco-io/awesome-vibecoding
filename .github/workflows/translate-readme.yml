@@ -41,6 +41,6 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add README.ko.md README.ja.md
+          git add -A
           git commit -m "Update translations for README.md" || echo "No changes to commit"
           git push

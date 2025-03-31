@@ -53,7 +53,7 @@
 
 - [Model Context Protocol (MCP): The Key To Agentic AI](https://www.youtube.com/watch?v=VChRPFUzJGA) - 이 비디오는 모델 컨텍스트 프로토콜(MCP)에 대한 개요를 제공하며, 그것이 무엇인지, 왜 중요한지, 어떻게 작동하는지, 다른 프로토콜과 어떻게 비교되는지를 설명합니다. MCP는 AI 모델, 특히 대형 언어 모델(LLMs)이 작업을 완료하는 데 필요한 외부 컨텍스트(예: 데이터베이스 또는 파일)에 접근할 수 있도록 합니다. 발표자는 SQLite 데이터베이스 서버와 Claude 데스크톱을 사용한 실용적인 예를 보여줍니다.
 
-- [MCP causing a frenzy these days! I'll break it down for you in under 10 minutes](https://www.youtube.com/watch?v=EswVjHZMn74) - 이 콘텐츠는 AI 애플리케이션이 외부 시스템에 연결하는 표준화된 방법인 모델 컨텍스트 프로토콜(mCP)을 소개합니다. mCP가 무엇인지, 어떻게 작동하는지, Python SDK를 사용하여 자신의 mCP 서버를 구축하고 CLA 및 csor와 같은 앱에 연결하는 방법을 설명합니다. 발표자는 mCP가 개발자가 배워야 할 가치 있는 기술이라고 믿습니다.
+- [MCP causing a frenzy these days! I'll break it down for you in under 10 minutes](https://www.youtube.com/watch?v=EswVjHZMn74) - 이 콘텐츠는 AI 애플리케이션이 외부 시스템에 연결하는 표준화된 방법인 모델 컨텍스트 프로토콜(MCP)을 소개합니다. MCP가 무엇인지, 어떻게 작동하는지, Python SDK를 사용하여 자신의 MCP 서버를 구축하고 CLA 및 csor와 같은 앱에 연결하는 방법을 설명합니다. 발표자는 MCP가 개발자가 배워야 할 가치 있는 기술이라고 믿습니다.
 
 ## Contribution Guidelines
 
