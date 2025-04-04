@@ -2,6 +2,8 @@
 
 *Language: [English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md)*
 
+![Vibe Coding Meme](images/vibecoding-meme.png)
+
 [Vibe Coding](https://en.wikipedia.org/wiki/Vibe_coding) is an AI-assisted programming approach where users simply describe their problem, and AI generates the necessary code without requiring the developer to deeply understand or engage with detailed code logic. Programmers entrust coding tasks to the AI's intuition ("vibes") and capabilities, often ignoring detailed implementations. This magical-like experience allows even inexperienced programmers to build software solutions previously requiring extensive development teams, challenging traditional assumptions of software engineering complexity.
 
 The term **"Vibe Coding"** was coined by AI researcher Andrej Karpathy in February 2025. Karpathy described using advanced voice-recognition technologies such as *SuperWhisper* to interact passively with AI, relying entirely on AI's intuitive coding abilities. He emphasized a hands-off approach, primarily instructing and observing outcomes, and only intervening when necessary.
@@ -49,7 +51,11 @@ The term **"Vibe Coding"** was coined by AI researcher Andrej Karpathy in Februa
 
 - [New tools for building agents with the API](https://www.youtube.com/watch?v=hciNKcLwSes) - OpenAI has launched new tools and APIs for developers to build reliable and useful agents, including the Web Search tool, File Search tool, and Computer Use tool, along with the new Responses API and Agents SDK. These tools aim to simplify the creation of complex, multi-step workflows required for effective agents. The new API and SDK provide developers with the building blocks needed to create agents that can perform tasks independently.
 
+- [AI Development Tool Showdown: Copilot, Cursor, Cline, Devin, Windsurf!(Japanese)](https://www.youtube.com/watch?v=EQHXIVItNxs) - This is a summary of a panel discussion on AI-assisted coding tools. The speakers share their experiences using tools like Cursor, Copilot, Debby, and others, focusing on practical applications, comparisons, and future implications. The discussion covers a range of topics, from basic tool overviews to advanced techniques and the changing role of developers in an AI-driven environment.
+
 - [Model Context Protocol (MCP): The Key To Agentic AI](https://www.youtube.com/watch?v=VChRPFUzJGA) - This video provides an overview of the Model Context Protocol (mCP), explaining what it is, why it's important, how it works, and how it compares to other protocols. mCP allows AI models, especially Large Language Models (LLMs), to access external context, such as databases or files, necessary to complete tasks. The presenter also demonstrates a practical example using an SQLite database server and Claude desktop.
+
+- [MCP causing a frenzy these days! I'll break it down for you in under 10 minutes](https://www.youtube.com/watch?v=EswVjHZMn74) - This content introduces the Model Context Protocol (mCP), a standardized way for AI applications to connect to external systems. It explains what mCP is, how it works, and how to build your own mCP server using the Python SDK, and connect it to apps like CLA and csor. The speaker believes that mCP is a valuable skill for developers to learn.
 
 ## Contribution Guidelines
 
