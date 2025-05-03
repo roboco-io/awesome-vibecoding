@@ -34,6 +34,8 @@ The term **"Vibe Coding"** was coined by AI researcher Andrej Karpathy in Februa
 
 - [Goose](https://block.github.io/goose/) - Goose is an open-source coding assistant developed by Block, designed to assist developers through seamless integration with various AI providers, including support for OpenAI-compatible platforms, Anthropic, Ollama and several others. Goose operates in either a command line or interactive mode and optionally integrates with VSCode or other IDEs via the Model Context Protocol (MCP), offering a robust environment for code generation and editing. It aims to enhance productivity by providing efficient workflows and versatile support in development tasks.
 
+- [Vibe Compiler (vibec)](https://github.com/grishingrishin/vibe-compiler) - Vibe Compiler is a self-compiling tool that transforms prompt stacks into code and tests using LLM generation. It processes markdown-based prompt stacks to generate code, tests, and documentation, with support for both static and dynamic plugins. The tool works with any LLM via OpenRouter, including Claude, ChatGPT, and Grok, and can even compile itself through a bootstrap process, evolving its own implementation across numbered stages.
+
 ## Guides/Manual/Best Practices/Tutorials/Blogs
 
 - [Vibe Coding Manual](https://www.reddit.com/r/ChatGPTCoding/comments/1j5l4xw/vibe_coding_manual/) - This Reddit post on the r/ChatGPTCoding subreddit explores the “Vibe Coding Manual,” offering insights into a novel coding approach powered by ChatGPT. It shares tips, examples, and personal experiences on how human-AI collaboration can lead to more intuitive and flexible programming methods, helping developers enhance their skills and discover creative solutions.
