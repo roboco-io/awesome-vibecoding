@@ -36,6 +36,8 @@ The term **"Vibe Coding"** was coined by AI researcher Andrej Karpathy in Februa
 
 - [Berrry](https://berrry.app) - Berrry embodies the essence of vibe coding by transforming social media posts into functional web applications through pure AI intuition. Users simply share a Twitter post or Reddit content, and Berrry's AI generates complete, working apps without requiring any technical knowledge or code understanding—the ultimate "vibes-only" development experience.
 
+- [Vibe Compiler (vibec)](https://github.com/Strawberry-Computer/vibe-compiler) - Vibe Compiler is a self-compiling tool that transforms prompt stacks into code and tests using LLM generation. It processes markdown-based prompt stacks to generate code, tests, and documentation, with support for both static and dynamic plugins. The tool works with any LLM via OpenRouter, including Claude, ChatGPT, and Grok, and can even compile itself through a bootstrap process, evolving its own implementation across numbered stages.
+
 ## Guides/Manual/Best Practices/Tutorials/Blogs
 
 - [Vibe Coding Manual](https://www.reddit.com/r/ChatGPTCoding/comments/1j5l4xw/vibe_coding_manual/) - This Reddit post on the r/ChatGPTCoding subreddit explores the “Vibe Coding Manual,” offering insights into a novel coding approach powered by ChatGPT. It shares tips, examples, and personal experiences on how human-AI collaboration can lead to more intuitive and flexible programming methods, helping developers enhance their skills and discover creative solutions.

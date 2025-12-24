@@ -18,5 +18,9 @@
   "line_33_35": {
     "source": "\n- [Goose](https://block.github.io/goose/) - Goose is an open-source coding assistant developed by Block, designed to assist developers through seamless integration with various AI providers, including support for OpenAI-compatible platforms, Anthropic, Ollama and several others. Goose operates in either a command line or interactive mode and optionally integrates with VSCode or other IDEs via the Model Context Protocol (MCP), offering a robust environment for code generation and editing. It aims to enhance productivity by providing efficient workflows and versatile support in development tasks.\n",
     "translation": "```markdown\n- [Goose](https://block.github.io/goose/) - Gooseは、Blockによって開発されたオープンソースのコーディングアシスタントであり、OpenAI互換プラットフォーム、Anthropic、Ollamaなど、さまざまなAIプロバイダーとのシームレスな統合を通じて開発者を支援することを目的としています。Gooseは、コマンドラインモードまたはインタラクティブモードのいずれかで動作し、オプションでVSCodeや他のIDEとModel Context Protocol (MCP)を介して統合され、コード生成と編集のための堅牢な環境を提供します。効率的なワークフローと開発タスクにおける多様なサポートを提供することで、生産性を向上させることを目指しています。\n```"
+  },
+  "line_35_37": {
+    "source": "\n- [Vibe Compiler (vibec)](https://github.com/grishingrishin/vibe-compiler) - Vibe Compiler is a self-compiling tool that transforms prompt stacks into code and tests using LLM generation. It processes markdown-based prompt stacks to generate code, tests, and documentation, with support for both static and dynamic plugins. The tool works with any LLM via OpenRouter, including Claude, ChatGPT, and Grok, and can even compile itself through a bootstrap process, evolving its own implementation across numbered stages.\n",
+    "translation": "```markdown\n- [Vibe Compiler (vibec)](https://github.com/grishingrishin/vibe-compiler) - Vibe Compilerは、プロンプトスタックをコードとテストに変換する自己コンパイルツールです。これは、マークダウンベースのプロンプトスタックを処理してコード、テスト、およびドキュメントを生成し、静的および動的プラグインの両方をサポートします。このツールは、Claude、ChatGPT、Grokを含む任意のLLMとOpenRouterを介して連携し、ブートストラッププロセスを通じて自らをコンパイルすることもでき、番号付きのステージを通じて自身の実装を進化させます。\n```"
   }
 }
