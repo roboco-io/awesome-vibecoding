@@ -6,6 +6,8 @@
 
 **Vibe Coding** 관련 리소스를 정리한 목록입니다. Vibe Coding은 AI 네이티브 프로그래밍 패러다임으로, 자연어로 의도를 설명하면 AI가 코드를 생성합니다.
 
+> **AI가 관리합니다**: 이 저장소는 [Claude Code](https://claude.ai/code) + [Perplexity MCP](https://github.com/ppl-ai/modelcontextprotocol)를 사용하여 매주 자동 업데이트됩니다. 번역은 Claude Code hooks를 통해 자동 동기화됩니다. [자세히 보기 →](docs/automation.md)
+
 > **"완전히 분위기에 몸을 맡기고, 지수적 성장을 받아들이며, 코드가 존재한다는 사실조차 잊으세요."**
 > — Andrej Karpathy, 2025년 2월
 

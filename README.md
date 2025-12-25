@@ -6,6 +6,8 @@
 
 A curated list of resources for **Vibe Coding**—the AI-native programming paradigm where you describe your intent in natural language and let AI generate the code.
 
+> **Maintained by AI**: This repository is automatically updated weekly using [Claude Code](https://claude.ai/code) + [Perplexity MCP](https://github.com/ppl-ai/modelcontextprotocol). Translations sync automatically via Claude Code hooks. [Learn how →](docs/automation.md)
+
 > **"Fully give in to the vibes, embrace exponentials, and forget that the code even exists."**
 > — Andrej Karpathy, February 2025
 

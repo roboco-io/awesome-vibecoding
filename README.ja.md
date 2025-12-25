@@ -6,6 +6,8 @@
 
 **Vibe Coding**に関するリソースのキュレーションリスト。Vibe Codingとは、自然言語で意図を記述し、AIにコードを生成させるAIネイティブなプログラミングパラダイムです。
 
+> **AIによる管理**: このリポジトリは[Claude Code](https://claude.ai/code) + [Perplexity MCP](https://github.com/ppl-ai/modelcontextprotocol)を使用して毎週自動更新されます。翻訳はClaude Code hooksで自動同期されます。[詳細 →](docs/automation.md)
+
 > **「完全にバイブに身を任せ、指数関数的な成長を受け入れ、コードの存在すら忘れましょう。」**
 > — Andrej Karpathy、2025年2月
 
