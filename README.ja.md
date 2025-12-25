@@ -1,80 +1,284 @@
-# Awesome Vibe Coding (日本語)
+# Awesome Vibe Coding
 
 *Language: [English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md)*
 
 ![Vibe Coding Meme](images/vibecoding-meme.png)
 
-[Vibe Coding](https://en.wikipedia.org/wiki/Vibe_coding)は、ユーザーが単に問題を説明するだけで、AIが必要なコードを生成するAI支援プログラミングアプローチです。開発者は詳細なコードロジックを深く理解したり関与したりする必要がありません。プログラマーはコーディングタスクをAIの直感（「vibes」）と能力に委ね、詳細な実装を無視することがよくあります。この魔法のような体験により、経験の浅いプログラマーでも、以前は大規模な開発チームを必要としていたソフトウェアソリューションを構築できるようになり、ソフトウェアエンジニアリングの複雑性に関する従来の前提に挑戦しています。
+**Vibe Coding**に関するリソースのキュレーションリスト。Vibe Codingとは、自然言語で意図を記述し、AIにコードを生成させるAIネイティブなプログラミングパラダイムです。
 
-**「Vibe Coding」**という用語は、AI研究者のAndrej Karpathyによって2025年2月に造られました。Karpathyは、*SuperWhisper*などの高度な音声認識技術を使用してAIと受動的にやり取りし、AIの直感的なコーディング能力に完全に依存することを説明しました。彼は主に指示を出し、結果を観察し、必要な場合にのみ介入するという、ハンズオフアプローチを強調しました。
+> **「完全にバイブに身を任せ、指数関数的な成長を受け入れ、コードの存在すら忘れましょう。」**
+> — Andrej Karpathy、2025年2月
 
-## プロジェクト/プラットフォーム/ツール/サービス
+---
 
-- [Github Copilot](https://github.com/features/copilot) - GitHub Copilotは、リアルタイムでコードや関数全体を自動的に提案することで開発者を支援するように設計されたAI搭載のペアプログラマーです。GitHubとOpenAIが共同で開発し、高度な機械学習を活用してコードエディタのコンテキストを解釈し、インテリジェントでコンテキストを考慮した提案を提供します。
+## 目次
 
-- [Windsurf](https://codeium.com/windsurf) - Windsurfは、Codiumの傘下で開発されたAI駆動ソリューションで、コード生成と開発者ワークフローを最適化するように設計されています。高度な言語モデルを活用してプログラマーのコード作成と改善を支援し、プロトタイピングとプロダクション開発の両方を加速するシームレスな体験を提供します。
+- [Vibe Codingとは？](#vibe-codingとは)
+- [主要な原則](#主要な原則)
+- [ツール](#ツール)
+  - [IDE & エディタアシスタント](#ide--エディタアシスタント)
+  - [エージェント型コーディング環境](#エージェント型コーディング環境)
+  - [MCPサーバー & ツール](#mcpサーバー--ツール)
+  - [クラウド & プラットフォーム統合](#クラウド--プラットフォーム統合)
+- [ワークフロー & テンプレート](#ワークフロー--テンプレート)
+- [ベストプラクティス](#ベストプラクティス)
+- [ドメイン別アプリケーション](#ドメイン別アプリケーション)
+- [学習リソース](#学習リソース)
+  - [研究論文](#研究論文)
+  - [記事 & マニュアル](#記事--マニュアル)
+  - [動画 & チュートリアル](#動画--チュートリアル)
+- [コミュニティ](#コミュニティ)
+- [関連するAwesomeリスト](#関連するawesomeリスト)
+- [貢献](#貢献)
 
-- [Cursor](https://www.cursor.com/) - CursorはAI統合コードエディタで、ソフトウェア開発を加速し簡素化するように設計されています。直感的な編集機能と高度な生成AIを組み合わせることで、Cursorは新人開発者と経験豊富な開発者の両方がより効率的にコードを書き、デバッグし、改善できるようにします。
+---
 
-- [Claude Code](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview) - Claude Codeは、AnthropicのClaudeの特化バージョンで、自然言語インタラクションを通じてコード関連タスクを支援するように設計されています。Claudeの高度な言語能力と開発者中心の機能を組み合わせることで、Claude Codeはコードを生成、説明、改善し、生産性とソフトウェア品質の両方を向上させることができます。
+## Vibe Codingとは？
 
-- [Trae AI](https://www.futuretools.io/tools/trae-ai) - Trae AIは、個人や企業が高品質なコンテンツを作成し、ブランドストーリーテリングを最適化するのを支援するように設計された高度なAI駆動プラットフォームです。最先端の言語モデルを活用することで、Trae AIは創造的プロセスを効率化します。マーケティング資料、ソーシャルメディアキャンペーン、戦略的ブランドコミュニケーションのためのテキスト生成など、さまざまな用途に対応します。直感的なインターフェースとデータ駆動型インサイトにより、Trae AIはアイデア創出、下書き、コンテンツの改善をより速く、よりスマートに行う方法を提供し、ユーザーが一貫したブランドボイスを維持し、ターゲットオーディエンスと共鳴できるようにします。このプラットフォームはまた、パフォーマンス分析を統合し、ユーザーがエンゲージメントを測定し、リアルタイムで戦略を最適化できるようにします。
+[Vibe Coding](https://en.wikipedia.org/wiki/Vibe_coding)は、ユーザーが自然言語で問題を記述し、AIが必要なコードを生成するAI支援プログラミングアプローチです。開発者は詳細なコードロジックを深く理解したり関与したりする必要がありません。この用語は、AI研究者の**Andrej Karpathy**が2025年2月に作りました。
 
-- [AlphaCode](https://alphacode.deepmind.com/) - DeepMindによって開発されたAlphaCodeは、AI駆動コーディングの分野における重要なマイルストーンを表しています。競技プログラミングの課題に取り組むように設計されたAlphaCodeは、高度な言語モデルを活用して問題文を解釈し、高品質なコードソリューションを生成し、人間のプログラマーに似た推論ステップを実行します。
+### パラダイムの比較
 
-- [Replit Ghostwriter](https://replit.com/learn/intro-to-ghostwriter) - Replit GhostwriterはReplitプラットフォームに統合されたAI搭載コーディングアシスタントで、あらゆるスキルレベルの開発者がコードを書き、デバッグし、最適化するのを支援するように設計されています。コンテキストの理解とインタラクティブなプロンプトを組み合わせることで、Ghostwriterはソフトウェア開発プロセスを効率化し、迅速なプロトタイピングを可能にします。
+| パラダイム | アプローチ | 人間の役割 | 最適な用途 |
+|----------|----------|------------|----------|
+| **従来のコーディング** | 手動での構文ベースの記述 | すべてのコードを記述/読み取り | 完全な制御、本番システム |
+| **AI支援コーディング** | LLMが提案し、人間がレビュー/編集 | コードをレビューして洗練 | 監視を伴う高速開発 |
+| **Vibe Coding** | 自然言語からAIへ、テストのみで評価 | 意図を導き、結果をテスト | 迅速なプロトタイピング、MVP |
 
-- [OpenManus](https://github.com/mannaandpoem/OpenManus) - OpenManusは、学術論文の作成プロセスを簡素化し、効率化することを目的としたオープンソースフレームワークです。最新のコラボレーション技術とカスタマイズ可能なワークフローを統合することで、研究者、執筆者、チームがより効率的に構造化されたドキュメントを作成できるようにします。
+---
 
-- [Cline](https://github.com/cline/cline) - Clineは、最新の開発プラクティスと拡張性に焦点を当てたインタラクティブなコマンドライン環境を提供するオープンソースプロジェクトです。テキストベースのインターフェースの従来の力と追加のツーリングを組み合わせることで、Clineは生産性を向上させ、開発者、システム管理者、愛好家のための効率的なワークフローを提供することを目指しています。
+## 主要な原則
 
-- [Duet AI for Google Workspace](https://workspace.google.com/blog/product-announcements/duet-ai?hl=en) - Duet AIは、Google Workspace内で生産性を向上させ、ワークフローを効率化するためにGoogleが設計した協調型AI駆動ソリューションです。生成AIを活用することで、Duet AIはユーザーがさまざまなタスクを処理するのを支援することを目指しています。
+- **自然言語第一** — 実装方法ではなく、何を望むかを記述する
+- **仕様 vs バイブ** — 詳細な仕様よりも、緩やかで意図駆動の記述
+- **コンテキスト管理** — 複数ターンの会話で状態を維持
+- **責任の境界** — 人間が判断/テストを担当し、AIが生成を担当
+- **信頼の構築** — 反復的なテストとフィードバックがAI出力への信頼を育む
+- **不確実性の受容** — 行ごとのレビューではなく、テストに基づいてAIコードを受け入れる
 
-- [Roo Code](https://github.com/RooVetGit/Roo-Code) - Roo Codeは、エディタ内に常駐するAI駆動アシスタントで、開発プロセス全体を効率化します。自然言語理解を備え、ワークスペース内のファイルを直接読み書きし、ターミナルコマンドを実行し、ブラウザタスクを自動化することさえできます。任意のOpenAI互換またはカスタムAIモデルと統合することで、Roo Codeは柔軟なコーディングパートナーやシステムアーキテクトから、QAエンジニアやプロダクトマネージャーなどの専門的な役割まで、さまざまな役割をサポートする高度に適応可能なコーディング環境を提供します。
+---
 
-- [Goose](https://block.github.io/goose/) - GooseはBlockによって開発されたオープンソースのコーディングアシスタントで、OpenAI互換プラットフォーム、Anthropic、Ollamaなどを含むさまざまなAIプロバイダーとのシームレスな統合を通じて開発者を支援するように設計されています。Gooseはコマンドラインまたはインタラクティブモードで動作し、オプションでModel Context Protocol（MCP）を介してVSCodeまたは他のIDEと統合し、コード生成と編集のための堅牢な環境を提供します。効率的なワークフローと開発タスクにおける多用途のサポートを提供することで、生産性を向上させることを目指しています。
+## ツール
 
-- [Berrry](https://berrry.app) - Berrryは、純粋なAIの直感を通じてソーシャルメディアの投稿を機能的なWebアプリケーションに変換することで、Vibe Codingの本質を体現しています。ユーザーは単にTwitterの投稿やRedditのコンテンツを共有するだけで、BerrryのAIは技術的な知識やコードの理解を必要とせずに、完全に動作するアプリを生成します。究極の「vibes-only」開発体験です。
+### IDE & エディタアシスタント
 
-- [Vibe Compiler (vibec)](https://github.com/Strawberry-Computer/vibe-compiler) - Vibe Compilerは、LLM生成を使用してプロンプトスタックをコードとテストに変換する自己コンパイルツールです。マークダウンベースのプロンプトスタックを処理してコード、テスト、ドキュメントを生成し、静的および動的プラグインの両方をサポートします。このツールは、OpenRouter経由で任意のLLM（Claude、ChatGPT、Grokを含む）と連携し、ブートストラッププロセスを通じて自分自身をコンパイルすることさえでき、番号付きステージにわたって独自の実装を進化させることができます。
+開発環境に統合されたAI駆動のコード補完と支援。
 
-## ガイド/マニュアル/ベストプラクティス/チュートリアル/ブログ
+| ツール | 説明 | リンク |
+|------|-------------|-------|
+| **GitHub Copilot** | オートコンプリート、チャット、マルチIDE対応のAIペアプログラマー | [Website](https://github.com/features/copilot) |
+| **Cursor** | コンテキストに応じたコード生成とインラインチャット機能を持つVS Codeフォーク | [Website](https://www.cursor.com/) |
+| **Windsurf** | CodeiumのAIネイティブIDEでCascade AIとマルチLLMサポート | [Website](https://codeium.com/windsurf) |
+| **Claude Code** | AnthropicのCLIベースのエージェント型コーディングアシスタント | [Docs](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview) |
+| **JetBrains AI** | IntelliJ/PyCharmにMellum LLMとの深い統合 | [Website](https://www.jetbrains.com/ai/) |
+| **Tabnine** | コーディングスタイルに適応する深層学習オートコンプリート | [Website](https://www.tabnine.com/) |
+| **Amazon Q Developer** | AWS統合AIコーディングアシスタント | [Website](https://aws.amazon.com/q/developer/) |
+| **Cline** | ファイル/ターミナル/ブラウザ自動化を備えたオープンソースAIアシスタント | [GitHub](https://github.com/cline/cline) |
+| **Roo Code** | 複数の役割（アーキテクト、QA、PM）をサポートするAIアシスタント | [GitHub](https://github.com/RooVetGit/Roo-Code) |
 
-- [Vibe Coding Manual](https://www.reddit.com/r/ChatGPTCoding/comments/1j5l4xw/vibe_coding_manual/) - r/ChatGPTCodingサブレディットのこのReddit投稿は、「Vibe Coding Manual」を探求し、ChatGPTを活用した新しいコーディングアプローチに関する洞察を提供しています。人間とAIのコラボレーションがより直感的で柔軟なプログラミング方法につながる方法について、ヒント、例、個人的な経験を共有し、開発者がスキルを向上させ、創造的なソリューションを発見するのを支援します。
+### エージェント型コーディング環境
 
-- [Here's how I use LLMs to help me write code](https://simonwillison.net/2025/Mar/11/using-llms-for-code/) - このブログ投稿で、Simon Willisonは、大規模言語モデル（LLM）がコードの記述、レビュー、説明などのコーディングタスクをどのように支援できるかを探求しています。彼は、うまく機能するプロンプトの例を強調し、不正確または不完全な出力などの制限とリスクについて議論し、LLMを開発者のワークフローに統合する効果的な方法についての洞察を提供します。Willisonはまた、正確性を確保し品質を維持するための人間の監視の重要性を強調し、AI生成コードに依存することの可能性と課題の両方を示しています。
+エンドツーエンドの開発タスクを処理する自律型AIシステム。
 
-## YouTube
+| ツール | 説明 | リンク |
+|------|-------------|-------|
+| **Devin** | Cognitionによる自律型AIソフトウェアエンジニア | [Website](https://www.cognition.ai/devin) |
+| **OpenHands** | オープンソースの自律型AIソフトウェア開発者 | [GitHub](https://github.com/All-Hands-AI/OpenHands) |
+| **Goose** | BlockによるMCPサポート付きオープンソースコーディングアシスタント | [Website](https://block.github.io/goose/) |
+| **OpenManus** | AI支援ドキュメント作成のためのオープンソースフレームワーク | [GitHub](https://github.com/mannaandpoem/OpenManus) |
+| **Vibe Compiler (vibec)** | プロンプトをコードに変換する自己コンパイルツール | [GitHub](https://github.com/Strawberry-Computer/vibe-compiler) |
+| **AlphaCode** | DeepMindの競技プログラミングAI | [Website](https://alphacode.deepmind.com/) |
 
-- [Vibe Coding Tutorial and Best Practices](https://www.youtube.com/watch?v=YWwS911iLhg&t=907s) - このビデオでは、CursorやWindsurfなどのコーディング環境でAIエージェントを使用してアプリケーション開発プロセス全体を自動化する「vibe coding」について議論しています。スピーカーは、詳細な指示を指定すること、AIの動作をガイドするためにルールを利用すること、現在のモデルの制限をナビゲートすることなど、これらのAIエージェントの効果を最大化するための経験とベストプラクティスを共有しています。また、これらのツールを通じたコーディングアクセシビリティと効率性の向上の可能性も強調しています。
+### MCPサーバー & ツール
 
-- [Vibe Coding Is The Future](https://www.youtube.com/watch?v=IACHfKmZMr8&t=1606s) - このポッドキャストエピソードでは、Andrej Karpathyによって造られた用語である「Vibe Coding」について議論しています。これは、開発者がAIツールを受け入れ、迅速に反復し、ソフトウェアエンジニアの役割を変革する可能性のあるコーディングスタイルを指します。Y Combinatorのパートナーであるホストは、現在のバッチの創業者を調査して、AIがワークフローとソフトウェアエンジニアリングの未来をどのように変えているかを理解しました。議論では、プロダクト重視のエンジニアリングへのシフト、テイストとシステム思考の重要性、コーディングツールとモデルの進化する状況が強調されています。
+AI機能を拡張する[Model Context Protocol](https://modelcontextprotocol.io/)サーバー。
 
-- [How I use LLMs from Andrej Karpathy's YouTube Channel](https://www.youtube.com/watch?v=EWvNQjAaOHw) - このビデオは、ChatGPTのような大規模言語モデル（LLM）の使用に関する実用的なガイドを提供し、実世界のアプリケーション、利用可能な設定、個人的および専門的な用途のための効果的な戦略に焦点を当てています。さまざまなプラットフォーム、モデル、ツール、モダリティをカバーし、視聴者が急速に進化するLLMエコシステムをナビゲートするのを支援します。
+| カテゴリ | サーバー | 説明 |
+|----------|---------|-------------|
+| **Git操作** | Git、Rube | リポジトリの読み取り/検索/操作 |
+| **データベース** | ClickHouse、MongoDB、Prisma、Chroma | クエリ、マイグレーション、セマンティック検索 |
+| **テスト** | CircleCI、Semgrep | CI/CD統合、コードスキャン |
+| **ブラウザ** | AnyCrawl、Fetch | Webスクレイピング、コンテンツ取得 |
+| **ファイルシステム** | Filesystem | 安全な読み取り/書き込み操作 |
+| **DevOps** | Terraform-Cloud、Sentry | インフラストラクチャ、エラートラッキング |
 
-- [How Windsurf writes 90% of your code with an Agentic IDE - Kevin Hou, head of product engineering at Codium](https://www.youtube.com/watch?v=bVNNvWq6dKo) - このプレゼンテーションでは、Codiumによって開発されたAIエージェント搭載コードエディタであるWindsurfを紹介しています。プロダクトエンジニアリングチームのKevinは、Windsurf背後の原則を強調し、統一されたタイムラインを通じて開発者のニーズを理解し予測する能力、メタラーニングを介してコーディングの好みに適応する能力、AIモデルの進歩とともにインテリジェンスをスケールする能力に焦点を当てています。
+📚 包括的なリストは[awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers)を参照してください。
 
-- [Vibecoding is Here - How AI is Changing How We Build Online](https://www.youtube.com/watch?v=xxA-M3HrKrc) - このコンテンツは、技術者と非技術者の両方のユーザーが、自然言語を使用してAIコーディングエージェントに指示し、アプリケーションとWebサイトを生成する「vibe coding」の新たなトレンドについて議論しています。関与する企業、成長の規模、ツールの能力、AI支援ソフトウェア開発の潜在的な将来の方向性を探ります。
+### クラウド & プラットフォーム統合
 
-- [New tools for building agents with the API](https://www.youtube.com/watch?v=hciNKcLwSes) - OpenAIは、信頼性が高く有用なエージェントを構築するための新しいツールとAPIを開発者向けに発表しました。Web Searchツール、File Searchツール、Computer Useツール、新しいResponses APIとAgents SDKが含まれます。これらのツールは、効果的なエージェントに必要な複雑で多段階のワークフローの作成を簡素化することを目指しています。新しいAPIとSDKは、開発者がタスクを独立して実行できるエージェントを作成するために必要な構成要素を提供します。
+AI支援開発のためのブラウザベースおよびクラウドプラットフォーム。
 
-- [AI Development Tool Showdown: Copilot, Cursor, Cline, Devin, Windsurf!(Japanese)](https://www.youtube.com/watch?v=EQHXIVItNxs) - これは、AI支援コーディングツールに関するパネルディスカッションの要約です。スピーカーは、Cursor、Copilot、Debbyなどのツールを使用した経験を共有し、実用的なアプリケーション、比較、将来への影響に焦点を当てています。議論は、基本的なツールの概要から高度なテクニック、AI駆動環境における開発者の役割の変化まで、さまざまなトピックをカバーしています。
+| ツール | 説明 | リンク |
+|------|-------------|-------|
+| **Replit** | Ghostwriter AIを備えたブラウザベースIDE | [Website](https://replit.com/) |
+| **v0** | VercelのUI/React生成AI | [Website](https://v0.dev/) |
+| **Bolt.new** | StackBlitzによる自然言語アプリ構築 | [Website](https://bolt.new/) |
+| **Lovable** | Supabaseを使用したフルスタックアプリ生成 | [Website](https://lovable.dev/) |
+| **Berrry** | ソーシャル投稿をWebアプリに変換 | [Website](https://berrry.app) |
+| **Duet AI** | Google WorkspaceのAI統合 | [Website](https://workspace.google.com/solutions/ai/) |
+| **Trae AI** | コンテンツ作成のためのAIプラットフォーム | [Website](https://www.trae.ai/) |
 
-- [Model Context Protocol (MCP): The Key To Agentic AI](https://www.youtube.com/watch?v=VChRPFUzJGA) - このビデオは、Model Context Protocol（mCP）の概要を提供し、それが何であるか、なぜ重要か、どのように機能するか、他のプロトコルとどのように比較されるかを説明しています。mCPは、AIモデル、特に大規模言語モデル（LLM）が、タスクを完了するために必要なデータベースやファイルなどの外部コンテキストにアクセスできるようにします。プレゼンターはまた、SQLiteデータベースサーバーとClaude desktopを使用した実用的な例をデモンストレーションしています。
+---
 
-- [MCP causing a frenzy these days! I'll break it down for you in under 10 minutes](https://www.youtube.com/watch?v=EswVjHZMn74) - このコンテンツは、AIアプリケーションが外部システムに接続するための標準化された方法であるModel Context Protocol（mCP）を紹介しています。mCPとは何か、どのように機能するか、Python SDKを使用して独自のmCPサーバーを構築し、CLAやcsorなどのアプリに接続する方法を説明します。スピーカーは、mCPが開発者が学ぶべき貴重なスキルであると信じています。
+## ワークフロー & テンプレート
 
-## 貢献ガイドライン
+### セッションセットアップパターン
 
-このリポジトリを強化するための貢献を歓迎します。以下の簡単なガイドラインに従ってください。
+```markdown
+Project: {1行の説明}
+Stack: {技術スタック}
+Repo layout: {主要なディレクトリ/ファイル}
 
-1. **フォークとブランチ作成:** このリポジトリをフォークし、機能ブランチを作成します。
-2. **貢献を追加:** 新しいリソースを明確に文書化するか、既存のコンテンツを改善します。
-3. **コミットとプッシュ:** 説明的なコミットメッセージで変更をコミットし、ブランチをGitHubにプッシュします。
-4. **プルリクエストを作成:** プルリクエストを開き、貢献内容を明確に説明します。
+Artifacts:
+- PRD: {パス}
+- TECH_DESIGN: {パス}
+- NOTES: {パス}
 
-一緒に、Vibe Coding愛好家のための究極の厳選されたリソースを構築しましょう。
+Task: {1〜3文、単一の焦点}
+
+What I want: 1) 明確化の質問 2) 短い計画 3) ステップ1の実装
+```
+
+### 推奨されるアーティファクト
+
+リポジトリにこれらのAI可読ドキュメントを保持します。
+- **PRD.md** — 製品要件とユーザーストーリー
+- **TECH_DESIGN.md** — アーキテクチャ、データモデル、統合ポイント
+- **NOTES.md** — 決定事項とTODOの継続的なログ
+- **CHANGELOG.md** — 人間/AI維持の変更履歴
+
+### 作業タイプ別プレイブック
+
+| ワークフロー | 主要なステップ |
+|----------|-----------|
+| **新機能** | バイブブリーフ → PRDで検証 → バーティカルスライス計画 → 段階的実装 |
+| **リファクタリング** | パターン/臭いを分析 → 安全戦略 → 順次小さなステップ |
+| **バグ修正** | トリアージと仮説 → 最小限の失敗するテスト → 修正 → 検証 |
+| **テスト生成** | 重要な動作を特定 → リスクで優先順位付け → テスト生成 |
+
+📚 詳細なテンプレートは[Vibe Coding Prompt Template](https://github.com/KhazP/vibe-coding-prompt-template)を参照してください。
+
+---
+
+## ベストプラクティス
+
+### すべきこと ✅
+
+- **コンテキストから始める** — アーキテクチャ、制約、関連コードを提供
+- **タスクを分解する** — 計画 → 生成 → テスト → リファクタリングに分割
+- **テストファースト** — コードの前または同時にテストを生成
+- **サンドボックスを使用** — 分離された環境でAIコードを実行
+- **「ジュニアエンジニア」としてレビュー** — セキュリティとアーキテクチャのために常に人間がレビュー
+- **アーティファクトを維持** — PRD、NOTES、CHANGELOGを更新し続ける
+
+### してはいけないこと ❌
+
+- **「簡単な」コードのレビューをスキップ** — AIは微妙なバグを導入する可能性がある
+- **プロンプトに秘密を含める** — 環境変数やボールトを使用
+- **パブリックモデルに独自コードを提供** — データ漏洩のリスク
+- **生の出力を盲目的に受け入れる** — バイブ ≠ 検証なしのバイブ
+- **複雑な決定にAIに過度に依存** — 人間が判断を処理
+
+---
+
+## ドメイン別アプリケーション
+
+| ドメイン | ユースケース | ツール例 |
+|--------|-----------|---------------|
+| **Web/アプリ/バックエンド** | CRUDアプリ、SaaS、マイクロサービス | Lovable、Cursor、v0 |
+| **データ & ML** | パイプライン生成、実験自動化 | Zapier Agents、n8n |
+| **DevOps** | IaC、CI/CDセットアップ、監視 | Terraform MCP、AutoVibe |
+| **研究** | ノートブック自動化、データ可視化 | ChatGPT、Claude |
+
+---
+
+## 学習リソース
+
+### 研究論文
+
+| 論文 | 焦点 | リンク |
+|-------|-------|------|
+| **Vibe Coding: Toward an AI-Native Paradigm** | セマンティックソフトウェア開発 | [arXiv:2510.17842](https://arxiv.org/abs/2510.17842) |
+| **A Review on Vibe Coding** | 基礎、課題、将来の方向性 | [TechRxiv](https://www.techrxiv.org/users/913189/articles/1292402) |
+| **Vibe Coding and AI-Led Conversational Programming** | 開発者とAIの相互作用 | [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5469367) |
+| **Vibe Coding: AI/Voice Based Code Generation** | 非コーダー向け研究ツール | [ICAIR](https://papers.academic-conferences.org/index.php/icair/article/view/3975) |
+
+### 記事 & マニュアル
+
+- [What is Vibe Coding? (IBM)](https://www.ibm.com/think/topics/vibe-coding) — エンタープライズの視点
+- [Vibe Coding Manual (Roboco)](https://roboco.io/posts/vibe-coding-manual/) — テンプレート付き包括的ガイド
+- [12 Best Practices for AI Coding (Questera)](https://www.questera.ai/blogs/12-best-practices-to-use-ai-in-coding-in-2025) — 2025年のベストプラクティス
+- [Secure Vibe Coding Guide (CSA)](https://cloudsecurityalliance.org/blog/2025/04/09/secure-vibe-coding-guide) — セキュリティの考慮事項
+- [Here's how I use LLMs to help me write code (Simon Willison)](https://simonwillison.net/2025/Mar/11/using-llms-for-code/) — 実践的な統合のヒント
+
+### 動画 & チュートリアル
+
+| 動画 | トピック | リンク |
+|-------|-------|------|
+| **Vibe Coding Tutorial and Best Practices** | Cursor/WindsurfでのAIエージェント | [YouTube](https://www.youtube.com/watch?v=YWwS911iLhg) |
+| **Vibe Coding Is The Future** | Y CombinatorのVibe Coding | [YouTube](https://www.youtube.com/watch?v=IACHfKmZMr8) |
+| **How I use LLMs** | Andrej Karpathyのガイド | [YouTube](https://www.youtube.com/watch?v=EWvNQjAaOHw) |
+| **Model Context Protocol Explained** | MCPの基礎 | [YouTube](https://www.youtube.com/watch?v=VChRPFUzJGA) |
+| **Windsurf: 90% of Your Code** | エージェント型IDEの詳細 | [YouTube](https://www.youtube.com/watch?v=bVNNvWq6dKo) |
+| **Vibecoding is Here** | AIが開発を変える | [YouTube](https://www.youtube.com/watch?v=xxA-M3HrKrc) |
+| **New Tools for Building Agents** | OpenAIのエージェントツール | [YouTube](https://www.youtube.com/watch?v=hciNKcLwSes) |
+| **AI Tool Showdown (Japanese)** | Copilot vs Cursor等 | [YouTube](https://www.youtube.com/watch?v=EQHXIVItNxs) |
+| **MCP in 10 Minutes** | MCPクイックイントロ | [YouTube](https://www.youtube.com/watch?v=EswVjHZMn74) |
+
+---
+
+## コミュニティ
+
+### Reddit
+
+- [r/vibecoding](https://reddit.com/r/vibecoding) — Vibe Coding専用コミュニティ
+- [r/ChatGPTCoding](https://reddit.com/r/ChatGPTCoding) — ChatGPT + コーディングワークフロー
+- [r/LocalLlama](https://reddit.com/r/LocalLlama) — ローカルLLM開発
+- [r/replit](https://reddit.com/r/replit) — ReplitとGhostwriterコミュニティ
+
+### Discord
+
+- **Cursor Discord** — ワークフロー、拡張機能、プロジェクトショーケース
+- **Lovable AI Discord** — フルスタックアプリ生成の共有
+- **Bolt.new Discord** — 自然言語アプリ構築
+- **v0 by Vercel Discord** — UI/React生成コミュニティ
+- **Replit Discord** — マルチプレイヤーVibe Coding
+
+### スターターキット
+
+- [vibe-coding-prompt-template](https://github.com/KhazP/vibe-coding-prompt-template) — 包括的なプロンプトテンプレート
+- [awesome-vibe-coding](https://github.com/filipecalegario/awesome-vibe-coding) — 別のキュレーションリスト
+- [vibeworkflow.app](https://vibeworkflow.app) — Vibe Codingのワークフロー自動化
+
+---
+
+## 関連するAwesomeリスト
+
+- [awesome-code-ai](https://github.com/sourcegraph/awesome-code-ai) — SourcegraphによるAIコーディングツール
+- [awesome-ai-assisted-coding](https://github.com/saviorand/awesome-ai-assisted-coding) — AI支援コーディングリソース
+- [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers) — Model Context Protocolサーバー
+- [awesome-chatgpt](https://github.com/humanloop/awesome-chatgpt) — ChatGPTリソース
+
+---
+
+## 貢献
+
+このリポジトリを強化するための貢献を歓迎します。以下のガイドラインに従ってください。
+
+1. **フォーク & ブランチ作成** — このリポジトリをフォークし、フィーチャーブランチを作成
+2. **貢献を追加** — 既存の形式に従う：`[名前](URL) — 説明`
+3. **コミット & プッシュ** — 説明的なコミットメッセージを使用
+4. **プルリクエスト作成** — 貢献内容を明確に説明
+
+### キュレーション原則
+
+リソースは以下であるべきです。
+- **関連性** — Vibe CodingまたはAI支援開発に直接関連
+- **品質** — 適切に維持され、文書化され、積極的に使用されている
+- **アクセス可能性** — 無料または無料ティアが利用可能なものが望ましい
+
+---
 
 ## ライセンス
 
-この作品は、[CC0 1.0 Universal License](https://creativecommons.org/publicdomain/zero/1.0/)の下でパブリックドメインに捧げられています。
+この作品は[CC0 1.0 Universal License](https://creativecommons.org/publicdomain/zero/1.0/)の下でパブリックドメインに捧げられています。

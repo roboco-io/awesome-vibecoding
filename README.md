@@ -4,75 +4,280 @@
 
 ![Vibe Coding Meme](images/vibecoding-meme.png)
 
-[Vibe Coding](https://en.wikipedia.org/wiki/Vibe_coding) is an AI-assisted programming approach where users simply describe their problem, and AI generates the necessary code without requiring the developer to deeply understand or engage with detailed code logic. Programmers entrust coding tasks to the AI's intuition ("vibes") and capabilities, often ignoring detailed implementations. This magical-like experience allows even inexperienced programmers to build software solutions previously requiring extensive development teams, challenging traditional assumptions of software engineering complexity.
+A curated list of resources for **Vibe Coding**—the AI-native programming paradigm where you describe your intent in natural language and let AI generate the code.
 
-The term **"Vibe Coding"** was coined by AI researcher Andrej Karpathy in February 2025. Karpathy described using advanced voice-recognition technologies such as *SuperWhisper* to interact passively with AI, relying entirely on AI's intuitive coding abilities. He emphasized a hands-off approach, primarily instructing and observing outcomes, and only intervening when necessary.
+> **"Fully give in to the vibes, embrace exponentials, and forget that the code even exists."**
+> — Andrej Karpathy, February 2025
 
-## Projects/Platforms/Tools/Services
+---
 
-- [Github Copilot](https://github.com/features/copilot)- GitHub Copilot is an AI-powered pair programmer designed to assist developers by automatically suggesting code and entire functions in real-time. Developed collaboratively by GitHub and OpenAI, it leverages advanced machine learning to interpret the context in your code editor and provide intelligent, context-aware suggestions.
+## Contents
 
-- [Windsurf](https://codeium.com/windsurf) - Windsurf, developed under the Codeium umbrella, is an AI-driven solution designed to optimize code generation and developer workflows. It leverages advanced language models to assist programmers in crafting and refining code, offering a seamless experience that accelerates both prototyping and production development.
+- [What is Vibe Coding?](#what-is-vibe-coding)
+- [Key Principles](#key-principles)
+- [Tools](#tools)
+  - [IDE & Editor Assistants](#ide--editor-assistants)
+  - [Agentic Coding Environments](#agentic-coding-environments)
+  - [MCP Servers & Tooling](#mcp-servers--tooling)
+  - [Cloud & Platform Integrations](#cloud--platform-integrations)
+- [Workflows & Templates](#workflows--templates)
+- [Best Practices](#best-practices)
+- [Domain Applications](#domain-applications)
+- [Learning Resources](#learning-resources)
+  - [Research Papers](#research-papers)
+  - [Articles & Manuals](#articles--manuals)
+  - [Videos & Tutorials](#videos--tutorials)
+- [Community](#community)
+- [Related Awesome Lists](#related-awesome-lists)
+- [Contributing](#contributing)
 
-- [Cursor](https://www.cursor.com/) - Cursor is an AI-integrated code editor designed to accelerate and simplify software development. By combining intuitive editing features with advanced generative AI, Cursor empowers both new and experienced developers to write, debug, and refine code more efficiently
+---
 
-- [Claude Code](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview) - Claude Code is a specialized variant of Anthropic’s Claude, designed to assist with code-related tasks through natural language interactions. By combining Claude’s advanced language capabilities with developer-centric features, Claude Code can generate, explain, and refine code to improve both productivity and software quality.
+## What is Vibe Coding?
 
-- [Trae AI](https://www.futuretools.io/tools/trae-ai) - Trae AI is an advanced AI-driven platform designed to help individuals and businesses create high-quality content and optimize their brand storytelling. By leveraging cutting-edge language models, Trae AI streamlines the creative process—whether you’re generating text for marketing materials, social media campaigns, or strategic brand communication. With its intuitive interface and data-driven insights, Trae AI offers a faster, smarter way to ideate, draft, and refine content, enabling users to maintain a consistent brand voice and resonate with their target audience. The platform also integrates performance analytics to help users measure engagement and optimize their strategies in real time.
+[Vibe Coding](https://en.wikipedia.org/wiki/Vibe_coding) is an AI-assisted programming approach where users describe their problem in natural language, and AI generates the necessary code without requiring the developer to deeply understand or engage with detailed code logic. The term was coined by AI researcher **Andrej Karpathy** in February 2025.
 
-- [AlphaCode](https://alphacode.deepmind.com/) - AlphaCode, developed by DeepMind, represents a significant milestone in the field of AI-driven coding. Designed to tackle competitive programming challenges, AlphaCode leverages advanced language models to interpret problem statements, generate high-quality code solutions, and perform reasoning steps akin to those of human programmers.
+### Paradigm Comparison
 
-- [Replit Ghostwriter](https://replit.com/learn/intro-to-ghostwriter) - Replit Ghostwriter is an AI-powered coding assistant integrated into the Replit platform, designed to help developers at all skill levels write, debug, and optimize code. By combining contextual understanding with interactive prompts, Ghostwriter streamlines the software development process and enables quick prototyping.
+| Paradigm | Approach | Human Role | Best For |
+|----------|----------|------------|----------|
+| **Traditional Coding** | Manual syntax-based writing | Writes/reads all code | Full control, production systems |
+| **AI-Assisted Coding** | LLM suggests, human reviews/edits | Reviews and refines code | Faster development with oversight |
+| **Vibe Coding** | Natural language to AI, test-only evaluation | Guides via intent, tests outcomes | Rapid prototyping, MVPs |
 
-- [OpenManus](https://github.com/mannaandpoem/OpenManus) - OpenManus is an open-source framework aimed at simplifying and streamlining the process of academic manuscript creation. By integrating modern collaboration techniques and customizable workflows, it empowers researchers, writers, and teams to produce well-structured documents more efficiently.
+---
 
-- [Cline](https://github.com/cline/cline) - Cline is an open-source project that provides an interactive command-line environment with a focus on modern development practices and extensibility. By combining the traditional power of a text-based interface with additional tooling, Cline aims to enhance productivity and offer a streamlined workflow for developers, system administrators, and hobbyists alike.
+## Key Principles
 
-- [Duet AI for Google Workspace](https://workspace.google.com/blog/product-announcements/duet-ai?hl=en) - Duet AI is a collaborative, AI-driven solution by Google designed to enhance productivity and streamline workflows within Google Workspace. By leveraging generative AI, Duet AI aims to help users handle a wide range of tasks
+- **Natural Language First** — Describe what you want, not how to implement it
+- **Specification vs Vibe** — Loose, intent-driven descriptions over exhaustive specs
+- **Context Management** — Maintain state across multi-turn conversations
+- **Responsibility Boundaries** — Humans handle judgment/testing; AI handles generation
+- **Trust Building** — Iterative testing and feedback foster reliance on AI outputs
+- **Embrace Uncertainty** — Accept AI code based on tests, not line-by-line review
 
-- [Roo Code](https://github.com/RooVetGit/Roo-Code) - Roo Code is an AI-driven assistant that lives in your editor, streamlining the entire development process. Equipped with natural language understanding, it can read and write files directly in your workspace, run terminal commands, and even automate browser tasks. By integrating with any OpenAI-compatible or custom AI model, Roo Code offers a highly adaptable coding environment that supports various roles, from a flexible coding partner or system architect to specialized positions like QA engineer or product manager.
+---
 
-- [Goose](https://block.github.io/goose/) - Goose is an open-source coding assistant developed by Block, designed to assist developers through seamless integration with various AI providers, including support for OpenAI-compatible platforms, Anthropic, Ollama and several others. Goose operates in either a command line or interactive mode and optionally integrates with VSCode or other IDEs via the Model Context Protocol (MCP), offering a robust environment for code generation and editing. It aims to enhance productivity by providing efficient workflows and versatile support in development tasks.
+## Tools
 
-- [Berrry](https://berrry.app) - Berrry embodies the essence of vibe coding by transforming social media posts into functional web applications through pure AI intuition. Users simply share a Twitter post or Reddit content, and Berrry's AI generates complete, working apps without requiring any technical knowledge or code understanding—the ultimate "vibes-only" development experience.
+### IDE & Editor Assistants
 
-- [Vibe Compiler (vibec)](https://github.com/Strawberry-Computer/vibe-compiler) - Vibe Compiler is a self-compiling tool that transforms prompt stacks into code and tests using LLM generation. It processes markdown-based prompt stacks to generate code, tests, and documentation, with support for both static and dynamic plugins. The tool works with any LLM via OpenRouter, including Claude, ChatGPT, and Grok, and can even compile itself through a bootstrap process, evolving its own implementation across numbered stages.
+AI-powered code completion and assistance integrated into your development environment.
 
-## Guides/Manual/Best Practices/Tutorials/Blogs
+| Tool | Description | Links |
+|------|-------------|-------|
+| **GitHub Copilot** | AI pair programmer with autocomplete, chat, multi-IDE support | [Website](https://github.com/features/copilot) |
+| **Cursor** | VS Code fork with contextual code generation and inline chat | [Website](https://www.cursor.com/) |
+| **Windsurf** | AI-native IDE from Codeium with Cascade AI and multi-LLM support | [Website](https://codeium.com/windsurf) |
+| **Claude Code** | Anthropic's CLI-based agentic coding assistant | [Docs](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview) |
+| **JetBrains AI** | Deep integration in IntelliJ/PyCharm with Mellum LLM | [Website](https://www.jetbrains.com/ai/) |
+| **Tabnine** | Deep learning autocomplete adapting to your coding style | [Website](https://www.tabnine.com/) |
+| **Amazon Q Developer** | AWS-integrated AI coding assistant | [Website](https://aws.amazon.com/q/developer/) |
+| **Cline** | Open-source AI assistant with file/terminal/browser automation | [GitHub](https://github.com/cline/cline) |
+| **Roo Code** | AI assistant supporting multiple roles (architect, QA, PM) | [GitHub](https://github.com/RooVetGit/Roo-Code) |
 
-- [Vibe Coding Manual](https://www.reddit.com/r/ChatGPTCoding/comments/1j5l4xw/vibe_coding_manual/) - This Reddit post on the r/ChatGPTCoding subreddit explores the “Vibe Coding Manual,” offering insights into a novel coding approach powered by ChatGPT. It shares tips, examples, and personal experiences on how human-AI collaboration can lead to more intuitive and flexible programming methods, helping developers enhance their skills and discover creative solutions.
+### Agentic Coding Environments
 
-- [Here’s how I use LLMs to help me write code](https://simonwillison.net/2025/Mar/11/using-llms-for-code/) - In his blog post, Simon Willison explores how large language models (LLMs) can help with coding tasks such as writing, reviewing, and explaining code. He highlights examples of prompts that work well, discusses the limitations and risks—such as incorrect or incomplete outputs—and provides insights into effective ways to integrate LLMs into a developer’s workflow. Willison also underscores the importance of human oversight to ensure accuracy and maintain quality, illustrating both the potential and the challenges of relying on AI-generated code.
+Autonomous AI systems that handle end-to-end development tasks.
 
-## YouTube
-- [Vibe Coding Tutorial and Best Practices](https://www.youtube.com/watch?v=YWwS911iLhg&t=907s) - This video discusses "vibe coding," which involves using AI agents in coding environments like Cursor or Windsurf to automate the entire application development process. The speaker shares their experiences and best practices for maximizing the effectiveness of these AI agents, including specifying detailed instructions, utilizing rules to guide the AI's behavior, and navigating the limitations of current models. They also highlight the potential for increased coding accessibility and efficiency through these tools.
+| Tool | Description | Links |
+|------|-------------|-------|
+| **Devin** | Autonomous AI software engineer by Cognition | [Website](https://www.cognition.ai/devin) |
+| **OpenHands** | Open-source autonomous AI software developer | [GitHub](https://github.com/All-Hands-AI/OpenHands) |
+| **Goose** | Open-source coding assistant by Block with MCP support | [Website](https://block.github.io/goose/) |
+| **OpenManus** | Open-source framework for AI-assisted document creation | [GitHub](https://github.com/mannaandpoem/OpenManus) |
+| **Vibe Compiler (vibec)** | Self-compiling tool that transforms prompts into code | [GitHub](https://github.com/Strawberry-Computer/vibe-compiler) |
+| **AlphaCode** | DeepMind's competitive programming AI | [Website](https://alphacode.deepmind.com/) |
 
-- [Vibe Coding Is The Future](https://www.youtube.com/watch?v=IACHfKmZMr8&t=1606s) - This podcast episode discusses "Vibe Coding," a term coined by Andrej Karpathy, referring to a coding style where developers embrace AI tools and iterate rapidly, potentially transforming the role of software engineers. The hosts, partners at Y Combinator, surveyed founders in their current batch to understand how AI is changing their workflows and the future of software engineering. The discussion highlights the shift towards product-focused engineering, the importance of taste and system thinking, and the evolving landscape of coding tools and models.
+### MCP Servers & Tooling
 
-- [How I use LLMs from Andrej Karpathy's YouTube Channel](https://www.youtube.com/watch?v=EWvNQjAaOHw) - This video provides a practical guide to using large language models (LLMs) like ChatGPT, focusing on real-world applications, available settings, and effective strategies for both personal and professional use. It covers various platforms, models, tools, and modalities to help viewers navigate the rapidly evolving LLM ecosystem.
+[Model Context Protocol](https://modelcontextprotocol.io/) servers that extend AI capabilities.
 
-- [How Windsurf writes 90% of your code with an Agentic IDE - Kevin Hou, head of product engineering at Codium](https://www.youtube.com/watch?v=bVNNvWq6dKo) - This presentation introduces Windsurf, an AI agent-powered code editor developed by Codium. The speaker, Kevin from the product engineering team, highlights the principles behind Windsurf, focusing on its ability to understand and anticipate developer needs through a unified timeline, adapt to coding preferences via meta-learning, and scale its intelligence with advancements in AI models.
+| Category | Servers | Description |
+|----------|---------|-------------|
+| **Git Operations** | Git, Rube | Repository read/search/manipulation |
+| **Databases** | ClickHouse, MongoDB, Prisma, Chroma | Query, migrations, semantic search |
+| **Testing** | CircleCI, Semgrep | CI/CD integration, code scanning |
+| **Browser** | AnyCrawl, Fetch | Web scraping, content fetching |
+| **File System** | Filesystem | Secure read/write operations |
+| **DevOps** | Terraform-Cloud, Sentry | Infrastructure, error tracking |
 
-- [Vibecoding is Here - How AI is Changing How We Build Online](https://www.youtube.com/watch?v=xxA-M3HrKrc) - This content discusses the emerging trend of "vibe coding," where users, both technical and non-technical, instruct AI coding agents using natural language to generate applications and websites. It explores the companies involved, the scale of their growth, the capabilities of the tools, and the potential future direction of AI-assisted software development.
+📚 See [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers) for a comprehensive list.
 
-- [New tools for building agents with the API](https://www.youtube.com/watch?v=hciNKcLwSes) - OpenAI has launched new tools and APIs for developers to build reliable and useful agents, including the Web Search tool, File Search tool, and Computer Use tool, along with the new Responses API and Agents SDK. These tools aim to simplify the creation of complex, multi-step workflows required for effective agents. The new API and SDK provide developers with the building blocks needed to create agents that can perform tasks independently.
+### Cloud & Platform Integrations
 
-- [AI Development Tool Showdown: Copilot, Cursor, Cline, Devin, Windsurf!(Japanese)](https://www.youtube.com/watch?v=EQHXIVItNxs) - This is a summary of a panel discussion on AI-assisted coding tools. The speakers share their experiences using tools like Cursor, Copilot, Debby, and others, focusing on practical applications, comparisons, and future implications. The discussion covers a range of topics, from basic tool overviews to advanced techniques and the changing role of developers in an AI-driven environment.
+Browser-based and cloud platforms for AI-assisted development.
 
-- [Model Context Protocol (MCP): The Key To Agentic AI](https://www.youtube.com/watch?v=VChRPFUzJGA) - This video provides an overview of the Model Context Protocol (mCP), explaining what it is, why it's important, how it works, and how it compares to other protocols. mCP allows AI models, especially Large Language Models (LLMs), to access external context, such as databases or files, necessary to complete tasks. The presenter also demonstrates a practical example using an SQLite database server and Claude desktop.
+| Tool | Description | Links |
+|------|-------------|-------|
+| **Replit** | Browser-based IDE with Ghostwriter AI | [Website](https://replit.com/) |
+| **v0** | Vercel's AI for UI/React generation | [Website](https://v0.dev/) |
+| **Bolt.new** | Natural language app building by StackBlitz | [Website](https://bolt.new/) |
+| **Lovable** | Full-stack app generation with Supabase | [Website](https://lovable.dev/) |
+| **Berrry** | Transform social posts into web apps | [Website](https://berrry.app) |
+| **Duet AI** | Google Workspace AI integration | [Website](https://workspace.google.com/solutions/ai/) |
+| **Trae AI** | AI platform for content creation | [Website](https://www.trae.ai/) |
 
-- [MCP causing a frenzy these days! I'll break it down for you in under 10 minutes](https://www.youtube.com/watch?v=EswVjHZMn74) - This content introduces the Model Context Protocol (mCP), a standardized way for AI applications to connect to external systems. It explains what mCP is, how it works, and how to build your own mCP server using the Python SDK, and connect it to apps like CLA and csor. The speaker believes that mCP is a valuable skill for developers to learn.
+---
 
-## Contribution Guidelines
+## Workflows & Templates
 
-Contributions to enhance this repository are highly encouraged! Please follow these simple guidelines:
+### Session Setup Pattern
 
-1. **Fork & Create Branch:** Fork this repository, then create your feature branch.
-2. **Add Your Contributions:** Clearly document new resources or improvements to existing content.
-3. **Commit & Push:** Commit your changes with a descriptive commit message, then push your branch to GitHub.
-4. **Create Pull Request:** Open a pull request and clearly describe your contribution.
+```markdown
+Project: {one-line description}
+Stack: {tech stack}
+Repo layout: {key dirs/files}
 
-Together, let's build the ultimate curated resource for Vibe Coding enthusiasts!
+Artifacts:
+- PRD: {path}
+- TECH_DESIGN: {path}
+- NOTES: {path}
+
+Task: {1-3 sentences, single focus}
+
+What I want: 1) Clarifying questions 2) Short plan 3) Implement step 1
+```
+
+### Recommended Artifacts
+
+Keep these AI-readable documents in your repo:
+- **PRD.md** — Product requirements & user stories
+- **TECH_DESIGN.md** — Architecture, data models, integration points
+- **NOTES.md** — Running log of decisions and TODOs
+- **CHANGELOG.md** — Human/AI-maintained change history
+
+### Work-Type Playbooks
+
+| Workflow | Key Steps |
+|----------|-----------|
+| **New Feature** | Vibe Brief → Verify with PRD → Vertical slice plan → Implement stepwise |
+| **Refactoring** | Analyze patterns/smells → Safety strategy → Sequential small steps |
+| **Bug Fixing** | Triage & hypotheses → Minimal failing test → Fix → Verify |
+| **Test Generation** | Identify critical behaviors → Prioritize by risk → Generate tests |
+
+📚 See [Vibe Coding Prompt Template](https://github.com/KhazP/vibe-coding-prompt-template) for detailed templates.
+
+---
+
+## Best Practices
+
+### Do's ✅
+
+- **Start with context** — Provide architecture, constraints, relevant code
+- **Decompose tasks** — Break into planning → generation → testing → refactoring
+- **Test first** — Generate tests before or alongside code
+- **Use sandboxes** — Run AI code in isolated environments
+- **Review as "junior engineer"** — Always human-review for security and architecture
+- **Maintain artifacts** — Keep PRD, NOTES, CHANGELOG updated
+
+### Don'ts ❌
+
+- **Skip review for "simple" code** — AI can introduce subtle bugs
+- **Include secrets in prompts** — Use environment variables or vaults
+- **Feed proprietary code to public models** — Risk of data leakage
+- **Accept raw output blindly** — Vibe ≠ vibes without verification
+- **Over-rely on AI for complex decisions** — Humans handle judgment
+
+---
+
+## Domain Applications
+
+| Domain | Use Cases | Example Tools |
+|--------|-----------|---------------|
+| **Web/App/Backend** | CRUD apps, SaaS, microservices | Lovable, Cursor, v0 |
+| **Data & ML** | Pipeline generation, experiment automation | Zapier Agents, n8n |
+| **DevOps** | IaC, CI/CD setup, monitoring | Terraform MCP, AutoVibe |
+| **Research** | Notebook automation, data visualization | ChatGPT, Claude |
+
+---
+
+## Learning Resources
+
+### Research Papers
+
+| Paper | Focus | Link |
+|-------|-------|------|
+| **Vibe Coding: Toward an AI-Native Paradigm** | Semantic software development | [arXiv:2510.17842](https://arxiv.org/abs/2510.17842) |
+| **A Review on Vibe Coding** | Fundamentals, challenges, future directions | [TechRxiv](https://www.techrxiv.org/users/913189/articles/1292402) |
+| **Vibe Coding and AI-Led Conversational Programming** | Developer-AI interaction | [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5469367) |
+| **Vibe Coding: AI/Voice Based Code Generation** | Research tool for non-coders | [ICAIR](https://papers.academic-conferences.org/index.php/icair/article/view/3975) |
+
+### Articles & Manuals
+
+- [What is Vibe Coding? (IBM)](https://www.ibm.com/think/topics/vibe-coding) — Enterprise perspective
+- [Vibe Coding Manual (Roboco)](https://roboco.io/posts/vibe-coding-manual/) — Comprehensive guide with templates
+- [12 Best Practices for AI Coding (Questera)](https://www.questera.ai/blogs/12-best-practices-to-use-ai-in-coding-in-2025) — 2025 best practices
+- [Secure Vibe Coding Guide (CSA)](https://cloudsecurityalliance.org/blog/2025/04/09/secure-vibe-coding-guide) — Security considerations
+- [Here's how I use LLMs to help me write code (Simon Willison)](https://simonwillison.net/2025/Mar/11/using-llms-for-code/) — Practical integration tips
+
+### Videos & Tutorials
+
+| Video | Topic | Link |
+|-------|-------|------|
+| **Vibe Coding Tutorial and Best Practices** | AI agents in Cursor/Windsurf | [YouTube](https://www.youtube.com/watch?v=YWwS911iLhg) |
+| **Vibe Coding Is The Future** | Y Combinator on vibe coding | [YouTube](https://www.youtube.com/watch?v=IACHfKmZMr8) |
+| **How I use LLMs** | Andrej Karpathy's guide | [YouTube](https://www.youtube.com/watch?v=EWvNQjAaOHw) |
+| **Model Context Protocol Explained** | MCP fundamentals | [YouTube](https://www.youtube.com/watch?v=VChRPFUzJGA) |
+| **Windsurf: 90% of Your Code** | Agentic IDE deep dive | [YouTube](https://www.youtube.com/watch?v=bVNNvWq6dKo) |
+| **Vibecoding is Here** | AI changing development | [YouTube](https://www.youtube.com/watch?v=xxA-M3HrKrc) |
+| **New Tools for Building Agents** | OpenAI's agent tools | [YouTube](https://www.youtube.com/watch?v=hciNKcLwSes) |
+| **AI Tool Showdown (Japanese)** | Copilot vs Cursor vs others | [YouTube](https://www.youtube.com/watch?v=EQHXIVItNxs) |
+| **MCP in 10 Minutes** | Quick MCP intro | [YouTube](https://www.youtube.com/watch?v=EswVjHZMn74) |
+
+---
+
+## Community
+
+### Reddit
+
+- [r/vibecoding](https://reddit.com/r/vibecoding) — Dedicated vibe coding community
+- [r/ChatGPTCoding](https://reddit.com/r/ChatGPTCoding) — ChatGPT + coding workflows
+- [r/LocalLlama](https://reddit.com/r/LocalLlama) — Local LLM development
+- [r/replit](https://reddit.com/r/replit) — Replit & Ghostwriter community
+
+### Discord
+
+- **Cursor Discord** — Workflows, extensions, project showcases
+- **Lovable AI Discord** — Full-stack app generation sharing
+- **Bolt.new Discord** — Natural language app building
+- **v0 by Vercel Discord** — UI/React generation community
+- **Replit Discord** — Multiplayer vibe coding
+
+### Starter Kits
+
+- [vibe-coding-prompt-template](https://github.com/KhazP/vibe-coding-prompt-template) — Comprehensive prompt templates
+- [awesome-vibe-coding](https://github.com/filipecalegario/awesome-vibe-coding) — Another curated list
+- [vibeworkflow.app](https://vibeworkflow.app) — Workflow automation for vibe coding
+
+---
+
+## Related Awesome Lists
+
+- [awesome-code-ai](https://github.com/sourcegraph/awesome-code-ai) — AI coding tools by Sourcegraph
+- [awesome-ai-assisted-coding](https://github.com/saviorand/awesome-ai-assisted-coding) — AI-assisted coding resources
+- [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers) — Model Context Protocol servers
+- [awesome-chatgpt](https://github.com/humanloop/awesome-chatgpt) — ChatGPT resources
+
+---
+
+## Contributing
+
+Contributions to enhance this repository are highly encouraged! Please follow these guidelines:
+
+1. **Fork & Create Branch** — Fork this repository, then create your feature branch
+2. **Add Your Contributions** — Follow the existing format: `[Name](URL) — Description`
+3. **Commit & Push** — Use descriptive commit messages
+4. **Create Pull Request** — Clearly describe your contribution
+
+### Curation Principles
+
+Resources should be:
+- **Relevant** — Directly related to vibe coding or AI-assisted development
+- **Quality** — Well-maintained, documented, and actively used
+- **Accessible** — Free or with free tier available preferred
+
+---
 
 ## License
 
