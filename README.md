@@ -263,12 +263,18 @@ Keep these AI-readable documents in your repo:
 
 ## Contributing
 
-Contributions to enhance this repository are highly encouraged! Please follow these guidelines:
+This repository is maintained using **Claude Code** (with custom commands and hooks) and **Perplexity MCP** for research. We welcome your suggestions!
 
-1. **Fork & Create Branch** — Fork this repository, then create your feature branch
-2. **Add Your Contributions** — Follow the existing format: `[Name](URL) — Description`
-3. **Commit & Push** — Use descriptive commit messages
-4. **Create Pull Request** — Clearly describe your contribution
+### How to Contribute
+
+1. **Open an Issue** — [Create a new issue](../../issues/new) with your suggestion
+   - New tool or resource to add
+   - Correction or update to existing content
+   - New category or section idea
+2. **Describe Your Suggestion** — Include name, URL, and brief description
+3. **We'll Review & Update** — Maintainers will curate and add approved suggestions
+
+> 💡 **Why issues instead of PRs?** This ensures consistent formatting, proper categorization, and quality curation across all three language versions (English, Korean, Japanese).
 
 ### Curation Principles
 
