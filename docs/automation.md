@@ -37,7 +37,7 @@ flowchart TB
     subgraph "Auto-Translation"
         F[Edit README.md] --> G[PostToolUse Hook]
         G --> H[Detect Change]
-        H --> I[/translate Command]
+        H --> I[translate Command]
         I --> J[Parallel Agents]
         J --> K[README.ko.md]
         J --> L[README.ja.md]
@@ -66,7 +66,7 @@ sequenceDiagram
     MCP-->>CC: Return search results
     CC->>CC: Compare with existing entries
     CC->>Repo: Add new tools to README.md
-    CC->>CC: Run /translate
+    CC->>CC: Run translate command
     CC->>Repo: Update README.ko.md, README.ja.md
     CC-->>GHA: Changes complete
     GHA->>Repo: Create Pull Request
@@ -117,10 +117,10 @@ When README.md is edited, a hook automatically triggers translation to Korean an
 ```mermaid
 flowchart LR
     A[User edits<br/>README.md] --> B{PostToolUse<br/>Hook}
-    B -->|Edit/Write tool| C[translate-readme.sh]
+    B -->|Edit or Write tool| C[translate-readme.sh]
     C --> D[Output instruction]
     D --> E[Claude reads instruction]
-    E --> F[Execute /translate]
+    E --> F[Execute translate]
 
     subgraph "Translation Process"
         F --> G[Read README.md]
@@ -137,7 +137,7 @@ The `/translate` command supports two modes:
 
 ```mermaid
 flowchart TB
-    A[/translate] --> B{Mode?}
+    A[translate command] --> B{Mode?}
 
     B -->|Default| C[Incremental Sync]
     C --> C1[Read both files]
