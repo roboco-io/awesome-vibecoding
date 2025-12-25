@@ -25,23 +25,16 @@ This repository uses two automated systems:
 | **Weekly Auto-Update** | GitHub Actions (cron) | Research and add new AI coding tools |
 | **Auto-Translation** | Claude Code Hook | Sync Korean/Japanese translations |
 
+**Weekly Auto-Update:**
 ```mermaid
-flowchart TB
-    subgraph "Weekly Auto-Update"
-        A[GitHub Actions<br/>Every Sunday 00:00 UTC] --> B[Claude Code<br/>Headless Mode]
-        B --> C[Perplexity MCP<br/>Research Tools]
-        C --> D[Update README.md]
-        D --> E[Create Pull Request]
-    end
+flowchart LR
+    A[GitHub Actions] --> B[Claude Code] --> C[Perplexity MCP] --> D[Update README] --> E[Create PR]
+```
 
-    subgraph "Auto-Translation"
-        F[Edit README.md] --> G[PostToolUse Hook]
-        G --> H[Detect Change]
-        H --> I[translate Command]
-        I --> J[Parallel Agents]
-        J --> K[README.ko.md]
-        J --> L[README.ja.md]
-    end
+**Auto-Translation:**
+```mermaid
+flowchart LR
+    A[Edit README.md] --> B[Hook] --> C[translate] --> D[Agents] --> E[ko + ja]
 ```
 
 ---
