@@ -115,20 +115,18 @@ on:
 When README.md is edited, a hook automatically triggers translation to Korean and Japanese.
 
 ```mermaid
-flowchart LR
-    A[User edits<br/>README.md] --> B{PostToolUse<br/>Hook}
+flowchart TB
+    A[User edits README.md] --> B{PostToolUse Hook}
     B -->|Edit or Write tool| C[translate-readme.sh]
     C --> D[Output instruction]
     D --> E[Claude reads instruction]
     E --> F[Execute translate]
-
-    subgraph "Translation Process"
-        F --> G[Read README.md]
-        G --> H[Agent 1: Korean]
-        G --> I[Agent 2: Japanese]
-        H --> J[README.ko.md]
-        I --> K[README.ja.md]
-    end
+    F --> G[Read README.md]
+    G --> H[Parallel Agents]
+    H --> I[Agent 1: Korean]
+    H --> J[Agent 2: Japanese]
+    I --> K[README.ko.md]
+    J --> L[README.ja.md]
 ```
 
 ### Translation Modes
