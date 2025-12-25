@@ -238,11 +238,11 @@ Keep these AI-readable documents in your repo:
 
 ### Discord
 
-- **Cursor Discord** — Workflows, extensions, project showcases
-- **Lovable AI Discord** — Full-stack app generation sharing
-- **Bolt.new Discord** — Natural language app building
-- **v0 by Vercel Discord** — UI/React generation community
-- **Replit Discord** — Multiplayer vibe coding
+- [Cursor Discord](https://discord.gg/cursor) — Workflows, extensions, project showcases
+- [Lovable AI Discord](https://discord.gg/lovable) — Full-stack app generation sharing
+- [Bolt.new Discord](https://discord.gg/stackblitz) — Natural language app building (StackBlitz)
+- [v0 by Vercel Discord](https://discord.gg/vercel) — UI/React generation community
+- [Replit Discord](https://discord.gg/replit) — Multiplayer vibe coding
 
 ### Starter Kits
 

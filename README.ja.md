@@ -238,11 +238,11 @@ What I want: 1) 明確化の質問 2) 短い計画 3) ステップ1の実装
 
 ### Discord
 
-- **Cursor Discord** — ワークフロー、拡張機能、プロジェクトショーケース
-- **Lovable AI Discord** — フルスタックアプリ生成の共有
-- **Bolt.new Discord** — 自然言語アプリ構築
-- **v0 by Vercel Discord** — UI/React生成コミュニティ
-- **Replit Discord** — マルチプレイヤーVibe Coding
+- [Cursor Discord](https://discord.gg/cursor) — ワークフロー、拡張機能、プロジェクトショーケース
+- [Lovable AI Discord](https://discord.gg/lovable) — フルスタックアプリ生成の共有
+- [Bolt.new Discord](https://discord.gg/stackblitz) — 自然言語アプリ構築（StackBlitz）
+- [v0 by Vercel Discord](https://discord.gg/vercel) — UI/React生成コミュニティ
+- [Replit Discord](https://discord.gg/replit) — マルチプレイヤーVibe Coding
 
 ### スターターキット
 

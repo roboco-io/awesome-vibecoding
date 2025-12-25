@@ -238,11 +238,11 @@ What I want: 1) 명확화 질문 2) 간단한 계획 3) 1단계 구현
 
 ### Discord
 
-- **Cursor Discord** — 워크플로우, 확장 프로그램, 프로젝트 쇼케이스
-- **Lovable AI Discord** — 풀스택 앱 생성 공유
-- **Bolt.new Discord** — 자연어 앱 빌딩
-- **v0 by Vercel Discord** — UI/React 생성 커뮤니티
-- **Replit Discord** — 멀티플레이어 vibe coding
+- [Cursor Discord](https://discord.gg/cursor) — 워크플로우, 확장 프로그램, 프로젝트 쇼케이스
+- [Lovable AI Discord](https://discord.gg/lovable) — 풀스택 앱 생성 공유
+- [Bolt.new Discord](https://discord.gg/stackblitz) — 자연어 앱 빌딩 (StackBlitz)
+- [v0 by Vercel Discord](https://discord.gg/vercel) — UI/React 생성 커뮤니티
+- [Replit Discord](https://discord.gg/replit) — 멀티플레이어 vibe coding
 
 ### 스타터 킷
 
