@@ -70,11 +70,20 @@ AI-powered code completion and assistance integrated into your development envir
 | **Cursor** | VS Code fork with contextual code generation and inline chat | [Website](https://www.cursor.com/) |
 | **Windsurf** | AI-native IDE from Codeium with Cascade AI and multi-LLM support | [Website](https://codeium.com/windsurf) |
 | **Claude Code** | Anthropic's CLI-based agentic coding assistant | [Docs](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview) |
-| **JetBrains AI** | Deep integration in IntelliJ/PyCharm with Mellum LLM | [Website](https://www.jetbrains.com/ai/) |
+| **OpenAI Codex CLI** | Open-source CLI coding agent with natural language prompts | [Website](https://openai.com/codex/) |
+| **Google Jules** | Autonomous AI coding agent powered by Gemini 2.5 Pro | [Website](https://jules.google) |
+| **Gemini Code Assist** | Google's AI code completion and chat for Cloud/IDEs | [Website](https://cloud.google.com/products/gemini/code-assist) |
+| **JetBrains AI** | Deep integration in IntelliJ/PyCharm with Junie agent | [Website](https://www.jetbrains.com/ai/) |
+| **Augment Code** | Enterprise AI with deep context and security (SOC 2) | [Website](https://www.augmentcode.com) |
 | **Tabnine** | Deep learning autocomplete adapting to your coding style | [Website](https://www.tabnine.com/) |
 | **Amazon Q Developer** | AWS-integrated AI coding assistant | [Website](https://aws.amazon.com/q/developer/) |
+| **Continue** | Open-source configurable AI assistant framework | [Website](https://www.continue.dev) |
+| **Qodo** | AI code review engine (formerly CodiumAI) | [Website](https://www.qodo.ai) |
+| **Sourcegraph Cody** | AI assistant for code understanding and search | [Website](https://sourcegraph.com/cody) |
+| **Supermaven** | High-speed AI code completion | [Website](https://supermaven.com) |
 | **Cline** | Open-source AI assistant with file/terminal/browser automation | [GitHub](https://github.com/cline/cline) |
 | **Roo Code** | AI assistant supporting multiple roles (architect, QA, PM) | [GitHub](https://github.com/RooVetGit/Roo-Code) |
+| **Google Antigravity** | Agent-first IDE with multi-agent orchestration (Gemini 3 Pro) | [Website](https://antigravity.google) |
 
 ### Agentic Coding Environments
 

@@ -70,11 +70,20 @@
 | **Cursor** | 컨텍스트 기반 코드 생성 및 인라인 채팅을 갖춘 VS Code 포크 | [Website](https://www.cursor.com/) |
 | **Windsurf** | Codeium의 AI 네이티브 IDE, Cascade AI 및 다중 LLM 지원 | [Website](https://codeium.com/windsurf) |
 | **Claude Code** | Anthropic의 CLI 기반 에이전트 코딩 어시스턴트 | [Docs](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview) |
-| **JetBrains AI** | Mellum LLM을 사용한 IntelliJ/PyCharm의 깊은 통합 | [Website](https://www.jetbrains.com/ai/) |
+| **OpenAI Codex CLI** | 자연어 프롬프트를 사용하는 오픈소스 CLI 코딩 에이전트 | [Website](https://openai.com/codex/) |
+| **Google Jules** | Gemini 2.5 Pro 기반 자율 AI 코딩 에이전트 | [Website](https://jules.google) |
+| **Gemini Code Assist** | Cloud/IDE용 Google의 AI 코드 완성 및 채팅 | [Website](https://cloud.google.com/products/gemini/code-assist) |
+| **JetBrains AI** | Junie 에이전트를 갖춘 IntelliJ/PyCharm 깊은 통합 | [Website](https://www.jetbrains.com/ai/) |
+| **Augment Code** | 깊은 컨텍스트와 보안(SOC 2)을 갖춘 엔터프라이즈 AI | [Website](https://www.augmentcode.com) |
 | **Tabnine** | 코딩 스타일에 적응하는 딥러닝 자동 완성 | [Website](https://www.tabnine.com/) |
 | **Amazon Q Developer** | AWS 통합 AI 코딩 어시스턴트 | [Website](https://aws.amazon.com/q/developer/) |
+| **Continue** | 오픈소스 구성 가능 AI 어시스턴트 프레임워크 | [Website](https://www.continue.dev) |
+| **Qodo** | AI 코드 리뷰 엔진 (구 CodiumAI) | [Website](https://www.qodo.ai) |
+| **Sourcegraph Cody** | 코드 이해 및 검색을 위한 AI 어시스턴트 | [Website](https://sourcegraph.com/cody) |
+| **Supermaven** | 고속 AI 코드 완성 | [Website](https://supermaven.com) |
 | **Cline** | 파일/터미널/브라우저 자동화를 지원하는 오픈소스 AI 어시스턴트 | [GitHub](https://github.com/cline/cline) |
 | **Roo Code** | 여러 역할(설계자, QA, PM)을 지원하는 AI 어시스턴트 | [GitHub](https://github.com/RooVetGit/Roo-Code) |
+| **Google Antigravity** | 멀티 에이전트 오케스트레이션을 갖춘 에이전트 기반 IDE (Gemini 3 Pro) | [Website](https://antigravity.google) |
 
 ### 에이전트 기반 코딩 환경
 

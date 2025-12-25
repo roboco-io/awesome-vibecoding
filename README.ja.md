@@ -70,11 +70,20 @@
 | **Cursor** | コンテキストに応じたコード生成とインラインチャット機能を持つVS Codeフォーク | [Website](https://www.cursor.com/) |
 | **Windsurf** | CodeiumのAIネイティブIDEでCascade AIとマルチLLMサポート | [Website](https://codeium.com/windsurf) |
 | **Claude Code** | AnthropicのCLIベースのエージェント型コーディングアシスタント | [Docs](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview) |
-| **JetBrains AI** | IntelliJ/PyCharmにMellum LLMとの深い統合 | [Website](https://www.jetbrains.com/ai/) |
+| **OpenAI Codex CLI** | 自然言語プロンプトを使用するオープンソースCLIコーディングエージェント | [Website](https://openai.com/codex/) |
+| **Google Jules** | Gemini 2.5 Pro搭載の自律型AIコーディングエージェント | [Website](https://jules.google) |
+| **Gemini Code Assist** | Cloud/IDE向けGoogleのAIコード補完とチャット | [Website](https://cloud.google.com/products/gemini/code-assist) |
+| **JetBrains AI** | Junieエージェントを備えたIntelliJ/PyCharmの深い統合 | [Website](https://www.jetbrains.com/ai/) |
+| **Augment Code** | 深いコンテキストとセキュリティ（SOC 2）を備えたエンタープライズAI | [Website](https://www.augmentcode.com) |
 | **Tabnine** | コーディングスタイルに適応する深層学習オートコンプリート | [Website](https://www.tabnine.com/) |
 | **Amazon Q Developer** | AWS統合AIコーディングアシスタント | [Website](https://aws.amazon.com/q/developer/) |
+| **Continue** | オープンソース設定可能AIアシスタントフレームワーク | [Website](https://www.continue.dev) |
+| **Qodo** | AIコードレビューエンジン（旧CodiumAI） | [Website](https://www.qodo.ai) |
+| **Sourcegraph Cody** | コード理解と検索のためのAIアシスタント | [Website](https://sourcegraph.com/cody) |
+| **Supermaven** | 高速AIコード補完 | [Website](https://supermaven.com) |
 | **Cline** | ファイル/ターミナル/ブラウザ自動化を備えたオープンソースAIアシスタント | [GitHub](https://github.com/cline/cline) |
 | **Roo Code** | 複数の役割（アーキテクト、QA、PM）をサポートするAIアシスタント | [GitHub](https://github.com/RooVetGit/Roo-Code) |
+| **Google Antigravity** | マルチエージェントオーケストレーションを備えたエージェント型IDE（Gemini 3 Pro） | [Website](https://antigravity.google) |
 
 ### エージェント型コーディング環境
 
