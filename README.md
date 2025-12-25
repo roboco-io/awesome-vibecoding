@@ -122,33 +122,6 @@ Browser-based and cloud platforms for AI-assisted development.
 
 ## Workflows & Templates
 
-### Session Setup Pattern
-
-```markdown
-Project: {one-line description}
-Stack: {tech stack}
-Repo layout: {key dirs/files}
-
-Artifacts:
-- PRD: {path}
-- TECH_DESIGN: {path}
-- NOTES: {path}
-
-Task: {1-3 sentences, single focus}
-
-What I want: 1) Clarifying questions 2) Short plan 3) Implement step 1
-```
-
-### Recommended Artifacts
-
-Keep these AI-readable documents in your repo:
-- **PRD.md** — Product requirements & user stories
-- **TECH_DESIGN.md** — Architecture, data models, integration points
-- **NOTES.md** — Running log of decisions and TODOs
-- **CHANGELOG.md** — Human/AI-maintained change history
-
-### Work-Type Playbooks
-
 | Workflow | Key Steps |
 |----------|-----------|
 | **New Feature** | Vibe Brief → Verify with PRD → Vertical slice plan → Implement stepwise |
@@ -156,7 +129,9 @@ Keep these AI-readable documents in your repo:
 | **Bug Fixing** | Triage & hypotheses → Minimal failing test → Fix → Verify |
 | **Test Generation** | Identify critical behaviors → Prioritize by risk → Generate tests |
 
-📚 See [Vibe Coding Prompt Template](https://github.com/KhazP/vibe-coding-prompt-template) for detailed templates.
+**Recommended Artifacts**: PRD.md, TECH_DESIGN.md, NOTES.md, CHANGELOG.md
+
+📚 **[Full Workflows & Templates Guide →](docs/workflows-and-templates.md)** — Session setup, prompt templates, playbooks
 
 ---
 

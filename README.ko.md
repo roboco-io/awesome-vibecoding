@@ -122,33 +122,6 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 
 ## 워크플로우 & 템플릿
 
-### 세션 설정 패턴
-
-```markdown
-Project: {한 줄 설명}
-Stack: {기술 스택}
-Repo layout: {주요 디렉토리/파일}
-
-Artifacts:
-- PRD: {경로}
-- TECH_DESIGN: {경로}
-- NOTES: {경로}
-
-Task: {1-3문장, 단일 초점}
-
-What I want: 1) 명확화 질문 2) 간단한 계획 3) 1단계 구현
-```
-
-### 권장 아티팩트
-
-저장소에 다음과 같은 AI가 읽을 수 있는 문서를 유지하세요:
-- **PRD.md** — 제품 요구사항 및 사용자 스토리
-- **TECH_DESIGN.md** — 아키텍처, 데이터 모델, 통합 지점
-- **NOTES.md** — 의사결정 및 TODO의 실행 로그
-- **CHANGELOG.md** — 사람/AI가 유지하는 변경 이력
-
-### 작업 유형별 플레이북
-
 | 워크플로우 | 주요 단계 |
 |----------|-----------|
 | **새 기능** | Vibe Brief → PRD로 검증 → 수직 슬라이스 계획 → 단계별 구현 |
@@ -156,7 +129,9 @@ What I want: 1) 명확화 질문 2) 간단한 계획 3) 1단계 구현
 | **버그 수정** | 분류 및 가설 → 최소 실패 테스트 → 수정 → 검증 |
 | **테스트 생성** | 중요 동작 식별 → 위험도별 우선순위 → 테스트 생성 |
 
-📚 자세한 템플릿은 [Vibe Coding Prompt Template](https://github.com/KhazP/vibe-coding-prompt-template)을 참조하세요.
+**권장 아티팩트**: PRD.md, TECH_DESIGN.md, NOTES.md, CHANGELOG.md
+
+📚 **[전체 워크플로우 & 템플릿 가이드 →](docs/workflows-and-templates.md)** — 세션 설정, 프롬프트 템플릿, 플레이북
 
 ---
 
