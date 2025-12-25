@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Claude Code Hook: Notify when README.md is modified
-# Triggers reminder to run /translate command
+# Claude Code Hook: Auto-trigger translation when README.md is modified
+# Uses stopBehavior to instruct Claude to run /translate automatically
 
 # Read hook input from stdin
 INPUT=$(cat)
@@ -19,12 +19,18 @@ if [[ "$FILE_PATH" == *".ko.md" ]] || [[ "$FILE_PATH" == *".ja.md" ]]; then
   exit 0
 fi
 
-# Output reminder message
-echo ""
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo "📝 README.md가 수정되었습니다."
-echo "   번역을 업데이트하려면 /translate 명령을 실행하세요."
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo ""
+# Output instruction for Claude to auto-execute translation
+cat << 'EOF'
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📝 README.md가 수정되었습니다.
+🔄 자동으로 번역을 실행합니다.
+
+[AUTO-TRANSLATE] README.md 변경사항을 감지했습니다.
+README.ko.md와 README.ja.md에 변경사항을 동기화하세요.
+/translate 명령의 "부분 동기화" 프로세스를 따르세요.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+EOF
 
 exit 0
