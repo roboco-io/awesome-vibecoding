@@ -4,58 +4,57 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is **awesome-vibecoding**, a curated list of resources about Vibe Coding (AI-assisted programming). The repository is primarily a documentation project containing:
-- English README.md (source of truth)
-- Auto-translated Korean (README.ko.md) and Japanese (README.ja.md) versions
-- Python translation automation script
+**awesome-vibecoding** is a curated list of resources about Vibe Coding (AI-assisted programming). This is a documentation-only repository with no build/test steps.
 
 ## Architecture
 
 ```
 awesome-vibecoding/
-├── README.md              # Primary English documentation (edit this)
-├── README.ko.md           # Auto-generated Korean translation
-├── README.ja.md           # Auto-generated Japanese translation
+├── README.md                    # English source (edit this only)
+├── README.ko.md                 # Korean translation (auto-generated)
+├── README.ja.md                 # Japanese translation (auto-generated)
+├── docs/
+│   ├── automation.md            # How the automation works
+│   └── workflows-and-templates.md
 ├── .claude/
-│   ├── commands/
-│   │   └── translate.md   # /translate skill definition
-│   ├── hooks/
-│   │   └── translate-readme.sh  # Hook: notifies when README.md changes
-│   └── settings.json      # Claude Code hooks configuration
-└── .github/workflows/
-    └── translate-readme.yml  # Backup: GitHub Actions translation
+│   ├── commands/translate.md    # /translate skill
+│   ├── hooks/translate-readme.sh
+│   └── settings.json            # PostToolUse hook config
+└── .github/
+    ├── workflows/
+    │   ├── weekly-update.yml    # Weekly content update via Claude Code
+    │   └── issue-approval.yml   # Issue-based resource addition
+    └── prompts/
+        ├── weekly-update.md     # Prompt for weekly updates
+        └── issue-approval.md    # Prompt for issue processing
 ```
 
-## Key Workflow
+## Key Commands
 
-**Content changes should only be made to README.md.** Translations are triggered via:
-1. Claude Code hook detects README.md modification → prompts to run `/translate`
-2. `/translate` command launches translation agents
-
-## Commands
-
-### Translate README (Claude Code)
+### Translation
 ```
 /translate
 ```
-Launches parallel translation agents for Korean and Japanese.
+Runs parallel agents to sync README.md changes to Korean and Japanese versions.
 
-### Legacy: Run Translation via Python
-```bash
-export OPENAI_KEY=your_api_key
-python scripts/translate_readme.py
-```
+### GitHub Actions Workflows
+- **weekly-update.yml**: Runs every Sunday, uses Perplexity MCP to find new tools
+- **issue-approval.yml**: Triggered when owner comments `/approve` on an issue
 
-## Translation System
+## Content Editing Rules
 
-When `/translate` is executed:
-- Two translation agents run in parallel (Korean, Japanese)
-- Each agent reads README.md and writes the translated version
-- Claude Code hook automatically notifies when README.md is modified
+1. **Only edit README.md** — translations are auto-generated
+2. **Run `/translate` after changes** — or let the hook remind you
+3. **Follow table formats** — each section uses specific table structures
+4. **All tools need links** — use official GitHub repos or product pages
 
-## Content Guidelines
+## Hook System
 
-When adding entries to README.md:
-- Follow existing format: `- [Name](URL) - Description`
-- Keep descriptions concise but informative
-- Place entries under appropriate sections (Projects/Guides/YouTube)
+The `PostToolUse` hook (`translate-readme.sh`) monitors Edit/Write operations and prompts to run `/translate` when README.md is modified.
+
+## Translation Guidelines
+
+- Keep technical terms, URLs, and product names in English
+- Korean: Add space after **bold text** followed by Korean characters
+- Japanese: Use appropriate particles and natural phrasing
+- Preserve all markdown formatting exactly
