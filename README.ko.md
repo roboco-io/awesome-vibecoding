@@ -1,7 +1,7 @@
 # Awesome Vibe Coding (한국어)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![Weekly Update](https://github.com/serithemage/awesome-vibecoding/actions/workflows/weekly-update.yml/badge.svg)](https://github.com/serithemage/awesome-vibecoding/actions/workflows/weekly-update.yml)
+[![Weekly Update](https://github.com/roboco-io/awesome-vibecoding/actions/workflows/weekly-update.yml/badge.svg)](https://github.com/roboco-io/awesome-vibecoding/actions/workflows/weekly-update.yml)
 [![Maintained by Claude Code](https://img.shields.io/badge/Maintained%20by-Claude%20Code-blueviolet)](https://claude.ai/code)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](../../issues/new)
 [![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
