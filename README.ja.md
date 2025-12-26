@@ -176,10 +176,10 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 
 | ドメイン | ユースケース | ツール例 |
 |--------|-----------|---------------|
-| **Web/アプリ/バックエンド** | CRUDアプリ、SaaS、マイクロサービス | Lovable、Cursor、v0 |
-| **データ & ML** | パイプライン生成、実験自動化 | Zapier Agents、n8n |
-| **DevOps** | IaC、CI/CDセットアップ、監視 | Terraform MCP、AutoVibe |
-| **研究** | ノートブック自動化、データ可視化 | ChatGPT、Claude |
+| **Web/アプリ/バックエンド** | CRUDアプリ、SaaS、マイクロサービス | [Lovable](https://lovable.dev/)、[Cursor](https://www.cursor.com/)、[v0](https://v0.dev/) |
+| **データ & ML** | パイプライン生成、実験自動化 | [Zapier](https://zapier.com/)、[n8n](https://n8n.io/) |
+| **DevOps** | IaC、CI/CDセットアップ、監視 | [Pulumi](https://www.pulumi.com/)、[Terraform](https://www.terraform.io/) |
+| **研究** | ノートブック自動化、データ可視化 | [ChatGPT](https://chat.openai.com/)、[Claude](https://claude.ai/) |
 
 ---
 

@@ -176,10 +176,10 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 
 | 도메인 | 사용 사례 | 예시 도구 |
 |--------|-----------|---------------|
-| **웹/앱/백엔드** | CRUD 앱, SaaS, 마이크로서비스 | Lovable, Cursor, v0 |
-| **데이터 & ML** | 파이프라인 생성, 실험 자동화 | Zapier Agents, n8n |
-| **DevOps** | IaC, CI/CD 설정, 모니터링 | Terraform MCP, AutoVibe |
-| **연구** | 노트북 자동화, 데이터 시각화 | ChatGPT, Claude |
+| **웹/앱/백엔드** | CRUD 앱, SaaS, 마이크로서비스 | [Lovable](https://lovable.dev/), [Cursor](https://www.cursor.com/), [v0](https://v0.dev/) |
+| **데이터 & ML** | 파이프라인 생성, 실험 자동화 | [Zapier](https://zapier.com/), [n8n](https://n8n.io/) |
+| **DevOps** | IaC, CI/CD 설정, 모니터링 | [Pulumi](https://www.pulumi.com/), [Terraform](https://www.terraform.io/) |
+| **연구** | 노트북 자동화, 데이터 시각화 | [ChatGPT](https://chat.openai.com/), [Claude](https://claude.ai/) |
 
 ---
 

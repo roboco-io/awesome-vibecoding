@@ -176,10 +176,10 @@ Browser-based and cloud platforms for AI-assisted development.
 
 | Domain | Use Cases | Example Tools |
 |--------|-----------|---------------|
-| **Web/App/Backend** | CRUD apps, SaaS, microservices | Lovable, Cursor, v0 |
-| **Data & ML** | Pipeline generation, experiment automation | Zapier Agents, n8n |
-| **DevOps** | IaC, CI/CD setup, monitoring | Terraform MCP, AutoVibe |
-| **Research** | Notebook automation, data visualization | ChatGPT, Claude |
+| **Web/App/Backend** | CRUD apps, SaaS, microservices | [Lovable](https://lovable.dev/), [Cursor](https://www.cursor.com/), [v0](https://v0.dev/) |
+| **Data & ML** | Pipeline generation, experiment automation | [Zapier](https://zapier.com/), [n8n](https://n8n.io/) |
+| **DevOps** | IaC, CI/CD setup, monitoring | [Pulumi](https://www.pulumi.com/), [Terraform](https://www.terraform.io/) |
+| **Research** | Notebook automation, data visualization | [ChatGPT](https://chat.openai.com/), [Claude](https://claude.ai/) |
 
 ---
 
