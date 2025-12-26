@@ -1,4 +1,4 @@
-# Awesome Vibe Coding
+# Awesome Vibe Coding (한국어)
 
 *Language: [English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md)*
 
@@ -66,39 +66,39 @@
 
 개발 환경에 통합된 AI 기반 코드 완성 및 지원.
 
-| 도구 | 설명 | 링크 |
-|------|-------------|-------|
-| **GitHub Copilot** | 자동 완성, 채팅, 다중 IDE 지원을 갖춘 AI 페어 프로그래머 | [Website](https://github.com/features/copilot) |
-| **Cursor** | 컨텍스트 기반 코드 생성 및 인라인 채팅을 갖춘 VS Code 포크 | [Website](https://www.cursor.com/) |
-| **Windsurf** | Codeium의 AI 네이티브 IDE, Cascade AI 및 다중 LLM 지원 | [Website](https://codeium.com/windsurf) |
-| **Claude Code** | Anthropic의 CLI 기반 에이전트 코딩 어시스턴트 | [Docs](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview) |
-| **OpenAI Codex CLI** | 자연어 프롬프트를 사용하는 오픈소스 CLI 코딩 에이전트 | [Website](https://openai.com/codex/) |
-| **Google Jules** | Gemini 2.5 Pro 기반 자율 AI 코딩 에이전트 | [Website](https://jules.google) |
-| **Gemini Code Assist** | Cloud/IDE용 Google의 AI 코드 완성 및 채팅 | [Website](https://cloud.google.com/products/gemini/code-assist) |
-| **JetBrains AI** | Junie 에이전트를 갖춘 IntelliJ/PyCharm 깊은 통합 | [Website](https://www.jetbrains.com/ai/) |
-| **Augment Code** | 깊은 컨텍스트와 보안(SOC 2)을 갖춘 엔터프라이즈 AI | [Website](https://www.augmentcode.com) |
-| **Tabnine** | 코딩 스타일에 적응하는 딥러닝 자동 완성 | [Website](https://www.tabnine.com/) |
-| **Amazon Q Developer** | AWS 통합 AI 코딩 어시스턴트 | [Website](https://aws.amazon.com/q/developer/) |
-| **Continue** | 오픈소스 구성 가능 AI 어시스턴트 프레임워크 | [Website](https://www.continue.dev) |
-| **Qodo** | AI 코드 리뷰 엔진 (구 CodiumAI) | [Website](https://www.qodo.ai) |
-| **Sourcegraph Cody** | 코드 이해 및 검색을 위한 AI 어시스턴트 | [Website](https://sourcegraph.com/cody) |
-| **Supermaven** | 고속 AI 코드 완성 | [Website](https://supermaven.com) |
-| **Cline** | 파일/터미널/브라우저 자동화를 지원하는 오픈소스 AI 어시스턴트 | [GitHub](https://github.com/cline/cline) |
-| **Roo Code** | 여러 역할(설계자, QA, PM)을 지원하는 AI 어시스턴트 | [GitHub](https://github.com/RooVetGit/Roo-Code) |
-| **Google Antigravity** | 멀티 에이전트 오케스트레이션을 갖춘 에이전트 기반 IDE (Gemini 3 Pro) | [Website](https://antigravity.google) |
+| 도구 | 설명 |
+|------|-------------|
+| [**GitHub Copilot**](https://github.com/features/copilot) | 자동 완성, 채팅, 다중 IDE 지원을 갖춘 AI 페어 프로그래머 |
+| [**Cursor**](https://www.cursor.com/) | 컨텍스트 기반 코드 생성 및 인라인 채팅을 갖춘 VS Code 포크 |
+| [**Windsurf**](https://codeium.com/windsurf) | Codeium의 AI 네이티브 IDE, Cascade AI 및 다중 LLM 지원 |
+| [**Claude Code**](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview) | Anthropic의 CLI 기반 에이전트 코딩 어시스턴트 |
+| [**OpenAI Codex CLI**](https://openai.com/codex/) | 자연어 프롬프트를 사용하는 오픈소스 CLI 코딩 에이전트 |
+| [**Google Jules**](https://jules.google) | Gemini 2.5 Pro 기반 자율 AI 코딩 에이전트 |
+| [**Gemini Code Assist**](https://cloud.google.com/products/gemini/code-assist) | Cloud/IDE용 Google의 AI 코드 완성 및 채팅 |
+| [**JetBrains AI**](https://www.jetbrains.com/ai/) | Junie 에이전트를 갖춘 IntelliJ/PyCharm 깊은 통합 |
+| [**Augment Code**](https://www.augmentcode.com) | 깊은 컨텍스트와 보안(SOC 2)을 갖춘 엔터프라이즈 AI |
+| [**Tabnine**](https://www.tabnine.com/) | 코딩 스타일에 적응하는 딥러닝 자동 완성 |
+| [**Amazon Q Developer**](https://aws.amazon.com/q/developer/) | AWS 통합 AI 코딩 어시스턴트 |
+| [**Continue**](https://www.continue.dev) | 오픈소스 구성 가능 AI 어시스턴트 프레임워크 |
+| [**Qodo**](https://www.qodo.ai) | AI 코드 리뷰 엔진 (구 CodiumAI) |
+| [**Sourcegraph Cody**](https://sourcegraph.com/cody) | 코드 이해 및 검색을 위한 AI 어시스턴트 |
+| [**Supermaven**](https://supermaven.com) | 고속 AI 코드 완성 |
+| [**Cline**](https://github.com/cline/cline) | 파일/터미널/브라우저 자동화를 지원하는 오픈소스 AI 어시스턴트 |
+| [**Roo Code**](https://github.com/RooVetGit/Roo-Code) | 여러 역할(설계자, QA, PM)을 지원하는 AI 어시스턴트 |
+| [**Google Antigravity**](https://antigravity.google) | 멀티 에이전트 오케스트레이션을 갖춘 에이전트 기반 IDE (Gemini 3 Pro) |
 
 ### 에이전트 기반 코딩 환경
 
 엔드투엔드 개발 작업을 처리하는 자율 AI 시스템.
 
-| 도구 | 설명 | 링크 |
-|------|-------------|-------|
-| **Devin** | Cognition의 자율 AI 소프트웨어 엔지니어 | [Website](https://www.cognition.ai/devin) |
-| **OpenHands** | 오픈소스 자율 AI 소프트웨어 개발자 | [GitHub](https://github.com/All-Hands-AI/OpenHands) |
-| **Goose** | Block의 오픈소스 코딩 어시스턴트, MCP 지원 | [Website](https://block.github.io/goose/) |
-| **OpenManus** | AI 보조 문서 작성을 위한 오픈소스 프레임워크 | [GitHub](https://github.com/mannaandpoem/OpenManus) |
-| **Vibe Compiler (vibec)** | 프롬프트를 코드로 변환하는 자체 컴파일 도구 | [GitHub](https://github.com/Strawberry-Computer/vibe-compiler) |
-| **AlphaCode** | DeepMind의 경쟁 프로그래밍 AI | [Website](https://alphacode.deepmind.com/) |
+| 도구 | 설명 |
+|------|-------------|
+| [**Devin**](https://www.cognition.ai/devin) | Cognition의 자율 AI 소프트웨어 엔지니어 |
+| [**OpenHands**](https://github.com/All-Hands-AI/OpenHands) | 오픈소스 자율 AI 소프트웨어 개발자 |
+| [**Goose**](https://block.github.io/goose/) | Block의 오픈소스 코딩 어시스턴트, MCP 지원 |
+| [**OpenManus**](https://github.com/mannaandpoem/OpenManus) | AI 보조 문서 작성을 위한 오픈소스 프레임워크 |
+| [**Vibe Compiler (vibec)**](https://github.com/Strawberry-Computer/vibe-compiler) | 프롬프트를 코드로 변환하는 자체 컴파일 도구 |
+| [**AlphaCode**](https://alphacode.deepmind.com/) | DeepMind의 경쟁 프로그래밍 AI |
 
 ### MCP 서버 & 도구
 
@@ -106,11 +106,11 @@ AI 기능을 확장하는 [Model Context Protocol](https://modelcontextprotocol.
 
 | 카테고리 | 서버 | 설명 |
 |----------|---------|-------------|
-| **Git 작업** | Git, Rube | 저장소 읽기/검색/조작 |
+| **Git 작업** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube) | 저장소 읽기/검색/조작 |
 | **데이터베이스** | ClickHouse, MongoDB, Prisma, Chroma | 쿼리, 마이그레이션, 시맨틱 검색 |
 | **테스팅** | CircleCI, Semgrep | CI/CD 통합, 코드 스캐닝 |
-| **브라우저** | AnyCrawl, Fetch | 웹 스크래핑, 콘텐츠 가져오기 |
-| **파일 시스템** | Filesystem | 안전한 읽기/쓰기 작업 |
+| **브라우저** | AnyCrawl, [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | 웹 스크래핑, 콘텐츠 가져오기 |
+| **파일 시스템** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 안전한 읽기/쓰기 작업 |
 | **DevOps** | Terraform-Cloud, Sentry | 인프라, 오류 추적 |
 
 📚 전체 목록은 [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers)를 참조하세요.
@@ -119,15 +119,15 @@ AI 기능을 확장하는 [Model Context Protocol](https://modelcontextprotocol.
 
 AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 
-| 도구 | 설명 | 링크 |
-|------|-------------|-------|
-| **Replit** | Ghostwriter AI를 갖춘 브라우저 기반 IDE | [Website](https://replit.com/) |
-| **v0** | Vercel의 UI/React 생성 AI | [Website](https://v0.dev/) |
-| **Bolt.new** | StackBlitz의 자연어 앱 빌딩 | [Website](https://bolt.new/) |
-| **Lovable** | Supabase를 사용한 풀스택 앱 생성 | [Website](https://lovable.dev/) |
-| **Berrry** | 소셜 게시물을 웹 앱으로 변환 | [Website](https://berrry.app) |
-| **Duet AI** | Google Workspace AI 통합 | [Website](https://workspace.google.com/solutions/ai/) |
-| **Trae AI** | 콘텐츠 제작을 위한 AI 플랫폼 | [Website](https://www.trae.ai/) |
+| 도구 | 설명 |
+|------|-------------|
+| [**Replit**](https://replit.com/) | Ghostwriter AI를 갖춘 브라우저 기반 IDE |
+| [**v0**](https://v0.dev/) | Vercel의 UI/React 생성 AI |
+| [**Bolt.new**](https://bolt.new/) | StackBlitz의 자연어 앱 빌딩 |
+| [**Lovable**](https://lovable.dev/) | Supabase를 사용한 풀스택 앱 생성 |
+| [**Berrry**](https://berrry.app) | 소셜 게시물을 웹 앱으로 변환 |
+| [**Duet AI**](https://workspace.google.com/solutions/ai/) | Google Workspace AI 통합 |
+| [**Trae AI**](https://www.trae.ai/) | 콘텐츠 제작을 위한 AI 플랫폼 |
 
 ---
 
@@ -199,17 +199,17 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 
 ### 비디오 & 튜토리얼
 
-| 비디오 | 주제 | 링크 |
-|-------|-------|------|
-| **Vibe Coding Tutorial and Best Practices** | Cursor/Windsurf의 AI agents | [YouTube](https://www.youtube.com/watch?v=YWwS911iLhg) |
-| **Vibe Coding Is The Future** | Y Combinator의 vibe coding | [YouTube](https://www.youtube.com/watch?v=IACHfKmZMr8) |
-| **How I use LLMs** | Andrej Karpathy의 가이드 | [YouTube](https://www.youtube.com/watch?v=EWvNQjAaOHw) |
-| **Model Context Protocol Explained** | MCP 기본 개념 | [YouTube](https://www.youtube.com/watch?v=VChRPFUzJGA) |
-| **Windsurf: 90% of Your Code** | 에이전트 IDE 심층 분석 | [YouTube](https://www.youtube.com/watch?v=bVNNvWq6dKo) |
-| **Vibecoding is Here** | AI가 바꾸는 개발 | [YouTube](https://www.youtube.com/watch?v=xxA-M3HrKrc) |
-| **New Tools for Building Agents** | OpenAI의 에이전트 도구 | [YouTube](https://www.youtube.com/watch?v=hciNKcLwSes) |
-| **AI Tool Showdown (Japanese)** | Copilot vs Cursor vs 기타 | [YouTube](https://www.youtube.com/watch?v=EQHXIVItNxs) |
-| **MCP in 10 Minutes** | MCP 빠른 소개 | [YouTube](https://www.youtube.com/watch?v=EswVjHZMn74) |
+| 비디오 | 주제 |
+|-------|-------|
+| [**Vibe Coding Tutorial and Best Practices**](https://www.youtube.com/watch?v=YWwS911iLhg) | Cursor/Windsurf의 AI agents |
+| [**Vibe Coding Is The Future**](https://www.youtube.com/watch?v=IACHfKmZMr8) | Y Combinator의 vibe coding |
+| [**How I use LLMs**](https://www.youtube.com/watch?v=EWvNQjAaOHw) | Andrej Karpathy의 가이드 |
+| [**Model Context Protocol Explained**](https://www.youtube.com/watch?v=VChRPFUzJGA) | MCP 기본 개념 |
+| [**Windsurf: 90% of Your Code**](https://www.youtube.com/watch?v=bVNNvWq6dKo) | 에이전트 IDE 심층 분석 |
+| [**Vibecoding is Here**](https://www.youtube.com/watch?v=xxA-M3HrKrc) | AI가 바꾸는 개발 |
+| [**New Tools for Building Agents**](https://www.youtube.com/watch?v=hciNKcLwSes) | OpenAI의 에이전트 도구 |
+| [**AI Tool Showdown (Japanese)**](https://www.youtube.com/watch?v=EQHXIVItNxs) | Copilot vs Cursor vs 기타 |
+| [**MCP in 10 Minutes**](https://www.youtube.com/watch?v=EswVjHZMn74) | MCP 빠른 소개 |
 
 ---
 
@@ -219,6 +219,12 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 
 - [r/vibecoding](https://reddit.com/r/vibecoding) — Vibe coding 전용 커뮤니티
 - [r/ChatGPTCoding](https://reddit.com/r/ChatGPTCoding) — ChatGPT + 코딩 워크플로우
+- [r/ClaudeAI](https://reddit.com/r/ClaudeAI) — Claude 및 Claude Code 토론
+- [r/CursorAI](https://reddit.com/r/CursorAI) — Cursor IDE 워크플로우 및 팁
+- [r/copilot](https://reddit.com/r/copilot) — GitHub Copilot 커뮤니티
+- [r/Jetbrains](https://reddit.com/r/Jetbrains) — JetBrains IDE 및 AI Assistant
+- [r/Tabnine](https://reddit.com/r/Tabnine) — Tabnine AI 자동 완성
+- [r/continue_dev](https://reddit.com/r/continue_dev) — Continue.dev 오픈소스 어시스턴트
 - [r/LocalLlama](https://reddit.com/r/LocalLlama) — 로컬 LLM 개발
 - [r/replit](https://reddit.com/r/replit) — Replit 및 Ghostwriter 커뮤니티
 

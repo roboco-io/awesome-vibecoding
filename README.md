@@ -66,39 +66,39 @@ A curated list of resources for **Vibe Coding**—the AI-native programming para
 
 AI-powered code completion and assistance integrated into your development environment.
 
-| Tool | Description | Links |
-|------|-------------|-------|
-| **GitHub Copilot** | AI pair programmer with autocomplete, chat, multi-IDE support | [Website](https://github.com/features/copilot) |
-| **Cursor** | VS Code fork with contextual code generation and inline chat | [Website](https://www.cursor.com/) |
-| **Windsurf** | AI-native IDE from Codeium with Cascade AI and multi-LLM support | [Website](https://codeium.com/windsurf) |
-| **Claude Code** | Anthropic's CLI-based agentic coding assistant | [Docs](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview) |
-| **OpenAI Codex CLI** | Open-source CLI coding agent with natural language prompts | [Website](https://openai.com/codex/) |
-| **Google Jules** | Autonomous AI coding agent powered by Gemini 2.5 Pro | [Website](https://jules.google) |
-| **Gemini Code Assist** | Google's AI code completion and chat for Cloud/IDEs | [Website](https://cloud.google.com/products/gemini/code-assist) |
-| **JetBrains AI** | Deep integration in IntelliJ/PyCharm with Junie agent | [Website](https://www.jetbrains.com/ai/) |
-| **Augment Code** | Enterprise AI with deep context and security (SOC 2) | [Website](https://www.augmentcode.com) |
-| **Tabnine** | Deep learning autocomplete adapting to your coding style | [Website](https://www.tabnine.com/) |
-| **Amazon Q Developer** | AWS-integrated AI coding assistant | [Website](https://aws.amazon.com/q/developer/) |
-| **Continue** | Open-source configurable AI assistant framework | [Website](https://www.continue.dev) |
-| **Qodo** | AI code review engine (formerly CodiumAI) | [Website](https://www.qodo.ai) |
-| **Sourcegraph Cody** | AI assistant for code understanding and search | [Website](https://sourcegraph.com/cody) |
-| **Supermaven** | High-speed AI code completion | [Website](https://supermaven.com) |
-| **Cline** | Open-source AI assistant with file/terminal/browser automation | [GitHub](https://github.com/cline/cline) |
-| **Roo Code** | AI assistant supporting multiple roles (architect, QA, PM) | [GitHub](https://github.com/RooVetGit/Roo-Code) |
-| **Google Antigravity** | Agent-first IDE with multi-agent orchestration (Gemini 3 Pro) | [Website](https://antigravity.google) |
+| Tool | Description |
+|------|-------------|
+| [**GitHub Copilot**](https://github.com/features/copilot) | AI pair programmer with autocomplete, chat, multi-IDE support |
+| [**Cursor**](https://www.cursor.com/) | VS Code fork with contextual code generation and inline chat |
+| [**Windsurf**](https://codeium.com/windsurf) | AI-native IDE from Codeium with Cascade AI and multi-LLM support |
+| [**Claude Code**](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview) | Anthropic's CLI-based agentic coding assistant |
+| [**OpenAI Codex CLI**](https://openai.com/codex/) | Open-source CLI coding agent with natural language prompts |
+| [**Google Jules**](https://jules.google) | Autonomous AI coding agent powered by Gemini 2.5 Pro |
+| [**Gemini Code Assist**](https://cloud.google.com/products/gemini/code-assist) | Google's AI code completion and chat for Cloud/IDEs |
+| [**JetBrains AI**](https://www.jetbrains.com/ai/) | Deep integration in IntelliJ/PyCharm with Junie agent |
+| [**Augment Code**](https://www.augmentcode.com) | Enterprise AI with deep context and security (SOC 2) |
+| [**Tabnine**](https://www.tabnine.com/) | Deep learning autocomplete adapting to your coding style |
+| [**Amazon Q Developer**](https://aws.amazon.com/q/developer/) | AWS-integrated AI coding assistant |
+| [**Continue**](https://www.continue.dev) | Open-source configurable AI assistant framework |
+| [**Qodo**](https://www.qodo.ai) | AI code review engine (formerly CodiumAI) |
+| [**Sourcegraph Cody**](https://sourcegraph.com/cody) | AI assistant for code understanding and search |
+| [**Supermaven**](https://supermaven.com) | High-speed AI code completion |
+| [**Cline**](https://github.com/cline/cline) | Open-source AI assistant with file/terminal/browser automation |
+| [**Roo Code**](https://github.com/RooVetGit/Roo-Code) | AI assistant supporting multiple roles (architect, QA, PM) |
+| [**Google Antigravity**](https://antigravity.google) | Agent-first IDE with multi-agent orchestration (Gemini 3 Pro) |
 
 ### Agentic Coding Environments
 
 Autonomous AI systems that handle end-to-end development tasks.
 
-| Tool | Description | Links |
-|------|-------------|-------|
-| **Devin** | Autonomous AI software engineer by Cognition | [Website](https://www.cognition.ai/devin) |
-| **OpenHands** | Open-source autonomous AI software developer | [GitHub](https://github.com/All-Hands-AI/OpenHands) |
-| **Goose** | Open-source coding assistant by Block with MCP support | [Website](https://block.github.io/goose/) |
-| **OpenManus** | Open-source framework for AI-assisted document creation | [GitHub](https://github.com/mannaandpoem/OpenManus) |
-| **Vibe Compiler (vibec)** | Self-compiling tool that transforms prompts into code | [GitHub](https://github.com/Strawberry-Computer/vibe-compiler) |
-| **AlphaCode** | DeepMind's competitive programming AI | [Website](https://alphacode.deepmind.com/) |
+| Tool | Description |
+|------|-------------|
+| [**Devin**](https://www.cognition.ai/devin) | Autonomous AI software engineer by Cognition |
+| [**OpenHands**](https://github.com/All-Hands-AI/OpenHands) | Open-source autonomous AI software developer |
+| [**Goose**](https://block.github.io/goose/) | Open-source coding assistant by Block with MCP support |
+| [**OpenManus**](https://github.com/mannaandpoem/OpenManus) | Open-source framework for AI-assisted document creation |
+| [**Vibe Compiler (vibec)**](https://github.com/Strawberry-Computer/vibe-compiler) | Self-compiling tool that transforms prompts into code |
+| [**AlphaCode**](https://alphacode.deepmind.com/) | DeepMind's competitive programming AI |
 
 ### MCP Servers & Tooling
 
@@ -106,11 +106,11 @@ Autonomous AI systems that handle end-to-end development tasks.
 
 | Category | Servers | Description |
 |----------|---------|-------------|
-| **Git Operations** | Git, Rube | Repository read/search/manipulation |
+| **Git Operations** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube) | Repository read/search/manipulation |
 | **Databases** | ClickHouse, MongoDB, Prisma, Chroma | Query, migrations, semantic search |
 | **Testing** | CircleCI, Semgrep | CI/CD integration, code scanning |
-| **Browser** | AnyCrawl, Fetch | Web scraping, content fetching |
-| **File System** | Filesystem | Secure read/write operations |
+| **Browser** | AnyCrawl, [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | Web scraping, content fetching |
+| **File System** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | Secure read/write operations |
 | **DevOps** | Terraform-Cloud, Sentry | Infrastructure, error tracking |
 
 📚 See [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers) for a comprehensive list.
@@ -119,15 +119,15 @@ Autonomous AI systems that handle end-to-end development tasks.
 
 Browser-based and cloud platforms for AI-assisted development.
 
-| Tool | Description | Links |
-|------|-------------|-------|
-| **Replit** | Browser-based IDE with Ghostwriter AI | [Website](https://replit.com/) |
-| **v0** | Vercel's AI for UI/React generation | [Website](https://v0.dev/) |
-| **Bolt.new** | Natural language app building by StackBlitz | [Website](https://bolt.new/) |
-| **Lovable** | Full-stack app generation with Supabase | [Website](https://lovable.dev/) |
-| **Berrry** | Transform social posts into web apps | [Website](https://berrry.app) |
-| **Duet AI** | Google Workspace AI integration | [Website](https://workspace.google.com/solutions/ai/) |
-| **Trae AI** | AI platform for content creation | [Website](https://www.trae.ai/) |
+| Tool | Description |
+|------|-------------|
+| [**Replit**](https://replit.com/) | Browser-based IDE with Ghostwriter AI |
+| [**v0**](https://v0.dev/) | Vercel's AI for UI/React generation |
+| [**Bolt.new**](https://bolt.new/) | Natural language app building by StackBlitz |
+| [**Lovable**](https://lovable.dev/) | Full-stack app generation with Supabase |
+| [**Berrry**](https://berrry.app) | Transform social posts into web apps |
+| [**Duet AI**](https://workspace.google.com/solutions/ai/) | Google Workspace AI integration |
+| [**Trae AI**](https://www.trae.ai/) | AI platform for content creation |
 
 ---
 
@@ -199,17 +199,17 @@ Browser-based and cloud platforms for AI-assisted development.
 
 ### Videos & Tutorials
 
-| Video | Topic | Link |
-|-------|-------|------|
-| **Vibe Coding Tutorial and Best Practices** | AI agents in Cursor/Windsurf | [YouTube](https://www.youtube.com/watch?v=YWwS911iLhg) |
-| **Vibe Coding Is The Future** | Y Combinator on vibe coding | [YouTube](https://www.youtube.com/watch?v=IACHfKmZMr8) |
-| **How I use LLMs** | Andrej Karpathy's guide | [YouTube](https://www.youtube.com/watch?v=EWvNQjAaOHw) |
-| **Model Context Protocol Explained** | MCP fundamentals | [YouTube](https://www.youtube.com/watch?v=VChRPFUzJGA) |
-| **Windsurf: 90% of Your Code** | Agentic IDE deep dive | [YouTube](https://www.youtube.com/watch?v=bVNNvWq6dKo) |
-| **Vibecoding is Here** | AI changing development | [YouTube](https://www.youtube.com/watch?v=xxA-M3HrKrc) |
-| **New Tools for Building Agents** | OpenAI's agent tools | [YouTube](https://www.youtube.com/watch?v=hciNKcLwSes) |
-| **AI Tool Showdown (Japanese)** | Copilot vs Cursor vs others | [YouTube](https://www.youtube.com/watch?v=EQHXIVItNxs) |
-| **MCP in 10 Minutes** | Quick MCP intro | [YouTube](https://www.youtube.com/watch?v=EswVjHZMn74) |
+| Video | Topic |
+|-------|-------|
+| [**Vibe Coding Tutorial and Best Practices**](https://www.youtube.com/watch?v=YWwS911iLhg) | AI agents in Cursor/Windsurf |
+| [**Vibe Coding Is The Future**](https://www.youtube.com/watch?v=IACHfKmZMr8) | Y Combinator on vibe coding |
+| [**How I use LLMs**](https://www.youtube.com/watch?v=EWvNQjAaOHw) | Andrej Karpathy's guide |
+| [**Model Context Protocol Explained**](https://www.youtube.com/watch?v=VChRPFUzJGA) | MCP fundamentals |
+| [**Windsurf: 90% of Your Code**](https://www.youtube.com/watch?v=bVNNvWq6dKo) | Agentic IDE deep dive |
+| [**Vibecoding is Here**](https://www.youtube.com/watch?v=xxA-M3HrKrc) | AI changing development |
+| [**New Tools for Building Agents**](https://www.youtube.com/watch?v=hciNKcLwSes) | OpenAI's agent tools |
+| [**AI Tool Showdown (Japanese)**](https://www.youtube.com/watch?v=EQHXIVItNxs) | Copilot vs Cursor vs others |
+| [**MCP in 10 Minutes**](https://www.youtube.com/watch?v=EswVjHZMn74) | Quick MCP intro |
 
 ---
 
@@ -219,6 +219,12 @@ Browser-based and cloud platforms for AI-assisted development.
 
 - [r/vibecoding](https://reddit.com/r/vibecoding) — Dedicated vibe coding community
 - [r/ChatGPTCoding](https://reddit.com/r/ChatGPTCoding) — ChatGPT + coding workflows
+- [r/ClaudeAI](https://reddit.com/r/ClaudeAI) — Claude and Claude Code discussions
+- [r/CursorAI](https://reddit.com/r/CursorAI) — Cursor IDE workflows and tips
+- [r/copilot](https://reddit.com/r/copilot) — GitHub Copilot community
+- [r/Jetbrains](https://reddit.com/r/Jetbrains) — JetBrains IDEs and AI Assistant
+- [r/Tabnine](https://reddit.com/r/Tabnine) — Tabnine AI autocomplete
+- [r/continue_dev](https://reddit.com/r/continue_dev) — Continue.dev open-source assistant
 - [r/LocalLlama](https://reddit.com/r/LocalLlama) — Local LLM development
 - [r/replit](https://reddit.com/r/replit) — Replit & Ghostwriter community
 

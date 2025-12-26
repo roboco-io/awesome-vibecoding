@@ -1,4 +1,4 @@
-# Awesome Vibe Coding
+# Awesome Vibe Coding (日本語)
 
 *Language: [English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md)*
 
@@ -66,39 +66,39 @@
 
 開発環境に統合されたAI駆動のコード補完と支援。
 
-| ツール | 説明 | リンク |
-|------|-------------|-------|
-| **GitHub Copilot** | オートコンプリート、チャット、マルチIDE対応のAIペアプログラマー | [Website](https://github.com/features/copilot) |
-| **Cursor** | コンテキストに応じたコード生成とインラインチャット機能を持つVS Codeフォーク | [Website](https://www.cursor.com/) |
-| **Windsurf** | CodeiumのAIネイティブIDEでCascade AIとマルチLLMサポート | [Website](https://codeium.com/windsurf) |
-| **Claude Code** | AnthropicのCLIベースのエージェント型コーディングアシスタント | [Docs](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview) |
-| **OpenAI Codex CLI** | 自然言語プロンプトを使用するオープンソースCLIコーディングエージェント | [Website](https://openai.com/codex/) |
-| **Google Jules** | Gemini 2.5 Pro搭載の自律型AIコーディングエージェント | [Website](https://jules.google) |
-| **Gemini Code Assist** | Cloud/IDE向けGoogleのAIコード補完とチャット | [Website](https://cloud.google.com/products/gemini/code-assist) |
-| **JetBrains AI** | Junieエージェントを備えたIntelliJ/PyCharmの深い統合 | [Website](https://www.jetbrains.com/ai/) |
-| **Augment Code** | 深いコンテキストとセキュリティ（SOC 2）を備えたエンタープライズAI | [Website](https://www.augmentcode.com) |
-| **Tabnine** | コーディングスタイルに適応する深層学習オートコンプリート | [Website](https://www.tabnine.com/) |
-| **Amazon Q Developer** | AWS統合AIコーディングアシスタント | [Website](https://aws.amazon.com/q/developer/) |
-| **Continue** | オープンソース設定可能AIアシスタントフレームワーク | [Website](https://www.continue.dev) |
-| **Qodo** | AIコードレビューエンジン（旧CodiumAI） | [Website](https://www.qodo.ai) |
-| **Sourcegraph Cody** | コード理解と検索のためのAIアシスタント | [Website](https://sourcegraph.com/cody) |
-| **Supermaven** | 高速AIコード補完 | [Website](https://supermaven.com) |
-| **Cline** | ファイル/ターミナル/ブラウザ自動化を備えたオープンソースAIアシスタント | [GitHub](https://github.com/cline/cline) |
-| **Roo Code** | 複数の役割（アーキテクト、QA、PM）をサポートするAIアシスタント | [GitHub](https://github.com/RooVetGit/Roo-Code) |
-| **Google Antigravity** | マルチエージェントオーケストレーションを備えたエージェント型IDE（Gemini 3 Pro） | [Website](https://antigravity.google) |
+| ツール | 説明 |
+|------|-------------|
+| [**GitHub Copilot**](https://github.com/features/copilot) | オートコンプリート、チャット、マルチIDE対応のAIペアプログラマー |
+| [**Cursor**](https://www.cursor.com/) | コンテキストに応じたコード生成とインラインチャット機能を持つVS Codeフォーク |
+| [**Windsurf**](https://codeium.com/windsurf) | CodeiumのAIネイティブIDEでCascade AIとマルチLLMサポート |
+| [**Claude Code**](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview) | AnthropicのCLIベースのエージェント型コーディングアシスタント |
+| [**OpenAI Codex CLI**](https://openai.com/codex/) | 自然言語プロンプトを使用するオープンソースCLIコーディングエージェント |
+| [**Google Jules**](https://jules.google) | Gemini 2.5 Pro搭載の自律型AIコーディングエージェント |
+| [**Gemini Code Assist**](https://cloud.google.com/products/gemini/code-assist) | Cloud/IDE向けGoogleのAIコード補完とチャット |
+| [**JetBrains AI**](https://www.jetbrains.com/ai/) | Junieエージェントを備えたIntelliJ/PyCharmの深い統合 |
+| [**Augment Code**](https://www.augmentcode.com) | 深いコンテキストとセキュリティ（SOC 2）を備えたエンタープライズAI |
+| [**Tabnine**](https://www.tabnine.com/) | コーディングスタイルに適応する深層学習オートコンプリート |
+| [**Amazon Q Developer**](https://aws.amazon.com/q/developer/) | AWS統合AIコーディングアシスタント |
+| [**Continue**](https://www.continue.dev) | オープンソース設定可能AIアシスタントフレームワーク |
+| [**Qodo**](https://www.qodo.ai) | AIコードレビューエンジン（旧CodiumAI） |
+| [**Sourcegraph Cody**](https://sourcegraph.com/cody) | コード理解と検索のためのAIアシスタント |
+| [**Supermaven**](https://supermaven.com) | 高速AIコード補完 |
+| [**Cline**](https://github.com/cline/cline) | ファイル/ターミナル/ブラウザ自動化を備えたオープンソースAIアシスタント |
+| [**Roo Code**](https://github.com/RooVetGit/Roo-Code) | 複数の役割（アーキテクト、QA、PM）をサポートするAIアシスタント |
+| [**Google Antigravity**](https://antigravity.google) | マルチエージェントオーケストレーションを備えたエージェント型IDE（Gemini 3 Pro） |
 
 ### エージェント型コーディング環境
 
 エンドツーエンドの開発タスクを処理する自律型AIシステム。
 
-| ツール | 説明 | リンク |
-|------|-------------|-------|
-| **Devin** | Cognitionによる自律型AIソフトウェアエンジニア | [Website](https://www.cognition.ai/devin) |
-| **OpenHands** | オープンソースの自律型AIソフトウェア開発者 | [GitHub](https://github.com/All-Hands-AI/OpenHands) |
-| **Goose** | BlockによるMCPサポート付きオープンソースコーディングアシスタント | [Website](https://block.github.io/goose/) |
-| **OpenManus** | AI支援ドキュメント作成のためのオープンソースフレームワーク | [GitHub](https://github.com/mannaandpoem/OpenManus) |
-| **Vibe Compiler (vibec)** | プロンプトをコードに変換する自己コンパイルツール | [GitHub](https://github.com/Strawberry-Computer/vibe-compiler) |
-| **AlphaCode** | DeepMindの競技プログラミングAI | [Website](https://alphacode.deepmind.com/) |
+| ツール | 説明 |
+|------|-------------|
+| [**Devin**](https://www.cognition.ai/devin) | Cognitionによる自律型AIソフトウェアエンジニア |
+| [**OpenHands**](https://github.com/All-Hands-AI/OpenHands) | オープンソースの自律型AIソフトウェア開発者 |
+| [**Goose**](https://block.github.io/goose/) | BlockによるMCPサポート付きオープンソースコーディングアシスタント |
+| [**OpenManus**](https://github.com/mannaandpoem/OpenManus) | AI支援ドキュメント作成のためのオープンソースフレームワーク |
+| [**Vibe Compiler (vibec)**](https://github.com/Strawberry-Computer/vibe-compiler) | プロンプトをコードに変換する自己コンパイルツール |
+| [**AlphaCode**](https://alphacode.deepmind.com/) | DeepMindの競技プログラミングAI |
 
 ### MCPサーバー & ツール
 
@@ -106,11 +106,11 @@ AI機能を拡張する[Model Context Protocol](https://modelcontextprotocol.io/
 
 | カテゴリ | サーバー | 説明 |
 |----------|---------|-------------|
-| **Git操作** | Git、Rube | リポジトリの読み取り/検索/操作 |
-| **データベース** | ClickHouse、MongoDB、Prisma、Chroma | クエリ、マイグレーション、セマンティック検索 |
-| **テスト** | CircleCI、Semgrep | CI/CD統合、コードスキャン |
-| **ブラウザ** | AnyCrawl、Fetch | Webスクレイピング、コンテンツ取得 |
-| **ファイルシステム** | Filesystem | 安全な読み取り/書き込み操作 |
+| **Git操作** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube) | リポジトリの読み取り/検索/操作 |
+| **データベース** | ClickHouse, MongoDB, Prisma, Chroma | クエリ、マイグレーション、セマンティック検索 |
+| **テスト** | CircleCI, Semgrep | CI/CD統合、コードスキャン |
+| **ブラウザ** | AnyCrawl, [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | Webスクレイピング、コンテンツ取得 |
+| **ファイルシステム** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 安全な読み取り/書き込み操作 |
 | **DevOps** | Terraform-Cloud、Sentry | インフラストラクチャ、エラートラッキング |
 
 📚 包括的なリストは[awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers)を参照してください。
@@ -119,15 +119,15 @@ AI機能を拡張する[Model Context Protocol](https://modelcontextprotocol.io/
 
 AI支援開発のためのブラウザベースおよびクラウドプラットフォーム。
 
-| ツール | 説明 | リンク |
-|------|-------------|-------|
-| **Replit** | Ghostwriter AIを備えたブラウザベースIDE | [Website](https://replit.com/) |
-| **v0** | VercelのUI/React生成AI | [Website](https://v0.dev/) |
-| **Bolt.new** | StackBlitzによる自然言語アプリ構築 | [Website](https://bolt.new/) |
-| **Lovable** | Supabaseを使用したフルスタックアプリ生成 | [Website](https://lovable.dev/) |
-| **Berrry** | ソーシャル投稿をWebアプリに変換 | [Website](https://berrry.app) |
-| **Duet AI** | Google WorkspaceのAI統合 | [Website](https://workspace.google.com/solutions/ai/) |
-| **Trae AI** | コンテンツ作成のためのAIプラットフォーム | [Website](https://www.trae.ai/) |
+| ツール | 説明 |
+|------|-------------|
+| [**Replit**](https://replit.com/) | Ghostwriter AIを備えたブラウザベースIDE |
+| [**v0**](https://v0.dev/) | VercelのUI/React生成AI |
+| [**Bolt.new**](https://bolt.new/) | StackBlitzによる自然言語アプリ構築 |
+| [**Lovable**](https://lovable.dev/) | Supabaseを使用したフルスタックアプリ生成 |
+| [**Berrry**](https://berrry.app) | ソーシャル投稿をWebアプリに変換 |
+| [**Duet AI**](https://workspace.google.com/solutions/ai/) | Google WorkspaceのAI統合 |
+| [**Trae AI**](https://www.trae.ai/) | コンテンツ作成のためのAIプラットフォーム |
 
 ---
 
@@ -199,17 +199,17 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 
 ### 動画 & チュートリアル
 
-| 動画 | トピック | リンク |
-|-------|-------|------|
-| **Vibe Coding Tutorial and Best Practices** | Cursor/WindsurfでのAIエージェント | [YouTube](https://www.youtube.com/watch?v=YWwS911iLhg) |
-| **Vibe Coding Is The Future** | Y CombinatorのVibe Coding | [YouTube](https://www.youtube.com/watch?v=IACHfKmZMr8) |
-| **How I use LLMs** | Andrej Karpathyのガイド | [YouTube](https://www.youtube.com/watch?v=EWvNQjAaOHw) |
-| **Model Context Protocol Explained** | MCPの基礎 | [YouTube](https://www.youtube.com/watch?v=VChRPFUzJGA) |
-| **Windsurf: 90% of Your Code** | エージェント型IDEの詳細 | [YouTube](https://www.youtube.com/watch?v=bVNNvWq6dKo) |
-| **Vibecoding is Here** | AIが開発を変える | [YouTube](https://www.youtube.com/watch?v=xxA-M3HrKrc) |
-| **New Tools for Building Agents** | OpenAIのエージェントツール | [YouTube](https://www.youtube.com/watch?v=hciNKcLwSes) |
-| **AI Tool Showdown (Japanese)** | Copilot vs Cursor等 | [YouTube](https://www.youtube.com/watch?v=EQHXIVItNxs) |
-| **MCP in 10 Minutes** | MCPクイックイントロ | [YouTube](https://www.youtube.com/watch?v=EswVjHZMn74) |
+| 動画 | トピック |
+|-------|-------|
+| [**Vibe Coding Tutorial and Best Practices**](https://www.youtube.com/watch?v=YWwS911iLhg) | Cursor/WindsurfでのAIエージェント |
+| [**Vibe Coding Is The Future**](https://www.youtube.com/watch?v=IACHfKmZMr8) | Y CombinatorのVibe Coding |
+| [**How I use LLMs**](https://www.youtube.com/watch?v=EWvNQjAaOHw) | Andrej Karpathyのガイド |
+| [**Model Context Protocol Explained**](https://www.youtube.com/watch?v=VChRPFUzJGA) | MCPの基礎 |
+| [**Windsurf: 90% of Your Code**](https://www.youtube.com/watch?v=bVNNvWq6dKo) | エージェント型IDEの詳細 |
+| [**Vibecoding is Here**](https://www.youtube.com/watch?v=xxA-M3HrKrc) | AIが開発を変える |
+| [**New Tools for Building Agents**](https://www.youtube.com/watch?v=hciNKcLwSes) | OpenAIのエージェントツール |
+| [**AI Tool Showdown (Japanese)**](https://www.youtube.com/watch?v=EQHXIVItNxs) | Copilot vs Cursor等 |
+| [**MCP in 10 Minutes**](https://www.youtube.com/watch?v=EswVjHZMn74) | MCPクイックイントロ |
 
 ---
 
@@ -219,6 +219,12 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 
 - [r/vibecoding](https://reddit.com/r/vibecoding) — Vibe Coding専用コミュニティ
 - [r/ChatGPTCoding](https://reddit.com/r/ChatGPTCoding) — ChatGPT + コーディングワークフロー
+- [r/ClaudeAI](https://reddit.com/r/ClaudeAI) — ClaudeとClaude Codeのディスカッション
+- [r/CursorAI](https://reddit.com/r/CursorAI) — Cursor IDEのワークフローとヒント
+- [r/copilot](https://reddit.com/r/copilot) — GitHub Copilotコミュニティ
+- [r/Jetbrains](https://reddit.com/r/Jetbrains) — JetBrains IDEとAI Assistant
+- [r/Tabnine](https://reddit.com/r/Tabnine) — Tabnine AIオートコンプリート
+- [r/continue_dev](https://reddit.com/r/continue_dev) — Continue.devオープンソースアシスタント
 - [r/LocalLlama](https://reddit.com/r/LocalLlama) — ローカルLLM開発
 - [r/replit](https://reddit.com/r/replit) — ReplitとGhostwriterコミュニティ
 
