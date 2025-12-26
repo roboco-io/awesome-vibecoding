@@ -113,11 +113,10 @@ AI 기능을 확장하는 [Model Context Protocol](https://modelcontextprotocol.
 | 카테고리 | 서버 | 설명 |
 |----------|---------|-------------|
 | **Git 작업** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube) | 저장소 읽기/검색/조작 |
-| **데이터베이스** | ClickHouse, MongoDB, Prisma, Chroma | 쿼리, 마이그레이션, 시맨틱 검색 |
-| **테스팅** | CircleCI, Semgrep | CI/CD 통합, 코드 스캐닝 |
-| **브라우저** | AnyCrawl, [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | 웹 스크래핑, 콘텐츠 가져오기 |
+| **데이터베이스** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp) | 쿼리, 마이그레이션, 시맨틱 검색 |
+| **보안** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | 코드 스캐닝, 오류 추적 |
+| **브라우저** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | 웹 스크래핑, 콘텐츠 가져오기 |
 | **파일 시스템** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 안전한 읽기/쓰기 작업 |
-| **DevOps** | Terraform-Cloud, Sentry | 인프라, 오류 추적 |
 
 📚 전체 목록은 [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers)를 참조하세요.
 

@@ -113,11 +113,10 @@ AI機能を拡張する[Model Context Protocol](https://modelcontextprotocol.io/
 | カテゴリ | サーバー | 説明 |
 |----------|---------|-------------|
 | **Git操作** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube) | リポジトリの読み取り/検索/操作 |
-| **データベース** | ClickHouse, MongoDB, Prisma, Chroma | クエリ、マイグレーション、セマンティック検索 |
-| **テスト** | CircleCI, Semgrep | CI/CD統合、コードスキャン |
-| **ブラウザ** | AnyCrawl, [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | Webスクレイピング、コンテンツ取得 |
+| **データベース** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp) | クエリ、マイグレーション、セマンティック検索 |
+| **セキュリティ** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | コードスキャン、エラートラッキング |
+| **ブラウザ** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | Webスクレイピング、コンテンツ取得 |
 | **ファイルシステム** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 安全な読み取り/書き込み操作 |
-| **DevOps** | Terraform-Cloud、Sentry | インフラストラクチャ、エラートラッキング |
 
 📚 包括的なリストは[awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers)を参照してください。
 

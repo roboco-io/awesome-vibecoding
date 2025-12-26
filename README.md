@@ -113,11 +113,10 @@ Autonomous AI systems that handle end-to-end development tasks.
 | Category | Servers | Description |
 |----------|---------|-------------|
 | **Git Operations** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube) | Repository read/search/manipulation |
-| **Databases** | ClickHouse, MongoDB, Prisma, Chroma | Query, migrations, semantic search |
-| **Testing** | CircleCI, Semgrep | CI/CD integration, code scanning |
-| **Browser** | AnyCrawl, [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | Web scraping, content fetching |
+| **Databases** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp) | Query, migrations, semantic search |
+| **Security** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | Code scanning, error tracking |
+| **Browser** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | Web scraping, content fetching |
 | **File System** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | Secure read/write operations |
-| **DevOps** | Terraform-Cloud, Sentry | Infrastructure, error tracking |
 
 📚 See [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers) for a comprehensive list.
 
