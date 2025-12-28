@@ -92,6 +92,8 @@
 | [**Cline**](https://github.com/cline/cline) | ファイル/ターミナル/ブラウザ自動化を備えたオープンソースAIアシスタント |
 | [**Roo Code**](https://github.com/RooVetGit/Roo-Code) | 複数の役割（アーキテクト、QA、PM）をサポートするAIアシスタント |
 | [**Google Antigravity**](https://antigravity.google) | マルチエージェントオーケストレーションを備えたエージェント型IDE（Gemini 3 Pro） |
+| [**PearAI**](https://trypear.ai) | カスタマイズ可能なAI統合を備えたオープンソースAIコードエディタ |
+| [**Void**](https://voideditor.com) | ローカルファーストアプローチとプライバシー重視のCursor代替 |
 
 ### エージェント型コーディング環境
 
@@ -105,6 +107,8 @@
 | [**OpenManus**](https://github.com/mannaandpoem/OpenManus) | AI支援ドキュメント作成のためのオープンソースフレームワーク |
 | [**Vibe Compiler (vibec)**](https://github.com/Strawberry-Computer/vibe-compiler) | プロンプトをコードに変換する自己コンパイルツール |
 | [**AlphaCode**](https://alphacode.deepmind.com/) | DeepMindの競技プログラミングAI |
+| [**Aider**](https://aider.chat) | git統合を備えたターミナルでのAIペアプログラミング |
+| [**Sweep**](https://sweep.dev) | IssueをPull Requestに変換するAI |
 
 ### MCPサーバー & ツール
 
@@ -113,8 +117,9 @@ AI機能を拡張する[Model Context Protocol](https://modelcontextprotocol.io/
 | カテゴリ | サーバー | 説明 |
 |----------|---------|-------------|
 | **Git操作** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube) | リポジトリの読み取り/検索/操作 |
-| **データベース** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp) | クエリ、マイグレーション、セマンティック検索 |
+| **データベース** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp), [PostgreSQL](https://github.com/benborla/mcp-server-postgres) | クエリ、マイグレーション、セマンティック検索 |
 | **セキュリティ** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | コードスキャン、エラートラッキング |
+| **AI/LLM** | [Perplexity](https://github.com/ppl-ai/modelcontextprotocol), [Memory](https://github.com/modelcontextprotocol/servers/tree/main/src/memory) | Web検索、永続的コンテキスト |
 | **ブラウザ** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | Webスクレイピング、コンテンツ取得 |
 | **ファイルシステム** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 安全な読み取り/書き込み操作 |
 
@@ -133,6 +138,8 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 | [**Berrry**](https://berrry.app) | ソーシャル投稿をWebアプリに変換 |
 | [**Duet AI**](https://workspace.google.com/solutions/ai/) | Google WorkspaceのAI統合 |
 | [**Trae AI**](https://www.trae.ai/) | コンテンツ作成のためのAIプラットフォーム |
+| [**Marblism**](https://marblism.com) | プロンプトからReact + Nodeでフルスタックアプリを生成 |
+| [**GPT Engineer**](https://gptengineer.app) | 自然言語会話を通じてWebアプリを構築 |
 
 ---
 
@@ -201,6 +208,8 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 - [12 Best Practices for AI Coding (Questera)](https://www.questera.ai/blogs/12-best-practices-to-use-ai-in-coding-in-2025) — 2025年のベストプラクティス
 - [Secure Vibe Coding Guide (CSA)](https://cloudsecurityalliance.org/blog/2025/04/09/secure-vibe-coding-guide) — セキュリティの考慮事項
 - [Here's how I use LLMs to help me write code (Simon Willison)](https://simonwillison.net/2025/Mar/11/using-llms-for-code/) — 実践的な統合のヒント
+- [The Rise of AI Coding Agents (Sequoia)](https://www.sequoiacap.com/article/ai-coding-agents/) — Vibe Codingに関する投資視点
+- [Vibe Coding Best Practices (Anthropic)](https://www.anthropic.com/research/vibe-coding) — 研究に基づくガイドライン
 
 ### 動画 & チュートリアル
 

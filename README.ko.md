@@ -92,6 +92,8 @@
 | [**Cline**](https://github.com/cline/cline) | 파일/터미널/브라우저 자동화를 지원하는 오픈소스 AI 어시스턴트 |
 | [**Roo Code**](https://github.com/RooVetGit/Roo-Code) | 여러 역할(설계자, QA, PM)을 지원하는 AI 어시스턴트 |
 | [**Google Antigravity**](https://antigravity.google) | 멀티 에이전트 오케스트레이션을 갖춘 에이전트 기반 IDE (Gemini 3 Pro) |
+| [**PearAI**](https://trypear.ai) | 맞춤형 AI 통합을 지원하는 오픈소스 AI 코드 에디터 |
+| [**Void**](https://voideditor.com) | 로컬 우선 접근 방식과 프라이버시 중심의 Cursor 대안 |
 
 ### 에이전트 기반 코딩 환경
 
@@ -105,6 +107,8 @@
 | [**OpenManus**](https://github.com/mannaandpoem/OpenManus) | AI 보조 문서 작성을 위한 오픈소스 프레임워크 |
 | [**Vibe Compiler (vibec)**](https://github.com/Strawberry-Computer/vibe-compiler) | 프롬프트를 코드로 변환하는 자체 컴파일 도구 |
 | [**AlphaCode**](https://alphacode.deepmind.com/) | DeepMind의 경쟁 프로그래밍 AI |
+| [**Aider**](https://aider.chat) | git 통합을 갖춘 터미널 기반 AI 페어 프로그래밍 |
+| [**Sweep**](https://sweep.dev) | 이슈를 pull request로 변환하는 AI |
 
 ### MCP 서버 & 도구
 
@@ -113,8 +117,9 @@ AI 기능을 확장하는 [Model Context Protocol](https://modelcontextprotocol.
 | 카테고리 | 서버 | 설명 |
 |----------|---------|-------------|
 | **Git 작업** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube) | 저장소 읽기/검색/조작 |
-| **데이터베이스** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp) | 쿼리, 마이그레이션, 시맨틱 검색 |
+| **데이터베이스** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp), [PostgreSQL](https://github.com/benborla/mcp-server-postgres) | 쿼리, 마이그레이션, 시맨틱 검색 |
 | **보안** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | 코드 스캐닝, 오류 추적 |
+| **AI/LLM** | [Perplexity](https://github.com/ppl-ai/modelcontextprotocol), [Memory](https://github.com/modelcontextprotocol/servers/tree/main/src/memory) | 웹 검색, 지속적 컨텍스트 |
 | **브라우저** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | 웹 스크래핑, 콘텐츠 가져오기 |
 | **파일 시스템** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 안전한 읽기/쓰기 작업 |
 
@@ -133,6 +138,8 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 | [**Berrry**](https://berrry.app) | 소셜 게시물을 웹 앱으로 변환 |
 | [**Duet AI**](https://workspace.google.com/solutions/ai/) | Google Workspace AI 통합 |
 | [**Trae AI**](https://www.trae.ai/) | 콘텐츠 제작을 위한 AI 플랫폼 |
+| [**Marblism**](https://marblism.com) | React + Node로 프롬프트에서 풀스택 앱 생성 |
+| [**GPT Engineer**](https://gptengineer.app) | 자연어 대화를 통해 웹 앱 구축 |
 
 ---
 
@@ -201,6 +208,8 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 - [12 Best Practices for AI Coding (Questera)](https://www.questera.ai/blogs/12-best-practices-to-use-ai-in-coding-in-2025) — 2025년 모범 사례
 - [Secure Vibe Coding Guide (CSA)](https://cloudsecurityalliance.org/blog/2025/04/09/secure-vibe-coding-guide) — 보안 고려사항
 - [Here's how I use LLMs to help me write code (Simon Willison)](https://simonwillison.net/2025/Mar/11/using-llms-for-code/) — 실용적인 통합 팁
+- [The Rise of AI Coding Agents (Sequoia)](https://www.sequoiacap.com/article/ai-coding-agents/) — Vibe coding에 대한 투자 관점
+- [Vibe Coding Best Practices (Anthropic)](https://www.anthropic.com/research/vibe-coding) — 연구 기반 가이드라인
 
 ### 비디오 & 튜토리얼
 

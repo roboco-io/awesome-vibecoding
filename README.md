@@ -92,6 +92,8 @@ AI-powered code completion and assistance integrated into your development envir
 | [**Cline**](https://github.com/cline/cline) | Open-source AI assistant with file/terminal/browser automation |
 | [**Roo Code**](https://github.com/RooVetGit/Roo-Code) | AI assistant supporting multiple roles (architect, QA, PM) |
 | [**Google Antigravity**](https://antigravity.google) | Agent-first IDE with multi-agent orchestration (Gemini 3 Pro) |
+| [**PearAI**](https://trypear.ai) | Open-source AI code editor with customizable AI integrations |
+| [**Void**](https://voideditor.com) | Cursor alternative with local-first approach and privacy focus |
 
 ### Agentic Coding Environments
 
@@ -105,6 +107,8 @@ Autonomous AI systems that handle end-to-end development tasks.
 | [**OpenManus**](https://github.com/mannaandpoem/OpenManus) | Open-source framework for AI-assisted document creation |
 | [**Vibe Compiler (vibec)**](https://github.com/Strawberry-Computer/vibe-compiler) | Self-compiling tool that transforms prompts into code |
 | [**AlphaCode**](https://alphacode.deepmind.com/) | DeepMind's competitive programming AI |
+| [**Aider**](https://aider.chat) | AI pair programming in terminal with git integration |
+| [**Sweep**](https://sweep.dev) | AI that turns issues into pull requests |
 
 ### MCP Servers & Tooling
 
@@ -113,8 +117,9 @@ Autonomous AI systems that handle end-to-end development tasks.
 | Category | Servers | Description |
 |----------|---------|-------------|
 | **Git Operations** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube) | Repository read/search/manipulation |
-| **Databases** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp) | Query, migrations, semantic search |
+| **Databases** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp), [PostgreSQL](https://github.com/benborla/mcp-server-postgres) | Query, migrations, semantic search |
 | **Security** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | Code scanning, error tracking |
+| **AI/LLM** | [Perplexity](https://github.com/ppl-ai/modelcontextprotocol), [Memory](https://github.com/modelcontextprotocol/servers/tree/main/src/memory) | Web search, persistent context |
 | **Browser** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | Web scraping, content fetching |
 | **File System** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | Secure read/write operations |
 
@@ -133,6 +138,8 @@ Browser-based and cloud platforms for AI-assisted development.
 | [**Berrry**](https://berrry.app) | Transform social posts into web apps |
 | [**Duet AI**](https://workspace.google.com/solutions/ai/) | Google Workspace AI integration |
 | [**Trae AI**](https://www.trae.ai/) | AI platform for content creation |
+| [**Marblism**](https://marblism.com) | Generate full-stack apps from prompts with React + Node |
+| [**GPT Engineer**](https://gptengineer.app) | Build web apps through natural language conversations |
 
 ---
 
@@ -201,6 +208,8 @@ Browser-based and cloud platforms for AI-assisted development.
 - [12 Best Practices for AI Coding (Questera)](https://www.questera.ai/blogs/12-best-practices-to-use-ai-in-coding-in-2025) — 2025 best practices
 - [Secure Vibe Coding Guide (CSA)](https://cloudsecurityalliance.org/blog/2025/04/09/secure-vibe-coding-guide) — Security considerations
 - [Here's how I use LLMs to help me write code (Simon Willison)](https://simonwillison.net/2025/Mar/11/using-llms-for-code/) — Practical integration tips
+- [The Rise of AI Coding Agents (Sequoia)](https://www.sequoiacap.com/article/ai-coding-agents/) — Investment perspective on vibe coding
+- [Vibe Coding Best Practices (Anthropic)](https://www.anthropic.com/research/vibe-coding) — Research-backed guidelines
 
 ### Videos & Tutorials
 
