@@ -92,6 +92,8 @@
 | [**Cline**](https://github.com/cline/cline) | 파일/터미널/브라우저 자동화를 지원하는 오픈소스 AI 어시스턴트 |
 | [**Roo Code**](https://github.com/RooVetGit/Roo-Code) | 여러 역할(설계자, QA, PM)을 지원하는 AI 어시스턴트 |
 | [**Google Antigravity**](https://antigravity.google) | 멀티 에이전트 오케스트레이션을 갖춘 에이전트 기반 IDE (Gemini 3 Pro) |
+| [**PearAI**](https://trypear.ai/) | VS Code 포크 기반 오픈소스 AI 코드 에디터 |
+| [**Zed AI**](https://zed.dev/) | 내장 AI 어시스턴트를 갖춘 고성능 에디터 |
 
 ### 에이전트 기반 코딩 환경
 
@@ -101,6 +103,7 @@
 |------|-------------|
 | [**Devin**](https://www.cognition.ai/devin) | Cognition의 자율 AI 소프트웨어 엔지니어 |
 | [**OpenHands**](https://github.com/All-Hands-AI/OpenHands) | 오픈소스 자율 AI 소프트웨어 개발자 |
+| [**Replit Agent**](https://replit.com/ai) | 브라우저에서 풀스택 앱 개발을 위한 자율 에이전트 |
 | [**Goose**](https://block.github.io/goose/) | Block의 오픈소스 코딩 어시스턴트, MCP 지원 |
 | [**OpenManus**](https://github.com/mannaandpoem/OpenManus) | AI 보조 문서 작성을 위한 오픈소스 프레임워크 |
 | [**Vibe Compiler (vibec)**](https://github.com/Strawberry-Computer/vibe-compiler) | 프롬프트를 코드로 변환하는 자체 컴파일 도구 |
@@ -112,10 +115,10 @@ AI 기능을 확장하는 [Model Context Protocol](https://modelcontextprotocol.
 
 | 카테고리 | 서버 | 설명 |
 |----------|---------|-------------|
-| **Git 작업** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube) | 저장소 읽기/검색/조작 |
-| **데이터베이스** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp) | 쿼리, 마이그레이션, 시맨틱 검색 |
+| **Git 작업** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube), [GitHub](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | 저장소 읽기/검색/조작, PR/이슈 관리 |
+| **데이터베이스** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp), [Postgres](https://github.com/modelcontextprotocol/servers/tree/main/src/postgres) | 쿼리, 마이그레이션, 시맨틱 검색 |
 | **보안** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | 코드 스캐닝, 오류 추적 |
-| **브라우저** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | 웹 스크래핑, 콘텐츠 가져오기 |
+| **브라우저** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch), [Puppeteer](https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer) | 웹 스크래핑, 콘텐츠 가져오기, 브라우저 자동화 |
 | **파일 시스템** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 안전한 읽기/쓰기 작업 |
 
 📚 전체 목록은 [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers)를 참조하세요.
@@ -127,6 +130,7 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 | 도구 | 설명 |
 |------|-------------|
 | [**Replit**](https://replit.com/) | Ghostwriter AI를 갖춘 브라우저 기반 IDE |
+| [**GitHub Spark**](https://githubnext.com/projects/github-spark) | GitHub의 자연어 앱 생성 플랫폼 |
 | [**v0**](https://v0.dev/) | Vercel의 UI/React 생성 AI |
 | [**Bolt.new**](https://bolt.new/) | StackBlitz의 자연어 앱 빌딩 |
 | [**Lovable**](https://lovable.dev/) | Supabase를 사용한 풀스택 앱 생성 |

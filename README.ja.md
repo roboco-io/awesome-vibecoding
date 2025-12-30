@@ -92,6 +92,8 @@
 | [**Cline**](https://github.com/cline/cline) | ファイル/ターミナル/ブラウザ自動化を備えたオープンソースAIアシスタント |
 | [**Roo Code**](https://github.com/RooVetGit/Roo-Code) | 複数の役割（アーキテクト、QA、PM）をサポートするAIアシスタント |
 | [**Google Antigravity**](https://antigravity.google) | マルチエージェントオーケストレーションを備えたエージェント型IDE（Gemini 3 Pro） |
+| [**PearAI**](https://trypear.ai/) | VS Codeフォークを備えたオープンソースAIコードエディタ |
+| [**Zed AI**](https://zed.dev/) | ビルトインAIアシスタントを備えた高性能エディタ |
 
 ### エージェント型コーディング環境
 
@@ -101,6 +103,7 @@
 |------|-------------|
 | [**Devin**](https://www.cognition.ai/devin) | Cognitionによる自律型AIソフトウェアエンジニア |
 | [**OpenHands**](https://github.com/All-Hands-AI/OpenHands) | オープンソースの自律型AIソフトウェア開発者 |
+| [**Replit Agent**](https://replit.com/ai) | ブラウザ上でのフルスタックアプリ開発のための自律型エージェント |
 | [**Goose**](https://block.github.io/goose/) | BlockによるMCPサポート付きオープンソースコーディングアシスタント |
 | [**OpenManus**](https://github.com/mannaandpoem/OpenManus) | AI支援ドキュメント作成のためのオープンソースフレームワーク |
 | [**Vibe Compiler (vibec)**](https://github.com/Strawberry-Computer/vibe-compiler) | プロンプトをコードに変換する自己コンパイルツール |
@@ -112,10 +115,10 @@ AI機能を拡張する[Model Context Protocol](https://modelcontextprotocol.io/
 
 | カテゴリ | サーバー | 説明 |
 |----------|---------|-------------|
-| **Git操作** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube) | リポジトリの読み取り/検索/操作 |
-| **データベース** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp) | クエリ、マイグレーション、セマンティック検索 |
+| **Git操作** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube), [GitHub](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | リポジトリの読み取り/検索/操作、PR/issue管理 |
+| **データベース** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp), [Postgres](https://github.com/modelcontextprotocol/servers/tree/main/src/postgres) | クエリ、マイグレーション、セマンティック検索 |
 | **セキュリティ** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | コードスキャン、エラートラッキング |
-| **ブラウザ** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | Webスクレイピング、コンテンツ取得 |
+| **ブラウザ** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch), [Puppeteer](https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer) | Webスクレイピング、コンテンツ取得、ブラウザ自動化 |
 | **ファイルシステム** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 安全な読み取り/書き込み操作 |
 
 📚 包括的なリストは[awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers)を参照してください。
@@ -127,6 +130,7 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 | ツール | 説明 |
 |------|-------------|
 | [**Replit**](https://replit.com/) | Ghostwriter AIを備えたブラウザベースIDE |
+| [**GitHub Spark**](https://githubnext.com/projects/github-spark) | GitHubによる自然言語アプリ作成プラットフォーム |
 | [**v0**](https://v0.dev/) | VercelのUI/React生成AI |
 | [**Bolt.new**](https://bolt.new/) | StackBlitzによる自然言語アプリ構築 |
 | [**Lovable**](https://lovable.dev/) | Supabaseを使用したフルスタックアプリ生成 |

@@ -92,6 +92,8 @@ AI-powered code completion and assistance integrated into your development envir
 | [**Cline**](https://github.com/cline/cline) | Open-source AI assistant with file/terminal/browser automation |
 | [**Roo Code**](https://github.com/RooVetGit/Roo-Code) | AI assistant supporting multiple roles (architect, QA, PM) |
 | [**Google Antigravity**](https://antigravity.google) | Agent-first IDE with multi-agent orchestration (Gemini 3 Pro) |
+| [**PearAI**](https://trypear.ai/) | Open-source AI code editor with fork of VS Code |
+| [**Zed AI**](https://zed.dev/) | High-performance editor with built-in AI assistant |
 
 ### Agentic Coding Environments
 
@@ -101,6 +103,7 @@ Autonomous AI systems that handle end-to-end development tasks.
 |------|-------------|
 | [**Devin**](https://www.cognition.ai/devin) | Autonomous AI software engineer by Cognition |
 | [**OpenHands**](https://github.com/All-Hands-AI/OpenHands) | Open-source autonomous AI software developer |
+| [**Replit Agent**](https://replit.com/ai) | Autonomous agent for full-stack app development in browser |
 | [**Goose**](https://block.github.io/goose/) | Open-source coding assistant by Block with MCP support |
 | [**OpenManus**](https://github.com/mannaandpoem/OpenManus) | Open-source framework for AI-assisted document creation |
 | [**Vibe Compiler (vibec)**](https://github.com/Strawberry-Computer/vibe-compiler) | Self-compiling tool that transforms prompts into code |
@@ -112,10 +115,10 @@ Autonomous AI systems that handle end-to-end development tasks.
 
 | Category | Servers | Description |
 |----------|---------|-------------|
-| **Git Operations** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube) | Repository read/search/manipulation |
-| **Databases** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp) | Query, migrations, semantic search |
+| **Git Operations** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube), [GitHub](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | Repository read/search/manipulation, PR/issue management |
+| **Databases** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp), [Postgres](https://github.com/modelcontextprotocol/servers/tree/main/src/postgres) | Query, migrations, semantic search |
 | **Security** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | Code scanning, error tracking |
-| **Browser** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | Web scraping, content fetching |
+| **Browser** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch), [Puppeteer](https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer) | Web scraping, content fetching, browser automation |
 | **File System** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | Secure read/write operations |
 
 📚 See [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers) for a comprehensive list.
@@ -127,6 +130,7 @@ Browser-based and cloud platforms for AI-assisted development.
 | Tool | Description |
 |------|-------------|
 | [**Replit**](https://replit.com/) | Browser-based IDE with Ghostwriter AI |
+| [**GitHub Spark**](https://githubnext.com/projects/github-spark) | Natural language app creation platform by GitHub |
 | [**v0**](https://v0.dev/) | Vercel's AI for UI/React generation |
 | [**Bolt.new**](https://bolt.new/) | Natural language app building by StackBlitz |
 | [**Lovable**](https://lovable.dev/) | Full-stack app generation with Supabase |
