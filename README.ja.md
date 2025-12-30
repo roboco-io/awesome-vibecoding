@@ -201,6 +201,7 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 - [12 Best Practices for AI Coding (Questera)](https://www.questera.ai/blogs/12-best-practices-to-use-ai-in-coding-in-2025) — 2025年のベストプラクティス
 - [Secure Vibe Coding Guide (CSA)](https://cloudsecurityalliance.org/blog/2025/04/09/secure-vibe-coding-guide) — セキュリティの考慮事項
 - [Here's how I use LLMs to help me write code (Simon Willison)](https://simonwillison.net/2025/Mar/11/using-llms-for-code/) — 実践的な統合のヒント
+- [Agentic Coding (Armin Ronacher)](https://lucumr.pocoo.org/2025/6/12/agentic-coding/) — AI駆動型自律開発アプローチ
 
 ### 動画 & チュートリアル
 
