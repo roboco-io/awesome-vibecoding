@@ -92,6 +92,9 @@
 | [**Cline**](https://github.com/cline/cline) | 파일/터미널/브라우저 자동화를 지원하는 오픈소스 AI 어시스턴트 |
 | [**Roo Code**](https://github.com/RooVetGit/Roo-Code) | 여러 역할(설계자, QA, PM)을 지원하는 AI 어시스턴트 |
 | [**Google Antigravity**](https://antigravity.google) | 멀티 에이전트 오케스트레이션을 갖춘 에이전트 기반 IDE (Gemini 3 Pro) |
+| [**opencode**](https://github.com/opencode-ai/opencode) | 다중 프로바이더 및 MCP를 지원하는 오픈소스 TUI 코딩 에이전트 |
+| [**Aider**](https://github.com/paul-gauthier/aider) | git 통합을 갖춘 터미널 AI 페어 프로그래밍 |
+| [**Zed AI**](https://zed.dev/) | 네이티브 AI 어시스턴트를 통합한 고성능 편집기 |
 
 ### 에이전트 기반 코딩 환경
 

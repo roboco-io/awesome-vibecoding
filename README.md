@@ -92,6 +92,9 @@ AI-powered code completion and assistance integrated into your development envir
 | [**Cline**](https://github.com/cline/cline) | Open-source AI assistant with file/terminal/browser automation |
 | [**Roo Code**](https://github.com/RooVetGit/Roo-Code) | AI assistant supporting multiple roles (architect, QA, PM) |
 | [**Google Antigravity**](https://antigravity.google) | Agent-first IDE with multi-agent orchestration (Gemini 3 Pro) |
+| [**opencode**](https://github.com/opencode-ai/opencode) | Open-source TUI coding agent with multi-provider and MCP support |
+| [**Aider**](https://github.com/paul-gauthier/aider) | AI pair programming in terminal with git integration |
+| [**Zed AI**](https://zed.dev/) | High-performance editor with native AI assistant integration |
 
 ### Agentic Coding Environments
 

@@ -92,6 +92,9 @@
 | [**Cline**](https://github.com/cline/cline) | ファイル/ターミナル/ブラウザ自動化を備えたオープンソースAIアシスタント |
 | [**Roo Code**](https://github.com/RooVetGit/Roo-Code) | 複数の役割（アーキテクト、QA、PM）をサポートするAIアシスタント |
 | [**Google Antigravity**](https://antigravity.google) | マルチエージェントオーケストレーションを備えたエージェント型IDE（Gemini 3 Pro） |
+| [**opencode**](https://github.com/opencode-ai/opencode) | マルチプロバイダーとMCPをサポートするオープンソースTUIコーディングエージェント |
+| [**Aider**](https://github.com/paul-gauthier/aider) | git統合を備えたターミナルAIペアプログラミング |
+| [**Zed AI**](https://zed.dev/) | ネイティブAIアシスタントを統合した高性能エディタ |
 
 ### エージェント型コーディング環境
 
