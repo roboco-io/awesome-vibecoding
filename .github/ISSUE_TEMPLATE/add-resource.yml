@@ -1,0 +1,51 @@
+name: Add Resource
+description: Request to add a new tool, project, guide, or video to the list
+title: "[Add]: "
+labels: ["addition"]
+body:
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: Which section should this resource be added to?
+      options:
+        - Projects/Platforms/Tools/Services
+        - Guides/Manual/Best Practices/Tutorials/Blogs
+        - YouTube
+    validations:
+      required: true
+
+  - type: input
+    id: name
+    attributes:
+      label: Resource Name
+      description: Name of the tool, project, guide, or video
+      placeholder: e.g., Cursor, Claude Code
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      description: Link to the resource
+      placeholder: https://...
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Brief description of the resource (1-3 sentences in English)
+      placeholder: Describe what this resource is and why it's relevant to Vibe Coding
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Any other information that might be helpful
+    validations:
+      required: false
