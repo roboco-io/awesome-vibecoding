@@ -95,6 +95,11 @@
 | [**opencode**](https://github.com/opencode-ai/opencode) | 다중 프로바이더 및 MCP를 지원하는 오픈소스 TUI 코딩 에이전트 |
 | [**Aider**](https://github.com/paul-gauthier/aider) | git 통합을 갖춘 터미널 AI 페어 프로그래밍 |
 | [**Zed AI**](https://zed.dev/) | 네이티브 AI 어시스턴트를 통합한 고성능 편집기 |
+| [**Void**](https://github.com/voideditor/void) | 자율 AI 코딩 기능을 갖춘 오픈소스 VS Code 포크 |
+| [**Melty**](https://github.com/meltylabs/melty) | 대화형 인터페이스를 갖춘 채팅 우선 코드 편집기 |
+| [**CodeGPT**](https://codegpt.co) | VS Code 및 IDE용 다중 LLM 지원 AI 코딩 어시스턴트 |
+| [**Wingman AI**](https://github.com/RussellCanfield/wingman-ai-vscode-extension) | Ollama, HuggingFace, OpenAI, Anthropic을 지원하는 오픈소스 VSCode 확장 |
+| [**DeepSeek CLI**](https://github.com/holasoymalva/deepseek-cli) | DeepSeek Coder 모델 기반 터미널 AI 코딩 어시스턴트 |
 
 ### 에이전트 기반 코딩 환경
 
@@ -108,6 +113,8 @@
 | [**OpenManus**](https://github.com/mannaandpoem/OpenManus) | AI 보조 문서 작성을 위한 오픈소스 프레임워크 |
 | [**Vibe Compiler (vibec)**](https://github.com/Strawberry-Computer/vibe-compiler) | 프롬프트를 코드로 변환하는 자체 컴파일 도구 |
 | [**AlphaCode**](https://alphacode.deepmind.com/) | DeepMind의 경쟁 프로그래밍 AI |
+| [**Cherry Studio**](https://github.com/CherryHQ/cherry-studio) | 자율 코딩 및 300개 이상의 어시스턴트를 갖춘 AI Agent 데스크탑 |
+| [**OpenSpec**](https://github.com/Fission-AI/OpenSpec) | AI 코딩 어시스턴트를 위한 스펙 기반 개발 프레임워크 |
 
 ### MCP 서버 & 도구
 
@@ -116,10 +123,13 @@ AI 기능을 확장하는 [Model Context Protocol](https://modelcontextprotocol.
 | 카테고리 | 서버 | 설명 |
 |----------|---------|-------------|
 | **Git 작업** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube) | 저장소 읽기/검색/조작 |
-| **데이터베이스** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp) | 쿼리, 마이그레이션, 시맨틱 검색 |
+| **데이터베이스** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp), [Excel](https://github.com/haris-musa/excel-mcp-server) | 쿼리, 마이그레이션, 시맨틱 검색, 스프레드시트 작업 |
 | **보안** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | 코드 스캐닝, 오류 추적 |
-| **브라우저** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | 웹 스크래핑, 콘텐츠 가져오기 |
+| **브라우저 & 자동화** | [Chrome MCP](https://github.com/hangwin/mcp-chrome), [Playwright MCP](https://github.com/executeautomation/mcp-playwright), [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | 브라우저 자동화, 테스팅, 웹 스크래핑, 콘텐츠 가져오기 |
+| **모바일** | [Mobile MCP](https://github.com/mobile-next/mobile-mcp) | iOS/Android 자동화 및 스크래핑 (에뮬레이터, 시뮬레이터, 실제 디바이스) |
+| **개발** | [Xcode Build MCP](https://github.com/cameroncooke/XcodeBuildMCP), [Spec Workflow MCP](https://github.com/Pimzino/spec-workflow-mcp) | Xcode 통합, 실시간 대시보드를 갖춘 스펙 기반 개발 |
 | **파일 시스템** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 안전한 읽기/쓰기 작업 |
+| **MCP 클라이언트** | [5ire](https://github.com/nanbingxyz/5ire) | MCP 지원 및 로컬 지식베이스를 갖춘 크로스 플랫폼 데스크탑 AI 어시스턴트 |
 
 📚 전체 목록은 [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers)를 참조하세요.
 
@@ -201,6 +211,7 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 
 - [What is Vibe Coding? (IBM)](https://www.ibm.com/think/topics/vibe-coding) — 기업 관점
 - [Vibe Coding Manual (Roboco)](https://roboco.io/posts/vibe-coding-manual/) — 템플릿이 포함된 포괄적 가이드
+- [Context Engineering Intro (coleam00)](https://github.com/coleam00/context-engineering-intro) — Claude Code를 사용하여 AI 코딩 어시스턴트를 효과적으로 작동시키는 방법
 - [12 Best Practices for AI Coding (Questera)](https://www.questera.ai/blogs/12-best-practices-to-use-ai-in-coding-in-2025) — 2025년 모범 사례
 - [Secure Vibe Coding Guide (CSA)](https://cloudsecurityalliance.org/blog/2025/04/09/secure-vibe-coding-guide) — 보안 고려사항
 - [Here's how I use LLMs to help me write code (Simon Willison)](https://simonwillison.net/2025/Mar/11/using-llms-for-code/) — 실용적인 통합 팁
@@ -248,8 +259,9 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 ### 스타터 킷
 
 - [vibe-coding-prompt-template](https://github.com/KhazP/vibe-coding-prompt-template) — 포괄적인 프롬프트 템플릿
-- [awesome-vibe-coding](https://github.com/filipecalegario/awesome-vibe-coding) — 또 다른 큐레이션 리스트
+- [awesome-vibe-coding](https://github.com/filipecalegario/awesome-vibe-coding) — 또 다른 큐레이션 리스트 (2.8k stars)
 - [vibeworkflow.app](https://vibeworkflow.app) — Vibe coding을 위한 워크플로우 자동화
+- [Dev Janitor](https://github.com/cocojojo5213/Dev-Janitor) — AI 코딩 어시스턴트 및 의존성 관리를 위한 크로스 플랫폼 데스크탑 툴킷
 
 ---
 
