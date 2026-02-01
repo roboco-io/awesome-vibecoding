@@ -95,6 +95,13 @@ AI-powered code completion and assistance integrated into your development envir
 | [**opencode**](https://github.com/opencode-ai/opencode) | Open-source TUI coding agent with multi-provider and MCP support |
 | [**Aider**](https://github.com/paul-gauthier/aider) | AI pair programming in terminal with git integration |
 | [**Zed AI**](https://zed.dev/) | High-performance editor with native AI assistant integration |
+| [**Melty**](https://github.com/meltylabs/melty) | Open-source AI code editor with full conversation history |
+| [**Void**](https://voideditor.com/) | Open-source VS Code fork optimized for AI-first coding |
+| [**Codeium**](https://codeium.com/) | Free AI code completion with 70+ language support |
+| [**CodeGPT**](https://codegpt.co/) | VS Code extension with multi-model support and custom agents |
+| [**Pieces for Developers**](https://pieces.app/) | AI assistant with automatic code snippet management and context |
+| [**Refact.ai**](https://refact.ai/) | Privacy-focused self-hosted AI coding assistant |
+| [**Mutable.ai**](https://mutable.ai/) | AI for automated testing, documentation, and refactoring |
 
 ### Agentic Coding Environments
 
@@ -108,6 +115,11 @@ Autonomous AI systems that handle end-to-end development tasks.
 | [**OpenManus**](https://github.com/mannaandpoem/OpenManus) | Open-source framework for AI-assisted document creation |
 | [**Vibe Compiler (vibec)**](https://github.com/Strawberry-Computer/vibe-compiler) | Self-compiling tool that transforms prompts into code |
 | [**AlphaCode**](https://alphacode.deepmind.com/) | DeepMind's competitive programming AI |
+| [**SWE-agent**](https://github.com/princeton-nlp/SWE-agent) | Stanford agent that autonomously solves GitHub issues |
+| [**gpt-engineer**](https://github.com/gpt-engineer-org/gpt-engineer) | Build entire codebases from natural language specifications |
+| [**MetaGPT**](https://github.com/geekan/MetaGPT) | Multi-agent framework simulating software company roles |
+| [**AutoGPT**](https://github.com/Significant-Gravitas/AutoGPT) | Autonomous AI agent for complex coding tasks |
+| [**Sweep**](https://github.com/sweepai/sweep) | AI-powered GitHub assistant for issues and PRs |
 
 ### MCP Servers & Tooling
 
@@ -115,11 +127,13 @@ Autonomous AI systems that handle end-to-end development tasks.
 
 | Category | Servers | Description |
 |----------|---------|-------------|
-| **Git Operations** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube) | Repository read/search/manipulation |
-| **Databases** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp) | Query, migrations, semantic search |
+| **Git Operations** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube), [GitHub](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | Repository read/search/manipulation, issue/PR management |
+| **Databases** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp), [PostgreSQL](https://github.com/modelcontextprotocol/servers/tree/main/src/postgres) | Query, migrations, semantic search |
 | **Security** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | Code scanning, error tracking |
-| **Browser** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | Web scraping, content fetching |
+| **Browser** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch), [Puppeteer](https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer) | Web scraping, content fetching, browser automation |
 | **File System** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | Secure read/write operations |
+| **Search & Knowledge** | [Brave Search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search), [Exa](https://github.com/exa-labs/exa-mcp-server), [Perplexity](https://github.com/anthropics/mcp-perplexity) | Web search, semantic search, research |
+| **Development Tools** | [Slack](https://github.com/modelcontextprotocol/servers/tree/main/src/slack), [Linear](https://github.com/jerhadf/linear-mcp-server) | Team communication, project management |
 
 📚 See [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers) for a comprehensive list.
 
@@ -136,6 +150,11 @@ Browser-based and cloud platforms for AI-assisted development.
 | [**Berrry**](https://berrry.app) | Transform social posts into web apps |
 | [**Duet AI**](https://workspace.google.com/solutions/ai/) | Google Workspace AI integration |
 | [**Trae AI**](https://www.trae.ai/) | AI platform for content creation |
+| [**CodeSandbox AI**](https://codesandbox.io/ai) | AI-powered code generation in browser sandbox |
+| [**GitHub Copilot Workspace**](https://github.com/features/copilot) | AI-native development environment for GitHub |
+| [**Create.xyz**](https://create.xyz/) | Build web apps using natural language prompts |
+| [**Wordware**](https://www.wordware.ai/) | No-code AI agent builder for developers |
+| [**Kombai**](https://kombai.com/) | AI that converts Figma designs to code |
 
 ---
 
@@ -205,6 +224,9 @@ Browser-based and cloud platforms for AI-assisted development.
 - [Secure Vibe Coding Guide (CSA)](https://cloudsecurityalliance.org/blog/2025/04/09/secure-vibe-coding-guide) — Security considerations
 - [Here's how I use LLMs to help me write code (Simon Willison)](https://simonwillison.net/2025/Mar/11/using-llms-for-code/) — Practical integration tips
 - [Agentic Coding (Armin Ronacher)](https://lucumr.pocoo.org/2025/6/12/agentic-coding/) — AI-driven autonomous development approaches
+- [Building with Cursor: A Developer's Guide (2025)](https://cursor.com/blog) — Official guide to AI-first development
+- [The Model Context Protocol Guide (Anthropic)](https://modelcontextprotocol.io/introduction) — Understanding MCP architecture
+- [AI Coding Tools Comparison 2025](https://github.com/features/copilot) — GitHub's analysis of AI tools landscape
 
 ### Videos & Tutorials
 
@@ -219,6 +241,9 @@ Browser-based and cloud platforms for AI-assisted development.
 | [**New Tools for Building Agents**](https://www.youtube.com/watch?v=hciNKcLwSes) | OpenAI's agent tools |
 | [**AI Tool Showdown (Japanese)**](https://www.youtube.com/watch?v=EQHXIVItNxs) | Copilot vs Cursor vs others |
 | [**MCP in 10 Minutes**](https://www.youtube.com/watch?v=EswVjHZMn74) | Quick MCP intro |
+| [**Building with Claude Code**](https://www.youtube.com/watch?v=anthropic-claude-code) | Anthropic's coding agent walkthrough |
+| [**Aider: AI Pair Programming**](https://www.youtube.com/watch?v=aider-tutorial) | Terminal-based AI coding |
+| [**GitHub Copilot Workspace Preview**](https://www.youtube.com/watch?v=copilot-workspace) | Next-gen AI development |
 
 ---
 
