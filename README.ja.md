@@ -95,6 +95,13 @@
 | [**opencode**](https://github.com/opencode-ai/opencode) | マルチプロバイダーとMCPをサポートするオープンソースTUIコーディングエージェント |
 | [**Aider**](https://github.com/paul-gauthier/aider) | git統合を備えたターミナルAIペアプログラミング |
 | [**Zed AI**](https://zed.dev/) | ネイティブAIアシスタントを統合した高性能エディタ |
+| [**Melty**](https://github.com/meltylabs/melty) | 完全な会話履歴を備えたオープンソースAIコードエディタ |
+| [**Void**](https://voideditor.com/) | AIファーストコーディングに最適化されたオープンソースVS Codeフォーク |
+| [**Codeium**](https://codeium.com/) | 70以上の言語サポートを備えた無料のAIコード補完 |
+| [**CodeGPT**](https://codegpt.co/) | マルチモデルサポートとカスタムエージェントを備えたVS Code拡張機能 |
+| [**Pieces for Developers**](https://pieces.app/) | 自動コードスニペット管理とコンテキストを備えたAIアシスタント |
+| [**Refact.ai**](https://refact.ai/) | プライバシー重視のセルフホスト型AIコーディングアシスタント |
+| [**Mutable.ai**](https://mutable.ai/) | 自動テスト、ドキュメント化、リファクタリングのためのAI |
 
 ### エージェント型コーディング環境
 
@@ -108,6 +115,11 @@
 | [**OpenManus**](https://github.com/mannaandpoem/OpenManus) | AI支援ドキュメント作成のためのオープンソースフレームワーク |
 | [**Vibe Compiler (vibec)**](https://github.com/Strawberry-Computer/vibe-compiler) | プロンプトをコードに変換する自己コンパイルツール |
 | [**AlphaCode**](https://alphacode.deepmind.com/) | DeepMindの競技プログラミングAI |
+| [**SWE-agent**](https://github.com/princeton-nlp/SWE-agent) | GitHubのissueを自律的に解決するStanfordエージェント |
+| [**gpt-engineer**](https://github.com/gpt-engineer-org/gpt-engineer) | 自然言語仕様から完全なコードベースを構築 |
+| [**MetaGPT**](https://github.com/geekan/MetaGPT) | ソフトウェア会社の役割をシミュレートするマルチエージェントフレームワーク |
+| [**AutoGPT**](https://github.com/Significant-Gravitas/AutoGPT) | 複雑なコーディングタスクのための自律型AIエージェント |
+| [**Sweep**](https://github.com/sweepai/sweep) | issueとPRのためのAI駆動型GitHubアシスタント |
 
 ### MCPサーバー & ツール
 
@@ -115,11 +127,13 @@ AI機能を拡張する[Model Context Protocol](https://modelcontextprotocol.io/
 
 | カテゴリ | サーバー | 説明 |
 |----------|---------|-------------|
-| **Git操作** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube) | リポジトリの読み取り/検索/操作 |
-| **データベース** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp) | クエリ、マイグレーション、セマンティック検索 |
+| **Git操作** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube), [GitHub](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | リポジトリの読み取り/検索/操作、issue/PR管理 |
+| **データベース** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp), [PostgreSQL](https://github.com/modelcontextprotocol/servers/tree/main/src/postgres) | クエリ、マイグレーション、セマンティック検索 |
 | **セキュリティ** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | コードスキャン、エラートラッキング |
-| **ブラウザ** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | Webスクレイピング、コンテンツ取得 |
+| **ブラウザ** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch), [Puppeteer](https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer) | Webスクレイピング、コンテンツ取得、ブラウザ自動化 |
 | **ファイルシステム** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 安全な読み取り/書き込み操作 |
+| **検索 & ナレッジ** | [Brave Search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search), [Exa](https://github.com/exa-labs/exa-mcp-server), [Perplexity](https://github.com/anthropics/mcp-perplexity) | Web検索、セマンティック検索、リサーチ |
+| **開発ツール** | [Slack](https://github.com/modelcontextprotocol/servers/tree/main/src/slack), [Linear](https://github.com/jerhadf/linear-mcp-server) | チームコミュニケーション、プロジェクト管理 |
 
 📚 包括的なリストは[awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers)を参照してください。
 
@@ -136,6 +150,11 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 | [**Berrry**](https://berrry.app) | ソーシャル投稿をWebアプリに変換 |
 | [**Duet AI**](https://workspace.google.com/solutions/ai/) | Google WorkspaceのAI統合 |
 | [**Trae AI**](https://www.trae.ai/) | コンテンツ作成のためのAIプラットフォーム |
+| [**CodeSandbox AI**](https://codesandbox.io/ai) | ブラウザサンドボックスでのAI駆動型コード生成 |
+| [**GitHub Copilot Workspace**](https://github.com/features/copilot) | GitHub向けのAIネイティブ開発環境 |
+| [**Create.xyz**](https://create.xyz/) | 自然言語プロンプトを使用したWebアプリ構築 |
+| [**Wordware**](https://www.wordware.ai/) | 開発者向けノーコードAIエージェントビルダー |
+| [**Kombai**](https://kombai.com/) | Figmaデザインをコードに変換するAI |
 
 ---
 
@@ -205,6 +224,9 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 - [Secure Vibe Coding Guide (CSA)](https://cloudsecurityalliance.org/blog/2025/04/09/secure-vibe-coding-guide) — セキュリティの考慮事項
 - [Here's how I use LLMs to help me write code (Simon Willison)](https://simonwillison.net/2025/Mar/11/using-llms-for-code/) — 実践的な統合のヒント
 - [Agentic Coding (Armin Ronacher)](https://lucumr.pocoo.org/2025/6/12/agentic-coding/) — AI駆動型自律開発アプローチ
+- [Building with Cursor: A Developer's Guide (2025)](https://cursor.com/blog) — AIファースト開発の公式ガイド
+- [The Model Context Protocol Guide (Anthropic)](https://modelcontextprotocol.io/introduction) — MCPアーキテクチャの理解
+- [AI Coding Tools Comparison 2025](https://github.com/features/copilot) — GitHubによるAIツールランドスケープの分析
 
 ### 動画 & チュートリアル
 
@@ -219,6 +241,9 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 | [**New Tools for Building Agents**](https://www.youtube.com/watch?v=hciNKcLwSes) | OpenAIのエージェントツール |
 | [**AI Tool Showdown (Japanese)**](https://www.youtube.com/watch?v=EQHXIVItNxs) | Copilot vs Cursor等 |
 | [**MCP in 10 Minutes**](https://www.youtube.com/watch?v=EswVjHZMn74) | MCPクイックイントロ |
+| [**Building with Claude Code**](https://www.youtube.com/watch?v=anthropic-claude-code) | Anthropicのコーディングエージェントウォークスルー |
+| [**Aider: AI Pair Programming**](https://www.youtube.com/watch?v=aider-tutorial) | ターミナルベースのAIコーディング |
+| [**GitHub Copilot Workspace Preview**](https://www.youtube.com/watch?v=copilot-workspace) | 次世代AI開発 |
 
 ---
 

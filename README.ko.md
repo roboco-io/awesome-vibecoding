@@ -95,6 +95,13 @@
 | [**opencode**](https://github.com/opencode-ai/opencode) | 다중 프로바이더 및 MCP를 지원하는 오픈소스 TUI 코딩 에이전트 |
 | [**Aider**](https://github.com/paul-gauthier/aider) | git 통합을 갖춘 터미널 AI 페어 프로그래밍 |
 | [**Zed AI**](https://zed.dev/) | 네이티브 AI 어시스턴트를 통합한 고성능 편집기 |
+| [**Melty**](https://github.com/meltylabs/melty) | 전체 대화 기록을 제공하는 오픈소스 AI 코드 편집기 |
+| [**Void**](https://voideditor.com/) | AI 우선 코딩에 최적화된 오픈소스 VS Code 포크 |
+| [**Codeium**](https://codeium.com/) | 70개 이상 언어 지원하는 무료 AI 코드 완성 |
+| [**CodeGPT**](https://codegpt.co/) | 다중 모델 지원 및 커스텀 에이전트를 갖춘 VS Code 확장 |
+| [**Pieces for Developers**](https://pieces.app/) | 자동 코드 스니펫 관리 및 컨텍스트를 갖춘 AI 어시스턴트 |
+| [**Refact.ai**](https://refact.ai/) | 프라이버시 중심 자체 호스팅 AI 코딩 어시스턴트 |
+| [**Mutable.ai**](https://mutable.ai/) | 자동 테스트, 문서화, 리팩토링을 위한 AI |
 
 ### 에이전트 기반 코딩 환경
 
@@ -108,6 +115,11 @@
 | [**OpenManus**](https://github.com/mannaandpoem/OpenManus) | AI 보조 문서 작성을 위한 오픈소스 프레임워크 |
 | [**Vibe Compiler (vibec)**](https://github.com/Strawberry-Computer/vibe-compiler) | 프롬프트를 코드로 변환하는 자체 컴파일 도구 |
 | [**AlphaCode**](https://alphacode.deepmind.com/) | DeepMind의 경쟁 프로그래밍 AI |
+| [**SWE-agent**](https://github.com/princeton-nlp/SWE-agent) | GitHub 이슈를 자율적으로 해결하는 Stanford 에이전트 |
+| [**gpt-engineer**](https://github.com/gpt-engineer-org/gpt-engineer) | 자연어 명세로부터 전체 코드베이스 구축 |
+| [**MetaGPT**](https://github.com/geekan/MetaGPT) | 소프트웨어 회사 역할을 시뮬레이션하는 멀티 에이전트 프레임워크 |
+| [**AutoGPT**](https://github.com/Significant-Gravitas/AutoGPT) | 복잡한 코딩 작업을 위한 자율 AI 에이전트 |
+| [**Sweep**](https://github.com/sweepai/sweep) | 이슈 및 PR을 위한 AI 기반 GitHub 어시스턴트 |
 
 ### MCP 서버 & 도구
 
@@ -115,11 +127,13 @@ AI 기능을 확장하는 [Model Context Protocol](https://modelcontextprotocol.
 
 | 카테고리 | 서버 | 설명 |
 |----------|---------|-------------|
-| **Git 작업** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube) | 저장소 읽기/검색/조작 |
-| **데이터베이스** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp) | 쿼리, 마이그레이션, 시맨틱 검색 |
+| **Git 작업** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube), [GitHub](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | 저장소 읽기/검색/조작, 이슈/PR 관리 |
+| **데이터베이스** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp), [PostgreSQL](https://github.com/modelcontextprotocol/servers/tree/main/src/postgres) | 쿼리, 마이그레이션, 시맨틱 검색 |
 | **보안** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | 코드 스캐닝, 오류 추적 |
-| **브라우저** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | 웹 스크래핑, 콘텐츠 가져오기 |
+| **브라우저** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch), [Puppeteer](https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer) | 웹 스크래핑, 콘텐츠 가져오기, 브라우저 자동화 |
 | **파일 시스템** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 안전한 읽기/쓰기 작업 |
+| **검색 & 지식** | [Brave Search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search), [Exa](https://github.com/exa-labs/exa-mcp-server), [Perplexity](https://github.com/anthropics/mcp-perplexity) | 웹 검색, 시맨틱 검색, 리서치 |
+| **개발 도구** | [Slack](https://github.com/modelcontextprotocol/servers/tree/main/src/slack), [Linear](https://github.com/jerhadf/linear-mcp-server) | 팀 커뮤니케이션, 프로젝트 관리 |
 
 📚 전체 목록은 [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers)를 참조하세요.
 
@@ -136,6 +150,11 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 | [**Berrry**](https://berrry.app) | 소셜 게시물을 웹 앱으로 변환 |
 | [**Duet AI**](https://workspace.google.com/solutions/ai/) | Google Workspace AI 통합 |
 | [**Trae AI**](https://www.trae.ai/) | 콘텐츠 제작을 위한 AI 플랫폼 |
+| [**CodeSandbox AI**](https://codesandbox.io/ai) | 브라우저 샌드박스에서 AI 기반 코드 생성 |
+| [**GitHub Copilot Workspace**](https://github.com/features/copilot) | GitHub을 위한 AI 네이티브 개발 환경 |
+| [**Create.xyz**](https://create.xyz/) | 자연어 프롬프트를 사용한 웹 앱 구축 |
+| [**Wordware**](https://www.wordware.ai/) | 개발자를 위한 노코드 AI 에이전트 빌더 |
+| [**Kombai**](https://kombai.com/) | Figma 디자인을 코드로 변환하는 AI |
 
 ---
 
@@ -205,6 +224,9 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 - [Secure Vibe Coding Guide (CSA)](https://cloudsecurityalliance.org/blog/2025/04/09/secure-vibe-coding-guide) — 보안 고려사항
 - [Here's how I use LLMs to help me write code (Simon Willison)](https://simonwillison.net/2025/Mar/11/using-llms-for-code/) — 실용적인 통합 팁
 - [Agentic Coding (Armin Ronacher)](https://lucumr.pocoo.org/2025/6/12/agentic-coding/) — AI 기반 자율 개발 접근법
+- [Building with Cursor: A Developer's Guide (2025)](https://cursor.com/blog) — AI 우선 개발에 대한 공식 가이드
+- [The Model Context Protocol Guide (Anthropic)](https://modelcontextprotocol.io/introduction) — MCP 아키텍처 이해하기
+- [AI Coding Tools Comparison 2025](https://github.com/features/copilot) — GitHub의 AI 도구 환경 분석
 
 ### 비디오 & 튜토리얼
 
@@ -219,6 +241,9 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 | [**New Tools for Building Agents**](https://www.youtube.com/watch?v=hciNKcLwSes) | OpenAI의 에이전트 도구 |
 | [**AI Tool Showdown (Japanese)**](https://www.youtube.com/watch?v=EQHXIVItNxs) | Copilot vs Cursor vs 기타 |
 | [**MCP in 10 Minutes**](https://www.youtube.com/watch?v=EswVjHZMn74) | MCP 빠른 소개 |
+| [**Building with Claude Code**](https://www.youtube.com/watch?v=anthropic-claude-code) | Anthropic의 코딩 에이전트 워크스루 |
+| [**Aider: AI Pair Programming**](https://www.youtube.com/watch?v=aider-tutorial) | 터미널 기반 AI 코딩 |
+| [**GitHub Copilot Workspace Preview**](https://www.youtube.com/watch?v=copilot-workspace) | 차세대 AI 개발 |
 
 ---
 
