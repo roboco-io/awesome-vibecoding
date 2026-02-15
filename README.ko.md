@@ -95,6 +95,10 @@
 | [**opencode**](https://github.com/opencode-ai/opencode) | 다중 프로바이더 및 MCP를 지원하는 오픈소스 TUI 코딩 에이전트 |
 | [**Aider**](https://github.com/paul-gauthier/aider) | git 통합을 갖춘 터미널 AI 페어 프로그래밍 |
 | [**Zed AI**](https://zed.dev/) | 네이티브 AI 어시스턴트를 통합한 고성능 편집기 |
+| [**Void**](https://github.com/voideditor/void) | 고급 AI 기능과 커서 기능을 갖춘 VS Code 포크 |
+| [**Melty**](https://github.com/meltylabs/melty) | AI 기반 개발 워크플로우를 갖춘 채팅 우선 코드 편집기 |
+| [**Sweep**](https://github.com/sweepai/sweep) | JetBrains IDE 전문 AI 코딩 어시스턴트 |
+| [**CopilotKit**](https://github.com/CopilotKit/CopilotKit) | 채팅 및 생성 UI를 갖춘 AI 코파일럿 구축 프레임워크 |
 
 ### 에이전트 기반 코딩 환경
 
@@ -108,6 +112,9 @@
 | [**OpenManus**](https://github.com/mannaandpoem/OpenManus) | AI 보조 문서 작성을 위한 오픈소스 프레임워크 |
 | [**Vibe Compiler (vibec)**](https://github.com/Strawberry-Computer/vibe-compiler) | 프롬프트를 코드로 변환하는 자체 컴파일 도구 |
 | [**AlphaCode**](https://alphacode.deepmind.com/) | DeepMind의 경쟁 프로그래밍 AI |
+| [**Devika**](https://github.com/stitionai/devika) | Devin의 대안인 최초의 오픈소스 에이전트 기반 소프트웨어 엔지니어 |
+| [**smol-ai developer**](https://github.com/smol-ai/developer) | 앱용 임베드 가능한 개발자 에이전트 라이브러리 |
+| [**E2B**](https://github.com/e2b-dev/e2b) | 엔터프라이즈급 AI 에이전트를 위한 안전한 클라우드 샌드박스 환경 |
 
 ### MCP 서버 & 도구
 
@@ -118,8 +125,10 @@ AI 기능을 확장하는 [Model Context Protocol](https://modelcontextprotocol.
 | **Git 작업** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube) | 저장소 읽기/검색/조작 |
 | **데이터베이스** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp) | 쿼리, 마이그레이션, 시맨틱 검색 |
 | **보안** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | 코드 스캐닝, 오류 추적 |
-| **브라우저** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | 웹 스크래핑, 콘텐츠 가져오기 |
+| **브라우저** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch), [Chrome MCP](https://github.com/hangwin/mcp-chrome) | 웹 스크래핑, 콘텐츠 가져오기, 브라우저 자동화 |
 | **파일 시스템** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 안전한 읽기/쓰기 작업 |
+| **Automation** | [Playwright MCP](https://github.com/executeautomation/mcp-playwright) | Claude Desktop/Cline/Cursor의 브라우저 및 API 자동화 |
+| **Clients** | [5ire](https://github.com/nanbingxyz/5ire) | 크로스 플랫폼 데스크톱 AI 어시스턴트 및 MCP 클라이언트 |
 
 📚 전체 목록은 [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers)를 참조하세요.
 
@@ -136,6 +145,7 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 | [**Berrry**](https://berrry.app) | 소셜 게시물을 웹 앱으로 변환 |
 | [**Duet AI**](https://workspace.google.com/solutions/ai/) | Google Workspace AI 통합 |
 | [**Trae AI**](https://www.trae.ai/) | 콘텐츠 제작을 위한 AI 플랫폼 |
+| [**Dyad**](https://github.com/dyad-sh/dyad) | 로컬 오픈소스 AI 앱 빌더 (v0/Lovable/Bolt 대안) |
 
 ---
 

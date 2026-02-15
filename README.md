@@ -95,6 +95,10 @@ AI-powered code completion and assistance integrated into your development envir
 | [**opencode**](https://github.com/opencode-ai/opencode) | Open-source TUI coding agent with multi-provider and MCP support |
 | [**Aider**](https://github.com/paul-gauthier/aider) | AI pair programming in terminal with git integration |
 | [**Zed AI**](https://zed.dev/) | High-performance editor with native AI assistant integration |
+| [**Void**](https://github.com/voideditor/void) | VS Code fork with advanced AI capabilities and cursor features |
+| [**Melty**](https://github.com/meltylabs/melty) | Chat-first code editor with AI-powered development workflow |
+| [**Sweep**](https://github.com/sweepai/sweep) | AI coding assistant specialized for JetBrains IDEs |
+| [**CopilotKit**](https://github.com/CopilotKit/CopilotKit) | Framework for building AI copilots with chat and generative UI |
 
 ### Agentic Coding Environments
 
@@ -108,6 +112,9 @@ Autonomous AI systems that handle end-to-end development tasks.
 | [**OpenManus**](https://github.com/mannaandpoem/OpenManus) | Open-source framework for AI-assisted document creation |
 | [**Vibe Compiler (vibec)**](https://github.com/Strawberry-Computer/vibe-compiler) | Self-compiling tool that transforms prompts into code |
 | [**AlphaCode**](https://alphacode.deepmind.com/) | DeepMind's competitive programming AI |
+| [**Devika**](https://github.com/stitionai/devika) | First open-source agentic software engineer alternative to Devin |
+| [**smol-ai developer**](https://github.com/smol-ai/developer) | Embeddable developer agent library for apps |
+| [**E2B**](https://github.com/e2b-dev/e2b) | Secure cloud sandbox environment for enterprise-grade AI agents |
 
 ### MCP Servers & Tooling
 
@@ -118,8 +125,10 @@ Autonomous AI systems that handle end-to-end development tasks.
 | **Git Operations** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube) | Repository read/search/manipulation |
 | **Databases** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp) | Query, migrations, semantic search |
 | **Security** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | Code scanning, error tracking |
-| **Browser** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | Web scraping, content fetching |
+| **Browser** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch), [Chrome MCP](https://github.com/hangwin/mcp-chrome) | Web scraping, content fetching, browser automation |
 | **File System** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | Secure read/write operations |
+| **Automation** | [Playwright MCP](https://github.com/executeautomation/mcp-playwright) | Browser and API automation in Claude Desktop/Cline/Cursor |
+| **Clients** | [5ire](https://github.com/nanbingxyz/5ire) | Cross-platform desktop AI assistant and MCP client |
 
 📚 See [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers) for a comprehensive list.
 
@@ -136,6 +145,7 @@ Browser-based and cloud platforms for AI-assisted development.
 | [**Berrry**](https://berrry.app) | Transform social posts into web apps |
 | [**Duet AI**](https://workspace.google.com/solutions/ai/) | Google Workspace AI integration |
 | [**Trae AI**](https://www.trae.ai/) | AI platform for content creation |
+| [**Dyad**](https://github.com/dyad-sh/dyad) | Local open-source AI app builder (v0/Lovable/Bolt alternative) |
 
 ---
 

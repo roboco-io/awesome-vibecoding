@@ -95,6 +95,10 @@
 | [**opencode**](https://github.com/opencode-ai/opencode) | マルチプロバイダーとMCPをサポートするオープンソースTUIコーディングエージェント |
 | [**Aider**](https://github.com/paul-gauthier/aider) | git統合を備えたターミナルAIペアプログラミング |
 | [**Zed AI**](https://zed.dev/) | ネイティブAIアシスタントを統合した高性能エディタ |
+| [**Void**](https://github.com/voideditor/void) | 高度なAI機能とカーソル機能を備えたVS Codeフォーク |
+| [**Melty**](https://github.com/meltylabs/melty) | AI駆動の開発ワークフローを備えたチャット優先のコードエディタ |
+| [**Sweep**](https://github.com/sweepai/sweep) | JetBrains IDE向けに特化したAIコーディングアシスタント |
+| [**CopilotKit**](https://github.com/CopilotKit/CopilotKit) | チャットとジェネレーティブUIを備えたAIコパイロットを構築するためのフレームワーク |
 
 ### エージェント型コーディング環境
 
@@ -108,6 +112,9 @@
 | [**OpenManus**](https://github.com/mannaandpoem/OpenManus) | AI支援ドキュメント作成のためのオープンソースフレームワーク |
 | [**Vibe Compiler (vibec)**](https://github.com/Strawberry-Computer/vibe-compiler) | プロンプトをコードに変換する自己コンパイルツール |
 | [**AlphaCode**](https://alphacode.deepmind.com/) | DeepMindの競技プログラミングAI |
+| [**Devika**](https://github.com/stitionai/devika) | Devinに代わる初のオープンソースエージェント型ソフトウェアエンジニア |
+| [**smol-ai developer**](https://github.com/smol-ai/developer) | アプリ用の組み込み可能な開発者エージェントライブラリ |
+| [**E2B**](https://github.com/e2b-dev/e2b) | エンタープライズグレードのAIエージェント向けセキュアなクラウドサンドボックス環境 |
 
 ### MCPサーバー & ツール
 
@@ -118,8 +125,10 @@ AI機能を拡張する[Model Context Protocol](https://modelcontextprotocol.io/
 | **Git操作** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube) | リポジトリの読み取り/検索/操作 |
 | **データベース** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp) | クエリ、マイグレーション、セマンティック検索 |
 | **セキュリティ** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | コードスキャン、エラートラッキング |
-| **ブラウザ** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | Webスクレイピング、コンテンツ取得 |
+| **ブラウザ** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch), [Chrome MCP](https://github.com/hangwin/mcp-chrome) | Webスクレイピング、コンテンツ取得、ブラウザ自動化 |
 | **ファイルシステム** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 安全な読み取り/書き込み操作 |
+| **自動化** | [Playwright MCP](https://github.com/executeautomation/mcp-playwright) | Claude Desktop/Cline/Cursorでのブラウザとapi自動化 |
+| **クライアント** | [5ire](https://github.com/nanbingxyz/5ire) | クロスプラットフォームのデスクトップAIアシスタントとMCPクライアント |
 
 📚 包括的なリストは[awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers)を参照してください。
 
@@ -136,6 +145,7 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 | [**Berrry**](https://berrry.app) | ソーシャル投稿をWebアプリに変換 |
 | [**Duet AI**](https://workspace.google.com/solutions/ai/) | Google WorkspaceのAI統合 |
 | [**Trae AI**](https://www.trae.ai/) | コンテンツ作成のためのAIプラットフォーム |
+| [**Dyad**](https://github.com/dyad-sh/dyad) | ローカルのオープンソースAIアプリビルダー（v0/Lovable/Boltの代替） |
 
 ---
 
