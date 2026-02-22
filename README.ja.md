@@ -95,6 +95,11 @@
 | [**opencode**](https://github.com/opencode-ai/opencode) | マルチプロバイダーとMCPをサポートするオープンソースTUIコーディングエージェント |
 | [**Aider**](https://github.com/paul-gauthier/aider) | git統合を備えたターミナルAIペアプログラミング |
 | [**Zed AI**](https://zed.dev/) | ネイティブAIアシスタントを統合した高性能エディタ |
+| [**Void**](https://voideditor.com) | ネイティブAIを搭載した任意のLLMに対応するオープンソースVS Codeフォーク |
+| [**Kiro**](https://kiro.dev) | 要件をコードとテストに変換するAWSのスペック駆動型AI IDE |
+| [**CodeGPT**](https://codegpt.co) | 30以上のLLMプロバイダーにアクセスできるVS Code AIコーディングアシスタント |
+| [**Codeium**](https://codeium.com) | 40以上のIDEで70以上の言語に対応する無料AIコード補完 |
+| [**Warp**](https://www.warp.dev) | 自然言語コマンドとエージェントモードを備えたAIネイティブターミナル |
 
 ### エージェント型コーディング環境
 
@@ -108,6 +113,11 @@
 | [**OpenManus**](https://github.com/mannaandpoem/OpenManus) | AI支援ドキュメント作成のためのオープンソースフレームワーク |
 | [**Vibe Compiler (vibec)**](https://github.com/Strawberry-Computer/vibe-compiler) | プロンプトをコードに変換する自己コンパイルツール |
 | [**AlphaCode**](https://alphacode.deepmind.com/) | DeepMindの競技プログラミングAI |
+| [**SWE-agent**](https://github.com/princeton-nlp/SWE-agent) | GitHubのIssueを自律的に解決するPrinceton NLPエージェント |
+| [**Plandex**](https://plandex.ai) | 複雑なマルチステップタスクに対応するオープンソースのターミナルAIコーディングエンジン |
+| [**Cosine**](https://cosine.sh) | 複雑なコードベースのタスクに対応する自律型AIソフトウェアエンジニア |
+| [**Factory**](https://factory.ai) | 自律的なコードレビュー、テスト、PR作成を行うAI Droids |
+| [**Amp**](https://ampcode.com) | Sourcegraphのターミナルファーストなエージェント型コーディングアシスタント |
 
 ### MCPサーバー & ツール
 
@@ -136,6 +146,8 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 | [**Berrry**](https://berrry.app) | ソーシャル投稿をWebアプリに変換 |
 | [**Duet AI**](https://workspace.google.com/solutions/ai/) | Google WorkspaceのAI統合 |
 | [**Trae AI**](https://www.trae.ai/) | コンテンツ作成のためのAIプラットフォーム |
+| [**Firebase Studio**](https://firebase.studio) | 旧Project IDXで、GeminiによるGoogleのAIファーストブラウザIDE |
+| [**Google AI Studio**](https://aistudio.google.com) | Geminiモデルでの構築とプロトタイピングに対応するブラウザIDE |
 
 ---
 

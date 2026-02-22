@@ -95,6 +95,11 @@ AI-powered code completion and assistance integrated into your development envir
 | [**opencode**](https://github.com/opencode-ai/opencode) | Open-source TUI coding agent with multi-provider and MCP support |
 | [**Aider**](https://github.com/paul-gauthier/aider) | AI pair programming in terminal with git integration |
 | [**Zed AI**](https://zed.dev/) | High-performance editor with native AI assistant integration |
+| [**Void**](https://voideditor.com) | Open-source VS Code fork with native AI; supports any LLM |
+| [**Kiro**](https://kiro.dev) | AWS spec-driven AI IDE turning requirements into code and tests |
+| [**CodeGPT**](https://codegpt.co) | VS Code AI coding assistant with access to 30+ LLM providers |
+| [**Codeium**](https://codeium.com) | Free AI code completion for 70+ languages across 40+ IDEs |
+| [**Warp**](https://www.warp.dev) | AI-native terminal with natural language commands and agent mode |
 
 ### Agentic Coding Environments
 
@@ -108,6 +113,11 @@ Autonomous AI systems that handle end-to-end development tasks.
 | [**OpenManus**](https://github.com/mannaandpoem/OpenManus) | Open-source framework for AI-assisted document creation |
 | [**Vibe Compiler (vibec)**](https://github.com/Strawberry-Computer/vibe-compiler) | Self-compiling tool that transforms prompts into code |
 | [**AlphaCode**](https://alphacode.deepmind.com/) | DeepMind's competitive programming AI |
+| [**SWE-agent**](https://github.com/princeton-nlp/SWE-agent) | Princeton NLP agent that autonomously resolves GitHub issues |
+| [**Plandex**](https://plandex.ai) | Open-source terminal AI coding engine for complex multi-step tasks |
+| [**Cosine**](https://cosine.sh) | Autonomous AI software engineer for complex codebase tasks |
+| [**Factory**](https://factory.ai) | AI Droids for autonomous code review, testing, and PR creation |
+| [**Amp**](https://ampcode.com) | Sourcegraph's terminal-first agentic coding assistant |
 
 ### MCP Servers & Tooling
 
@@ -136,6 +146,8 @@ Browser-based and cloud platforms for AI-assisted development.
 | [**Berrry**](https://berrry.app) | Transform social posts into web apps |
 | [**Duet AI**](https://workspace.google.com/solutions/ai/) | Google Workspace AI integration |
 | [**Trae AI**](https://www.trae.ai/) | AI platform for content creation |
+| [**Firebase Studio**](https://firebase.studio) | Google's AI-first browser IDE with Gemini, formerly Project IDX |
+| [**Google AI Studio**](https://aistudio.google.com) | Browser IDE for building and prototyping with Gemini models |
 
 ---
 

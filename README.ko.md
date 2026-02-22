@@ -95,6 +95,11 @@
 | [**opencode**](https://github.com/opencode-ai/opencode) | 다중 프로바이더 및 MCP를 지원하는 오픈소스 TUI 코딩 에이전트 |
 | [**Aider**](https://github.com/paul-gauthier/aider) | git 통합을 갖춘 터미널 AI 페어 프로그래밍 |
 | [**Zed AI**](https://zed.dev/) | 네이티브 AI 어시스턴트를 통합한 고성능 편집기 |
+| [**Void**](https://voideditor.com) | 네이티브 AI를 갖춘 오픈소스 VS Code 포크; 모든 LLM 지원 |
+| [**Kiro**](https://kiro.dev) | 요구사항을 코드와 테스트로 변환하는 AWS 스펙 기반 AI IDE |
+| [**CodeGPT**](https://codegpt.co) | 30개 이상의 LLM 프로바이더를 지원하는 VS Code AI 코딩 어시스턴트 |
+| [**Codeium**](https://codeium.com) | 40개 이상의 IDE에서 70개 이상의 언어를 지원하는 무료 AI 코드 완성 |
+| [**Warp**](https://www.warp.dev) | 자연어 명령과 에이전트 모드를 갖춘 AI 네이티브 터미널 |
 
 ### 에이전트 기반 코딩 환경
 
@@ -108,6 +113,11 @@
 | [**OpenManus**](https://github.com/mannaandpoem/OpenManus) | AI 보조 문서 작성을 위한 오픈소스 프레임워크 |
 | [**Vibe Compiler (vibec)**](https://github.com/Strawberry-Computer/vibe-compiler) | 프롬프트를 코드로 변환하는 자체 컴파일 도구 |
 | [**AlphaCode**](https://alphacode.deepmind.com/) | DeepMind의 경쟁 프로그래밍 AI |
+| [**SWE-agent**](https://github.com/princeton-nlp/SWE-agent) | GitHub 이슈를 자율적으로 해결하는 Princeton NLP 에이전트 |
+| [**Plandex**](https://plandex.ai) | 복잡한 멀티스텝 작업을 위한 오픈소스 터미널 AI 코딩 엔진 |
+| [**Cosine**](https://cosine.sh) | 복잡한 코드베이스 작업을 위한 자율 AI 소프트웨어 엔지니어 |
+| [**Factory**](https://factory.ai) | 자율 코드 리뷰, 테스트, PR 생성을 위한 AI Droids |
+| [**Amp**](https://ampcode.com) | Sourcegraph의 터미널 우선 에이전트 코딩 어시스턴트 |
 
 ### MCP 서버 & 도구
 
@@ -136,6 +146,8 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 | [**Berrry**](https://berrry.app) | 소셜 게시물을 웹 앱으로 변환 |
 | [**Duet AI**](https://workspace.google.com/solutions/ai/) | Google Workspace AI 통합 |
 | [**Trae AI**](https://www.trae.ai/) | 콘텐츠 제작을 위한 AI 플랫폼 |
+| [**Firebase Studio**](https://firebase.studio) | Gemini를 갖춘 Google의 AI 우선 브라우저 IDE, 구 Project IDX |
+| [**Google AI Studio**](https://aistudio.google.com) | Gemini 모델로 빌드 및 프로토타이핑을 위한 브라우저 IDE |
 
 ---
 
