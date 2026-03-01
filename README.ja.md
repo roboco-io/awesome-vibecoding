@@ -95,6 +95,10 @@
 | [**opencode**](https://github.com/opencode-ai/opencode) | マルチプロバイダーとMCPをサポートするオープンソースTUIコーディングエージェント |
 | [**Aider**](https://github.com/paul-gauthier/aider) | git統合を備えたターミナルAIペアプログラミング |
 | [**Zed AI**](https://zed.dev/) | ネイティブAIアシスタントを統合した高性能エディタ |
+| [**Void**](https://github.com/voideditor/void) | ネイティブAIとローカルモデルサポートを備えたオープンソースVS Codeフォーク |
+| [**CodeGPT**](https://codegpt.co) | インラインアシスタンス向けに50以上のAIプロバイダーを接続するVS Code拡張機能 |
+| [**Codeium**](https://codeium.com) | 40以上のIDE統合を持つ無料AIコード補完 |
+| [**PearAI**](https://trypear.ai) | 統合検索を備えたオープンソースVS Code AIエディタ |
 
 ### エージェント型コーディング環境
 
@@ -108,6 +112,9 @@
 | [**OpenManus**](https://github.com/mannaandpoem/OpenManus) | AI支援ドキュメント作成のためのオープンソースフレームワーク |
 | [**Vibe Compiler (vibec)**](https://github.com/Strawberry-Computer/vibe-compiler) | プロンプトをコードに変換する自己コンパイルツール |
 | [**AlphaCode**](https://alphacode.deepmind.com/) | DeepMindの競技プログラミングAI |
+| [**SWE-agent**](https://github.com/SWE-agent/SWE-agent) | Agent-Computer Interfaceを通じて実際のGitHub issueを解決する自律型エージェント |
+| [**Devon**](https://github.com/entropy-research/Devon) | Devinの代替となるオープンソース自律型コーディングエージェント |
+| [**Copilot Workspace**](https://githubnext.com/projects/copilot-workspace) | Issue-to-PRワークフロー向けGitHubのエージェント型環境 |
 
 ### MCPサーバー & ツール
 
@@ -118,8 +125,11 @@ AI機能を拡張する[Model Context Protocol](https://modelcontextprotocol.io/
 | **Git操作** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube) | リポジトリの読み取り/検索/操作 |
 | **データベース** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp) | クエリ、マイグレーション、セマンティック検索 |
 | **セキュリティ** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | コードスキャン、エラートラッキング |
-| **ブラウザ** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | Webスクレイピング、コンテンツ取得 |
+| **ブラウザ** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch), [Playwright](https://github.com/microsoft/playwright-mcp) | Webスクレイピング、コンテンツ取得、ブラウザ自動化 |
 | **ファイルシステム** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 安全な読み取り/書き込み操作 |
+| **CI/CD** | [GitHub MCP](https://github.com/github/github-mcp-server) | issues、PR、ActionsへのフルGitHub APIアクセス |
+| **実行** | [E2B](https://github.com/e2b-dev/mcp-server) | AI生成コード実行のための安全なクラウドサンドボックス |
+| **ドキュメント** | [Context7](https://github.com/upstash/context7) | AIコンテキストに最新ライブラリドキュメントを注入 |
 
 📚 包括的なリストは[awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers)を参照してください。
 
@@ -136,6 +146,8 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 | [**Berrry**](https://berrry.app) | ソーシャル投稿をWebアプリに変換 |
 | [**Duet AI**](https://workspace.google.com/solutions/ai/) | Google WorkspaceのAI統合 |
 | [**Trae AI**](https://www.trae.ai/) | コンテンツ作成のためのAIプラットフォーム |
+| [**Databutton**](https://databutton.com) | Pythonバックエンドを備えたAI駆動フルスタックアプリビルダー |
+| [**Create.xyz**](https://www.create.xyz) | 自然言語からフルスタックWebアプリを構築するビルダー |
 
 ---
 
@@ -196,6 +208,8 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 | **A Review on Vibe Coding** | 基礎、課題、将来の方向性 | [TechRxiv](https://www.techrxiv.org/users/913189/articles/1292402) |
 | **Vibe Coding and AI-Led Conversational Programming** | 開発者とAIの相互作用 | [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5469367) |
 | **Vibe Coding: AI/Voice Based Code Generation** | 非コーダー向け研究ツール | [ICAIR](https://papers.academic-conferences.org/index.php/icair/article/view/3975) |
+| **SWE-bench: Can Language Models Resolve Real-World GitHub Issues?** | AIコーディングエージェント評価の標準ベンチマーク | [arXiv:2310.06770](https://arxiv.org/abs/2310.06770) |
+| **SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering** | Agent-Computer Interfaceを使って実際のバグを修正する自律型エージェント | [arXiv:2405.15793](https://arxiv.org/abs/2405.15793) |
 
 ### 記事 & マニュアル
 
@@ -259,6 +273,7 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 - [awesome-ai-assisted-coding](https://github.com/saviorand/awesome-ai-assisted-coding) — AI支援コーディングリソース
 - [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers) — Model Context Protocolサーバー
 - [awesome-chatgpt](https://github.com/humanloop/awesome-chatgpt) — ChatGPTリソース
+- [awesome-cursorrules](https://github.com/PatrickJS/awesome-cursorrules) — Cursor IDE向けコミュニティ厳選の `.cursorrules` ファイル
 
 ---
 

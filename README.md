@@ -95,6 +95,10 @@ AI-powered code completion and assistance integrated into your development envir
 | [**opencode**](https://github.com/opencode-ai/opencode) | Open-source TUI coding agent with multi-provider and MCP support |
 | [**Aider**](https://github.com/paul-gauthier/aider) | AI pair programming in terminal with git integration |
 | [**Zed AI**](https://zed.dev/) | High-performance editor with native AI assistant integration |
+| [**Void**](https://github.com/voideditor/void) | Open-source VS Code fork with native AI and local model support |
+| [**CodeGPT**](https://codegpt.co) | VS Code extension connecting 50+ AI providers for inline assistance |
+| [**Codeium**](https://codeium.com) | Free AI code completion with 40+ IDE integrations |
+| [**PearAI**](https://trypear.ai) | Open-source VS Code AI editor with integrated search |
 
 ### Agentic Coding Environments
 
@@ -108,6 +112,9 @@ Autonomous AI systems that handle end-to-end development tasks.
 | [**OpenManus**](https://github.com/mannaandpoem/OpenManus) | Open-source framework for AI-assisted document creation |
 | [**Vibe Compiler (vibec)**](https://github.com/Strawberry-Computer/vibe-compiler) | Self-compiling tool that transforms prompts into code |
 | [**AlphaCode**](https://alphacode.deepmind.com/) | DeepMind's competitive programming AI |
+| [**SWE-agent**](https://github.com/SWE-agent/SWE-agent) | Autonomous agent solving real GitHub issues via Agent-Computer Interface |
+| [**Devon**](https://github.com/entropy-research/Devon) | Open-source autonomous coding agent, alternative to Devin |
+| [**Copilot Workspace**](https://githubnext.com/projects/copilot-workspace) | GitHub's agentic environment for issue-to-PR workflows |
 
 ### MCP Servers & Tooling
 
@@ -118,8 +125,11 @@ Autonomous AI systems that handle end-to-end development tasks.
 | **Git Operations** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube) | Repository read/search/manipulation |
 | **Databases** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp) | Query, migrations, semantic search |
 | **Security** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | Code scanning, error tracking |
-| **Browser** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | Web scraping, content fetching |
+| **Browser** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch), [Playwright](https://github.com/microsoft/playwright-mcp) | Web scraping, content fetching, browser automation |
 | **File System** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | Secure read/write operations |
+| **CI/CD** | [GitHub MCP](https://github.com/github/github-mcp-server) | Full GitHub API access for issues, PRs, and Actions |
+| **Execution** | [E2B](https://github.com/e2b-dev/mcp-server) | Secure cloud sandbox for AI-generated code execution |
+| **Docs** | [Context7](https://github.com/upstash/context7) | Up-to-date library documentation injected into AI context |
 
 📚 See [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers) for a comprehensive list.
 
@@ -136,6 +146,8 @@ Browser-based and cloud platforms for AI-assisted development.
 | [**Berrry**](https://berrry.app) | Transform social posts into web apps |
 | [**Duet AI**](https://workspace.google.com/solutions/ai/) | Google Workspace AI integration |
 | [**Trae AI**](https://www.trae.ai/) | AI platform for content creation |
+| [**Databutton**](https://databutton.com) | AI-powered full-stack app builder with Python backend |
+| [**Create.xyz**](https://www.create.xyz) | Natural language to full-stack web app builder |
 
 ---
 
@@ -196,6 +208,8 @@ Browser-based and cloud platforms for AI-assisted development.
 | **A Review on Vibe Coding** | Fundamentals, challenges, future directions | [TechRxiv](https://www.techrxiv.org/users/913189/articles/1292402) |
 | **Vibe Coding and AI-Led Conversational Programming** | Developer-AI interaction | [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5469367) |
 | **Vibe Coding: AI/Voice Based Code Generation** | Research tool for non-coders | [ICAIR](https://papers.academic-conferences.org/index.php/icair/article/view/3975) |
+| **SWE-bench: Can Language Models Resolve Real-World GitHub Issues?** | Standard benchmark for evaluating AI coding agents | [arXiv:2310.06770](https://arxiv.org/abs/2310.06770) |
+| **SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering** | Autonomous agent fixing real bugs using Agent-Computer Interface | [arXiv:2405.15793](https://arxiv.org/abs/2405.15793) |
 
 ### Articles & Manuals
 
@@ -259,6 +273,7 @@ Browser-based and cloud platforms for AI-assisted development.
 - [awesome-ai-assisted-coding](https://github.com/saviorand/awesome-ai-assisted-coding) — AI-assisted coding resources
 - [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers) — Model Context Protocol servers
 - [awesome-chatgpt](https://github.com/humanloop/awesome-chatgpt) — ChatGPT resources
+- [awesome-cursorrules](https://github.com/PatrickJS/awesome-cursorrules) — Community-curated `.cursorrules` files for Cursor IDE
 
 ---
 

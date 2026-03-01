@@ -95,6 +95,10 @@
 | [**opencode**](https://github.com/opencode-ai/opencode) | 다중 프로바이더 및 MCP를 지원하는 오픈소스 TUI 코딩 에이전트 |
 | [**Aider**](https://github.com/paul-gauthier/aider) | git 통합을 갖춘 터미널 AI 페어 프로그래밍 |
 | [**Zed AI**](https://zed.dev/) | 네이티브 AI 어시스턴트를 통합한 고성능 편집기 |
+| [**Void**](https://github.com/voideditor/void) | 네이티브 AI 및 로컬 모델을 지원하는 오픈소스 VS Code 포크 |
+| [**CodeGPT**](https://codegpt.co) | 인라인 지원을 위해 50개 이상의 AI 프로바이더를 연결하는 VS Code 확장 |
+| [**Codeium**](https://codeium.com) | 40개 이상의 IDE를 통합하는 무료 AI 코드 완성 |
+| [**PearAI**](https://trypear.ai) | 통합 검색 기능을 갖춘 오픈소스 VS Code AI 편집기 |
 
 ### 에이전트 기반 코딩 환경
 
@@ -108,6 +112,9 @@
 | [**OpenManus**](https://github.com/mannaandpoem/OpenManus) | AI 보조 문서 작성을 위한 오픈소스 프레임워크 |
 | [**Vibe Compiler (vibec)**](https://github.com/Strawberry-Computer/vibe-compiler) | 프롬프트를 코드로 변환하는 자체 컴파일 도구 |
 | [**AlphaCode**](https://alphacode.deepmind.com/) | DeepMind의 경쟁 프로그래밍 AI |
+| [**SWE-agent**](https://github.com/SWE-agent/SWE-agent) | Agent-Computer Interface를 통해 실제 GitHub 이슈를 해결하는 자율 에이전트 |
+| [**Devon**](https://github.com/entropy-research/Devon) | Devin의 대안인 오픈소스 자율 코딩 에이전트 |
+| [**Copilot Workspace**](https://githubnext.com/projects/copilot-workspace) | 이슈에서 PR까지의 워크플로우를 위한 GitHub의 에이전트 환경 |
 
 ### MCP 서버 & 도구
 
@@ -118,8 +125,11 @@ AI 기능을 확장하는 [Model Context Protocol](https://modelcontextprotocol.
 | **Git 작업** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube) | 저장소 읽기/검색/조작 |
 | **데이터베이스** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp) | 쿼리, 마이그레이션, 시맨틱 검색 |
 | **보안** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | 코드 스캐닝, 오류 추적 |
-| **브라우저** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | 웹 스크래핑, 콘텐츠 가져오기 |
+| **브라우저** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch), [Playwright](https://github.com/microsoft/playwright-mcp) | 웹 스크래핑, 콘텐츠 가져오기, 브라우저 자동화 |
 | **파일 시스템** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 안전한 읽기/쓰기 작업 |
+| **CI/CD** | [GitHub MCP](https://github.com/github/github-mcp-server) | 이슈, PR, Actions를 위한 전체 GitHub API 액세스 |
+| **실행** | [E2B](https://github.com/e2b-dev/mcp-server) | AI 생성 코드 실행을 위한 보안 클라우드 샌드박스 |
+| **문서** | [Context7](https://github.com/upstash/context7) | AI 컨텍스트에 주입되는 최신 라이브러리 문서 |
 
 📚 전체 목록은 [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers)를 참조하세요.
 
@@ -136,6 +146,8 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 | [**Berrry**](https://berrry.app) | 소셜 게시물을 웹 앱으로 변환 |
 | [**Duet AI**](https://workspace.google.com/solutions/ai/) | Google Workspace AI 통합 |
 | [**Trae AI**](https://www.trae.ai/) | 콘텐츠 제작을 위한 AI 플랫폼 |
+| [**Databutton**](https://databutton.com) | Python 백엔드를 갖춘 AI 기반 풀스택 앱 빌더 |
+| [**Create.xyz**](https://www.create.xyz) | 자연어로 풀스택 웹 앱을 만드는 빌더 |
 
 ---
 
@@ -196,6 +208,8 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 | **A Review on Vibe Coding** | 기본 개념, 과제, 미래 방향 | [TechRxiv](https://www.techrxiv.org/users/913189/articles/1292402) |
 | **Vibe Coding and AI-Led Conversational Programming** | 개발자-AI 상호작용 | [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5469367) |
 | **Vibe Coding: AI/Voice Based Code Generation** | 비개발자를 위한 연구 도구 | [ICAIR](https://papers.academic-conferences.org/index.php/icair/article/view/3975) |
+| **SWE-bench: Can Language Models Resolve Real-World GitHub Issues?** | AI 코딩 에이전트 평가를 위한 표준 벤치마크 | [arXiv:2310.06770](https://arxiv.org/abs/2310.06770) |
+| **SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering** | Agent-Computer Interface를 사용하여 실제 버그를 수정하는 자율 에이전트 | [arXiv:2405.15793](https://arxiv.org/abs/2405.15793) |
 
 ### 아티클 & 매뉴얼
 
@@ -259,6 +273,7 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 - [awesome-ai-assisted-coding](https://github.com/saviorand/awesome-ai-assisted-coding) — AI 보조 코딩 리소스
 - [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers) — Model Context Protocol 서버
 - [awesome-chatgpt](https://github.com/humanloop/awesome-chatgpt) — ChatGPT 리소스
+- [awesome-cursorrules](https://github.com/PatrickJS/awesome-cursorrules) — Cursor IDE를 위한 커뮤니티 큐레이션 `.cursorrules` 파일
 
 ---
 
