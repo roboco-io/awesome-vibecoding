@@ -95,6 +95,9 @@
 | [**opencode**](https://github.com/opencode-ai/opencode) | マルチプロバイダーとMCPをサポートするオープンソースTUIコーディングエージェント |
 | [**Aider**](https://github.com/paul-gauthier/aider) | git統合を備えたターミナルAIペアプログラミング |
 | [**Zed AI**](https://zed.dev/) | ネイティブAIアシスタントを統合した高性能エディタ |
+| [**Void**](https://voideditor.com/) | AIモデルを直接統合したオープンソースのVS Codeフォーク |
+| [**CodeGPT**](https://codegpt.co/) | 50以上のAIモデルプロバイダーをサポートするVS Code拡張機能 |
+| [**Copilot Workspace**](https://githubnext.com/projects/copilot-workspace) | GitHubのタスク中心のAI開発環境 |
 
 ### エージェント型コーディング環境
 
@@ -108,6 +111,8 @@
 | [**OpenManus**](https://github.com/mannaandpoem/OpenManus) | AI支援ドキュメント作成のためのオープンソースフレームワーク |
 | [**Vibe Compiler (vibec)**](https://github.com/Strawberry-Computer/vibe-compiler) | プロンプトをコードに変換する自己コンパイルツール |
 | [**AlphaCode**](https://alphacode.deepmind.com/) | DeepMindの競技プログラミングAI |
+| [**SWE-agent**](https://github.com/princeton-nlp/SWE-agent) | GitHubのIssueを自律的に修正するPrincetonのAIエージェント |
+| [**Plandex**](https://plandex.ai/) | 大規模なマルチファイルタスク向けのターミナルベースAIコーディングエンジン |
 
 ### MCPサーバー & ツール
 
@@ -116,10 +121,14 @@ AI機能を拡張する[Model Context Protocol](https://modelcontextprotocol.io/
 | カテゴリ | サーバー | 説明 |
 |----------|---------|-------------|
 | **Git操作** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube) | リポジトリの読み取り/検索/操作 |
-| **データベース** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp) | クエリ、マイグレーション、セマンティック検索 |
+| **データベース** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp), [PostgreSQL](https://github.com/modelcontextprotocol/servers/tree/main/src/postgres) | クエリ、マイグレーション、セマンティック検索 |
 | **セキュリティ** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | コードスキャン、エラートラッキング |
-| **ブラウザ** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | Webスクレイピング、コンテンツ取得 |
+| **ブラウザ** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch), [Playwright](https://github.com/microsoft/playwright-mcp) | Webスクレイピング、コンテンツ取得、ブラウザ自動化 |
 | **ファイルシステム** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 安全な読み取り/書き込み操作 |
+| **GitHub** | [GitHub](https://github.com/github/github-mcp-server) | リポジトリ、PR、IssueのためのGitHub公式MCPサーバー |
+| **決済** | [Stripe](https://github.com/stripe/agent-toolkit) | 決済、顧客、サブスクリプションのための公式Stripe MCP |
+| **ブラウザ（クラウド）** | [Browserbase](https://github.com/browserbase/mcp-server-browserbase) | AIエージェント向けクラウドブラウザ自動化MCP |
+| **バックエンド** | [Supabase](https://github.com/supabase-community/supabase-mcp) | Supabaseプロジェクトの管理、SQLの実行、マイグレーション処理 |
 
 📚 包括的なリストは[awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers)を参照してください。
 
@@ -136,6 +145,11 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 | [**Berrry**](https://berrry.app) | ソーシャル投稿をWebアプリに変換 |
 | [**Duet AI**](https://workspace.google.com/solutions/ai/) | Google WorkspaceのAI統合 |
 | [**Trae AI**](https://www.trae.ai/) | コンテンツ作成のためのAIプラットフォーム |
+| [**Firebase Studio**](https://firebase.studio/) | GoogleのAI駆動フルスタックアプリ開発IDE |
+| [**Project IDX**](https://idx.dev/) | AI支援機能を備えたGoogleのブラウザベースクラウドワークスペース |
+| [**Tempo Labs**](https://tempolabs.ai/) | ビジュアルエディタとコードエクスポートを備えたAI駆動のReact UIビルダー |
+| [**Warp**](https://www.warp.dev/) | 自然言語コマンドとエージェントモードを備えたAIネイティブターミナル |
+| [**Gitpod**](https://www.gitpod.io/) | AIによるワークスペース自動化を備えたクラウド開発環境 |
 
 ---
 

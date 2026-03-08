@@ -95,6 +95,9 @@ AI-powered code completion and assistance integrated into your development envir
 | [**opencode**](https://github.com/opencode-ai/opencode) | Open-source TUI coding agent with multi-provider and MCP support |
 | [**Aider**](https://github.com/paul-gauthier/aider) | AI pair programming in terminal with git integration |
 | [**Zed AI**](https://zed.dev/) | High-performance editor with native AI assistant integration |
+| [**Void**](https://voideditor.com/) | Open-source VS Code fork with direct AI model integration |
+| [**CodeGPT**](https://codegpt.co/) | VS Code extension supporting 50+ AI model providers |
+| [**Copilot Workspace**](https://githubnext.com/projects/copilot-workspace) | GitHub's task-centric AI development environment |
 
 ### Agentic Coding Environments
 
@@ -108,6 +111,8 @@ Autonomous AI systems that handle end-to-end development tasks.
 | [**OpenManus**](https://github.com/mannaandpoem/OpenManus) | Open-source framework for AI-assisted document creation |
 | [**Vibe Compiler (vibec)**](https://github.com/Strawberry-Computer/vibe-compiler) | Self-compiling tool that transforms prompts into code |
 | [**AlphaCode**](https://alphacode.deepmind.com/) | DeepMind's competitive programming AI |
+| [**SWE-agent**](https://github.com/princeton-nlp/SWE-agent) | Princeton's AI agent that autonomously fixes GitHub issues |
+| [**Plandex**](https://plandex.ai/) | Terminal-based AI coding engine for large multi-file tasks |
 
 ### MCP Servers & Tooling
 
@@ -116,10 +121,14 @@ Autonomous AI systems that handle end-to-end development tasks.
 | Category | Servers | Description |
 |----------|---------|-------------|
 | **Git Operations** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube) | Repository read/search/manipulation |
-| **Databases** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp) | Query, migrations, semantic search |
+| **Databases** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp), [PostgreSQL](https://github.com/modelcontextprotocol/servers/tree/main/src/postgres) | Query, migrations, semantic search |
 | **Security** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | Code scanning, error tracking |
-| **Browser** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | Web scraping, content fetching |
+| **Browser** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch), [Playwright](https://github.com/microsoft/playwright-mcp) | Web scraping, content fetching, browser automation |
 | **File System** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | Secure read/write operations |
+| **GitHub** | [GitHub](https://github.com/github/github-mcp-server) | Official GitHub MCP server for repos, PRs, and issues |
+| **Payments** | [Stripe](https://github.com/stripe/agent-toolkit) | Official Stripe MCP for payments, customers, and subscriptions |
+| **Browser (Cloud)** | [Browserbase](https://github.com/browserbase/mcp-server-browserbase) | Cloud browser automation MCP for AI agents |
+| **Backend** | [Supabase](https://github.com/supabase-community/supabase-mcp) | Manage Supabase projects, run SQL, and handle migrations |
 
 📚 See [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers) for a comprehensive list.
 
@@ -136,6 +145,11 @@ Browser-based and cloud platforms for AI-assisted development.
 | [**Berrry**](https://berrry.app) | Transform social posts into web apps |
 | [**Duet AI**](https://workspace.google.com/solutions/ai/) | Google Workspace AI integration |
 | [**Trae AI**](https://www.trae.ai/) | AI platform for content creation |
+| [**Firebase Studio**](https://firebase.studio/) | Google's AI-powered full-stack app development IDE |
+| [**Project IDX**](https://idx.dev/) | Google's browser-based cloud workspace with AI assistance |
+| [**Tempo Labs**](https://tempolabs.ai/) | AI-powered React UI builder with visual editor and code export |
+| [**Warp**](https://www.warp.dev/) | AI-native terminal with natural language commands and agent mode |
+| [**Gitpod**](https://www.gitpod.io/) | Cloud dev environments with AI-assisted workspace automation |
 
 ---
 

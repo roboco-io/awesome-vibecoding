@@ -95,6 +95,9 @@
 | [**opencode**](https://github.com/opencode-ai/opencode) | 다중 프로바이더 및 MCP를 지원하는 오픈소스 TUI 코딩 에이전트 |
 | [**Aider**](https://github.com/paul-gauthier/aider) | git 통합을 갖춘 터미널 AI 페어 프로그래밍 |
 | [**Zed AI**](https://zed.dev/) | 네이티브 AI 어시스턴트를 통합한 고성능 편집기 |
+| [**Void**](https://voideditor.com/) | 직접 AI 모델 통합을 갖춘 오픈소스 VS Code 포크 |
+| [**CodeGPT**](https://codegpt.co/) | 50개 이상의 AI 모델 프로바이더를 지원하는 VS Code 확장 |
+| [**Copilot Workspace**](https://githubnext.com/projects/copilot-workspace) | GitHub의 작업 중심 AI 개발 환경 |
 
 ### 에이전트 기반 코딩 환경
 
@@ -108,6 +111,8 @@
 | [**OpenManus**](https://github.com/mannaandpoem/OpenManus) | AI 보조 문서 작성을 위한 오픈소스 프레임워크 |
 | [**Vibe Compiler (vibec)**](https://github.com/Strawberry-Computer/vibe-compiler) | 프롬프트를 코드로 변환하는 자체 컴파일 도구 |
 | [**AlphaCode**](https://alphacode.deepmind.com/) | DeepMind의 경쟁 프로그래밍 AI |
+| [**SWE-agent**](https://github.com/princeton-nlp/SWE-agent) | GitHub 이슈를 자율적으로 수정하는 Princeton의 AI 에이전트 |
+| [**Plandex**](https://plandex.ai/) | 대규모 멀티 파일 작업을 위한 터미널 기반 AI 코딩 엔진 |
 
 ### MCP 서버 & 도구
 
@@ -116,10 +121,14 @@ AI 기능을 확장하는 [Model Context Protocol](https://modelcontextprotocol.
 | 카테고리 | 서버 | 설명 |
 |----------|---------|-------------|
 | **Git 작업** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube) | 저장소 읽기/검색/조작 |
-| **데이터베이스** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp) | 쿼리, 마이그레이션, 시맨틱 검색 |
+| **데이터베이스** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp), [PostgreSQL](https://github.com/modelcontextprotocol/servers/tree/main/src/postgres) | 쿼리, 마이그레이션, 시맨틱 검색 |
 | **보안** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | 코드 스캐닝, 오류 추적 |
-| **브라우저** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | 웹 스크래핑, 콘텐츠 가져오기 |
+| **브라우저** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch), [Playwright](https://github.com/microsoft/playwright-mcp) | 웹 스크래핑, 콘텐츠 가져오기, 브라우저 자동화 |
 | **파일 시스템** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 안전한 읽기/쓰기 작업 |
+| **GitHub** | [GitHub](https://github.com/github/github-mcp-server) | 저장소, PR, 이슈를 위한 공식 GitHub MCP 서버 |
+| **결제** | [Stripe](https://github.com/stripe/agent-toolkit) | 결제, 고객, 구독을 위한 공식 Stripe MCP |
+| **브라우저 (클라우드)** | [Browserbase](https://github.com/browserbase/mcp-server-browserbase) | AI 에이전트를 위한 클라우드 브라우저 자동화 MCP |
+| **백엔드** | [Supabase](https://github.com/supabase-community/supabase-mcp) | Supabase 프로젝트 관리, SQL 실행, 마이그레이션 처리 |
 
 📚 전체 목록은 [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers)를 참조하세요.
 
@@ -136,6 +145,11 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 | [**Berrry**](https://berrry.app) | 소셜 게시물을 웹 앱으로 변환 |
 | [**Duet AI**](https://workspace.google.com/solutions/ai/) | Google Workspace AI 통합 |
 | [**Trae AI**](https://www.trae.ai/) | 콘텐츠 제작을 위한 AI 플랫폼 |
+| [**Firebase Studio**](https://firebase.studio/) | Google의 AI 기반 풀스택 앱 개발 IDE |
+| [**Project IDX**](https://idx.dev/) | AI 지원을 갖춘 Google의 브라우저 기반 클라우드 워크스페이스 |
+| [**Tempo Labs**](https://tempolabs.ai/) | 시각적 편집기와 코드 내보내기를 갖춘 AI 기반 React UI 빌더 |
+| [**Warp**](https://www.warp.dev/) | 자연어 명령과 에이전트 모드를 갖춘 AI 네이티브 터미널 |
+| [**Gitpod**](https://www.gitpod.io/) | AI 지원 워크스페이스 자동화를 갖춘 클라우드 개발 환경 |
 
 ---
 
