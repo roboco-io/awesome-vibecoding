@@ -106,6 +106,8 @@
 | [**Refact.ai**](https://refact.ai/) | 프라이버시 중심 자체 호스팅 AI 코딩 어시스턴트 |
 | [**Mutable.ai**](https://mutable.ai/) | 자동 테스트, 문서화, 리팩토링을 위한 AI |
 | [**CopilotKit**](https://github.com/CopilotKit/CopilotKit) | 채팅 및 생성 UI를 갖춘 AI 코파일럿 구축 프레임워크 |
+| [**Kiro**](https://kiro.dev) | 요구사항을 코드와 테스트로 변환하는 AWS 스펙 기반 AI IDE |
+| [**Warp**](https://www.warp.dev) | 자연어 명령과 에이전트 모드를 갖춘 AI 네이티브 터미널 |
 
 ### 에이전트 기반 코딩 환경
 
@@ -129,6 +131,10 @@
 | [**Devika**](https://github.com/stitionai/devika) | Devin의 대안인 최초의 오픈소스 에이전트 기반 소프트웨어 엔지니어 |
 | [**smol-ai developer**](https://github.com/smol-ai/developer) | 앱용 임베드 가능한 개발자 에이전트 라이브러리 |
 | [**E2B**](https://github.com/e2b-dev/e2b) | 엔터프라이즈급 AI 에이전트를 위한 안전한 클라우드 샌드박스 환경 |
+| [**Plandex**](https://plandex.ai) | 복잡한 멀티스텝 작업을 위한 오픈소스 터미널 AI 코딩 엔진 |
+| [**Cosine**](https://cosine.sh) | 복잡한 코드베이스 작업을 위한 자율 AI 소프트웨어 엔지니어 |
+| [**Factory**](https://factory.ai) | 자율 코드 리뷰, 테스트, PR 생성을 위한 AI Droids |
+| [**Amp**](https://ampcode.com) | Sourcegraph의 터미널 우선 에이전트 코딩 어시스턴트 |
 
 ### MCP 서버 & 도구
 
@@ -167,6 +173,8 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 | [**Wordware**](https://www.wordware.ai/) | 개발자를 위한 노코드 AI 에이전트 빌더 |
 | [**Kombai**](https://kombai.com/) | Figma 디자인을 코드로 변환하는 AI |
 | [**Dyad**](https://github.com/dyad-sh/dyad) | 로컬 오픈소스 AI 앱 빌더 (v0/Lovable/Bolt 대안) |
+| [**Firebase Studio**](https://firebase.studio) | Gemini를 갖춘 Google의 AI 우선 브라우저 IDE, 구 Project IDX |
+| [**Google AI Studio**](https://aistudio.google.com) | Gemini 모델로 빌드 및 프로토타이핑을 위한 브라우저 IDE |
 
 ---
 

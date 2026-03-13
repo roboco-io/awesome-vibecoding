@@ -106,6 +106,8 @@
 | [**Refact.ai**](https://refact.ai/) | プライバシー重視のセルフホスト型AIコーディングアシスタント |
 | [**Mutable.ai**](https://mutable.ai/) | 自動テスト、ドキュメント化、リファクタリングのためのAI |
 | [**CopilotKit**](https://github.com/CopilotKit/CopilotKit) | チャットとジェネレーティブUIを備えたAIコパイロットを構築するためのフレームワーク |
+| [**Kiro**](https://kiro.dev) | 要件をコードとテストに変換するAWSのスペック駆動型AI IDE |
+| [**Warp**](https://www.warp.dev) | 自然言語コマンドとエージェントモードを備えたAIネイティブターミナル |
 
 ### エージェント型コーディング環境
 
@@ -129,6 +131,10 @@
 | [**Devika**](https://github.com/stitionai/devika) | Devinに代わる初のオープンソースエージェント型ソフトウェアエンジニア |
 | [**smol-ai developer**](https://github.com/smol-ai/developer) | アプリ用の組み込み可能な開発者エージェントライブラリ |
 | [**E2B**](https://github.com/e2b-dev/e2b) | エンタープライズグレードのAIエージェント向けセキュアなクラウドサンドボックス環境 |
+| [**Plandex**](https://plandex.ai) | 複雑なマルチステップタスクに対応するオープンソースのターミナルAIコーディングエンジン |
+| [**Cosine**](https://cosine.sh) | 複雑なコードベースのタスクに対応する自律型AIソフトウェアエンジニア |
+| [**Factory**](https://factory.ai) | 自律的なコードレビュー、テスト、PR作成を行うAI Droids |
+| [**Amp**](https://ampcode.com) | Sourcegraphのターミナルファーストなエージェント型コーディングアシスタント |
 
 ### MCPサーバー & ツール
 
@@ -167,6 +173,8 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 | [**Wordware**](https://www.wordware.ai/) | 開発者向けノーコードAIエージェントビルダー |
 | [**Kombai**](https://kombai.com/) | Figmaデザインをコードに変換するAI |
 | [**Dyad**](https://github.com/dyad-sh/dyad) | ローカルのオープンソースAIアプリビルダー（v0/Lovable/Boltの代替） |
+| [**Firebase Studio**](https://firebase.studio) | 旧Project IDXで、GeminiによるGoogleのAIファーストブラウザIDE |
+| [**Google AI Studio**](https://aistudio.google.com) | Geminiモデルでの構築とプロトタイピングに対応するブラウザIDE |
 
 ---
 

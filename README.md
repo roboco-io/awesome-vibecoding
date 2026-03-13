@@ -106,6 +106,8 @@ AI-powered code completion and assistance integrated into your development envir
 | [**Refact.ai**](https://refact.ai/) | Privacy-focused self-hosted AI coding assistant |
 | [**Mutable.ai**](https://mutable.ai/) | AI for automated testing, documentation, and refactoring |
 | [**CopilotKit**](https://github.com/CopilotKit/CopilotKit) | Framework for building AI copilots with chat and generative UI |
+| [**Kiro**](https://kiro.dev) | AWS spec-driven AI IDE turning requirements into code and tests |
+| [**Warp**](https://www.warp.dev) | AI-native terminal with natural language commands and agent mode |
 
 ### Agentic Coding Environments
 
@@ -129,6 +131,10 @@ Autonomous AI systems that handle end-to-end development tasks.
 | [**Devika**](https://github.com/stitionai/devika) | First open-source agentic software engineer alternative to Devin |
 | [**smol-ai developer**](https://github.com/smol-ai/developer) | Embeddable developer agent library for apps |
 | [**E2B**](https://github.com/e2b-dev/e2b) | Secure cloud sandbox environment for enterprise-grade AI agents |
+| [**Plandex**](https://plandex.ai) | Open-source terminal AI coding engine for complex multi-step tasks |
+| [**Cosine**](https://cosine.sh) | Autonomous AI software engineer for complex codebase tasks |
+| [**Factory**](https://factory.ai) | AI Droids for autonomous code review, testing, and PR creation |
+| [**Amp**](https://ampcode.com) | Sourcegraph's terminal-first agentic coding assistant |
 
 ### MCP Servers & Tooling
 
@@ -167,6 +173,8 @@ Browser-based and cloud platforms for AI-assisted development.
 | [**Wordware**](https://www.wordware.ai/) | No-code AI agent builder for developers |
 | [**Kombai**](https://kombai.com/) | AI that converts Figma designs to code |
 | [**Dyad**](https://github.com/dyad-sh/dyad) | Local open-source AI app builder (v0/Lovable/Bolt alternative) |
+| [**Firebase Studio**](https://firebase.studio) | Google's AI-first browser IDE with Gemini, formerly Project IDX |
+| [**Google AI Studio**](https://aistudio.google.com) | Browser IDE for building and prototyping with Gemini models |
 
 ---
 
