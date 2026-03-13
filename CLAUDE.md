@@ -39,7 +39,8 @@ Runs parallel agents to sync README.md changes to Korean and Japanese versions.
 
 ### GitHub Actions Workflows
 - **weekly-update.yml**: Runs every Sunday, uses Perplexity MCP to find new tools, commits directly to main
-- **issue-approval.yml**: Triggered when owner comments `/approve` on an issue, commits directly to main and closes issue
+- **auto-process-issue.yml**: Triggers on issue creation with `addition` label — validates URL, checks duplicates, then Claude Code auto-processes and commits to main
+- **issue-approval.yml**: Manual fallback — `/approve` forces add, `/reject` closes with reason. For issues that auto-processing couldn't handle (`needs-review` label)
 
 ## Content Editing Rules
 

@@ -4,16 +4,27 @@ This repository is **fully automated with AI**. Content updates, translations, a
 
 ## How to Contribute
 
-1. **Open an Issue** — [Create a new issue](https://github.com/roboco-io/awesome-vibecoding/issues/new) with your suggestion
-   - New tool or resource to add
-   - Correction or update to existing content
-   - New category or section idea
-2. **Describe Your Suggestion** — Include name, URL, and brief description
-3. **Automatic Processing** — Once a maintainer comments `/approve`, Claude Code automatically adds the resource, generates translations (English, Korean, Japanese), and commits to main
+1. **Open an Issue** — Use the [Add Resource template](https://github.com/roboco-io/awesome-vibecoding/issues/new?template=add-resource.yml)
+   - Select a category, provide name, URL, and description
+2. **Automatic Processing** — The system automatically:
+   - Validates the URL (reachability, duplicates)
+   - Checks content quality with Claude Code
+   - Adds the resource and generates translations (English, Korean, Japanese)
+   - Commits to main and closes the issue
+3. **Manual Review** — If auto-processing can't handle it, a `needs-review` label is added and a maintainer will use `/approve` or `/reject`
 
 ## Please Submit Issues, Not PRs
 
-This repository is AI-operated. Claude Code handles all content editing, formatting, and translation to ensure consistency across all three language versions. Direct PRs will likely cause merge conflicts with the automated pipeline.
+This repository is AI-operated. Claude Code handles all content editing, formatting, and translation to ensure consistency across all three language versions. Direct PRs will cause merge conflicts with the automated pipeline.
+
+## Gate-keeping
+
+Submissions are automatically rejected if:
+
+- URL is unreachable
+- Resource is already listed (duplicate)
+- Content is unrelated to AI-assisted coding
+- Submission appears to be spam
 
 ## Curation Principles
 

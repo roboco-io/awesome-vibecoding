@@ -1,0 +1,196 @@
+name: Auto Process Issue
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  validate-and-process:
+    # Only process issues with the "addition" label (from issue template)
+    if: contains(github.event.issue.labels.*.name, 'addition')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate URL
+        id: validate
+        run: |
+          # Extract URL from issue body
+          URL=$(echo "${{ github.event.issue.body }}" | grep -oP 'https?://[^\s\)]+' | head -1)
+
+          if [ -z "$URL" ]; then
+            echo "status=no_url" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          echo "url=$URL" >> $GITHUB_OUTPUT
+
+          # Check if URL is reachable
+          HTTP_CODE=$(curl -o /dev/null -s -w "%{http_code}" -L --max-time 10 "$URL" || echo "000")
+          if [ "$HTTP_CODE" -lt 200 ] || [ "$HTTP_CODE" -ge 400 ]; then
+            echo "status=unreachable" >> $GITHUB_OUTPUT
+            echo "http_code=$HTTP_CODE" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # Check for duplicates in README
+          if grep -qF "$URL" README.md; then
+            echo "status=duplicate" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          echo "status=valid" >> $GITHUB_OUTPUT
+
+      - name: Reject - No URL
+        if: steps.validate.outputs.status == 'no_url'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: '❌ **Rejected**: No valid URL found in this issue. Please include a URL (https://...) for the resource.\n\nPlease create a new issue using the [Add Resource template](https://github.com/roboco-io/awesome-vibecoding/issues/new?template=add-resource.yml).'
+            });
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              state: 'closed',
+              labels: ['invalid']
+            });
+
+      - name: Reject - Unreachable URL
+        if: steps.validate.outputs.status == 'unreachable'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `❌ **Rejected**: The URL \`${{ steps.validate.outputs.url }}\` is not reachable (HTTP ${{ steps.validate.outputs.http_code }}). Please verify the URL and create a new issue.`
+            });
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              state: 'closed',
+              labels: ['invalid']
+            });
+
+      - name: Reject - Duplicate
+        if: steps.validate.outputs.status == 'duplicate'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `ℹ️ **Already listed**: The URL \`${{ steps.validate.outputs.url }}\` is already in the README. If you want to update the description, please mention that in a new issue.\n\nClosing as duplicate.`
+            });
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              state: 'closed',
+              labels: ['duplicate']
+            });
+
+      - name: Setup Node.js
+        if: steps.validate.outputs.status == 'valid'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Claude Code
+        if: steps.validate.outputs.status == 'valid'
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Process with Claude Code
+        if: steps.validate.outputs.status == 'valid'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          ISSUE_TITLE="${{ github.event.issue.title }}"
+          ISSUE_BODY=$(cat <<'ISSUE_EOF'
+          ${{ github.event.issue.body }}
+          ISSUE_EOF
+          )
+          ISSUE_NUMBER="${{ github.event.issue.number }}"
+
+          PROMPT=$(cat .github/prompts/issue-auto-process.md)
+
+          claude -p "
+          $PROMPT
+
+          ## Issue Details
+
+          **Issue #$ISSUE_NUMBER**: $ISSUE_TITLE
+
+          **Issue Body**:
+          $ISSUE_BODY
+
+          Process this issue: validate content quality, add the resource to README.md, then translate to Korean and Japanese.
+          " --allowedTools "Edit,Read,Glob,Grep,Write,Bash(git diff:git status)" \
+            --max-turns 30
+
+      - name: Commit and push
+        if: steps.validate.outputs.status == 'valid'
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            git add README.md README.ko.md README.ja.md
+            git commit -m "docs: Add resource from issue #${{ github.event.issue.number }}
+
+          Closes #${{ github.event.issue.number }}
+          Generated by Claude Code via GitHub Actions"
+            git push
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Close issue on success
+        if: steps.validate.outputs.status == 'valid' && steps.commit.outputs.has_changes == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: '✅ **Added!** The resource has been added to the README with Korean and Japanese translations. Thank you for your contribution!'
+            });
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              state: 'closed'
+            });
+
+      - name: Label for review if Claude couldn't process
+        if: steps.validate.outputs.status == 'valid' && steps.commit.outputs.has_changes == 'false'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              labels: ['needs-review']
+            });
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: '⚠️ **Needs manual review**: The URL is valid but the automated system could not process this resource. A maintainer will review shortly.\n\nPossible reasons: content quality concerns, unclear categorization, or duplicate with different URL.'
+            });
