@@ -95,6 +95,11 @@ AI-powered code completion and assistance integrated into your development envir
 | [**opencode**](https://github.com/opencode-ai/opencode) | Open-source TUI coding agent with multi-provider and MCP support |
 | [**Aider**](https://github.com/paul-gauthier/aider) | AI pair programming in terminal with git integration |
 | [**Zed AI**](https://zed.dev/) | High-performance editor with native AI assistant integration |
+| [**Void**](https://github.com/voideditor/void) | Open-source VS Code fork with autonomous AI coding capabilities |
+| [**Melty**](https://github.com/meltylabs/melty) | Chat-first code editor with conversational interface |
+| [**CodeGPT**](https://codegpt.co) | AI coding assistant with multi-LLM support for VS Code and IDEs |
+| [**Wingman AI**](https://github.com/RussellCanfield/wingman-ai-vscode-extension) | Open-source VSCode extension supporting Ollama, HuggingFace, OpenAI, Anthropic |
+| [**DeepSeek CLI**](https://github.com/holasoymalva/deepseek-cli) | Terminal AI coding assistant powered by DeepSeek Coder models |
 
 ### Agentic Coding Environments
 
@@ -108,6 +113,8 @@ Autonomous AI systems that handle end-to-end development tasks.
 | [**OpenManus**](https://github.com/mannaandpoem/OpenManus) | Open-source framework for AI-assisted document creation |
 | [**Vibe Compiler (vibec)**](https://github.com/Strawberry-Computer/vibe-compiler) | Self-compiling tool that transforms prompts into code |
 | [**AlphaCode**](https://alphacode.deepmind.com/) | DeepMind's competitive programming AI |
+| [**Cherry Studio**](https://github.com/CherryHQ/cherry-studio) | AI Agent desktop with autonomous coding and 300+ assistants |
+| [**OpenSpec**](https://github.com/Fission-AI/OpenSpec) | Spec-driven development framework for AI coding assistants |
 
 ### MCP Servers & Tooling
 
@@ -116,10 +123,13 @@ Autonomous AI systems that handle end-to-end development tasks.
 | Category | Servers | Description |
 |----------|---------|-------------|
 | **Git Operations** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube) | Repository read/search/manipulation |
-| **Databases** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp) | Query, migrations, semantic search |
+| **Databases** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp), [Excel](https://github.com/haris-musa/excel-mcp-server) | Query, migrations, semantic search, spreadsheet operations |
 | **Security** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | Code scanning, error tracking |
-| **Browser** | [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | Web scraping, content fetching |
+| **Browser & Automation** | [Chrome MCP](https://github.com/hangwin/mcp-chrome), [Playwright MCP](https://github.com/executeautomation/mcp-playwright), [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | Browser automation, testing, web scraping, content fetching |
+| **Mobile** | [Mobile MCP](https://github.com/mobile-next/mobile-mcp) | iOS/Android automation and scraping (emulators, simulators, real devices) |
+| **Development** | [Xcode Build MCP](https://github.com/cameroncooke/XcodeBuildMCP), [Spec Workflow MCP](https://github.com/Pimzino/spec-workflow-mcp) | Xcode integration, spec-driven development with real-time dashboard |
 | **File System** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | Secure read/write operations |
+| **MCP Clients** | [5ire](https://github.com/nanbingxyz/5ire) | Cross-platform desktop AI assistant with MCP support and local knowledge base |
 
 📚 See [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers) for a comprehensive list.
 
@@ -201,6 +211,7 @@ Browser-based and cloud platforms for AI-assisted development.
 
 - [What is Vibe Coding? (IBM)](https://www.ibm.com/think/topics/vibe-coding) — Enterprise perspective
 - [Vibe Coding Manual (Roboco)](https://roboco.io/posts/vibe-coding-manual/) — Comprehensive guide with templates
+- [Context Engineering Intro (coleam00)](https://github.com/coleam00/context-engineering-intro) — How to make AI coding assistants work effectively with Claude Code
 - [12 Best Practices for AI Coding (Questera)](https://www.questera.ai/blogs/12-best-practices-to-use-ai-in-coding-in-2025) — 2025 best practices
 - [Secure Vibe Coding Guide (CSA)](https://cloudsecurityalliance.org/blog/2025/04/09/secure-vibe-coding-guide) — Security considerations
 - [Here's how I use LLMs to help me write code (Simon Willison)](https://simonwillison.net/2025/Mar/11/using-llms-for-code/) — Practical integration tips
@@ -248,8 +259,9 @@ Browser-based and cloud platforms for AI-assisted development.
 ### Starter Kits
 
 - [vibe-coding-prompt-template](https://github.com/KhazP/vibe-coding-prompt-template) — Comprehensive prompt templates
-- [awesome-vibe-coding](https://github.com/filipecalegario/awesome-vibe-coding) — Another curated list
+- [awesome-vibe-coding](https://github.com/filipecalegario/awesome-vibe-coding) — Another curated list (2.8k stars)
 - [vibeworkflow.app](https://vibeworkflow.app) — Workflow automation for vibe coding
+- [Dev Janitor](https://github.com/cocojojo5213/Dev-Janitor) — Cross-platform desktop toolkit for managing AI coding assistants and dependencies
 
 ---
 
