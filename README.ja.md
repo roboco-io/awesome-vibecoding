@@ -157,6 +157,9 @@ AI機能を拡張する[Model Context Protocol](https://modelcontextprotocol.io/
 | **実行** | [E2B](https://github.com/e2b-dev/mcp-server) | AI生成コード実行のための安全なクラウドサンドボックス |
 | **ドキュメント** | [Context7](https://github.com/upstash/context7) | AIコンテキストに最新ライブラリドキュメントを注入 |
 | **ファイルシステム** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 安全な読み取り/書き込み操作 |
+| **決済** | [Stripe](https://github.com/stripe/agent-toolkit) | 決済、顧客、サブスクリプションのための公式Stripe MCP |
+| **ブラウザ（クラウド）** | [Browserbase](https://github.com/browserbase/mcp-server-browserbase) | AIエージェント向けクラウドブラウザ自動化MCP |
+| **バックエンド** | [Supabase](https://github.com/supabase-community/supabase-mcp) | Supabaseプロジェクトの管理、SQLの実行、マイグレーション処理 |
 | **MCPクライアント** | [5ire](https://github.com/nanbingxyz/5ire) | MCPサポートとローカルナレッジベースを備えたクロスプラットフォームデスクトップAIアシスタント |
 
 📚 包括的なリストは[awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers)を参照してください。
@@ -183,6 +186,8 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 | [**Firebase Studio**](https://firebase.studio) | 旧Project IDXで、GeminiによるGoogleのAIファーストブラウザIDE |
 | [**Google AI Studio**](https://aistudio.google.com) | Geminiモデルでの構築とプロトタイピングに対応するブラウザIDE |
 | [**Databutton**](https://databutton.com) | Pythonバックエンドを備えたAI駆動フルスタックアプリビルダー |
+| [**Tempo Labs**](https://tempolabs.ai/) | ビジュアルエディタとコードエクスポートを備えたAI駆動のReact UIビルダー |
+| [**Gitpod**](https://www.gitpod.io/) | AIによるワークスペース自動化を備えたクラウド開発環境 |
 
 ---
 

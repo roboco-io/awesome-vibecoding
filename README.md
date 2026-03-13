@@ -156,6 +156,9 @@ Autonomous AI systems that handle end-to-end development tasks.
 | **Execution** | [E2B](https://github.com/e2b-dev/mcp-server) | Secure cloud sandbox for AI-generated code execution |
 | **Docs** | [Context7](https://github.com/upstash/context7) | Up-to-date library documentation injected into AI context |
 | **File System** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | Secure read/write operations |
+| **Payments** | [Stripe](https://github.com/stripe/agent-toolkit) | Official Stripe MCP for payments, customers, and subscriptions |
+| **Browser (Cloud)** | [Browserbase](https://github.com/browserbase/mcp-server-browserbase) | Cloud browser automation MCP for AI agents |
+| **Backend** | [Supabase](https://github.com/supabase-community/supabase-mcp) | Manage Supabase projects, run SQL, and handle migrations |
 | **MCP Clients** | [5ire](https://github.com/nanbingxyz/5ire) | Cross-platform desktop AI assistant with MCP support and local knowledge base |
 
 📚 See [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers) for a comprehensive list.
@@ -182,6 +185,8 @@ Browser-based and cloud platforms for AI-assisted development.
 | [**Firebase Studio**](https://firebase.studio) | Google's AI-first browser IDE with Gemini, formerly Project IDX |
 | [**Google AI Studio**](https://aistudio.google.com) | Browser IDE for building and prototyping with Gemini models |
 | [**Databutton**](https://databutton.com) | AI-powered full-stack app builder with Python backend |
+| [**Tempo Labs**](https://tempolabs.ai/) | AI-powered React UI builder with visual editor and code export |
+| [**Gitpod**](https://www.gitpod.io/) | Cloud dev environments with AI-assisted workspace automation |
 
 ---
 
