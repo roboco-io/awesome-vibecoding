@@ -108,6 +108,7 @@
 | [**CopilotKit**](https://github.com/CopilotKit/CopilotKit) | チャットとジェネレーティブUIを備えたAIコパイロットを構築するためのフレームワーク |
 | [**Kiro**](https://kiro.dev) | 要件をコードとテストに変換するAWSのスペック駆動型AI IDE |
 | [**Warp**](https://www.warp.dev) | 自然言語コマンドとエージェントモードを備えたAIネイティブターミナル |
+| [**PearAI**](https://trypear.ai) | 統合検索を備えたオープンソースVS Code AIエディタ |
 
 ### エージェント型コーディング環境
 
@@ -135,6 +136,8 @@
 | [**Cosine**](https://cosine.sh) | 複雑なコードベースのタスクに対応する自律型AIソフトウェアエンジニア |
 | [**Factory**](https://factory.ai) | 自律的なコードレビュー、テスト、PR作成を行うAI Droids |
 | [**Amp**](https://ampcode.com) | Sourcegraphのターミナルファーストなエージェント型コーディングアシスタント |
+| [**Devon**](https://github.com/entropy-research/Devon) | Devinの代替となるオープンソース自律型コーディングエージェント |
+| [**Copilot Workspace**](https://githubnext.com/projects/copilot-workspace) | Issue-to-PRワークフロー向けGitHubのエージェント型環境 |
 
 ### MCPサーバー & ツール
 
@@ -149,6 +152,10 @@ AI機能を拡張する[Model Context Protocol](https://modelcontextprotocol.io/
 | **モバイル** | [Mobile MCP](https://github.com/mobile-next/mobile-mcp) | iOS/Android自動化とスクレイピング（エミュレータ、シミュレータ、実機） |
 | **検索 & ナレッジ** | [Brave Search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search), [Exa](https://github.com/exa-labs/exa-mcp-server), [Perplexity](https://github.com/anthropics/mcp-perplexity) | Web検索、セマンティック検索、リサーチ |
 | **開発** | [Xcode Build MCP](https://github.com/cameroncooke/XcodeBuildMCP), [Spec Workflow MCP](https://github.com/Pimzino/spec-workflow-mcp), [Slack](https://github.com/modelcontextprotocol/servers/tree/main/src/slack), [Linear](https://github.com/jerhadf/linear-mcp-server) | Xcode統合、スペック駆動開発、チームコミュニケーション、プロジェクト管理 |
+| **ファイルシステム** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 安全な読み取り/書き込み操作 |
+| **CI/CD** | [GitHub MCP](https://github.com/github/github-mcp-server) | issues、PR、ActionsへのフルGitHub APIアクセス |
+| **実行** | [E2B](https://github.com/e2b-dev/mcp-server) | AI生成コード実行のための安全なクラウドサンドボックス |
+| **ドキュメント** | [Context7](https://github.com/upstash/context7) | AIコンテキストに最新ライブラリドキュメントを注入 |
 | **ファイルシステム** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 安全な読み取り/書き込み操作 |
 | **MCPクライアント** | [5ire](https://github.com/nanbingxyz/5ire) | MCPサポートとローカルナレッジベースを備えたクロスプラットフォームデスクトップAIアシスタント |
 
@@ -175,6 +182,7 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 | [**Dyad**](https://github.com/dyad-sh/dyad) | ローカルのオープンソースAIアプリビルダー（v0/Lovable/Boltの代替） |
 | [**Firebase Studio**](https://firebase.studio) | 旧Project IDXで、GeminiによるGoogleのAIファーストブラウザIDE |
 | [**Google AI Studio**](https://aistudio.google.com) | Geminiモデルでの構築とプロトタイピングに対応するブラウザIDE |
+| [**Databutton**](https://databutton.com) | Pythonバックエンドを備えたAI駆動フルスタックアプリビルダー |
 
 ---
 
@@ -235,6 +243,8 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 | **A Review on Vibe Coding** | 基礎、課題、将来の方向性 | [TechRxiv](https://www.techrxiv.org/users/913189/articles/1292402) |
 | **Vibe Coding and AI-Led Conversational Programming** | 開発者とAIの相互作用 | [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5469367) |
 | **Vibe Coding: AI/Voice Based Code Generation** | 非コーダー向け研究ツール | [ICAIR](https://papers.academic-conferences.org/index.php/icair/article/view/3975) |
+| **SWE-bench: Can Language Models Resolve Real-World GitHub Issues?** | AIコーディングエージェント評価の標準ベンチマーク | [arXiv:2310.06770](https://arxiv.org/abs/2310.06770) |
+| **SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering** | Agent-Computer Interfaceを使って実際のバグを修正する自律型エージェント | [arXiv:2405.15793](https://arxiv.org/abs/2405.15793) |
 
 ### 記事 & マニュアル
 
@@ -301,6 +311,7 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 - [awesome-ai-assisted-coding](https://github.com/saviorand/awesome-ai-assisted-coding) — AI支援コーディングリソース
 - [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers) — Model Context Protocolサーバー
 - [awesome-chatgpt](https://github.com/humanloop/awesome-chatgpt) — ChatGPTリソース
+- [awesome-cursorrules](https://github.com/PatrickJS/awesome-cursorrules) — Cursor IDE向けコミュニティ厳選の `.cursorrules` ファイル
 
 ---
 

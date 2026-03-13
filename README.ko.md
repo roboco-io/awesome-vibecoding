@@ -108,6 +108,7 @@
 | [**CopilotKit**](https://github.com/CopilotKit/CopilotKit) | 채팅 및 생성 UI를 갖춘 AI 코파일럿 구축 프레임워크 |
 | [**Kiro**](https://kiro.dev) | 요구사항을 코드와 테스트로 변환하는 AWS 스펙 기반 AI IDE |
 | [**Warp**](https://www.warp.dev) | 자연어 명령과 에이전트 모드를 갖춘 AI 네이티브 터미널 |
+| [**PearAI**](https://trypear.ai) | 통합 검색 기능을 갖춘 오픈소스 VS Code AI 편집기 |
 
 ### 에이전트 기반 코딩 환경
 
@@ -135,6 +136,8 @@
 | [**Cosine**](https://cosine.sh) | 복잡한 코드베이스 작업을 위한 자율 AI 소프트웨어 엔지니어 |
 | [**Factory**](https://factory.ai) | 자율 코드 리뷰, 테스트, PR 생성을 위한 AI Droids |
 | [**Amp**](https://ampcode.com) | Sourcegraph의 터미널 우선 에이전트 코딩 어시스턴트 |
+| [**Devon**](https://github.com/entropy-research/Devon) | Devin의 대안인 오픈소스 자율 코딩 에이전트 |
+| [**Copilot Workspace**](https://githubnext.com/projects/copilot-workspace) | 이슈에서 PR까지의 워크플로우를 위한 GitHub의 에이전트 환경 |
 
 ### MCP 서버 & 도구
 
@@ -149,6 +152,10 @@ AI 기능을 확장하는 [Model Context Protocol](https://modelcontextprotocol.
 | **모바일** | [Mobile MCP](https://github.com/mobile-next/mobile-mcp) | iOS/Android 자동화 및 스크래핑 (에뮬레이터, 시뮬레이터, 실제 디바이스) |
 | **검색 & 지식** | [Brave Search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search), [Exa](https://github.com/exa-labs/exa-mcp-server), [Perplexity](https://github.com/anthropics/mcp-perplexity) | 웹 검색, 시맨틱 검색, 리서치 |
 | **개발** | [Xcode Build MCP](https://github.com/cameroncooke/XcodeBuildMCP), [Spec Workflow MCP](https://github.com/Pimzino/spec-workflow-mcp), [Slack](https://github.com/modelcontextprotocol/servers/tree/main/src/slack), [Linear](https://github.com/jerhadf/linear-mcp-server) | Xcode 통합, 스펙 기반 개발, 팀 커뮤니케이션, 프로젝트 관리 |
+| **파일 시스템** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 안전한 읽기/쓰기 작업 |
+| **CI/CD** | [GitHub MCP](https://github.com/github/github-mcp-server) | 이슈, PR, Actions를 위한 전체 GitHub API 액세스 |
+| **실행** | [E2B](https://github.com/e2b-dev/mcp-server) | AI 생성 코드 실행을 위한 보안 클라우드 샌드박스 |
+| **문서** | [Context7](https://github.com/upstash/context7) | AI 컨텍스트에 주입되는 최신 라이브러리 문서 |
 | **파일 시스템** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 안전한 읽기/쓰기 작업 |
 | **MCP 클라이언트** | [5ire](https://github.com/nanbingxyz/5ire) | MCP 지원 및 로컬 지식베이스를 갖춘 크로스 플랫폼 데스크탑 AI 어시스턴트 |
 
@@ -175,6 +182,7 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 | [**Dyad**](https://github.com/dyad-sh/dyad) | 로컬 오픈소스 AI 앱 빌더 (v0/Lovable/Bolt 대안) |
 | [**Firebase Studio**](https://firebase.studio) | Gemini를 갖춘 Google의 AI 우선 브라우저 IDE, 구 Project IDX |
 | [**Google AI Studio**](https://aistudio.google.com) | Gemini 모델로 빌드 및 프로토타이핑을 위한 브라우저 IDE |
+| [**Databutton**](https://databutton.com) | Python 백엔드를 갖춘 AI 기반 풀스택 앱 빌더 |
 
 ---
 
@@ -235,6 +243,8 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 | **A Review on Vibe Coding** | 기본 개념, 과제, 미래 방향 | [TechRxiv](https://www.techrxiv.org/users/913189/articles/1292402) |
 | **Vibe Coding and AI-Led Conversational Programming** | 개발자-AI 상호작용 | [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5469367) |
 | **Vibe Coding: AI/Voice Based Code Generation** | 비개발자를 위한 연구 도구 | [ICAIR](https://papers.academic-conferences.org/index.php/icair/article/view/3975) |
+| **SWE-bench: Can Language Models Resolve Real-World GitHub Issues?** | AI 코딩 에이전트 평가를 위한 표준 벤치마크 | [arXiv:2310.06770](https://arxiv.org/abs/2310.06770) |
+| **SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering** | Agent-Computer Interface를 사용하여 실제 버그를 수정하는 자율 에이전트 | [arXiv:2405.15793](https://arxiv.org/abs/2405.15793) |
 
 ### 아티클 & 매뉴얼
 
@@ -301,6 +311,7 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 - [awesome-ai-assisted-coding](https://github.com/saviorand/awesome-ai-assisted-coding) — AI 보조 코딩 리소스
 - [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers) — Model Context Protocol 서버
 - [awesome-chatgpt](https://github.com/humanloop/awesome-chatgpt) — ChatGPT 리소스
+- [awesome-cursorrules](https://github.com/PatrickJS/awesome-cursorrules) — Cursor IDE를 위한 커뮤니티 큐레이션 `.cursorrules` 파일
 
 ---
 

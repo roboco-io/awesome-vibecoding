@@ -108,6 +108,7 @@ AI-powered code completion and assistance integrated into your development envir
 | [**CopilotKit**](https://github.com/CopilotKit/CopilotKit) | Framework for building AI copilots with chat and generative UI |
 | [**Kiro**](https://kiro.dev) | AWS spec-driven AI IDE turning requirements into code and tests |
 | [**Warp**](https://www.warp.dev) | AI-native terminal with natural language commands and agent mode |
+| [**PearAI**](https://trypear.ai) | Open-source VS Code AI editor with integrated search |
 
 ### Agentic Coding Environments
 
@@ -135,6 +136,8 @@ Autonomous AI systems that handle end-to-end development tasks.
 | [**Cosine**](https://cosine.sh) | Autonomous AI software engineer for complex codebase tasks |
 | [**Factory**](https://factory.ai) | AI Droids for autonomous code review, testing, and PR creation |
 | [**Amp**](https://ampcode.com) | Sourcegraph's terminal-first agentic coding assistant |
+| [**Devon**](https://github.com/entropy-research/Devon) | Open-source autonomous coding agent, alternative to Devin |
+| [**Copilot Workspace**](https://githubnext.com/projects/copilot-workspace) | GitHub's agentic environment for issue-to-PR workflows |
 
 ### MCP Servers & Tooling
 
@@ -149,6 +152,9 @@ Autonomous AI systems that handle end-to-end development tasks.
 | **Mobile** | [Mobile MCP](https://github.com/mobile-next/mobile-mcp) | iOS/Android automation and scraping (emulators, simulators, real devices) |
 | **Search & Knowledge** | [Brave Search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search), [Exa](https://github.com/exa-labs/exa-mcp-server), [Perplexity](https://github.com/anthropics/mcp-perplexity) | Web search, semantic search, research |
 | **Development** | [Xcode Build MCP](https://github.com/cameroncooke/XcodeBuildMCP), [Spec Workflow MCP](https://github.com/Pimzino/spec-workflow-mcp), [Slack](https://github.com/modelcontextprotocol/servers/tree/main/src/slack), [Linear](https://github.com/jerhadf/linear-mcp-server) | Xcode integration, spec-driven development, team communication, project management |
+| **CI/CD** | [GitHub MCP](https://github.com/github/github-mcp-server) | Full GitHub API access for issues, PRs, and Actions |
+| **Execution** | [E2B](https://github.com/e2b-dev/mcp-server) | Secure cloud sandbox for AI-generated code execution |
+| **Docs** | [Context7](https://github.com/upstash/context7) | Up-to-date library documentation injected into AI context |
 | **File System** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | Secure read/write operations |
 | **MCP Clients** | [5ire](https://github.com/nanbingxyz/5ire) | Cross-platform desktop AI assistant with MCP support and local knowledge base |
 
@@ -175,6 +181,7 @@ Browser-based and cloud platforms for AI-assisted development.
 | [**Dyad**](https://github.com/dyad-sh/dyad) | Local open-source AI app builder (v0/Lovable/Bolt alternative) |
 | [**Firebase Studio**](https://firebase.studio) | Google's AI-first browser IDE with Gemini, formerly Project IDX |
 | [**Google AI Studio**](https://aistudio.google.com) | Browser IDE for building and prototyping with Gemini models |
+| [**Databutton**](https://databutton.com) | AI-powered full-stack app builder with Python backend |
 
 ---
 
@@ -235,6 +242,8 @@ Browser-based and cloud platforms for AI-assisted development.
 | **A Review on Vibe Coding** | Fundamentals, challenges, future directions | [TechRxiv](https://www.techrxiv.org/users/913189/articles/1292402) |
 | **Vibe Coding and AI-Led Conversational Programming** | Developer-AI interaction | [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5469367) |
 | **Vibe Coding: AI/Voice Based Code Generation** | Research tool for non-coders | [ICAIR](https://papers.academic-conferences.org/index.php/icair/article/view/3975) |
+| **SWE-bench: Can Language Models Resolve Real-World GitHub Issues?** | Standard benchmark for evaluating AI coding agents | [arXiv:2310.06770](https://arxiv.org/abs/2310.06770) |
+| **SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering** | Autonomous agent fixing real bugs using Agent-Computer Interface | [arXiv:2405.15793](https://arxiv.org/abs/2405.15793) |
 
 ### Articles & Manuals
 
@@ -301,6 +310,7 @@ Browser-based and cloud platforms for AI-assisted development.
 - [awesome-ai-assisted-coding](https://github.com/saviorand/awesome-ai-assisted-coding) — AI-assisted coding resources
 - [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers) — Model Context Protocol servers
 - [awesome-chatgpt](https://github.com/humanloop/awesome-chatgpt) — ChatGPT resources
+- [awesome-cursorrules](https://github.com/PatrickJS/awesome-cursorrules) — Community-curated `.cursorrules` files for Cursor IDE
 
 ---
 
