@@ -38,8 +38,8 @@ awesome-vibecoding/
 Runs parallel agents to sync README.md changes to Korean and Japanese versions.
 
 ### GitHub Actions Workflows
-- **weekly-update.yml**: Runs every Sunday, uses Perplexity MCP to find new tools
-- **issue-approval.yml**: Triggered when owner comments `/approve` on an issue
+- **weekly-update.yml**: Runs every Sunday, uses Perplexity MCP to find new tools, commits directly to main
+- **issue-approval.yml**: Triggered when owner comments `/approve` on an issue, commits directly to main and closes issue
 
 ## Content Editing Rules
 
