@@ -81,6 +81,7 @@
 | [**OpenAI Codex CLI**](https://openai.com/codex/) | 자연어 프롬프트를 사용하는 오픈소스 CLI 코딩 에이전트 |
 | [**Google Jules**](https://jules.google) | Gemini 2.5 Pro 기반 자율 AI 코딩 에이전트 |
 | [**Gemini Code Assist**](https://cloud.google.com/products/gemini/code-assist) | Cloud/IDE용 Google의 AI 코드 완성 및 채팅 |
+| [**dbForge AI Assistant**](https://www.devart.com/dbforge/ai-assistant/) | dbForge 제품에 통합된 AI 기반 SQL 코딩 도구 |
 | [**JetBrains AI**](https://www.jetbrains.com/ai/) | Junie 에이전트를 갖춘 IntelliJ/PyCharm 깊은 통합 |
 | [**Augment Code**](https://www.augmentcode.com) | 깊은 컨텍스트와 보안(SOC 2)을 갖춘 엔터프라이즈 AI |
 | [**Tabnine**](https://www.tabnine.com/) | 코딩 스타일에 적응하는 딥러닝 자동 완성 |

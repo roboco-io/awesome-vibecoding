@@ -81,6 +81,7 @@
 | [**OpenAI Codex CLI**](https://openai.com/codex/) | 自然言語プロンプトを使用するオープンソースCLIコーディングエージェント |
 | [**Google Jules**](https://jules.google) | Gemini 2.5 Pro搭載の自律型AIコーディングエージェント |
 | [**Gemini Code Assist**](https://cloud.google.com/products/gemini/code-assist) | Cloud/IDE向けGoogleのAIコード補完とチャット |
+| [**dbForge AI Assistant**](https://www.devart.com/dbforge/ai-assistant/) | dbForge製品に統合されたAI搭載SQLコーディングツール |
 | [**JetBrains AI**](https://www.jetbrains.com/ai/) | Junieエージェントを備えたIntelliJ/PyCharmの深い統合 |
 | [**Augment Code**](https://www.augmentcode.com) | 深いコンテキストとセキュリティ（SOC 2）を備えたエンタープライズAI |
 | [**Tabnine**](https://www.tabnine.com/) | コーディングスタイルに適応する深層学習オートコンプリート |

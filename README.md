@@ -81,6 +81,7 @@ AI-powered code completion and assistance integrated into your development envir
 | [**OpenAI Codex CLI**](https://openai.com/codex/) | Open-source CLI coding agent with natural language prompts |
 | [**Google Jules**](https://jules.google) | Autonomous AI coding agent powered by Gemini 2.5 Pro |
 | [**Gemini Code Assist**](https://cloud.google.com/products/gemini/code-assist) | Google's AI code completion and chat for Cloud/IDEs |
+| [**dbForge AI Assistant**](https://www.devart.com/dbforge/ai-assistant/) | AI-powered SQL coding tool, integrated into dbForge products |
 | [**JetBrains AI**](https://www.jetbrains.com/ai/) | Deep integration in IntelliJ/PyCharm with Junie agent |
 | [**Augment Code**](https://www.augmentcode.com) | Enterprise AI with deep context and security (SOC 2) |
 | [**Tabnine**](https://www.tabnine.com/) | Deep learning autocomplete adapting to your coding style |
