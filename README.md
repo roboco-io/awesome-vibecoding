@@ -104,6 +104,7 @@ AI-powered code completion and assistance integrated into your development envir
 | [**Pieces for Developers**](https://pieces.app/) | AI assistant with automatic code snippet management and context |
 | [**Refact.ai**](https://refact.ai/) | Privacy-focused self-hosted AI coding assistant |
 | [**Mutable.ai**](https://mutable.ai/) | AI for automated testing, documentation, and refactoring |
+| [**CopilotKit**](https://github.com/CopilotKit/CopilotKit) | Framework for building AI copilots with chat and generative UI |
 
 ### Agentic Coding Environments
 
@@ -124,6 +125,9 @@ Autonomous AI systems that handle end-to-end development tasks.
 | [**MetaGPT**](https://github.com/geekan/MetaGPT) | Multi-agent framework simulating software company roles |
 | [**AutoGPT**](https://github.com/Significant-Gravitas/AutoGPT) | Autonomous AI agent for complex coding tasks |
 | [**Sweep**](https://github.com/sweepai/sweep) | AI-powered GitHub assistant for issues and PRs |
+| [**Devika**](https://github.com/stitionai/devika) | First open-source agentic software engineer alternative to Devin |
+| [**smol-ai developer**](https://github.com/smol-ai/developer) | Embeddable developer agent library for apps |
+| [**E2B**](https://github.com/e2b-dev/e2b) | Secure cloud sandbox environment for enterprise-grade AI agents |
 
 ### MCP Servers & Tooling
 
@@ -161,6 +165,7 @@ Browser-based and cloud platforms for AI-assisted development.
 | [**Create.xyz**](https://create.xyz/) | Build web apps using natural language prompts |
 | [**Wordware**](https://www.wordware.ai/) | No-code AI agent builder for developers |
 | [**Kombai**](https://kombai.com/) | AI that converts Figma designs to code |
+| [**Dyad**](https://github.com/dyad-sh/dyad) | Local open-source AI app builder (v0/Lovable/Bolt alternative) |
 
 ---
 

@@ -104,6 +104,7 @@
 | [**Pieces for Developers**](https://pieces.app/) | 自動コードスニペット管理とコンテキストを備えたAIアシスタント |
 | [**Refact.ai**](https://refact.ai/) | プライバシー重視のセルフホスト型AIコーディングアシスタント |
 | [**Mutable.ai**](https://mutable.ai/) | 自動テスト、ドキュメント化、リファクタリングのためのAI |
+| [**CopilotKit**](https://github.com/CopilotKit/CopilotKit) | チャットとジェネレーティブUIを備えたAIコパイロットを構築するためのフレームワーク |
 
 ### エージェント型コーディング環境
 
@@ -124,6 +125,9 @@
 | [**MetaGPT**](https://github.com/geekan/MetaGPT) | ソフトウェア会社の役割をシミュレートするマルチエージェントフレームワーク |
 | [**AutoGPT**](https://github.com/Significant-Gravitas/AutoGPT) | 複雑なコーディングタスクのための自律型AIエージェント |
 | [**Sweep**](https://github.com/sweepai/sweep) | issueとPRのためのAI駆動型GitHubアシスタント |
+| [**Devika**](https://github.com/stitionai/devika) | Devinに代わる初のオープンソースエージェント型ソフトウェアエンジニア |
+| [**smol-ai developer**](https://github.com/smol-ai/developer) | アプリ用の組み込み可能な開発者エージェントライブラリ |
+| [**E2B**](https://github.com/e2b-dev/e2b) | エンタープライズグレードのAIエージェント向けセキュアなクラウドサンドボックス環境 |
 
 ### MCPサーバー & ツール
 
@@ -161,6 +165,7 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 | [**Create.xyz**](https://create.xyz/) | 自然言語プロンプトを使用したWebアプリ構築 |
 | [**Wordware**](https://www.wordware.ai/) | 開発者向けノーコードAIエージェントビルダー |
 | [**Kombai**](https://kombai.com/) | Figmaデザインをコードに変換するAI |
+| [**Dyad**](https://github.com/dyad-sh/dyad) | ローカルのオープンソースAIアプリビルダー（v0/Lovable/Boltの代替） |
 
 ---
 

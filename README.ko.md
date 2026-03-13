@@ -104,6 +104,7 @@
 | [**Pieces for Developers**](https://pieces.app/) | 자동 코드 스니펫 관리 및 컨텍스트를 갖춘 AI 어시스턴트 |
 | [**Refact.ai**](https://refact.ai/) | 프라이버시 중심 자체 호스팅 AI 코딩 어시스턴트 |
 | [**Mutable.ai**](https://mutable.ai/) | 자동 테스트, 문서화, 리팩토링을 위한 AI |
+| [**CopilotKit**](https://github.com/CopilotKit/CopilotKit) | 채팅 및 생성 UI를 갖춘 AI 코파일럿 구축 프레임워크 |
 
 ### 에이전트 기반 코딩 환경
 
@@ -124,6 +125,9 @@
 | [**MetaGPT**](https://github.com/geekan/MetaGPT) | 소프트웨어 회사 역할을 시뮬레이션하는 멀티 에이전트 프레임워크 |
 | [**AutoGPT**](https://github.com/Significant-Gravitas/AutoGPT) | 복잡한 코딩 작업을 위한 자율 AI 에이전트 |
 | [**Sweep**](https://github.com/sweepai/sweep) | 이슈 및 PR을 위한 AI 기반 GitHub 어시스턴트 |
+| [**Devika**](https://github.com/stitionai/devika) | Devin의 대안인 최초의 오픈소스 에이전트 기반 소프트웨어 엔지니어 |
+| [**smol-ai developer**](https://github.com/smol-ai/developer) | 앱용 임베드 가능한 개발자 에이전트 라이브러리 |
+| [**E2B**](https://github.com/e2b-dev/e2b) | 엔터프라이즈급 AI 에이전트를 위한 안전한 클라우드 샌드박스 환경 |
 
 ### MCP 서버 & 도구
 
@@ -161,6 +165,7 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 | [**Create.xyz**](https://create.xyz/) | 자연어 프롬프트를 사용한 웹 앱 구축 |
 | [**Wordware**](https://www.wordware.ai/) | 개발자를 위한 노코드 AI 에이전트 빌더 |
 | [**Kombai**](https://kombai.com/) | Figma 디자인을 코드로 변환하는 AI |
+| [**Dyad**](https://github.com/dyad-sh/dyad) | 로컬 오픈소스 AI 앱 빌더 (v0/Lovable/Bolt 대안) |
 
 ---
 
