@@ -100,6 +100,10 @@ AI-powered code completion and assistance integrated into your development envir
 | [**CodeGPT**](https://codegpt.co) | AI coding assistant with multi-LLM support for VS Code and IDEs |
 | [**Wingman AI**](https://github.com/RussellCanfield/wingman-ai-vscode-extension) | Open-source VSCode extension supporting Ollama, HuggingFace, OpenAI, Anthropic |
 | [**DeepSeek CLI**](https://github.com/holasoymalva/deepseek-cli) | Terminal AI coding assistant powered by DeepSeek Coder models |
+| [**Codeium**](https://codeium.com/) | Free AI code completion with 70+ language support |
+| [**Pieces for Developers**](https://pieces.app/) | AI assistant with automatic code snippet management and context |
+| [**Refact.ai**](https://refact.ai/) | Privacy-focused self-hosted AI coding assistant |
+| [**Mutable.ai**](https://mutable.ai/) | AI for automated testing, documentation, and refactoring |
 
 ### Agentic Coding Environments
 
@@ -115,6 +119,11 @@ Autonomous AI systems that handle end-to-end development tasks.
 | [**AlphaCode**](https://alphacode.deepmind.com/) | DeepMind's competitive programming AI |
 | [**Cherry Studio**](https://github.com/CherryHQ/cherry-studio) | AI Agent desktop with autonomous coding and 300+ assistants |
 | [**OpenSpec**](https://github.com/Fission-AI/OpenSpec) | Spec-driven development framework for AI coding assistants |
+| [**SWE-agent**](https://github.com/princeton-nlp/SWE-agent) | Stanford agent that autonomously solves GitHub issues |
+| [**gpt-engineer**](https://github.com/gpt-engineer-org/gpt-engineer) | Build entire codebases from natural language specifications |
+| [**MetaGPT**](https://github.com/geekan/MetaGPT) | Multi-agent framework simulating software company roles |
+| [**AutoGPT**](https://github.com/Significant-Gravitas/AutoGPT) | Autonomous AI agent for complex coding tasks |
+| [**Sweep**](https://github.com/sweepai/sweep) | AI-powered GitHub assistant for issues and PRs |
 
 ### MCP Servers & Tooling
 
@@ -122,12 +131,13 @@ Autonomous AI systems that handle end-to-end development tasks.
 
 | Category | Servers | Description |
 |----------|---------|-------------|
-| **Git Operations** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube) | Repository read/search/manipulation |
-| **Databases** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp), [Excel](https://github.com/haris-musa/excel-mcp-server) | Query, migrations, semantic search, spreadsheet operations |
+| **Git Operations** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube), [GitHub](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | Repository read/search/manipulation, issue/PR management |
+| **Databases** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp), [Excel](https://github.com/haris-musa/excel-mcp-server), [PostgreSQL](https://github.com/modelcontextprotocol/servers/tree/main/src/postgres) | Query, migrations, semantic search, spreadsheet operations |
 | **Security** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | Code scanning, error tracking |
-| **Browser & Automation** | [Chrome MCP](https://github.com/hangwin/mcp-chrome), [Playwright MCP](https://github.com/executeautomation/mcp-playwright), [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | Browser automation, testing, web scraping, content fetching |
+| **Browser & Automation** | [Chrome MCP](https://github.com/hangwin/mcp-chrome), [Playwright MCP](https://github.com/executeautomation/mcp-playwright), [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch), [Puppeteer](https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer) | Browser automation, testing, web scraping, content fetching |
 | **Mobile** | [Mobile MCP](https://github.com/mobile-next/mobile-mcp) | iOS/Android automation and scraping (emulators, simulators, real devices) |
-| **Development** | [Xcode Build MCP](https://github.com/cameroncooke/XcodeBuildMCP), [Spec Workflow MCP](https://github.com/Pimzino/spec-workflow-mcp) | Xcode integration, spec-driven development with real-time dashboard |
+| **Search & Knowledge** | [Brave Search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search), [Exa](https://github.com/exa-labs/exa-mcp-server), [Perplexity](https://github.com/anthropics/mcp-perplexity) | Web search, semantic search, research |
+| **Development** | [Xcode Build MCP](https://github.com/cameroncooke/XcodeBuildMCP), [Spec Workflow MCP](https://github.com/Pimzino/spec-workflow-mcp), [Slack](https://github.com/modelcontextprotocol/servers/tree/main/src/slack), [Linear](https://github.com/jerhadf/linear-mcp-server) | Xcode integration, spec-driven development, team communication, project management |
 | **File System** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | Secure read/write operations |
 | **MCP Clients** | [5ire](https://github.com/nanbingxyz/5ire) | Cross-platform desktop AI assistant with MCP support and local knowledge base |
 
@@ -146,6 +156,11 @@ Browser-based and cloud platforms for AI-assisted development.
 | [**Berrry**](https://berrry.app) | Transform social posts into web apps |
 | [**Duet AI**](https://workspace.google.com/solutions/ai/) | Google Workspace AI integration |
 | [**Trae AI**](https://www.trae.ai/) | AI platform for content creation |
+| [**CodeSandbox AI**](https://codesandbox.io/ai) | AI-powered code generation in browser sandbox |
+| [**GitHub Copilot Workspace**](https://github.com/features/copilot) | AI-native development environment for GitHub |
+| [**Create.xyz**](https://create.xyz/) | Build web apps using natural language prompts |
+| [**Wordware**](https://www.wordware.ai/) | No-code AI agent builder for developers |
+| [**Kombai**](https://kombai.com/) | AI that converts Figma designs to code |
 
 ---
 
@@ -216,6 +231,7 @@ Browser-based and cloud platforms for AI-assisted development.
 - [Secure Vibe Coding Guide (CSA)](https://cloudsecurityalliance.org/blog/2025/04/09/secure-vibe-coding-guide) — Security considerations
 - [Here's how I use LLMs to help me write code (Simon Willison)](https://simonwillison.net/2025/Mar/11/using-llms-for-code/) — Practical integration tips
 - [Agentic Coding (Armin Ronacher)](https://lucumr.pocoo.org/2025/6/12/agentic-coding/) — AI-driven autonomous development approaches
+- [The Model Context Protocol Guide (Anthropic)](https://modelcontextprotocol.io/introduction) — Understanding MCP architecture
 
 ### Videos & Tutorials
 
