@@ -321,7 +321,7 @@ Browser-based and cloud platforms for AI-assisted development.
 
 ## Contributing
 
-This repository is maintained using **Claude Code** (with custom commands and hooks) and **Perplexity MCP** for research. We welcome your suggestions!
+This repository is **fully automated with AI**. Content updates, translations, and curation are handled by **Claude Code** and **Perplexity MCP** via GitHub Actions. Weekly updates run automatically every Sunday, and approved issues are processed and merged without manual intervention.
 
 ### How to Contribute
 
@@ -330,9 +330,9 @@ This repository is maintained using **Claude Code** (with custom commands and ho
    - Correction or update to existing content
    - New category or section idea
 2. **Describe Your Suggestion** — Include name, URL, and brief description
-3. **We'll Review & Update** — Maintainers will curate and add approved suggestions
+3. **Automatic Processing** — Once a maintainer comments `/approve`, Claude Code automatically adds the resource, generates translations, and commits to main
 
-> 💡 **Why issues instead of PRs?** This ensures consistent formatting, proper categorization, and quality curation across all three language versions (English, Korean, Japanese).
+> **Please submit issues, not pull requests.** This repository is AI-operated — Claude Code handles all content editing, formatting, and translation (English, Korean, Japanese) to ensure consistency. Direct PRs will likely cause merge conflicts with the automated pipeline.
 
 ### Curation Principles
 
