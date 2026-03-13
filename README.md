@@ -319,6 +319,8 @@ Browser-based and cloud platforms for AI-assisted development.
 
 ---
 
+<a id="contribution-guidelines"></a>
+
 ## Contributing
 
 This repository is **fully automated with AI**. Content updates, translations, and curation are handled by **Claude Code** and **Perplexity MCP** via GitHub Actions. Weekly updates run automatically every Sunday, and approved issues are processed and merged without manual intervention.
