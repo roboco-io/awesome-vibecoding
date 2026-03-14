@@ -15,12 +15,17 @@ Before adding, verify ALL of the following:
 3. **Not malicious**: Does the URL point to a legitimate domain? Reject suspicious domains.
 4. **Uniqueness**: Check README.md — is the tool name already listed (even with a different URL)? If so, do NOT add.
 
-If validation fails, make NO changes to any files. Output:
+If validation clearly fails, make NO changes to any files. Output:
 ```
 REJECTED: [reason]
 ```
 
-If validation passes, proceed to Step 2.
+If you are uncertain (borderline relevance, unclear category, questionable quality but not obvious spam), make NO changes and output:
+```
+UNCERTAIN: [reason why you're unsure]
+```
+
+If validation clearly passes, proceed to Step 2.
 
 ## Step 2: Determine Category
 
