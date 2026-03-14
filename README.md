@@ -109,6 +109,7 @@ AI-powered code completion and assistance integrated into your development envir
 | [**Kiro**](https://kiro.dev) | AWS spec-driven AI IDE turning requirements into code and tests |
 | [**Warp**](https://www.warp.dev) | AI-native terminal with natural language commands and agent mode |
 | [**PearAI**](https://trypear.ai) | Open-source VS Code AI editor with integrated search |
+| [**OpenPaw**](https://github.com/daxaur/openpaw) | CLI tool that extends Claude Code into a personal assistant with 38+ skills |
 
 ### Agentic Coding Environments
 
@@ -316,6 +317,7 @@ Browser-based and cloud platforms for AI-assisted development.
 - [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers) — Model Context Protocol servers
 - [awesome-chatgpt](https://github.com/humanloop/awesome-chatgpt) — ChatGPT resources
 - [awesome-cursorrules](https://github.com/PatrickJS/awesome-cursorrules) — Community-curated `.cursorrules` files for Cursor IDE
+- [awesome-vibe-coding](https://github.com/taskade/awesome-vibe-coding) — 245+ vibe coding tools, platforms, and resources by Taskade
 
 ---
 

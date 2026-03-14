@@ -109,6 +109,7 @@
 | [**Kiro**](https://kiro.dev) | 요구사항을 코드와 테스트로 변환하는 AWS 스펙 기반 AI IDE |
 | [**Warp**](https://www.warp.dev) | 자연어 명령과 에이전트 모드를 갖춘 AI 네이티브 터미널 |
 | [**PearAI**](https://trypear.ai) | 통합 검색 기능을 갖춘 오픈소스 VS Code AI 편집기 |
+| [**OpenPaw**](https://github.com/daxaur/openpaw) | Claude Code를 38개 이상의 스킬을 갖춘 개인 어시스턴트로 확장하는 CLI 도구 |
 
 ### 에이전트 기반 코딩 환경
 
@@ -317,6 +318,7 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 - [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers) — Model Context Protocol 서버
 - [awesome-chatgpt](https://github.com/humanloop/awesome-chatgpt) — ChatGPT 리소스
 - [awesome-cursorrules](https://github.com/PatrickJS/awesome-cursorrules) — Cursor IDE를 위한 커뮤니티 큐레이션 `.cursorrules` 파일
+- [awesome-vibe-coding](https://github.com/taskade/awesome-vibe-coding) — Taskade의 245개 이상 Vibe Coding 도구, 플랫폼, 리소스
 
 ---
 
