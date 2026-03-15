@@ -110,6 +110,8 @@
 | [**Warp**](https://www.warp.dev) | 自然言語コマンドとエージェントモードを備えたAIネイティブターミナル |
 | [**PearAI**](https://trypear.ai) | 統合検索を備えたオープンソースVS Code AIエディタ |
 | [**OpenPaw**](https://github.com/daxaur/openpaw) | Claude Codeを38以上のスキルを持つパーソナルアシスタントに拡張するCLIツール |
+| [**Gemini CLI**](https://github.com/google-gemini/gemini-cli) | Geminiモデル搭載のGoogleのオープンソースエージェント型コーディングCLI |
+| [**Tabby**](https://tabbyml.com) | プライバシー重視のセルフホスト型オープンソースAIコーディングアシスタント |
 
 ### エージェント型コーディング環境
 
@@ -139,6 +141,7 @@
 | [**Amp**](https://ampcode.com) | Sourcegraphのターミナルファーストなエージェント型コーディングアシスタント |
 | [**Devon**](https://github.com/entropy-research/Devon) | Devinの代替となるオープンソース自律型コーディングエージェント |
 | [**Copilot Workspace**](https://githubnext.com/projects/copilot-workspace) | Issue-to-PRワークフロー向けGitHubのエージェント型環境 |
+| [**Agentless**](https://github.com/OpenAutoCoder/Agentless) | 自律型ソフトウェアエンジニアリングのためのミニマリストなオープンソースアプローチ |
 
 ### MCPサーバー & ツール
 
@@ -147,7 +150,7 @@ AI機能を拡張する[Model Context Protocol](https://modelcontextprotocol.io/
 | カテゴリ | サーバー | 説明 |
 |----------|---------|-------------|
 | **Git操作** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube), [GitHub](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | リポジトリの読み取り/検索/操作、issue/PR管理 |
-| **データベース** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp), [Excel](https://github.com/haris-musa/excel-mcp-server), [PostgreSQL](https://github.com/modelcontextprotocol/servers/tree/main/src/postgres) | クエリ、マイグレーション、セマンティック検索、スプレッドシート操作 |
+| **データベース** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp), [Excel](https://github.com/haris-musa/excel-mcp-server), [PostgreSQL](https://github.com/modelcontextprotocol/servers/tree/main/src/postgres), [Neon](https://github.com/neondatabase/mcp-server-neon) | クエリ、マイグレーション、セマンティック検索、スプレッドシート操作、サーバーレスPostgres |
 | **セキュリティ** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | コードスキャン、エラートラッキング |
 | **ブラウザ & 自動化** | [Chrome MCP](https://github.com/hangwin/mcp-chrome), [Playwright MCP](https://github.com/executeautomation/mcp-playwright), [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch), [Puppeteer](https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer) | ブラウザ自動化、テスト、Webスクレイピング、コンテンツ取得 |
 | **モバイル** | [Mobile MCP](https://github.com/mobile-next/mobile-mcp) | iOS/Android自動化とスクレイピング（エミュレータ、シミュレータ、実機） |
@@ -161,6 +164,8 @@ AI機能を拡張する[Model Context Protocol](https://modelcontextprotocol.io/
 | **決済** | [Stripe](https://github.com/stripe/agent-toolkit) | 決済、顧客、サブスクリプションのための公式Stripe MCP |
 | **ブラウザ（クラウド）** | [Browserbase](https://github.com/browserbase/mcp-server-browserbase) | AIエージェント向けクラウドブラウザ自動化MCP |
 | **バックエンド** | [Supabase](https://github.com/supabase-community/supabase-mcp) | Supabaseプロジェクトの管理、SQLの実行、マイグレーション処理 |
+| **デザイン** | [Figma](https://github.com/figma/figma-developer-mcp) | AI駆動フロントエンド開発のためのFigmaデザインデータ |
+| **クラウドインフラ** | [Cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) | AIを通じてCloudflare Workers、KV、D1、R2を管理 |
 | **MCPクライアント** | [5ire](https://github.com/nanbingxyz/5ire) | MCPサポートとローカルナレッジベースを備えたクロスプラットフォームデスクトップAIアシスタント |
 
 📚 包括的なリストは[awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers)を参照してください。
@@ -189,6 +194,10 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 | [**Databutton**](https://databutton.com) | Pythonバックエンドを備えたAI駆動フルスタックアプリビルダー |
 | [**Tempo Labs**](https://tempolabs.ai/) | ビジュアルエディタとコードエクスポートを備えたAI駆動のReact UIビルダー |
 | [**Gitpod**](https://www.gitpod.io/) | AIによるワークスペース自動化を備えたクラウド開発環境 |
+| [**Bolt.diy**](https://github.com/stackblitz-labs/bolt.diy) | 独自APIキーをサポートするオープンソースのBolt.new代替 |
+| [**Marblism**](https://marblism.com) | テキストプロンプトからフルスタックNext.jsアプリを生成するAI |
+| [**Subframe**](https://subframe.com) | クリーンなReactコンポーネントコードを生成するAI支援UIビルダー |
+| [**BuildShip**](https://buildship.com) | ローコードノードを備えたビジュアルAIワークフロー・バックエンドビルダー |
 
 ---
 

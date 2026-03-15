@@ -110,6 +110,8 @@
 | [**Warp**](https://www.warp.dev) | 자연어 명령과 에이전트 모드를 갖춘 AI 네이티브 터미널 |
 | [**PearAI**](https://trypear.ai) | 통합 검색 기능을 갖춘 오픈소스 VS Code AI 편집기 |
 | [**OpenPaw**](https://github.com/daxaur/openpaw) | Claude Code를 38개 이상의 스킬을 갖춘 개인 어시스턴트로 확장하는 CLI 도구 |
+| [**Gemini CLI**](https://github.com/google-gemini/gemini-cli) | Gemini 모델 기반 Google의 오픈소스 에이전트 코딩 CLI |
+| [**Tabby**](https://tabbyml.com) | 프라이버시 우선 설계의 자체 호스팅 오픈소스 AI 코딩 어시스턴트 |
 
 ### 에이전트 기반 코딩 환경
 
@@ -139,6 +141,7 @@
 | [**Amp**](https://ampcode.com) | Sourcegraph의 터미널 우선 에이전트 코딩 어시스턴트 |
 | [**Devon**](https://github.com/entropy-research/Devon) | Devin의 대안인 오픈소스 자율 코딩 에이전트 |
 | [**Copilot Workspace**](https://githubnext.com/projects/copilot-workspace) | 이슈에서 PR까지의 워크플로우를 위한 GitHub의 에이전트 환경 |
+| [**Agentless**](https://github.com/OpenAutoCoder/Agentless) | 자율 소프트웨어 엔지니어링을 위한 미니멀리스트 오픈소스 접근 방식 |
 
 ### MCP 서버 & 도구
 
@@ -147,7 +150,7 @@ AI 기능을 확장하는 [Model Context Protocol](https://modelcontextprotocol.
 | 카테고리 | 서버 | 설명 |
 |----------|---------|-------------|
 | **Git 작업** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube), [GitHub](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | 저장소 읽기/검색/조작, 이슈/PR 관리 |
-| **데이터베이스** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp), [Excel](https://github.com/haris-musa/excel-mcp-server), [PostgreSQL](https://github.com/modelcontextprotocol/servers/tree/main/src/postgres) | 쿼리, 마이그레이션, 시맨틱 검색, 스프레드시트 작업 |
+| **데이터베이스** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp), [Excel](https://github.com/haris-musa/excel-mcp-server), [PostgreSQL](https://github.com/modelcontextprotocol/servers/tree/main/src/postgres), [Neon](https://github.com/neondatabase/mcp-server-neon) | 쿼리, 마이그레이션, 시맨틱 검색, 스프레드시트 작업, 서버리스 Postgres |
 | **보안** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | 코드 스캐닝, 오류 추적 |
 | **브라우저 & 자동화** | [Chrome MCP](https://github.com/hangwin/mcp-chrome), [Playwright MCP](https://github.com/executeautomation/mcp-playwright), [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch), [Puppeteer](https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer) | 브라우저 자동화, 테스팅, 웹 스크래핑, 콘텐츠 가져오기 |
 | **모바일** | [Mobile MCP](https://github.com/mobile-next/mobile-mcp) | iOS/Android 자동화 및 스크래핑 (에뮬레이터, 시뮬레이터, 실제 디바이스) |
@@ -161,6 +164,8 @@ AI 기능을 확장하는 [Model Context Protocol](https://modelcontextprotocol.
 | **결제** | [Stripe](https://github.com/stripe/agent-toolkit) | 결제, 고객, 구독을 위한 공식 Stripe MCP |
 | **브라우저 (클라우드)** | [Browserbase](https://github.com/browserbase/mcp-server-browserbase) | AI 에이전트를 위한 클라우드 브라우저 자동화 MCP |
 | **백엔드** | [Supabase](https://github.com/supabase-community/supabase-mcp) | Supabase 프로젝트 관리, SQL 실행, 마이그레이션 처리 |
+| **디자인** | [Figma](https://github.com/figma/figma-developer-mcp) | AI 기반 프론트엔드 개발을 위한 Figma 디자인 데이터 |
+| **클라우드 인프라** | [Cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) | AI를 통한 Cloudflare Workers, KV, D1, R2 관리 |
 | **MCP 클라이언트** | [5ire](https://github.com/nanbingxyz/5ire) | MCP 지원 및 로컬 지식베이스를 갖춘 크로스 플랫폼 데스크탑 AI 어시스턴트 |
 
 📚 전체 목록은 [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers)를 참조하세요.
@@ -189,6 +194,10 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 | [**Databutton**](https://databutton.com) | Python 백엔드를 갖춘 AI 기반 풀스택 앱 빌더 |
 | [**Tempo Labs**](https://tempolabs.ai/) | 시각적 편집기와 코드 내보내기를 갖춘 AI 기반 React UI 빌더 |
 | [**Gitpod**](https://www.gitpod.io/) | AI 지원 워크스페이스 자동화를 갖춘 클라우드 개발 환경 |
+| [**Bolt.diy**](https://github.com/stackblitz-labs/bolt.diy) | 자체 API 키를 사용하는 오픈소스 Bolt.new 대안 |
+| [**Marblism**](https://marblism.com) | 텍스트 프롬프트에서 풀스택 Next.js 앱을 생성하는 AI |
+| [**Subframe**](https://subframe.com) | 깔끔한 React 컴포넌트 코드를 생성하는 AI 보조 UI 빌더 |
+| [**BuildShip**](https://buildship.com) | 로우코드 노드를 갖춘 비주얼 AI 워크플로우 및 백엔드 빌더 |
 
 ---
 

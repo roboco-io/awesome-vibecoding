@@ -110,6 +110,8 @@ AI-powered code completion and assistance integrated into your development envir
 | [**Warp**](https://www.warp.dev) | AI-native terminal with natural language commands and agent mode |
 | [**PearAI**](https://trypear.ai) | Open-source VS Code AI editor with integrated search |
 | [**OpenPaw**](https://github.com/daxaur/openpaw) | CLI tool that extends Claude Code into a personal assistant with 38+ skills |
+| [**Gemini CLI**](https://github.com/google-gemini/gemini-cli) | Google's open-source agentic CLI for coding powered by Gemini models |
+| [**Tabby**](https://tabbyml.com) | Self-hosted, open-source AI coding assistant with privacy-first design |
 
 ### Agentic Coding Environments
 
@@ -139,6 +141,7 @@ Autonomous AI systems that handle end-to-end development tasks.
 | [**Amp**](https://ampcode.com) | Sourcegraph's terminal-first agentic coding assistant |
 | [**Devon**](https://github.com/entropy-research/Devon) | Open-source autonomous coding agent, alternative to Devin |
 | [**Copilot Workspace**](https://githubnext.com/projects/copilot-workspace) | GitHub's agentic environment for issue-to-PR workflows |
+| [**Agentless**](https://github.com/OpenAutoCoder/Agentless) | Minimalist open-source approach to autonomous software engineering |
 
 ### MCP Servers & Tooling
 
@@ -147,7 +150,7 @@ Autonomous AI systems that handle end-to-end development tasks.
 | Category | Servers | Description |
 |----------|---------|-------------|
 | **Git Operations** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube), [GitHub](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | Repository read/search/manipulation, issue/PR management |
-| **Databases** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp), [Excel](https://github.com/haris-musa/excel-mcp-server), [PostgreSQL](https://github.com/modelcontextprotocol/servers/tree/main/src/postgres) | Query, migrations, semantic search, spreadsheet operations |
+| **Databases** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp), [Excel](https://github.com/haris-musa/excel-mcp-server), [PostgreSQL](https://github.com/modelcontextprotocol/servers/tree/main/src/postgres), [Neon](https://github.com/neondatabase/mcp-server-neon) | Query, migrations, semantic search, spreadsheet operations, serverless Postgres |
 | **Security** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | Code scanning, error tracking |
 | **Browser & Automation** | [Chrome MCP](https://github.com/hangwin/mcp-chrome), [Playwright MCP](https://github.com/executeautomation/mcp-playwright), [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch), [Puppeteer](https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer) | Browser automation, testing, web scraping, content fetching |
 | **Mobile** | [Mobile MCP](https://github.com/mobile-next/mobile-mcp) | iOS/Android automation and scraping (emulators, simulators, real devices) |
@@ -160,6 +163,8 @@ Autonomous AI systems that handle end-to-end development tasks.
 | **Payments** | [Stripe](https://github.com/stripe/agent-toolkit) | Official Stripe MCP for payments, customers, and subscriptions |
 | **Browser (Cloud)** | [Browserbase](https://github.com/browserbase/mcp-server-browserbase) | Cloud browser automation MCP for AI agents |
 | **Backend** | [Supabase](https://github.com/supabase-community/supabase-mcp) | Manage Supabase projects, run SQL, and handle migrations |
+| **Design** | [Figma](https://github.com/figma/figma-developer-mcp) | Figma design data for AI-powered frontend development |
+| **Cloud Infrastructure** | [Cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) | Manage Cloudflare Workers, KV, D1, and R2 via AI |
 | **MCP Clients** | [5ire](https://github.com/nanbingxyz/5ire) | Cross-platform desktop AI assistant with MCP support and local knowledge base |
 
 📚 See [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers) for a comprehensive list.
@@ -188,6 +193,10 @@ Browser-based and cloud platforms for AI-assisted development.
 | [**Databutton**](https://databutton.com) | AI-powered full-stack app builder with Python backend |
 | [**Tempo Labs**](https://tempolabs.ai/) | AI-powered React UI builder with visual editor and code export |
 | [**Gitpod**](https://www.gitpod.io/) | Cloud dev environments with AI-assisted workspace automation |
+| [**Bolt.diy**](https://github.com/stackblitz-labs/bolt.diy) | Open-source Bolt.new alternative with bring-your-own-API-key support |
+| [**Marblism**](https://marblism.com) | AI that generates full-stack Next.js apps from a text prompt |
+| [**Subframe**](https://subframe.com) | AI-assisted UI builder that generates clean React component code |
+| [**BuildShip**](https://buildship.com) | Visual AI workflow and backend builder with low-code nodes |
 
 ---
 
