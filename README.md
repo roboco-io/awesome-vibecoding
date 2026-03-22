@@ -112,6 +112,8 @@ AI-powered code completion and assistance integrated into your development envir
 | [**OpenPaw**](https://github.com/daxaur/openpaw) | CLI tool that extends Claude Code into a personal assistant with 38+ skills |
 | [**Gemini CLI**](https://github.com/google-gemini/gemini-cli) | Google's open-source agentic CLI for coding powered by Gemini models |
 | [**Tabby**](https://tabbyml.com) | Self-hosted, open-source AI coding assistant with privacy-first design |
+| [**Aide**](https://aide.dev) | Open-source VS Code fork with proactive AI agent that can fix issues across the codebase |
+| [**Blackbox AI**](https://www.blackbox.ai) | AI code completion and generation supporting 20+ languages, popular for in-browser coding |
 
 ### Agentic Coding Environments
 
@@ -142,6 +144,7 @@ Autonomous AI systems that handle end-to-end development tasks.
 | [**Devon**](https://github.com/entropy-research/Devon) | Open-source autonomous coding agent, alternative to Devin |
 | [**Copilot Workspace**](https://githubnext.com/projects/copilot-workspace) | GitHub's agentic environment for issue-to-PR workflows |
 | [**Agentless**](https://github.com/OpenAutoCoder/Agentless) | Minimalist open-source approach to autonomous software engineering |
+| [**Suna**](https://github.com/kortix-ai/suna) | Open-source generalist AI agent with browser, code execution, and file system for dev tasks |
 
 ### MCP Servers & Tooling
 
@@ -166,6 +169,7 @@ Autonomous AI systems that handle end-to-end development tasks.
 | **Design** | [Figma](https://github.com/figma/figma-developer-mcp) | Figma design data for AI-powered frontend development |
 | **Cloud Infrastructure** | [Cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) | Manage Cloudflare Workers, KV, D1, and R2 via AI |
 | **MCP Clients** | [5ire](https://github.com/nanbingxyz/5ire) | Cross-platform desktop AI assistant with MCP support and local knowledge base |
+| **Productivity** | [Notion MCP](https://github.com/makenotion/notion-mcp-server) | Official Notion MCP server for reading and writing pages, databases, and blocks |
 
 📚 See [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers) for a comprehensive list.
 
@@ -197,6 +201,8 @@ Browser-based and cloud platforms for AI-assisted development.
 | [**Marblism**](https://marblism.com) | AI that generates full-stack Next.js apps from a text prompt |
 | [**Subframe**](https://subframe.com) | AI-assisted UI builder that generates clean React component code |
 | [**BuildShip**](https://buildship.com) | Visual AI workflow and backend builder with low-code nodes |
+| [**Onlook**](https://onlook.dev) | Open-source browser-based visual editor for React/Next.js with AI code generation |
+| [**GitHub Spark**](https://githubnext.com/projects/spark) | Natural language micro-app builder by GitHub Next, runs in the browser |
 
 ---
 

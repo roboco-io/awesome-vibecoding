@@ -112,6 +112,8 @@
 | [**OpenPaw**](https://github.com/daxaur/openpaw) | Claude Codeを38以上のスキルを持つパーソナルアシスタントに拡張するCLIツール |
 | [**Gemini CLI**](https://github.com/google-gemini/gemini-cli) | Geminiモデル搭載のGoogleのオープンソースエージェント型コーディングCLI |
 | [**Tabby**](https://tabbyml.com) | プライバシー重視のセルフホスト型オープンソースAIコーディングアシスタント |
+| [**Aide**](https://aide.dev) | コードベース全体の問題を自律的に修正できるプロアクティブなAIエージェントを搭載したオープンソースのVS Codeフォーク |
+| [**Blackbox AI**](https://www.blackbox.ai) | 20以上の言語に対応したAIコード補完・生成ツール、ブラウザ内コーディングで人気 |
 
 ### エージェント型コーディング環境
 
@@ -142,6 +144,7 @@
 | [**Devon**](https://github.com/entropy-research/Devon) | Devinの代替となるオープンソース自律型コーディングエージェント |
 | [**Copilot Workspace**](https://githubnext.com/projects/copilot-workspace) | Issue-to-PRワークフロー向けGitHubのエージェント型環境 |
 | [**Agentless**](https://github.com/OpenAutoCoder/Agentless) | 自律型ソフトウェアエンジニアリングのためのミニマリストなオープンソースアプローチ |
+| [**Suna**](https://github.com/kortix-ai/suna) | ブラウザ、コード実行、ファイルシステムを備えた開発タスク向けオープンソース汎用AIエージェント |
 
 ### MCPサーバー & ツール
 
@@ -167,6 +170,7 @@ AI機能を拡張する[Model Context Protocol](https://modelcontextprotocol.io/
 | **デザイン** | [Figma](https://github.com/figma/figma-developer-mcp) | AI駆動フロントエンド開発のためのFigmaデザインデータ |
 | **クラウドインフラ** | [Cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) | AIを通じてCloudflare Workers、KV、D1、R2を管理 |
 | **MCPクライアント** | [5ire](https://github.com/nanbingxyz/5ire) | MCPサポートとローカルナレッジベースを備えたクロスプラットフォームデスクトップAIアシスタント |
+| **生産性** | [Notion MCP](https://github.com/makenotion/notion-mcp-server) | ページ・データベース・ブロックの読み書きができる公式Notion MCPサーバー |
 
 📚 包括的なリストは[awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers)を参照してください。
 
@@ -198,6 +202,8 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 | [**Marblism**](https://marblism.com) | テキストプロンプトからフルスタックNext.jsアプリを生成するAI |
 | [**Subframe**](https://subframe.com) | クリーンなReactコンポーネントコードを生成するAI支援UIビルダー |
 | [**BuildShip**](https://buildship.com) | ローコードノードを備えたビジュアルAIワークフロー・バックエンドビルダー |
+| [**Onlook**](https://onlook.dev) | AIコード生成機能を備えたReact/Next.js向けオープンソースのブラウザベースビジュアルエディタ |
+| [**GitHub Spark**](https://githubnext.com/projects/spark) | GitHub Nextが開発した自然言語マイクロアプリビルダー、ブラウザ上で動作 |
 
 ---
 

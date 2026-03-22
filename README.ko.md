@@ -112,6 +112,8 @@
 | [**OpenPaw**](https://github.com/daxaur/openpaw) | Claude Code를 38개 이상의 스킬을 갖춘 개인 어시스턴트로 확장하는 CLI 도구 |
 | [**Gemini CLI**](https://github.com/google-gemini/gemini-cli) | Gemini 모델 기반 Google의 오픈소스 에이전트 코딩 CLI |
 | [**Tabby**](https://tabbyml.com) | 프라이버시 우선 설계의 자체 호스팅 오픈소스 AI 코딩 어시스턴트 |
+| [**Aide**](https://aide.dev) | 코드베이스 전반의 문제를 자율적으로 수정할 수 있는 능동적 AI 에이전트가 내장된 오픈소스 VS Code 포크 |
+| [**Blackbox AI**](https://www.blackbox.ai) | 20개 이상 언어를 지원하는 AI 코드 자동완성 및 생성 도구, 브라우저 내 코딩으로 인기 |
 
 ### 에이전트 기반 코딩 환경
 
@@ -142,6 +144,7 @@
 | [**Devon**](https://github.com/entropy-research/Devon) | Devin의 대안인 오픈소스 자율 코딩 에이전트 |
 | [**Copilot Workspace**](https://githubnext.com/projects/copilot-workspace) | 이슈에서 PR까지의 워크플로우를 위한 GitHub의 에이전트 환경 |
 | [**Agentless**](https://github.com/OpenAutoCoder/Agentless) | 자율 소프트웨어 엔지니어링을 위한 미니멀리스트 오픈소스 접근 방식 |
+| [**Suna**](https://github.com/kortix-ai/suna) | 브라우저, 코드 실행, 파일 시스템을 갖춘 개발 작업용 오픈소스 범용 AI 에이전트 |
 
 ### MCP 서버 & 도구
 
@@ -167,6 +170,7 @@ AI 기능을 확장하는 [Model Context Protocol](https://modelcontextprotocol.
 | **디자인** | [Figma](https://github.com/figma/figma-developer-mcp) | AI 기반 프론트엔드 개발을 위한 Figma 디자인 데이터 |
 | **클라우드 인프라** | [Cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) | AI를 통한 Cloudflare Workers, KV, D1, R2 관리 |
 | **MCP 클라이언트** | [5ire](https://github.com/nanbingxyz/5ire) | MCP 지원 및 로컬 지식베이스를 갖춘 크로스 플랫폼 데스크탑 AI 어시스턴트 |
+| **생산성** | [Notion MCP](https://github.com/makenotion/notion-mcp-server) | 페이지, 데이터베이스, 블록 읽기·쓰기를 위한 공식 Notion MCP 서버 |
 
 📚 전체 목록은 [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers)를 참조하세요.
 
@@ -198,6 +202,8 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 | [**Marblism**](https://marblism.com) | 텍스트 프롬프트에서 풀스택 Next.js 앱을 생성하는 AI |
 | [**Subframe**](https://subframe.com) | 깔끔한 React 컴포넌트 코드를 생성하는 AI 보조 UI 빌더 |
 | [**BuildShip**](https://buildship.com) | 로우코드 노드를 갖춘 비주얼 AI 워크플로우 및 백엔드 빌더 |
+| [**Onlook**](https://onlook.dev) | AI 코드 생성 기능이 있는 React/Next.js용 오픈소스 브라우저 기반 시각적 편집기 |
+| [**GitHub Spark**](https://githubnext.com/projects/spark) | GitHub Next가 개발한 자연어 마이크로 앱 빌더, 브라우저에서 실행 |
 
 ---
 
