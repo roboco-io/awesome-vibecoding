@@ -114,6 +114,7 @@
 | [**Tabby**](https://tabbyml.com) | 프라이버시 우선 설계의 자체 호스팅 오픈소스 AI 코딩 어시스턴트 |
 | [**Aide**](https://aide.dev) | 코드베이스 전반의 문제를 자율적으로 수정할 수 있는 능동적 AI 에이전트가 내장된 오픈소스 VS Code 포크 |
 | [**Blackbox AI**](https://www.blackbox.ai) | 20개 이상 언어를 지원하는 AI 코드 자동완성 및 생성 도구, 브라우저 내 코딩으로 인기 |
+| [**llm.log**](https://github.com/lanesket/llm.log) | AI 에이전트 API 호출을 캡처하는 로컬 프록시 — 토큰, 비용, 프롬프트, 지연 시간을 TUI 대시보드에서 확인 |
 
 ### 에이전트 기반 코딩 환경
 

@@ -114,6 +114,7 @@ AI-powered code completion and assistance integrated into your development envir
 | [**Tabby**](https://tabbyml.com) | Self-hosted, open-source AI coding assistant with privacy-first design |
 | [**Aide**](https://aide.dev) | Open-source VS Code fork with proactive AI agent that can fix issues across the codebase |
 | [**Blackbox AI**](https://www.blackbox.ai) | AI code completion and generation supporting 20+ languages, popular for in-browser coding |
+| [**llm.log**](https://github.com/lanesket/llm.log) | Local proxy that captures AI agent API calls — tokens, costs, prompts, latency in a TUI dashboard |
 
 ### Agentic Coding Environments
 
