@@ -115,6 +115,9 @@
 | [**Aide**](https://aide.dev) | 코드베이스 전반의 문제를 자율적으로 수정할 수 있는 능동적 AI 에이전트가 내장된 오픈소스 VS Code 포크 |
 | [**Blackbox AI**](https://www.blackbox.ai) | 20개 이상 언어를 지원하는 AI 코드 자동완성 및 생성 도구, 브라우저 내 코딩으로 인기 |
 | [**llm.log**](https://github.com/lanesket/llm.log) | AI 에이전트 API 호출을 캡처하는 로컬 프록시 — 토큰, 비용, 프롬프트, 지연 시간을 TUI 대시보드에서 확인 |
+| [**Phind**](https://www.phind.com) | 코드, 오류, 기술 Q&A를 위한 AI 기반 개발자 검색 엔진 |
+| [**Bito AI**](https://bito.ai) | VS Code 및 JetBrains IDE용 AI 코드 리뷰 및 생성 어시스턴트 |
+| [**PR-Agent**](https://github.com/Codium-ai/pr-agent) | 자동화된 풀 리퀘스트 분석 및 리뷰를 위한 오픈소스 AI 에이전트 |
 
 ### 에이전트 기반 코딩 환경
 
@@ -146,6 +149,9 @@
 | [**Copilot Workspace**](https://githubnext.com/projects/copilot-workspace) | 이슈에서 PR까지의 워크플로우를 위한 GitHub의 에이전트 환경 |
 | [**Agentless**](https://github.com/OpenAutoCoder/Agentless) | 자율 소프트웨어 엔지니어링을 위한 미니멀리스트 오픈소스 접근 방식 |
 | [**Suna**](https://github.com/kortix-ai/suna) | 브라우저, 코드 실행, 파일 시스템을 갖춘 개발 작업용 오픈소스 범용 AI 에이전트 |
+| [**micro-agent**](https://github.com/BuilderIO/micro-agent) | 테스트가 통과할 때까지 TDD 방식으로 코드를 작성하고 반복 수정하는 CLI 도구 |
+| [**Potpie**](https://github.com/potpie-ai/potpie) | 코드베이스 디버깅, 테스트, 코드 리뷰를 위한 오픈소스 AI 에이전트 |
+| [**RA.Aid**](https://github.com/ai-christianson/RA.Aid) | 리서치, 계획 수립, 다단계 코드 생성을 결합한 자율 개발 에이전트 |
 
 ### MCP 서버 & 도구
 
@@ -156,9 +162,9 @@ AI 기능을 확장하는 [Model Context Protocol](https://modelcontextprotocol.
 | **Git 작업** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube), [GitHub](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | 저장소 읽기/검색/조작, 이슈/PR 관리 |
 | **데이터베이스** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp), [Excel](https://github.com/haris-musa/excel-mcp-server), [PostgreSQL](https://github.com/modelcontextprotocol/servers/tree/main/src/postgres), [Neon](https://github.com/neondatabase/mcp-server-neon) | 쿼리, 마이그레이션, 시맨틱 검색, 스프레드시트 작업, 서버리스 Postgres |
 | **보안** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | 코드 스캐닝, 오류 추적 |
-| **브라우저 & 자동화** | [Chrome MCP](https://github.com/hangwin/mcp-chrome), [Playwright MCP](https://github.com/executeautomation/mcp-playwright), [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch), [Puppeteer](https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer) | 브라우저 자동화, 테스팅, 웹 스크래핑, 콘텐츠 가져오기 |
+| **브라우저 & 자동화** | [Chrome MCP](https://github.com/hangwin/mcp-chrome), [Playwright MCP](https://github.com/executeautomation/mcp-playwright), [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch), [Puppeteer](https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer), [Firecrawl MCP](https://github.com/mendableai/firecrawl-mcp-server) | 브라우저 자동화, 테스팅, 웹 스크래핑, 콘텐츠 가져오기 |
 | **모바일** | [Mobile MCP](https://github.com/mobile-next/mobile-mcp) | iOS/Android 자동화 및 스크래핑 (에뮬레이터, 시뮬레이터, 실제 디바이스) |
-| **검색 & 지식** | [Brave Search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search), [Exa](https://github.com/exa-labs/exa-mcp-server), [Perplexity](https://github.com/anthropics/mcp-perplexity) | 웹 검색, 시맨틱 검색, 리서치 |
+| **검색 & 지식** | [Brave Search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search), [Exa](https://github.com/exa-labs/exa-mcp-server), [Perplexity](https://github.com/anthropics/mcp-perplexity), [Tavily](https://github.com/tavily-ai/tavily-mcp) | 웹 검색, 시맨틱 검색, 리서치, AI 최적화 검색 |
 | **개발** | [Xcode Build MCP](https://github.com/cameroncooke/XcodeBuildMCP), [Spec Workflow MCP](https://github.com/Pimzino/spec-workflow-mcp), [Slack](https://github.com/modelcontextprotocol/servers/tree/main/src/slack), [Linear](https://github.com/jerhadf/linear-mcp-server) | Xcode 통합, 스펙 기반 개발, 팀 커뮤니케이션, 프로젝트 관리 |
 | **파일 시스템** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 안전한 읽기/쓰기 작업 |
 | **CI/CD** | [GitHub MCP](https://github.com/github/github-mcp-server) | 이슈, PR, Actions를 위한 전체 GitHub API 액세스 |
@@ -172,6 +178,8 @@ AI 기능을 확장하는 [Model Context Protocol](https://modelcontextprotocol.
 | **클라우드 인프라** | [Cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) | AI를 통한 Cloudflare Workers, KV, D1, R2 관리 |
 | **MCP 클라이언트** | [5ire](https://github.com/nanbingxyz/5ire) | MCP 지원 및 로컬 지식베이스를 갖춘 크로스 플랫폼 데스크탑 AI 어시스턴트 |
 | **생산성** | [Notion MCP](https://github.com/makenotion/notion-mcp-server) | 페이지, 데이터베이스, 블록 읽기·쓰기를 위한 공식 Notion MCP 서버 |
+| **배포** | [Vercel MCP](https://github.com/vercel/mcp-adapter) | AI를 통한 프로젝트 배포, 도메인 관리, 환경 변수 설정 |
+| **프로젝트 관리** | [Jira MCP](https://github.com/sooperset/mcp-atlassian) | 이슈 및 문서 관리를 위한 Atlassian Jira 및 Confluence 통합 |
 
 📚 전체 목록은 [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers)를 참조하세요.
 
@@ -205,6 +213,8 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 | [**BuildShip**](https://buildship.com) | 로우코드 노드를 갖춘 비주얼 AI 워크플로우 및 백엔드 빌더 |
 | [**Onlook**](https://onlook.dev) | AI 코드 생성 기능이 있는 React/Next.js용 오픈소스 브라우저 기반 시각적 편집기 |
 | [**GitHub Spark**](https://githubnext.com/projects/spark) | GitHub Next가 개발한 자연어 마이크로 앱 빌더, 브라우저에서 실행 |
+| [**Dify**](https://github.com/langgenius/dify) | LLM 기반 애플리케이션 구축 및 배포를 위한 오픈소스 플랫폼 |
+| [**Lazy AI**](https://www.getlazy.ai) | 원클릭 클라우드 배포를 지원하는 채팅 기반 웹 앱 빌더 |
 
 ---
 

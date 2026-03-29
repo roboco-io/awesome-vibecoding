@@ -115,6 +115,9 @@
 | [**Aide**](https://aide.dev) | コードベース全体の問題を自律的に修正できるプロアクティブなAIエージェントを搭載したオープンソースのVS Codeフォーク |
 | [**Blackbox AI**](https://www.blackbox.ai) | 20以上の言語に対応したAIコード補完・生成ツール、ブラウザ内コーディングで人気 |
 | [**llm.log**](https://github.com/lanesket/llm.log) | AIエージェントのAPI呼び出しをキャプチャするローカルプロキシ — トークン、コスト、プロンプト、レイテンシをTUIダッシュボードで表示 |
+| [**Phind**](https://www.phind.com) | コード・エラー・技術的Q&AのためのAI搭載開発者向け検索エンジン |
+| [**Bito AI**](https://bito.ai) | VS CodeおよびJetBrains IDE向けAIコードレビュー・生成アシスタント |
+| [**PR-Agent**](https://github.com/Codium-ai/pr-agent) | プルリクエストの自動分析とレビューのためのオープンソースAIエージェント |
 
 ### エージェント型コーディング環境
 
@@ -146,6 +149,9 @@
 | [**Copilot Workspace**](https://githubnext.com/projects/copilot-workspace) | Issue-to-PRワークフロー向けGitHubのエージェント型環境 |
 | [**Agentless**](https://github.com/OpenAutoCoder/Agentless) | 自律型ソフトウェアエンジニアリングのためのミニマリストなオープンソースアプローチ |
 | [**Suna**](https://github.com/kortix-ai/suna) | ブラウザ、コード実行、ファイルシステムを備えた開発タスク向けオープンソース汎用AIエージェント |
+| [**micro-agent**](https://github.com/BuilderIO/micro-agent) | テストが通過するまでTDDでコードを書き反復修正するCLIツール |
+| [**Potpie**](https://github.com/potpie-ai/potpie) | コードベースのデバッグ・テスト・コードレビュー向けオープンソースAIエージェント |
+| [**RA.Aid**](https://github.com/ai-christianson/RA.Aid) | リサーチ・計画・多段階コード生成を組み合わせた自律型開発エージェント |
 
 ### MCPサーバー & ツール
 
@@ -156,9 +162,9 @@ AI機能を拡張する[Model Context Protocol](https://modelcontextprotocol.io/
 | **Git操作** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube), [GitHub](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | リポジトリの読み取り/検索/操作、issue/PR管理 |
 | **データベース** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp), [Excel](https://github.com/haris-musa/excel-mcp-server), [PostgreSQL](https://github.com/modelcontextprotocol/servers/tree/main/src/postgres), [Neon](https://github.com/neondatabase/mcp-server-neon) | クエリ、マイグレーション、セマンティック検索、スプレッドシート操作、サーバーレスPostgres |
 | **セキュリティ** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | コードスキャン、エラートラッキング |
-| **ブラウザ & 自動化** | [Chrome MCP](https://github.com/hangwin/mcp-chrome), [Playwright MCP](https://github.com/executeautomation/mcp-playwright), [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch), [Puppeteer](https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer) | ブラウザ自動化、テスト、Webスクレイピング、コンテンツ取得 |
+| **ブラウザ & 自動化** | [Chrome MCP](https://github.com/hangwin/mcp-chrome), [Playwright MCP](https://github.com/executeautomation/mcp-playwright), [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch), [Puppeteer](https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer), [Firecrawl MCP](https://github.com/mendableai/firecrawl-mcp-server) | ブラウザ自動化、テスト、Webスクレイピング、コンテンツ取得 |
 | **モバイル** | [Mobile MCP](https://github.com/mobile-next/mobile-mcp) | iOS/Android自動化とスクレイピング（エミュレータ、シミュレータ、実機） |
-| **検索 & ナレッジ** | [Brave Search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search), [Exa](https://github.com/exa-labs/exa-mcp-server), [Perplexity](https://github.com/anthropics/mcp-perplexity) | Web検索、セマンティック検索、リサーチ |
+| **検索 & ナレッジ** | [Brave Search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search), [Exa](https://github.com/exa-labs/exa-mcp-server), [Perplexity](https://github.com/anthropics/mcp-perplexity), [Tavily](https://github.com/tavily-ai/tavily-mcp) | Web検索、セマンティック検索、リサーチ、AI最適化検索 |
 | **開発** | [Xcode Build MCP](https://github.com/cameroncooke/XcodeBuildMCP), [Spec Workflow MCP](https://github.com/Pimzino/spec-workflow-mcp), [Slack](https://github.com/modelcontextprotocol/servers/tree/main/src/slack), [Linear](https://github.com/jerhadf/linear-mcp-server) | Xcode統合、スペック駆動開発、チームコミュニケーション、プロジェクト管理 |
 | **ファイルシステム** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 安全な読み取り/書き込み操作 |
 | **CI/CD** | [GitHub MCP](https://github.com/github/github-mcp-server) | issues、PR、ActionsへのフルGitHub APIアクセス |
@@ -172,6 +178,8 @@ AI機能を拡張する[Model Context Protocol](https://modelcontextprotocol.io/
 | **クラウドインフラ** | [Cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) | AIを通じてCloudflare Workers、KV、D1、R2を管理 |
 | **MCPクライアント** | [5ire](https://github.com/nanbingxyz/5ire) | MCPサポートとローカルナレッジベースを備えたクロスプラットフォームデスクトップAIアシスタント |
 | **生産性** | [Notion MCP](https://github.com/makenotion/notion-mcp-server) | ページ・データベース・ブロックの読み書きができる公式Notion MCPサーバー |
+| **デプロイメント** | [Vercel MCP](https://github.com/vercel/mcp-adapter) | AIを通じてプロジェクトをデプロイし、ドメインの管理や環境変数の設定を行う |
+| **プロジェクト管理** | [Jira MCP](https://github.com/sooperset/mcp-atlassian) | issueとドキュメント管理のためのAtlassian JiraおよびConfluence統合 |
 
 📚 包括的なリストは[awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers)を参照してください。
 
@@ -205,6 +213,8 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 | [**BuildShip**](https://buildship.com) | ローコードノードを備えたビジュアルAIワークフロー・バックエンドビルダー |
 | [**Onlook**](https://onlook.dev) | AIコード生成機能を備えたReact/Next.js向けオープンソースのブラウザベースビジュアルエディタ |
 | [**GitHub Spark**](https://githubnext.com/projects/spark) | GitHub Nextが開発した自然言語マイクロアプリビルダー、ブラウザ上で動作 |
+| [**Dify**](https://github.com/langgenius/dify) | LLM搭載アプリケーションの構築・デプロイのためのオープンソースプラットフォーム |
+| [**Lazy AI**](https://www.getlazy.ai) | ワンクリッククラウドデプロイ対応のチャットベースWebアプリビルダー |
 
 ---
 

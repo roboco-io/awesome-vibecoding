@@ -115,6 +115,9 @@ AI-powered code completion and assistance integrated into your development envir
 | [**Aide**](https://aide.dev) | Open-source VS Code fork with proactive AI agent that can fix issues across the codebase |
 | [**Blackbox AI**](https://www.blackbox.ai) | AI code completion and generation supporting 20+ languages, popular for in-browser coding |
 | [**llm.log**](https://github.com/lanesket/llm.log) | Local proxy that captures AI agent API calls — tokens, costs, prompts, latency in a TUI dashboard |
+| [**Phind**](https://www.phind.com) | AI-powered developer search engine for code, errors, and technical Q&A |
+| [**Bito AI**](https://bito.ai) | AI code review and generation assistant for VS Code and JetBrains IDEs |
+| [**PR-Agent**](https://github.com/Codium-ai/pr-agent) | Open-source AI agent for automated pull request analysis and review |
 
 ### Agentic Coding Environments
 
@@ -146,6 +149,9 @@ Autonomous AI systems that handle end-to-end development tasks.
 | [**Copilot Workspace**](https://githubnext.com/projects/copilot-workspace) | GitHub's agentic environment for issue-to-PR workflows |
 | [**Agentless**](https://github.com/OpenAutoCoder/Agentless) | Minimalist open-source approach to autonomous software engineering |
 | [**Suna**](https://github.com/kortix-ai/suna) | Open-source generalist AI agent with browser, code execution, and file system for dev tasks |
+| [**micro-agent**](https://github.com/BuilderIO/micro-agent) | CLI tool that writes and iteratively fixes code using TDD until tests pass |
+| [**Potpie**](https://github.com/potpie-ai/potpie) | Open-source AI agents for codebase debugging, testing, and code review |
+| [**RA.Aid**](https://github.com/ai-christianson/RA.Aid) | Autonomous dev agent combining research, planning, and multi-step code generation |
 
 ### MCP Servers & Tooling
 
@@ -156,9 +162,9 @@ Autonomous AI systems that handle end-to-end development tasks.
 | **Git Operations** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube), [GitHub](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | Repository read/search/manipulation, issue/PR management |
 | **Databases** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp), [Excel](https://github.com/haris-musa/excel-mcp-server), [PostgreSQL](https://github.com/modelcontextprotocol/servers/tree/main/src/postgres), [Neon](https://github.com/neondatabase/mcp-server-neon) | Query, migrations, semantic search, spreadsheet operations, serverless Postgres |
 | **Security** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | Code scanning, error tracking |
-| **Browser & Automation** | [Chrome MCP](https://github.com/hangwin/mcp-chrome), [Playwright MCP](https://github.com/executeautomation/mcp-playwright), [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch), [Puppeteer](https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer) | Browser automation, testing, web scraping, content fetching |
+| **Browser & Automation** | [Chrome MCP](https://github.com/hangwin/mcp-chrome), [Playwright MCP](https://github.com/executeautomation/mcp-playwright), [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch), [Puppeteer](https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer), [Firecrawl MCP](https://github.com/mendableai/firecrawl-mcp-server) | Browser automation, testing, web scraping, content fetching |
 | **Mobile** | [Mobile MCP](https://github.com/mobile-next/mobile-mcp) | iOS/Android automation and scraping (emulators, simulators, real devices) |
-| **Search & Knowledge** | [Brave Search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search), [Exa](https://github.com/exa-labs/exa-mcp-server), [Perplexity](https://github.com/anthropics/mcp-perplexity) | Web search, semantic search, research |
+| **Search & Knowledge** | [Brave Search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search), [Exa](https://github.com/exa-labs/exa-mcp-server), [Perplexity](https://github.com/anthropics/mcp-perplexity), [Tavily](https://github.com/tavily-ai/tavily-mcp) | Web search, semantic search, research, AI-optimized search |
 | **Development** | [Xcode Build MCP](https://github.com/cameroncooke/XcodeBuildMCP), [Spec Workflow MCP](https://github.com/Pimzino/spec-workflow-mcp), [Slack](https://github.com/modelcontextprotocol/servers/tree/main/src/slack), [Linear](https://github.com/jerhadf/linear-mcp-server) | Xcode integration, spec-driven development, team communication, project management |
 | **CI/CD** | [GitHub MCP](https://github.com/github/github-mcp-server) | Full GitHub API access for issues, PRs, and Actions |
 | **Execution** | [E2B](https://github.com/e2b-dev/mcp-server) | Secure cloud sandbox for AI-generated code execution |
@@ -171,6 +177,8 @@ Autonomous AI systems that handle end-to-end development tasks.
 | **Cloud Infrastructure** | [Cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) | Manage Cloudflare Workers, KV, D1, and R2 via AI |
 | **MCP Clients** | [5ire](https://github.com/nanbingxyz/5ire) | Cross-platform desktop AI assistant with MCP support and local knowledge base |
 | **Productivity** | [Notion MCP](https://github.com/makenotion/notion-mcp-server) | Official Notion MCP server for reading and writing pages, databases, and blocks |
+| **Deployment** | [Vercel MCP](https://github.com/vercel/mcp-adapter) | Deploy projects, manage domains, and configure env vars via AI |
+| **Project Management** | [Jira MCP](https://github.com/sooperset/mcp-atlassian) | Atlassian Jira and Confluence integration for issue and doc management |
 
 📚 See [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers) for a comprehensive list.
 
@@ -204,6 +212,8 @@ Browser-based and cloud platforms for AI-assisted development.
 | [**BuildShip**](https://buildship.com) | Visual AI workflow and backend builder with low-code nodes |
 | [**Onlook**](https://onlook.dev) | Open-source browser-based visual editor for React/Next.js with AI code generation |
 | [**GitHub Spark**](https://githubnext.com/projects/spark) | Natural language micro-app builder by GitHub Next, runs in the browser |
+| [**Dify**](https://github.com/langgenius/dify) | Open-source platform for building and deploying LLM-powered applications |
+| [**Lazy AI**](https://www.getlazy.ai) | Chat-based web app builder with one-click cloud deployment |
 
 ---
 
