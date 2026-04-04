@@ -118,6 +118,7 @@ AI-powered code completion and assistance integrated into your development envir
 | [**Phind**](https://www.phind.com) | AI-powered developer search engine for code, errors, and technical Q&A |
 | [**Bito AI**](https://bito.ai) | AI code review and generation assistant for VS Code and JetBrains IDEs |
 | [**PR-Agent**](https://github.com/Codium-ai/pr-agent) | Open-source AI agent for automated pull request analysis and review |
+| [**Caliber**](https://github.com/caliber-ai-org/ai-setup) | CLI that generates and syncs AI agent configs for Claude Code, Cursor, and Codex |
 
 ### Agentic Coding Environments
 

@@ -118,6 +118,7 @@
 | [**Phind**](https://www.phind.com) | コード・エラー・技術的Q&AのためのAI搭載開発者向け検索エンジン |
 | [**Bito AI**](https://bito.ai) | VS CodeおよびJetBrains IDE向けAIコードレビュー・生成アシスタント |
 | [**PR-Agent**](https://github.com/Codium-ai/pr-agent) | プルリクエストの自動分析とレビューのためのオープンソースAIエージェント |
+| [**Caliber**](https://github.com/caliber-ai-org/ai-setup) | Claude Code、Cursor、Codex向けのAIエージェント設定を生成・同期するCLI |
 
 ### エージェント型コーディング環境
 
