@@ -2,7 +2,7 @@ name: Auto Process Issue
 
 on:
   issues:
-    types: [opened]
+    types: [opened, labeled]
 
 jobs:
   validate-and-process:
