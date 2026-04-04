@@ -119,6 +119,8 @@ AI-powered code completion and assistance integrated into your development envir
 | [**Bito AI**](https://bito.ai) | AI code review and generation assistant for VS Code and JetBrains IDEs |
 | [**PR-Agent**](https://github.com/Codium-ai/pr-agent) | Open-source AI agent for automated pull request analysis and review |
 | [**Caliber**](https://github.com/caliber-ai-org/ai-setup) | CLI that generates and syncs AI agent configs for Claude Code, Cursor, and Codex |
+| [**roboco-cli**](https://github.com/roboco-io/roboco-cli) | AI-native development scaffolding system for vibe coding with Claude Code |
+| [**vibe-ready**](https://github.com/roboco-io/vibe-ready-cli) | CLI tool that analyzes repository readiness for vibe coding using Claude Agent SDK with 6-category scoring |
 
 ### Agentic Coding Environments
 
@@ -153,6 +155,8 @@ Autonomous AI systems that handle end-to-end development tasks.
 | [**micro-agent**](https://github.com/BuilderIO/micro-agent) | CLI tool that writes and iteratively fixes code using TDD until tests pass |
 | [**Potpie**](https://github.com/potpie-ai/potpie) | Open-source AI agents for codebase debugging, testing, and code review |
 | [**RA.Aid**](https://github.com/ai-christianson/RA.Aid) | Autonomous dev agent combining research, planning, and multi-step code generation |
+| [**serverless-openclaw**](https://github.com/serithemage/serverless-openclaw) | Run OpenClaw AI agent on-demand on AWS serverless infrastructure with Web UI and Telegram interfaces |
+| [**serverless-autoresearch**](https://github.com/roboco-io/serverless-autoresearch) | Parallel evolution pipeline for Karpathy's autoresearch on SageMaker Spot Training (H100) with HUGI pattern |
 
 ### MCP Servers & Tooling
 

@@ -119,6 +119,8 @@
 | [**Bito AI**](https://bito.ai) | VS CodeおよびJetBrains IDE向けAIコードレビュー・生成アシスタント |
 | [**PR-Agent**](https://github.com/Codium-ai/pr-agent) | プルリクエストの自動分析とレビューのためのオープンソースAIエージェント |
 | [**Caliber**](https://github.com/caliber-ai-org/ai-setup) | Claude Code、Cursor、Codex向けのAIエージェント設定を生成・同期するCLI |
+| [**roboco-cli**](https://github.com/roboco-io/roboco-cli) | Claude Codeによるバイブコーディングのための AI ネイティブ開発スキャフォールディングシステム |
+| [**vibe-ready**](https://github.com/roboco-io/vibe-ready-cli) | Claude Agent SDKを使用してリポジトリのバイブコーディング準備度を6カテゴリスコアリングで分析するCLIツール |
 
 ### エージェント型コーディング環境
 
@@ -153,6 +155,8 @@
 | [**micro-agent**](https://github.com/BuilderIO/micro-agent) | テストが通過するまでTDDでコードを書き反復修正するCLIツール |
 | [**Potpie**](https://github.com/potpie-ai/potpie) | コードベースのデバッグ・テスト・コードレビュー向けオープンソースAIエージェント |
 | [**RA.Aid**](https://github.com/ai-christianson/RA.Aid) | リサーチ・計画・多段階コード生成を組み合わせた自律型開発エージェント |
+| [**serverless-openclaw**](https://github.com/serithemage/serverless-openclaw) | AWSサーバーレスインフラ上でOpenClaw AIエージェントをオンデマンド実行、Web UIとTelegramインターフェース対応 |
+| [**serverless-autoresearch**](https://github.com/roboco-io/serverless-autoresearch) | SageMaker Spotトレーニング（H100）上でKarpathyのautoresearchをHUGIパターンで並列進化させるパイプライン |
 
 ### MCPサーバー & ツール
 
