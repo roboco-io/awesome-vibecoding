@@ -1,0 +1,13 @@
+{
+  "name": "awesome-vibecoding",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "weekly-update": "node scripts/weekly-update.mjs",
+    "auto-process-issue": "node scripts/auto-process-issue.mjs",
+    "issue-approval": "node scripts/issue-approval.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.1.0"
+  }
+}

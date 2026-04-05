@@ -13,6 +13,11 @@ awesome-vibecoding/
 ├── README.md                    # English source (edit this only)
 ├── README.ko.md                 # Korean translation (auto-generated)
 ├── README.ja.md                 # Japanese translation (auto-generated)
+├── package.json                 # SDK dependency (@anthropic-ai/claude-agent-sdk)
+├── scripts/
+│   ├── weekly-update.mjs        # SDK script for weekly updates
+│   ├── auto-process-issue.mjs   # SDK script for issue auto-processing
+│   └── issue-approval.mjs       # SDK script for manual approval
 ├── docs/
 │   ├── automation.md            # How the automation works
 │   └── workflows-and-templates.md
@@ -22,11 +27,12 @@ awesome-vibecoding/
 │   └── settings.json            # PostToolUse hook config
 └── .github/
     ├── workflows/
-    │   ├── weekly-update.yml    # Weekly content update via Claude Code
-    │   └── issue-approval.yml   # Issue-based resource addition
+    │   ├── weekly-update.yml    # Weekly content update via Claude Code SDK
+    │   ├── auto-process-issue.yml # Issue auto-processing via Claude Code SDK
+    │   └── issue-approval.yml   # Manual approval via Claude Code SDK
     └── prompts/
-        ├── weekly-update.md     # Prompt for weekly updates
-        └── issue-approval.md    # Prompt for issue processing
+        ├── issue-auto-process.md # Prompt for issue auto-processing
+        └── issue-approval.md    # Prompt for issue approval
 ```
 
 ## Key Commands
@@ -37,10 +43,10 @@ awesome-vibecoding/
 ```
 Runs parallel agents to sync README.md changes to Korean and Japanese versions.
 
-### GitHub Actions Workflows
-- **weekly-update.yml**: Runs every Sunday, uses Perplexity MCP to find new tools, commits directly to main
-- **auto-process-issue.yml**: Triggers on issue creation with `addition` label — validates URL, checks duplicates, then Claude Code auto-processes and commits to main
-- **issue-approval.yml**: Manual fallback — `/approve` forces add, `/reject` closes with reason. For issues that auto-processing couldn't handle (`needs-review` label)
+### GitHub Actions Workflows (Claude Code SDK)
+- **weekly-update.yml**: Runs every Sunday, uses Perplexity MCP to find new tools, commits directly to main. Script: `scripts/weekly-update.mjs`
+- **auto-process-issue.yml**: Triggers on issue creation with `addition` label — validates URL, checks duplicates, then auto-processes and commits to main. Script: `scripts/auto-process-issue.mjs`
+- **issue-approval.yml**: Manual fallback — `/approve` forces add, `/reject` closes with reason. Script: `scripts/issue-approval.mjs`
 
 ## Content Editing Rules
 

@@ -113,50 +113,19 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install Claude Code
+      - name: Install dependencies
         if: steps.validate.outputs.status == 'valid'
-        run: npm install -g @anthropic-ai/claude-code
+        run: npm ci
 
-      - name: Process with Claude Code
+      - name: Process with Claude Code SDK
         if: steps.validate.outputs.status == 'valid'
         id: claude
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: |
-          ISSUE_TITLE="${{ github.event.issue.title }}"
-          ISSUE_BODY=$(cat <<'ISSUE_EOF'
-          ${{ github.event.issue.body }}
-          ISSUE_EOF
-          )
-          ISSUE_NUMBER="${{ github.event.issue.number }}"
-
-          PROMPT=$(cat .github/prompts/issue-auto-process.md)
-
-          OUTPUT=$(claude -p "
-          $PROMPT
-
-          ## Issue Details
-
-          **Issue #$ISSUE_NUMBER**: $ISSUE_TITLE
-
-          **Issue Body**:
-          $ISSUE_BODY
-
-          Process this issue: validate content quality, add the resource to README.md, then translate to Korean and Japanese.
-          " --allowedTools "Edit,Read,Glob,Grep,Write,Bash(git diff:git status)" \
-            --max-turns 30 2>&1) || true
-
-          echo "$OUTPUT"
-
-          if echo "$OUTPUT" | grep -q "^REJECTED:"; then
-            echo "result=rejected" >> $GITHUB_OUTPUT
-            echo "reason=$(echo "$OUTPUT" | grep "^REJECTED:" | sed 's/^REJECTED: //')" >> $GITHUB_OUTPUT
-          elif echo "$OUTPUT" | grep -q "^UNCERTAIN:"; then
-            echo "result=uncertain" >> $GITHUB_OUTPUT
-            echo "reason=$(echo "$OUTPUT" | grep "^UNCERTAIN:" | sed 's/^UNCERTAIN: //')" >> $GITHUB_OUTPUT
-          else
-            echo "result=processed" >> $GITHUB_OUTPUT
-          fi
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: node scripts/auto-process-issue.mjs
 
       - name: Reject - Quality check failed
         if: steps.validate.outputs.status == 'valid' && steps.claude.outputs.result == 'rejected'

@@ -69,27 +69,18 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install Claude Code
+      - name: Install dependencies
         if: steps.check.outputs.skip != 'true'
-        run: npm install -g @anthropic-ai/claude-code
+        run: npm ci
 
       - name: Run Claude Code Update
         if: steps.check.outputs.skip != 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
-        run: |
-          CATEGORY="${{ github.event.inputs.category || 'all' }}"
-          FORCE_REFRESH="${{ github.event.inputs.force_refresh || 'false' }}"
-          PROMPT=$(cat .claude/commands/update-readme.md)
-
-          claude -p "
-          $PROMPT
-
-          Category filter for this run: $CATEGORY
-          Force refresh: $FORCE_REFRESH
-          " --allowedTools "Edit,Read,Glob,Grep,Write,mcp__perplexity-ask__perplexity_ask,Bash" \
-            --max-turns 50
+          CATEGORY: ${{ github.event.inputs.category || 'all' }}
+          FORCE_REFRESH: ${{ github.event.inputs.force_refresh || 'false' }}
+        run: node scripts/weekly-update.mjs
 
       - name: Commit and push changes
         if: steps.check.outputs.skip != 'true'

@@ -40,35 +40,16 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install Claude Code
-        run: npm install -g @anthropic-ai/claude-code
+      - name: Install dependencies
+        run: npm ci
 
       - name: Process Issue and Update README
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: |
-          ISSUE_TITLE="${{ github.event.issue.title }}"
-          ISSUE_BODY=$(cat <<'ISSUE_EOF'
-          ${{ github.event.issue.body }}
-          ISSUE_EOF
-          )
-          ISSUE_NUMBER="${{ github.event.issue.number }}"
-
-          PROMPT=$(cat .github/prompts/issue-approval.md)
-
-          claude -p "
-          $PROMPT
-
-          ## Issue Details
-
-          **Issue #$ISSUE_NUMBER**: $ISSUE_TITLE
-
-          **Issue Body**:
-          $ISSUE_BODY
-
-          This issue has been manually approved by a maintainer. Skip quality validation and add the resource directly.
-          " --allowedTools "Edit,Read,Glob,Grep,Write,Bash(git diff:git status)" \
-            --max-turns 30
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: node scripts/issue-approval.mjs
 
       - name: Commit and push changes
         id: commit
