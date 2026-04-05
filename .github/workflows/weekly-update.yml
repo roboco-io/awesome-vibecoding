@@ -10,6 +10,15 @@ on:
         description: 'Category to update (all, ide, agentic, cloud, learning)'
         required: false
         default: 'all'
+      force:
+        description: 'Force update even if updated within the last week'
+        required: false
+        type: boolean
+        default: false
+
+concurrency:
+  group: readme-update
+  cancel-in-progress: false
 
 jobs:
   update-readme:
@@ -21,35 +30,62 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check for recent updates
+        id: check
+        run: |
+          FORCE="${{ github.event.inputs.force || 'false' }}"
+          if [ "$FORCE" = "true" ]; then
+            echo "skip=false" >> $GITHUB_OUTPUT
+            echo "Force update requested, skipping recency check"
+            exit 0
+          fi
+
+          # Check if README.md was updated in the last 7 days (excluding bot commits)
+          LAST_UPDATE=$(git log -1 --format="%ct" --diff-filter=M -- README.md)
+          NOW=$(date +%s)
+          DAYS_AGO=$(( (NOW - LAST_UPDATE) / 86400 ))
+
+          echo "Last README.md update: $DAYS_AGO days ago"
+
+          if [ "$DAYS_AGO" -lt 7 ]; then
+            echo "skip=true" >> $GITHUB_OUTPUT
+            echo "Skipping: README.md was updated $DAYS_AGO days ago (< 7 days)"
+          else
+            echo "skip=false" >> $GITHUB_OUTPUT
+            echo "Proceeding: README.md was last updated $DAYS_AGO days ago"
+          fi
 
       - name: Setup Node.js
+        if: steps.check.outputs.skip != 'true'
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
       - name: Install Claude Code
+        if: steps.check.outputs.skip != 'true'
         run: npm install -g @anthropic-ai/claude-code
 
       - name: Run Claude Code Update
+        if: steps.check.outputs.skip != 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
         run: |
           CATEGORY="${{ github.event.inputs.category || 'all' }}"
-          PROMPT=$(cat .github/prompts/weekly-update.md)
+          PROMPT=$(cat .claude/commands/update-readme.md)
 
           claude -p "
           $PROMPT
 
           Category filter for this run: $CATEGORY
-          - If 'all': Update all categories
-          - If specific: Only update that category
-
-          Start by reading README.md, then use Perplexity to research each category.
           " --allowedTools "Edit,Read,Glob,Grep,Write,mcp__perplexity-ask__perplexity_ask,Bash" \
             --max-turns 50
 
       - name: Commit and push changes
+        if: steps.check.outputs.skip != 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"

@@ -1,6 +1,12 @@
-# Weekly README Update Prompt
+# Weekly README Update
 
 You are updating the awesome-vibecoding README.md with the latest AI coding tools.
+
+## Arguments
+
+- $ARGUMENTS: Category filter (all, ide, agentic, cloud, learning). Default: all
+  - If 'all': Update all categories
+  - If specific: Only update that category
 
 ## Task
 
@@ -92,19 +98,6 @@ A tool should be added if it meets ANY of these:
 - Active development (multiple releases in 2025)
 - Mentioned in multiple community discussions
 - Offers unique capability not covered by existing tools
-
-## Known Gaps to Check
-
-These tools are frequently discussed but may be missing:
-- opencode (CLI AI coding agent)
-- Aider (AI pair programming)
-- Void (VS Code fork)
-- Melty (AI coding assistant)
-- Zed AI (Zed editor AI features)
-- CodeGPT
-- Codeium (standalone)
-
-Search specifically for these and add if not present.
 
 ## Translation
 
