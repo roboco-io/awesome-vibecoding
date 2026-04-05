@@ -219,6 +219,7 @@ Browser-based and cloud platforms for AI-assisted development.
 | [**GitHub Spark**](https://githubnext.com/projects/spark) | Natural language micro-app builder by GitHub Next, runs in the browser |
 | [**Dify**](https://github.com/langgenius/dify) | Open-source platform for building and deploying LLM-powered applications |
 | [**Lazy AI**](https://www.getlazy.ai) | Chat-based web app builder with one-click cloud deployment |
+| [**Rosebud AI**](https://rosebud.ai) | Vibe coding platform for 3D games and interactive web apps |
 
 ---
 

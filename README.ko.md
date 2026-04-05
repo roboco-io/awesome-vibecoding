@@ -220,6 +220,7 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 | [**GitHub Spark**](https://githubnext.com/projects/spark) | GitHub Next가 개발한 자연어 마이크로 앱 빌더, 브라우저에서 실행 |
 | [**Dify**](https://github.com/langgenius/dify) | LLM 기반 애플리케이션 구축 및 배포를 위한 오픈소스 플랫폼 |
 | [**Lazy AI**](https://www.getlazy.ai) | 원클릭 클라우드 배포를 지원하는 채팅 기반 웹 앱 빌더 |
+| [**Rosebud AI**](https://rosebud.ai) | 3D 게임과 인터랙티브 웹 앱을 위한 바이브 코딩 플랫폼 |
 
 ---
 
