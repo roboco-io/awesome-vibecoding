@@ -121,6 +121,9 @@ AI-powered code completion and assistance integrated into your development envir
 | [**Caliber**](https://github.com/caliber-ai-org/ai-setup) | CLI that generates and syncs AI agent configs for Claude Code, Cursor, and Codex |
 | [**roboco-cli**](https://github.com/roboco-io/roboco-cli) | AI-native development scaffolding system for vibe coding with Claude Code |
 | [**vibe-ready**](https://github.com/roboco-io/vibe-ready-cli) | CLI tool that analyzes repository readiness for vibe coding using Claude Agent SDK with 6-category scoring |
+| [**oh-my-claudecode**](https://github.com/Yeachan-Heo/oh-my-claudecode) | Multi-agent orchestration for Claude Code with zero learning curve |
+| [**vmux**](https://github.com/roboco-io/vmux) | VS Code terminal extension for AI coding agents with notifications and session management |
+| [**Codebuff**](https://github.com/CodebuffAI/codebuff) | Open-source terminal AI agent with sub-agent coordination, 61% SWE-bench accuracy |
 
 ### Agentic Coding Environments
 
@@ -184,6 +187,7 @@ Autonomous AI systems that handle end-to-end development tasks.
 | **Productivity** | [Notion MCP](https://github.com/makenotion/notion-mcp-server) | Official Notion MCP server for reading and writing pages, databases, and blocks |
 | **Deployment** | [Vercel MCP](https://github.com/vercel/mcp-adapter) | Deploy projects, manage domains, and configure env vars via AI |
 | **Project Management** | [Jira MCP](https://github.com/sooperset/mcp-atlassian) | Atlassian Jira and Confluence integration for issue and doc management |
+| **Multi-Service** | [Composio](https://github.com/ComposioHQ/composio) | MCP automation connecting Linear, Notion, Slack and 100+ services for AI agents |
 
 📚 See [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers) for a comprehensive list.
 
@@ -220,6 +224,8 @@ Browser-based and cloud platforms for AI-assisted development.
 | [**Dify**](https://github.com/langgenius/dify) | Open-source platform for building and deploying LLM-powered applications |
 | [**Lazy AI**](https://www.getlazy.ai) | Chat-based web app builder with one-click cloud deployment |
 | [**Rosebud AI**](https://rosebud.ai) | Vibe coding platform for 3D games and interactive web apps |
+| [**Emergent**](https://emergent.sh) | AI full-stack vibe coding platform with one-click deployment and custom domains |
+| [**Hostinger Horizons**](https://hostinger.com/horizons) | AI no-code app builder with voice/text/image prompts and built-in hosting |
 
 ---
 
@@ -339,6 +345,7 @@ Browser-based and cloud platforms for AI-assisted development.
 - [awesome-vibe-coding](https://github.com/filipecalegario/awesome-vibe-coding) — Another curated list (2.8k stars)
 - [vibeworkflow.app](https://vibeworkflow.app) — Workflow automation for vibe coding
 - [Dev Janitor](https://github.com/cocojojo5213/Dev-Janitor) — Cross-platform desktop toolkit for managing AI coding assistants and dependencies
+- [everything-claude-code](https://github.com/serithemage/everything-claude-code) — Battle-tested Claude Code configs (agents, skills, hooks, commands) from Anthropic hackathon winner
 
 ---
 

@@ -121,6 +121,9 @@
 | [**Caliber**](https://github.com/caliber-ai-org/ai-setup) | Claude Code, Cursor, Codex용 AI 에이전트 설정을 생성하고 동기화하는 CLI |
 | [**roboco-cli**](https://github.com/roboco-io/roboco-cli) | Claude Code를 활용한 바이브 코딩을 위한 AI 네이티브 개발 스캐폴딩 시스템 |
 | [**vibe-ready**](https://github.com/roboco-io/vibe-ready-cli) | Claude Agent SDK를 활용하여 6개 카테고리 스코어링으로 리포지토리의 바이브 코딩 준비도를 분석하는 CLI 도구 |
+| [**oh-my-claudecode**](https://github.com/Yeachan-Heo/oh-my-claudecode) | 학습 곡선 제로의 Claude Code 멀티 에이전트 오케스트레이션 |
+| [**vmux**](https://github.com/roboco-io/vmux) | AI 코딩 에이전트를 위한 알림 및 세션 관리 기능이 있는 VS Code 터미널 확장 |
+| [**Codebuff**](https://github.com/CodebuffAI/codebuff) | 서브 에이전트 조율 기능을 갖춘 오픈소스 터미널 AI 에이전트, SWE-bench 61% 정확도 |
 
 ### 에이전트 기반 코딩 환경
 
@@ -185,6 +188,7 @@ AI 기능을 확장하는 [Model Context Protocol](https://modelcontextprotocol.
 | **생산성** | [Notion MCP](https://github.com/makenotion/notion-mcp-server) | 페이지, 데이터베이스, 블록 읽기·쓰기를 위한 공식 Notion MCP 서버 |
 | **배포** | [Vercel MCP](https://github.com/vercel/mcp-adapter) | AI를 통한 프로젝트 배포, 도메인 관리, 환경 변수 설정 |
 | **프로젝트 관리** | [Jira MCP](https://github.com/sooperset/mcp-atlassian) | 이슈 및 문서 관리를 위한 Atlassian Jira 및 Confluence 통합 |
+| **멀티 서비스** | [Composio](https://github.com/ComposioHQ/composio) | Linear, Notion, Slack 등 100개 이상의 서비스를 AI 에이전트에 연결하는 MCP 자동화 |
 
 📚 전체 목록은 [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers)를 참조하세요.
 
@@ -221,6 +225,8 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 | [**Dify**](https://github.com/langgenius/dify) | LLM 기반 애플리케이션 구축 및 배포를 위한 오픈소스 플랫폼 |
 | [**Lazy AI**](https://www.getlazy.ai) | 원클릭 클라우드 배포를 지원하는 채팅 기반 웹 앱 빌더 |
 | [**Rosebud AI**](https://rosebud.ai) | 3D 게임과 인터랙티브 웹 앱을 위한 바이브 코딩 플랫폼 |
+| [**Emergent**](https://emergent.sh) | 원클릭 배포와 커스텀 도메인을 지원하는 AI 풀스택 바이브 코딩 플랫폼 |
+| [**Hostinger Horizons**](https://hostinger.com/horizons) | 음성/텍스트/이미지 프롬프트와 내장 호스팅을 지원하는 AI 노코드 앱 빌더 |
 
 ---
 
@@ -340,6 +346,7 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 - [awesome-vibe-coding](https://github.com/filipecalegario/awesome-vibe-coding) — 또 다른 큐레이션 리스트 (2.8k stars)
 - [vibeworkflow.app](https://vibeworkflow.app) — Vibe coding을 위한 워크플로우 자동화
 - [Dev Janitor](https://github.com/cocojojo5213/Dev-Janitor) — AI 코딩 어시스턴트 및 의존성 관리를 위한 크로스 플랫폼 데스크탑 툴킷
+- [everything-claude-code](https://github.com/serithemage/everything-claude-code) — Anthropic 해커톤 수상자의 실전 검증된 Claude Code 설정 (에이전트, 스킬, 훅, 커맨드)
 
 ---
 
