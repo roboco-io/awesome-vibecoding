@@ -124,6 +124,7 @@
 | [**oh-my-claudecode**](https://github.com/Yeachan-Heo/oh-my-claudecode) | 学習コストゼロのClaude Code向けマルチエージェントオーケストレーション |
 | [**vmux**](https://github.com/roboco-io/vmux) | AIコーディングエージェント向けの通知とセッション管理を備えたVS Codeターミナル拡張機能 |
 | [**Codebuff**](https://github.com/CodebuffAI/codebuff) | サブエージェント連携とSWE-bench精度61%を実現するオープンソースターミナルAIエージェント |
+| [**Crush**](https://github.com/charmbracelet/crush) | LSP統合とマルチモデル対応を備えたCharmbracelet製グラマラスなターミナルAIコーディングエージェント |
 
 ### エージェント型コーディング環境
 

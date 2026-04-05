@@ -124,6 +124,7 @@
 | [**oh-my-claudecode**](https://github.com/Yeachan-Heo/oh-my-claudecode) | 학습 곡선 제로의 Claude Code 멀티 에이전트 오케스트레이션 |
 | [**vmux**](https://github.com/roboco-io/vmux) | AI 코딩 에이전트를 위한 알림 및 세션 관리 기능이 있는 VS Code 터미널 확장 |
 | [**Codebuff**](https://github.com/CodebuffAI/codebuff) | 서브 에이전트 조율 기능을 갖춘 오픈소스 터미널 AI 에이전트, SWE-bench 61% 정확도 |
+| [**Crush**](https://github.com/charmbracelet/crush) | Charmbracelet 의 매력적인 터미널 AI 코딩 에이전트, LSP 통합 및 멀티 모델 지원 |
 
 ### 에이전트 기반 코딩 환경
 

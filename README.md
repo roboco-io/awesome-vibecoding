@@ -124,6 +124,7 @@ AI-powered code completion and assistance integrated into your development envir
 | [**oh-my-claudecode**](https://github.com/Yeachan-Heo/oh-my-claudecode) | Multi-agent orchestration for Claude Code with zero learning curve |
 | [**vmux**](https://github.com/roboco-io/vmux) | VS Code terminal extension for AI coding agents with notifications and session management |
 | [**Codebuff**](https://github.com/CodebuffAI/codebuff) | Open-source terminal AI agent with sub-agent coordination, 61% SWE-bench accuracy |
+| [**Crush**](https://github.com/charmbracelet/crush) | Glamorous terminal AI coding agent by Charmbracelet with LSP integration and multi-model support |
 
 ### Agentic Coding Environments
 
