@@ -1,4 +1,4 @@
-import { query, ClaudeAgentOptions } from "@anthropic-ai/claude-agent-sdk";
+import { query } from "@anthropic-ai/claude-agent-sdk";
 import { readFileSync } from "fs";
 
 const category = process.env.CATEGORY || "all";
