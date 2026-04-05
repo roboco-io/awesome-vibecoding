@@ -60,7 +60,33 @@ Search for community discussions:
 - "r/ChatGPTCoding best tools 2025"
 - "Hacker News AI coding tools"
 
-### 3. GitHub Trending Check
+### 3. GitHub Org Repos (roboco-io & serithemage)
+
+Check these GitHub organizations/users for new vibe coding related projects:
+
+**How to check:**
+1. Use `gh repo list roboco-io --json name,description,url,updatedAt --limit 50` to list repos
+2. Use `gh repo list serithemage --json name,description,url,updatedAt --limit 50` to list repos
+3. Filter for repos related to AI coding, vibe coding, MCP, Claude Code, or developer tools
+4. Cross-check against README.md to find repos not yet listed
+5. Add any qualifying repos to the appropriate category
+
+**Examples of qualifying repos:** CLI tools, AI agent frameworks, MCP servers, scaffolding tools, analysis tools, serverless AI infrastructure.
+
+### 4. GeekNews (news.hada.io)
+
+Check Korean tech community GeekNews for vibe coding related projects and tools:
+
+**How to check:**
+1. Fetch https://news.hada.io/search?q=vibe+coding and extract links to projects/tools
+2. Fetch https://news.hada.io/search?q=AI+coding and extract links to projects/tools
+3. Fetch https://news.hada.io/search?q=claude+code and extract links
+4. Fetch https://news.hada.io/search?q=cursor+AI and extract links
+5. Fetch https://news.hada.io/search?q=MCP+server and extract links
+6. From each search result, identify tools/projects that are not yet in README.md
+7. Verify each candidate meets the quality criteria before adding
+
+### 5. GitHub Trending Check
 
 Search for:
 - "GitHub trending AI coding repositories this week"
