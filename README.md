@@ -365,7 +365,73 @@ Browser-based and cloud platforms for AI-assisted development.
 
 ## Contributing
 
-This repository is **fully automated with AI**. Content updates, translations, and curation are handled by **Claude Code** and **Perplexity MCP** via GitHub Actions. Weekly updates run automatically every Sunday, and approved issues are processed and merged without manual intervention.
+This repository is **fully automated with AI**. Content updates, translations, and curation are handled by **Claude Code SDK** and **Perplexity MCP** via GitHub Actions. Weekly updates run automatically every Sunday, and approved issues are processed and merged without manual intervention.
+
+### Architecture
+
+```mermaid
+graph TB
+    subgraph Repository
+        README["README.md<br/>(English Source)"]
+        README_KO["README.ko.md<br/>(Korean)"]
+        README_JA["README.ja.md<br/>(Japanese)"]
+        SCRIPTS["scripts/<br/>weekly-update.mjs<br/>auto-process-issue.mjs<br/>issue-approval.mjs"]
+        PROMPTS["prompts/<br/>issue-auto-process.md<br/>issue-approval.md"]
+        CACHE[".cache/<br/>awesome-vibecoding.db"]
+    end
+
+    subgraph GitHub Actions
+        WU["Weekly Update<br/>(every Sunday)"]
+        API["Auto Process Issue<br/>(on issue creation)"]
+        IA["Issue Approval<br/>(/approve comment)"]
+    end
+
+    subgraph External Services
+        SDK["Claude Code SDK<br/>(@anthropic-ai/claude-agent-sdk)"]
+        PERPLEXITY["Perplexity MCP<br/>(AI Search)"]
+        GITHUB["GitHub API<br/>(Stars, Repos)"]
+    end
+
+    WU -->|"node scripts/weekly-update.mjs"| SDK
+    API -->|"node scripts/auto-process-issue.mjs"| SDK
+    IA -->|"node scripts/issue-approval.mjs"| SDK
+    SDK -->|research| PERPLEXITY
+    SDK -->|metadata| GITHUB
+    SDK -->|edit| README
+    README -->|translate| README_KO
+    README -->|translate| README_JA
+    SCRIPTS -.->|read| PROMPTS
+    SDK -.->|cache| CACHE
+```
+
+### Automation Workflows
+
+```mermaid
+flowchart LR
+    subgraph Weekly["Weekly Update (Sunday)"]
+        direction TB
+        W1["Perplexity Search<br/>+ GitHub Trending"] --> W2["Filter & Verify<br/>(stars, activity)"]
+        W2 --> W3["Update README.md"]
+        W3 --> W4["Translate KO/JA"]
+        W4 --> W5["Commit & Push"]
+    end
+
+    subgraph Issue["Issue Auto-Processing"]
+        direction TB
+        I1["Issue Created<br/>(addition label)"] --> I2["Validate URL<br/>& Check Duplicates"]
+        I2 --> I3{"Quality<br/>Check"}
+        I3 -->|Pass| I4["Add to README<br/>& Translate"]
+        I3 -->|Fail| I5["Reject / Needs Review"]
+        I4 --> I6["Commit & Close Issue"]
+    end
+
+    subgraph Approve["Manual Approval"]
+        direction TB
+        A1["/approve Comment"] --> A2["Skip Validation"]
+        A2 --> A3["Add to README<br/>& Translate"]
+        A3 --> A4["Commit & Close Issue"]
+    end
+```
 
 ### How to Contribute
 

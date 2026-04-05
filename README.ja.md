@@ -366,7 +366,73 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 
 ## 貢献
 
-このリポジトリは **AIで完全自動運用** されています。コンテンツの更新、翻訳、キュレーションは **Claude Code** と **Perplexity MCP** がGitHub Actionsを通じて処理します。毎週日曜日に自動更新が実行され、承認されたIssueは手動介入なしで自動的に処理・反映されます。
+このリポジトリは **AIで完全自動運用** されています。コンテンツの更新、翻訳、キュレーションは **Claude Code SDK** と **Perplexity MCP** がGitHub Actionsを通じて処理します。毎週日曜日に自動更新が実行され、承認されたIssueは手動介入なしで自動的に処理・反映されます。
+
+### アーキテクチャ
+
+```mermaid
+graph TB
+    subgraph Repository
+        README["README.md<br/>(英語ソース)"]
+        README_KO["README.ko.md<br/>(韓国語)"]
+        README_JA["README.ja.md<br/>(日本語)"]
+        SCRIPTS["scripts/<br/>weekly-update.mjs<br/>auto-process-issue.mjs<br/>issue-approval.mjs"]
+        PROMPTS["prompts/<br/>issue-auto-process.md<br/>issue-approval.md"]
+        CACHE[".cache/<br/>awesome-vibecoding.db"]
+    end
+
+    subgraph GitHub Actions
+        WU["週次更新<br/>(毎週日曜日)"]
+        API["Issue自動処理<br/>(Issue作成時)"]
+        IA["Issue承認<br/>(/approve コメント)"]
+    end
+
+    subgraph External Services
+        SDK["Claude Code SDK<br/>(@anthropic-ai/claude-agent-sdk)"]
+        PERPLEXITY["Perplexity MCP<br/>(AI検索)"]
+        GITHUB["GitHub API<br/>(スター数、リポジトリ)"]
+    end
+
+    WU -->|"node scripts/weekly-update.mjs"| SDK
+    API -->|"node scripts/auto-process-issue.mjs"| SDK
+    IA -->|"node scripts/issue-approval.mjs"| SDK
+    SDK -->|research| PERPLEXITY
+    SDK -->|metadata| GITHUB
+    SDK -->|edit| README
+    README -->|translate| README_KO
+    README -->|translate| README_JA
+    SCRIPTS -.->|read| PROMPTS
+    SDK -.->|cache| CACHE
+```
+
+### 自動化ワークフロー
+
+```mermaid
+flowchart LR
+    subgraph Weekly["週次更新 (日曜日)"]
+        direction TB
+        W1["Perplexity検索<br/>+ GitHubトレンド"] --> W2["フィルタリング & 検証<br/>(スター数、アクティビティ)"]
+        W2 --> W3["README.mdを更新"]
+        W3 --> W4["KO/JA翻訳"]
+        W4 --> W5["コミット & プッシュ"]
+    end
+
+    subgraph Issue["Issue自動処理"]
+        direction TB
+        I1["Issue作成<br/>(addition ラベル)"] --> I2["URL検証<br/>& 重複チェック"]
+        I2 --> I3{"品質<br/>チェック"}
+        I3 -->|Pass| I4["READMEに追加<br/>& 翻訳"]
+        I3 -->|Fail| I5["却下 / 要レビュー"]
+        I4 --> I6["コミット & Issueクローズ"]
+    end
+
+    subgraph Approve["手動承認"]
+        direction TB
+        A1["/approve コメント"] --> A2["検証スキップ"]
+        A2 --> A3["READMEに追加<br/>& 翻訳"]
+        A3 --> A4["コミット & Issueクローズ"]
+    end
+```
 
 ### 貢献方法
 

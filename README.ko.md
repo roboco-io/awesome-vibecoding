@@ -366,7 +366,73 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 
 ## 기여하기
 
-이 저장소는 **AI로 완전 자동 운영**됩니다. 콘텐츠 업데이트, 번역, 큐레이션은 **Claude Code** 와 **Perplexity MCP** 가 GitHub Actions를 통해 처리합니다. 매주 일요일 자동 업데이트가 실행되며, 승인된 이슈는 수동 개입 없이 자동으로 처리되어 반영됩니다.
+이 저장소는 **AI로 완전 자동 운영**됩니다. 콘텐츠 업데이트, 번역, 큐레이션은 **Claude Code SDK** 와 **Perplexity MCP** 가 GitHub Actions를 통해 처리합니다. 매주 일요일 자동 업데이트가 실행되며, 승인된 이슈는 수동 개입 없이 자동으로 처리되어 반영됩니다.
+
+### 아키텍처
+
+```mermaid
+graph TB
+    subgraph Repository["저장소"]
+        README["README.md<br/>(영어 원본)"]
+        README_KO["README.ko.md<br/>(한국어)"]
+        README_JA["README.ja.md<br/>(일본어)"]
+        SCRIPTS["scripts/<br/>weekly-update.mjs<br/>auto-process-issue.mjs<br/>issue-approval.mjs"]
+        PROMPTS["prompts/<br/>issue-auto-process.md<br/>issue-approval.md"]
+        CACHE[".cache/<br/>awesome-vibecoding.db"]
+    end
+
+    subgraph GitHub Actions
+        WU["주간 업데이트<br/>(매주 일요일)"]
+        API["이슈 자동 처리<br/>(이슈 생성 시)"]
+        IA["이슈 승인<br/>(/approve 코멘트)"]
+    end
+
+    subgraph External Services["외부 서비스"]
+        SDK["Claude Code SDK<br/>(@anthropic-ai/claude-agent-sdk)"]
+        PERPLEXITY["Perplexity MCP<br/>(AI 검색)"]
+        GITHUB["GitHub API<br/>(Stars, Repos)"]
+    end
+
+    WU -->|"node scripts/weekly-update.mjs"| SDK
+    API -->|"node scripts/auto-process-issue.mjs"| SDK
+    IA -->|"node scripts/issue-approval.mjs"| SDK
+    SDK -->|research| PERPLEXITY
+    SDK -->|metadata| GITHUB
+    SDK -->|edit| README
+    README -->|translate| README_KO
+    README -->|translate| README_JA
+    SCRIPTS -.->|read| PROMPTS
+    SDK -.->|cache| CACHE
+```
+
+### 자동화 워크플로우
+
+```mermaid
+flowchart LR
+    subgraph Weekly["주간 업데이트 (일요일)"]
+        direction TB
+        W1["Perplexity 검색<br/>+ GitHub Trending"] --> W2["필터링 & 검증<br/>(stars, 활동)"]
+        W2 --> W3["README.md 업데이트"]
+        W3 --> W4["한국어/일본어 번역"]
+        W4 --> W5["커밋 & 푸시"]
+    end
+
+    subgraph Issue["이슈 자동 처리"]
+        direction TB
+        I1["이슈 생성<br/>(addition 라벨)"] --> I2["URL 검증<br/>& 중복 확인"]
+        I2 --> I3{"품질<br/>검사"}
+        I3 -->|통과| I4["README에 추가<br/>& 번역"]
+        I3 -->|실패| I5["반려 / 검토 필요"]
+        I4 --> I6["커밋 & 이슈 닫기"]
+    end
+
+    subgraph Approve["수동 승인"]
+        direction TB
+        A1["/approve 코멘트"] --> A2["검증 건너뛰기"]
+        A2 --> A3["README에 추가<br/>& 번역"]
+        A3 --> A4["커밋 & 이슈 닫기"]
+    end
+```
 
 ### 기여 방법
 
