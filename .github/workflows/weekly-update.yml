@@ -15,6 +15,11 @@ on:
         required: false
         type: boolean
         default: false
+      force_refresh:
+        description: 'Force refresh all caches (ignore TTL)'
+        required: false
+        type: boolean
+        default: false
 
 concurrency:
   group: readme-update
@@ -75,12 +80,14 @@ jobs:
           PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
         run: |
           CATEGORY="${{ github.event.inputs.category || 'all' }}"
+          FORCE_REFRESH="${{ github.event.inputs.force_refresh || 'false' }}"
           PROMPT=$(cat .claude/commands/update-readme.md)
 
           claude -p "
           $PROMPT
 
           Category filter for this run: $CATEGORY
+          Force refresh: $FORCE_REFRESH
           " --allowedTools "Edit,Read,Glob,Grep,Write,mcp__perplexity-ask__perplexity_ask,Bash" \
             --max-turns 50
 
@@ -92,7 +99,7 @@ jobs:
           if git diff --quiet; then
             echo "No changes to commit"
           else
-            git add README.md README.ko.md README.ja.md
+            git add README.md README.ko.md README.ja.md .cache/awesome-vibecoding.db
             git commit -m "chore: Weekly README update via Claude Code
 
           - Researched new AI coding tools via Perplexity

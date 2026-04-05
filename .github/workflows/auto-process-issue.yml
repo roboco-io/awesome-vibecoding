@@ -205,6 +205,7 @@ jobs:
             echo "has_changes=false" >> $GITHUB_OUTPUT
           else
             git add README.md README.ko.md README.ja.md
+            git add .cache/awesome-vibecoding.db 2>/dev/null || true
             git commit -m "docs: Add resource from issue #${{ github.event.issue.number }}
 
           Closes #${{ github.event.issue.number }}
