@@ -161,6 +161,7 @@
 | [**RA.Aid**](https://github.com/ai-christianson/RA.Aid) | リサーチ・計画・多段階コード生成を組み合わせた自律型開発エージェント |
 | [**serverless-openclaw**](https://github.com/serithemage/serverless-openclaw) | AWSサーバーレスインフラ上でOpenClaw AIエージェントをオンデマンド実行、Web UIとTelegramインターフェース対応 |
 | [**serverless-autoresearch**](https://github.com/roboco-io/serverless-autoresearch) | SageMaker Spotトレーニング（H100）上でKarpathyのautoresearchをHUGIパターンで並列進化させるパイプライン |
+| [**mymir**](https://github.com/FrkAk/mymir) | コンテキストネットワークを備えたAIコーディングエージェント向けプロジェクト管理レイヤー |
 
 ### MCPサーバー & ツール
 

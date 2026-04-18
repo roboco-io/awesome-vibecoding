@@ -161,6 +161,7 @@
 | [**RA.Aid**](https://github.com/ai-christianson/RA.Aid) | 리서치, 계획 수립, 다단계 코드 생성을 결합한 자율 개발 에이전트 |
 | [**serverless-openclaw**](https://github.com/serithemage/serverless-openclaw) | Web UI 및 Telegram 인터페이스를 갖춘 AWS 서버리스 인프라에서 OpenClaw AI 에이전트를 온디맨드로 실행 |
 | [**serverless-autoresearch**](https://github.com/roboco-io/serverless-autoresearch) | HUGI 패턴을 적용한 SageMaker Spot Training(H100)에서 Karpathy의 autoresearch를 병렬 진화시키는 파이프라인 |
+| [**mymir**](https://github.com/FrkAk/mymir) | 컨텍스트 네트워크를 갖춘 AI 코딩 에이전트용 프로젝트 관리 레이어 |
 
 ### MCP 서버 & 도구
 

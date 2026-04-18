@@ -161,6 +161,7 @@ Autonomous AI systems that handle end-to-end development tasks.
 | [**RA.Aid**](https://github.com/ai-christianson/RA.Aid) | Autonomous dev agent combining research, planning, and multi-step code generation |
 | [**serverless-openclaw**](https://github.com/serithemage/serverless-openclaw) | Run OpenClaw AI agent on-demand on AWS serverless infrastructure with Web UI and Telegram interfaces |
 | [**serverless-autoresearch**](https://github.com/roboco-io/serverless-autoresearch) | Parallel evolution pipeline for Karpathy's autoresearch on SageMaker Spot Training (H100) with HUGI pattern |
+| [**mymir**](https://github.com/FrkAk/mymir) | Project management layer for AI coding agents with context network |
 
 ### MCP Servers & Tooling
 
