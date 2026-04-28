@@ -301,6 +301,7 @@ Browser-based and cloud platforms for AI-assisted development.
 - [Here's how I use LLMs to help me write code (Simon Willison)](https://simonwillison.net/2025/Mar/11/using-llms-for-code/) — Practical integration tips
 - [Agentic Coding (Armin Ronacher)](https://lucumr.pocoo.org/2025/6/12/agentic-coding/) — AI-driven autonomous development approaches
 - [The Model Context Protocol Guide (Anthropic)](https://modelcontextprotocol.io/introduction) — Understanding MCP architecture
+- [vibecodex](https://github.com/yerdaulet-damir/vibecodex) — Production architecture bible with 54 principles for vibe-coding (FastAPI, Next.js, Go)
 
 ### Videos & Tutorials
 

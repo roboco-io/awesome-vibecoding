@@ -302,6 +302,7 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 - [Here's how I use LLMs to help me write code (Simon Willison)](https://simonwillison.net/2025/Mar/11/using-llms-for-code/) — 실용적인 통합 팁
 - [Agentic Coding (Armin Ronacher)](https://lucumr.pocoo.org/2025/6/12/agentic-coding/) — AI 기반 자율 개발 접근법
 - [The Model Context Protocol Guide (Anthropic)](https://modelcontextprotocol.io/introduction) — MCP 아키텍처 이해하기
+- [vibecodex](https://github.com/yerdaulet-damir/vibecodex) — 바이브 코딩을 위한 54가지 원칙을 담은 프로덕션 아키텍처 바이블 (FastAPI, Next.js, Go)
 
 ### 비디오 & 튜토리얼
 

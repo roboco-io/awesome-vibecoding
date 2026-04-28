@@ -302,6 +302,7 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 - [Here's how I use LLMs to help me write code (Simon Willison)](https://simonwillison.net/2025/Mar/11/using-llms-for-code/) — 実践的な統合のヒント
 - [Agentic Coding (Armin Ronacher)](https://lucumr.pocoo.org/2025/6/12/agentic-coding/) — AI駆動型自律開発アプローチ
 - [The Model Context Protocol Guide (Anthropic)](https://modelcontextprotocol.io/introduction) — MCPアーキテクチャの理解
+- [vibecodex](https://github.com/yerdaulet-damir/vibecodex) — バイブコーディングのための54の原則を含むプロダクションアーキテクチャバイブル (FastAPI, Next.js, Go)
 
 ### 動画 & チュートリアル
 
