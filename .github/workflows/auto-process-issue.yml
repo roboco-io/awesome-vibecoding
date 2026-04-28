@@ -10,8 +10,17 @@ concurrency:
 
 jobs:
   validate-and-process:
-    # Only process issues with the "addition" label (from issue template)
-    if: contains(github.event.issue.labels.*.name, 'addition')
+    # Run only when the issue currently has the 'addition' label AND the event
+    # that fired the workflow is either the original 'opened' or the moment the
+    # 'addition' label itself was applied. Skipping other 'labeled' events
+    # prevents the job from re-running each time the workflow adds its own
+    # status labels (invalid/duplicate/rejected/needs-review).
+    if: |
+      contains(github.event.issue.labels.*.name, 'addition') &&
+      (
+        github.event.action == 'opened' ||
+        (github.event.action == 'labeled' && github.event.label.name == 'addition')
+      )
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -23,9 +32,12 @@ jobs:
 
       - name: Validate URL
         id: validate
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
         run: |
-          # Extract URL from issue body
-          URL=$(echo "${{ github.event.issue.body }}" | grep -oP 'https?://[^\s\)]+' | head -1)
+          # Extract URL from issue body. Pass the body via env to avoid shell
+          # injection from `${{ ... }}` interpolation into the script.
+          URL=$(printf '%s' "$ISSUE_BODY" | grep -oPi 'https?://[^\s)]+' | head -1)
 
           if [ -z "$URL" ]; then
             echo "status=no_url" >> $GITHUB_OUTPUT

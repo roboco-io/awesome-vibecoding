@@ -10,6 +10,7 @@ on:
 
 jobs:
   label:
+    if: ${{ !endsWith(github.actor, '[bot]') }}
     runs-on: ubuntu-latest
     permissions:
       issues: write
@@ -25,7 +26,7 @@ jobs:
               return;
             }
             const body = issue.body || '';
-            if (!/https?:\/\/\S+/.test(body)) {
+            if (!/https?:\/\/[^\s)]+/i.test(body)) {
               core.info('No URL found in issue body; skipping.');
               return;
             }
