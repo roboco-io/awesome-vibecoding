@@ -10,17 +10,11 @@ concurrency:
 
 jobs:
   validate-and-process:
-    # Run only when the issue currently has the 'addition' label AND the event
-    # that fired the workflow is either the original 'opened' or the moment the
-    # 'addition' label itself was applied. Skipping other 'labeled' events
-    # prevents the job from re-running each time the workflow adds its own
+    # Run on the initial 'opened' event when the 'addition' label is already
+    # present, or on the 'labeled' event when 'addition' is the label that was
+    # just applied. This prevents re-runs when the workflow adds its own
     # status labels (invalid/duplicate/rejected/needs-review).
-    if: |
-      contains(github.event.issue.labels.*.name, 'addition') &&
-      (
-        github.event.action == 'opened' ||
-        (github.event.action == 'labeled' && github.event.label.name == 'addition')
-      )
+    if: (github.event.action == 'opened' && contains(github.event.issue.labels.*.name, 'addition')) || (github.event.action == 'labeled' && github.event.label.name == 'addition')
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -35,8 +29,8 @@ jobs:
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
         run: |
-          # Extract URL from issue body. Pass the body via env to avoid shell
-          # injection from `${{ ... }}` interpolation into the script.
+          # Extract URL from issue body. Body is passed via env var so that
+          # backticks or $() in the issue text cannot be evaluated by the shell.
           URL=$(printf '%s' "$ISSUE_BODY" | grep -oPi 'https?://[^\s)]+' | head -1)
 
           if [ -z "$URL" ]; then
