@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Validate URL
         id: validate
@@ -58,7 +58,7 @@ jobs:
 
       - name: Reject - No URL
         if: steps.validate.outputs.status == 'no_url'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             await github.rest.issues.createComment({
@@ -77,7 +77,7 @@ jobs:
 
       - name: Reject - Unreachable URL
         if: steps.validate.outputs.status == 'unreachable'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             await github.rest.issues.createComment({
@@ -96,7 +96,7 @@ jobs:
 
       - name: Reject - Duplicate
         if: steps.validate.outputs.status == 'duplicate'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             await github.rest.issues.createComment({
@@ -115,7 +115,7 @@ jobs:
 
       - name: Setup Node.js
         if: steps.validate.outputs.status == 'valid'
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: '20'
 
@@ -135,7 +135,7 @@ jobs:
 
       - name: Reject - Quality check failed
         if: steps.validate.outputs.status == 'valid' && steps.claude.outputs.result == 'rejected'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             await github.rest.issues.createComment({
@@ -154,7 +154,7 @@ jobs:
 
       - name: Request maintainer review - Uncertain
         if: steps.validate.outputs.status == 'valid' && steps.claude.outputs.result == 'uncertain'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             await github.rest.issues.addLabels({
@@ -192,7 +192,7 @@ jobs:
 
       - name: Comment on issue
         if: steps.validate.outputs.status == 'valid' && steps.claude.outputs.result == 'processed' && steps.commit.outputs.has_changes == 'true'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             await github.rest.issues.createComment({
@@ -204,7 +204,7 @@ jobs:
 
       - name: Close issue
         if: steps.validate.outputs.status == 'valid' && steps.claude.outputs.result == 'processed' && steps.commit.outputs.has_changes == 'true'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             await github.rest.issues.update({
@@ -216,7 +216,7 @@ jobs:
 
       - name: Request review if no changes
         if: steps.validate.outputs.status == 'valid' && steps.claude.outputs.result == 'processed' && steps.commit.outputs.has_changes == 'false'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             await github.rest.issues.addLabels({

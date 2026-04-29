@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Acknowledge approval
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             await github.rest.issues.createComment({
@@ -33,10 +33,10 @@ jobs:
             });
 
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: '20'
 
@@ -72,7 +72,7 @@ jobs:
 
       - name: Close issue on success
         if: steps.commit.outputs.has_changes == 'true'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             await github.rest.issues.createComment({
@@ -90,7 +90,7 @@ jobs:
 
       - name: Comment on failure
         if: steps.commit.outputs.has_changes == 'false'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             await github.rest.issues.createComment({
@@ -112,7 +112,7 @@ jobs:
 
     steps:
       - name: Reject and close
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const comment = context.payload.comment.body;
