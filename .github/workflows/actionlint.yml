@@ -1,0 +1,31 @@
+name: Lint Workflows
+
+# Validates GitHub Actions workflow YAML on every change to .github/workflows.
+# Catches syntax problems that would otherwise surface only as a "workflow file
+# issue" failure on push (e.g. literal '${{ }}' inside run-step comments,
+# malformed multi-line if expressions).
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/**'
+  pull_request:
+    paths:
+      - '.github/workflows/**'
+
+jobs:
+  actionlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run actionlint
+        env:
+          # SC2086 fires on $GITHUB_OUTPUT and similar runner-managed vars
+          # that are safe to leave unquoted. Other shellcheck rules stay on.
+          SHELLCHECK_OPTS: -e SC2086
+        shell: bash
+        run: |
+          bash <(curl https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
+          ./actionlint -color
