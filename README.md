@@ -125,6 +125,7 @@ AI-powered code completion and assistance integrated into your development envir
 | [**vmux**](https://github.com/roboco-io/vmux) | VS Code terminal extension for AI coding agents with notifications and session management |
 | [**Codebuff**](https://github.com/CodebuffAI/codebuff) | Open-source terminal AI agent with sub-agent coordination, 61% SWE-bench accuracy |
 | [**Crush**](https://github.com/charmbracelet/crush) | Glamorous terminal AI coding agent by Charmbracelet with LSP integration and multi-model support |
+| [**Open WebUI**](https://github.com/open-webui/open-webui) | Self-hosted AI interface with 139K+ stars, 290M downloads, offline-first (Ollama/OpenAI) |
 
 ### Agentic Coding Environments
 
@@ -162,6 +163,7 @@ Autonomous AI systems that handle end-to-end development tasks.
 | [**serverless-openclaw**](https://github.com/serithemage/serverless-openclaw) | Run OpenClaw AI agent on-demand on AWS serverless infrastructure with Web UI and Telegram interfaces |
 | [**serverless-autoresearch**](https://github.com/roboco-io/serverless-autoresearch) | Parallel evolution pipeline for Karpathy's autoresearch on SageMaker Spot Training (H100) with HUGI pattern |
 | [**mymir**](https://github.com/FrkAk/mymir) | Project management layer for AI coding agents with context network |
+| [**Langflow**](https://github.com/langflow-ai/langflow) | Open-source visual AI agent builder with drag-and-drop canvas (149K+ stars) |
 
 ### MCP Servers & Tooling
 
@@ -174,7 +176,7 @@ Autonomous AI systems that handle end-to-end development tasks.
 | **Security** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | Code scanning, error tracking |
 | **Browser & Automation** | [Chrome MCP](https://github.com/hangwin/mcp-chrome), [Playwright MCP](https://github.com/executeautomation/mcp-playwright), [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch), [Puppeteer](https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer), [Firecrawl MCP](https://github.com/mendableai/firecrawl-mcp-server) | Browser automation, testing, web scraping, content fetching |
 | **Mobile** | [Mobile MCP](https://github.com/mobile-next/mobile-mcp) | iOS/Android automation and scraping (emulators, simulators, real devices) |
-| **Search & Knowledge** | [Brave Search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search), [Exa](https://github.com/exa-labs/exa-mcp-server), [Perplexity](https://github.com/anthropics/mcp-perplexity), [Tavily](https://github.com/tavily-ai/tavily-mcp) | Web search, semantic search, research, AI-optimized search |
+| **Search & Knowledge** | [Brave Search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search), [Exa](https://github.com/exa-labs/exa-mcp-server), [Perplexity](https://github.com/anthropics/mcp-perplexity), [Tavily](https://github.com/tavily-ai/tavily-mcp), [Solar MCP](https://github.com/serithemage/solar-mcp), [Botmadang MCP](https://github.com/serithemage/botmadang-mcp) | Web search, semantic search, research, AI-optimized search, Upstage Solar models, Korean social platform |
 | **Development** | [Xcode Build MCP](https://github.com/cameroncooke/XcodeBuildMCP), [Spec Workflow MCP](https://github.com/Pimzino/spec-workflow-mcp), [Slack](https://github.com/modelcontextprotocol/servers/tree/main/src/slack), [Linear](https://github.com/jerhadf/linear-mcp-server) | Xcode integration, spec-driven development, team communication, project management |
 | **CI/CD** | [GitHub MCP](https://github.com/github/github-mcp-server) | Full GitHub API access for issues, PRs, and Actions |
 | **Execution** | [E2B](https://github.com/e2b-dev/mcp-server) | Secure cloud sandbox for AI-generated code execution |
@@ -349,6 +351,8 @@ Browser-based and cloud platforms for AI-assisted development.
 - [vibeworkflow.app](https://vibeworkflow.app) — Workflow automation for vibe coding
 - [Dev Janitor](https://github.com/cocojojo5213/Dev-Janitor) — Cross-platform desktop toolkit for managing AI coding assistants and dependencies
 - [everything-claude-code](https://github.com/serithemage/everything-claude-code) — Battle-tested Claude Code configs (agents, skills, hooks, commands) from Anthropic hackathon winner
+- [vibe-lead](https://github.com/roboco-io/vibe-lead) — Change management framework for AI-based vibe coding adoption in organizations
+- [intent-engineering](https://github.com/roboco-io/intent-engineering) — Operating model for shipping intent instead of code with AI execution
 
 ---
 

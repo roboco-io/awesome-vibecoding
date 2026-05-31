@@ -125,6 +125,7 @@
 | [**vmux**](https://github.com/roboco-io/vmux) | AI 코딩 에이전트를 위한 알림 및 세션 관리 기능이 있는 VS Code 터미널 확장 |
 | [**Codebuff**](https://github.com/CodebuffAI/codebuff) | 서브 에이전트 조율 기능을 갖춘 오픈소스 터미널 AI 에이전트, SWE-bench 61% 정확도 |
 | [**Crush**](https://github.com/charmbracelet/crush) | Charmbracelet 의 매력적인 터미널 AI 코딩 에이전트, LSP 통합 및 멀티 모델 지원 |
+| [**Open WebUI**](https://github.com/open-webui/open-webui) | 셀프 호스팅 AI 인터페이스, 13.9만+ 스타, 2.9억 다운로드, 오프라인 우선 (Ollama/OpenAI) |
 
 ### 에이전트 기반 코딩 환경
 
@@ -162,6 +163,7 @@
 | [**serverless-openclaw**](https://github.com/serithemage/serverless-openclaw) | Web UI 및 Telegram 인터페이스를 갖춘 AWS 서버리스 인프라에서 OpenClaw AI 에이전트를 온디맨드로 실행 |
 | [**serverless-autoresearch**](https://github.com/roboco-io/serverless-autoresearch) | HUGI 패턴을 적용한 SageMaker Spot Training(H100)에서 Karpathy의 autoresearch를 병렬 진화시키는 파이프라인 |
 | [**mymir**](https://github.com/FrkAk/mymir) | 컨텍스트 네트워크를 갖춘 AI 코딩 에이전트용 프로젝트 관리 레이어 |
+| [**Langflow**](https://github.com/langflow-ai/langflow) | 드래그 앤 드롭 캔버스를 갖춘 오픈소스 비주얼 AI 에이전트 빌더 (14.9만+ 스타) |
 
 ### MCP 서버 & 도구
 
@@ -174,7 +176,7 @@ AI 기능을 확장하는 [Model Context Protocol](https://modelcontextprotocol.
 | **보안** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | 코드 스캐닝, 오류 추적 |
 | **브라우저 & 자동화** | [Chrome MCP](https://github.com/hangwin/mcp-chrome), [Playwright MCP](https://github.com/executeautomation/mcp-playwright), [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch), [Puppeteer](https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer), [Firecrawl MCP](https://github.com/mendableai/firecrawl-mcp-server) | 브라우저 자동화, 테스팅, 웹 스크래핑, 콘텐츠 가져오기 |
 | **모바일** | [Mobile MCP](https://github.com/mobile-next/mobile-mcp) | iOS/Android 자동화 및 스크래핑 (에뮬레이터, 시뮬레이터, 실제 디바이스) |
-| **검색 & 지식** | [Brave Search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search), [Exa](https://github.com/exa-labs/exa-mcp-server), [Perplexity](https://github.com/anthropics/mcp-perplexity), [Tavily](https://github.com/tavily-ai/tavily-mcp) | 웹 검색, 시맨틱 검색, 리서치, AI 최적화 검색 |
+| **검색 & 지식** | [Brave Search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search), [Exa](https://github.com/exa-labs/exa-mcp-server), [Perplexity](https://github.com/anthropics/mcp-perplexity), [Tavily](https://github.com/tavily-ai/tavily-mcp), [Solar MCP](https://github.com/serithemage/solar-mcp), [Botmadang MCP](https://github.com/serithemage/botmadang-mcp) | 웹 검색, 시맨틱 검색, 리서치, AI 최적화 검색, Upstage Solar 모델, 한국 소셜 플랫폼 |
 | **개발** | [Xcode Build MCP](https://github.com/cameroncooke/XcodeBuildMCP), [Spec Workflow MCP](https://github.com/Pimzino/spec-workflow-mcp), [Slack](https://github.com/modelcontextprotocol/servers/tree/main/src/slack), [Linear](https://github.com/jerhadf/linear-mcp-server) | Xcode 통합, 스펙 기반 개발, 팀 커뮤니케이션, 프로젝트 관리 |
 | **파일 시스템** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 안전한 읽기/쓰기 작업 |
 | **CI/CD** | [GitHub MCP](https://github.com/github/github-mcp-server) | 이슈, PR, Actions를 위한 전체 GitHub API 액세스 |
@@ -350,6 +352,8 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 - [vibeworkflow.app](https://vibeworkflow.app) — Vibe coding을 위한 워크플로우 자동화
 - [Dev Janitor](https://github.com/cocojojo5213/Dev-Janitor) — AI 코딩 어시스턴트 및 의존성 관리를 위한 크로스 플랫폼 데스크탑 툴킷
 - [everything-claude-code](https://github.com/serithemage/everything-claude-code) — Anthropic 해커톤 수상자의 실전 검증된 Claude Code 설정 (에이전트, 스킬, 훅, 커맨드)
+- [vibe-lead](https://github.com/roboco-io/vibe-lead) — 조직에서 AI 기반 바이브 코딩 도입을 위한 변화 관리 프레임워크
+- [intent-engineering](https://github.com/roboco-io/intent-engineering) — AI 실행을 통해 코드 대신 의도를 전달하는 운영 모델
 
 ---
 
