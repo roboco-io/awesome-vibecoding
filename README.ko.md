@@ -355,6 +355,7 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 - [everything-claude-code](https://github.com/serithemage/everything-claude-code) — Anthropic 해커톤 수상자의 실전 검증된 Claude Code 설정 (에이전트, 스킬, 훅, 커맨드)
 - [vibe-lead](https://github.com/roboco-io/vibe-lead) — 조직에서 AI 기반 바이브 코딩 도입을 위한 변화 관리 프레임워크
 - [intent-engineering](https://github.com/roboco-io/intent-engineering) — AI 실행을 통해 코드 대신 의도를 전달하는 운영 모델
+- [AppLighter](https://applighter.com/) — AI 에이전트 워크플로우를 위한 CLAUDE.md, AGENTS.md, .cursorrules가 포함된 프로덕션 레디 React Native + Expo 템플릿
 
 ---
 

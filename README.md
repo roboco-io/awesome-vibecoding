@@ -354,6 +354,7 @@ Browser-based and cloud platforms for AI-assisted development.
 - [everything-claude-code](https://github.com/serithemage/everything-claude-code) — Battle-tested Claude Code configs (agents, skills, hooks, commands) from Anthropic hackathon winner
 - [vibe-lead](https://github.com/roboco-io/vibe-lead) — Change management framework for AI-based vibe coding adoption in organizations
 - [intent-engineering](https://github.com/roboco-io/intent-engineering) — Operating model for shipping intent instead of code with AI execution
+- [AppLighter](https://applighter.com/) — Production-ready React Native + Expo templates with CLAUDE.md, AGENTS.md, .cursorrules for AI agent workflows
 
 ---
 

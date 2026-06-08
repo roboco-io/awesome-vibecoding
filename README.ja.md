@@ -351,6 +351,9 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 - [vibeworkflow.app](https://vibeworkflow.app) — Vibe Codingのワークフロー自動化
 - [Dev Janitor](https://github.com/cocojojo5213/Dev-Janitor) — AIコーディングアシスタントと依存関係を管理するためのクロスプラットフォームデスクトップツールキット
 - [everything-claude-code](https://github.com/serithemage/everything-claude-code) — Anthropicハッカソン優勝者による実戦検証済みClaude Code設定（エージェント、スキル、フック、コマンド）
+- [vibe-lead](https://github.com/roboco-io/vibe-lead) — 組織におけるAIベースのバイブコーディング導入のための変革管理フレームワーク
+- [intent-engineering](https://github.com/roboco-io/intent-engineering) — AI実行によってコードではなく意図を提供する運用モデル
+- [AppLighter](https://applighter.com/) — AIエージェントワークフロー向けのCLAUDE.md、AGENTS.md、.cursorrules付きプロダクションレディReact Native + Expoテンプレート
 
 ---
 
