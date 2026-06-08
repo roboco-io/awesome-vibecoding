@@ -162,6 +162,7 @@
 | [**serverless-openclaw**](https://github.com/serithemage/serverless-openclaw) | AWSサーバーレスインフラ上でOpenClaw AIエージェントをオンデマンド実行、Web UIとTelegramインターフェース対応 |
 | [**serverless-autoresearch**](https://github.com/roboco-io/serverless-autoresearch) | SageMaker Spotトレーニング（H100）上でKarpathyのautoresearchをHUGIパターンで並列進化させるパイプライン |
 | [**mymir**](https://github.com/FrkAk/mymir) | コンテキストネットワークを備えたAIコーディングエージェント向けプロジェクト管理レイヤー |
+| [**Parallel Code**](https://github.com/johannesjo/parallel-code) | 並列ワークツリーでAIコーディングエージェントを実行するデスクトップアプリ |
 
 ### MCPサーバー & ツール
 

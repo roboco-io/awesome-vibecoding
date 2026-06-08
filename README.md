@@ -164,6 +164,7 @@ Autonomous AI systems that handle end-to-end development tasks.
 | [**serverless-autoresearch**](https://github.com/roboco-io/serverless-autoresearch) | Parallel evolution pipeline for Karpathy's autoresearch on SageMaker Spot Training (H100) with HUGI pattern |
 | [**mymir**](https://github.com/FrkAk/mymir) | Project management layer for AI coding agents with context network |
 | [**Langflow**](https://github.com/langflow-ai/langflow) | Open-source visual AI agent builder with drag-and-drop canvas (149K+ stars) |
+| [**Parallel Code**](https://github.com/johannesjo/parallel-code) | Desktop app for running AI coding agents in parallel worktrees |
 
 ### MCP Servers & Tooling
 

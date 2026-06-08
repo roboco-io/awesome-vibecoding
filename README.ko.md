@@ -164,6 +164,7 @@
 | [**serverless-autoresearch**](https://github.com/roboco-io/serverless-autoresearch) | HUGI 패턴을 적용한 SageMaker Spot Training(H100)에서 Karpathy의 autoresearch를 병렬 진화시키는 파이프라인 |
 | [**mymir**](https://github.com/FrkAk/mymir) | 컨텍스트 네트워크를 갖춘 AI 코딩 에이전트용 프로젝트 관리 레이어 |
 | [**Langflow**](https://github.com/langflow-ai/langflow) | 드래그 앤 드롭 캔버스를 갖춘 오픈소스 비주얼 AI 에이전트 빌더 (14.9만+ 스타) |
+| [**Parallel Code**](https://github.com/johannesjo/parallel-code) | 병렬 워크트리에서 AI 코딩 에이전트를 실행하는 데스크톱 앱 |
 
 ### MCP 서버 & 도구
 
