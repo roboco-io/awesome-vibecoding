@@ -231,6 +231,7 @@ Browser-based and cloud platforms for AI-assisted development.
 | [**Rosebud AI**](https://rosebud.ai) | Vibe coding platform for 3D games and interactive web apps |
 | [**Emergent**](https://emergent.sh) | AI full-stack vibe coding platform with one-click deployment and custom domains |
 | [**Hostinger Horizons**](https://hostinger.com/horizons) | AI no-code app builder with voice/text/image prompts and built-in hosting |
+| [**RapidNative**](https://rapidnative.com/) | AI mobile app builder with sketch/text input for React Native |
 
 ---
 

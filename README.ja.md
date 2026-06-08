@@ -230,6 +230,7 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 | [**Rosebud AI**](https://rosebud.ai) | 3DゲームとインタラクティブWebアプリのためのバイブコーディングプラットフォーム |
 | [**Emergent**](https://emergent.sh) | ワンクリックデプロイとカスタムドメインを備えたAIフルスタックバイブコーディングプラットフォーム |
 | [**Hostinger Horizons**](https://hostinger.com/horizons) | 音声・テキスト・画像プロンプトとホスティング内蔵のAIノーコードアプリビルダー |
+| [**RapidNative**](https://rapidnative.com/) | スケッチ/テキスト入力でReact Nativeを生成するAIモバイルアプリビルダー |
 
 ---
 

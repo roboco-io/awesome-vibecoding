@@ -232,6 +232,7 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 | [**Rosebud AI**](https://rosebud.ai) | 3D 게임과 인터랙티브 웹 앱을 위한 바이브 코딩 플랫폼 |
 | [**Emergent**](https://emergent.sh) | 원클릭 배포와 커스텀 도메인을 지원하는 AI 풀스택 바이브 코딩 플랫폼 |
 | [**Hostinger Horizons**](https://hostinger.com/horizons) | 음성/텍스트/이미지 프롬프트와 내장 호스팅을 지원하는 AI 노코드 앱 빌더 |
+| [**RapidNative**](https://rapidnative.com/) | 스케치/텍스트 입력으로 React Native를 생성하는 AI 모바일 앱 빌더 |
 
 ---
 
