@@ -10,11 +10,21 @@ concurrency:
 
 jobs:
   validate-and-process:
-    # Run on the initial 'opened' event when the 'addition' label is already
-    # present, or on the 'labeled' event when 'addition' is the label that was
-    # just applied. This prevents re-runs when the workflow adds its own
-    # status labels (invalid/duplicate/rejected/needs-review).
-    if: (github.event.action == 'opened' && contains(github.event.issue.labels.*.name, 'addition')) || (github.event.action == 'labeled' && github.event.label.name == 'addition')
+    # Run when a human opens an issue that either already carries the
+    # 'addition' label or contains a URL in its body, or when a human applies
+    # the 'addition' label later. We deliberately do NOT rely on
+    # auto-label-addition.yml to "unblock" us by adding the label: that
+    # workflow uses the default GITHUB_TOKEN, and label events created by
+    # GITHUB_TOKEN do not trigger further workflow runs, so the 'labeled'
+    # branch would never fire for bot-added labels. Detecting the URL directly
+    # on 'opened' removes that broken handoff. The bot-actor guard also
+    # prevents re-runs when this workflow adds its own status labels
+    # (invalid/duplicate/rejected/needs-review).
+    if: >-
+      !endsWith(github.actor, '[bot]') && (
+        (github.event.action == 'opened' && (contains(github.event.issue.labels.*.name, 'addition') || contains(github.event.issue.body, 'http'))) ||
+        (github.event.action == 'labeled' && github.event.label.name == 'addition')
+      )
     runs-on: ubuntu-latest
     permissions:
       contents: write

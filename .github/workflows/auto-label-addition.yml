@@ -2,7 +2,12 @@ name: Auto Label Addition
 
 # Adds the `addition` label to newly opened issues that contain a URL but were
 # not created via the issue template (which would add the label automatically).
-# This unblocks `auto-process-issue.yml`, which only runs when the label is set.
+#
+# NOTE: This is now purely cosmetic/organisational. It does NOT unblock
+# `auto-process-issue.yml`: this workflow adds the label with the default
+# GITHUB_TOKEN, and label events created by GITHUB_TOKEN do not trigger other
+# workflows. `auto-process-issue.yml` therefore detects the URL itself on the
+# `opened` event rather than waiting for this label.
 
 on:
   issues:
