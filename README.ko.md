@@ -233,6 +233,7 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 | [**Emergent**](https://emergent.sh) | 원클릭 배포와 커스텀 도메인을 지원하는 AI 풀스택 바이브 코딩 플랫폼 |
 | [**Hostinger Horizons**](https://hostinger.com/horizons) | 음성/텍스트/이미지 프롬프트와 내장 호스팅을 지원하는 AI 노코드 앱 빌더 |
 | [**RapidNative**](https://rapidnative.com/) | 스케치/텍스트 입력으로 React Native를 생성하는 AI 모바일 앱 빌더 |
+| [**Playcode**](https://playcode.io/ai-website-builder) | 시각적 편집, 호스팅, 커스텀 도메인, 원클릭 퍼블리싱을 지원하는 AI 웹사이트 및 앱 빌더 |
 
 ---
 

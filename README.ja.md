@@ -231,6 +231,7 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 | [**Emergent**](https://emergent.sh) | ワンクリックデプロイとカスタムドメインを備えたAIフルスタックバイブコーディングプラットフォーム |
 | [**Hostinger Horizons**](https://hostinger.com/horizons) | 音声・テキスト・画像プロンプトとホスティング内蔵のAIノーコードアプリビルダー |
 | [**RapidNative**](https://rapidnative.com/) | スケッチ/テキスト入力でReact Nativeを生成するAIモバイルアプリビルダー |
+| [**Playcode**](https://playcode.io/ai-website-builder) | ビジュアル編集、ホスティング、カスタムドメイン、ワンクリック公開を備えたAIウェブサイト・アプリビルダー |
 
 ---
 
