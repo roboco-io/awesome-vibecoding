@@ -107,6 +107,7 @@ AI-powered code completion and assistance integrated into your development envir
 | [**Mutable.ai**](https://mutable.ai/) | AI for automated testing, documentation, and refactoring |
 | [**CopilotKit**](https://github.com/CopilotKit/CopilotKit) | Framework for building AI copilots with chat and generative UI |
 | [**Kiro**](https://kiro.dev) | AWS spec-driven AI IDE turning requirements into code and tests |
+| [**Kilo Code**](https://kilo.ai) | AI coding assistant with 1.5M+ users, 500+ model support, and browser automation |
 | [**Warp**](https://www.warp.dev) | AI-native terminal with natural language commands and agent mode |
 | [**PearAI**](https://trypear.ai) | Open-source VS Code AI editor with integrated search |
 | [**OpenPaw**](https://github.com/daxaur/openpaw) | CLI tool that extends Claude Code into a personal assistant with 38+ skills |
@@ -125,6 +126,8 @@ AI-powered code completion and assistance integrated into your development envir
 | [**vmux**](https://github.com/roboco-io/vmux) | VS Code terminal extension for AI coding agents with notifications and session management |
 | [**Codebuff**](https://github.com/CodebuffAI/codebuff) | Open-source terminal AI agent with sub-agent coordination, 61% SWE-bench accuracy |
 | [**Crush**](https://github.com/charmbracelet/crush) | Glamorous terminal AI coding agent by Charmbracelet with LSP integration and multi-model support |
+| [**OpenClaw**](https://github.com/openclaw/openclaw) | Personal AI assistant with 380K+ stars (GitHub's most-starred software project), autonomous workflows, local execution |
+| [**Hermes Agent**](https://github.com/nousresearch/hermes-agent) | Self-improving AI agent with 203K+ stars, persistent memory, automated skill creation, works with 200+ models |
 | [**Open WebUI**](https://github.com/open-webui/open-webui) | Self-hosted AI interface with 139K+ stars, 290M downloads, offline-first (Ollama/OpenAI) |
 
 ### Agentic Coding Environments
@@ -142,10 +145,12 @@ Autonomous AI systems that handle end-to-end development tasks.
 | [**Cherry Studio**](https://github.com/CherryHQ/cherry-studio) | AI Agent desktop with autonomous coding and 300+ assistants |
 | [**OpenSpec**](https://github.com/Fission-AI/OpenSpec) | Spec-driven development framework for AI coding assistants |
 | [**SWE-agent**](https://github.com/princeton-nlp/SWE-agent) | Stanford agent that autonomously solves GitHub issues |
+| [**SuperNinja**](https://www.ninjatech.ai) | End-to-end autonomous AI development agent |
 | [**gpt-engineer**](https://github.com/gpt-engineer-org/gpt-engineer) | Build entire codebases from natural language specifications |
 | [**MetaGPT**](https://github.com/geekan/MetaGPT) | Multi-agent framework simulating software company roles |
 | [**AutoGPT**](https://github.com/Significant-Gravitas/AutoGPT) | Autonomous AI agent for complex coding tasks |
 | [**Sweep**](https://github.com/sweepai/sweep) | AI-powered GitHub assistant for issues and PRs |
+| [**Twill**](https://twill.ai) | Cloud-based autonomous coding agent that ships PRs |
 | [**Devika**](https://github.com/stitionai/devika) | First open-source agentic software engineer alternative to Devin |
 | [**smol-ai developer**](https://github.com/smol-ai/developer) | Embeddable developer agent library for apps |
 | [**E2B**](https://github.com/e2b-dev/e2b) | Secure cloud sandbox environment for enterprise-grade AI agents |
@@ -207,6 +212,7 @@ Browser-based and cloud platforms for AI-assisted development.
 | [**Bolt.new**](https://bolt.new/) | Natural language app building by StackBlitz |
 | [**Lovable**](https://lovable.dev/) | Full-stack app generation with Supabase |
 | [**Berrry**](https://berrry.app) | Transform social posts into web apps |
+| [**Appsmith**](https://www.appsmith.com) | Low-code platform for building internal tools (40K+ GitHub stars) |
 | [**Duet AI**](https://workspace.google.com/solutions/ai/) | Google Workspace AI integration |
 | [**Trae AI**](https://www.trae.ai/) | AI platform for content creation |
 | [**CodeSandbox AI**](https://codesandbox.io/ai) | AI-powered code generation in browser sandbox |
@@ -221,10 +227,12 @@ Browser-based and cloud platforms for AI-assisted development.
 | [**Tempo Labs**](https://tempolabs.ai/) | AI-powered React UI builder with visual editor and code export |
 | [**Gitpod**](https://www.gitpod.io/) | Cloud dev environments with AI-assisted workspace automation |
 | [**Bolt.diy**](https://github.com/stackblitz-labs/bolt.diy) | Open-source Bolt.new alternative with bring-your-own-API-key support |
+| [**Botpress**](https://botpress.com) | LLM-powered chatbot development platform (14K+ GitHub stars) |
 | [**Marblism**](https://marblism.com) | AI that generates full-stack Next.js apps from a text prompt |
 | [**Subframe**](https://subframe.com) | AI-assisted UI builder that generates clean React component code |
 | [**BuildShip**](https://buildship.com) | Visual AI workflow and backend builder with low-code nodes |
 | [**Onlook**](https://onlook.dev) | Open-source browser-based visual editor for React/Next.js with AI code generation |
+| [**OpenBolt.dev**](https://openbolt.dev) | Open-source Bolt.new alternative, self-hosted and customizable |
 | [**GitHub Spark**](https://githubnext.com/projects/spark) | Natural language micro-app builder by GitHub Next, runs in the browser |
 | [**Dify**](https://github.com/langgenius/dify) | Open-source platform for building and deploying LLM-powered applications |
 | [**Lazy AI**](https://www.getlazy.ai) | Chat-based web app builder with one-click cloud deployment |
