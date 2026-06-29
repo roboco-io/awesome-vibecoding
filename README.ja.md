@@ -306,6 +306,7 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 - [Agentic Coding (Armin Ronacher)](https://lucumr.pocoo.org/2025/6/12/agentic-coding/) — AI駆動型自律開発アプローチ
 - [The Model Context Protocol Guide (Anthropic)](https://modelcontextprotocol.io/introduction) — MCPアーキテクチャの理解
 - [vibecodex](https://github.com/yerdaulet-damir/vibecodex) — バイブコーディングのための54の原則を含むプロダクションアーキテクチャバイブル (FastAPI, Next.js, Go)
+- [AI Book: AI Coding](https://aibook.ren/categories/ai-coding) — Cursor、Codex、Claude Code、Kiroを使用したコーディングエージェントワークフロー、ツール選択、実践に関する中国語ハンドブック
 
 ### 動画 & チュートリアル
 

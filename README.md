@@ -315,6 +315,7 @@ Browser-based and cloud platforms for AI-assisted development.
 - [Agentic Coding (Armin Ronacher)](https://lucumr.pocoo.org/2025/6/12/agentic-coding/) — AI-driven autonomous development approaches
 - [The Model Context Protocol Guide (Anthropic)](https://modelcontextprotocol.io/introduction) — Understanding MCP architecture
 - [vibecodex](https://github.com/yerdaulet-damir/vibecodex) — Production architecture bible with 54 principles for vibe-coding (FastAPI, Next.js, Go)
+- [AI Book: AI Coding](https://aibook.ren/categories/ai-coding) — Chinese handbook on coding-agent workflows, tool selection, and practices with Cursor, Codex, Claude Code, and Kiro
 
 ### Videos & Tutorials
 

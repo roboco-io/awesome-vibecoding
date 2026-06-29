@@ -308,6 +308,7 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 - [Agentic Coding (Armin Ronacher)](https://lucumr.pocoo.org/2025/6/12/agentic-coding/) — AI 기반 자율 개발 접근법
 - [The Model Context Protocol Guide (Anthropic)](https://modelcontextprotocol.io/introduction) — MCP 아키텍처 이해하기
 - [vibecodex](https://github.com/yerdaulet-damir/vibecodex) — 바이브 코딩을 위한 54가지 원칙을 담은 프로덕션 아키텍처 바이블 (FastAPI, Next.js, Go)
+- [AI Book: AI Coding](https://aibook.ren/categories/ai-coding) — Cursor, Codex, Claude Code, Kiro를 활용한 코딩 에이전트 워크플로우, 도구 선택 및 실습에 대한 중국어 핸드북
 
 ### 비디오 & 튜토리얼
 
