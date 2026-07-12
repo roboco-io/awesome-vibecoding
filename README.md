@@ -170,6 +170,7 @@ Autonomous AI systems that handle end-to-end development tasks.
 | [**mymir**](https://github.com/FrkAk/mymir) | Project management layer for AI coding agents with context network |
 | [**Langflow**](https://github.com/langflow-ai/langflow) | Open-source visual AI agent builder with drag-and-drop canvas (149K+ stars) |
 | [**Parallel Code**](https://github.com/johannesjo/parallel-code) | Desktop app for running AI coding agents in parallel worktrees |
+| [**Intent**](https://www.augmentcode.com/intent) | Multi-agent orchestration workspace with spec-driven structured oversight |
 
 ### MCP Servers & Tooling
 
@@ -241,6 +242,7 @@ Browser-based and cloud platforms for AI-assisted development.
 | [**Hostinger Horizons**](https://hostinger.com/horizons) | AI no-code app builder with voice/text/image prompts and built-in hosting |
 | [**RapidNative**](https://rapidnative.com/) | AI mobile app builder with sketch/text input for React Native |
 | [**Playcode**](https://playcode.io/ai-website-builder) | AI website and app builder with visual editing, hosting, custom domains, and one-click publishing |
+| [**Fusion**](https://www.builder.io/fusion) | Visual AI IDE connecting to GitHub with design system awareness and Figma integration |
 
 ---
 
