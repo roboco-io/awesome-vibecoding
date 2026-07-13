@@ -232,6 +232,8 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 | [**Hostinger Horizons**](https://hostinger.com/horizons) | 音声・テキスト・画像プロンプトとホスティング内蔵のAIノーコードアプリビルダー |
 | [**RapidNative**](https://rapidnative.com/) | スケッチ/テキスト入力でReact Nativeを生成するAIモバイルアプリビルダー |
 | [**Playcode**](https://playcode.io/ai-website-builder) | ビジュアル編集、ホスティング、カスタムドメイン、ワンクリック公開を備えたAIウェブサイト・アプリビルダー |
+| [**Fusion**](https://www.builder.io/fusion) | デザインシステム認識とFigma統合機能を備えたGitHub接続ビジュアルAI IDE |
+| [**VibeKit.bot**](https://vibekit.bot) | アプリごとに永続的なAIコーディングエージェントを提供し、ビルド、ホスティング(ライブドメイン)、継続的な改善を実行。携帯電話やCLIから駆動可能。BYOKまたは従量課金制 |
 
 ---
 

@@ -243,6 +243,7 @@ Browser-based and cloud platforms for AI-assisted development.
 | [**RapidNative**](https://rapidnative.com/) | AI mobile app builder with sketch/text input for React Native |
 | [**Playcode**](https://playcode.io/ai-website-builder) | AI website and app builder with visual editing, hosting, custom domains, and one-click publishing |
 | [**Fusion**](https://www.builder.io/fusion) | Visual AI IDE connecting to GitHub with design system awareness and Figma integration |
+| [**VibeKit.bot**](https://vibekit.bot) | Persistent AI coding agent per app that builds, hosts (live domain), and keeps improving it, driven from your phone or CLI; BYOK or pay-as-you-go |
 
 ---
 

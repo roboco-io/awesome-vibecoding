@@ -234,6 +234,8 @@ AI 보조 개발을 위한 브라우저 기반 및 클라우드 플랫폼.
 | [**Hostinger Horizons**](https://hostinger.com/horizons) | 음성/텍스트/이미지 프롬프트와 내장 호스팅을 지원하는 AI 노코드 앱 빌더 |
 | [**RapidNative**](https://rapidnative.com/) | 스케치/텍스트 입력으로 React Native를 생성하는 AI 모바일 앱 빌더 |
 | [**Playcode**](https://playcode.io/ai-website-builder) | 시각적 편집, 호스팅, 커스텀 도메인, 원클릭 퍼블리싱을 지원하는 AI 웹사이트 및 앱 빌더 |
+| [**Fusion**](https://www.builder.io/fusion) | 디자인 시스템 인식 및 Figma 통합 기능을 갖춘 GitHub 연결 비주얼 AI IDE |
+| [**VibeKit.bot**](https://vibekit.bot) | 앱별 지속적 AI 코딩 에이전트로 빌드, 호스팅(라이브 도메인), 지속적 개선을 수행하며 휴대폰이나 CLI로 구동; BYOK 또는 사용량 기반 과금 |
 
 ---
 
