@@ -116,6 +116,7 @@ AI-powered code completion and assistance integrated into your development envir
 | [**Aide**](https://aide.dev) | Open-source VS Code fork with proactive AI agent that can fix issues across the codebase |
 | [**Blackbox AI**](https://www.blackbox.ai) | AI code completion and generation supporting 20+ languages, popular for in-browser coding |
 | [**llm.log**](https://github.com/lanesket/llm.log) | Local proxy that captures AI agent API calls — tokens, costs, prompts, latency in a TUI dashboard |
+| [**usage**](https://github.com/aqua5230/usage) | macOS menu bar app showing Claude Code/Codex quota at a glance |
 | [**Phind**](https://www.phind.com) | AI-powered developer search engine for code, errors, and technical Q&A |
 | [**Bito AI**](https://bito.ai) | AI code review and generation assistant for VS Code and JetBrains IDEs |
 | [**PR-Agent**](https://github.com/Codium-ai/pr-agent) | Open-source AI agent for automated pull request analysis and review |
