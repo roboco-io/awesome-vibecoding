@@ -116,6 +116,7 @@
 | [**Blackbox AI**](https://www.blackbox.ai) | 20개 이상 언어를 지원하는 AI 코드 자동완성 및 생성 도구, 브라우저 내 코딩으로 인기 |
 | [**llm.log**](https://github.com/lanesket/llm.log) | AI 에이전트 API 호출을 캡처하는 로컬 프록시 — 토큰, 비용, 프롬프트, 지연 시간을 TUI 대시보드에서 확인 |
 | [**usage**](https://github.com/aqua5230/usage) | Claude Code/Codex 할당량을 한눈에 보여주는 macOS 메뉴 바 앱 |
+| [**Agent Island**](https://github.com/tristan666666/agent-island) | macOS/Windows용 Claude Code/Codex 데스크탑 상태 컴패니언 |
 | [**Phind**](https://www.phind.com) | 코드, 오류, 기술 Q&A를 위한 AI 기반 개발자 검색 엔진 |
 | [**Bito AI**](https://bito.ai) | VS Code 및 JetBrains IDE용 AI 코드 리뷰 및 생성 어시스턴트 |
 | [**PR-Agent**](https://github.com/Codium-ai/pr-agent) | 자동화된 풀 리퀘스트 분석 및 리뷰를 위한 오픈소스 AI 에이전트 |

@@ -117,6 +117,7 @@ AI-powered code completion and assistance integrated into your development envir
 | [**Blackbox AI**](https://www.blackbox.ai) | AI code completion and generation supporting 20+ languages, popular for in-browser coding |
 | [**llm.log**](https://github.com/lanesket/llm.log) | Local proxy that captures AI agent API calls — tokens, costs, prompts, latency in a TUI dashboard |
 | [**usage**](https://github.com/aqua5230/usage) | macOS menu bar app showing Claude Code/Codex quota at a glance |
+| [**Agent Island**](https://github.com/tristan666666/agent-island) | Desktop status companion for Claude Code/Codex on macOS/Windows |
 | [**Phind**](https://www.phind.com) | AI-powered developer search engine for code, errors, and technical Q&A |
 | [**Bito AI**](https://bito.ai) | AI code review and generation assistant for VS Code and JetBrains IDEs |
 | [**PR-Agent**](https://github.com/Codium-ai/pr-agent) | Open-source AI agent for automated pull request analysis and review |

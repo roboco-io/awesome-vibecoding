@@ -116,6 +116,7 @@
 | [**Blackbox AI**](https://www.blackbox.ai) | 20以上の言語に対応したAIコード補完・生成ツール、ブラウザ内コーディングで人気 |
 | [**llm.log**](https://github.com/lanesket/llm.log) | AIエージェントのAPI呼び出しをキャプチャするローカルプロキシ — トークン、コスト、プロンプト、レイテンシをTUIダッシュボードで表示 |
 | [**usage**](https://github.com/aqua5230/usage) | Claude Code/Codexのクォータを一目で確認できるmacOSメニューバーアプリ |
+| [**Agent Island**](https://github.com/tristan666666/agent-island) | macOS/Windows用のClaude Code/Codexデスクトップステータスコンパニオン |
 | [**Phind**](https://www.phind.com) | コード・エラー・技術的Q&AのためのAI搭載開発者向け検索エンジン |
 | [**Bito AI**](https://bito.ai) | VS CodeおよびJetBrains IDE向けAIコードレビュー・生成アシスタント |
 | [**PR-Agent**](https://github.com/Codium-ai/pr-agent) | プルリクエストの自動分析とレビューのためのオープンソースAIエージェント |
