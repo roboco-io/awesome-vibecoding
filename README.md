@@ -131,6 +131,7 @@ AI-powered code completion and assistance integrated into your development envir
 | [**OpenClaw**](https://github.com/openclaw/openclaw) | Personal AI assistant with 380K+ stars (GitHub's most-starred software project), autonomous workflows, local execution |
 | [**Hermes Agent**](https://github.com/nousresearch/hermes-agent) | Self-improving AI agent with 203K+ stars, persistent memory, automated skill creation, works with 200+ models |
 | [**Open WebUI**](https://github.com/open-webui/open-webui) | Self-hosted AI interface with 139K+ stars, 290M downloads, offline-first (Ollama/OpenAI) |
+| [**breaking-coding-chaos**](https://github.com/bo-cao/breaking-coding-chaos) | Human-in-the-loop dual-loop control-plane skill suite |
 
 ### Agentic Coding Environments
 

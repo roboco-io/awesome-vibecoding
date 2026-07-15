@@ -128,6 +128,7 @@
 | [**Codebuff**](https://github.com/CodebuffAI/codebuff) | 서브 에이전트 조율 기능을 갖춘 오픈소스 터미널 AI 에이전트, SWE-bench 61% 정확도 |
 | [**Crush**](https://github.com/charmbracelet/crush) | Charmbracelet 의 매력적인 터미널 AI 코딩 에이전트, LSP 통합 및 멀티 모델 지원 |
 | [**Open WebUI**](https://github.com/open-webui/open-webui) | 셀프 호스팅 AI 인터페이스, 13.9만+ 스타, 2.9억 다운로드, 오프라인 우선 (Ollama/OpenAI) |
+| [**breaking-coding-chaos**](https://github.com/bo-cao/breaking-coding-chaos) | 휴먼-인-더-루프 이중 루프 제어 플레인 스킬 스위트 |
 
 ### 에이전트 기반 코딩 환경
 
