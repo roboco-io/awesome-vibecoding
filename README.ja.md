@@ -26,6 +26,7 @@
 <!-- recent-updates:start -->
 | 確認日 | 更新項目 | 変更内容 |
 |---|---|---|
+| 2026-09-18 | [Grok Build](#resource-grok-build) | レビュー後に追加：プランモード、並列サブエージェント、MCPに対応したxAIのターミナルコーディングエージェント。 |
 | 2026-09-18 | [Pi](#resource-pi) | レビュー後に追加：マルチプロバイダーモデルとSDKを備えたMITライセンスの拡張型ターミナルコーディングエージェント。 |
 | 2026-09-18 | [NextReset](#resource-nextreset) | レビュー後に追加：非公式の公開リセット履歴とローカルのカウントダウン。予測の正確性を保証するものではありません。 |
 | 2026-09-18 | [Superagent](#resource-superagent) | レビュー後に追加：ブラウザとiOSのワークフローに対応したmacOS用コーディングエージェントワークスペース。 |
@@ -95,6 +96,7 @@
 | <a id="resource-google-jules"></a>[**Google Jules**](https://jules.google) · Web | リポジトリのコーディング作業を自律型エージェントに委任 | 条件を要確認 | — |
 | <a id="resource-goose"></a>[**Goose**](https://block.github.io/goose/) · CLI | MCPに対応したBlockのコーディングアシスタント | 条件を要確認 | — |
 | <a id="resource-gpt-engineer"></a>[**gpt-engineer**](https://github.com/gpt-engineer-org/gpt-engineer) | 自然言語仕様から完全なコードベースを構築 | 条件を要確認 | — |
+| <a id="resource-grok-build"></a>[**Grok Build**](https://x.ai/cli) · CLI | プランモード、並列サブエージェント、スキル、MCPに対応したxAIのターミナルコーディングエージェント（TUI、ヘッドレス、ACP） | Apache-2.0クライアント；無料トライアル、SuperGrokサブスクリプションまたはxAI APIキー | 2026-09-18 |
 | <a id="resource-jetbrains-ai"></a>[**JetBrains AI**](https://www.jetbrains.com/ai/) | Junieエージェントを備えたIntelliJ/PyCharmの深い統合 | 条件を要確認 | — |
 | <a id="resource-kilo-code"></a>[**Kilo Code**](https://kilo.ai) | モデル選択とブラウザ自動化に対応したAIコーディング支援 | 条件を要確認 | — |
 | <a id="resource-kiro"></a>[**Kiro**](https://kiro.dev) · IDE | 要件をコードとテストに変換するAWSのスペック駆動型AI IDE | 条件を要確認 | — |

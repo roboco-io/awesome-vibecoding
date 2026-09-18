@@ -26,6 +26,7 @@ Recent reviews and material changes from the last 30 days, newest first. A revie
 <!-- recent-updates:start -->
 | Verified on | Update | What changed |
 |---|---|---|
+| 2026-09-18 | [Grok Build](#resource-grok-build) | Reviewed addition: xAI's terminal coding agent with plan mode, subagents, and MCP support. |
 | 2026-09-18 | [Pi](#resource-pi) | Reviewed addition: extensible MIT terminal coding agent with multi-provider models and an SDK. |
 | 2026-09-18 | [NextReset](#resource-nextreset) | Reviewed addition: unofficial public reset history and local countdowns; forecasts are not endorsed. |
 | 2026-09-18 | [Superagent](#resource-superagent) | Reviewed addition: macOS coding-agent workspace with browser and iOS workflows. |
@@ -95,6 +96,7 @@ Understand a repository, implement a feature, or refactor existing code.
 | <a id="resource-google-jules"></a>[**Google Jules**](https://jules.google) · Web | Delegate repository coding tasks to an autonomous agent | Check terms | — |
 | <a id="resource-goose"></a>[**Goose**](https://block.github.io/goose/) · CLI | coding assistant by Block with MCP support | Check terms | — |
 | <a id="resource-gpt-engineer"></a>[**gpt-engineer**](https://github.com/gpt-engineer-org/gpt-engineer) | Build entire codebases from natural language specifications | Check terms | — |
+| <a id="resource-grok-build"></a>[**Grok Build**](https://x.ai/cli) · CLI | xAI's terminal coding agent (TUI, headless, ACP) with plan mode, parallel subagents, skills, and MCP support | Apache-2.0 client; free trial, SuperGrok subscription, or xAI API key | 2026-09-18 |
 | <a id="resource-jetbrains-ai"></a>[**JetBrains AI**](https://www.jetbrains.com/ai/) | Deep integration in IntelliJ/PyCharm with Junie agent | Check terms | — |
 | <a id="resource-kilo-code"></a>[**Kilo Code**](https://kilo.ai) | AI coding assistance with model selection and browser automation | Check terms | — |
 | <a id="resource-kiro"></a>[**Kiro**](https://kiro.dev) · IDE | AWS spec-driven AI IDE turning requirements into code and tests | Check terms | — |

@@ -26,6 +26,7 @@
 <!-- recent-updates:start -->
 | 검증일 | 업데이트 | 변경 사항 |
 |---|---|---|
+| 2026-09-18 | [Grok Build](#resource-grok-build) | 검토 후 추가: 플랜 모드, 병렬 서브에이전트, MCP를 지원하는 xAI의 터미널 코딩 에이전트. |
 | 2026-09-18 | [Pi](#resource-pi) | 검토 후 추가: 다중 프로바이더 모델과 SDK를 갖춘 MIT 라이선스 확장형 터미널 코딩 에이전트. |
 | 2026-09-18 | [NextReset](#resource-nextreset) | 검토 후 추가: 비공식 공개 초기화 이력과 로컬 카운트다운; 예측의 정확성을 보증하지 않음. |
 | 2026-09-18 | [Superagent](#resource-superagent) | 검토 후 추가: 브라우저 및 iOS 워크플로우를 지원하는 macOS 코딩 에이전트 작업 공간. |
@@ -95,6 +96,7 @@
 | <a id="resource-google-jules"></a>[**Google Jules**](https://jules.google) · Web | 저장소 코딩 작업을 자율 에이전트에 위임 | 이용 조건 확인 | — |
 | <a id="resource-goose"></a>[**Goose**](https://block.github.io/goose/) · CLI | MCP를 지원하는 Block의 코딩 어시스턴트 | 이용 조건 확인 | — |
 | <a id="resource-gpt-engineer"></a>[**gpt-engineer**](https://github.com/gpt-engineer-org/gpt-engineer) | 자연어 명세로부터 전체 코드베이스 구축 | 이용 조건 확인 | — |
+| <a id="resource-grok-build"></a>[**Grok Build**](https://x.ai/cli) · CLI | 플랜 모드, 병렬 서브에이전트, 스킬, MCP를 지원하는 xAI의 터미널 코딩 에이전트 (TUI, 헤드리스, ACP) | Apache-2.0 클라이언트; 물료 체험, SuperGrok 구독 또는 xAI API 키 | 2026-09-18 |
 | <a id="resource-jetbrains-ai"></a>[**JetBrains AI**](https://www.jetbrains.com/ai/) | Junie 에이전트를 갖춘 IntelliJ/PyCharm 깊은 통합 | 이용 조건 확인 | — |
 | <a id="resource-kilo-code"></a>[**Kilo Code**](https://kilo.ai) | 모델 선택과 브라우저 자동화를 지원하는 AI 코딩 어시스턴트 | 이용 조건 확인 | — |
 | <a id="resource-kiro"></a>[**Kiro**](https://kiro.dev) · IDE | 요구사항을 코드와 테스트로 변환하는 AWS 스펙 기반 AI IDE | 이용 조건 확인 | — |
