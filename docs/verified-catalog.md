@@ -1,0 +1,135 @@
+# Additional Verified Resources
+
+[Back to the core shortlist](../README.md). Reviewed on 2026-09-18. These are additional usable alternatives, not a ranking. Dated learning resources are identified as historical where appropriate. Status and access scope apply to the specific implementation linked; no product was installed or security-certified by this review.
+
+## Code & Editing
+
+| Resource | When to use it | Access / scope | Verified |
+|---|---|---|---|
+| <a id="resource-amp"></a>[**Amp**](https://ampcode.com) · CLI | Coding agent available through terminal, cloud workspaces, and native apps | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-amp) |
+| <a id="resource-augment-code"></a>[**Augment Code**](https://www.augmentcode.com) | Coding agents and codebase context for CLI and IDE workflows | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-augment-code) |
+| <a id="resource-blackbox-ai"></a>[**Blackbox AI**](https://www.blackbox.ai) | VS Code coding agent with file editing, terminal execution, and browser testing | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-blackbox-ai) |
+| <a id="resource-fusion"></a>[**Builder Code**](https://www.builder.io/platform/code) · Web | Visual AI coding workflow connected to repositories and design systems; formerly Fusion | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-fusion) |
+| <a id="resource-codegpt"></a>[**CodeGPT**](https://codegpt.co) | IDE coding assistant that connects to model providers | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-codegpt) |
+| <a id="resource-sourcegraph-cody"></a>[**Cody Enterprise**](https://sourcegraph.com/cody) | Sourcegraph-context coding assistance for enterprise customers; individual tiers retired | Enterprise only; individual tiers retired; check terms | [2026-09-18](lifecycle-review-2026-09-18.md#resource-sourcegraph-cody) |
+| <a id="resource-continue"></a>[**Continue**](https://www.continue.dev) | Configurable coding agents for VS Code, JetBrains, and the terminal | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-continue) |
+| <a id="resource-cosine"></a>[**Cosine**](https://cosine.sh) · Web | Coding agent for CLI, cloud, and desktop workflows | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-cosine) |
+| <a id="resource-crush"></a>[**Crush**](https://github.com/charmbracelet/crush) · CLI | Multi-model terminal coding agent with LSP context and MCP tools | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-crush) |
+| <a id="resource-dbforge-ai-assistant"></a>[**dbForge AI Assistant**](https://www.devart.com/dbforge/ai-assistant/) | SQL coding assistance integrated into dbForge tools; separate AI Assistant license | Separate AI Assistant license; check terms | [2026-09-18](lifecycle-review-2026-09-18.md#resource-dbforge-ai-assistant) |
+| <a id="resource-devin"></a>[**Devin**](https://www.cognition.ai/devin) · Web | Coding agent across cloud, CLI, and Devin Desktop, the IDE formerly named Windsurf | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-devin) |
+| <a id="resource-codebuff"></a>[**Freebuff**](https://github.com/CodebuffAI/freebuff) · CLI | Coding agent with terminal, desktop, and cloud workflows; formerly Codebuff | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-codebuff) |
+| <a id="resource-gemini-code-assist"></a>[**Gemini Code Assist Standard and Enterprise**](https://cloud.google.com/products/gemini/code-assist) | Enterprise IDE coding assistance; consumer tiers retired and new-account subscriptions require sales | Standard/Enterprise; new subscriptions via sales for new billing accounts; consumer tiers retired | [2026-09-18](lifecycle-review-2026-09-18.md#resource-gemini-code-assist) |
+| <a id="resource-google-antigravity"></a>[**Google Antigravity**](https://antigravity.google) · IDE | Coding agents for desktop, IDE, and CLI workflows | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-google-antigravity) |
+| <a id="resource-google-jules"></a>[**Google Jules**](https://jules.google) · Web | GitHub-connected coding agent that performs repository tasks in a virtual machine | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-google-jules) |
+| <a id="resource-jetbrains-ai"></a>[**JetBrains AI**](https://www.jetbrains.com/ai/) | AI Assistant integration for supported JetBrains IDEs | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-jetbrains-ai) |
+| <a id="resource-kilo-code"></a>[**Kilo Code**](https://kilo.ai) | Coding agents for VS Code, JetBrains, and CLI with model selection and MCP | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-kilo-code) |
+| <a id="resource-pearai"></a>[**PearAI**](https://github.com/trypear/pearai-submodule) · IDE | AI code editor with project-context assistance; core functionality maintained in its extension submodule | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-pearai) |
+| <a id="resource-refact-ai"></a>[**Refact (community-maintained)**](https://github.com/JegernOUTT/refact) | Local-first IDE coding agent maintained in the officially linked community fork; BYOK or local models, with cloud service retired | Community-maintained local/BYOK; hosted cloud retired; check model costs | [2026-09-18](lifecycle-review-2026-09-18.md#resource-refact-ai) |
+| <a id="resource-swe-agent"></a>[**SWE-agent**](https://github.com/SWE-agent/SWE-agent) | Research-oriented repository coding agent; maintainers recommend mini-SWE-agent for new use | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-swe-agent) |
+| <a id="resource-tabby"></a>[**Tabby**](https://github.com/TabbyML/tabby) | Self-hosted coding assistant with an OpenAPI interface and local model infrastructure | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-tabby) |
+| <a id="resource-tabnine"></a>[**Tabnine**](https://www.tabnine.com/) | IDE coding assistance with enterprise and private deployment options | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-tabnine) |
+| <a id="resource-twill"></a>[**Twill**](https://twill.ai) · Web | Run coding agents in project environments and return tested, reviewable pull requests | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-twill) |
+| <a id="resource-zed-ai"></a>[**Zed AI**](https://zed.dev/) · IDE | Coding-agent integration in the Zed editor | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-zed-ai) |
+
+## App & UI Prototyping
+
+| Resource | When to use it | Access / scope | Verified |
+|---|---|---|---|
+| <a id="resource-create-xyz"></a>[**Anything**](https://www.anything.com/) · Web | Build applications from natural-language requirements | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-create-xyz) |
+| <a id="resource-appsmith"></a>[**Appsmith**](https://www.appsmith.com) · Web | Low-code platform for building internal tools | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-appsmith) |
+| <a id="resource-berrry"></a>[**Berrry**](https://berrry.app) · Web | Transform social posts into web apps | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-berrry) |
+| <a id="resource-bolt-diy"></a>[**Bolt.diy**](https://github.com/stackblitz-labs/bolt.diy) · Web | Bolt.new alternative with bring-your-own-API-key support | Check pricing; bring your own model provider; last meaningful maintenance needs periodic recheck. | [2026-09-18](lifecycle-review-2026-09-18.md#resource-bolt-diy) |
+| <a id="resource-buildship"></a>[**BuildShip**](https://buildship.com) · Web | Visual AI workflow and backend builder with low-code nodes | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-buildship) |
+| <a id="resource-emergent"></a>[**Emergent**](https://emergent.sh) · Web | AI full-stack vibe coding platform with one-click deployment and custom domains | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-emergent) |
+| <a id="resource-figma-mcp"></a>[**Figma MCP**](https://developers.figma.com/docs/figma-mcp-server/) · MCP | Bring design data into UI implementation | Check pricing; Figma account/seat and rate limits apply. | [2026-09-18](lifecycle-review-2026-09-18.md#resource-figma-mcp) |
+| <a id="resource-hostinger-horizons"></a>[**Hostinger Horizons**](https://www.hostinger.com/horizons) · Web | AI no-code app builder with voice/text/image prompts and built-in hosting | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-hostinger-horizons) |
+| <a id="resource-kombai"></a>[**Kombai**](https://kombai.com/) · Desktop | Implement frontend interfaces with a desktop coding agent | Check pricing; desktop app or IDE extension. | [2026-09-18](lifecycle-review-2026-09-18.md#resource-kombai) |
+| <a id="resource-playcode"></a>[**Playcode**](https://playcode.io/ai-website-builder) · Web | AI website and app builder with visual editing, hosting, custom domains, and one-click publishing | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-playcode) |
+| <a id="resource-rapidnative"></a>[**RapidNative**](https://www.rapidnative.com/) · Web | AI mobile app builder with sketch/text input for React Native | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-rapidnative) |
+| <a id="resource-rosebud-ai"></a>[**Rosebud AI**](https://rosebud.ai) · Web | Vibe coding platform for 3D games and interactive web apps | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-rosebud-ai) |
+| <a id="resource-subframe"></a>[**Subframe**](https://www.subframe.com/) · Web | AI-assisted UI builder that generates clean React component code | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-subframe) |
+| <a id="resource-vibekit-bot"></a>[**VibeKit.bot**](https://vibekit.bot) · Web | Persistent AI coding agent per app that builds, hosts (live domain), and keeps improving it, driven from your phone or CLI; BYOK or pay-as-you-go | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-vibekit-bot) |
+
+## Context, Specs & Integrations
+
+| Resource | When to use it | Access / scope | Verified |
+|---|---|---|---|
+| <a id="resource-anycrawl"></a>[**AnyCrawl**](https://github.com/any4ai/anycrawl-mcp-server) · MCP | Fetch website content for agent context | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-anycrawl) |
+| <a id="resource-breaking-coding-chaos"></a>[**breaking-coding-chaos**](https://github.com/bo-cao/breaking-coding-chaos) | Human-in-the-loop dual-loop control-plane skill suite | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-breaking-coding-chaos) |
+| <a id="resource-chroma"></a>[**Chroma**](https://github.com/chroma-core/chroma-mcp) · MCP | Retrieve context from a vector database | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-chroma) |
+| <a id="resource-clickhouse"></a>[**ClickHouse**](https://github.com/ClickHouse/mcp-clickhouse) · MCP | Query and inspect ClickHouse data | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-clickhouse) |
+| <a id="resource-composio-mcp"></a>[**Composio MCP**](https://github.com/ComposioHQ/composio) · MCP | Connect coding agents to external services | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-composio-mcp) |
+| <a id="resource-everything-claude-code"></a>[**ECC (Everything Claude Code)**](https://github.com/affaan-m/ECC) | Agent harness skills, memory and configuration for Claude Code, Codex and other coding agents | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-everything-claude-code) |
+| <a id="resource-exa-mcp"></a>[**Exa MCP**](https://github.com/exa-labs/exa-mcp-server) · MCP | Search the web for relevant reference material | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-exa-mcp) |
+| <a id="resource-excel"></a>[**Excel**](https://github.com/haris-musa/excel-mcp-server) · MCP | Read and update spreadsheet data | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-excel) |
+| <a id="resource-fetch"></a>[**Fetch**](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) · MCP | Retrieve web content for a coding task | Check pricing; reference implementation, not a production-ready guarantee | [2026-09-18](lifecycle-review-2026-09-18.md#resource-fetch) |
+| <a id="resource-firecrawl-mcp"></a>[**Firecrawl MCP**](https://github.com/firecrawl/firecrawl-mcp-server) · MCP | Search, scrape and interact with websites for coding-agent context | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-firecrawl-mcp) |
+| <a id="resource-git-mcp"></a>[**Git MCP**](https://github.com/modelcontextprotocol/servers/tree/main/src/git) · MCP | Read repository history and changes | Check pricing; reference implementation, not a production-ready guarantee | [2026-09-18](lifecycle-review-2026-09-18.md#resource-git-mcp) |
+| <a id="resource-intent-engineering"></a>[**intent-engineering**](https://github.com/roboco-io/intent-engineering) | Operating model for shipping intent instead of code with AI execution | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-intent-engineering) |
+| <a id="resource-jira-mcp"></a>[**Jira MCP**](https://github.com/sooperset/mcp-atlassian) · MCP | Connect Jira issues and Confluence project context | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-jira-mcp) |
+| <a id="resource-linear-mcp"></a>[**Linear MCP**](https://linear.app/docs/mcp) · MCP | Official hosted MCP for Linear issues, projects and planning | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-linear-mcp) |
+| <a id="resource-mongodb"></a>[**MongoDB**](https://github.com/mongodb-js/mongodb-mcp-server) · MCP | Inspect collections and query MongoDB | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-mongodb) |
+| <a id="resource-oh-my-claudecode"></a>[**oh-my-claudecode**](https://github.com/Yeachan-Heo/oh-my-claudecode) | Multi-agent orchestration for Claude Code with zero learning curve | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-oh-my-claudecode) |
+| <a id="resource-perplexity-mcp"></a>[**Perplexity MCP**](https://github.com/perplexityai/modelcontextprotocol) · MCP | Official Perplexity API MCP server for web search and research | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-perplexity-mcp) |
+| <a id="resource-pieces-for-developers"></a>[**Pieces**](https://pieces.app/) | On-device work memory with search and MCP context for coding assistants | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-pieces-for-developers) |
+| <a id="resource-mymir"></a>[**Piyaz**](https://github.com/FrkAk/piyaz) | Project workspace with a context graph shared by people and coding agents | AGPL-3.0 self-hosting; hosted beta terms | [2026-09-18](lifecycle-review-2026-09-18.md#resource-mymir) |
+| <a id="resource-roboco-cli"></a>[**roboco-cli**](https://github.com/roboco-io/roboco-cli) | AI-native development scaffolding system for vibe coding with Claude Code | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-roboco-cli) |
+| <a id="resource-rube"></a>[**Rube**](https://rube.app) · MCP | Hosted Composio MCP connecting AI assistants to external applications | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-rube) |
+| <a id="resource-spec-workflow-mcp"></a>[**Spec Workflow MCP**](https://github.com/Pimzino/spec-workflow-mcp) · MCP | Maintain specifications and structured development steps | Check pricing; maintainer on a stated personal break | [2026-09-18](lifecycle-review-2026-09-18.md#resource-spec-workflow-mcp) |
+| <a id="resource-stripe-mcp"></a>[**Stripe MCP**](https://docs.stripe.com/mcp) · MCP | Official hosted MCP for Stripe APIs and payment development | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-stripe-mcp) |
+| <a id="resource-tavily"></a>[**Tavily**](https://github.com/tavily-ai/tavily-mcp) · MCP | Retrieve web evidence for an agent task | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-tavily) |
+| <a id="resource-vercel-mcp"></a>[**Vercel MCP**](https://vercel.com/docs/agent-resources/vercel-mcp) · MCP | Official hosted MCP for Vercel projects, deployments and logs | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-vercel-mcp) |
+| <a id="resource-vibeworkflow-app"></a>[**Vibe Workflow**](https://vibeworkflow.app) | Generate research, PRDs, technical designs and agent instructions from an app idea | Free website; BYOK model costs | [2026-09-18](lifecycle-review-2026-09-18.md#resource-vibeworkflow-app) |
+| <a id="resource-vibe-coding-prompt-template"></a>[**vibe-coding-prompt-template**](https://github.com/KhazP/vibe-coding-prompt-template) · Template | Comprehensive prompt templates | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-vibe-coding-prompt-template) |
+| <a id="resource-vibe-lead"></a>[**vibe-lead**](https://github.com/roboco-io/vibe-lead) | Reusable role-description reference for organizational adoption of AI-assisted development | CC BY-SA 4.0; role-description reference | [2026-09-18](lifecycle-review-2026-09-18.md#resource-vibe-lead) |
+
+## Testing, Review & Security
+
+| Resource | When to use it | Access / scope | Verified |
+|---|---|---|---|
+| <a id="resource-bito-ai"></a>[**Bito**](https://bito.ai) | Codebase-aware model routing and AI code review | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-bito-ai) |
+| <a id="resource-browserbase"></a>[**Browserbase MCP**](https://docs.browserbase.com/integrations/mcp/introduction) · MCP | Hosted browser automation through Browserbase and Stagehand | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-browserbase) |
+| <a id="resource-factory"></a>[**Factory**](https://factory.com/) | Droid agents for planning, implementing, reviewing and validating software changes | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-factory) |
+| <a id="resource-mobile-mcp"></a>[**Mobile MCP**](https://github.com/mobile-next/mobile-mcp) · MCP | Automate and inspect mobile applications | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-mobile-mcp) |
+| <a id="resource-potpie"></a>[**Potpie**](https://github.com/potpie-ai/potpie) | AI agents for codebase debugging, testing, and code review | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-potpie) |
+| <a id="resource-vibe-ready"></a>[**vibe-ready**](https://github.com/roboco-io/vibe-ready-cli) | CLI assessing repository readiness for AI coding across seven categories | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-vibe-ready) |
+
+## Deployment & Execution
+
+| Resource | When to use it | Access / scope | Verified |
+|---|---|---|---|
+| <a id="resource-serverless-openclaw"></a>[**serverless-openclaw**](https://github.com/serithemage/serverless-openclaw) | Run OpenClaw AI agent on-demand on AWS serverless infrastructure with Web UI and Telegram interfaces | Check pricing; alpha for development/testing; AWS and model costs | [2026-09-18](lifecycle-review-2026-09-18.md#resource-serverless-openclaw) |
+
+## Agent Workspaces & Usage
+
+| Resource | When to use it | Access / scope | Verified |
+|---|---|---|---|
+| <a id="resource-dev-janitor"></a>[**Dev Janitor**](https://github.com/cocojojo5213/Dev-Janitor) | Inspect developer tools and clean reviewed AI-tool caches without removing project configuration | MIT; model/provider costs separate | [2026-09-18](lifecycle-review-2026-09-18.md#resource-dev-janitor) |
+| <a id="resource-intent"></a>[**Intent**](https://intentapp.dev/) | Coordinate coding agents and development workspaces on macOS | macOS; check model and service terms | [2026-09-18](lifecycle-review-2026-09-18.md#resource-intent) |
+| <a id="resource-nextreset"></a>[**NextReset**](https://nextreset.ai/) · Web | Read unofficial public reset history and keep a browser-local countdown | Free public page; unofficial | [2026-09-18](lifecycle-review-2026-09-18.md#resource-nextreset) |
+| <a id="resource-gitpod"></a>[**Ona**](https://ona.com/) · Web | Run background coding agents in reproducible cloud development environments | Cloud account; check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-gitpod) |
+| <a id="resource-openhands"></a>[**OpenHands Agent Canvas**](https://github.com/OpenHands/OpenHands) | Beta self-hosted workspace for OpenHands and other ACP-compatible coding agents | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-openhands) |
+| <a id="resource-tempo-labs"></a>[**Tempo**](https://www.tempo.new/) · Desktop | Coordinate coding agents, issues and code reviews in a desktop workspace | Check pricing; desktop workspace connected to Claude or Codex. | [2026-09-18](lifecycle-review-2026-09-18.md#resource-tempo-labs) |
+| <a id="resource-vmux"></a>[**vmux**](https://github.com/roboco-io/vmux) | Manage coding-agent terminal sessions and notifications inside VS Code | MIT; model/provider costs separate | [2026-09-18](lifecycle-review-2026-09-18.md#resource-vmux) |
+
+## Learn & Practice
+
+| Resource | When to use it | Access / scope | Verified |
+|---|---|---|---|
+| <a id="resource-12-best-practices-for-ai-coding-questera"></a>[**12 Best Practices for AI Coding (Questera)**](https://www.questera.ai/blogs/12-best-practices-to-use-ai-in-coding-in-2026) · Guide | 2025 best practices | Free reading; check reuse terms | [2026-09-18](lifecycle-review-2026-09-18.md#resource-12-best-practices-for-ai-coding-questera) |
+| <a id="resource-ai-tool-showdown-japanese"></a>[**AI Tool Showdown (Japanese)**](https://www.youtube.com/watch?v=EQHXIVItNxs) · Video | Historical 2025 material: Copilot vs Cursor vs others | Public video; historical 2025 material; playback may vary by region | [2026-09-18](lifecycle-review-2026-09-18.md#resource-ai-tool-showdown-japanese) |
+| <a id="resource-applighter"></a>[**AppLighter**](https://www.applighter.com/) · Template | Production-ready React Native + Expo templates with CLAUDE.md, AGENTS.md, .cursorrules for AI agent workflows | Paid templates; check license and model/backend costs | [2026-09-18](lifecycle-review-2026-09-18.md#resource-applighter) |
+| <a id="resource-how-i-use-llms"></a>[**How I use LLMs**](https://www.youtube.com/watch?v=EWvNQjAaOHw) · Video | Historical 2025 material: Andrej Karpathy's guide | Public video; historical 2025 material; playback may vary by region | [2026-09-18](lifecycle-review-2026-09-18.md#resource-how-i-use-llms) |
+| <a id="resource-mcp-in-10-minutes"></a>[**MCP in 10 Minutes**](https://www.youtube.com/watch?v=EswVjHZMn74) · Video | Historical 2025 material: Quick MCP intro | Public video; historical 2025 material; playback may vary by region | [2026-09-18](lifecycle-review-2026-09-18.md#resource-mcp-in-10-minutes) |
+| <a id="resource-model-context-protocol-explained"></a>[**Model Context Protocol (MCP): The Key To Agentic AI**](https://www.youtube.com/watch?v=VChRPFUzJGA) · Video | Historical 2025 MCP explanation; use current protocol docs for implementation | Public video; historical 2025 material; playback may vary by region | [2026-09-18](lifecycle-review-2026-09-18.md#resource-model-context-protocol-explained) |
+| <a id="resource-new-tools-for-building-agents"></a>[**New Tools for Building Agents**](https://www.youtube.com/watch?v=hciNKcLwSes) · Video | Historical 2025 material: OpenAI's agent tools | Public video; historical 2025 material; playback may vary by region | [2026-09-18](lifecycle-review-2026-09-18.md#resource-new-tools-for-building-agents) |
+| <a id="resource-vibe-coding-ai-voice-based-code-generation"></a>[**Vibe Coding a Research Probe for Exploring AI/Voice Based Code Reviews**](https://papers.academic-conferences.org/index.php/icair/article/view/3975) · Paper | Work-in-progress research on voice-based code reviews, not code generation | Free reading; check reuse terms | [2026-09-18](lifecycle-review-2026-09-18.md#resource-vibe-coding-ai-voice-based-code-generation) |
+| <a id="resource-vibe-coding-and-ai-led-conversational-programming"></a>[**Vibe Coding and AI-Led Conversational Programming**](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5469367) · Paper | Developer-AI interaction | Public abstract; check full-text access and reuse terms | [2026-09-18](lifecycle-review-2026-09-18.md#resource-vibe-coding-and-ai-led-conversational-programming) |
+| <a id="resource-vibe-coding-is-the-future"></a>[**Vibe Coding Is The Future**](https://www.youtube.com/watch?v=IACHfKmZMr8) · Video | Historical 2025 material: Y Combinator on vibe coding | Public video; historical 2025 material; playback may vary by region | [2026-09-18](lifecycle-review-2026-09-18.md#resource-vibe-coding-is-the-future) |
+| <a id="resource-vibe-coding-tutorial-and-best-practices"></a>[**Vibe Coding Tutorial and Best Practices**](https://www.youtube.com/watch?v=YWwS911iLhg) · Video | Historical 2025 material: AI agents in Cursor/Windsurf | Public video; historical 2025 material; playback may vary by region | [2026-09-18](lifecycle-review-2026-09-18.md#resource-vibe-coding-tutorial-and-best-practices) |
+| <a id="resource-vibe-coding-toward-an-ai-native-paradigm"></a>[**Vibe Coding: Toward an AI-Native Paradigm**](https://arxiv.org/abs/2510.17842) · Paper | Semantic software development | Free reading; check reuse terms | [2026-09-18](lifecycle-review-2026-09-18.md#resource-vibe-coding-toward-an-ai-native-paradigm) |
+| <a id="resource-vibecodex"></a>[**vibe-coding-rules**](https://github.com/yerdaulet-damir/vibe-coding-rules) · Guide | Architecture and agent-instruction examples; adapt framework-specific details | MIT; adapt version-specific framework examples | [2026-09-18](lifecycle-review-2026-09-18.md#resource-vibecodex) |
+| <a id="resource-vibecoding-is-here"></a>[**Vibecoding is Here**](https://www.youtube.com/watch?v=xxA-M3HrKrc) · Video | Historical 2025 material: AI changing development | Public video; historical 2025 material; playback may vary by region | [2026-09-18](lifecycle-review-2026-09-18.md#resource-vibecoding-is-here) |
+| <a id="resource-what-is-vibe-coding-ibm"></a>[**What is Vibe Coding? (IBM)**](https://www.ibm.com/think/topics/vibe-coding) · Guide | Enterprise perspective | Free reading; check reuse terms | [2026-09-18](lifecycle-review-2026-09-18.md#resource-what-is-vibe-coding-ibm) |
+| <a id="resource-windsurf-90-of-your-code"></a>[**Windsurf: 90% of Your Code**](https://www.youtube.com/watch?v=bVNNvWq6dKo) · Video | Historical 2025 material: Agentic IDE deep dive | Public video; historical 2025 material; playback may vary by region | [2026-09-18](lifecycle-review-2026-09-18.md#resource-windsurf-90-of-your-code) |
+
