@@ -27,6 +27,7 @@
 <!-- recent-updates:start -->
 | 確認日 | 更新項目 | 変更内容 |
 |---|---|---|
+| 2026-09-18 | [Shep](#resource-shep) | レビュー後に追加：分離したGitワークツリーで複数のコーディングエージェントを並列実行し、ドラフトPRまで自動化するローカルファーストのオーケストレーター。 |
 | 2026-09-18 | [提供状況に基づく整理](docs/lifecycle-review-2026-09-18.md) | 利用できない項目や新規利用できない項目を除外し、正式な製品情報を修正。主要ツールを156件から40件に絞りました。 |
 | 2026-09-18 | [Pi](#resource-pi) | レビュー後に追加：マルチプロバイダーモデルとSDKを備えたMITライセンスの拡張型ターミナルコーディングエージェント。 |
 | 2026-09-18 | [NextReset](docs/verified-catalog.md#resource-nextreset) | レビュー後に追加：非公式の公開リセット履歴とローカルのカウントダウン。予測の正確性を保証するものではありません。 |
@@ -155,6 +156,7 @@
 | <a id="resource-duckweed"></a>[**Duckweed**](https://github.com/MusicMaster4/Duckweed) · Desktop | クロスプラットフォームのローカルワークスペースでコーディングエージェント、シェル、Git差分、セッションを扱う | ソース公開；ライセンスを要確認；モデル・プロバイダー利用料は別途 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-duckweed) |
 | <a id="resource-llm-log"></a>[**llm.log**](https://github.com/lanesket/llm.log) | ローカルプロキシでモデル利用料、トークン、リクエストの記録を確認 | MIT；モデル・プロバイダー利用料は別途 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-llm-log) |
 | <a id="resource-parallel-code"></a>[**Parallel Code**](https://github.com/johannesjo/parallel-code) · Desktop | 分離したGitワークツリーでコーディングエージェントを実行し、変更をレビュー | MIT；モデル・プロバイダー利用料は別途 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-parallel-code) |
+| <a id="resource-shep"></a>[**Shep**](https://github.com/shep-ai/shep) · CLI | 分離したGitワークツリーで複数のコーディングエージェントを並列実行し、コミット・プッシュ・CI監視・ドラフトPRまで自動化 | MITクライアント；エージェントのサブスクリプションまたはAPI利用料は別途 | 2026-09-18 |
 | <a id="resource-superagent"></a>[**Superagent**](https://github.com/pungme/superagent-desktop) · Desktop | ブラウザ・iOSツールを備えたmacOSワークスペースでClaude CodeまたはCodexを使用 | MIT；macOS Apple Silicon；モデルのサブスクリプションは別途 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-superagent) |
 | <a id="resource-usage"></a>[**usage**](https://github.com/aqua5230/usage) · Desktop | macOSのメニューバーまたはWindowsのシステムトレイでコーディングエージェントの利用枠を確認 | AGPL-3.0；モデル・プロバイダー利用料は別途 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-usage) |
 | <a id="resource-warp"></a>[**Warp Terminal**](https://www.warp.dev/terminal) | エージェント向けターミナルを使い、コーディングワークフローを確認 | ターミナルをダウンロード；AI利用料金を要確認 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-warp) |

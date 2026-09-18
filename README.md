@@ -27,6 +27,7 @@ Recent reviews and material changes from the last 30 days, newest first. A revie
 <!-- recent-updates:start -->
 | Verified on | Update | What changed |
 |---|---|---|
+| 2026-09-18 | [Shep](#resource-shep) | Reviewed addition: local-first orchestrator that runs parallel coding agents in isolated Git worktrees through to draft PRs. |
 | 2026-09-18 | [Lifecycle cleanup](docs/lifecycle-review-2026-09-18.md) | Removed unavailable/new-user-blocked entries, corrected canonical products, and reduced the core tool list from 156 to 40. |
 | 2026-09-18 | [Pi](#resource-pi) | Reviewed addition: extensible MIT terminal coding agent with multi-provider models and an SDK. |
 | 2026-09-18 | [NextReset](docs/verified-catalog.md#resource-nextreset) | Reviewed addition: unofficial public reset history and local countdowns; forecasts are not endorsed. |
@@ -155,6 +156,7 @@ Organize sessions, inspect runs, and understand usage or availability.
 | <a id="resource-duckweed"></a>[**Duckweed**](https://github.com/MusicMaster4/Duckweed) · Desktop | Run coding agents, shells, Git diffs and sessions in a local cross-platform workspace | Source-available; see license; model/provider costs separate | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-duckweed) |
 | <a id="resource-llm-log"></a>[**llm.log**](https://github.com/lanesket/llm.log) | Inspect model costs, tokens and request traces through a local proxy | MIT; model/provider costs separate | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-llm-log) |
 | <a id="resource-parallel-code"></a>[**Parallel Code**](https://github.com/johannesjo/parallel-code) · Desktop | Run coding agents in isolated Git worktrees and review their changes | MIT; model/provider costs separate | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-parallel-code) |
+| <a id="resource-shep"></a>[**Shep**](https://github.com/shep-ai/shep) · CLI | Orchestrate parallel coding agents in isolated Git worktrees through commit, push, CI watch and draft PRs | MIT client; agent subscription or API costs separate | 2026-09-18 |
 | <a id="resource-superagent"></a>[**Superagent**](https://github.com/pungme/superagent-desktop) · Desktop | Use Claude Code or Codex in a macOS workspace with browser and iOS tools | MIT; macOS Apple Silicon; model subscription separate | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-superagent) |
 | <a id="resource-usage"></a>[**usage**](https://github.com/aqua5230/usage) · Desktop | View coding-agent quotas from the macOS menu bar or Windows system tray | AGPL-3.0; model/provider costs separate | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-usage) |
 | <a id="resource-warp"></a>[**Warp Terminal**](https://www.warp.dev/terminal) | Use an agent-oriented terminal and inspect coding workflows | Terminal download; check AI usage pricing | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-warp) |

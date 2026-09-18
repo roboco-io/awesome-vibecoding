@@ -27,6 +27,7 @@
 <!-- recent-updates:start -->
 | 검증일 | 업데이트 | 변경 사항 |
 |---|---|---|
+| 2026-09-18 | [Shep](#resource-shep) | 검토 후 추가: 격리된 Git worktree에서 여러 코딩 에이전트를 병렬 실행해 초안 PR까지 자동화하는 로컬 우선 오케스트레이터. |
 | 2026-09-18 | [서비스 상태 정리](docs/lifecycle-review-2026-09-18.md) | 이용 불가·신규 사용자 접근 제한 항목 제거, 공식 제품명 수정, 핵심 도구 목록을 156개에서 40개로 축소. |
 | 2026-09-18 | [Pi](#resource-pi) | 검토 후 추가: 다중 프로바이더 모델과 SDK를 갖춘 MIT 라이선스 확장형 터미널 코딩 에이전트. |
 | 2026-09-18 | [NextReset](docs/verified-catalog.md#resource-nextreset) | 검토 후 추가: 비공식 공개 초기화 이력과 로컬 카운트다운; 예측의 정확성을 보증하지 않음. |
@@ -155,6 +156,7 @@
 | <a id="resource-duckweed"></a>[**Duckweed**](https://github.com/MusicMaster4/Duckweed) · Desktop | 여러 운영체제를 지원하는 로컬 작업 공간에서 코딩 에이전트·셸·Git diff·세션 관리 | 소스 공개; 라이선스 확인; 모델·공급자 비용 별도 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-duckweed) |
 | <a id="resource-llm-log"></a>[**llm.log**](https://github.com/lanesket/llm.log) | 로컬 프록시를 통해 모델 비용·토큰·요청 추적 정보 확인 | MIT; 모델·공급자 비용 별도 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-llm-log) |
 | <a id="resource-parallel-code"></a>[**Parallel Code**](https://github.com/johannesjo/parallel-code) · Desktop | 격리된 Git worktree에서 코딩 에이전트를 실행하고 변경 사항 검토 | MIT; 모델·공급자 비용 별도 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-parallel-code) |
+| <a id="resource-shep"></a>[**Shep**](https://github.com/shep-ai/shep) · CLI | 격리된 Git worktree에서 여러 코딩 에이전트를 병렬 실행하고 커밋·푸시·CI 감시·초안 PR까지 자동화 | MIT 클라이언트; 에이전트 구독 또는 API 비용 별도 | 2026-09-18 |
 | <a id="resource-superagent"></a>[**Superagent**](https://github.com/pungme/superagent-desktop) · Desktop | 브라우저 및 iOS 도구를 갖춘 macOS 작업 공간에서 Claude Code 또는 Codex 사용 | MIT; macOS Apple Silicon; 모델 구독 별도 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-superagent) |
 | <a id="resource-usage"></a>[**usage**](https://github.com/aqua5230/usage) · Desktop | macOS 메뉴 막대 또는 Windows 시스템 트레이에서 코딩 에이전트 사용 한도 확인 | AGPL-3.0; 모델·공급자 비용 별도 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-usage) |
 | <a id="resource-warp"></a>[**Warp Terminal**](https://www.warp.dev/terminal) | 에이전트 중심 터미널 사용 및 코딩 워크플로우 확인 | 터미널 다운로드; AI 사용 요금 확인 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-warp) |
