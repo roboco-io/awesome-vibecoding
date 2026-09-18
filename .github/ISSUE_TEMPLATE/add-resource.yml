@@ -7,11 +7,16 @@ body:
     id: category
     attributes:
       label: Category
-      description: Which section should this resource be added to?
+      description: Choose the main development task. CLI, IDE, and MCP are formats, not categories.
       options:
-        - Projects/Platforms/Tools/Services
-        - Guides/Manual/Best Practices/Tutorials/Blogs
-        - YouTube
+        - Code & Editing
+        - App & UI Prototyping
+        - Context, Specs & Integrations
+        - Testing, Review & Security
+        - Deployment & Execution
+        - Agent Workspaces & Usage
+        - Learn & Practice
+        - Not sure — please suggest a section
     validations:
       required: true
 
@@ -39,6 +44,32 @@ body:
       label: Description
       description: Brief description of the resource (1-3 sentences in English)
       placeholder: Describe what this resource is and why it's relevant to Vibe Coding
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Public Evidence
+      description: Link to first-party documentation, a usable release, demo, or readable learning material.
+      placeholder: Explain what the evidence demonstrates; a landing page alone may not be enough.
+    validations:
+      required: true
+
+  - type: textarea
+    id: access
+    attributes:
+      label: Access and License
+      description: State free or paid access, separate model/API costs, platform restrictions, and the license where applicable.
+      placeholder: e.g. Free client, paid model API required, MIT, macOS only
+    validations:
+      required: true
+
+  - type: input
+    id: affiliation
+    attributes:
+      label: Affiliation
+      description: Disclose whether you created, maintain, or commercially benefit from this resource; write None if unrelated.
     validations:
       required: true
 

@@ -1,0 +1,36 @@
+name: Test Automation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'README*.md'
+      - 'scripts/**'
+      - 'package*.json'
+      - '.github/workflows/**'
+      - '.github/prompts/**'
+      - 'docs/curation-policy.md'
+  pull_request:
+    paths:
+      - 'README*.md'
+      - 'scripts/**'
+      - 'package*.json'
+      - '.github/workflows/**'
+      - '.github/prompts/**'
+      - 'docs/curation-policy.md'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm test

@@ -7,6 +7,7 @@ on:
 concurrency:
   group: readme-update
   cancel-in-progress: false
+  queue: max
 
 jobs:
   validate-and-process:
@@ -26,6 +27,7 @@ jobs:
         (github.event.action == 'labeled' && github.event.label.name == 'addition')
       )
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     permissions:
       contents: write
       issues: write
@@ -50,7 +52,7 @@ jobs:
           fi
 
           # Extract URL from issue body.
-          URL=$(printf '%s' "$ISSUE_BODY" | grep -oPi 'https?://[^\s)]+' | head -1)
+          URL=$(printf '%s' "$ISSUE_BODY" | grep -oPi 'https?://[^\s)>]+' | head -1 || true)
 
           if [ -z "$URL" ]; then
             echo "status=no_url" >> $GITHUB_OUTPUT
@@ -60,7 +62,14 @@ jobs:
           echo "url=$URL" >> $GITHUB_OUTPUT
 
           # Check if URL is reachable
-          HTTP_CODE=$(curl -o /dev/null -s -w "%{http_code}" -L --max-time 10 "$URL" || echo "000")
+          CURL_FAILED=false
+          HTTP_CODE=$(curl --globoff --proto =http,https --proto-redir =http,https -o /dev/null -s -w "%{http_code}" -L --max-time 10 "$URL") || CURL_FAILED=true
+          HTTP_CODE=${HTTP_CODE:-000}
+          if [ "$CURL_FAILED" = true ] || [ "$HTTP_CODE" = "000" ] || [ "$HTTP_CODE" = "401" ] || [ "$HTTP_CODE" = "403" ] || [ "$HTTP_CODE" = "408" ] || [ "$HTTP_CODE" = "429" ] || [ "$HTTP_CODE" -ge 500 ]; then
+            echo "status=needs_review" >> $GITHUB_OUTPUT
+            echo "http_code=$HTTP_CODE" >> $GITHUB_OUTPUT
+            exit 0
+          fi
           if [ "$HTTP_CODE" -lt 200 ] || [ "$HTTP_CODE" -ge 400 ]; then
             echo "status=unreachable" >> $GITHUB_OUTPUT
             echo "http_code=$HTTP_CODE" >> $GITHUB_OUTPUT
@@ -113,16 +122,35 @@ jobs:
               labels: ['invalid']
             });
 
+      - name: Request review - URL temporarily inaccessible
+        if: steps.validate.outputs.status == 'needs_review'
+        uses: actions/github-script@v9
+        env:
+          RESOURCE_URL: ${{ steps.validate.outputs.url }}
+          HTTP_CODE: ${{ steps.validate.outputs.http_code }}
+        with:
+          script: |
+            await github.rest.issues.addLabels({
+              ...context.repo, issue_number: context.issue.number, labels: ['needs-review']
+            });
+            await github.rest.issues.createComment({
+              ...context.repo, issue_number: context.issue.number,
+              body: `The public evidence at ${process.env.RESOURCE_URL} could not be verified (HTTP ${process.env.HTTP_CODE}). This may be temporary or an automated-access restriction, so the issue remains open for review.`
+            });
+
       - name: Reject - Unreachable URL
         if: steps.validate.outputs.status == 'unreachable'
         uses: actions/github-script@v9
+        env:
+          RESOURCE_URL: ${{ steps.validate.outputs.url }}
+          HTTP_CODE: ${{ steps.validate.outputs.http_code }}
         with:
           script: |
             await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
-              body: `❌ **Rejected**: The URL \`${{ steps.validate.outputs.url }}\` is not reachable (HTTP ${{ steps.validate.outputs.http_code }}). Please verify the URL and create a new issue.`
+              body: `❌ **Rejected**: The URL \`${process.env.RESOURCE_URL}\` is not reachable (HTTP ${process.env.HTTP_CODE}). Please verify the URL and create a new issue.`
             });
             await github.rest.issues.update({
               owner: context.repo.owner,
@@ -135,13 +163,15 @@ jobs:
       - name: Reject - Duplicate
         if: steps.validate.outputs.status == 'duplicate'
         uses: actions/github-script@v9
+        env:
+          RESOURCE_URL: ${{ steps.validate.outputs.url }}
         with:
           script: |
             await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
-              body: `ℹ️ **Already listed**: The URL \`${{ steps.validate.outputs.url }}\` is already in the README. If you want to update the description, please mention that in a new issue.\n\nClosing as duplicate.`
+              body: `ℹ️ **Already listed**: The URL \`${process.env.RESOURCE_URL}\` is already in the README. If you want to update the description, please mention that in a new issue.\n\nClosing as duplicate.`
             });
             await github.rest.issues.update({
               owner: context.repo.owner,
@@ -159,28 +189,39 @@ jobs:
 
       - name: Install dependencies
         if: steps.validate.outputs.status == 'valid'
-        run: npm ci
+        run: npm ci --ignore-scripts
 
-      - name: Process with Claude Code SDK
+      - name: Process with Pi
         if: steps.validate.outputs.status == 'valid'
-        id: claude
+        id: pi
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          AI_PROVIDER: ${{ vars.AI_PROVIDER || 'kimi' }}
+          AI_MODEL: ${{ vars.AI_MODEL }}
+          AI_BASE_URL: ${{ vars.AI_BASE_URL }}
+          AI_MAX_TURNS: ${{ vars.AI_MAX_TURNS }}
+          AI_MAX_TOKENS: ${{ vars.AI_MAX_TOKENS }}
+          AI_TIMEOUT_SECONDS: ${{ vars.AI_TIMEOUT_SECONDS }}
+          KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
+          DASHSCOPE_API_KEY: ${{ secrets.DASHSCOPE_API_KEY }}
+          EXA_API_KEY: ${{ secrets.EXA_API_KEY }}
+          ISSUE_URL: ${{ steps.validate.outputs.url }}
           ISSUE_TITLE: ${{ github.event.issue.title }}
           ISSUE_BODY: ${{ github.event.issue.body }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
         run: node scripts/auto-process-issue.mjs
 
       - name: Reject - Quality check failed
-        if: steps.validate.outputs.status == 'valid' && steps.claude.outputs.result == 'rejected'
+        if: steps.validate.outputs.status == 'valid' && steps.pi.outputs.result == 'rejected'
         uses: actions/github-script@v9
+        env:
+          REASON: ${{ steps.pi.outputs.reason }}
         with:
           script: |
             await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
-              body: `❌ **Rejected**: ${{ steps.claude.outputs.reason }}\n\nIf you believe this is incorrect, please comment with additional context and a maintainer will review.`
+              body: `❌ **Rejected**: ${process.env.REASON}\n\nIf you believe this is incorrect, please comment with additional context and a maintainer will review.`
             });
             await github.rest.issues.update({
               owner: context.repo.owner,
@@ -191,8 +232,10 @@ jobs:
             });
 
       - name: Request maintainer review - Uncertain
-        if: steps.validate.outputs.status == 'valid' && steps.claude.outputs.result == 'uncertain'
+        if: steps.validate.outputs.status == 'valid' && steps.pi.outputs.result == 'uncertain'
         uses: actions/github-script@v9
+        env:
+          REASON: ${{ steps.pi.outputs.reason }}
         with:
           script: |
             await github.rest.issues.addLabels({
@@ -205,11 +248,11 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
-              body: `🤔 **Needs maintainer review**: ${{ steps.claude.outputs.reason }}\n\n@serithemage Could you take a look? Use \`/approve\` to add or \`/reject [reason]\` to decline.`
+              body: `🤔 **Needs maintainer review**: ${process.env.REASON}\n\n@serithemage Could you take a look? Use \`/approve\` to add or \`/reject [reason]\` to decline.`
             });
 
       - name: Commit and push
-        if: steps.validate.outputs.status == 'valid' && steps.claude.outputs.result == 'processed'
+        if: steps.validate.outputs.status == 'valid' && steps.pi.outputs.result == 'processed'
         id: commit
         run: |
           git config user.name "github-actions[bot]"
@@ -218,18 +261,17 @@ jobs:
             echo "has_changes=false" >> $GITHUB_OUTPUT
           else
             git add README.md README.ko.md README.ja.md
-            git add .cache/awesome-vibecoding.db 2>/dev/null || true
             git commit -m "docs: Add resource from issue #${{ github.event.issue.number }}
 
           Closes #${{ github.event.issue.number }}
-          Generated by Claude Code via GitHub Actions"
+          Generated by Pi via GitHub Actions"
             git pull --rebase
             git push
             echo "has_changes=true" >> $GITHUB_OUTPUT
           fi
 
       - name: Comment on issue
-        if: steps.validate.outputs.status == 'valid' && steps.claude.outputs.result == 'processed' && steps.commit.outputs.has_changes == 'true'
+        if: steps.validate.outputs.status == 'valid' && steps.pi.outputs.result == 'processed' && steps.commit.outputs.has_changes == 'true'
         uses: actions/github-script@v9
         with:
           script: |
@@ -241,7 +283,7 @@ jobs:
             });
 
       - name: Close issue
-        if: steps.validate.outputs.status == 'valid' && steps.claude.outputs.result == 'processed' && steps.commit.outputs.has_changes == 'true'
+        if: steps.validate.outputs.status == 'valid' && steps.pi.outputs.result == 'processed' && steps.commit.outputs.has_changes == 'true'
         uses: actions/github-script@v9
         with:
           script: |
@@ -253,7 +295,7 @@ jobs:
             });
 
       - name: Request review if no changes
-        if: steps.validate.outputs.status == 'valid' && steps.claude.outputs.result == 'processed' && steps.commit.outputs.has_changes == 'false'
+        if: steps.validate.outputs.status == 'valid' && steps.pi.outputs.result == 'processed' && steps.commit.outputs.has_changes == 'false'
         uses: actions/github-script@v9
         with:
           script: |
@@ -268,4 +310,16 @@ jobs:
               repo: context.repo.repo,
               issue_number: context.issue.number,
               body: '⚠️ **Needs manual review**: The automated system could not make changes.\n\n@serithemage Could you take a look? Use `/approve` to add or `/reject [reason]` to decline.'
+            });
+      - name: Request review after failure
+        if: failure()
+        uses: actions/github-script@v9
+        with:
+          script: |
+            await github.rest.issues.addLabels({
+              ...context.repo, issue_number: context.issue.number, labels: ['needs-review']
+            });
+            await github.rest.issues.createComment({
+              ...context.repo, issue_number: context.issue.number,
+              body: 'Pi automation failed. No success was recorded. A maintainer can inspect the Actions run and retry or use `/approve`.'
             });

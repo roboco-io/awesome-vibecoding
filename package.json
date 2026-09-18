@@ -2,12 +2,21 @@
   "name": "awesome-vibecoding",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=24.14.0"
+  },
   "scripts": {
+    "test": "node --test scripts/*.test.mjs",
     "weekly-update": "node scripts/weekly-update.mjs",
     "auto-process-issue": "node scripts/auto-process-issue.mjs",
     "issue-approval": "node scripts/issue-approval.mjs"
   },
   "dependencies": {
-    "@anthropic-ai/claude-agent-sdk": "^0.1.0"
+    "@earendil-works/pi-ai": "0.85.1",
+    "@earendil-works/pi-coding-agent": "0.85.1",
+    "typebox": "1.3.7"
+  },
+  "devDependencies": {
+    "yaml": "2.9.0"
   }
 }

@@ -28,4 +28,6 @@ jobs:
         shell: bash
         run: |
           bash <(curl https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
-          ./actionlint -color
+          # GitHub supports queue: max; actionlint 1.7.12 does not yet recognize it.
+          # Ignore only that known parser gap, retaining every other diagnostic.
+          ./actionlint -color -ignore 'unexpected key "queue" for "concurrency" section'
