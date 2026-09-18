@@ -10,6 +10,7 @@ on:
       - '.github/workflows/**'
       - '.github/prompts/**'
       - 'docs/curation-policy.md'
+      - 'data/catalog-status.json'
   pull_request:
     paths:
       - 'README*.md'
@@ -18,6 +19,7 @@ on:
       - '.github/workflows/**'
       - '.github/prompts/**'
       - 'docs/curation-policy.md'
+      - 'data/catalog-status.json'
 
 permissions:
   contents: read

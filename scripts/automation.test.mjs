@@ -145,15 +145,17 @@ test("real Pi SDK executes only custom tools and persists only a successful full
   let call = 0;
   let fail = false;
   let rejectCriteria = false;
+  let retiredResource = false;
   t.mock.method(globalThis, "fetch", async url => {
     assert.equal(url, "https://api.exa.ai/search");
     return { ok: true, json: async () => ({ results: [{ url: "https://new.example/", title: "New", text: "Official docs" }] }) };
   });
   t.mock.method(ModelRuntime.prototype, "streamSimple", (model, context) => {
-    assert.deepEqual(context.tools.map(tool => tool.name).sort(), ["read_readme", "search_web", "submit_result"]);
+    assert.deepEqual(context.tools.map(tool => tool.name).sort(), ["lookup_resource", "read_readme", "search_web", "submit_result"]);
     const step = call++ % 3;
     const p = proposal();
     if (rejectCriteria) p.checks.relevant = false;
+    if (retiredResource) p.edits.forEach(edit => { edit.newText = edit.newText.replaceAll("https://new.example/", "https://aws.amazon.com/q/developer/"); });
     const message = {
       role: "assistant", api: model.api, provider: model.provider, model: model.id, timestamp: Date.now(),
       content: step === 0 ? [{ type: "toolCall", id: "search-test", name: "search_web", arguments: { query: "New official docs" } }] : step === 1 ? [{ type: "toolCall", id: "submit-test", name: "submit_result", arguments: p }] : [{ type: "text", text: "Done" }],
@@ -175,6 +177,10 @@ test("real Pi SDK executes only custom tools and persists only a successful full
   fail = false;
   rejectCriteria = true;
   await assert.rejects(runAutomation({ cwd, env, prompt: "Add unrelated resource" }), /criterion|without submitting/);
+  for (const file of README_FILES) assert.equal(await readFile(join(cwd, file), "utf8"), source);
+  rejectCriteria = false;
+  retiredResource = true;
+  await assert.rejects(runAutomation({ cwd, env, prompt: "Re-add a sunset product" }), /catalog decision|without submitting/);
   for (const file of README_FILES) assert.equal(await readFile(join(cwd, file), "utf8"), source);
 });
 

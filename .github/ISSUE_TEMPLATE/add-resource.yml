@@ -66,6 +66,15 @@ body:
       required: true
 
   - type: input
+    id: lifecycle
+    attributes:
+      label: Current Availability
+      description: Can a new user start today? Disclose any announced sunset, restricted signup, rebrand, or migration. Link the official notice if applicable.
+      placeholder: e.g. Accepting new users; current release and setup docs linked above
+    validations:
+      required: true
+
+  - type: input
     id: affiliation
     attributes:
       label: Affiliation

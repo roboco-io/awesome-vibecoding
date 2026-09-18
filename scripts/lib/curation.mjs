@@ -1,4 +1,4 @@
-export const CURATION_CHECKS = ["relevant", "usable", "distinct", "transparent", "maintained"];
+export const CURATION_CHECKS = ["relevant", "usable", "distinct", "transparent", "maintained", "available_to_new_users", "not_sunsetting"];
 
 export function validateEvidence(proposal, observedUrls) {
   if (proposal.status !== "processed") return;
