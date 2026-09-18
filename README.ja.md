@@ -26,6 +26,7 @@
 <!-- recent-updates:start -->
 | 確認日 | 更新項目 | 変更内容 |
 |---|---|---|
+| 2026-09-18 | [Pi](#resource-pi) | レビュー後に追加：マルチプロバイダーモデルとSDKを備えたMITライセンスの拡張型ターミナルコーディングエージェント。 |
 | 2026-09-18 | [NextReset](#resource-nextreset) | レビュー後に追加：非公式の公開リセット履歴とローカルのカウントダウン。予測の正確性を保証するものではありません。 |
 | 2026-09-18 | [Superagent](#resource-superagent) | レビュー後に追加：ブラウザとiOSのワークフローに対応したmacOS用コーディングエージェントワークスペース。 |
 | 2026-09-18 | [Publish.my](#resource-publish-my) | レビュー後に追加：エージェント向け静的サイト公開サービス。メールによる利用開始手続きが必要です。 |
@@ -102,6 +103,7 @@
 | <a id="resource-openai-codex-cli"></a>[**OpenAI Codex CLI**](https://openai.com/codex/) · CLI | 自然言語プロンプトで操作するCLIコーディングエージェント | 条件を要確認 | — |
 | <a id="resource-openhands"></a>[**OpenHands**](https://github.com/All-Hands-AI/OpenHands) | 自律型AIソフトウェア開発エージェント | 条件を要確認 | — |
 | <a id="resource-pearai"></a>[**PearAI**](https://trypear.ai) · IDE | 検索機能を統合したVS CodeベースのAIエディタ | 条件を要確認 | — |
+| <a id="resource-pi"></a>[**Pi**](https://github.com/earendil-works/pi) · CLI | TypeScript拡張、マルチプロバイダーモデル、埋め込み可能なSDKを備えた拡張型ターミナルコーディングエージェント | MIT；モデルAPIまたはサブスクリプション利用料あり | 2026-09-18 |
 | <a id="resource-plandex"></a>[**Plandex**](https://plandex.ai) · CLI | 複雑な多段階タスクに対応するターミナルAIコーディングエンジン | 条件を要確認 | — |
 | <a id="resource-ra-aid"></a>[**RA.Aid**](https://github.com/ai-christianson/RA.Aid) · CLI | リサーチ・計画・多段階コード生成を組み合わせた自律型開発エージェント | 条件を要確認 | — |
 | <a id="resource-refact-ai"></a>[**Refact.ai**](https://refact.ai/) | セルフホスト型AIコーディングアシスタント | 条件を要確認 | — |

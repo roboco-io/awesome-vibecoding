@@ -26,6 +26,7 @@ Recent reviews and material changes from the last 30 days, newest first. A revie
 <!-- recent-updates:start -->
 | Verified on | Update | What changed |
 |---|---|---|
+| 2026-09-18 | [Pi](#resource-pi) | Reviewed addition: extensible MIT terminal coding agent with multi-provider models and an SDK. |
 | 2026-09-18 | [NextReset](#resource-nextreset) | Reviewed addition: unofficial public reset history and local countdowns; forecasts are not endorsed. |
 | 2026-09-18 | [Superagent](#resource-superagent) | Reviewed addition: macOS coding-agent workspace with browser and iOS workflows. |
 | 2026-09-18 | [Publish.my](#resource-publish-my) | Reviewed addition: agent-oriented static-site publishing; email activation required. |
@@ -102,6 +103,7 @@ Understand a repository, implement a feature, or refactor existing code.
 | <a id="resource-openai-codex-cli"></a>[**OpenAI Codex CLI**](https://openai.com/codex/) · CLI | CLI coding agent with natural language prompts | Check terms | — |
 | <a id="resource-openhands"></a>[**OpenHands**](https://github.com/All-Hands-AI/OpenHands) | autonomous AI software developer | Check terms | — |
 | <a id="resource-pearai"></a>[**PearAI**](https://trypear.ai) · IDE | VS Code AI editor with integrated search | Check terms | — |
+| <a id="resource-pi"></a>[**Pi**](https://github.com/earendil-works/pi) · CLI | Extensible terminal coding agent with TypeScript extensions, multi-provider models, and an embeddable SDK | MIT; model API or subscription costs | 2026-09-18 |
 | <a id="resource-plandex"></a>[**Plandex**](https://plandex.ai) · CLI | terminal AI coding engine for complex multi-step tasks | Check terms | — |
 | <a id="resource-ra-aid"></a>[**RA.Aid**](https://github.com/ai-christianson/RA.Aid) · CLI | Autonomous dev agent combining research, planning, and multi-step code generation | Check terms | — |
 | <a id="resource-refact-ai"></a>[**Refact.ai**](https://refact.ai/) | self-hosted AI coding assistant | Check terms | — |

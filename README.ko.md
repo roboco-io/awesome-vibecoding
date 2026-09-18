@@ -26,6 +26,7 @@
 <!-- recent-updates:start -->
 | 검증일 | 업데이트 | 변경 사항 |
 |---|---|---|
+| 2026-09-18 | [Pi](#resource-pi) | 검토 후 추가: 다중 프로바이더 모델과 SDK를 갖춘 MIT 라이선스 확장형 터미널 코딩 에이전트. |
 | 2026-09-18 | [NextReset](#resource-nextreset) | 검토 후 추가: 비공식 공개 초기화 이력과 로컬 카운트다운; 예측의 정확성을 보증하지 않음. |
 | 2026-09-18 | [Superagent](#resource-superagent) | 검토 후 추가: 브라우저 및 iOS 워크플로우를 지원하는 macOS 코딩 에이전트 작업 공간. |
 | 2026-09-18 | [Publish.my](#resource-publish-my) | 검토 후 추가: 에이전트용 정적 사이트 게시; 이메일 활성화 필요. |
@@ -102,6 +103,7 @@
 | <a id="resource-openai-codex-cli"></a>[**OpenAI Codex CLI**](https://openai.com/codex/) · CLI | 자연어 프롬프트를 사용하는 CLI 코딩 에이전트 | 이용 조건 확인 | — |
 | <a id="resource-openhands"></a>[**OpenHands**](https://github.com/All-Hands-AI/OpenHands) | 자율 AI 소프트웨어 개발자 | 이용 조건 확인 | — |
 | <a id="resource-pearai"></a>[**PearAI**](https://trypear.ai) · IDE | 검색 기능이 통합된 VS Code AI 편집기 | 이용 조건 확인 | — |
+| <a id="resource-pi"></a>[**Pi**](https://github.com/earendil-works/pi) · CLI | TypeScript 확장, 다중 프로바이더 모델, 임베딩 가능한 SDK를 갖춘 확장형 터미널 코딩 에이전트 | MIT; 모델 API 또는 구독 비용 발생 | 2026-09-18 |
 | <a id="resource-plandex"></a>[**Plandex**](https://plandex.ai) · CLI | 복잡한 다단계 작업을 위한 터미널 AI 코딩 엔진 | 이용 조건 확인 | — |
 | <a id="resource-ra-aid"></a>[**RA.Aid**](https://github.com/ai-christianson/RA.Aid) · CLI | 리서치, 계획 수립, 다단계 코드 생성을 결합한 자율 개발 에이전트 | 이용 조건 확인 | — |
 | <a id="resource-refact-ai"></a>[**Refact.ai**](https://refact.ai/) | 자체 호스팅 AI 코딩 어시스턴트 | 이용 조건 확인 | — |
