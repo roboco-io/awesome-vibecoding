@@ -2,336 +2,417 @@
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 [![Weekly Update](https://github.com/roboco-io/awesome-vibecoding/actions/workflows/weekly-update.yml/badge.svg)](https://github.com/roboco-io/awesome-vibecoding/actions/workflows/weekly-update.yml)
-[![Maintained by Claude Code](https://img.shields.io/badge/Maintained%20by-Claude%20Code-blueviolet)](https://claude.ai/code)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](../../issues/new)
+[![Maintained by Pi](https://img.shields.io/badge/Maintained%20by-Pi-blueviolet)](https://pi.dev/)
+[![Issues Welcome](https://img.shields.io/badge/Issues-welcome-brightgreen.svg)](../../issues/new)
 [![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
 *Language: [English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md)*
 
-![Vibe Coding Meme](images/vibecoding-meme.png)
+**AIでソフトウェアを作る**ためのツールと学習リソースを探せます。まず目的を選び、利用条件を確認してください。確認日を見れば、レビュー済みの情報と以前からの掲載項目を区別できます。
 
-**Vibe Coding**に関するリソースのキュレーションリスト。Vibe Codingとは、自然言語で意図を記述し、AIにコードを生成させるAIネイティブなプログラミングパラダイムです。
+| やりたいこと | 入口 |
+|---|---|
+| 変更点を見る | [最近の確認済み更新](#recent-updates) |
+| ソフトウェアを作る・改善する | [目的別にツールを探す](#tools) |
+| 最初のプロジェクトで学ぶ | [はじめに](#start-here) · [学習と実践](#learning) |
 
-> **AIによる管理**: このリポジトリは[Claude Code](https://claude.ai/code) + [Perplexity MCP](https://github.com/ppl-ai/modelcontextprotocol)を使用して毎週自動更新されます。翻訳はClaude Code hooksで自動同期されます。[詳細 →](docs/automation.md)
+[コード](#code) · [アプリ・UI](#apps) · [コンテキスト・仕様](#context) · [テスト・レビュー](#quality) · [デプロイ・実行](#delivery) · [ワークスペース・使用状況](#operations) · [コミュニティ](#community)
 
-> **「完全にバイブに身を任せ、指数関数的な成長を受け入れ、コードの存在すら忘れましょう。」**
+<a id="recent-updates"></a>
+## 最近の確認済み更新
+
+過去30日間のレビューと重要な変更を新しい順に掲載しています。確認日は **製品のリリース日ではありません**。[レビュー記録と根拠](docs/issue-review-2026-09-18.md)に確認内容を記録しています。
+
+<!-- recent-updates:start -->
+| 確認日 | 更新項目 | 変更内容 |
+|---|---|---|
+| 2026-09-18 | [NextReset](#resource-nextreset) | レビュー後に追加：非公式の公開リセット履歴とローカルのカウントダウン。予測の正確性を保証するものではありません。 |
+| 2026-09-18 | [Superagent](#resource-superagent) | レビュー後に追加：ブラウザとiOSのワークフローに対応したmacOS用コーディングエージェントワークスペース。 |
+| 2026-09-18 | [Publish.my](#resource-publish-my) | レビュー後に追加：エージェント向け静的サイト公開サービス。メールによる利用開始手続きが必要です。 |
+| 2026-09-18 | [Agent QA](#resource-agent-qa) | レビュー後に追加：Web・モバイルのテストワークフロー。FSL-1.1-ALv2ライセンスを明記しています。 |
+| 2026-09-18 | [Duckweed](#resource-duckweed) | レビュー後に追加：コーディングエージェント用ローカルターミナルワークスペース。ソース公開ライセンスを採用しています。 |
+| 2026-09-18 | [Vibe Coding with Confidence (Mahmoud Zalt)](#resource-vibe-coding-with-confidence-mahmoud-zalt) | レビュー後に追加：無料で閲覧できる開発ハンドブック。 |
+| 2026-09-18 | [opencode](#resource-opencode) | 状態を確認：旧リポジトリはアーカイブ済みで、Crushを案内しています。 |
+<!-- recent-updates:end -->
+
+<a id="start-here"></a>
+## はじめに
+
+**開発が初めての方：** 小さなプロジェクトを一つ選び、Gitで変更を保存する方法を学び、一機能ずつテストしましょう。プロジェクトフォルダを開き、選んだチュートリアルのコマンドを実行できることが前提です。不慣れな場合は、その教材の環境構築の章から始めてください。
+
+1. [最初のプロジェクト向けガイド](#first-project)を読み、ローカルのタスク一覧など、自分で説明できる成果物を選びます。
+2. [コーディングアシスタント](#code)か[アプリ試作ツール](#apps)を一つ選びます。無料のクライアントでも、有料モデル、サブスクリプション、APIキーが必要な場合があるため、先に利用条件を確認してください。
+3. 短い目標と受け入れ条件を書きます。小さく実装し、変更を確認してテストを実行し、Gitに区切りとして保存します。
+4. 公開前に[テスト・レビューツール](#quality)を使います。認証情報をプロンプトやコミットに含めず、利用する生成コードの内容を理解してください。
+5. [ホスティング・実行環境の制約](#delivery)、特にバックエンドの必要性を確認してからデプロイします。
+
+**開発経験のある方：** 上の目的別リンクから移動し、計画、リファクタリング、デバッグ、検証に[実践ワークフロー](#practical-guides)を活用してください。
+
+<a id="tools"></a>
+## 目的別にツールを探す
+
+各リソースは主な用途の一か所に掲載しています。**CLI、IDE、Web、Desktop、MCP** は利用形態を示し、品質の順位ではありません。このページで `MCP` を検索すると、用途をまたいで連携機能を探せます。
+
+**メタデータの読み方：** `—` は実質的な確認日が記録されていないことを示します。`条件を要確認` / `利用方法を要確認` は現在の料金や利用条件が未確認であることを意味します。オープンソースとソース公開はライセンスの区分であり、モデルの利用が無料であることを意味しません。確認日は記載した機能と利用条件の根拠に関するもので、セキュリティ監査日ではありません。古い説明は今後の再確認対象です。
+
+<a id="code"></a>
+### コード作成・編集
+
+リポジトリを理解し、機能を実装し、既存コードをリファクタリングします。
+
+<!-- catalog:code -->
+| リソース | 用途 | 利用方法・条件 | 確認日 |
+|---|---|---|---|
+| <a id="resource-agentless"></a>[**Agentless**](https://github.com/OpenAutoCoder/Agentless) | 自律型ソフトウェアエンジニアリングのためのミニマリストなオープンソースアプローチ | 条件を要確認 | — |
+| <a id="resource-aide"></a>[**Aide**](https://aide.dev) · IDE | コードベース全体の問題を修正できる能動的なAIエージェントを備えたVS Codeフォーク | 条件を要確認 | — |
+| <a id="resource-aider"></a>[**Aider**](https://github.com/paul-gauthier/aider) · CLI | git統合を備えたターミナルAIペアプログラミング | 条件を要確認 | — |
+| <a id="resource-amazon-q-developer"></a>[**Amazon Q Developer**](https://aws.amazon.com/q/developer/) | AWS統合AIコーディングアシスタント | 条件を要確認 | — |
+| <a id="resource-amp"></a>[**Amp**](https://ampcode.com) · CLI | Sourcegraphのターミナルファーストなエージェント型コーディングアシスタント | 条件を要確認 | — |
+| <a id="resource-augment-code"></a>[**Augment Code**](https://www.augmentcode.com) | プロジェクトのコンテキストを活用したコーディング支援 | 条件を要確認 | — |
+| <a id="resource-blackbox-ai"></a>[**Blackbox AI**](https://www.blackbox.ai) | 20以上の言語に対応したAIコード補完・生成ツール、ブラウザ内コーディングで人気 | 条件を要確認 | — |
+| <a id="resource-claude-code"></a>[**Claude Code**](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview) · CLI | AnthropicのCLIベースのエージェント型コーディングアシスタント | 条件を要確認 | — |
+| <a id="resource-cline"></a>[**Cline**](https://github.com/cline/cline) | ファイル・ターミナル・ブラウザの自動化に対応したAIアシスタント | 条件を要確認 | — |
+| <a id="resource-codebuff"></a>[**Codebuff**](https://github.com/CodebuffAI/codebuff) · CLI | サブエージェントと連携してターミナルでのコーディング作業を進める | 条件を要確認 | — |
+| <a id="resource-codegpt"></a>[**CodeGPT**](https://codegpt.co) | VS CodeとIDEに対応したマルチLLMサポートのAIコーディングアシスタント | 条件を要確認 | — |
+| <a id="resource-codeium"></a>[**Codeium**](https://codeium.com/) | 各種開発環境でのコード補完。現在のブランド名と利用条件を要確認 | 条件を要確認 | — |
+| <a id="resource-codesandbox-ai"></a>[**CodeSandbox AI**](https://codesandbox.io/ai) · Web | ブラウザサンドボックスでのAI駆動型コード生成 | 条件を要確認 | — |
+| <a id="resource-continue"></a>[**Continue**](https://www.continue.dev) | 設定をカスタマイズできるAIアシスタントフレームワーク | 条件を要確認 | — |
+| <a id="resource-copilot-workspace"></a>[**Copilot Workspace**](https://githubnext.com/projects/copilot-workspace) · Web | Issue-to-PRワークフロー向けGitHubのエージェント型環境 | 条件を要確認 | — |
+| <a id="resource-cosine"></a>[**Cosine**](https://cosine.sh) · Web | 複雑なコードベースのタスクに対応する自律型AIソフトウェアエンジニア | 条件を要確認 | — |
+| <a id="resource-crush"></a>[**Crush**](https://github.com/charmbracelet/crush) · CLI | LSP統合とマルチモデル対応を備えたCharmbracelet製グラマラスなターミナルAIコーディングエージェント | 条件を要確認 | — |
+| <a id="resource-cursor"></a>[**Cursor**](https://www.cursor.com/) · IDE | コンテキストに応じたコード生成とインラインチャット機能を持つVS Codeフォーク | 条件を要確認 | — |
+| <a id="resource-dbforge-ai-assistant"></a>[**dbForge AI Assistant**](https://www.devart.com/dbforge/ai-assistant/) | dbForge製品に統合されたAI搭載SQLコーディングツール | 条件を要確認 | — |
+| <a id="resource-deepseek-cli"></a>[**DeepSeek CLI**](https://github.com/holasoymalva/deepseek-cli) · CLI | DeepSeek Coderモデル搭載のターミナルAIコーディングアシスタント | 条件を要確認 | — |
+| <a id="resource-devika"></a>[**Devika**](https://github.com/stitionai/devika) | エージェントによるソフトウェア開発ワークフロー | 条件を要確認 | — |
+| <a id="resource-devin"></a>[**Devin**](https://www.cognition.ai/devin) · Web | Cognitionによる自律型AIソフトウェアエンジニア | 条件を要確認 | — |
+| <a id="resource-devon"></a>[**Devon**](https://github.com/entropy-research/Devon) | Devinの代替となる自律型コーディングエージェント | 条件を要確認 | — |
+| <a id="resource-fusion"></a>[**Fusion**](https://www.builder.io/fusion) · Web | デザインシステム認識とFigma統合機能を備えたGitHub接続ビジュアルAI IDE | 条件を要確認 | — |
+| <a id="resource-gemini-cli"></a>[**Gemini CLI**](https://github.com/google-gemini/gemini-cli) · CLI | Geminiモデル搭載のGoogleのオープンソースエージェント型コーディングCLI | 条件を要確認 | — |
+| <a id="resource-gemini-code-assist"></a>[**Gemini Code Assist**](https://cloud.google.com/products/gemini/code-assist) | Cloud/IDE向けGoogleのAIコード補完とチャット | 条件を要確認 | — |
+| <a id="resource-github-copilot"></a>[**GitHub Copilot**](https://github.com/features/copilot) | コード補完、チャット、複数IDE対応を備えたAIペアプログラマー | 条件を要確認 | — |
+| <a id="resource-google-antigravity"></a>[**Google Antigravity**](https://antigravity.google) · IDE | マルチエージェント連携を備えたエージェント中心のIDE | 条件を要確認 | — |
+| <a id="resource-google-jules"></a>[**Google Jules**](https://jules.google) · Web | リポジトリのコーディング作業を自律型エージェントに委任 | 条件を要確認 | — |
+| <a id="resource-goose"></a>[**Goose**](https://block.github.io/goose/) · CLI | MCPに対応したBlockのコーディングアシスタント | 条件を要確認 | — |
+| <a id="resource-gpt-engineer"></a>[**gpt-engineer**](https://github.com/gpt-engineer-org/gpt-engineer) | 自然言語仕様から完全なコードベースを構築 | 条件を要確認 | — |
+| <a id="resource-jetbrains-ai"></a>[**JetBrains AI**](https://www.jetbrains.com/ai/) | Junieエージェントを備えたIntelliJ/PyCharmの深い統合 | 条件を要確認 | — |
+| <a id="resource-kilo-code"></a>[**Kilo Code**](https://kilo.ai) | モデル選択とブラウザ自動化に対応したAIコーディング支援 | 条件を要確認 | — |
+| <a id="resource-kiro"></a>[**Kiro**](https://kiro.dev) · IDE | 要件をコードとテストに変換するAWSのスペック駆動型AI IDE | 条件を要確認 | — |
+| <a id="resource-melty"></a>[**Melty**](https://github.com/meltylabs/melty) · IDE | 対話型インターフェースを備えたチャット優先のコードエディタ | 条件を要確認 | — |
+| <a id="resource-metagpt"></a>[**MetaGPT**](https://github.com/geekan/MetaGPT) | ソフトウェア会社の役割をシミュレートするマルチエージェントフレームワーク | 条件を要確認 | — |
+| <a id="resource-openai-codex-cli"></a>[**OpenAI Codex CLI**](https://openai.com/codex/) · CLI | 自然言語プロンプトで操作するCLIコーディングエージェント | 条件を要確認 | — |
+| <a id="resource-openhands"></a>[**OpenHands**](https://github.com/All-Hands-AI/OpenHands) | 自律型AIソフトウェア開発エージェント | 条件を要確認 | — |
+| <a id="resource-pearai"></a>[**PearAI**](https://trypear.ai) · IDE | 検索機能を統合したVS CodeベースのAIエディタ | 条件を要確認 | — |
+| <a id="resource-plandex"></a>[**Plandex**](https://plandex.ai) · CLI | 複雑な多段階タスクに対応するターミナルAIコーディングエンジン | 条件を要確認 | — |
+| <a id="resource-ra-aid"></a>[**RA.Aid**](https://github.com/ai-christianson/RA.Aid) · CLI | リサーチ・計画・多段階コード生成を組み合わせた自律型開発エージェント | 条件を要確認 | — |
+| <a id="resource-refact-ai"></a>[**Refact.ai**](https://refact.ai/) | セルフホスト型AIコーディングアシスタント | 条件を要確認 | — |
+| <a id="resource-roo-code"></a>[**Roo Code**](https://github.com/RooVetGit/Roo-Code) | 複数の役割（アーキテクト、QA、PM）をサポートするAIアシスタント | 条件を要確認 | — |
+| <a id="resource-sourcegraph-cody"></a>[**Sourcegraph Cody**](https://sourcegraph.com/cody) | コード理解と検索のためのAIアシスタント | 条件を要確認 | — |
+| <a id="resource-supermaven"></a>[**Supermaven**](https://supermaven.com) | 高速AIコード補完 | 条件を要確認 | — |
+| <a id="resource-superninja"></a>[**SuperNinja**](https://www.ninjatech.ai) · Web | 開発工程全体を担う自律型AI開発エージェント | 条件を要確認 | — |
+| <a id="resource-swe-agent"></a>[**SWE-agent**](https://github.com/princeton-nlp/SWE-agent) | リポジトリのIssueを解決するエージェント | 条件を要確認 | — |
+| <a id="resource-sweep"></a>[**Sweep**](https://github.com/sweepai/sweep) | issueとPRのためのAI駆動型GitHubアシスタント | 条件を要確認 | — |
+| <a id="resource-tabby"></a>[**Tabby**](https://tabbyml.com) | プライバシー重視のセルフホスト型オープンソースAIコーディングアシスタント | 条件を要確認 | — |
+| <a id="resource-tabnine"></a>[**Tabnine**](https://www.tabnine.com/) | コーディングスタイルに適応する深層学習オートコンプリート | 条件を要確認 | — |
+| <a id="resource-trae-ai"></a>[**Trae AI**](https://www.trae.ai/) · Web | コンテンツ作成のためのAIプラットフォーム | 条件を要確認 | — |
+| <a id="resource-twill"></a>[**Twill**](https://twill.ai) · Web | PRを作成するクラウド型の自律コーディングエージェント | 条件を要確認 | — |
+| <a id="resource-vibe-compiler-vibec"></a>[**Vibe Compiler (vibec)**](https://github.com/Strawberry-Computer/vibe-compiler) | プロンプトをコードに変換する自己コンパイルツール | 条件を要確認 | — |
+| <a id="resource-void"></a>[**Void**](https://github.com/voideditor/void) · IDE | 自律型AIコーディング機能を備えたVS Codeフォーク | 条件を要確認 | — |
+| <a id="resource-windsurf"></a>[**Windsurf**](https://codeium.com/windsurf) · IDE | CodeiumのAIネイティブIDEでCascade AIとマルチLLMサポート | 条件を要確認 | — |
+| <a id="resource-wingman-ai"></a>[**Wingman AI**](https://github.com/RussellCanfield/wingman-ai-vscode-extension) | Ollama、HuggingFace、OpenAI、Anthropicに対応したVSCode拡張機能 | 条件を要確認 | — |
+| <a id="resource-zed-ai"></a>[**Zed AI**](https://zed.dev/) · IDE | ネイティブAIアシスタントを統合した高性能エディタ | 条件を要確認 | — |
+<!-- /catalog:code -->
+
+<a id="apps"></a>
+### アプリ・UIの試作
+
+説明やデザインから最初のアプリやインターフェースを作ります。
+
+<!-- catalog:apps -->
+| リソース | 用途 | 利用方法・条件 | 確認日 |
+|---|---|---|---|
+| <a id="resource-appsmith"></a>[**Appsmith**](https://www.appsmith.com) · Web | 社内ツールを構築するためのローコードプラットフォーム | 条件を要確認 | — |
+| <a id="resource-berrry"></a>[**Berrry**](https://berrry.app) · Web | ソーシャル投稿をWebアプリに変換 | 条件を要確認 | — |
+| <a id="resource-bolt-diy"></a>[**Bolt.diy**](https://github.com/stackblitz-labs/bolt.diy) · Web | 独自APIキーの利用に対応したBolt.new代替 | 条件を要確認 | — |
+| <a id="resource-bolt-new"></a>[**Bolt.new**](https://bolt.new/) · Web | StackBlitzによる自然言語アプリ構築 | 条件を要確認 | — |
+| <a id="resource-buildship"></a>[**BuildShip**](https://buildship.com) · Web | ローコードノードを備えたビジュアルAIワークフロー・バックエンドビルダー | 条件を要確認 | — |
+| <a id="resource-create-xyz"></a>[**Create.xyz**](https://create.xyz/) · Web | 自然言語プロンプトを使用したWebアプリ構築 | 条件を要確認 | — |
+| <a id="resource-databutton"></a>[**Databutton**](https://databutton.com) · Web | Pythonバックエンドを備えたAI駆動フルスタックアプリビルダー | 条件を要確認 | — |
+| <a id="resource-dyad"></a>[**Dyad**](https://github.com/dyad-sh/dyad) · Web | ローカルのオープンソースAIアプリビルダー（v0/Lovable/Boltの代替） | 条件を要確認 | — |
+| <a id="resource-emergent"></a>[**Emergent**](https://emergent.sh) · Web | ワンクリックデプロイとカスタムドメインを備えたAIフルスタックバイブコーディングプラットフォーム | 条件を要確認 | — |
+| <a id="resource-figma-mcp"></a>[**Figma MCP**](https://github.com/figma/figma-developer-mcp) · MCP | デザインデータをUI実装に取り込む | 条件を要確認 | — |
+| <a id="resource-firebase-studio"></a>[**Firebase Studio**](https://firebase.studio) · Web | 旧Project IDXで、GeminiによるGoogleのAIファーストブラウザIDE | 条件を要確認 | — |
+| <a id="resource-github-spark"></a>[**GitHub Spark**](https://githubnext.com/projects/spark) · Web | GitHub Nextが開発した自然言語マイクロアプリビルダー、ブラウザ上で動作 | 条件を要確認 | — |
+| <a id="resource-hostinger-horizons"></a>[**Hostinger Horizons**](https://hostinger.com/horizons) · Web | 音声・テキスト・画像プロンプトとホスティング内蔵のAIノーコードアプリビルダー | 条件を要確認 | — |
+| <a id="resource-kombai"></a>[**Kombai**](https://kombai.com/) · Web | Figmaデザインをコードに変換するAI | 条件を要確認 | — |
+| <a id="resource-lazy-ai"></a>[**Lazy AI**](https://www.getlazy.ai) · Web | ワンクリッククラウドデプロイ対応のチャットベースWebアプリビルダー | 条件を要確認 | — |
+| <a id="resource-lovable"></a>[**Lovable**](https://lovable.dev/) · Web | Supabaseを使用したフルスタックアプリ生成 | 条件を要確認 | — |
+| <a id="resource-marblism"></a>[**Marblism**](https://marblism.com) · Web | テキストプロンプトからフルスタックNext.jsアプリを生成するAI | 条件を要確認 | — |
+| <a id="resource-onlook"></a>[**Onlook**](https://onlook.dev) · Web | AIコード生成に対応したReact/Next.js向けブラウザ型ビジュアルエディタ | 条件を要確認 | — |
+| <a id="resource-openbolt-dev"></a>[**OpenBolt.dev**](https://openbolt.dev) · Web | セルフホストとカスタマイズに対応したBolt.new代替 | 条件を要確認 | — |
+| <a id="resource-playcode"></a>[**Playcode**](https://playcode.io/ai-website-builder) · Web | ビジュアル編集、ホスティング、カスタムドメイン、ワンクリック公開を備えたAIウェブサイト・アプリビルダー | 条件を要確認 | — |
+| <a id="resource-rapidnative"></a>[**RapidNative**](https://rapidnative.com/) · Web | スケッチ/テキスト入力でReact Nativeを生成するAIモバイルアプリビルダー | 条件を要確認 | — |
+| <a id="resource-replit"></a>[**Replit**](https://replit.com/) · Web | Ghostwriter AIを備えたブラウザベースIDE | 条件を要確認 | — |
+| <a id="resource-rosebud-ai"></a>[**Rosebud AI**](https://rosebud.ai) · Web | 3DゲームとインタラクティブWebアプリのためのバイブコーディングプラットフォーム | 条件を要確認 | — |
+| <a id="resource-subframe"></a>[**Subframe**](https://subframe.com) · Web | クリーンなReactコンポーネントコードを生成するAI支援UIビルダー | 条件を要確認 | — |
+| <a id="resource-tempo-labs"></a>[**Tempo Labs**](https://tempolabs.ai/) · Web | ビジュアルエディタとコードエクスポートを備えたAI駆動のReact UIビルダー | 条件を要確認 | — |
+| <a id="resource-v0"></a>[**v0**](https://v0.dev/) · Web | VercelのUI/React生成AI | 条件を要確認 | — |
+| <a id="resource-vibekit-bot"></a>[**VibeKit.bot**](https://vibekit.bot) · Web | アプリごとに永続的なAIコーディングエージェントを提供し、ビルド、ホスティング(ライブドメイン)、継続的な改善を実行。携帯電話やCLIから駆動可能。BYOKまたは従量課金制 | 条件を要確認 | — |
+<!-- /catalog:apps -->
+
+<a id="context"></a>
+### コンテキスト・仕様・連携
+
+要件、ルール、ドキュメント、連携先のプロジェクトデータをエージェントに提供します。
+
+<!-- catalog:context -->
+| リソース | 用途 | 利用方法・条件 | 確認日 |
+|---|---|---|---|
+| <a id="resource-anycrawl"></a>[**AnyCrawl**](https://github.com/any4ai/anycrawl-mcp-server) · MCP | エージェントのコンテキスト用にWebサイトの内容を取得 | 条件を要確認 | — |
+| <a id="resource-breaking-coding-chaos"></a>[**breaking-coding-chaos**](https://github.com/bo-cao/breaking-coding-chaos) | ヒューマンインザループ二重ループ制御プレーンスキルスイート | 条件を要確認 | — |
+| <a id="resource-caliber"></a>[**Caliber**](https://github.com/caliber-ai-org/ai-setup) | Claude Code、Cursor、Codex向けのAIエージェント設定を生成・同期するCLI | 条件を要確認 | — |
+| <a id="resource-chroma"></a>[**Chroma**](https://github.com/chroma-core/chroma-mcp) · MCP | ベクトルデータベースからコンテキストを取得 | 条件を要確認 | — |
+| <a id="resource-clickhouse"></a>[**ClickHouse**](https://github.com/ClickHouse/mcp-clickhouse) · MCP | ClickHouseデータの照会と確認 | 条件を要確認 | — |
+| <a id="resource-composio-mcp"></a>[**Composio MCP**](https://github.com/ComposioHQ/composio) · MCP | コーディングエージェントを外部サービスに接続 | 条件を要確認 | — |
+| <a id="resource-context7"></a>[**Context7**](https://github.com/upstash/context7) · MCP | コーディングのコンテキスト用にライブラリのドキュメントを取得 | 条件を要確認 | — |
+| <a id="resource-everything-claude-code"></a>[**everything-claude-code**](https://github.com/serithemage/everything-claude-code) | Anthropicハッカソン優勝者による実戦検証済みClaude Code設定（エージェント、スキル、フック、コマンド） | 条件を要確認 | — |
+| <a id="resource-exa-mcp"></a>[**Exa MCP**](https://github.com/exa-labs/exa-mcp-server) · MCP | 関連する参考資料をWeb検索 | 条件を要確認 | — |
+| <a id="resource-excel"></a>[**Excel**](https://github.com/haris-musa/excel-mcp-server) · MCP | スプレッドシートのデータを読み取り・更新 | 条件を要確認 | — |
+| <a id="resource-fetch"></a>[**Fetch**](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) · MCP | コーディング作業に必要なWebコンテンツを取得 | 条件を要確認 | — |
+| <a id="resource-filesystem-mcp"></a>[**Filesystem MCP**](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) · MCP | エージェントにプロジェクトファイルへの制御されたアクセスを提供 | 条件を要確認 | — |
+| <a id="resource-firecrawl-mcp"></a>[**Firecrawl MCP**](https://github.com/mendableai/firecrawl-mcp-server) · MCP | 調査やコンテキスト用にWebコンテンツを抽出 | 条件を要確認 | — |
+| <a id="resource-git-mcp"></a>[**Git MCP**](https://github.com/modelcontextprotocol/servers/tree/main/src/git) · MCP | リポジトリの履歴と変更を読み取る | 条件を要確認 | — |
+| <a id="resource-github-mcp"></a>[**GitHub MCP**](https://github.com/github/github-mcp-server) · MCP | リポジトリ、Issue、プルリクエストのワークフローを接続 | 条件を要確認 | — |
+| <a id="resource-intent-engineering"></a>[**intent-engineering**](https://github.com/roboco-io/intent-engineering) | AI実行によってコードではなく意図を提供する運用モデル | 条件を要確認 | — |
+| <a id="resource-jira-mcp"></a>[**Jira MCP**](https://github.com/sooperset/mcp-atlassian) · MCP | JiraのIssueとConfluenceのプロジェクトコンテキストを接続 | 条件を要確認 | — |
+| <a id="resource-linear-mcp"></a>[**Linear MCP**](https://github.com/jerhadf/linear-mcp-server) · MCP | プロジェクトのIssueと計画のコンテキストを接続 | 条件を要確認 | — |
+| <a id="resource-mongodb"></a>[**MongoDB**](https://github.com/mongodb-js/mongodb-mcp-server) · MCP | MongoDBのコレクションを確認し、クエリを実行 | 条件を要確認 | — |
+| <a id="resource-mymir"></a>[**mymir**](https://github.com/FrkAk/mymir) | コンテキストネットワークを備えたAIコーディングエージェント向けプロジェクト管理レイヤー | 条件を要確認 | — |
+| <a id="resource-neon"></a>[**Neon**](https://github.com/neondatabase/mcp-server-neon) · MCP | 開発ワークフローをNeonデータベースに接続 | 条件を要確認 | — |
+| <a id="resource-notion-mcp"></a>[**Notion MCP**](https://github.com/makenotion/notion-mcp-server) · MCP | プロジェクトのドキュメントを取得・更新 | 条件を要確認 | — |
+| <a id="resource-oh-my-claudecode"></a>[**oh-my-claudecode**](https://github.com/Yeachan-Heo/oh-my-claudecode) | 学習コストゼロのClaude Code向けマルチエージェントオーケストレーション | 条件を要確認 | — |
+| <a id="resource-openspec"></a>[**OpenSpec**](https://github.com/Fission-AI/OpenSpec) | AIコーディングアシスタント向けのスペック駆動開発フレームワーク | 条件を要確認 | — |
+| <a id="resource-perplexity-mcp"></a>[**Perplexity MCP**](https://github.com/anthropics/mcp-perplexity) · MCP | 調査用の連携機能。掲載されたソースは再確認が必要 | 条件を要確認 | — |
+| <a id="resource-phind"></a>[**Phind**](https://www.phind.com) | コード・エラー・技術的Q&AのためのAI搭載開発者向け検索エンジン | 条件を要確認 | — |
+| <a id="resource-pieces-for-developers"></a>[**Pieces for Developers**](https://pieces.app/) | 自動コードスニペット管理とコンテキストを備えたAIアシスタント | 条件を要確認 | — |
+| <a id="resource-roboco-cli"></a>[**roboco-cli**](https://github.com/roboco-io/roboco-cli) | Claude Codeによるバイブコーディングのための AI ネイティブ開発スキャフォールディングシステム | 条件を要確認 | — |
+| <a id="resource-rube"></a>[**Rube**](https://github.com/ComposioHQ/Rube) · MCP | リポジトリとサービスのワークフローを接続 | 条件を要確認 | — |
+| <a id="resource-solar-mcp"></a>[**Solar MCP**](https://github.com/serithemage/solar-mcp) · MCP | エージェントをUpstage Solarモデルに接続 | 条件を要確認 | — |
+| <a id="resource-spec-workflow-mcp"></a>[**Spec Workflow MCP**](https://github.com/Pimzino/spec-workflow-mcp) · MCP | 仕様と体系的な開発手順を管理 | 条件を要確認 | — |
+| <a id="resource-stripe-mcp"></a>[**Stripe MCP**](https://github.com/stripe/agent-toolkit) · MCP | アプリ開発時に決済APIを接続 | 条件を要確認 | — |
+| <a id="resource-supabase"></a>[**Supabase**](https://github.com/supabase-community/supabase-mcp) · MCP | スキーマの確認、クエリの実行、マイグレーションの管理 | 条件を要確認 | — |
+| <a id="resource-tavily"></a>[**Tavily**](https://github.com/tavily-ai/tavily-mcp) · MCP | エージェントのタスクに必要なWeb上の根拠を取得 | 条件を要確認 | — |
+| <a id="resource-vibe-coding-prompt-template"></a>[**vibe-coding-prompt-template**](https://github.com/KhazP/vibe-coding-prompt-template) · テンプレート | 包括的なプロンプトテンプレート | 条件を要確認 | — |
+| <a id="resource-vibe-lead"></a>[**vibe-lead**](https://github.com/roboco-io/vibe-lead) | 組織におけるAIベースのバイブコーディング導入のための変革管理フレームワーク | 条件を要確認 | — |
+| <a id="resource-vibeworkflow-app"></a>[**vibeworkflow.app**](https://vibeworkflow.app) | Vibe Codingのワークフロー自動化 | 条件を要確認 | — |
+<!-- /catalog:context -->
+
+<a id="quality"></a>
+### テスト・レビュー・セキュリティ
+
+動作を確認し、生成された変更をレビューして、障害を診断します。
+
+<!-- catalog:quality -->
+| リソース | 用途 | 利用方法・条件 | 確認日 |
+|---|---|---|---|
+| <a id="resource-agent-qa"></a>[**Agent QA**](https://github.com/vostride/agent-qa) · MCP | 自然言語でWeb・モバイルテストを作成・実行 | FSL-1.1-ALv2；モデル利用料あり | 2026-09-18 |
+| <a id="resource-bito-ai"></a>[**Bito AI**](https://bito.ai) | VS CodeおよびJetBrains IDE向けAIコードレビュー・生成アシスタント | 条件を要確認 | — |
+| <a id="resource-browserbase"></a>[**Browserbase**](https://github.com/browserbase/mcp-server-browserbase) · MCP | エージェント主導のブラウザワークフローをクラウドで実行 | 条件を要確認 | — |
+| <a id="resource-chrome-mcp"></a>[**Chrome MCP**](https://github.com/hangwin/mcp-chrome) · MCP | ブラウザを操作してアプリを確認・テスト | 条件を要確認 | — |
+| <a id="resource-factory"></a>[**Factory**](https://factory.ai) | 自律的なコードレビュー、テスト、PR作成を行うAI Droids | 条件を要確認 | — |
+| <a id="resource-micro-agent"></a>[**micro-agent**](https://github.com/BuilderIO/micro-agent) | テストが通過するまでTDDでコードを書き反復修正するCLIツール | 条件を要確認 | — |
+| <a id="resource-mobile-mcp"></a>[**Mobile MCP**](https://github.com/mobile-next/mobile-mcp) · MCP | モバイルアプリの操作を自動化し、状態を確認 | 条件を要確認 | — |
+| <a id="resource-mutable-ai"></a>[**Mutable.ai**](https://mutable.ai/) | 自動テスト、ドキュメント化、リファクタリングのためのAI | 条件を要確認 | — |
+| <a id="resource-playwright-mcp"></a>[**Playwright MCP**](https://github.com/executeautomation/mcp-playwright) · MCP | ブラウザ自動化とエンドツーエンドの検証を実行 | 条件を要確認 | — |
+| <a id="resource-potpie"></a>[**Potpie**](https://github.com/potpie-ai/potpie) | コードベースのデバッグ、テスト、コードレビュー用AIエージェント | 条件を要確認 | — |
+| <a id="resource-pr-agent"></a>[**PR-Agent**](https://github.com/Codium-ai/pr-agent) | プルリクエストの分析とレビューを自動化するAIエージェント | 条件を要確認 | — |
+| <a id="resource-qodo"></a>[**Qodo**](https://www.qodo.ai) | AIコードレビューエンジン（旧CodiumAI） | 条件を要確認 | — |
+| <a id="resource-semgrep"></a>[**Semgrep**](https://github.com/semgrep/mcp) · MCP | コードをスキャンしてセキュリティと品質の問題を検出 | 条件を要確認 | — |
+| <a id="resource-sentry"></a>[**Sentry**](https://github.com/getsentry/sentry-mcp) · MCP | アプリのエラーを確認し、障害を診断 | 条件を要確認 | — |
+| <a id="resource-vibe-ready"></a>[**vibe-ready**](https://github.com/roboco-io/vibe-ready-cli) | Claude Agent SDKを使用してリポジトリのバイブコーディング準備度を6カテゴリスコアリングで分析するCLIツール | 条件を要確認 | — |
+<!-- /catalog:quality -->
+
+<a id="delivery"></a>
+### デプロイ・実行
+
+適切な実行環境でコードをビルド、公開、実行します。
+
+<!-- catalog:delivery -->
+| リソース | 用途 | 利用方法・条件 | 確認日 |
+|---|---|---|---|
+| <a id="resource-cloudflare"></a>[**Cloudflare**](https://github.com/cloudflare/mcp-server-cloudflare) · MCP | アプリのデプロイとクラウドリソースを管理 | 条件を要確認 | — |
+| <a id="resource-e2b"></a>[**E2B**](https://github.com/e2b-dev/e2b) | エンタープライズグレードのAIエージェント向けセキュアなクラウドサンドボックス環境 | 条件を要確認 | — |
+| <a id="resource-e2b-mcp"></a>[**E2B MCP**](https://github.com/e2b-dev/mcp-server) · MCP | エージェントが生成したコードを分離されたサンドボックスで実行 | 条件を要確認 | — |
+| <a id="resource-publish-my"></a>[**Publish.my**](https://publish.my/) · Web | メールによる利用開始手続きを備えた、エージェント主導の静的サイト公開サービス | 無料枠あり；静的サイトのみ | 2026-09-18 |
+| <a id="resource-serverless-openclaw"></a>[**serverless-openclaw**](https://github.com/serithemage/serverless-openclaw) | AWSサーバーレスインフラ上でOpenClaw AIエージェントをオンデマンド実行、Web UIとTelegramインターフェース対応 | 条件を要確認 | — |
+| <a id="resource-vercel-mcp"></a>[**Vercel MCP**](https://github.com/vercel/mcp-adapter) · MCP | デプロイのワークフローをVercelに接続 | 条件を要確認 | — |
+| <a id="resource-xcode-build-mcp"></a>[**Xcode Build MCP**](https://github.com/cameroncooke/XcodeBuildMCP) · MCP | Appleプラットフォーム向けプロジェクトをビルド・実行 | 条件を要確認 | — |
+<!-- /catalog:delivery -->
+
+<a id="operations"></a>
+### エージェントのワークスペース・使用状況
+
+セッションを整理し、実行内容を確認して、使用状況や利用可能性を把握します。
+
+<!-- catalog:operations -->
+| リソース | 用途 | 利用方法・条件 | 確認日 |
+|---|---|---|---|
+| <a id="resource-agent-island"></a>[**Agent Island**](https://github.com/tristan666666/agent-island) · Desktop | macOS/Windows用のClaude Code/Codexデスクトップステータスコンパニオン | 条件を要確認 | — |
+| <a id="resource-dev-janitor"></a>[**Dev Janitor**](https://github.com/cocojojo5213/Dev-Janitor) | AIコーディングアシスタントと依存関係を管理するためのクロスプラットフォームデスクトップツールキット | 条件を要確認 | — |
+| <a id="resource-duckweed"></a>[**Duckweed**](https://github.com/MusicMaster4/Duckweed) · Desktop | ソースコードを公開している、コーディングエージェント向けのローカルターミナルワークスペース | ソース公開；モデル利用料を要確認 | 2026-09-18 |
+| <a id="resource-gitpod"></a>[**Gitpod**](https://www.gitpod.io/) · Web | AIによるワークスペース自動化を備えたクラウド開発環境 | 条件を要確認 | — |
+| <a id="resource-intent"></a>[**Intent**](https://www.augmentcode.com/intent) | 仕様に基づく体系的な監督機能を備えたマルチエージェントオーケストレーション用ワークスペース | 条件を要確認 | — |
+| <a id="resource-llm-log"></a>[**llm.log**](https://github.com/lanesket/llm.log) | AIエージェントのAPI呼び出しをキャプチャするローカルプロキシ — トークン、コスト、プロンプト、レイテンシをTUIダッシュボードで表示 | 条件を要確認 | — |
+| <a id="resource-nextreset"></a>[**NextReset**](https://nextreset.ai/) · Web | Codexのリセット履歴とブラウザ内のカウントダウンを提供する非公式ツール | 無料；非公式 | 2026-09-18 |
+| <a id="resource-parallel-code"></a>[**Parallel Code**](https://github.com/johannesjo/parallel-code) · Desktop | 並列ワークツリーでAIコーディングエージェントを実行するデスクトップアプリ | 条件を要確認 | — |
+| <a id="resource-superagent"></a>[**Superagent**](https://github.com/pungme/superagent-desktop) · Desktop | コーディングエージェント、ブラウザ、iOSワークフロー向けのMITライセンスのmacOSアプリ | MIT；モデル利用料を要確認 | 2026-09-18 |
+| <a id="resource-usage"></a>[**usage**](https://github.com/aqua5230/usage) · Desktop | Claude Code/Codexのクォータを一目で確認できるmacOSメニューバーアプリ | 条件を要確認 | — |
+| <a id="resource-vmux"></a>[**vmux**](https://github.com/roboco-io/vmux) | AIコーディングエージェント向けの通知とセッション管理を備えたVS Codeターミナル拡張機能 | 条件を要確認 | — |
+| <a id="resource-warp"></a>[**Warp**](https://www.warp.dev) | 自然言語コマンドとエージェントモードを備えたAIネイティブターミナル | 条件を要確認 | — |
+<!-- /catalog:operations -->
+
+<a id="learning"></a>
+## 学習と実践
+
+達成したいことに合わせて選んでください。ガイド、動画、論文、テンプレートのラベルは教材の形式を示します。前提知識、言語、所要時間、APIやサブスクリプションの費用はリンク先で確認してください。未確認の所要時間を推測して掲載することはしていません。
+
+<a id="first-project"></a>
+### 最初のプロジェクト
+
+環境構築から完成まで順に進めましょう。教材に記載された前提条件に従い、ツールを増やす前に小さく動くアプリを一つ完成させてください。
+
+| リソース | 用途 | 利用方法・条件 | 確認日 |
+|---|---|---|---|
+| <a id="resource-ai-book-ai-coding"></a>[**AI Book: AI Coding**](https://aibook.ren/categories/ai-coding) · ガイド | Cursor、Codex、Claude Code、Kiroを使用したコーディングエージェントワークフロー、ツール選択、実践に関する中国語ハンドブック | 利用方法を要確認 | — |
+| <a id="resource-applighter"></a>[**AppLighter**](https://applighter.com/) · テンプレート | AIエージェントワークフロー向けのCLAUDE.md、AGENTS.md、.cursorrules付きプロダクションレディReact Native + Expoテンプレート | 条件を要確認 | — |
+| <a id="resource-vibe-coding-manual-roboco"></a>[**Vibe Coding Manual (Roboco)**](https://roboco.io/posts/vibe-coding-manual/) · ガイド | テンプレート付き包括的ガイド | 利用方法を要確認 | — |
+| <a id="resource-vibe-coding-tutorial-and-best-practices"></a>[**Vibe Coding Tutorial and Best Practices**](https://www.youtube.com/watch?v=YWwS911iLhg) · 動画 | Cursor/WindsurfでのAIエージェント | 利用方法を要確認 | — |
+| <a id="resource-vibe-coding-with-confidence-mahmoud-zalt"></a>[**Vibe Coding with Confidence (Mahmoud Zalt)**](https://zalt.me/guides/vibe-coding) · ガイド | AI支援アプリの構築、テスト、セキュリティ対策、公開を学ぶハンドブック | 閲覧無料 · 英語 | 2026-09-18 |
+
+<a id="practical-guides"></a>
+### 実践ワークフロー
+
+既存のプロジェクトで具体的な問題を解決する際に使います。
+
+| 作業 | 手順 |
+|---|---|
+| 新機能 | 目標と受け入れ条件 → コンテキストを確認 → 小さく実装 → レビューとテスト |
+| リファクタリング | 現在の動作を記録 → 小さな変更を選ぶ → 動作を比較 → 繰り返す |
+| バグ修正 | 再現 → 仮説を立てる → 回帰チェックを追加 → 修正と検証 |
+| テスト | 重要な動作を特定 → 意味のある検証を選ぶ → 実行して失敗を確認 |
+
+[詳しいワークフローとプロンプトテンプレート](docs/workflows-and-templates.md)には、セッションの準備と再利用できる手順をまとめています。要件と判断をプロジェクト文書に記録し、必要に応じてサンドボックスを使い、セキュリティに関わる変更はデプロイ前にレビューしてください。
+
+| リソース | 用途 | 利用方法・条件 | 確認日 |
+|---|---|---|---|
+| <a id="resource-12-best-practices-for-ai-coding-questera"></a>[**12 Best Practices for AI Coding (Questera)**](https://www.questera.ai/blogs/12-best-practices-to-use-ai-in-coding-in-2025) · ガイド | 2025年のベストプラクティス | 利用方法を要確認 | — |
+| <a id="resource-agentic-coding-armin-ronacher"></a>[**Agentic Coding (Armin Ronacher)**](https://lucumr.pocoo.org/2025/6/12/agentic-coding/) · ガイド | AI駆動型自律開発アプローチ | 利用方法を要確認 | — |
+| <a id="resource-ai-tool-showdown-japanese"></a>[**AI Tool Showdown (Japanese)**](https://www.youtube.com/watch?v=EQHXIVItNxs) · 動画 | Copilot vs Cursor等 | 利用方法を要確認 | — |
+| <a id="resource-here-s-how-i-use-llms-to-help-me-write-code-simon-willison"></a>[**Here's how I use LLMs to help me write code (Simon Willison)**](https://simonwillison.net/2025/Mar/11/using-llms-for-code/) · ガイド | 実践的な統合のヒント | 利用方法を要確認 | — |
+| <a id="resource-how-i-use-llms"></a>[**How I use LLMs**](https://www.youtube.com/watch?v=EWvNQjAaOHw) · 動画 | Andrej Karpathyのガイド | 利用方法を要確認 | — |
+| <a id="resource-new-tools-for-building-agents"></a>[**New Tools for Building Agents**](https://www.youtube.com/watch?v=hciNKcLwSes) · 動画 | OpenAIのエージェントツール | 利用方法を要確認 | — |
+| <a id="resource-secure-vibe-coding-guide-csa"></a>[**Secure Vibe Coding Guide (CSA)**](https://cloudsecurityalliance.org/blog/2025/04/09/secure-vibe-coding-guide) · ガイド | セキュリティの考慮事項 | 利用方法を要確認 | — |
+| <a id="resource-vibecodex"></a>[**vibecodex**](https://github.com/yerdaulet-damir/vibecodex) · ガイド | バイブコーディングのための54の原則を含むプロダクションアーキテクチャバイブル (FastAPI, Next.js, Go) | 利用方法を要確認 | — |
+| <a id="resource-windsurf-90-of-your-code"></a>[**Windsurf: 90% of Your Code**](https://www.youtube.com/watch?v=bVNNvWq6dKo) · 動画 | エージェント型IDEの詳細 | 利用方法を要確認 | — |
+
+<a id="concepts-research"></a>
+### 概念と研究
+
+小さなプロジェクトを試した後にツールへの理解を深めたり、評価や開発手法をさらに学んだりできます。
+
+[Vibe coding](https://en.wikipedia.org/wiki/Vibe_coding)は自然言語で意図を伝え、AIによるソフトウェア生成を導く手法です。[Model Context Protocol](https://modelcontextprotocol.io/)はエージェントをツールやデータに接続します。コーディングエージェント、基盤モデル、連携機能はそれぞれ別の選択肢で、一つを変えても他が自動的に変わるわけではありません。
+
+| リソース | 用途 | 利用方法・条件 | 確認日 |
+|---|---|---|---|
+| <a id="resource-a-review-on-vibe-coding"></a>[**A Review on Vibe Coding**](https://www.techrxiv.org/users/913189/articles/1292402) · 論文 | 基礎、課題、今後の方向性 | 利用方法を要確認 | — |
+| <a id="resource-context-engineering-intro-coleam00"></a>[**Context Engineering Intro (coleam00)**](https://github.com/coleam00/context-engineering-intro) · ガイド | Claude Codeを使ってAIコーディングアシスタントを効果的に活用する方法 | 利用方法を要確認 | — |
+| <a id="resource-mcp-in-10-minutes"></a>[**MCP in 10 Minutes**](https://www.youtube.com/watch?v=EswVjHZMn74) · 動画 | MCPクイックイントロ | 利用方法を要確認 | — |
+| <a id="resource-model-context-protocol-explained"></a>[**Model Context Protocol Explained**](https://www.youtube.com/watch?v=VChRPFUzJGA) · 動画 | MCPの基礎 | 利用方法を要確認 | — |
+| <a id="resource-swe-agent-agent-computer-interfaces-enable-automated-software-engineering"></a>[**SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering**](https://arxiv.org/abs/2405.15793) · 論文 | Agent-Computer Interfaceで実際のバグを修正する自律型エージェント | 利用方法を要確認 | — |
+| <a id="resource-swe-bench-can-language-models-resolve-real-world-github-issues"></a>[**SWE-bench: Can Language Models Resolve Real-World GitHub Issues?**](https://arxiv.org/abs/2310.06770) · 論文 | AIコーディングエージェントを評価する標準ベンチマーク | 利用方法を要確認 | — |
+| <a id="resource-the-model-context-protocol-guide-anthropic"></a>[**The Model Context Protocol Guide (Anthropic)**](https://modelcontextprotocol.io/introduction) · ガイド | MCPアーキテクチャの理解 | 利用方法を要確認 | — |
+| <a id="resource-vibe-coding-and-ai-led-conversational-programming"></a>[**Vibe Coding and AI-Led Conversational Programming**](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5469367) · 論文 | 開発者とAIの相互作用 | 利用方法を要確認 | — |
+| <a id="resource-vibe-coding-is-the-future"></a>[**Vibe Coding Is The Future**](https://www.youtube.com/watch?v=IACHfKmZMr8) · 動画 | Y CombinatorのVibe Coding | 利用方法を要確認 | — |
+| <a id="resource-vibe-coding-ai-voice-based-code-generation"></a>[**Vibe Coding: AI/Voice Based Code Generation**](https://papers.academic-conferences.org/index.php/icair/article/view/3975) · 論文 | コーディングをしない人向けの研究ツール | 利用方法を要確認 | — |
+| <a id="resource-vibe-coding-toward-an-ai-native-paradigm"></a>[**Vibe Coding: Toward an AI-Native Paradigm**](https://arxiv.org/abs/2510.17842) · 論文 | セマンティックなソフトウェア開発 | 利用方法を要確認 | — |
+| <a id="resource-vibecoding-is-here"></a>[**Vibecoding is Here**](https://www.youtube.com/watch?v=xxA-M3HrKrc) · 動画 | AIが開発を変える | 利用方法を要確認 | — |
+| <a id="resource-what-is-vibe-coding-ibm"></a>[**What is Vibe Coding? (IBM)**](https://www.ibm.com/think/topics/vibe-coding) · ガイド | エンタープライズの視点 | 利用方法を要確認 | — |
+
+<details>
+<summary>背景と起源</summary>
+
+> 「完全にバイブに身を任せ、指数関数的な成長を受け入れ、コードの存在すら忘れましょう。」
 > — Andrej Karpathy、2025年2月
 
----
+![Vibe Coding Meme](images/vibecoding-meme.png)
 
-## 目次
+学習や本番開発では、自然言語の指示に加えて、内容の理解、レビュー、テスト、成果に対する明確な責任を持ちましょう。
 
-- [Vibe Codingとは？](#vibe-codingとは)
-- [主要な原則](#主要な原則)
-- [ツール](#ツール)
-  - [IDE & エディタアシスタント](#ide--エディタアシスタント)
-  - [エージェント型コーディング環境](#エージェント型コーディング環境)
-  - [MCPサーバー & ツール](#mcpサーバー--ツール)
-  - [クラウド & プラットフォーム統合](#クラウド--プラットフォーム統合)
-- [ワークフロー & テンプレート](#ワークフロー--テンプレート)
-- [ベストプラクティス](#ベストプラクティス)
-- [ドメイン別アプリケーション](#ドメイン別アプリケーション)
-- [学習リソース](#学習リソース)
-  - [研究論文](#研究論文)
-  - [記事 & マニュアル](#記事--マニュアル)
-  - [動画 & チュートリアル](#動画--チュートリアル)
-- [コミュニティ](#コミュニティ)
-- [関連するAwesomeリスト](#関連するawesomeリスト)
-- [貢献](#貢献)
+</details>
 
----
+<a id="related-context"></a>
+## 関連プラットフォームと専門的な用途
 
-## Vibe Codingとは？
+<details>
+<summary>周辺のAIプラットフォームと専門インフラを表示</summary>
 
-[Vibe Coding](https://en.wikipedia.org/wiki/Vibe_coding)は、ユーザーが自然言語で問題を記述し、AIが必要なコードを生成するAI支援プログラミングアプローチです。開発者は詳細なコードロジックを深く理解したり関与したりする必要がありません。この用語は、AI研究者の**Andrej Karpathy**が2025年2月に作りました。
+以前から掲載されている、広範なAIアプリ、パーソナルアシスタント、データ処理、専門インフラの項目です。コーディングのワークフローに直接適しているかは別途レビューが必要です。ここへの掲載は新たな推奨や再確認を意味しません。
 
-### パラダイムの比較
+| リソース | 用途 | 利用方法・条件 | 確認日 |
+|---|---|---|---|
+| <a id="resource-5ire"></a>[**5ire**](https://github.com/nanbingxyz/5ire) · MCP | ローカルナレッジとMCPを備えたデスクトップAIインターフェース | 条件を要確認 | — |
+| <a id="resource-alphacode"></a>[**AlphaCode**](https://alphacode.deepmind.com/) | DeepMindの競技プログラミングAI | 条件を要確認 | — |
+| <a id="resource-autogpt"></a>[**AutoGPT**](https://github.com/Significant-Gravitas/AutoGPT) | 複雑なコーディングタスクのための自律型AIエージェント | 条件を要確認 | — |
+| <a id="resource-botmadang-mcp"></a>[**Botmadang MCP**](https://github.com/serithemage/botmadang-mcp) · MCP | 韓国のAIコミュニティプラットフォームに接続 | 条件を要確認 | — |
+| <a id="resource-botpress"></a>[**Botpress**](https://botpress.com) · Web | LLMを活用したチャットボット開発プラットフォーム | 条件を要確認 | — |
+| <a id="resource-chatgpt"></a>[**ChatGPT**](https://chat.openai.com/) | 関連する開発・AIプラットフォーム。自身のワークフローへの適合性を確認 | 条件を要確認 | — |
+| <a id="resource-cherry-studio"></a>[**Cherry Studio**](https://github.com/CherryHQ/cherry-studio) | 自律型コーディングと300以上のアシスタントを備えたAI Agentデスクトップ | 条件を要確認 | — |
+| <a id="resource-claude"></a>[**Claude**](https://claude.ai/) | 関連する開発・AIプラットフォーム。自身のワークフローへの適合性を確認 | 条件を要確認 | — |
+| <a id="resource-copilotkit"></a>[**CopilotKit**](https://github.com/CopilotKit/CopilotKit) | チャットとジェネレーティブUIを備えたAIコパイロットを構築するためのフレームワーク | 条件を要確認 | — |
+| <a id="resource-dify"></a>[**Dify**](https://github.com/langgenius/dify) · Web | LLM搭載アプリを構築・デプロイするプラットフォーム | 条件を要確認 | — |
+| <a id="resource-duet-ai"></a>[**Duet AI**](https://workspace.google.com/solutions/ai/) · Web | Google WorkspaceのAI統合 | 条件を要確認 | — |
+| <a id="resource-google-ai-studio"></a>[**Google AI Studio**](https://aistudio.google.com) · Web | Geminiモデルでの構築とプロトタイピングに対応するブラウザIDE | 条件を要確認 | — |
+| <a id="resource-hermes-agent"></a>[**Hermes Agent**](https://github.com/nousresearch/hermes-agent) | 永続メモリとスキル作成機能を備えた汎用AIエージェント | 条件を要確認 | — |
+| <a id="resource-langflow"></a>[**Langflow**](https://github.com/langflow-ai/langflow) | AIエージェントとワークフローを視覚的に構築するツール | 条件を要確認 | — |
+| <a id="resource-n8n"></a>[**n8n**](https://n8n.io/) | 関連する開発・AIプラットフォーム。自身のワークフローへの適合性を確認 | 条件を要確認 | — |
+| <a id="resource-open-webui"></a>[**Open WebUI**](https://github.com/open-webui/open-webui) | ローカルモデルとホスト型モデルに対応したセルフホスト型AIインターフェース | 条件を要確認 | — |
+| <a id="resource-openclaw"></a>[**OpenClaw**](https://github.com/openclaw/openclaw) | 自律型ワークフローとローカル実行に対応したパーソナルAIアシスタント | 条件を要確認 | — |
+| <a id="resource-openmanus"></a>[**OpenManus**](https://github.com/mannaandpoem/OpenManus) | AI支援による文書作成フレームワーク | 条件を要確認 | — |
+| <a id="resource-openpaw"></a>[**OpenPaw**](https://github.com/daxaur/openpaw) | Claude Codeを38以上のスキルを持つパーソナルアシスタントに拡張するCLIツール | 条件を要確認 | — |
+| <a id="resource-pulumi"></a>[**Pulumi**](https://www.pulumi.com/) | 関連する開発・AIプラットフォーム。自身のワークフローへの適合性を確認 | 条件を要確認 | — |
+| <a id="resource-serverless-autoresearch"></a>[**serverless-autoresearch**](https://github.com/roboco-io/serverless-autoresearch) | SageMaker Spotトレーニング（H100）上でKarpathyのautoresearchをHUGIパターンで並列進化させるパイプライン | 条件を要確認 | — |
+| <a id="resource-smol-ai-developer"></a>[**smol-ai developer**](https://github.com/smol-ai/developer) | アプリ用の組み込み可能な開発者エージェントライブラリ | 条件を要確認 | — |
+| <a id="resource-suna"></a>[**Suna**](https://github.com/kortix-ai/suna) | 開発作業用のブラウザ、コード実行、ファイルシステムを備えた汎用AIエージェント | 条件を要確認 | — |
+| <a id="resource-terraform"></a>[**Terraform**](https://www.terraform.io/) | 関連する開発・AIプラットフォーム。自身のワークフローへの適合性を確認 | 条件を要確認 | — |
+| <a id="resource-wordware"></a>[**Wordware**](https://www.wordware.ai/) · Web | 開発者向けノーコードAIエージェントビルダー | 条件を要確認 | — |
+| <a id="resource-zapier"></a>[**Zapier**](https://zapier.com/) | 関連する開発・AIプラットフォーム。自身のワークフローへの適合性を確認 | 条件を要確認 | — |
 
-| パラダイム | アプローチ | 人間の役割 | 最適な用途 |
-|----------|----------|------------|----------|
-| **従来のコーディング** | 手動での構文ベースの記述 | すべてのコードを記述/読み取り | 完全な制御、本番システム |
-| **AI支援コーディング** | LLMが提案し、人間がレビュー/編集 | コードをレビューして洗練 | 監視を伴う高速開発 |
-| **Vibe Coding** | 自然言語からAIへ、テストのみで評価 | 意図を導き、結果をテスト | 迅速なプロトタイピング、MVP |
+</details>
 
----
+<a id="archive"></a>
+## 過去の参照資料
 
-## 主要な原則
+<details>
+<summary>アーカイブを確認した実装を表示</summary>
 
-- **自然言語第一** — 実装方法ではなく、何を望むかを記述する
-- **仕様 vs バイブ** — 詳細な仕様よりも、緩やかで意図駆動の記述
-- **コンテキスト管理** — 複数ターンの会話で状態を維持
-- **責任の境界** — 人間が判断/テストを担当し、AIが生成を担当
-- **信頼の構築** — 反復的なテストとフィードバックがAI出力への信頼を育む
-- **不確実性の受容** — 行ごとのレビューではなく、テストに基づいてAIコードを受け入れる
+過去の参照先を保存するための項目で、現在の入門用の推奨ではありません。旧OpenCodeリポジトリは後継として[Crush](#resource-crush)を案内しています。MCPプロジェクトの[アーカイブ済みサーバー一覧](https://github.com/modelcontextprotocol/servers#archived)には、以下の旧参照実装が記載されています。保存されたソースや後継を探す際に利用してください。
 
----
+| リソース | 用途 | 利用方法・条件 | 確認日 |
+|---|---|---|---|
+| <a id="resource-brave-search-mcp-legacy"></a>[**Brave Search MCP (legacy)**](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search) · MCP | Web検索用のアーカイブ済み参照実装 | アーカイブ済み参照実装 | 2026-09-18 |
+| <a id="resource-github-mcp-legacy"></a>[**GitHub MCP (legacy)**](https://github.com/modelcontextprotocol/servers/tree/main/src/github) · MCP | アーカイブ済みの参照実装。保守されているGitHub連携を利用してください | アーカイブ済み参照実装 | 2026-09-18 |
+| <a id="resource-opencode"></a>[**opencode**](https://github.com/opencode-ai/opencode) | アーカイブ済みリポジトリ。プロジェクトはCrushとして継続 | アーカイブ済み | 2026-09-18 |
+| <a id="resource-postgresql-mcp-legacy"></a>[**PostgreSQL MCP (legacy)**](https://github.com/modelcontextprotocol/servers/tree/main/src/postgres) · MCP | PostgreSQLアクセス用のアーカイブ済み参照実装 | アーカイブ済み参照実装 | 2026-09-18 |
+| <a id="resource-puppeteer-mcp-legacy"></a>[**Puppeteer MCP (legacy)**](https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer) · MCP | ブラウザ自動化用のアーカイブ済み参照実装 | アーカイブ済み参照実装 | 2026-09-18 |
+| <a id="resource-slack-mcp-legacy"></a>[**Slack MCP (legacy)**](https://github.com/modelcontextprotocol/servers/tree/main/src/slack) · MCP | Slackアクセス用のアーカイブ済み参照実装 | アーカイブ済み参照実装 | 2026-09-18 |
 
-## ツール
+</details>
 
-### IDE & エディタアシスタント
+<a id="community"></a>
+## コミュニティと関連リスト
 
-開発環境に統合されたAI駆動のコード補完と支援。
+コミュニティで議論や情報収集を行い、製品に関する主張は提供元の一次情報で確認しましょう。
 
-| ツール | 説明 |
-|------|-------------|
-| [**GitHub Copilot**](https://github.com/features/copilot) | オートコンプリート、チャット、マルチIDE対応のAIペアプログラマー |
-| [**Cursor**](https://www.cursor.com/) | コンテキストに応じたコード生成とインラインチャット機能を持つVS Codeフォーク |
-| [**Windsurf**](https://codeium.com/windsurf) | CodeiumのAIネイティブIDEでCascade AIとマルチLLMサポート |
-| [**Claude Code**](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview) | AnthropicのCLIベースのエージェント型コーディングアシスタント |
-| [**OpenAI Codex CLI**](https://openai.com/codex/) | 自然言語プロンプトを使用するオープンソースCLIコーディングエージェント |
-| [**Google Jules**](https://jules.google) | Gemini 2.5 Pro搭載の自律型AIコーディングエージェント |
-| [**Gemini Code Assist**](https://cloud.google.com/products/gemini/code-assist) | Cloud/IDE向けGoogleのAIコード補完とチャット |
-| [**dbForge AI Assistant**](https://www.devart.com/dbforge/ai-assistant/) | dbForge製品に統合されたAI搭載SQLコーディングツール |
-| [**JetBrains AI**](https://www.jetbrains.com/ai/) | Junieエージェントを備えたIntelliJ/PyCharmの深い統合 |
-| [**Augment Code**](https://www.augmentcode.com) | 深いコンテキストとセキュリティ（SOC 2）を備えたエンタープライズAI |
-| [**Tabnine**](https://www.tabnine.com/) | コーディングスタイルに適応する深層学習オートコンプリート |
-| [**Amazon Q Developer**](https://aws.amazon.com/q/developer/) | AWS統合AIコーディングアシスタント |
-| [**Continue**](https://www.continue.dev) | オープンソース設定可能AIアシスタントフレームワーク |
-| [**Qodo**](https://www.qodo.ai) | AIコードレビューエンジン（旧CodiumAI） |
-| [**Sourcegraph Cody**](https://sourcegraph.com/cody) | コード理解と検索のためのAIアシスタント |
-| [**Supermaven**](https://supermaven.com) | 高速AIコード補完 |
-| [**Cline**](https://github.com/cline/cline) | ファイル/ターミナル/ブラウザ自動化を備えたオープンソースAIアシスタント |
-| [**Roo Code**](https://github.com/RooVetGit/Roo-Code) | 複数の役割（アーキテクト、QA、PM）をサポートするAIアシスタント |
-| [**Google Antigravity**](https://antigravity.google) | マルチエージェントオーケストレーションを備えたエージェント型IDE（Gemini 3 Pro） |
-| [**opencode**](https://github.com/opencode-ai/opencode) | マルチプロバイダーとMCPをサポートするオープンソースTUIコーディングエージェント |
-| [**Aider**](https://github.com/paul-gauthier/aider) | git統合を備えたターミナルAIペアプログラミング |
-| [**Zed AI**](https://zed.dev/) | ネイティブAIアシスタントを統合した高性能エディタ |
-| [**Void**](https://github.com/voideditor/void) | 自律型AIコーディング機能を持つオープンソースVS Codeフォーク |
-| [**Melty**](https://github.com/meltylabs/melty) | 対話型インターフェースを備えたチャット優先のコードエディタ |
-| [**CodeGPT**](https://codegpt.co) | VS CodeとIDEに対応したマルチLLMサポートのAIコーディングアシスタント |
-| [**Wingman AI**](https://github.com/RussellCanfield/wingman-ai-vscode-extension) | Ollama、HuggingFace、OpenAI、Anthropicをサポートするオープンソースの VSCode拡張機能 |
-| [**DeepSeek CLI**](https://github.com/holasoymalva/deepseek-cli) | DeepSeek Coderモデル搭載のターミナルAIコーディングアシスタント |
-| [**Codeium**](https://codeium.com/) | 70以上の言語サポートを備えた無料のAIコード補完 |
-| [**Pieces for Developers**](https://pieces.app/) | 自動コードスニペット管理とコンテキストを備えたAIアシスタント |
-| [**Refact.ai**](https://refact.ai/) | プライバシー重視のセルフホスト型AIコーディングアシスタント |
-| [**Mutable.ai**](https://mutable.ai/) | 自動テスト、ドキュメント化、リファクタリングのためのAI |
-| [**CopilotKit**](https://github.com/CopilotKit/CopilotKit) | チャットとジェネレーティブUIを備えたAIコパイロットを構築するためのフレームワーク |
-| [**Kiro**](https://kiro.dev) | 要件をコードとテストに変換するAWSのスペック駆動型AI IDE |
-| [**Warp**](https://www.warp.dev) | 自然言語コマンドとエージェントモードを備えたAIネイティブターミナル |
-| [**PearAI**](https://trypear.ai) | 統合検索を備えたオープンソースVS Code AIエディタ |
-| [**OpenPaw**](https://github.com/daxaur/openpaw) | Claude Codeを38以上のスキルを持つパーソナルアシスタントに拡張するCLIツール |
-| [**Gemini CLI**](https://github.com/google-gemini/gemini-cli) | Geminiモデル搭載のGoogleのオープンソースエージェント型コーディングCLI |
-| [**Tabby**](https://tabbyml.com) | プライバシー重視のセルフホスト型オープンソースAIコーディングアシスタント |
-| [**Aide**](https://aide.dev) | コードベース全体の問題を自律的に修正できるプロアクティブなAIエージェントを搭載したオープンソースのVS Codeフォーク |
-| [**Blackbox AI**](https://www.blackbox.ai) | 20以上の言語に対応したAIコード補完・生成ツール、ブラウザ内コーディングで人気 |
-| [**llm.log**](https://github.com/lanesket/llm.log) | AIエージェントのAPI呼び出しをキャプチャするローカルプロキシ — トークン、コスト、プロンプト、レイテンシをTUIダッシュボードで表示 |
-| [**usage**](https://github.com/aqua5230/usage) | Claude Code/Codexのクォータを一目で確認できるmacOSメニューバーアプリ |
-| [**Agent Island**](https://github.com/tristan666666/agent-island) | macOS/Windows用のClaude Code/Codexデスクトップステータスコンパニオン |
-| [**Phind**](https://www.phind.com) | コード・エラー・技術的Q&AのためのAI搭載開発者向け検索エンジン |
-| [**Bito AI**](https://bito.ai) | VS CodeおよびJetBrains IDE向けAIコードレビュー・生成アシスタント |
-| [**PR-Agent**](https://github.com/Codium-ai/pr-agent) | プルリクエストの自動分析とレビューのためのオープンソースAIエージェント |
-| [**Caliber**](https://github.com/caliber-ai-org/ai-setup) | Claude Code、Cursor、Codex向けのAIエージェント設定を生成・同期するCLI |
-| [**roboco-cli**](https://github.com/roboco-io/roboco-cli) | Claude Codeによるバイブコーディングのための AI ネイティブ開発スキャフォールディングシステム |
-| [**vibe-ready**](https://github.com/roboco-io/vibe-ready-cli) | Claude Agent SDKを使用してリポジトリのバイブコーディング準備度を6カテゴリスコアリングで分析するCLIツール |
-| [**oh-my-claudecode**](https://github.com/Yeachan-Heo/oh-my-claudecode) | 学習コストゼロのClaude Code向けマルチエージェントオーケストレーション |
-| [**vmux**](https://github.com/roboco-io/vmux) | AIコーディングエージェント向けの通知とセッション管理を備えたVS Codeターミナル拡張機能 |
-| [**Codebuff**](https://github.com/CodebuffAI/codebuff) | サブエージェント連携とSWE-bench精度61%を実現するオープンソースターミナルAIエージェント |
-| [**Crush**](https://github.com/charmbracelet/crush) | LSP統合とマルチモデル対応を備えたCharmbracelet製グラマラスなターミナルAIコーディングエージェント |
-| [**breaking-coding-chaos**](https://github.com/bo-cao/breaking-coding-chaos) | ヒューマンインザループ二重ループ制御プレーンスキルスイート |
-
-### エージェント型コーディング環境
-
-エンドツーエンドの開発タスクを処理する自律型AIシステム。
-
-| ツール | 説明 |
-|------|-------------|
-| [**Devin**](https://www.cognition.ai/devin) | Cognitionによる自律型AIソフトウェアエンジニア |
-| [**OpenHands**](https://github.com/All-Hands-AI/OpenHands) | オープンソースの自律型AIソフトウェア開発者 |
-| [**Goose**](https://block.github.io/goose/) | BlockによるMCPサポート付きオープンソースコーディングアシスタント |
-| [**OpenManus**](https://github.com/mannaandpoem/OpenManus) | AI支援ドキュメント作成のためのオープンソースフレームワーク |
-| [**Vibe Compiler (vibec)**](https://github.com/Strawberry-Computer/vibe-compiler) | プロンプトをコードに変換する自己コンパイルツール |
-| [**AlphaCode**](https://alphacode.deepmind.com/) | DeepMindの競技プログラミングAI |
-| [**Cherry Studio**](https://github.com/CherryHQ/cherry-studio) | 自律型コーディングと300以上のアシスタントを備えたAI Agentデスクトップ |
-| [**OpenSpec**](https://github.com/Fission-AI/OpenSpec) | AIコーディングアシスタント向けのスペック駆動開発フレームワーク |
-| [**SWE-agent**](https://github.com/princeton-nlp/SWE-agent) | GitHubのissueを自律的に解決するStanfordエージェント |
-| [**gpt-engineer**](https://github.com/gpt-engineer-org/gpt-engineer) | 自然言語仕様から完全なコードベースを構築 |
-| [**MetaGPT**](https://github.com/geekan/MetaGPT) | ソフトウェア会社の役割をシミュレートするマルチエージェントフレームワーク |
-| [**AutoGPT**](https://github.com/Significant-Gravitas/AutoGPT) | 複雑なコーディングタスクのための自律型AIエージェント |
-| [**Sweep**](https://github.com/sweepai/sweep) | issueとPRのためのAI駆動型GitHubアシスタント |
-| [**Devika**](https://github.com/stitionai/devika) | Devinに代わる初のオープンソースエージェント型ソフトウェアエンジニア |
-| [**smol-ai developer**](https://github.com/smol-ai/developer) | アプリ用の組み込み可能な開発者エージェントライブラリ |
-| [**E2B**](https://github.com/e2b-dev/e2b) | エンタープライズグレードのAIエージェント向けセキュアなクラウドサンドボックス環境 |
-| [**Plandex**](https://plandex.ai) | 複雑なマルチステップタスクに対応するオープンソースのターミナルAIコーディングエンジン |
-| [**Cosine**](https://cosine.sh) | 複雑なコードベースのタスクに対応する自律型AIソフトウェアエンジニア |
-| [**Factory**](https://factory.ai) | 自律的なコードレビュー、テスト、PR作成を行うAI Droids |
-| [**Amp**](https://ampcode.com) | Sourcegraphのターミナルファーストなエージェント型コーディングアシスタント |
-| [**Devon**](https://github.com/entropy-research/Devon) | Devinの代替となるオープンソース自律型コーディングエージェント |
-| [**Copilot Workspace**](https://githubnext.com/projects/copilot-workspace) | Issue-to-PRワークフロー向けGitHubのエージェント型環境 |
-| [**Agentless**](https://github.com/OpenAutoCoder/Agentless) | 自律型ソフトウェアエンジニアリングのためのミニマリストなオープンソースアプローチ |
-| [**Suna**](https://github.com/kortix-ai/suna) | ブラウザ、コード実行、ファイルシステムを備えた開発タスク向けオープンソース汎用AIエージェント |
-| [**micro-agent**](https://github.com/BuilderIO/micro-agent) | テストが通過するまでTDDでコードを書き反復修正するCLIツール |
-| [**Potpie**](https://github.com/potpie-ai/potpie) | コードベースのデバッグ・テスト・コードレビュー向けオープンソースAIエージェント |
-| [**RA.Aid**](https://github.com/ai-christianson/RA.Aid) | リサーチ・計画・多段階コード生成を組み合わせた自律型開発エージェント |
-| [**serverless-openclaw**](https://github.com/serithemage/serverless-openclaw) | AWSサーバーレスインフラ上でOpenClaw AIエージェントをオンデマンド実行、Web UIとTelegramインターフェース対応 |
-| [**serverless-autoresearch**](https://github.com/roboco-io/serverless-autoresearch) | SageMaker Spotトレーニング（H100）上でKarpathyのautoresearchをHUGIパターンで並列進化させるパイプライン |
-| [**mymir**](https://github.com/FrkAk/mymir) | コンテキストネットワークを備えたAIコーディングエージェント向けプロジェクト管理レイヤー |
-| [**Parallel Code**](https://github.com/johannesjo/parallel-code) | 並列ワークツリーでAIコーディングエージェントを実行するデスクトップアプリ |
-
-### MCPサーバー & ツール
-
-AI機能を拡張する[Model Context Protocol](https://modelcontextprotocol.io/)サーバー。
-
-| カテゴリ | サーバー | 説明 |
-|----------|---------|-------------|
-| **Git操作** | [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git), [Rube](https://github.com/ComposioHQ/Rube), [GitHub](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | リポジトリの読み取り/検索/操作、issue/PR管理 |
-| **データベース** | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse), [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server), [Chroma](https://github.com/chroma-core/chroma-mcp), [Excel](https://github.com/haris-musa/excel-mcp-server), [PostgreSQL](https://github.com/modelcontextprotocol/servers/tree/main/src/postgres), [Neon](https://github.com/neondatabase/mcp-server-neon) | クエリ、マイグレーション、セマンティック検索、スプレッドシート操作、サーバーレスPostgres |
-| **セキュリティ** | [Semgrep](https://github.com/semgrep/mcp), [Sentry](https://github.com/getsentry/sentry-mcp) | コードスキャン、エラートラッキング |
-| **ブラウザ & 自動化** | [Chrome MCP](https://github.com/hangwin/mcp-chrome), [Playwright MCP](https://github.com/executeautomation/mcp-playwright), [AnyCrawl](https://github.com/any4ai/anycrawl-mcp-server), [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch), [Puppeteer](https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer), [Firecrawl MCP](https://github.com/mendableai/firecrawl-mcp-server) | ブラウザ自動化、テスト、Webスクレイピング、コンテンツ取得 |
-| **モバイル** | [Mobile MCP](https://github.com/mobile-next/mobile-mcp) | iOS/Android自動化とスクレイピング（エミュレータ、シミュレータ、実機） |
-| **検索 & ナレッジ** | [Brave Search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search), [Exa](https://github.com/exa-labs/exa-mcp-server), [Perplexity](https://github.com/anthropics/mcp-perplexity), [Tavily](https://github.com/tavily-ai/tavily-mcp) | Web検索、セマンティック検索、リサーチ、AI最適化検索 |
-| **開発** | [Xcode Build MCP](https://github.com/cameroncooke/XcodeBuildMCP), [Spec Workflow MCP](https://github.com/Pimzino/spec-workflow-mcp), [Slack](https://github.com/modelcontextprotocol/servers/tree/main/src/slack), [Linear](https://github.com/jerhadf/linear-mcp-server) | Xcode統合、スペック駆動開発、チームコミュニケーション、プロジェクト管理 |
-| **ファイルシステム** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 安全な読み取り/書き込み操作 |
-| **CI/CD** | [GitHub MCP](https://github.com/github/github-mcp-server) | issues、PR、ActionsへのフルGitHub APIアクセス |
-| **実行** | [E2B](https://github.com/e2b-dev/mcp-server) | AI生成コード実行のための安全なクラウドサンドボックス |
-| **ドキュメント** | [Context7](https://github.com/upstash/context7) | AIコンテキストに最新ライブラリドキュメントを注入 |
-| **ファイルシステム** | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 安全な読み取り/書き込み操作 |
-| **決済** | [Stripe](https://github.com/stripe/agent-toolkit) | 決済、顧客、サブスクリプションのための公式Stripe MCP |
-| **ブラウザ（クラウド）** | [Browserbase](https://github.com/browserbase/mcp-server-browserbase) | AIエージェント向けクラウドブラウザ自動化MCP |
-| **バックエンド** | [Supabase](https://github.com/supabase-community/supabase-mcp) | Supabaseプロジェクトの管理、SQLの実行、マイグレーション処理 |
-| **デザイン** | [Figma](https://github.com/figma/figma-developer-mcp) | AI駆動フロントエンド開発のためのFigmaデザインデータ |
-| **クラウドインフラ** | [Cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) | AIを通じてCloudflare Workers、KV、D1、R2を管理 |
-| **MCPクライアント** | [5ire](https://github.com/nanbingxyz/5ire) | MCPサポートとローカルナレッジベースを備えたクロスプラットフォームデスクトップAIアシスタント |
-| **生産性** | [Notion MCP](https://github.com/makenotion/notion-mcp-server) | ページ・データベース・ブロックの読み書きができる公式Notion MCPサーバー |
-| **デプロイメント** | [Vercel MCP](https://github.com/vercel/mcp-adapter) | AIを通じてプロジェクトをデプロイし、ドメインの管理や環境変数の設定を行う |
-| **プロジェクト管理** | [Jira MCP](https://github.com/sooperset/mcp-atlassian) | issueとドキュメント管理のためのAtlassian JiraおよびConfluence統合 |
-| **マルチサービス** | [Composio](https://github.com/ComposioHQ/composio) | Linear、Notion、Slackなど100以上のサービスをAIエージェント向けに接続するMCP自動化 |
-
-📚 包括的なリストは[awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers)を参照してください。
-
-### クラウド & プラットフォーム統合
-
-AI支援開発のためのブラウザベースおよびクラウドプラットフォーム。
-
-| ツール | 説明 |
-|------|-------------|
-| [**Replit**](https://replit.com/) | Ghostwriter AIを備えたブラウザベースIDE |
-| [**v0**](https://v0.dev/) | VercelのUI/React生成AI |
-| [**Bolt.new**](https://bolt.new/) | StackBlitzによる自然言語アプリ構築 |
-| [**Lovable**](https://lovable.dev/) | Supabaseを使用したフルスタックアプリ生成 |
-| [**Berrry**](https://berrry.app) | ソーシャル投稿をWebアプリに変換 |
-| [**Duet AI**](https://workspace.google.com/solutions/ai/) | Google WorkspaceのAI統合 |
-| [**Trae AI**](https://www.trae.ai/) | コンテンツ作成のためのAIプラットフォーム |
-| [**CodeSandbox AI**](https://codesandbox.io/ai) | ブラウザサンドボックスでのAI駆動型コード生成 |
-| [**GitHub Copilot Workspace**](https://github.com/features/copilot) | GitHub向けのAIネイティブ開発環境 |
-| [**Create.xyz**](https://create.xyz/) | 自然言語プロンプトを使用したWebアプリ構築 |
-| [**Wordware**](https://www.wordware.ai/) | 開発者向けノーコードAIエージェントビルダー |
-| [**Kombai**](https://kombai.com/) | Figmaデザインをコードに変換するAI |
-| [**Dyad**](https://github.com/dyad-sh/dyad) | ローカルのオープンソースAIアプリビルダー（v0/Lovable/Boltの代替） |
-| [**Firebase Studio**](https://firebase.studio) | 旧Project IDXで、GeminiによるGoogleのAIファーストブラウザIDE |
-| [**Google AI Studio**](https://aistudio.google.com) | Geminiモデルでの構築とプロトタイピングに対応するブラウザIDE |
-| [**Databutton**](https://databutton.com) | Pythonバックエンドを備えたAI駆動フルスタックアプリビルダー |
-| [**Tempo Labs**](https://tempolabs.ai/) | ビジュアルエディタとコードエクスポートを備えたAI駆動のReact UIビルダー |
-| [**Gitpod**](https://www.gitpod.io/) | AIによるワークスペース自動化を備えたクラウド開発環境 |
-| [**Bolt.diy**](https://github.com/stackblitz-labs/bolt.diy) | 独自APIキーをサポートするオープンソースのBolt.new代替 |
-| [**Marblism**](https://marblism.com) | テキストプロンプトからフルスタックNext.jsアプリを生成するAI |
-| [**Subframe**](https://subframe.com) | クリーンなReactコンポーネントコードを生成するAI支援UIビルダー |
-| [**BuildShip**](https://buildship.com) | ローコードノードを備えたビジュアルAIワークフロー・バックエンドビルダー |
-| [**Onlook**](https://onlook.dev) | AIコード生成機能を備えたReact/Next.js向けオープンソースのブラウザベースビジュアルエディタ |
-| [**GitHub Spark**](https://githubnext.com/projects/spark) | GitHub Nextが開発した自然言語マイクロアプリビルダー、ブラウザ上で動作 |
-| [**Dify**](https://github.com/langgenius/dify) | LLM搭載アプリケーションの構築・デプロイのためのオープンソースプラットフォーム |
-| [**Lazy AI**](https://www.getlazy.ai) | ワンクリッククラウドデプロイ対応のチャットベースWebアプリビルダー |
-| [**Rosebud AI**](https://rosebud.ai) | 3DゲームとインタラクティブWebアプリのためのバイブコーディングプラットフォーム |
-| [**Emergent**](https://emergent.sh) | ワンクリックデプロイとカスタムドメインを備えたAIフルスタックバイブコーディングプラットフォーム |
-| [**Hostinger Horizons**](https://hostinger.com/horizons) | 音声・テキスト・画像プロンプトとホスティング内蔵のAIノーコードアプリビルダー |
-| [**RapidNative**](https://rapidnative.com/) | スケッチ/テキスト入力でReact Nativeを生成するAIモバイルアプリビルダー |
-| [**Playcode**](https://playcode.io/ai-website-builder) | ビジュアル編集、ホスティング、カスタムドメイン、ワンクリック公開を備えたAIウェブサイト・アプリビルダー |
-| [**Fusion**](https://www.builder.io/fusion) | デザインシステム認識とFigma統合機能を備えたGitHub接続ビジュアルAI IDE |
-| [**VibeKit.bot**](https://vibekit.bot) | アプリごとに永続的なAIコーディングエージェントを提供し、ビルド、ホスティング(ライブドメイン)、継続的な改善を実行。携帯電話やCLIから駆動可能。BYOKまたは従量課金制 |
-
----
-
-## ワークフロー & テンプレート
-
-| ワークフロー | 主要なステップ |
-|----------|-----------|
-| **新機能** | Vibe Brief → PRDで検証 → バーティカルスライス計画 → 段階的実装 |
-| **リファクタリング** | パターン/臭いを分析 → 安全戦略 → 順次小さなステップ |
-| **バグ修正** | トリアージと仮説 → 最小限の失敗するテスト → 修正 → 検証 |
-| **テスト生成** | 重要な動作を特定 → リスクで優先順位付け → テスト生成 |
-
-**推奨アーティファクト**: PRD.md, TECH_DESIGN.md, NOTES.md, CHANGELOG.md
-
-📚 **[完全なワークフロー & テンプレートガイド →](docs/workflows-and-templates.md)** — セッションセットアップ、プロンプトテンプレート、プレイブック
-
----
-
-## ベストプラクティス
-
-### すべきこと ✅
-
-- **コンテキストから始める** — アーキテクチャ、制約、関連コードを提供
-- **タスクを分解する** — 計画 → 生成 → テスト → リファクタリングに分割
-- **テストファースト** — コードの前または同時にテストを生成
-- **サンドボックスを使用** — 分離された環境でAIコードを実行
-- **「ジュニアエンジニア」としてレビュー** — セキュリティとアーキテクチャのために常に人間がレビュー
-- **アーティファクトを維持** — PRD、NOTES、CHANGELOGを更新し続ける
-
-### してはいけないこと ❌
-
-- **「簡単な」コードのレビューをスキップ** — AIは微妙なバグを導入する可能性がある
-- **プロンプトに秘密を含める** — 環境変数やボールトを使用
-- **パブリックモデルに独自コードを提供** — データ漏洩のリスク
-- **生の出力を盲目的に受け入れる** — バイブ ≠ 検証なしのバイブ
-- **複雑な決定にAIに過度に依存** — 人間が判断を処理
-
----
-
-## ドメイン別アプリケーション
-
-| ドメイン | ユースケース | ツール例 |
-|--------|-----------|---------------|
-| **Web/アプリ/バックエンド** | CRUDアプリ、SaaS、マイクロサービス | [Lovable](https://lovable.dev/)、[Cursor](https://www.cursor.com/)、[v0](https://v0.dev/) |
-| **データ & ML** | パイプライン生成、実験自動化 | [Zapier](https://zapier.com/)、[n8n](https://n8n.io/) |
-| **DevOps** | IaC、CI/CDセットアップ、監視 | [Pulumi](https://www.pulumi.com/)、[Terraform](https://www.terraform.io/) |
-| **研究** | ノートブック自動化、データ可視化 | [ChatGPT](https://chat.openai.com/)、[Claude](https://claude.ai/) |
-
----
-
-## 学習リソース
-
-### 研究論文
-
-| 論文 | 焦点 | リンク |
-|-------|-------|------|
-| **Vibe Coding: Toward an AI-Native Paradigm** | セマンティックソフトウェア開発 | [arXiv:2510.17842](https://arxiv.org/abs/2510.17842) |
-| **A Review on Vibe Coding** | 基礎、課題、将来の方向性 | [TechRxiv](https://www.techrxiv.org/users/913189/articles/1292402) |
-| **Vibe Coding and AI-Led Conversational Programming** | 開発者とAIの相互作用 | [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5469367) |
-| **Vibe Coding: AI/Voice Based Code Generation** | 非コーダー向け研究ツール | [ICAIR](https://papers.academic-conferences.org/index.php/icair/article/view/3975) |
-| **SWE-bench: Can Language Models Resolve Real-World GitHub Issues?** | AIコーディングエージェント評価の標準ベンチマーク | [arXiv:2310.06770](https://arxiv.org/abs/2310.06770) |
-| **SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering** | Agent-Computer Interfaceを使って実際のバグを修正する自律型エージェント | [arXiv:2405.15793](https://arxiv.org/abs/2405.15793) |
-
-### 記事 & マニュアル
-
-- [What is Vibe Coding? (IBM)](https://www.ibm.com/think/topics/vibe-coding) — エンタープライズの視点
-- [Vibe Coding Manual (Roboco)](https://roboco.io/posts/vibe-coding-manual/) — テンプレート付き包括的ガイド
-- [Context Engineering Intro (coleam00)](https://github.com/coleam00/context-engineering-intro) — Claude Codeを使ってAIコーディングアシスタントを効果的に活用する方法
-- [12 Best Practices for AI Coding (Questera)](https://www.questera.ai/blogs/12-best-practices-to-use-ai-in-coding-in-2025) — 2025年のベストプラクティス
-- [Secure Vibe Coding Guide (CSA)](https://cloudsecurityalliance.org/blog/2025/04/09/secure-vibe-coding-guide) — セキュリティの考慮事項
-- [Here's how I use LLMs to help me write code (Simon Willison)](https://simonwillison.net/2025/Mar/11/using-llms-for-code/) — 実践的な統合のヒント
-- [Agentic Coding (Armin Ronacher)](https://lucumr.pocoo.org/2025/6/12/agentic-coding/) — AI駆動型自律開発アプローチ
-- [The Model Context Protocol Guide (Anthropic)](https://modelcontextprotocol.io/introduction) — MCPアーキテクチャの理解
-- [vibecodex](https://github.com/yerdaulet-damir/vibecodex) — バイブコーディングのための54の原則を含むプロダクションアーキテクチャバイブル (FastAPI, Next.js, Go)
-- [AI Book: AI Coding](https://aibook.ren/categories/ai-coding) — Cursor、Codex、Claude Code、Kiroを使用したコーディングエージェントワークフロー、ツール選択、実践に関する中国語ハンドブック
-
-### 動画 & チュートリアル
-
-| 動画 | トピック |
-|-------|-------|
-| [**Vibe Coding Tutorial and Best Practices**](https://www.youtube.com/watch?v=YWwS911iLhg) | Cursor/WindsurfでのAIエージェント |
-| [**Vibe Coding Is The Future**](https://www.youtube.com/watch?v=IACHfKmZMr8) | Y CombinatorのVibe Coding |
-| [**How I use LLMs**](https://www.youtube.com/watch?v=EWvNQjAaOHw) | Andrej Karpathyのガイド |
-| [**Model Context Protocol Explained**](https://www.youtube.com/watch?v=VChRPFUzJGA) | MCPの基礎 |
-| [**Windsurf: 90% of Your Code**](https://www.youtube.com/watch?v=bVNNvWq6dKo) | エージェント型IDEの詳細 |
-| [**Vibecoding is Here**](https://www.youtube.com/watch?v=xxA-M3HrKrc) | AIが開発を変える |
-| [**New Tools for Building Agents**](https://www.youtube.com/watch?v=hciNKcLwSes) | OpenAIのエージェントツール |
-| [**AI Tool Showdown (Japanese)**](https://www.youtube.com/watch?v=EQHXIVItNxs) | Copilot vs Cursor等 |
-| [**MCP in 10 Minutes**](https://www.youtube.com/watch?v=EswVjHZMn74) | MCPクイックイントロ |
-
----
-
-## コミュニティ
-
-### Reddit
+### コミュニティ
 
 - [r/vibecoding](https://reddit.com/r/vibecoding) — Vibe Coding専用コミュニティ
 - [r/ChatGPTCoding](https://reddit.com/r/ChatGPTCoding) — ChatGPT + コーディングワークフロー
@@ -343,30 +424,15 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 - [r/continue_dev](https://reddit.com/r/continue_dev) — Continue.devオープンソースアシスタント
 - [r/LocalLlama](https://reddit.com/r/LocalLlama) — ローカルLLM開発
 - [r/replit](https://reddit.com/r/replit) — ReplitとGhostwriterコミュニティ
-
-### Discord
-
 - [Cursor Discord](https://discord.gg/cursor) — ワークフロー、拡張機能、プロジェクトショーケース
 - [Lovable AI Discord](https://discord.gg/lovable) — フルスタックアプリ生成の共有
 - [Bolt.new Discord](https://discord.gg/stackblitz) — 自然言語アプリ構築（StackBlitz）
 - [v0 by Vercel Discord](https://discord.gg/vercel) — UI/React生成コミュニティ
 - [Replit Discord](https://discord.gg/replit) — マルチプレイヤーVibe Coding
 
-### スターターキット
+### 関連リスト
 
-- [vibe-coding-prompt-template](https://github.com/KhazP/vibe-coding-prompt-template) — 包括的なプロンプトテンプレート
-- [awesome-vibe-coding](https://github.com/filipecalegario/awesome-vibe-coding) — 別のキュレーションリスト（2.8k stars）
-- [vibeworkflow.app](https://vibeworkflow.app) — Vibe Codingのワークフロー自動化
-- [Dev Janitor](https://github.com/cocojojo5213/Dev-Janitor) — AIコーディングアシスタントと依存関係を管理するためのクロスプラットフォームデスクトップツールキット
-- [everything-claude-code](https://github.com/serithemage/everything-claude-code) — Anthropicハッカソン優勝者による実戦検証済みClaude Code設定（エージェント、スキル、フック、コマンド）
-- [vibe-lead](https://github.com/roboco-io/vibe-lead) — 組織におけるAIベースのバイブコーディング導入のための変革管理フレームワーク
-- [intent-engineering](https://github.com/roboco-io/intent-engineering) — AI実行によってコードではなく意図を提供する運用モデル
-- [AppLighter](https://applighter.com/) — AIエージェントワークフロー向けのCLAUDE.md、AGENTS.md、.cursorrules付きプロダクションレディReact Native + Expoテンプレート
-
----
-
-## 関連するAwesomeリスト
-
+- [awesome-vibe-coding](https://github.com/filipecalegario/awesome-vibe-coding) — Vibe Codingリソースをまとめた別のキュレーションリスト
 - [awesome-code-ai](https://github.com/sourcegraph/awesome-code-ai) — SourcegraphによるAIコーディングツール
 - [awesome-ai-assisted-coding](https://github.com/saviorand/awesome-ai-assisted-coding) — AI支援コーディングリソース
 - [awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers) — Model Context Protocolサーバー
@@ -374,100 +440,19 @@ AI支援開発のためのブラウザベースおよびクラウドプラット
 - [awesome-cursorrules](https://github.com/PatrickJS/awesome-cursorrules) — Cursor IDE向けコミュニティ厳選の `.cursorrules` ファイル
 - [awesome-vibe-coding](https://github.com/taskade/awesome-vibe-coding) — Taskadeによる245以上のVibe Codingツール、プラットフォーム、リソース
 
----
+- [MCPサーバーの総合リスト](https://github.com/wong2/awesome-mcp-servers) — この目的別リスト以外の連携機能も探せます。
 
+<a id="contributing"></a>
 <a id="contribution-guidelines"></a>
-
 ## 貢献
 
-このリポジトリは **AIで完全自動運用** されています。コンテンツの更新、翻訳、キュレーションは **Claude Code SDK** と **Perplexity MCP** がGitHub Actionsを通じて処理します。毎週日曜日に自動更新が実行され、承認されたIssueは手動介入なしで自動的に処理・反映されます。
+[Issueでリソースを提案](../../issues/new)してください。追加には **直接的な関連性、利用可能性を示す公開情報、独自の価値、利用条件と主張の透明性、保守の継続または内容の実質的な完成度** が必要です。有料製品や開発者自身による提案にも同じ基準を適用します。関係者とのつながりと重要な制約を開示してください。GitHubのスター数だけで掲載が決まることはありません。
 
-### アーキテクチャ
+[キュレーションポリシー](docs/curation-policy.md)と[貢献ガイド](.github/CONTRIBUTING.md)をお読みください。明確に基準を満たさないものは理由を添えて却下し、判断が難しいものはレビューのため未解決のままにします。採用した変更は英語・韓国語・日本語で同期し、公開が成功してからIssueを閉じます。
 
-```mermaid
-graph TB
-    subgraph Repository
-        README["README.md<br/>(英語ソース)"]
-        README_KO["README.ko.md<br/>(韓国語)"]
-        README_JA["README.ja.md<br/>(日本語)"]
-        SCRIPTS["scripts/<br/>weekly-update.mjs<br/>auto-process-issue.mjs<br/>issue-approval.mjs"]
-        PROMPTS["prompts/<br/>issue-auto-process.md<br/>issue-approval.md"]
-        CACHE[".cache/<br/>awesome-vibecoding.db"]
-    end
+週次更新とIssueのワークフローは[Pi](https://pi.dev/)、KimiまたはQwen、[Exa Search](https://exa.ai/)を使用します。実装とメンテナー向けの操作は[自動化と設定](docs/automation.md)で説明しています。
 
-    subgraph GitHub Actions
-        WU["週次更新<br/>(毎週日曜日)"]
-        API["Issue自動処理<br/>(Issue作成時)"]
-        IA["Issue承認<br/>(/approve コメント)"]
-    end
-
-    subgraph External Services
-        SDK["Claude Code SDK<br/>(@anthropic-ai/claude-agent-sdk)"]
-        PERPLEXITY["Perplexity MCP<br/>(AI検索)"]
-        GITHUB["GitHub API<br/>(スター数、リポジトリ)"]
-    end
-
-    WU -->|"node scripts/weekly-update.mjs"| SDK
-    API -->|"node scripts/auto-process-issue.mjs"| SDK
-    IA -->|"node scripts/issue-approval.mjs"| SDK
-    SDK -->|research| PERPLEXITY
-    SDK -->|metadata| GITHUB
-    SDK -->|edit| README
-    README -->|translate| README_KO
-    README -->|translate| README_JA
-    SCRIPTS -.->|read| PROMPTS
-    SDK -.->|cache| CACHE
-```
-
-### 自動化ワークフロー
-
-```mermaid
-flowchart LR
-    subgraph Weekly["週次更新 (日曜日)"]
-        direction TB
-        W1["Perplexity検索<br/>+ GitHubトレンド"] --> W2["フィルタリング & 検証<br/>(スター数、アクティビティ)"]
-        W2 --> W3["README.mdを更新"]
-        W3 --> W4["KO/JA翻訳"]
-        W4 --> W5["コミット & プッシュ"]
-    end
-
-    subgraph Issue["Issue自動処理"]
-        direction TB
-        I1["Issue作成<br/>(addition ラベル)"] --> I2["URL検証<br/>& 重複チェック"]
-        I2 --> I3{"品質<br/>チェック"}
-        I3 -->|Pass| I4["READMEに追加<br/>& 翻訳"]
-        I3 -->|Fail| I5["却下 / 要レビュー"]
-        I4 --> I6["コミット & Issueクローズ"]
-    end
-
-    subgraph Approve["手動承認"]
-        direction TB
-        A1["/approve コメント"] --> A2["検証スキップ"]
-        A2 --> A3["READMEに追加<br/>& 翻訳"]
-        A3 --> A4["コミット & Issueクローズ"]
-    end
-```
-
-### 貢献方法
-
-1. **Issueを作成** — [新しいIssueを作成](../../issues/new)して提案を登録
-   - 追加する新しいツールやリソース
-   - 既存コンテンツの修正や更新
-   - 新しいカテゴリやセクションのアイデア
-2. **提案内容を説明** — 名前、URL、簡単な説明を含める
-3. **自動処理** — メンテナーが `/approve` とコメントすると、Claude Codeが自動的にリソースを追加し、翻訳を生成してmainにコミットします
-
-> **PRではなくIssueを提出してください。** このリポジトリはAIが運用しています — Claude Codeがすべてのコンテンツ編集、フォーマット、翻訳（英語、韓国語、日本語）を処理し、一貫性を確保します。直接PRを送ると、自動化パイプラインとのマージコンフリクトが発生する可能性があります。
-
-### キュレーション原則
-
-リソースは以下であるべきです。
-- **関連性** — Vibe CodingまたはAI支援開発に直接関連
-- **品質** — 適切に維持され、文書化され、積極的に使用されている
-- **アクセス可能性** — 無料または無料ティアが利用可能なものが望ましい
-
----
-
+<a id="license"></a>
 ## ライセンス
 
-この作品は[CC0 1.0 Universal License](https://creativecommons.org/publicdomain/zero/1.0/)の下でパブリックドメインに捧げられています。
+この作品は[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)の下でパブリックドメインに捧げられています。リンク先のプロジェクトや教材には、それぞれ独自のライセンスと利用条件が適用されます。

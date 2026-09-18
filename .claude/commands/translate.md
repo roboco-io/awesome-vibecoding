@@ -17,6 +17,8 @@ Find added/modified/deleted items in README.md and apply them to the same positi
 - Keep technical terms, product names, code, and URLs in English
 - Preserve markdown formatting, links, and code blocks exactly
 - Maintain table structure precisely
+- Preserve all explicit anchor IDs and HTML comments, including catalog boundaries and recent-updates markers
+- Keep four-column resource tables, verification dates, and source ordering identical across languages
 
 ### Korean (README.ko.md)
 - First line: `# Awesome Vibe Coding (한국어)`
@@ -54,14 +56,14 @@ Each agent:
 
 When new item added to README.md:
 ```markdown
-### Cloud & Platform Integrations
-| Tool | Description |
-|------|-------------|
-| [**Lovable**](https://lovable.dev/) | Full-stack app generation with Supabase |
-| [**NewTool**](https://newtool.com/) | New AI tool description |
-| [**Duet AI**](https://workspace.google.com/solutions/ai/) | Google Workspace AI integration |
+### App & UI Prototyping
+| Resource | When to use it | Access / terms | Verified |
+|---|---|---|---|
+| [**Lovable**](https://lovable.dev/) | Generate an app prototype | Check terms | — |
+| [**NewTool**](https://newtool.com/) | New AI tool description | Check terms | — |
+| [**Replit**](https://replit.com/) | Build in a browser workspace | Check terms | — |
 ```
 
-→ Insert translated item at the same position (between Lovable and Duet AI) in README.ko.md and README.ja.md
+→ Insert the translated item at the same position (between Lovable and Replit) in README.ko.md and README.ja.md. Retain any anchor IDs from the actual source row.
 
 Report translation results to the user upon completion.
