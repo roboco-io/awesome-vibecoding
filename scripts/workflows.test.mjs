@@ -69,3 +69,28 @@ test("HTTP and transport timeouts leave issues open for review", async t => {
     assert.match(await readFile(output, "utf8"), /status=needs_review/, `${code}/${exit} must not reject an issue`);
   }
 });
+
+test("rejected suggestions close as not planned and accepted additions close as completed", async () => {
+  let checked = 0;
+  for (const name of ["auto-process-issue", "issue-approval"]) {
+    const data = await workflow(name);
+    for (const [jobName, job] of Object.entries(data.jobs)) {
+      for (const step of job.steps) {
+        const script = step.with?.script;
+        if (!script?.includes("state: 'closed'")) continue;
+        const updates = [];
+        const context = vm.createContext({
+          process: { env: { REASON: "Out of scope", RESOURCE_URL: "https://example.invalid/", HTTP_CODE: "404" } },
+          context: { repo: { owner: "owner", repo: "repo" }, issue: { number: 1 }, payload: { issue: { number: 1 }, comment: { body: "/reject Out of scope" } } },
+          github: { rest: { issues: { createComment: async () => {}, update: async value => updates.push(value) } } },
+        });
+        await vm.runInContext(`(async () => {${script.replace("${{ steps.validate.outputs.body_len }}", "5001")}})()`, context);
+        assert.equal(updates.length, 1);
+        const rejected = step.name.startsWith("Reject") || jobName === "handle-reject";
+        assert.equal(updates[0].state_reason, rejected ? "not_planned" : "completed", `${name}: ${step.name}`);
+        checked++;
+      }
+    }
+  }
+  assert.equal(checked, 8);
+});

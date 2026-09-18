@@ -100,6 +100,7 @@ jobs:
               repo: context.repo.repo,
               issue_number: context.issue.number,
               state: 'closed',
+              state_reason: 'not_planned',
               labels: ['invalid']
             });
 
@@ -119,6 +120,7 @@ jobs:
               repo: context.repo.repo,
               issue_number: context.issue.number,
               state: 'closed',
+              state_reason: 'not_planned',
               labels: ['invalid']
             });
 
@@ -157,6 +159,7 @@ jobs:
               repo: context.repo.repo,
               issue_number: context.issue.number,
               state: 'closed',
+              state_reason: 'not_planned',
               labels: ['invalid']
             });
 
@@ -178,6 +181,7 @@ jobs:
               repo: context.repo.repo,
               issue_number: context.issue.number,
               state: 'closed',
+              state_reason: 'not_planned',
               labels: ['duplicate']
             });
 
@@ -228,6 +232,7 @@ jobs:
               repo: context.repo.repo,
               issue_number: context.issue.number,
               state: 'closed',
+              state_reason: 'not_planned',
               labels: ['rejected']
             });
 
@@ -291,7 +296,8 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.payload.issue.number,
-              state: 'closed'
+              state: 'closed',
+              state_reason: 'completed'
             });
 
       - name: Request review if no changes
