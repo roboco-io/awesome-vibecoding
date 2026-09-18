@@ -19,7 +19,8 @@ A concise, reviewed starting point for **building software with AI**. The core t
 [Code](#code) · [App & UI](#apps) · [Context & specs](#context) · [Test & review](#quality) · [Deploy & run](#delivery) · [Workspaces & usage](#operations) · [Community](#community)
 
 <a id="recent-updates"></a>
-## Recent Verified Updates
+<details>
+<summary><strong>Recent Verified Updates</strong></summary>
 
 Recent reviews and material changes from the last 30 days, newest first. A review date is **not a product release date**. [Lifecycle review and evidence](docs/lifecycle-review-2026-09-18.md) record what was checked.
 
@@ -36,6 +37,8 @@ Recent reviews and material changes from the last 30 days, newest first. A revie
 | 2026-09-18 | [Vibe Coding with Confidence (Mahmoud Zalt)](#resource-vibe-coding-with-confidence-mahmoud-zalt) | Access clarified: free core chapters and paid advanced chapters. |
 | 2026-09-18 | [opencode](docs/catalog-history.md#resource-opencode) | Status checked: this historical repository is archived and points to Crush. |
 <!-- recent-updates:end -->
+
+</details>
 
 <a id="start-here"></a>
 ## Start Here

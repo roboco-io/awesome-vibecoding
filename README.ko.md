@@ -19,7 +19,8 @@
 [코딩](#code) · [앱 & UI](#apps) · [컨텍스트 & 명세](#context) · [테스트 & 리뷰](#quality) · [배포 & 실행](#delivery) · [작업 공간 & 사용량](#operations) · [커뮤니티](#community)
 
 <a id="recent-updates"></a>
-## 최근 검증된 업데이트
+<details>
+<summary><strong>최근 검증된 업데이트</strong></summary>
 
 지난 30일의 검토와 주요 변경 사항을 최신순으로 정리했습니다. 검토 날짜는 **제품 출시일이 아닙니다**. 확인한 내용은 [서비스 상태 검토와 근거](docs/lifecycle-review-2026-09-18.md)에 남깁니다.
 
@@ -36,6 +37,8 @@
 | 2026-09-18 | [Vibe Coding with Confidence (Mahmoud Zalt)](#resource-vibe-coding-with-confidence-mahmoud-zalt) | 이용 조건 명확화: 기본 장은 무료, 심화 장은 유료. |
 | 2026-09-18 | [opencode](docs/catalog-history.md#resource-opencode) | 상태 확인: 과거 저장소가 아카이브되었으며 Crush를 후속 프로젝트로 안내함. |
 <!-- recent-updates:end -->
+
+</details>
 
 <a id="start-here"></a>
 ## 시작하기

@@ -19,7 +19,8 @@
 [コード](#code) · [アプリ・UI](#apps) · [コンテキスト・仕様](#context) · [テスト・レビュー](#quality) · [デプロイ・実行](#delivery) · [ワークスペース・使用状況](#operations) · [コミュニティ](#community)
 
 <a id="recent-updates"></a>
-## 最近の確認済み更新
+<details>
+<summary><strong>最近の確認済み更新</strong></summary>
 
 過去30日間のレビューと重要な変更を新しい順に掲載しています。確認日は **製品のリリース日ではありません**。[提供状況のレビューと根拠](docs/lifecycle-review-2026-09-18.md)に確認内容を記録しています。
 
@@ -36,6 +37,8 @@
 | 2026-09-18 | [Vibe Coding with Confidence (Mahmoud Zalt)](#resource-vibe-coding-with-confidence-mahmoud-zalt) | 利用条件を明確化：基本章は無料、上級章は有料です。 |
 | 2026-09-18 | [opencode](docs/catalog-history.md#resource-opencode) | 状態を確認：旧リポジトリはアーカイブ済みで、Crushを案内しています。 |
 <!-- recent-updates:end -->
+
+</details>
 
 <a id="start-here"></a>
 ## はじめに
