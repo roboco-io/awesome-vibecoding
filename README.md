@@ -27,6 +27,7 @@ Recent reviews and material changes from the last 30 days, newest first. A revie
 <!-- recent-updates:start -->
 | Verified on | Update | What changed |
 |---|---|---|
+| 2026-09-20 | [Delta (Zed)](#resource-delta) | Reviewed addition: multiplayer agent-coding workspace with thread-based review; public beta, free during beta. |
 | 2026-09-18 | [Shep](#resource-shep) | Reviewed addition: local-first orchestrator that runs parallel coding agents in isolated Git worktrees through to draft PRs. |
 | 2026-09-18 | [Lifecycle cleanup](docs/lifecycle-review-2026-09-18.md) | Removed unavailable/new-user-blocked entries, corrected canonical products, and reduced the core tool list from 156 to 40. |
 | 2026-09-18 | [Pi](#resource-pi) | Reviewed addition: extensible MIT terminal coding agent with multi-provider models and an SDK. |
@@ -36,7 +37,6 @@ Recent reviews and material changes from the last 30 days, newest first. A revie
 | 2026-09-18 | [Agent QA](#resource-agent-qa) | Reviewed addition: web/mobile test workflows; FSL-1.1-ALv2 is identified. |
 | 2026-09-18 | [Duckweed](#resource-duckweed) | Reviewed addition: local coding-agent terminal workspace; source-available license. |
 | 2026-09-18 | [Vibe Coding with Confidence (Mahmoud Zalt)](#resource-vibe-coding-with-confidence-mahmoud-zalt) | Access clarified: free core chapters and paid advanced chapters. |
-| 2026-09-18 | [opencode](docs/catalog-history.md#resource-opencode) | Status checked: this historical repository is archived and points to Crush. |
 <!-- recent-updates:end -->
 
 </details>
@@ -153,6 +153,7 @@ Organize sessions, inspect runs, and understand usage or availability.
 <!-- catalog:operations -->
 | Resource | When to use it | Access / scope | Verified |
 |---|---|---|---|
+| <a id="resource-delta"></a>[**Delta (Zed)**](https://delta.dev/) · Desktop | Run agent threads and review their changes in a multiplayer workspace that keeps conversation and code history connected; works with existing Git repositories | Free during public beta; paid plans planned; model costs separate | 2026-09-20 |
 | <a id="resource-duckweed"></a>[**Duckweed**](https://github.com/MusicMaster4/Duckweed) · Desktop | Run coding agents, shells, Git diffs and sessions in a local cross-platform workspace | Source-available; see license; model/provider costs separate | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-duckweed) |
 | <a id="resource-llm-log"></a>[**llm.log**](https://github.com/lanesket/llm.log) | Inspect model costs, tokens and request traces through a local proxy | MIT; model/provider costs separate | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-llm-log) |
 | <a id="resource-parallel-code"></a>[**Parallel Code**](https://github.com/johannesjo/parallel-code) · Desktop | Run coding agents in isolated Git worktrees and review their changes | MIT; model/provider costs separate | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-parallel-code) |

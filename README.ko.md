@@ -27,6 +27,7 @@
 <!-- recent-updates:start -->
 | 검증일 | 업데이트 | 변경 사항 |
 |---|---|---|
+| 2026-09-20 | [Delta (Zed)](#resource-delta) | 검토 후 추가: 스레드 기반 리뷰를 제공하는 멀티플레이어 에이전트 코딩 작업 공간; 공개 베타 기간 묵료. |
 | 2026-09-18 | [Shep](#resource-shep) | 검토 후 추가: 격리된 Git worktree에서 여러 코딩 에이전트를 병렬 실행해 초안 PR까지 자동화하는 로컬 우선 오케스트레이터. |
 | 2026-09-18 | [서비스 상태 정리](docs/lifecycle-review-2026-09-18.md) | 이용 불가·신규 사용자 접근 제한 항목 제거, 공식 제품명 수정, 핵심 도구 목록을 156개에서 40개로 축소. |
 | 2026-09-18 | [Pi](#resource-pi) | 검토 후 추가: 다중 프로바이더 모델과 SDK를 갖춘 MIT 라이선스 확장형 터미널 코딩 에이전트. |
@@ -36,7 +37,6 @@
 | 2026-09-18 | [Agent QA](#resource-agent-qa) | 검토 후 추가: 웹·모바일 테스트 워크플로우; FSL-1.1-ALv2 라이선스 명시. |
 | 2026-09-18 | [Duckweed](#resource-duckweed) | 검토 후 추가: 코딩 에이전트용 로컬 터미널 작업 공간; 소스 공개 라이선스. |
 | 2026-09-18 | [Vibe Coding with Confidence (Mahmoud Zalt)](#resource-vibe-coding-with-confidence-mahmoud-zalt) | 이용 조건 명확화: 기본 장은 무료, 심화 장은 유료. |
-| 2026-09-18 | [opencode](docs/catalog-history.md#resource-opencode) | 상태 확인: 과거 저장소가 아카이브되었으며 Crush를 후속 프로젝트로 안내함. |
 <!-- recent-updates:end -->
 
 </details>
@@ -153,6 +153,7 @@
 <!-- catalog:operations -->
 | 리소스 | 활용 목적 | 이용 조건·범위 | 검증일 |
 |---|---|---|---|
+| <a id="resource-delta"></a>[**Delta (Zed)**](https://delta.dev/) · Desktop | 대화와 코드 이력을 함께 유지하는 멀티플레이어 작업 공간에서 에이전트 스레드를 실행하고 변경 사항을 검토; 기존 Git 저장소와 함께 사용 | 공개 베타 기간 묵료; 유료 요금제 제공 예정; 모델 비용 별도 | 2026-09-20 |
 | <a id="resource-duckweed"></a>[**Duckweed**](https://github.com/MusicMaster4/Duckweed) · Desktop | 여러 운영체제를 지원하는 로컬 작업 공간에서 코딩 에이전트·셸·Git diff·세션 관리 | 소스 공개; 라이선스 확인; 모델·공급자 비용 별도 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-duckweed) |
 | <a id="resource-llm-log"></a>[**llm.log**](https://github.com/lanesket/llm.log) | 로컬 프록시를 통해 모델 비용·토큰·요청 추적 정보 확인 | MIT; 모델·공급자 비용 별도 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-llm-log) |
 | <a id="resource-parallel-code"></a>[**Parallel Code**](https://github.com/johannesjo/parallel-code) · Desktop | 격리된 Git worktree에서 코딩 에이전트를 실행하고 변경 사항 검토 | MIT; 모델·공급자 비용 별도 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-parallel-code) |
