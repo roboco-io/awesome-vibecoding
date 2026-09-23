@@ -27,6 +27,7 @@ Recent reviews and material changes from the last 30 days, newest first. A revie
 <!-- recent-updates:start -->
 | Verified on | Update | What changed |
 |---|---|---|
+| 2026-09-23 | [Prbl](#resource-prbl) | Reviewed addition: security scanner for flaws common in AI-generated code; free scan and GitHub Action, paid rewriter. |
 | 2026-09-20 | [Delta (Zed)](#resource-delta) | Reviewed addition: multiplayer agent-coding workspace with thread-based review; public beta, free during beta. |
 | 2026-09-18 | [Shep](#resource-shep) | Reviewed addition: local-first orchestrator that runs parallel coding agents in isolated Git worktrees through to draft PRs. |
 | 2026-09-18 | [Lifecycle cleanup](docs/lifecycle-review-2026-09-18.md) | Removed unavailable/new-user-blocked entries, corrected canonical products, and reduced the core tool list from 156 to 40. |
@@ -36,7 +37,6 @@ Recent reviews and material changes from the last 30 days, newest first. A revie
 | 2026-09-18 | [Publish.my](#resource-publish-my) | Reviewed addition: agent-oriented static-site publishing; email activation required. |
 | 2026-09-18 | [Agent QA](#resource-agent-qa) | Reviewed addition: web/mobile test workflows; FSL-1.1-ALv2 is identified. |
 | 2026-09-18 | [Duckweed](#resource-duckweed) | Reviewed addition: local coding-agent terminal workspace; source-available license. |
-| 2026-09-18 | [Vibe Coding with Confidence (Mahmoud Zalt)](#resource-vibe-coding-with-confidence-mahmoud-zalt) | Access clarified: free core chapters and paid advanced chapters. |
 <!-- recent-updates:end -->
 
 </details>
@@ -126,6 +126,7 @@ Check behavior, review generated changes, and diagnose failures.
 | <a id="resource-agent-qa"></a>[**Agent QA**](https://github.com/vostride/agent-qa) · MCP | Author and run natural-language web and mobile tests | FSL-1.1-ALv2; source-available with competing-use restriction; model costs | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-agent-qa) |
 | <a id="resource-playwright-mcp-official"></a>[**Playwright MCP (Microsoft)**](https://github.com/microsoft/playwright-mcp) · MCP | Official browser automation through structured page snapshots | Apache-2.0 client; model terms separate | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-playwright-mcp-official) |
 | <a id="resource-pr-agent"></a>[**PR-Agent**](https://github.com/The-PR-Agent/pr-agent) | Community-maintained pull request reviewer, separate from Qodo | Check pricing | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-pr-agent) |
+| <a id="resource-prbl"></a>[**Prbl**](https://getprbl.com) · Web | Scan a live app or repo for flaws AI coding tools commonly introduce; GitHub Action comments on PRs; Pro rewriter applies verified fixes | Free scan and GitHub Action; paid plans for rewriter and private repos; Python/JS/TS only | 2026-09-23 |
 | <a id="resource-qodo"></a>[**Qodo**](https://www.qodo.ai) | AI code review engine (formerly CodiumAI) | Check pricing | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-qodo) |
 | <a id="resource-semgrep"></a>[**Semgrep MCP**](https://github.com/semgrep/semgrep/tree/develop/cli/src/semgrep/mcp) · MCP | MCP security scanning through the maintained Semgrep CLI | Check pricing | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-semgrep) |
 | <a id="resource-sentry"></a>[**Sentry**](https://github.com/getsentry/sentry-mcp) · MCP | Inspect application errors and diagnose failures | Functional Source License; source-available; check hosted terms | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-sentry) |

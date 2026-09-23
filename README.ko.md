@@ -27,6 +27,7 @@
 <!-- recent-updates:start -->
 | 검증일 | 업데이트 | 변경 사항 |
 |---|---|---|
+| 2026-09-23 | [Prbl](#resource-prbl) | 검토 후 추가: AI 생성 코드에 흔한 취약점을 검사하는 스캐너; 물료 검사와 GitHub Action, 재작성기는 유료. |
 | 2026-09-20 | [Delta (Zed)](#resource-delta) | 검토 후 추가: 스레드 기반 리뷰를 제공하는 멀티플레이어 에이전트 코딩 작업 공간; 공개 베타 기간 묵료. |
 | 2026-09-18 | [Shep](#resource-shep) | 검토 후 추가: 격리된 Git worktree에서 여러 코딩 에이전트를 병렬 실행해 초안 PR까지 자동화하는 로컬 우선 오케스트레이터. |
 | 2026-09-18 | [서비스 상태 정리](docs/lifecycle-review-2026-09-18.md) | 이용 불가·신규 사용자 접근 제한 항목 제거, 공식 제품명 수정, 핵심 도구 목록을 156개에서 40개로 축소. |
@@ -36,7 +37,6 @@
 | 2026-09-18 | [Publish.my](#resource-publish-my) | 검토 후 추가: 에이전트용 정적 사이트 게시; 이메일 활성화 필요. |
 | 2026-09-18 | [Agent QA](#resource-agent-qa) | 검토 후 추가: 웹·모바일 테스트 워크플로우; FSL-1.1-ALv2 라이선스 명시. |
 | 2026-09-18 | [Duckweed](#resource-duckweed) | 검토 후 추가: 코딩 에이전트용 로컬 터미널 작업 공간; 소스 공개 라이선스. |
-| 2026-09-18 | [Vibe Coding with Confidence (Mahmoud Zalt)](#resource-vibe-coding-with-confidence-mahmoud-zalt) | 이용 조건 명확화: 기본 장은 무료, 심화 장은 유료. |
 <!-- recent-updates:end -->
 
 </details>
@@ -126,6 +126,7 @@
 | <a id="resource-agent-qa"></a>[**Agent QA**](https://github.com/vostride/agent-qa) · MCP | 자연어로 웹·모바일 테스트 작성 및 실행 | FSL-1.1-ALv2; 소스 공개, 경쟁 용도 사용 제한; 모델 비용 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-agent-qa) |
 | <a id="resource-playwright-mcp-official"></a>[**Playwright MCP (Microsoft)**](https://github.com/microsoft/playwright-mcp) · MCP | 구조화된 페이지 스냅샷을 활용하는 공식 브라우저 자동화 | Apache-2.0 클라이언트; 모델 이용 조건 별도 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-playwright-mcp-official) |
 | <a id="resource-pr-agent"></a>[**PR-Agent**](https://github.com/The-PR-Agent/pr-agent) | Qodo와 별개로 커뮤니티가 유지보수하는 풀 리퀘스트 리뷰 도구 | 요금 확인 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-pr-agent) |
+| <a id="resource-prbl"></a>[**Prbl**](https://getprbl.com) · Web | AI 코딩 도구가 자주 만드는 취약점을 실제 앱이나 저장소에서 검사; GitHub Action이 PR에 결과를 댓글로 표시; Pro 재작성기가 검증된 수정 적용 | 물료 검사와 GitHub Action; 재작성기·비공개 저장소는 유료 요금제; Python/JS/TS만 지원 | 2026-09-23 |
 | <a id="resource-qodo"></a>[**Qodo**](https://www.qodo.ai) | AI 코드 리뷰 엔진 (구 CodiumAI) | 요금 확인 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-qodo) |
 | <a id="resource-semgrep"></a>[**Semgrep MCP**](https://github.com/semgrep/semgrep/tree/develop/cli/src/semgrep/mcp) · MCP | 유지보수 중인 Semgrep CLI를 통한 MCP 보안 검사 | 요금 확인 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-semgrep) |
 | <a id="resource-sentry"></a>[**Sentry**](https://github.com/getsentry/sentry-mcp) · MCP | 앱 오류 확인 및 장애 진단 | Functional Source License; 소스 공개; 호스팅 이용 조건 확인 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-sentry) |
