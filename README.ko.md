@@ -27,6 +27,7 @@
 <!-- recent-updates:start -->
 | 검증일 | 업데이트 | 변경 사항 |
 |---|---|---|
+| 2026-10-04 | [VDLC](#resource-vdlc) | 검토 후 추가: 의도와 컨텍스트를 1차 산출물로 다루는 개발 생명주기 프레임워크; 계획·리뷰·배포 관문은 사람이 담당; 삼중 언어 가이드. |
 | 2026-09-23 | [Prbl](#resource-prbl) | 검토 후 추가: AI 생성 코드에 흔한 취약점을 검사하는 스캐너; 물료 검사와 GitHub Action, 재작성기는 유료. |
 | 2026-09-20 | [Delta (Zed)](#resource-delta) | 검토 후 추가: 스레드 기반 리뷰를 제공하는 멀티플레이어 에이전트 코딩 작업 공간; 공개 베타 기간 묵료. |
 | 2026-09-18 | [Shep](#resource-shep) | 검토 후 추가: 격리된 Git worktree에서 여러 코딩 에이전트를 병렬 실행해 초안 PR까지 자동화하는 로컬 우선 오케스트레이터. |
@@ -36,7 +37,6 @@
 | 2026-09-18 | [Superagent](#resource-superagent) | 검토 후 추가: 브라우저 및 iOS 워크플로우를 지원하는 macOS 코딩 에이전트 작업 공간. |
 | 2026-09-18 | [Publish.my](#resource-publish-my) | 검토 후 추가: 에이전트용 정적 사이트 게시; 이메일 활성화 필요. |
 | 2026-09-18 | [Agent QA](#resource-agent-qa) | 검토 후 추가: 웹·모바일 테스트 워크플로우; FSL-1.1-ALv2 라이선스 명시. |
-| 2026-09-18 | [Duckweed](#resource-duckweed) | 검토 후 추가: 코딩 에이전트용 로컬 터미널 작업 공간; 소스 공개 라이선스. |
 <!-- recent-updates:end -->
 
 </details>
@@ -213,6 +213,7 @@
 | <a id="resource-the-model-context-protocol-guide-anthropic"></a>[**Model Context Protocol documentation**](https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro) · 가이드 | 현재 MCP 아키텍처와 통합을 설명하는 공식 입문 문서 | 무료 열람; 재사용 조건 확인 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-the-model-context-protocol-guide-anthropic) |
 | <a id="resource-swe-agent-agent-computer-interfaces-enable-automated-software-engineering"></a>[**SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering**](https://arxiv.org/abs/2405.15793) · 논문 | Agent-Computer Interface를 사용하여 실제 버그를 수정하는 자율 에이전트 | 무료 열람; 재사용 조건 확인 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-swe-agent-agent-computer-interfaces-enable-automated-software-engineering) |
 | <a id="resource-swe-bench-can-language-models-resolve-real-world-github-issues"></a>[**SWE-bench: Can Language Models Resolve Real-World GitHub Issues?**](https://arxiv.org/abs/2310.06770) · 논문 | AI 코딩 에이전트 평가를 위한 표준 벤치마크 | 무료 열람; 재사용 조건 확인 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-swe-bench-can-language-models-resolve-real-world-github-issues) |
+| <a id="resource-vdlc"></a>[**VDLC — Vibe-Driven Development Lifecycle (Roboco)**](https://vdlc.roboco.io/) · 가이드 | 의도와 컨텍스트를 1차 산출물로 다루는 개발 생명주기 프레임워크; 계획 승인·최종 리뷰·배포 승인 관문을 사람이 지키는 6단계 구성; 영·한·일 삼중 언어 제공 | 물료 열림; 재사용 조건 확인 | 2026-10-04 |
 
 <details>
 <summary>배경과 기원</summary>

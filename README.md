@@ -27,6 +27,7 @@ Recent reviews and material changes from the last 30 days, newest first. A revie
 <!-- recent-updates:start -->
 | Verified on | Update | What changed |
 |---|---|---|
+| 2026-10-04 | [VDLC](#resource-vdlc) | Reviewed addition: development lifecycle framework that treats intent and context as primary artifacts, with human gates at plan, review and deploy; trilingual guide. |
 | 2026-09-23 | [Prbl](#resource-prbl) | Reviewed addition: security scanner for flaws common in AI-generated code; free scan and GitHub Action, paid rewriter. |
 | 2026-09-20 | [Delta (Zed)](#resource-delta) | Reviewed addition: multiplayer agent-coding workspace with thread-based review; public beta, free during beta. |
 | 2026-09-18 | [Shep](#resource-shep) | Reviewed addition: local-first orchestrator that runs parallel coding agents in isolated Git worktrees through to draft PRs. |
@@ -36,7 +37,6 @@ Recent reviews and material changes from the last 30 days, newest first. A revie
 | 2026-09-18 | [Superagent](#resource-superagent) | Reviewed addition: macOS coding-agent workspace with browser and iOS workflows. |
 | 2026-09-18 | [Publish.my](#resource-publish-my) | Reviewed addition: agent-oriented static-site publishing; email activation required. |
 | 2026-09-18 | [Agent QA](#resource-agent-qa) | Reviewed addition: web/mobile test workflows; FSL-1.1-ALv2 is identified. |
-| 2026-09-18 | [Duckweed](#resource-duckweed) | Reviewed addition: local coding-agent terminal workspace; source-available license. |
 <!-- recent-updates:end -->
 
 </details>
@@ -213,6 +213,7 @@ Understand the tools after trying a small project, or go deeper into evaluation 
 | <a id="resource-the-model-context-protocol-guide-anthropic"></a>[**Model Context Protocol documentation**](https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro) · Guide | Current official introduction to MCP architecture and integrations | Free reading; check reuse terms | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-the-model-context-protocol-guide-anthropic) |
 | <a id="resource-swe-agent-agent-computer-interfaces-enable-automated-software-engineering"></a>[**SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering**](https://arxiv.org/abs/2405.15793) · Paper | Autonomous agent fixing real bugs using Agent-Computer Interface | Free reading; check reuse terms | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-swe-agent-agent-computer-interfaces-enable-automated-software-engineering) |
 | <a id="resource-swe-bench-can-language-models-resolve-real-world-github-issues"></a>[**SWE-bench: Can Language Models Resolve Real-World GitHub Issues?**](https://arxiv.org/abs/2310.06770) · Paper | Standard benchmark for evaluating AI coding agents | Free reading; check reuse terms | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-swe-bench-can-language-models-resolve-real-world-github-issues) |
+| <a id="resource-vdlc"></a>[**VDLC — Vibe-Driven Development Lifecycle (Roboco)**](https://vdlc.roboco.io/) · Guide | Development lifecycle framework treating intent and context as the primary artifacts; six stages with human gates at plan approval, final review and deploy; trilingual EN/KO/JA | Free reading; check reuse terms | 2026-10-04 |
 
 <details>
 <summary>Background and origin</summary>
