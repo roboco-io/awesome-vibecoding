@@ -27,6 +27,7 @@ Recent reviews and material changes from the last 30 days, newest first. A revie
 <!-- recent-updates:start -->
 | Verified on | Update | What changed |
 |---|---|---|
+| 2026-10-10 | [DropTheHassle](#resource-dropthehassle) | Reviewed addition: agent publishes a built site to a free HTTPS link without an account; paid custom domains via a human payment link. |
 | 2026-10-04 | [VDLC](#resource-vdlc) | Reviewed addition: development lifecycle framework that treats intent and context as primary artifacts, with human gates at plan, review and deploy; trilingual guide. |
 | 2026-09-23 | [Prbl](#resource-prbl) | Reviewed addition: security scanner for flaws common in AI-generated code; free scan and GitHub Action, paid rewriter. |
 | 2026-09-20 | [Delta (Zed)](#resource-delta) | Reviewed addition: multiplayer agent-coding workspace with thread-based review; public beta, free during beta. |
@@ -36,7 +37,6 @@ Recent reviews and material changes from the last 30 days, newest first. A revie
 | 2026-09-18 | [NextReset](docs/verified-catalog.md#resource-nextreset) | Reviewed addition: unofficial public reset history and local countdowns; forecasts are not endorsed. |
 | 2026-09-18 | [Superagent](#resource-superagent) | Reviewed addition: macOS coding-agent workspace with browser and iOS workflows. |
 | 2026-09-18 | [Publish.my](#resource-publish-my) | Reviewed addition: agent-oriented static-site publishing; email activation required. |
-| 2026-09-18 | [Agent QA](#resource-agent-qa) | Reviewed addition: web/mobile test workflows; FSL-1.1-ALv2 is identified. |
 <!-- recent-updates:end -->
 
 </details>
@@ -141,6 +141,7 @@ Build, publish, or run code in an appropriate execution environment.
 | Resource | When to use it | Access / scope | Verified |
 |---|---|---|---|
 | <a id="resource-cloudflare"></a>[**Cloudflare**](https://github.com/cloudflare/mcp-server-cloudflare) · MCP | Manage application deployment and cloud resources | Check pricing | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-cloudflare) |
+| <a id="resource-dropthehassle"></a>[**DropTheHassle**](https://dropthehassle.com) · CLI / MCP | Agent publishes a built site to a free HTTPS link with no account; human approves optional custom domain or email via a payment link | Free deploys; domains €12–€25/yr, email from €5/mo; MIT client; agent cannot pay | 2026-10-10 |
 | <a id="resource-e2b"></a>[**E2B**](https://github.com/e2b-dev/E2B) | Secure cloud sandbox environment for enterprise-grade AI agents | Check pricing | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-e2b) |
 | <a id="resource-publish-my"></a>[**Publish.my**](https://publish.my/) · Web | Agent-driven static-site publishing with email activation | Free tier; static sites only; email activation | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-publish-my) |
 | <a id="resource-xcode-build-mcp"></a>[**XcodeBuildMCP**](https://github.com/getsentry/XcodeBuildMCP) · MCP | CLI and MCP tools for building, running and debugging Apple-platform projects | Check pricing | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-xcode-build-mcp) |
