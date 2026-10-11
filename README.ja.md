@@ -27,6 +27,7 @@
 <!-- recent-updates:start -->
 | 確認日 | 更新項目 | 変更内容 |
 |---|---|---|
+| 2026-10-11 | [Coderblock](#resource-coderblock) | レビュー後に追加：アプリごとのSupabaseバックエンドを備えた対話型フルスタックWebアプリビルダー。無料の開始クレジットと有料プランあり。 |
 | 2026-10-11 | [Universal Modder Field Guide: Codexセットアップ](#resource-universal-modder-field-guide-codex) | レビュー後に追加：Universal ModderゲームMODツールキット向けの非公式Codexインストール・検証ガイド。閲覧無料。 |
 | 2026-10-10 | [DropTheHassle](#resource-dropthehassle) | レビュー後に追加：エージェントがビルド済みサイトをアカウント不要の無料HTTPSリンクに公開。有料カスタムドメインは人の支払いリンクで処理。 |
 | 2026-10-04 | [VDLC](#resource-vdlc) | レビュー後に追加：意図とコンテキストを一次成果物とする開発ライフサイクルの枠組み。計画・レビュー・デプロイのゲートは人が担当。3言語ガイド。 |
@@ -36,7 +37,6 @@
 | 2026-09-18 | [提供状況に基づく整理](docs/lifecycle-review-2026-09-18.md) | 利用できない項目や新規利用できない項目を除外し、正式な製品情報を修正。主要ツールを156件から40件に絞りました。 |
 | 2026-09-18 | [Pi](#resource-pi) | レビュー後に追加：マルチプロバイダーモデルとSDKを備えたMITライセンスの拡張型ターミナルコーディングエージェント。 |
 | 2026-09-18 | [NextReset](docs/verified-catalog.md#resource-nextreset) | レビュー後に追加：非公式の公開リセット履歴とローカルのカウントダウン。予測の正確性を保証するものではありません。 |
-| 2026-09-18 | [Superagent](#resource-superagent) | レビュー後に追加：ブラウザとiOSのワークフローに対応したmacOS用コーディングエージェントワークスペース。 |
 <!-- recent-updates:end -->
 
 </details>
@@ -90,6 +90,7 @@
 | リソース | 用途 | 利用方法・範囲 | 確認日 |
 |---|---|---|---|
 | <a id="resource-bolt-new"></a>[**Bolt.new**](https://bolt.new/) · Web | StackBlitzによる自然言語アプリ構築 | 料金を要確認 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-bolt-new) |
+| <a id="resource-coderblock"></a>[**Coderblock**](https://coderblock.ai/) · Web | チャットでフルスタックWebアプリを構築。アプリごとのSupabaseバックエンド、ライブプレビュー、ワンクリックデプロイに対応 | 無料の開始クレジット（生涯分の割り当て）；有料プランは月約$20から；料金を要確認 | 2026-10-11 |
 | <a id="resource-dyad"></a>[**Dyad**](https://github.com/dyad-sh/dyad) · Desktop | モデルプロバイダーを設定してローカルでアプリを構築 | 料金を要確認；ローカルデスクトップアプリとモデルプロバイダーの費用 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-dyad) |
 | <a id="resource-lovable"></a>[**Lovable**](https://lovable.dev/) · Web | Supabaseを使用したフルスタックアプリ生成 | 料金を要確認 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-lovable) |
 | <a id="resource-onlook"></a>[**Onlook**](https://www.onlook.com/) · Web | コードを扱いながらアプリのインターフェースを視覚的に編集 | 料金を要確認 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-onlook) |

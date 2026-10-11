@@ -27,6 +27,7 @@
 <!-- recent-updates:start -->
 | 검증일 | 업데이트 | 변경 사항 |
 |---|---|---|
+| 2026-10-11 | [Coderblock](#resource-coderblock) | 검토 후 추가: 앱별 Supabase 백엔드를 갖춘 대화형 풀스택 웹 앱 빌더; 묣료 시작 크레딧, 유료 요금제 제공. |
 | 2026-10-11 | [Universal Modder Field Guide: Codex 설정](#resource-universal-modder-field-guide-codex) | 검토 후 추가: Universal Modder 게임 모딩 툴킷을 위한 비공식 Codex 설치·검증 가이드; 물료 열림. |
 | 2026-10-10 | [DropTheHassle](#resource-dropthehassle) | 검토 후 추가: 에이전트가 빌드된 사이트를 계정 없이 묣료 HTTPS 링크에 게시; 유료 커스텀 도메인은 사람의 결제 링크로 진행. |
 | 2026-10-04 | [VDLC](#resource-vdlc) | 검토 후 추가: 의도와 컨텍스트를 1차 산출물로 다루는 개발 생명주기 프레임워크; 계획·리뷰·배포 관문은 사람이 담당; 삼중 언어 가이드. |
@@ -36,7 +37,6 @@
 | 2026-09-18 | [서비스 상태 정리](docs/lifecycle-review-2026-09-18.md) | 이용 불가·신규 사용자 접근 제한 항목 제거, 공식 제품명 수정, 핵심 도구 목록을 156개에서 40개로 축소. |
 | 2026-09-18 | [Pi](#resource-pi) | 검토 후 추가: 다중 프로바이더 모델과 SDK를 갖춘 MIT 라이선스 확장형 터미널 코딩 에이전트. |
 | 2026-09-18 | [NextReset](docs/verified-catalog.md#resource-nextreset) | 검토 후 추가: 비공식 공개 초기화 이력과 로컬 카운트다운; 예측의 정확성을 보증하지 않음. |
-| 2026-09-18 | [Superagent](#resource-superagent) | 검토 후 추가: 브라우저 및 iOS 워크플로우를 지원하는 macOS 코딩 에이전트 작업 공간. |
 <!-- recent-updates:end -->
 
 </details>
@@ -90,6 +90,7 @@
 | 리소스 | 활용 목적 | 이용 조건·범위 | 검증일 |
 |---|---|---|---|
 | <a id="resource-bolt-new"></a>[**Bolt.new**](https://bolt.new/) · Web | StackBlitz의 자연어 앱 빌딩 | 요금 확인 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-bolt-new) |
+| <a id="resource-coderblock"></a>[**Coderblock**](https://coderblock.ai/) · Web | 채팅으로 풀스택 웹 앱을 빌드; 앱별 Supabase 백엔드, 실시간 미리보기와 원클릭 배포 제공 | 묣료 시작 크레딧(평생 한정 수량); 유료 요금제 월 약 $20부터; 요금 확인 | 2026-10-11 |
 | <a id="resource-dyad"></a>[**Dyad**](https://github.com/dyad-sh/dyad) · Desktop | 모델 공급자를 설정하여 로컬에서 앱 개발 | 요금 확인; 로컬 데스크톱 앱 및 모델 공급자 비용. | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-dyad) |
 | <a id="resource-lovable"></a>[**Lovable**](https://lovable.dev/) · Web | Supabase를 사용한 풀스택 앱 생성 | 요금 확인 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-lovable) |
 | <a id="resource-onlook"></a>[**Onlook**](https://www.onlook.com/) · Web | 코드 작업과 함께 앱 인터페이스를 시각적으로 편집 | 요금 확인 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-onlook) |
