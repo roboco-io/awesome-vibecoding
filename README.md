@@ -27,6 +27,7 @@ Recent reviews and material changes from the last 30 days, newest first. A revie
 <!-- recent-updates:start -->
 | Verified on | Update | What changed |
 |---|---|---|
+| 2026-10-11 | [Massvai](#resource-massvai) | Reviewed addition: prompt-to-full-stack Next.js app builder with Supabase, live preview, GitHub export and Vercel deploy; free starting credits, paid plans. |
 | 2026-10-11 | [Coderblock](#resource-coderblock) | Reviewed addition: conversational builder for full-stack web apps with per-app Supabase backends; free starting credits, paid tiers. |
 | 2026-10-11 | [Universal Modder Field Guide: Codex setup](#resource-universal-modder-field-guide-codex) | Reviewed addition: unofficial Codex installation and verification guide for the Universal Modder game-modding toolkit; free reading. |
 | 2026-10-10 | [DropTheHassle](#resource-dropthehassle) | Reviewed addition: agent publishes a built site to a free HTTPS link without an account; paid custom domains via a human payment link. |
@@ -36,7 +37,6 @@ Recent reviews and material changes from the last 30 days, newest first. A revie
 | 2026-09-18 | [Shep](#resource-shep) | Reviewed addition: local-first orchestrator that runs parallel coding agents in isolated Git worktrees through to draft PRs. |
 | 2026-09-18 | [Lifecycle cleanup](docs/lifecycle-review-2026-09-18.md) | Removed unavailable/new-user-blocked entries, corrected canonical products, and reduced the core tool list from 156 to 40. |
 | 2026-09-18 | [Pi](#resource-pi) | Reviewed addition: extensible MIT terminal coding agent with multi-provider models and an SDK. |
-| 2026-09-18 | [NextReset](docs/verified-catalog.md#resource-nextreset) | Reviewed addition: unofficial public reset history and local countdowns; forecasts are not endorsed. |
 <!-- recent-updates:end -->
 
 </details>
@@ -93,6 +93,7 @@ Create a first application or interface from a description or design.
 | <a id="resource-coderblock"></a>[**Coderblock**](https://coderblock.ai/) · Web | Build a full-stack web app by chatting, with a per-app Supabase backend, live preview and one-click deploy | Free starting credits (lifetime allowance); paid plans from about $20/mo; check pricing | 2026-10-11 |
 | <a id="resource-dyad"></a>[**Dyad**](https://github.com/dyad-sh/dyad) · Desktop | Build applications locally with configurable model providers | Check pricing; local desktop app and model-provider costs. | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-dyad) |
 | <a id="resource-lovable"></a>[**Lovable**](https://lovable.dev/) · Web | Full-stack app generation with Supabase | Check pricing | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-lovable) |
+| <a id="resource-massvai"></a>[**Massvai**](https://massvai.com) · Web | Turn a prompt into a full-stack Next.js app with Supabase, live preview, GitHub code export and Vercel deploy | Free plan with 100 welcome credits; paid plans add monthly credits; check pricing | 2026-10-11 |
 | <a id="resource-onlook"></a>[**Onlook**](https://www.onlook.com/) · Web | Edit application interfaces visually while working with code | Check pricing | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-onlook) |
 | <a id="resource-replit"></a>[**Replit**](https://replit.com/) · Web | Build and iterate on applications with Replit Agent | Check pricing | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-replit) |
 | <a id="resource-v0"></a>[**v0**](https://v0.app/) · Web | Vercel's AI for UI/React generation | Check pricing | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-v0) |

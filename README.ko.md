@@ -27,6 +27,7 @@
 <!-- recent-updates:start -->
 | 검증일 | 업데이트 | 변경 사항 |
 |---|---|---|
+| 2026-10-11 | [Massvai](#resource-massvai) | 검토 후 추가: 프롬프트를 Supabase 연동 풀스택 Next.js 앱으로 만들어 주는 빌더; 실시간 미리보기, GitHub 코드 낳출 및 Vercel 배포 지원; 묣료 시작 크레딧과 유료 요금제 제공. |
 | 2026-10-11 | [Coderblock](#resource-coderblock) | 검토 후 추가: 앱별 Supabase 백엔드를 갖춘 대화형 풀스택 웹 앱 빌더; 묣료 시작 크레딧, 유료 요금제 제공. |
 | 2026-10-11 | [Universal Modder Field Guide: Codex 설정](#resource-universal-modder-field-guide-codex) | 검토 후 추가: Universal Modder 게임 모딩 툴킷을 위한 비공식 Codex 설치·검증 가이드; 물료 열림. |
 | 2026-10-10 | [DropTheHassle](#resource-dropthehassle) | 검토 후 추가: 에이전트가 빌드된 사이트를 계정 없이 묣료 HTTPS 링크에 게시; 유료 커스텀 도메인은 사람의 결제 링크로 진행. |
@@ -36,7 +37,6 @@
 | 2026-09-18 | [Shep](#resource-shep) | 검토 후 추가: 격리된 Git worktree에서 여러 코딩 에이전트를 병렬 실행해 초안 PR까지 자동화하는 로컬 우선 오케스트레이터. |
 | 2026-09-18 | [서비스 상태 정리](docs/lifecycle-review-2026-09-18.md) | 이용 불가·신규 사용자 접근 제한 항목 제거, 공식 제품명 수정, 핵심 도구 목록을 156개에서 40개로 축소. |
 | 2026-09-18 | [Pi](#resource-pi) | 검토 후 추가: 다중 프로바이더 모델과 SDK를 갖춘 MIT 라이선스 확장형 터미널 코딩 에이전트. |
-| 2026-09-18 | [NextReset](docs/verified-catalog.md#resource-nextreset) | 검토 후 추가: 비공식 공개 초기화 이력과 로컬 카운트다운; 예측의 정확성을 보증하지 않음. |
 <!-- recent-updates:end -->
 
 </details>
@@ -93,6 +93,7 @@
 | <a id="resource-coderblock"></a>[**Coderblock**](https://coderblock.ai/) · Web | 채팅으로 풀스택 웹 앱을 빌드; 앱별 Supabase 백엔드, 실시간 미리보기와 원클릭 배포 제공 | 묣료 시작 크레딧(평생 한정 수량); 유료 요금제 월 약 $20부터; 요금 확인 | 2026-10-11 |
 | <a id="resource-dyad"></a>[**Dyad**](https://github.com/dyad-sh/dyad) · Desktop | 모델 공급자를 설정하여 로컬에서 앱 개발 | 요금 확인; 로컬 데스크톱 앱 및 모델 공급자 비용. | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-dyad) |
 | <a id="resource-lovable"></a>[**Lovable**](https://lovable.dev/) · Web | Supabase를 사용한 풀스택 앱 생성 | 요금 확인 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-lovable) |
+| <a id="resource-massvai"></a>[**Massvai**](https://massvai.com) · Web | 프롬프트로 Supabase를 갖춘 풀스택 Next.js 앱을 생성; 실시간 미리보기, GitHub 코드 낳출과 Vercel 배포 제공 | 묻료 요금제에 웰컴 크레딧 100개 포함; 유료 요금제는 월간 크레딧 추가; 요금 확인 | 2026-10-11 |
 | <a id="resource-onlook"></a>[**Onlook**](https://www.onlook.com/) · Web | 코드 작업과 함께 앱 인터페이스를 시각적으로 편집 | 요금 확인 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-onlook) |
 | <a id="resource-replit"></a>[**Replit**](https://replit.com/) · Web | Replit Agent로 앱을 개발하고 반복적으로 개선 | 요금 확인 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-replit) |
 | <a id="resource-v0"></a>[**v0**](https://v0.app/) · Web | Vercel의 UI/React 생성 AI | 요금 확인 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-v0) |
