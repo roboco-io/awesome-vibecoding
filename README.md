@@ -27,6 +27,7 @@ Recent reviews and material changes from the last 30 days, newest first. A revie
 <!-- recent-updates:start -->
 | Verified on | Update | What changed |
 |---|---|---|
+| 2026-10-11 | [Universal Modder Field Guide: Codex setup](#resource-universal-modder-field-guide-codex) | Reviewed addition: unofficial Codex installation and verification guide for the Universal Modder game-modding toolkit; free reading. |
 | 2026-10-10 | [DropTheHassle](#resource-dropthehassle) | Reviewed addition: agent publishes a built site to a free HTTPS link without an account; paid custom domains via a human payment link. |
 | 2026-10-04 | [VDLC](#resource-vdlc) | Reviewed addition: development lifecycle framework that treats intent and context as primary artifacts, with human gates at plan, review and deploy; trilingual guide. |
 | 2026-09-23 | [Prbl](#resource-prbl) | Reviewed addition: security scanner for flaws common in AI-generated code; free scan and GitHub Action, paid rewriter. |
@@ -36,7 +37,6 @@ Recent reviews and material changes from the last 30 days, newest first. A revie
 | 2026-09-18 | [Pi](#resource-pi) | Reviewed addition: extensible MIT terminal coding agent with multi-provider models and an SDK. |
 | 2026-09-18 | [NextReset](docs/verified-catalog.md#resource-nextreset) | Reviewed addition: unofficial public reset history and local countdowns; forecasts are not endorsed. |
 | 2026-09-18 | [Superagent](#resource-superagent) | Reviewed addition: macOS coding-agent workspace with browser and iOS workflows. |
-| 2026-09-18 | [Publish.my](#resource-publish-my) | Reviewed addition: agent-oriented static-site publishing; email activation required. |
 <!-- recent-updates:end -->
 
 </details>
@@ -200,6 +200,8 @@ Use these when a project already exists and you need to solve a specific problem
 | <a id="resource-agentic-coding-armin-ronacher"></a>[**Agentic Coding Recommendations (Armin Ronacher)**](https://lucumr.pocoo.org/2025/6/12/agentic-coding/) · Guide | Practical agent workflows and testing advice; 2025 practitioner perspective | Free reading; check reuse terms | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-agentic-coding-armin-ronacher) |
 | <a id="resource-here-s-how-i-use-llms-to-help-me-write-code-simon-willison"></a>[**Here's how I use LLMs to help me write code (Simon Willison)**](https://simonwillison.net/2025/Mar/11/using-llms-for-code/) · Guide | Iterative coding and QA practices; 2025 tool examples are historical | Free reading; check reuse terms | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-here-s-how-i-use-llms-to-help-me-write-code-simon-willison) |
 | <a id="resource-secure-vibe-coding-guide-csa"></a>[**Secure Vibe Coding Guide (CSA)**](https://cloudsecurityalliance.org/blog/2025/04/09/secure-vibe-coding-guide) · Guide | Security checklist covering secrets, authorization, validation and review | Free reading; check reuse terms | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-secure-vibe-coding-guide-csa) |
+
+| <a id="resource-universal-modder-field-guide-codex"></a>[**Universal Modder Field Guide: Codex setup (unofficial)**](https://universalmodder.dev/guides/codex/) · Guide | Install the Universal Modder toolkit with Codex and verify plugin registration, skill discovery and the um CLI before editing game files | Free reading; unofficial companion to the upstream MIT toolkit; model and media-generation costs separate | 2026-10-11 |
 
 <a id="concepts-research"></a>
 ### Concepts & Research

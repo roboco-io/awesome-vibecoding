@@ -27,6 +27,7 @@
 <!-- recent-updates:start -->
 | 검증일 | 업데이트 | 변경 사항 |
 |---|---|---|
+| 2026-10-11 | [Universal Modder Field Guide: Codex 설정](#resource-universal-modder-field-guide-codex) | 검토 후 추가: Universal Modder 게임 모딩 툴킷을 위한 비공식 Codex 설치·검증 가이드; 물료 열림. |
 | 2026-10-10 | [DropTheHassle](#resource-dropthehassle) | 검토 후 추가: 에이전트가 빌드된 사이트를 계정 없이 묣료 HTTPS 링크에 게시; 유료 커스텀 도메인은 사람의 결제 링크로 진행. |
 | 2026-10-04 | [VDLC](#resource-vdlc) | 검토 후 추가: 의도와 컨텍스트를 1차 산출물로 다루는 개발 생명주기 프레임워크; 계획·리뷰·배포 관문은 사람이 담당; 삼중 언어 가이드. |
 | 2026-09-23 | [Prbl](#resource-prbl) | 검토 후 추가: AI 생성 코드에 흔한 취약점을 검사하는 스캐너; 물료 검사와 GitHub Action, 재작성기는 유료. |
@@ -36,7 +37,6 @@
 | 2026-09-18 | [Pi](#resource-pi) | 검토 후 추가: 다중 프로바이더 모델과 SDK를 갖춘 MIT 라이선스 확장형 터미널 코딩 에이전트. |
 | 2026-09-18 | [NextReset](docs/verified-catalog.md#resource-nextreset) | 검토 후 추가: 비공식 공개 초기화 이력과 로컬 카운트다운; 예측의 정확성을 보증하지 않음. |
 | 2026-09-18 | [Superagent](#resource-superagent) | 검토 후 추가: 브라우저 및 iOS 워크플로우를 지원하는 macOS 코딩 에이전트 작업 공간. |
-| 2026-09-18 | [Publish.my](#resource-publish-my) | 검토 후 추가: 에이전트용 정적 사이트 게시; 이메일 활성화 필요. |
 <!-- recent-updates:end -->
 
 </details>
@@ -200,6 +200,8 @@
 | <a id="resource-agentic-coding-armin-ronacher"></a>[**Agentic Coding Recommendations (Armin Ronacher)**](https://lucumr.pocoo.org/2025/6/12/agentic-coding/) · 가이드 | 실용적인 에이전트 워크플로우와 테스트 조언; 2025년 실무자 관점 | 무료 열람; 재사용 조건 확인 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-agentic-coding-armin-ronacher) |
 | <a id="resource-here-s-how-i-use-llms-to-help-me-write-code-simon-willison"></a>[**Here's how I use LLMs to help me write code (Simon Willison)**](https://simonwillison.net/2025/Mar/11/using-llms-for-code/) · 가이드 | 반복적인 코딩 및 QA 방법; 도구 예시는 2025년 당시 기준 | 무료 열람; 재사용 조건 확인 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-here-s-how-i-use-llms-to-help-me-write-code-simon-willison) |
 | <a id="resource-secure-vibe-coding-guide-csa"></a>[**Secure Vibe Coding Guide (CSA)**](https://cloudsecurityalliance.org/blog/2025/04/09/secure-vibe-coding-guide) · 가이드 | 비밀 정보·인가·검증·리뷰를 다루는 보안 체크리스트 | 무료 열람; 재사용 조건 확인 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-secure-vibe-coding-guide-csa) |
+
+| <a id="resource-universal-modder-field-guide-codex"></a>[**Universal Modder Field Guide: Codex 설정 (비공식)**](https://universalmodder.dev/guides/codex/) · 가이드 | Codex로 Universal Modder 툴킷을 설치하고, 게임 파일을 수정하기 전에 플러그인 등록·스킬 검색·um CLI를 확인하는 방법 | 물료 열림; 상위 MIT 툴킷의 비공식 안내 자료; 모델 및 미디어 생성 비용 별도 | 2026-10-11 |
 
 <a id="concepts-research"></a>
 ### 개념과 연구
