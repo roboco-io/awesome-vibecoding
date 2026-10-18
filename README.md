@@ -27,6 +27,7 @@ Recent reviews and material changes from the last 30 days, newest first. A revie
 <!-- recent-updates:start -->
 | Verified on | Update | What changed |
 |---|---|---|
+| 2026-10-18 | [Preflight](#resource-preflight) | Reviewed addition: builds a tailored security-check prompt for the user's own coding agent and reprioritizes the findings; 2 free checks per month, paid credits; no code upload. |
 | 2026-10-11 | [Massvai](#resource-massvai) | Reviewed addition: prompt-to-full-stack Next.js app builder with Supabase, live preview, GitHub export and Vercel deploy; free starting credits, paid plans. |
 | 2026-10-11 | [Coderblock](#resource-coderblock) | Reviewed addition: conversational builder for full-stack web apps with per-app Supabase backends; free starting credits, paid tiers. |
 | 2026-10-11 | [Universal Modder Field Guide: Codex setup](#resource-universal-modder-field-guide-codex) | Reviewed addition: unofficial Codex installation and verification guide for the Universal Modder game-modding toolkit; free reading. |
@@ -34,9 +35,6 @@ Recent reviews and material changes from the last 30 days, newest first. A revie
 | 2026-10-04 | [VDLC](#resource-vdlc) | Reviewed addition: development lifecycle framework that treats intent and context as primary artifacts, with human gates at plan, review and deploy; trilingual guide. |
 | 2026-09-23 | [Prbl](#resource-prbl) | Reviewed addition: security scanner for flaws common in AI-generated code; free scan and GitHub Action, paid rewriter. |
 | 2026-09-20 | [Delta (Zed)](#resource-delta) | Reviewed addition: multiplayer agent-coding workspace with thread-based review; public beta, free during beta. |
-| 2026-09-18 | [Shep](#resource-shep) | Reviewed addition: local-first orchestrator that runs parallel coding agents in isolated Git worktrees through to draft PRs. |
-| 2026-09-18 | [Lifecycle cleanup](docs/lifecycle-review-2026-09-18.md) | Removed unavailable/new-user-blocked entries, corrected canonical products, and reduced the core tool list from 156 to 40. |
-| 2026-09-18 | [Pi](#resource-pi) | Reviewed addition: extensible MIT terminal coding agent with multi-provider models and an SDK. |
 <!-- recent-updates:end -->
 
 </details>
@@ -129,6 +127,7 @@ Check behavior, review generated changes, and diagnose failures.
 | <a id="resource-playwright-mcp-official"></a>[**Playwright MCP (Microsoft)**](https://github.com/microsoft/playwright-mcp) · MCP | Official browser automation through structured page snapshots | Apache-2.0 client; model terms separate | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-playwright-mcp-official) |
 | <a id="resource-pr-agent"></a>[**PR-Agent**](https://github.com/The-PR-Agent/pr-agent) | Community-maintained pull request reviewer, separate from Qodo | Check pricing | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-pr-agent) |
 | <a id="resource-prbl"></a>[**Prbl**](https://getprbl.com) · Web | Scan a live app or repo for flaws AI coding tools commonly introduce; GitHub Action comments on PRs; Pro rewriter applies verified fixes | Free scan and GitHub Action; paid plans for rewriter and private repos; Python/JS/TS only | 2026-09-23 |
+| <a id="resource-preflight"></a>[**Preflight**](https://launchpreflight.com) · Web | Turn a short interview into a tailored security-check prompt for your own coding agent, then reorder its findings into fix-now, before-launch, uncertain and later priorities | 2 free checks per month (+1 on signup); extra credits from ₩3,300; no code upload or GitHub access; Korean UI | 2026-10-18 |
 | <a id="resource-qodo"></a>[**Qodo**](https://www.qodo.ai) | AI code review engine (formerly CodiumAI) | Check pricing | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-qodo) |
 | <a id="resource-semgrep"></a>[**Semgrep MCP**](https://github.com/semgrep/semgrep/tree/develop/cli/src/semgrep/mcp) · MCP | MCP security scanning through the maintained Semgrep CLI | Check pricing | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-semgrep) |
 | <a id="resource-sentry"></a>[**Sentry**](https://github.com/getsentry/sentry-mcp) · MCP | Inspect application errors and diagnose failures | Functional Source License; source-available; check hosted terms | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-sentry) |

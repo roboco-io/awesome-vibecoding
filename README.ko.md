@@ -27,6 +27,7 @@
 <!-- recent-updates:start -->
 | 검증일 | 업데이트 | 변경 사항 |
 |---|---|---|
+| 2026-10-18 | [Preflight](#resource-preflight) | 검토 후 추가: 사용 중인 코딩 에이전트에 맞춘 보안 점검 프롬프트를 만들고 결과를 우선순위로 재정리; 월 2건 묣료, 추가 크레딧 유료; 코드 업로드 불필요. |
 | 2026-10-11 | [Massvai](#resource-massvai) | 검토 후 추가: 프롬프트를 Supabase 연동 풀스택 Next.js 앱으로 만들어 주는 빌더; 실시간 미리보기, GitHub 코드 낳출 및 Vercel 배포 지원; 묣료 시작 크레딧과 유료 요금제 제공. |
 | 2026-10-11 | [Coderblock](#resource-coderblock) | 검토 후 추가: 앱별 Supabase 백엔드를 갖춘 대화형 풀스택 웹 앱 빌더; 묣료 시작 크레딧, 유료 요금제 제공. |
 | 2026-10-11 | [Universal Modder Field Guide: Codex 설정](#resource-universal-modder-field-guide-codex) | 검토 후 추가: Universal Modder 게임 모딩 툴킷을 위한 비공식 Codex 설치·검증 가이드; 물료 열림. |
@@ -34,9 +35,6 @@
 | 2026-10-04 | [VDLC](#resource-vdlc) | 검토 후 추가: 의도와 컨텍스트를 1차 산출물로 다루는 개발 생명주기 프레임워크; 계획·리뷰·배포 관문은 사람이 담당; 삼중 언어 가이드. |
 | 2026-09-23 | [Prbl](#resource-prbl) | 검토 후 추가: AI 생성 코드에 흔한 취약점을 검사하는 스캐너; 물료 검사와 GitHub Action, 재작성기는 유료. |
 | 2026-09-20 | [Delta (Zed)](#resource-delta) | 검토 후 추가: 스레드 기반 리뷰를 제공하는 멀티플레이어 에이전트 코딩 작업 공간; 공개 베타 기간 묵료. |
-| 2026-09-18 | [Shep](#resource-shep) | 검토 후 추가: 격리된 Git worktree에서 여러 코딩 에이전트를 병렬 실행해 초안 PR까지 자동화하는 로컬 우선 오케스트레이터. |
-| 2026-09-18 | [서비스 상태 정리](docs/lifecycle-review-2026-09-18.md) | 이용 불가·신규 사용자 접근 제한 항목 제거, 공식 제품명 수정, 핵심 도구 목록을 156개에서 40개로 축소. |
-| 2026-09-18 | [Pi](#resource-pi) | 검토 후 추가: 다중 프로바이더 모델과 SDK를 갖춘 MIT 라이선스 확장형 터미널 코딩 에이전트. |
 <!-- recent-updates:end -->
 
 </details>
@@ -129,6 +127,7 @@
 | <a id="resource-playwright-mcp-official"></a>[**Playwright MCP (Microsoft)**](https://github.com/microsoft/playwright-mcp) · MCP | 구조화된 페이지 스냅샷을 활용하는 공식 브라우저 자동화 | Apache-2.0 클라이언트; 모델 이용 조건 별도 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-playwright-mcp-official) |
 | <a id="resource-pr-agent"></a>[**PR-Agent**](https://github.com/The-PR-Agent/pr-agent) | Qodo와 별개로 커뮤니티가 유지보수하는 풀 리퀘스트 리뷰 도구 | 요금 확인 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-pr-agent) |
 | <a id="resource-prbl"></a>[**Prbl**](https://getprbl.com) · Web | AI 코딩 도구가 자주 만드는 취약점을 실제 앱이나 저장소에서 검사; GitHub Action이 PR에 결과를 댓글로 표시; Pro 재작성기가 검증된 수정 적용 | 물료 검사와 GitHub Action; 재작성기·비공개 저장소는 유료 요금제; Python/JS/TS만 지원 | 2026-09-23 |
+| <a id="resource-preflight"></a>[**Preflight**](https://launchpreflight.com) · Web | 짧은 인터뷰로 사용 중인 코딩 에이전트에 맞춘 보안 점검 프롬프트를 만들고, 에이전트 결과를 지금 수정·출시 전·불확실·나중에 우선순위로 재정리 | 월 2건 묣료(가입 시 +1건); 추가 크레딧 ₩3,300부터; 코드 업로드·GitHub 접근 불필요 | 2026-10-18 |
 | <a id="resource-qodo"></a>[**Qodo**](https://www.qodo.ai) | AI 코드 리뷰 엔진 (구 CodiumAI) | 요금 확인 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-qodo) |
 | <a id="resource-semgrep"></a>[**Semgrep MCP**](https://github.com/semgrep/semgrep/tree/develop/cli/src/semgrep/mcp) · MCP | 유지보수 중인 Semgrep CLI를 통한 MCP 보안 검사 | 요금 확인 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-semgrep) |
 | <a id="resource-sentry"></a>[**Sentry**](https://github.com/getsentry/sentry-mcp) · MCP | 앱 오류 확인 및 장애 진단 | Functional Source License; 소스 공개; 호스팅 이용 조건 확인 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-sentry) |

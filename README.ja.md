@@ -27,6 +27,7 @@
 <!-- recent-updates:start -->
 | 確認日 | 更新項目 | 変更内容 |
 |---|---|---|
+| 2026-10-18 | [Preflight](#resource-preflight) | レビュー後に追加：利用中のコーディングエージェント向けのセキュリティチェック用プロンプトを生成し、結果を優先度別に再整理。月2件無料、追加クレジットは有料。コードアップロード不要。 |
 | 2026-10-11 | [Massvai](#resource-massvai) | レビュー後に追加：プロンプトからSupabase連携のフルスタックNext.jsアプリを生成するビルダー。ライブプレビュー、GitHubへのコードエクスポート、Vercelデプロイに対応。無料の開始クレジットと有料プランあり。 |
 | 2026-10-11 | [Coderblock](#resource-coderblock) | レビュー後に追加：アプリごとのSupabaseバックエンドを備えた対話型フルスタックWebアプリビルダー。無料の開始クレジットと有料プランあり。 |
 | 2026-10-11 | [Universal Modder Field Guide: Codexセットアップ](#resource-universal-modder-field-guide-codex) | レビュー後に追加：Universal ModderゲームMODツールキット向けの非公式Codexインストール・検証ガイド。閲覧無料。 |
@@ -34,9 +35,6 @@
 | 2026-10-04 | [VDLC](#resource-vdlc) | レビュー後に追加：意図とコンテキストを一次成果物とする開発ライフサイクルの枠組み。計画・レビュー・デプロイのゲートは人が担当。3言語ガイド。 |
 | 2026-09-23 | [Prbl](#resource-prbl) | レビュー後に追加：AI生成コードに多い脆弱性を検出するスキャナー。無料スキャンとGitHub Action、リライターは有料。 |
 | 2026-09-20 | [Delta (Zed)](#resource-delta) | レビュー後に追加：スレッドベースのレビューを備えたマルチプレイヤーのエージェントコーディングワークスペース。公開ベータ期間は無料。 |
-| 2026-09-18 | [Shep](#resource-shep) | レビュー後に追加：分離したGitワークツリーで複数のコーディングエージェントを並列実行し、ドラフトPRまで自動化するローカルファーストのオーケストレーター。 |
-| 2026-09-18 | [提供状況に基づく整理](docs/lifecycle-review-2026-09-18.md) | 利用できない項目や新規利用できない項目を除外し、正式な製品情報を修正。主要ツールを156件から40件に絞りました。 |
-| 2026-09-18 | [Pi](#resource-pi) | レビュー後に追加：マルチプロバイダーモデルとSDKを備えたMITライセンスの拡張型ターミナルコーディングエージェント。 |
 <!-- recent-updates:end -->
 
 </details>
@@ -129,6 +127,7 @@
 | <a id="resource-playwright-mcp-official"></a>[**Playwright MCP (Microsoft)**](https://github.com/microsoft/playwright-mcp) · MCP | 構造化されたページスナップショットによる公式ブラウザ自動化 | Apache-2.0クライアント；モデルの利用条件は別途 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-playwright-mcp-official) |
 | <a id="resource-pr-agent"></a>[**PR-Agent**](https://github.com/The-PR-Agent/pr-agent) | Qodoとは別にコミュニティが保守するプルリクエストレビューツール | 料金を要確認 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-pr-agent) |
 | <a id="resource-prbl"></a>[**Prbl**](https://getprbl.com) · Web | AIコーディングツールが生成しがちな脆弱性を公開中のアプリやリポジトリからスキャン；GitHub ActionがPRに結果をコメント；Proのリライターが検証済みの修正を適用 | 無料スキャンとGitHub Action；リライター・プライベートリポジトリは有料；Python/JS/TSのみ対応 | 2026-09-23 |
+| <a id="resource-preflight"></a>[**Preflight**](https://launchpreflight.com) · Web | 短いインタビューから自分のコーディングエージェント向けのセキュリティチェック用プロンプトを生成し、結果を今すぐ修正・リリース前・不確実・後で改善の優先度に再整理 | 月2件無料（登録で+1件）；追加クレジットは₩3,300から；コードアップロードやGitHubアクセス不要；韓国語UI | 2026-10-18 |
 | <a id="resource-qodo"></a>[**Qodo**](https://www.qodo.ai) | AIコードレビューエンジン（旧CodiumAI） | 料金を要確認 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-qodo) |
 | <a id="resource-semgrep"></a>[**Semgrep MCP**](https://github.com/semgrep/semgrep/tree/develop/cli/src/semgrep/mcp) · MCP | 保守されているSemgrep CLIを通じたMCPセキュリティスキャン | 料金を要確認 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-semgrep) |
 | <a id="resource-sentry"></a>[**Sentry**](https://github.com/getsentry/sentry-mcp) · MCP | アプリのエラーを確認し、障害を診断 | Functional Source License；ソース公開；ホスト型サービスの条件を要確認 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-sentry) |
