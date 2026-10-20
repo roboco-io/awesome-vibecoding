@@ -71,3 +71,33 @@ export function assertShortlistCapacity(text) {
     if (block && shortlistRows(block).length > category.limit) throw new Error(`${category.title} shortlist limit (${category.limit}) reached; request editorial review instead of growing the list.`);
   }
 }
+
+export const findRegistryEntry = (resources, url) => resources.find(resource => identities(resource).includes(normalizeResourceUrl(url)));
+
+const EXCLUDED_STATUS = { archived: "archived", sunset_announced: "sunsetting", unavailable_to_new_users: "retired", inactive: "inactive" };
+
+export function applyRegistryUpdate(registry, { incoming, outgoing, categoryScores = [], today, issueUrl }) {
+  const data = structuredClone(registry);
+  const review = { reviewed_on: today, review_issue: issueUrl };
+  for (const { url, scores } of categoryScores) {
+    const entry = findRegistryEntry(data.resources, url);
+    if (entry) Object.assign(entry, { scores, scored_on: today });
+  }
+  if (outgoing) {
+    let entry = findRegistryEntry(data.resources, outgoing.url);
+    if (!entry) data.resources.push(entry = { id: outgoing.id, url: outgoing.url, aliases: [outgoing.url], category: outgoing.category });
+    delete entry.listed_on;
+    if (outgoing.disqualification) {
+      if (!EXCLUDED_STATUS[outgoing.disqualification]) throw new Error(`Unknown disqualification: ${outgoing.disqualification}`);
+      Object.assign(entry, { previous_status: entry.status, status: EXCLUDED_STATUS[outgoing.disqualification], location: "excluded", reason: outgoing.reason, evidence_urls: outgoing.evidenceUrls }, review);
+    } else Object.assign(entry, { status: "active", location: "extended", reason: outgoing.reason }, review);
+  }
+  let entry = findRegistryEntry(data.resources, incoming.url);
+  if (!entry) data.resources.push(entry = { id: incoming.id, name: incoming.name, url: incoming.url, aliases: [incoming.url], category: incoming.category });
+  delete entry.listed_on;
+  Object.assign(entry, {
+    status: "active", location: incoming.location, ...(incoming.location === "shortlist" && { listed_on: today }),
+    verified_on: today, scores: incoming.scores, scored_on: today, evidence_urls: incoming.evidenceUrls,
+  }, review);
+  return data;
+}
