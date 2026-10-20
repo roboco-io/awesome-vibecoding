@@ -117,6 +117,7 @@ export async function runAutomation({ prompt, cwd = process.cwd(), env = process
       security: Type.Optional(Type.Object({
         ...Object.fromEntries([...SECURITY_FLAGS, "officialVendor"].map(flag => [flag, Type.Boolean()])),
         evidenceUrls: Type.Array(Type.String(), { minItems: 1, maxItems: 5 }),
+        audit: Type.Optional(Type.Object({ standard: Type.String(), auditor: Type.String(), evidenceUrl: Type.String() })),
       })),
     };
     const tools = [
@@ -136,7 +137,7 @@ export async function runAutomation({ prompt, cwd = process.cwd(), env = process
       {
         name: "submit_result", label: "Submit result", description: weekly
           ? "Submit one complete result. Edits are exact, unique text replacements applied in order. processed must add the same resource URLs to all three languages and preserve existing links; other statuses require no edits. No files are written until the agent finishes successfully."
-          : "Submit one complete result. Edits are exact, unique text replacements applied in order. processed requires placement, resource, scores and security: readme placement adds the requested URL to its category block in all three languages (with replacement when the shortlist is full), extended placement adds it to docs/verified-catalog.md only. security flags credential storage or relay, payments and remote commands for services other than the vendor's own, plus official vendor status; unless the maintainer approved, a flagged tool (even an official one) or a security-signal-matching tool that is not an unflagged official vendor tool must be submitted as uncertain with manualReason security_sensitive. manualReason is allowed only with uncertain. Other statuses require no edits. No files are written until the agent finishes successfully.",
+          : "Submit one complete result. Edits are exact, unique text replacements applied in order. processed requires placement, resource, scores and security: readme placement adds the requested URL to its category block in all three languages (with replacement when the shortlist is full), extended placement adds it to docs/verified-catalog.md only. security flags hosted credential custody or relay, payment processing for other services and remote-triggered commands, plus official vendor status; a credential custody flag needs security.audit (an accepted standard, auditor and observed evidence URL) even in approved runs; unless the maintainer approved, a flagged tool (even an official one) or a security-signal-matching tool that is not an unflagged official vendor tool must be submitted as uncertain with manualReason security_sensitive. manualReason is allowed only with uncertain. Other statuses require no edits. No files are written until the agent finishes successfully.",
         parameters: Type.Object({
           status: Type.Union(["processed", "rejected", "uncertain", "unchanged"].map(value => Type.Literal(value))),
           reason: Type.String({ minLength: 1, maxLength: 1000 }),
@@ -149,7 +150,7 @@ export async function runAutomation({ prompt, cwd = process.cwd(), env = process
           if (submission) throw new Error("A result has already been accepted");
           checkResultFields(proposal, { weekly, approved, policy });
           validateEvidence(proposal, { searched: searchedUrls, fetched: fetchedUrls, submittedUrl: requiredUrl, policy, requireIndependent: !weekly && !approved });
-          if (!weekly && proposal.status === "processed") checkSecurity(proposal.security, { signals: policy.securitySignals, vendors: policy.verifiedVendors, resourceUrl: requiredUrl, approved, observedUrls: new Set([...searchedUrls, ...fetchedUrls]), sources: securitySources() });
+          if (!weekly && proposal.status === "processed") checkSecurity(proposal.security, { signals: policy.securitySignals, vendors: policy.verifiedVendors, resourceUrl: requiredUrl, approved, observedUrls: new Set([...searchedUrls, ...fetchedUrls]), sources: securitySources(), acceptedAuditStandards: policy.acceptedAuditStandards });
           const changed = weekly
             ? prepareUpdates(originals, proposal, { requiredUrl })
             : prepareCatalogUpdates(originals, proposal, { requiredUrl, policy, today, approved, searchedUrls: [...searchedUrls], fetchedUrls: [...fetchedUrls], issueUrl });

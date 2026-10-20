@@ -33,7 +33,7 @@ export function formatIssueComment(result, { issueUrl } = {}) {
   const urls = [...new Set([...evidenceUrls, ...(replacement?.evidenceUrls || []), ...(security?.evidenceUrls || [])])];
   if (urls.length) lines.push("**Evidence:**", ...urls.map(url => `- ${url}`), "");
   if (scores) lines.push("| Score item | Score |", "|---|---|", ...Object.entries(scores).map(([item, score]) => `| ${cell(item)} | ${cell(score)} |`), `| **Total** | **${total(scores)}** |`, "");
-  if (security) lines.push("| Security flag | Value |", "|---|---|", ...[...SECURITY_FLAGS, "officialVendor"].map(flag => `| ${flag} | ${security[flag] === true ? "yes" : security[flag] === false ? "no" : "—"} |`), "");
+  if (security) lines.push("| Security flag | Value |", "|---|---|", ...[...SECURITY_FLAGS, "officialVendor"].map(flag => `| ${flag} | ${security[flag] === true ? "yes" : security[flag] === false ? "no" : "—"} |`), ...(security.audit ? [`| audit | ${cell(security.audit.standard)} by ${cell(security.audit.auditor)} |`, `| audit evidence | ${cell(security.audit.evidenceUrl)} |`] : []), "");
   if (securitySignals.length) lines.push("| Security signal | Found in |", "|---|---|", ...securitySignals.map(({ signal, source }) => `| ${cell(signal)} | ${cell(source)} |`), "");
   if (status === "processed" && issueUrl) lines.push(`The Verified date of the new entry links to this issue: ${issueUrl}`, "");
   if (status !== "processed" && status !== "rejected") lines.push("A maintainer can comment `/approve` to process this resource or `/reject [reason]` to close this issue.", "");

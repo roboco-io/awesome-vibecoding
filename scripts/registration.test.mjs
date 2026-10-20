@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { mkdtemp, mkdir, readFile, writeFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { loadRegistrationPolicy, scoreTotal, isProtected, isScoreFresh, isIndependentSource, checkSecurity, isVerifiedVendor, findSecuritySignals } from "./lib/registration-policy.mjs";
+import { loadRegistrationPolicy, scoreTotal, isProtected, isScoreFresh, isIndependentSource, checkSecurity, validateRegistrationPolicy, isVerifiedVendor, findSecuritySignals } from "./lib/registration-policy.mjs";
 import { shortlistEntries } from "./lib/catalog-status.mjs";
 import { CATEGORIES } from "./lib/categories.mjs";
 import { README_FILES, prepareUpdates, readOriginals, persistUpdates } from "./lib/readme-updates.mjs";
@@ -300,9 +300,32 @@ test("security signals in issue or fetched text route a non-vendor tool to manua
 test("risk flags on a non-vendor tool require manual review unless the maintainer approved", () => {
   for (const flag of ["storesThirdPartyCredentials", "relaysCredentials", "handlesPayments", "executesRemoteCommands"]) {
     assert.throws(() => checkSecurity(security({ [flag]: true }), securityCtx()), /^Error: Security-sensitive third-party tool; submit uncertain with manualReason security_sensitive$/);
-    checkSecurity(security({ [flag]: true }), securityCtx({ approved: true }));
+    if (["handlesPayments", "executesRemoteCommands"].includes(flag)) checkSecurity(security({ [flag]: true }), securityCtx({ approved: true }));
   }
-  checkSecurity(security({ storesThirdPartyCredentials: true }), securityCtx({ approved: true, sources: issueSource("credentials stay in a vault") }));
+  checkSecurity(security({ executesRemoteCommands: true }), securityCtx({ approved: true, sources: issueSource("credentials stay in a vault") }));
+  assert.throws(() => checkSecurity(security({ executesRemoteCommands: true, audit }), securityCtx()), /^Error: Security-sensitive third-party tool/);
+});
+
+const audit = { standard: "SOC 2 Type II", auditor: "Example Auditors LLP", evidenceUrl: "https://new.example/" };
+const custody = /^Error: Credential custody requires audit evidence \(acceptedAuditStandards\); submit uncertain with manualReason security_sensitive$/;
+
+test("credential custody in an approved run requires an observed audit with an accepted standard", () => {
+  const ctx = securityCtx({ approved: true, acceptedAuditStandards: policy.acceptedAuditStandards });
+  for (const flag of ["storesThirdPartyCredentials", "relaysCredentials"]) {
+    assert.throws(() => checkSecurity(security({ [flag]: true }), ctx), custody);
+    assert.throws(() => checkSecurity(security({ [flag]: true, audit: { ...audit, standard: "self-assessed" } }), ctx), custody);
+    assert.throws(() => checkSecurity(security({ [flag]: true, audit: { ...audit, auditor: "" } }), ctx), custody);
+    assert.throws(() => checkSecurity(security({ [flag]: true, audit: { ...audit, evidenceUrl: "https://unseen.example/" } }), ctx), custody);
+    checkSecurity(security({ [flag]: true, audit }), ctx);
+  }
+  checkSecurity(security({ executesRemoteCommands: true, handlesPayments: true }), ctx);
+  assert.throws(() => checkSecurity(security({ storesThirdPartyCredentials: true, audit }), { ...ctx, approved: false }), /^Error: Security-sensitive third-party tool/);
+});
+
+test("policy requires a non-empty acceptedAuditStandards string list", () => {
+  assert.deepEqual(policy.acceptedAuditStandards, ["SOC 2 Type II", "ISO/IEC 27001", "independent penetration test"]);
+  validateRegistrationPolicy(policy);
+  for (const bad of [undefined, [], [""], [1], "SOC 2"]) assert.throws(() => validateRegistrationPolicy({ ...policy, acceptedAuditStandards: bad }), /Invalid registration policy/);
 });
 
 test("only a verified vendor resource URL passes security signals, and risk flags hold even verified vendors", () => {
@@ -360,6 +383,10 @@ test("issue comment names the placement, evidence and scores", () => {
   assert.match(secured, /\| executesRemoteCommands \| no \|/);
   assert.match(secured, /\| officialVendor \| yes \|/);
   assert.doesNotMatch(secured, /Security signal \|/);
+  assert.doesNotMatch(secured, /\| audit \|/);
+  const audited = formatIssueComment({ status: "processed", placement: "readme", reason: "Free slot", checks: checksPassed, evidenceUrls, scores: good, security: security({ storesThirdPartyCredentials: true, audit: { standard: "SOC 2 Type II", auditor: "A | B", evidenceUrl: "https://trust.example/" } }) }, { issueUrl });
+  assert.match(audited, /\| audit \| SOC 2 Type II by A \\\| B \|/);
+  assert.match(audited, /\| audit evidence \| https:\/\/trust\.example\/ \|/);
   const signalled = formatIssueComment({ status: "processed", placement: "readme", reason: "Free slot", checks: checksPassed, evidenceUrls, scores: good, security: security(), securitySignals: [{ signal: "oauth", source: "issue" }, { signal: "vault", source: "https://new.example/" }] }, { issueUrl });
   assert.match(signalled, /\| Security signal \| Found in \|\n\|---\|---\|\n\| oauth \| issue \|\n\| vault \| https:\/\/new\.example\/ \|/);
   assert.doesNotMatch(formatIssueComment({ status: "uncertain", reason: "Unclear" }, { issueUrl }), /Security flag/);

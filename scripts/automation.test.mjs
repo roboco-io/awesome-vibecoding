@@ -354,6 +354,10 @@ test("security signals from the issue and fetched pages hold a non-vendor tool f
   assert.match(toolResults.at(-1).content.map(part => part.text).join(""), /Security evidence URL was not returned/);
   await assertCatalogUnchanged(cwd);
   fields = { security: security({ storesThirdPartyCredentials: true }) };
+  await assert.rejects(runAutomation({ ...options, approved: true }), /without submitting/);
+  assert.match(toolResults.at(-1).content.map(part => part.text).join(""), /Credential custody requires audit evidence/);
+  await assertCatalogUnchanged(cwd);
+  fields = { security: security({ storesThirdPartyCredentials: true, audit: { standard: "SOC 2 Type II", auditor: "Example Auditors", evidenceUrl: "https://new.example/" } }) };
   const added = await runAutomation({ ...options, approved: true });
   assert.deepEqual([added.status, added.security.storesThirdPartyCredentials], ["processed", true]);
   assert.deepEqual(added.securitySignals, [{ signal: "credential", source: "https://new.example/" }, { signal: "vault", source: "https://new.example/" }]);
