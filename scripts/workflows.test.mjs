@@ -37,8 +37,8 @@ test("all automation entrypoints use registered organization secrets and preserv
     const steps = Object.values(data.jobs).flatMap(job => job.steps);
     const agent = steps.find(step => /^node scripts\//.test(step.run || ""));
     assert.ok(agent, `${name}: missing agent entrypoint`);
-    for (const key of ["KIMI_API_KEY", "DASHSCOPE_API_KEY", "EXA_API_KEY"]) assert.equal(agent.env[key], `\${{ secrets.${key} }}`);
-    assert.equal(agent.env.AI_PROVIDER, "${{ vars.AI_PROVIDER || 'kimi' }}");
+    for (const key of ["DEEPSEEK_API_KEY", "KIMI_API_KEY", "DASHSCOPE_API_KEY", "EXA_API_KEY"]) assert.equal(agent.env[key], `\${{ secrets.${key} }}`);
+    assert.equal(agent.env.AI_PROVIDER, "${{ vars.AI_PROVIDER || 'deepseek' }}");
     assert.doesNotMatch(JSON.stringify(data), /ANTHROPIC_API_KEY|PERPLEXITY_API_KEY|Claude Code/);
   }
 });

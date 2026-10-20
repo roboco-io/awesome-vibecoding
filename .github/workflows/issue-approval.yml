@@ -48,12 +48,13 @@ jobs:
       - name: Process Issue with Pi
         id: pi
         env:
-          AI_PROVIDER: ${{ vars.AI_PROVIDER || 'kimi' }}
+          AI_PROVIDER: ${{ vars.AI_PROVIDER || 'deepseek' }}
           AI_MODEL: ${{ vars.AI_MODEL }}
           AI_BASE_URL: ${{ vars.AI_BASE_URL }}
           AI_MAX_TURNS: ${{ vars.AI_MAX_TURNS }}
           AI_MAX_TOKENS: ${{ vars.AI_MAX_TOKENS }}
           AI_TIMEOUT_SECONDS: ${{ vars.AI_TIMEOUT_SECONDS }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
           DASHSCOPE_API_KEY: ${{ secrets.DASHSCOPE_API_KEY }}
           EXA_API_KEY: ${{ secrets.EXA_API_KEY }}

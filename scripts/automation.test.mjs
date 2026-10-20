@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { mkdtemp, readFile, writeFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { resolveConfig } from "./lib/pi-config.mjs";
+import { resolveConfig, DEEPSEEK_DEFAULT_MODEL } from "./lib/pi-config.mjs";
 import { README_FILES, prepareUpdates, persistUpdates, outputRecord } from "./lib/readme-updates.mjs";
 import { runSession, runAutomation } from "./lib/pi-runner.mjs";
 import { searchWeb } from "./lib/research.mjs";
@@ -34,13 +34,13 @@ test("acceptance requires every curation gate and evidence from actual search re
   validateEvidence({ status: "uncertain" }, new Set());
 });
 
-test("defaults to official Kimi K3 and requires only its key", () => {
-  const config = resolveConfig({ KIMI_API_KEY: "test" });
-  assert.equal(config.provider, "kimi");
-  assert.equal(config.model.id, "kimi-k3");
-  assert.equal(config.model.baseUrl, "https://api.moonshot.ai/v1");
-  assert.equal(config.model.compat.maxTokensField, "max_completion_tokens");
-  assert.throws(() => resolveConfig({}), /KIMI_API_KEY/);
+test("defaults to DeepSeek and requires only its key", () => {
+  const config = resolveConfig({ DEEPSEEK_API_KEY: "test" });
+  assert.equal(config.provider, "deepseek");
+  assert.equal(config.model.id, DEEPSEEK_DEFAULT_MODEL);
+  assert.equal(config.model.baseUrl, "https://api.deepseek.com");
+  assert.throws(() => resolveConfig({}), /DEEPSEEK_API_KEY/);
+  assert.equal(resolveConfig({ AI_PROVIDER: "kimi", KIMI_API_KEY: "t" }).model.compat.maxTokensField, "max_completion_tokens");
 });
 
 test("Qwen uses the official pay-as-you-go endpoint and supports model overrides", () => {
@@ -49,7 +49,7 @@ test("Qwen uses the official pay-as-you-go endpoint and supports model overrides
   assert.equal(config.model.baseUrl, "https://dashscope-intl.aliyuncs.com/compatible-mode/v1");
   assert.equal(resolveConfig({ AI_PROVIDER: "qwen", AI_MODEL: "qwen3.8-max-0902", DASHSCOPE_API_KEY: "test" }).model.id, "qwen3.8-max-0902");
   assert.throws(() => resolveConfig({ AI_PROVIDER: "other" }), /AI_PROVIDER/);
-  assert.throws(() => resolveConfig({ KIMI_API_KEY: "test", AI_MAX_TURNS: "0" }), /AI_MAX_TURNS/);
+  assert.throws(() => resolveConfig({ DEEPSEEK_API_KEY: "test", AI_MAX_TURNS: "0" }), /AI_MAX_TURNS/);
 });
 
 test("accepts matching additions in all three languages", () => {
@@ -167,7 +167,7 @@ test("real Pi SDK executes only custom tools and persists only a successful full
     stream.push(message.stopReason === "error" ? { type: "error", reason: "error", error: message } : { type: "done", reason: message.stopReason, message });
     return stream;
   });
-  const env = { KIMI_API_KEY: "test-only", EXA_API_KEY: "test-only", AI_TIMEOUT_SECONDS: "5" };
+  const env = { DEEPSEEK_API_KEY: "test-only", EXA_API_KEY: "test-only", AI_TIMEOUT_SECONDS: "5" };
   assert.equal((await runAutomation({ cwd, env, prompt: "Add New" })).status, "processed");
   assert.match(await readFile(join(cwd, "README.ja.md"), "utf8"), /new.example/);
   for (const file of README_FILES) await writeFile(join(cwd, file), source);
@@ -238,7 +238,7 @@ test("a successful weekly run with no additions still expires old recent-update 
     stream.push({ type: "done", reason: message.stopReason, message });
     return stream;
   });
-  const result = await runAutomation({ cwd, env: { KIMI_API_KEY: "test", EXA_API_KEY: "test" }, prompt: "Research", weekly: true });
+  const result = await runAutomation({ cwd, env: { DEEPSEEK_API_KEY: "test", EXA_API_KEY: "test" }, prompt: "Research", weekly: true });
   assert.equal(result.status, "unchanged");
   for (const file of README_FILES) {
     const updated = await readFile(join(cwd, file), "utf8");

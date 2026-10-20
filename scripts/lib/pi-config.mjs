@@ -1,6 +1,9 @@
 import { getModel } from "@earendil-works/pi-ai/compat";
 
+export const DEEPSEEK_DEFAULT_MODEL = "deepseek-v4-flash";
+
 const PROVIDERS = {
+  deepseek: { catalog: "deepseek", model: DEEPSEEK_DEFAULT_MODEL, key: "DEEPSEEK_API_KEY", baseUrl: "https://api.deepseek.com" },
   kimi: { catalog: "moonshotai", model: "kimi-k3", key: "KIMI_API_KEY", baseUrl: "https://api.moonshot.ai/v1" },
   qwen: { catalog: "qwen-token-plan", model: "qwen3.8-max", key: "DASHSCOPE_API_KEY", baseUrl: "https://dashscope-intl.aliyuncs.com/compatible-mode/v1" },
 };
@@ -12,9 +15,9 @@ function positiveInteger(env, name, fallback, max) {
 }
 
 export function resolveConfig(env = process.env) {
-  const provider = env.AI_PROVIDER || "kimi";
+  const provider = env.AI_PROVIDER || "deepseek";
   const preset = PROVIDERS[provider];
-  if (!preset) throw new Error("AI_PROVIDER must be kimi or qwen");
+  if (!preset) throw new Error("AI_PROVIDER must be deepseek, kimi, or qwen");
   if (!env[preset.key]?.trim()) throw new Error(`Missing ${preset.key}`);
   const template = getModel(preset.catalog, preset.model);
   if (!template) throw new Error(`Pi catalog is missing ${preset.model}`);
