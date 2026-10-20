@@ -52,6 +52,19 @@ test("issue comments come from the generated comment file", async () => {
   }
 });
 
+test("uncertain comment appends only the maintainer mention, not a second approve hint", async () => {
+  const step = (await workflow("auto-process-issue")).jobs["validate-and-process"].steps.find(item => item.name === "Request maintainer review - Uncertain");
+  const comments = [];
+  const context = vm.createContext({
+    require: () => ({ readFileSync: () => "generated" }), process: { env: { COMMENT_FILE: "/tmp/c.md" } },
+    context: { repo: { owner: "o", repo: "r" }, issue: { number: 1 } },
+    github: { rest: { issues: { createComment: async value => comments.push(value.body), addLabels: async () => {} } } },
+  });
+  await vm.runInContext(`(async () => {${step.with.script}})()`, context);
+  assert.equal(comments[0], "generated\n\n@serithemage Could you take a look?");
+  assert.doesNotMatch(comments[0].slice("generated".length), /\/approve/);
+});
+
 test("all automation entrypoints use registered organization secrets and preserve queued runs", async () => {
   for (const name of ["weekly-update", "auto-process-issue", "issue-approval"]) {
     const data = await workflow(name);

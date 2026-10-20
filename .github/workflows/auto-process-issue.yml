@@ -258,7 +258,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
-              body: `${fs.readFileSync(process.env.COMMENT_FILE, 'utf8')}\n\n@serithemage Could you take a look? Use \`/approve\` to add or \`/reject [reason]\` to decline.`
+              body: `${fs.readFileSync(process.env.COMMENT_FILE, 'utf8')}\n\n@serithemage Could you take a look?`
             });
 
       - name: Commit and push
