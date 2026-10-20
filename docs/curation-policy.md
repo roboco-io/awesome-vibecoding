@@ -50,7 +50,7 @@ The review compares the new resource with each README row of the same category. 
 
 **Path B, superior new resource.** If no row is disqualified, replace a row only when all three conditions hold: the new resource covers the core function of the row and is broader or more actively maintained; its score total is higher than the row's total; and the model judges it the better starting point and records the reason with evidence URLs. If several rows qualify, replace the one with the lowest score.
 
-**Protection period.** A row that entered the README fewer than 90 days ago cannot be replaced by Path B. A row without a recorded listing date is treated as past the period.
+**Protection period.** A row that entered the README fewer than 90 days ago cannot be replaced by Path B. A row without a recorded listing date is treated as past the period. The listing date is the registry field `listed_on`; the Verified date in a README row is a review date and does not start a protection period.
 
 **Scoring.** Each item is scored 0-2, for a total of 0-10. The items and thresholds are in `data/registration-policy.json`.
 

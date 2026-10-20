@@ -40,7 +40,7 @@ Path B, `path: "superseded"`: use it only when the category is full, no row is e
 - Covers: the new resource includes the core function of the outgoing row and is broader or more actively maintained. Set `covers: true` and explain the evidence in `rationale` (up to 1000 characters).
 - Score: the new resource's total is strictly higher than the outgoing row's total, and the outgoing row has the lowest total in its category.
 - Judgment: you judge the new resource to be the better starting point, and `rationale` says why, citing evidence URLs.
-- Protection: a README row listed less than 90 days ago cannot be replaced by Path B. A row without a recorded listing date counts as past the protection period.
+- Protection: a README row listed less than 90 days ago cannot be replaced by Path B. A row without a recorded listing date counts as past the protection period. The listing date is the registry field `listed_on` returned by lookup_resource. The Verified date in a README row is a review date, not a listing date, and never makes a row protected.
 
 For Path B, submit `categoryScores` as `[{url, scores}]` with a score for every unprotected README row in that category whose stored score is missing or older than 90 days. Each `url` must be a current row of that category block in README.md. Do not rescore rows whose stored score is fresh. If the lowest-scoring row is ambiguous, or the only reason to replace is long inactivity, return uncertain with `manualReason: "ambiguous_replacement"`.
 
