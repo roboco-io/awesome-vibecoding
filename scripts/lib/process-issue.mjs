@@ -22,7 +22,7 @@ export async function processIssue({ approved = false, env = process.env, run = 
   const commentFile = env.RUNNER_TEMP && join(env.RUNNER_TEMP, "issue-comment.md");
   if (commentFile) await writeFile(commentFile, formatIssueComment(result, { issueUrl }));
   if (env.GITHUB_OUTPUT) {
-    const records = [["result", result.status], ["reason", result.reason], ["placement", result.placement || ""], ["manual_reason", result.manualReason || ""], ...(commentFile ? [["comment_file", commentFile]] : [])];
+    const records = [["result", result.status], ["reason", result.reason], ["placement", result.placement || ""], ["manual_reason", result.manualReason || ""], ["replaced", String(Boolean(result.replacement))], ...(commentFile ? [["comment_file", commentFile]] : [])];
     await appendFile(env.GITHUB_OUTPUT, records.map(([key, value]) => outputRecord(key, value)).join(""));
   }
   console.log(`Result: ${result.status}`);

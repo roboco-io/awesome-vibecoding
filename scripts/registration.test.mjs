@@ -291,10 +291,13 @@ test("processIssue writes outputs and a comment file", async t => {
   assert.deepEqual(options.fetchableUrls.slice(0, 3), ["https://new.example/", "https://docs.new.example/start", "https://more0.example/"]);
   assert.match(options.prompt, /Maintainer approved: false/);
   const commentFile = join(dir, "issue-comment.md");
-  assert.equal(await readFile(output, "utf8"), `result=uncertain\nreason=Holds third-party credentials\nplacement=\nmanual_reason=security_sensitive\ncomment_file=${commentFile}\n`);
+  assert.equal(await readFile(output, "utf8"), `result=uncertain\nreason=Holds third-party credentials\nplacement=\nmanual_reason=security_sensitive\nreplaced=false\ncomment_file=${commentFile}\n`);
   assert.match(await readFile(commentFile, "utf8"), /Needs maintainer review — Security-sensitive third-party tool/);
   await writeFile(output, "");
   await processIssue({ approved: true, env: { ...env, RUNNER_TEMP: undefined }, run: async opts => { options = opts; return { status: "processed", reason: "Added", placement: "extended", scores: good, evidenceUrls: [] }; } });
   assert.equal(options.approved, true);
-  assert.equal(await readFile(output, "utf8"), "result=processed\nreason=Added\nplacement=extended\nmanual_reason=\n");
+  assert.equal(await readFile(output, "utf8"), "result=processed\nreason=Added\nplacement=extended\nmanual_reason=\nreplaced=false\n");
+  await writeFile(output, "");
+  await processIssue({ approved: true, env: { ...env, RUNNER_TEMP: undefined }, run: async () => ({ status: "processed", reason: "Swapped", placement: "readme", scores: good, evidenceUrls: [], replacement: { outgoingUrl: "https://old.example/", path: "disqualified" } }) });
+  assert.match(await readFile(output, "utf8"), /placement=readme\nmanual_reason=\nreplaced=true\n/);
 });

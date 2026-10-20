@@ -18,14 +18,37 @@ test("workflow comments treat issue and model strings as data, never JavaScript"
     const comments = [];
     const payload = "https://example.invalid/${globalThis.marker=1}`";
     const context = vm.createContext({
-      marker: 0, process: { env: { REASON: payload, RESOURCE_URL: payload, HTTP_CODE: "000" } },
+      marker: 0, require: name => name === "fs" ? { readFileSync: file => `comment from ${file}` } : assert.fail(name), process: { env: { REASON: payload, RESOURCE_URL: payload, HTTP_CODE: "000", COMMENT_FILE: "/tmp/c.md" } },
       context: { repo: { owner: "owner", repo: "repo" }, issue: { number: 1 } },
       github: { rest: { issues: { createComment: async value => comments.push(value.body), update: async () => {}, addLabels: async () => {} } } },
     });
     assert.doesNotMatch(step.with.script, /\$\{\{\s*steps\./);
     await vm.runInContext(`(async () => {${step.with.script}})()`, context);
     assert.equal(context.marker, 0);
-    assert.ok(comments.some(comment => comment.includes(payload)));
+    assert.ok(comments.some(comment => comment.includes(payload) || comment.includes("comment from /tmp/c.md")));
+  }
+});
+
+test("issue workflows commit every managed catalog file", async () => {
+  for (const name of ["auto-process-issue", "issue-approval"]) {
+    const data = await workflow(name);
+    const commit = Object.values(data.jobs).flatMap(job => job.steps).find(step => step.id === "commit");
+    assert.ok(commit.run.includes("git add README.md README.ko.md README.ja.md docs/verified-catalog.md docs/catalog-history.md data/catalog-status.json"), name);
+    assert.equal(commit.env.PLACEMENT, "${{ steps.pi.outputs.placement }}");
+    assert.equal(commit.env.REPLACED, "${{ steps.pi.outputs.replaced }}");
+    for (const subject of ["Add resource", "Add extended resource", "Replace resource"]) assert.ok(commit.run.includes(`SUBJECT="${subject}"`), `${name}: ${subject}`);
+  }
+});
+
+test("issue comments come from the generated comment file", async () => {
+  for (const [name, stepNames] of [["auto-process-issue", ["Reject - Quality check failed", "Request maintainer review - Uncertain", "Comment on issue"]], ["issue-approval", ["Post review result", "Close issue on success"]]]) {
+    const steps = Object.values((await workflow(name)).jobs).flatMap(job => job.steps);
+    for (const stepName of stepNames) {
+      const step = steps.find(item => item.name === stepName);
+      assert.ok(step, `${name}: ${stepName}`);
+      assert.equal(step.env.COMMENT_FILE, "${{ steps.pi.outputs.comment_file }}");
+      assert.match(step.with.script, /fs\.readFileSync\(process\.env\.COMMENT_FILE, 'utf8'\)/);
+    }
   }
 });
 
@@ -80,9 +103,10 @@ test("rejected suggestions close as not planned and accepted additions close as 
         if (!script?.includes("state: 'closed'")) continue;
         const updates = [];
         const context = vm.createContext({
-          process: { env: { REASON: "Out of scope", RESOURCE_URL: "https://example.invalid/", HTTP_CODE: "404" } },
+          require: () => ({ readFileSync: () => "comment" }),
+          process: { env: { REASON: "Out of scope", RESOURCE_URL: "https://example.invalid/", HTTP_CODE: "404", COMMENT_FILE: "/tmp/c.md" } },
           context: { repo: { owner: "owner", repo: "repo" }, issue: { number: 1 }, payload: { issue: { number: 1 }, comment: { body: "/reject Out of scope" } } },
-          github: { rest: { issues: { createComment: async () => {}, update: async value => updates.push(value) } } },
+          github: { rest: { issues: { createComment: async () => {}, removeLabel: async () => {}, update: async value => updates.push(value) } } },
         });
         await vm.runInContext(`(async () => {${script.replace("${{ steps.validate.outputs.body_len }}", "5001")}})()`, context);
         assert.equal(updates.length, 1);
