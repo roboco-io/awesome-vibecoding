@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 
 const NUMBERS = ["protectionDays", "scoreTtlDays", "maxSearches", "maxFetches"];
-const LISTS = ["scoreItems", "disqualifications", "approvalOnlyDisqualifications", "manualReasons", "independentHosts"];
+const LISTS = ["scoreItems", "disqualifications", "approvalOnlyDisqualifications", "manualReasons", "independentHosts", "securitySignals"];
 const DAY_MS = 86400000;
 
 export async function loadRegistrationPolicy() {
@@ -32,4 +32,20 @@ export function isIndependentSource(url, submittedUrl, policy) {
   const [source, submitted] = [sourceHost(url), sourceHost(submittedUrl)];
   if (policy.independentHosts.includes(source)) return true;
   return source !== submitted && !source.endsWith(`.${submitted}`) && !submitted.endsWith(`.${source}`);
+}
+
+export const SECURITY_FLAGS = ["storesThirdPartyCredentials", "relaysCredentials", "handlesPayments", "executesRemoteCommands"];
+
+// The model declares the security flags; signal words in the issue and fetched pages hold non-vendor tools for review regardless.
+export function checkSecurity(security, { signals, approved, observedUrls, texts = [] }) {
+  const { evidenceUrls } = security || {};
+  if (![...SECURITY_FLAGS, "officialVendor"].every(flag => typeof security?.[flag] === "boolean") || !Array.isArray(evidenceUrls) || !evidenceUrls.length || evidenceUrls.length > 5 || evidenceUrls.some(url => typeof url !== "string")) {
+    throw new Error(`security requires boolean ${SECURITY_FLAGS.join(", ")}, officialVendor and 1-5 evidenceUrls`);
+  }
+  if (evidenceUrls.some(url => !observedUrls.has(url))) throw new Error("Security evidence URL was not returned by a search or page fetch in this run");
+  if (approved || security.officialVendor) return;
+  if (SECURITY_FLAGS.some(flag => security[flag])) throw new Error("Security-sensitive third-party tool; submit uncertain with manualReason security_sensitive");
+  const text = texts.join("\n").toLowerCase();
+  const matched = signals.filter(signal => text.includes(signal));
+  if (matched.length) throw new Error(`Security signals found (${matched.join(", ")}); submit uncertain with manualReason security_sensitive unless the resource is an official vendor tool`);
 }

@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { mkdtemp, mkdir, readFile, writeFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { loadRegistrationPolicy, scoreTotal, isProtected, isScoreFresh, isIndependentSource } from "./lib/registration-policy.mjs";
+import { loadRegistrationPolicy, scoreTotal, isProtected, isScoreFresh, isIndependentSource, checkSecurity } from "./lib/registration-policy.mjs";
 import { shortlistEntries } from "./lib/catalog-status.mjs";
 import { CATEGORIES } from "./lib/categories.mjs";
 import { README_FILES, prepareUpdates, readOriginals, persistUpdates } from "./lib/readme-updates.mjs";
@@ -68,9 +68,10 @@ const addRow = () => readmeEdits("<!-- /catalog:context -->", `${NEW_ROW}\n<!-- 
 const replaceRow = n => readmeEdits(row(n), NEW_ROW);
 const toVerified = url => ({ file: "docs/verified-catalog.md", oldText: "| [**V**](https://v.example/) | v |", newText: `| [**V**](https://v.example/) | v |\n| [**X**](${url}) | moved |` });
 const toHistory = url => ({ file: "docs/catalog-history.md", oldText: "- Status: **archived**.", newText: `- Status: **archived**.\n\n### Moved\n\n- Status: **archived**. [Source](${url}).` });
+const security = (fields = {}) => ({ storesThirdPartyCredentials: false, relaysCredentials: false, handlesPayments: false, executesRemoteCommands: false, officialVendor: false, evidenceUrls: ["https://new.example/"], ...fields });
 const catalogProposal = (fields = {}) => ({
   status: "processed", reason: "Added New", evidenceUrls: ["https://new.example/"], placement: "readme",
-  resource: { id: "resource-new", name: "New", category: "context" }, scores: good, edits: addRow(), ...fields,
+  resource: { id: "resource-new", name: "New", category: "context" }, scores: good, edits: addRow(), security: security(), ...fields,
 });
 const ctx = (fields = {}) => ({ requiredUrl: "https://new.example/", policy, today, approved: false, searchedUrls: ["https://new.example/", "https://evidence.example/archived"], fetchedUrls: [], issueUrl: "https://github.com/o/r/issues/1", ...fields });
 const disqualified = (fields = {}) => ({ outgoingUrl: "https://r3.example/", path: "disqualified", disqualification: "archived", covers: true, rationale: "Archived", evidenceUrls: ["https://evidence.example/archived"], ...fields });
@@ -252,14 +253,52 @@ test("processed issue results require placement, resource and scores", () => {
     const { [field]: _, ...p } = catalogProposal();
     assert.throws(() => checkResultFields(p, { policy }), /placement, resource, and scores/);
   }
+  const { security: _, ...noSecurity } = catalogProposal();
+  for (const approved of [false, true]) assert.throws(() => checkResultFields(noSecurity, { approved, policy }), /require security/);
   checkResultFields({ status: "rejected", reason: "Out of scope", edits: [] }, { policy });
 });
 
 test("weekly results cannot use placement or replacement", () => {
-  for (const field of ["placement", "resource", "scores", "replacement", "categoryScores", "manualReason"]) {
+  for (const field of ["placement", "resource", "scores", "replacement", "categoryScores", "manualReason", "security"]) {
     assert.throws(() => checkResultFields({ status: "unchanged", reason: "None", edits: [], [field]: catalogProposal({ replacement: superseded(), categoryScores: [], manualReason: "security_sensitive" })[field] }, { weekly: true, policy }), /Weekly results/);
   }
   checkResultFields({ status: "unchanged", reason: "None", edits: [] }, { weekly: true, policy });
+});
+
+const observedUrls = new Set(["https://new.example/", "https://github.com/new/new"]);
+const securityCtx = (fields = {}) => ({ signals: policy.securitySignals, approved: false, observedUrls, texts: ["Add New", "A context tool"], ...fields });
+
+test("policy lists lowercase security signals", () => {
+  for (const signal of ["credential", "vault", "oauth", "api key", "access token", "connected app", "payment", "billing", "remote command", "shell access"]) assert.ok(policy.securitySignals.includes(signal), signal);
+  assert.ok(policy.securitySignals.every(signal => signal === signal.toLowerCase()));
+});
+
+test("security signals in issue or fetched text route a non-vendor tool to manual review", () => {
+  const texts = ["Add Aident Loadout", "Hosted MCP for your connected apps; your credentials stay in a vault."];
+  assert.throws(() => checkSecurity(security(), securityCtx({ texts })), /^Error: Security signals found \(credential, vault, connected app\); submit uncertain with manualReason security_sensitive unless the resource is an official vendor tool$/);
+  assert.throws(() => checkSecurity(security(), securityCtx({ texts: ["Supports OAUTH login"] })), /Security signals found \(oauth\)/);
+  checkSecurity(security(), securityCtx());
+});
+
+test("risk flags on a non-vendor tool require manual review unless the maintainer approved", () => {
+  for (const flag of ["storesThirdPartyCredentials", "relaysCredentials", "handlesPayments", "executesRemoteCommands"]) {
+    assert.throws(() => checkSecurity(security({ [flag]: true }), securityCtx()), /^Error: Security-sensitive third-party tool; submit uncertain with manualReason security_sensitive$/);
+    checkSecurity(security({ [flag]: true }), securityCtx({ approved: true }));
+  }
+  checkSecurity(security({ storesThirdPartyCredentials: true }), securityCtx({ approved: true, texts: ["credentials stay in a vault"] }));
+});
+
+test("an official vendor tool passes security signals and risk flags", () => {
+  checkSecurity(security({ officialVendor: true, storesThirdPartyCredentials: true, executesRemoteCommands: true }), securityCtx({ texts: ["Prisma MCP server", "Sign in with OAuth to manage your databases"] }));
+});
+
+test("security evidence must be observed and the field must be well formed", () => {
+  for (const approved of [false, true]) {
+    assert.throws(() => checkSecurity(security({ evidenceUrls: ["https://unseen.example/"] }), securityCtx({ approved })), /Security evidence URL was not returned/);
+    for (const bad of [undefined, security({ evidenceUrls: [] }), security({ evidenceUrls: Array(6).fill("https://new.example/") }), security({ officialVendor: "no" }), { evidenceUrls: ["https://new.example/"] }]) {
+      assert.throws(() => checkSecurity(bad, securityCtx({ approved })), /security requires/);
+    }
+  }
 });
 
 const checksPassed = { relevant: true, usable: true, distinct: true, transparent: true, maintained: true, available_to_new_users: true, not_sunsetting: true };
@@ -293,6 +332,12 @@ test("issue comment names the placement, evidence and scores", () => {
   assert.match(review, /`\/approve`/);
   assert.match(review, /`\/reject \[reason\]`/);
   assert.match(formatIssueComment({ status: "uncertain", reason: "Unclear" }, { issueUrl }), /^## 🤔 Needs maintainer review\n/);
+  const secured = formatIssueComment({ status: "processed", placement: "readme", reason: "Free slot", checks: checksPassed, evidenceUrls, scores: good, security: security({ officialVendor: true, storesThirdPartyCredentials: true }) }, { issueUrl });
+  assert.match(secured, /\| Security flag \| Value \|/);
+  assert.match(secured, /\| storesThirdPartyCredentials \| yes \|/);
+  assert.match(secured, /\| executesRemoteCommands \| no \|/);
+  assert.match(secured, /\| officialVendor \| yes \|/);
+  assert.doesNotMatch(formatIssueComment({ status: "uncertain", reason: "Unclear" }, { issueUrl }), /Security flag/);
   const rejected = formatIssueComment({ status: "rejected", reason: "Out of scope" }, { issueUrl });
   assert.match(rejected, /^## ❌ Rejected/);
   assert.match(rejected, /Out of scope/);
@@ -314,6 +359,7 @@ test("processIssue writes outputs and a comment file", async t => {
   assert.equal(options.fetchableUrls.length, 10);
   assert.deepEqual(options.fetchableUrls.slice(0, 3), ["https://new.example/", "https://docs.new.example/start", "https://more0.example/"]);
   assert.match(options.prompt, /Maintainer approved: false/);
+  assert.deepEqual(options.issueText, ["Add New", body]);
   const commentFile = join(dir, "issue-comment.md");
   assert.equal(await readFile(output, "utf8"), `result=uncertain\nreason=Holds third-party credentials\nplacement=\nmanual_reason=security_sensitive\nreplaced=false\ncomment_file=${commentFile}\n`);
   assert.match(await readFile(commentFile, "utf8"), /Needs maintainer review — Security-sensitive third-party tool/);

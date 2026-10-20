@@ -180,6 +180,7 @@ const catalogFiles = {
 const writeCatalog = async cwd => { for (const [file, text] of Object.entries(catalogFiles)) await writeFile(join(cwd, file), text); };
 const assertCatalogUnchanged = async cwd => { for (const [file, text] of Object.entries(catalogFiles)) assert.equal(await readFile(join(cwd, file), "utf8"), text); };
 const scores = { activity: 2, documentation: 2, access: 1, independent_sources: 1, category_fit: 2 };
+const security = (fields = {}) => ({ storesThirdPartyCredentials: false, relaysCredentials: false, handlesPayments: false, executesRemoteCommands: false, officialVendor: false, evidenceUrls: ["https://new.example/"], ...fields });
 
 test("real Pi SDK executes only custom tools and persists only a successful full result", async t => {
   const cwd = await mkdtemp(join(tmpdir(), "pi-sdk-test-"));
@@ -197,7 +198,7 @@ test("real Pi SDK executes only custom tools and persists only a successful full
   t.mock.method(ModelRuntime.prototype, "streamSimple", (model, context) => {
     assert.deepEqual(context.tools.map(tool => tool.name).sort(), ["lookup_resource", "read_readme", "search_web", "submit_result"]);
     const step = call++ % 3;
-    const p = { ...proposal(), placement: "readme", resource: { id: "resource-new", name: "New", category: "context" }, scores };
+    const p = { ...proposal(), placement: "readme", resource: { id: "resource-new", name: "New", category: "context" }, scores, security: security() };
     if (rejectCriteria) p.checks.relevant = false;
     if (retiredResource) p.edits.forEach(edit => { edit.newText = edit.newText.replaceAll("https://new.example/", "https://aws.amazon.com/q/developer/"); });
     const message = {
@@ -214,7 +215,7 @@ test("real Pi SDK executes only custom tools and persists only a successful full
   const env = { DEEPSEEK_API_KEY: "test-only", EXA_API_KEY: "test-only", AI_TIMEOUT_SECONDS: "5" };
   const requiredUrl = "https://new.example/";
   const added = await runAutomation({ cwd, env, prompt: "Add New", approved: true, requiredUrl, issueUrl: "https://github.com/o/r/issues/1" });
-  assert.deepEqual(added, { status: "processed", reason: "Added New", placement: "readme", manualReason: undefined, checks: proposal().checks, evidenceUrls: ["https://new.example/"], scores, replacement: undefined });
+  assert.deepEqual(added, { status: "processed", reason: "Added New", placement: "readme", manualReason: undefined, checks: proposal().checks, evidenceUrls: ["https://new.example/"], scores, security: security(), replacement: undefined });
   assert.match(await readFile(join(cwd, "README.ja.md"), "utf8"), /new.example/);
   const entry = JSON.parse(await readFile(join(cwd, "data/catalog-status.json"), "utf8")).resources.find(r => r.url === requiredUrl);
   assert.deepEqual([entry.location, entry.review_issue], ["shortlist", "https://github.com/o/r/issues/1"]);
@@ -287,7 +288,7 @@ test("a fetched second-domain page is not independent evidence unless the mainta
   t.mock.method(ModelRuntime.prototype, "streamSimple", (model, context) => {
     const step = call++ % 4;
     if (step === 3) toolResults = context.messages.filter(message => message.role === "toolResult");
-    const p = { ...proposal(), evidenceUrls: [requiredUrl, review], placement: "readme", resource: { id: "resource-new", name: "New", category: "context" }, scores };
+    const p = { ...proposal(), evidenceUrls: [requiredUrl, review], placement: "readme", resource: { id: "resource-new", name: "New", category: "context" }, scores, security: security() };
     const calls = [{ name: "fetch_page", arguments: { url: requiredUrl } }, { name: "fetch_page", arguments: { url: review } }, { name: "submit_result", arguments: p }];
     const message = {
       role: "assistant", api: model.api, provider: model.provider, model: model.id, timestamp: Date.now(),
@@ -308,6 +309,79 @@ test("a fetched second-domain page is not independent evidence unless the mainta
   const added = await runAutomation({ ...options, approved: true });
   assert.deepEqual([added.status, added.evidenceUrls], ["processed", [requiredUrl, review]]);
   assert.match(await readFile(join(cwd, "README.md"), "utf8"), /new\.example/);
+});
+
+test("security signals from the issue and fetched pages hold a non-vendor tool for review", async t => {
+  const cwd = await mkdtemp(join(tmpdir(), "pi-security-test-"));
+  t.after(() => rm(cwd, { recursive: true, force: true }));
+  await mkdir(join(cwd, "docs")); await mkdir(join(cwd, "data"));
+  await writeCatalog(cwd);
+  const requiredUrl = "https://new.example/";
+  const repo = "https://github.com/new/new";
+  t.mock.method(globalThis, "fetch", async (url, options) => {
+    const [page] = JSON.parse(options.body).urls;
+    return { ok: true, json: async () => ({ results: [{ url: page, title: "Page", text: page === requiredUrl ? "Hosted MCP. Your credentials stay in a vault." : "Source code" }] }) };
+  });
+  let call = 0;
+  let toolResults = [];
+  let fields = {};
+  t.mock.method(ModelRuntime.prototype, "streamSimple", (model, context) => {
+    const step = call++ % 4;
+    if (step === 3) toolResults = context.messages.filter(message => message.role === "toolResult");
+    const p = { ...proposal(), evidenceUrls: [requiredUrl, repo], placement: "readme", resource: { id: "resource-new", name: "New", category: "context" }, scores, security: security(), ...fields };
+    const calls = [{ name: "fetch_page", arguments: { url: requiredUrl } }, { name: "fetch_page", arguments: { url: repo } }, { name: "submit_result", arguments: p }];
+    const message = {
+      role: "assistant", api: model.api, provider: model.provider, model: model.id, timestamp: Date.now(),
+      content: step < 3 ? [{ type: "toolCall", id: `call-${step}`, ...calls[step] }] : [{ type: "text", text: "Done" }],
+      stopReason: step < 3 ? "toolUse" : "stop",
+      usage: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0, totalTokens: 0, cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0, total: 0 } },
+    };
+    const stream = createAssistantMessageEventStream();
+    stream.push({ type: "start", partial: message });
+    stream.push({ type: "done", reason: message.stopReason, message });
+    return stream;
+  });
+  const env = { DEEPSEEK_API_KEY: "test-only", EXA_API_KEY: "test-only", AI_TIMEOUT_SECONDS: "5" };
+  const options = { cwd, env, prompt: "Add New", requiredUrl, fetchableUrls: [requiredUrl, repo], issueText: ["Add New", "Please add a hosted MCP"] };
+  await assert.rejects(runAutomation(options), /without submitting/);
+  assert.match(toolResults.at(-1).content.map(part => part.text).join(""), /Security signals found \(credential, vault\)/);
+  await assertCatalogUnchanged(cwd);
+  await assert.rejects(runAutomation({ ...options, issueText: ["Add New", "Uses OAuth"] }), /without submitting/);
+  assert.match(toolResults.at(-1).content.map(part => part.text).join(""), /Security signals found \(credential, vault, oauth\)/);
+  fields = { security: security({ evidenceUrls: ["https://unseen.example/"] }) };
+  await assert.rejects(runAutomation({ ...options, approved: true }), /without submitting/);
+  assert.match(toolResults.at(-1).content.map(part => part.text).join(""), /Security evidence URL was not returned/);
+  await assertCatalogUnchanged(cwd);
+  fields = { security: security({ storesThirdPartyCredentials: true }) };
+  const added = await runAutomation({ ...options, approved: true });
+  assert.deepEqual([added.status, added.security.storesThirdPartyCredentials], ["processed", true]);
+});
+
+test("weekly results cannot include security", async t => {
+  const cwd = await mkdtemp(join(tmpdir(), "pi-weekly-security-test-"));
+  t.after(() => rm(cwd, { recursive: true, force: true }));
+  for (const file of README_FILES) await writeFile(join(cwd, file), source);
+  t.mock.method(globalThis, "fetch", async () => ({ ok: true, json: async () => ({ results: [{ url: "https://new.example/", title: "New", text: "Docs" }] }) }));
+  let call = 0;
+  let toolResults = [];
+  t.mock.method(ModelRuntime.prototype, "streamSimple", (model, context) => {
+    const step = call++;
+    if (step === 2) toolResults = context.messages.filter(message => message.role === "toolResult");
+    const calls = [{ name: "search_web", arguments: { query: "New" } }, { name: "submit_result", arguments: { status: "unchanged", reason: "None", edits: [], security: security() } }];
+    const message = {
+      role: "assistant", api: model.api, provider: model.provider, model: model.id, timestamp: Date.now(),
+      content: step < 2 ? [{ type: "toolCall", id: `call-${step}`, ...calls[step] }] : [{ type: "text", text: "Done" }],
+      stopReason: step < 2 ? "toolUse" : "stop",
+      usage: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0, totalTokens: 0, cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0, total: 0 } },
+    };
+    const stream = createAssistantMessageEventStream();
+    stream.push({ type: "start", partial: message });
+    stream.push({ type: "done", reason: message.stopReason, message });
+    return stream;
+  });
+  const env = { DEEPSEEK_API_KEY: "test-only", EXA_API_KEY: "test-only", AI_TIMEOUT_SECONDS: "5" };
+  await assert.rejects(runAutomation({ cwd, env, prompt: "Weekly", weekly: true }), /without submitting/);
+  assert.match(toolResults.at(-1).content.map(part => part.text).join(""), /Weekly results cannot include .*security/);
 });
 
 test("research cache handles quoted queries, force refresh, candidates and failed-run rollback", async t => {

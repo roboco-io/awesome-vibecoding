@@ -10,7 +10,7 @@ import { ResearchStore } from "./research-store.mjs";
 import { CURATION_CHECKS, validateEvidence } from "./curation.mjs";
 import { refreshRecentUpdates } from "./recent-updates.mjs";
 import { loadCatalogStatus, findResources, findRegistryEntry, assertNewResource, assertShortlistCapacity, normalizeResourceUrl } from "./catalog-status.mjs";
-import { loadRegistrationPolicy, scoreTotal, isScoreFresh } from "./registration-policy.mjs";
+import { loadRegistrationPolicy, scoreTotal, isScoreFresh, checkSecurity, SECURITY_FLAGS } from "./registration-policy.mjs";
 import { prepareCatalogUpdates } from "./catalog-updates.mjs";
 import { CATEGORIES } from "./categories.mjs";
 
@@ -41,7 +41,7 @@ export async function runSession(session, prompt, { maxTurns, timeoutMs }) {
 }
 
 const result = value => ({ content: [{ type: "text", text: JSON.stringify(value) }], details: {} });
-const PLACEMENT_FIELDS = ["placement", "resource", "scores", "replacement", "categoryScores", "manualReason"];
+const PLACEMENT_FIELDS = ["placement", "resource", "scores", "replacement", "categoryScores", "manualReason", "security"];
 
 export function checkResultFields(proposal, { weekly = false, approved = false, policy }) {
   if (weekly) {
@@ -54,6 +54,7 @@ export function checkResultFields(proposal, { weekly = false, approved = false, 
     if (!policy.manualReasons.includes(proposal.manualReason)) throw new Error(`manualReason must be one of: ${policy.manualReasons.join(", ")}`);
   }
   if (proposal.status === "processed" && ["placement", "resource", "scores"].some(field => proposal[field] === undefined)) throw new Error("Processed issue results require placement, resource, and scores");
+  if (proposal.status === "processed" && proposal.security === undefined) throw new Error("Processed issue results require security");
 }
 
 const identity = url => { try { return normalizeResourceUrl(url); } catch { return url; } };
@@ -66,7 +67,7 @@ function describeReplacement({ replacement, categoryScores = [] }, resources, po
 
 const literals = values => Type.Union(values.map(value => Type.Literal(value)));
 
-export async function runAutomation({ prompt, cwd = process.cwd(), env = process.env, requiredUrl, weekly = false, fetchableUrls, approved = false, issueUrl }) {
+export async function runAutomation({ prompt, cwd = process.cwd(), env = process.env, requiredUrl, weekly = false, fetchableUrls, approved = false, issueUrl, issueText = [] }) {
   const config = resolveConfig(env);
   if (weekly && !env.EXA_API_KEY) throw new Error("Weekly research requires EXA_API_KEY");
   const originals = await readOriginals(cwd);
@@ -81,6 +82,7 @@ export async function runAutomation({ prompt, cwd = process.cwd(), env = process
   let store;
   const searchedUrls = new Set();
   const fetchedUrls = new Set();
+  const fetchedTexts = [];
   const fetchable = new Map((fetchableUrls || []).map(url => [normalizeResourceUrl(url), url]));
   try {
     if (weekly) {
@@ -111,6 +113,10 @@ export async function runAutomation({ prompt, cwd = process.cwd(), env = process
       })),
       categoryScores: Type.Optional(Type.Array(Type.Object({ url: Type.String(), scores: scoreSchema }), { maxItems: 20 })),
       manualReason: Type.Optional(literals(policy.manualReasons)),
+      security: Type.Optional(Type.Object({
+        ...Object.fromEntries([...SECURITY_FLAGS, "officialVendor"].map(flag => [flag, Type.Boolean()])),
+        evidenceUrls: Type.Array(Type.String(), { minItems: 1, maxItems: 5 }),
+      })),
     };
     const tools = [
       {
@@ -129,7 +135,7 @@ export async function runAutomation({ prompt, cwd = process.cwd(), env = process
       {
         name: "submit_result", label: "Submit result", description: weekly
           ? "Submit one complete result. Edits are exact, unique text replacements applied in order. processed must add the same resource URLs to all three languages and preserve existing links; other statuses require no edits. No files are written until the agent finishes successfully."
-          : "Submit one complete result. Edits are exact, unique text replacements applied in order. processed requires placement, resource and scores: readme placement adds the requested URL to its category block in all three languages (with replacement when the shortlist is full), extended placement adds it to docs/verified-catalog.md only. manualReason is allowed only with uncertain. Other statuses require no edits. No files are written until the agent finishes successfully.",
+          : "Submit one complete result. Edits are exact, unique text replacements applied in order. processed requires placement, resource, scores and security: readme placement adds the requested URL to its category block in all three languages (with replacement when the shortlist is full), extended placement adds it to docs/verified-catalog.md only. security flags credential storage or relay, payments, remote commands and official vendor status; unless the maintainer approved, a flagged or security-signal-matching non-vendor tool must be submitted as uncertain with manualReason security_sensitive. manualReason is allowed only with uncertain. Other statuses require no edits. No files are written until the agent finishes successfully.",
         parameters: Type.Object({
           status: Type.Union(["processed", "rejected", "uncertain", "unchanged"].map(value => Type.Literal(value))),
           reason: Type.String({ minLength: 1, maxLength: 1000 }),
@@ -142,6 +148,7 @@ export async function runAutomation({ prompt, cwd = process.cwd(), env = process
           if (submission) throw new Error("A result has already been accepted");
           checkResultFields(proposal, { weekly, approved, policy });
           validateEvidence(proposal, { searched: searchedUrls, fetched: fetchedUrls, submittedUrl: requiredUrl, policy, requireIndependent: !weekly && !approved });
+          if (!weekly && proposal.status === "processed") checkSecurity(proposal.security, { signals: policy.securitySignals, approved, observedUrls: new Set([...searchedUrls, ...fetchedUrls]), texts: [...issueText, ...fetchedTexts] });
           const changed = weekly
             ? prepareUpdates(originals, proposal, { requiredUrl })
             : prepareCatalogUpdates(originals, proposal, { requiredUrl, policy, today, approved, searchedUrls: [...searchedUrls], fetchedUrls: [...fetchedUrls], issueUrl });
@@ -185,6 +192,7 @@ export async function runAutomation({ prompt, cwd = process.cwd(), env = process
         if (++fetches > policy.maxFetches) throw new Error("Fetch limit exceeded");
         const page = await fetchPage(original, { apiKey: env.EXA_API_KEY, signal });
         fetchedUrls.add(original);
+        fetchedTexts.push(`${page.title || ""}\n${page.snippet || ""}`);
         return result(page);
       },
     });
@@ -213,8 +221,8 @@ export async function runAutomation({ prompt, cwd = process.cwd(), env = process
     await runSession(session, prompt, config);
     if (researchError) throw researchError;
     if (!submission) throw new Error("Pi finished without submitting a result");
-    const { status, reason, placement, manualReason, checks, evidenceUrls, scores } = submission;
-    console.log(`Assessment: ${JSON.stringify({ status, reason, placement, manualReason, checks, evidenceUrls, scores })}`);
+    const { status, reason, placement, manualReason, checks, evidenceUrls, scores, security } = submission;
+    console.log(`Assessment: ${JSON.stringify({ status, reason, placement, manualReason, checks, evidenceUrls, scores, security })}`);
     if (weekly && !["processed", "unchanged"].includes(submission.status)) throw new Error("Weekly result requires review");
     if (weekly || (updates && README_FILES.some(file => updates[file] !== originals[file]))) {
       const refreshed = { ...(updates || originals) };
@@ -230,7 +238,7 @@ export async function runAutomation({ prompt, cwd = process.cwd(), env = process
       const added = updates ? [...links(updates["README.md"]).keys()].filter(url => !oldLinks.has(url)) : [];
       await store.commit(added);
     }
-    return { status, reason, placement, manualReason, checks, evidenceUrls, scores, replacement: status === "processed" && submission.replacement ? describeReplacement(submission, JSON.parse(originals["data/catalog-status.json"]).resources, policy, today) : undefined };
+    return { status, reason, placement, manualReason, checks, evidenceUrls, scores, security, replacement: status === "processed" && submission.replacement ? describeReplacement(submission, JSON.parse(originals["data/catalog-status.json"]).resources, policy, today) : undefined };
   } finally {
     store?.close();
     await rm(agentDir, { recursive: true, force: true });
