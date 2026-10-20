@@ -5224,6 +5224,37 @@
       ],
       "reviewed_on": "2026-10-20",
       "review_issue": "https://github.com/roboco-io/awesome-vibecoding/issues/53"
+    },
+    {
+      "id": "resource-aident-loadout",
+      "name": "Aident Loadout",
+      "url": "https://aident.ai",
+      "aliases": [
+        "https://aident.ai"
+      ],
+      "category": "context",
+      "status": "active",
+      "location": "extended",
+      "verified_on": "2026-10-20",
+      "scores": {
+        "activity": 2,
+        "documentation": 2,
+        "access": 1,
+        "independent_sources": 2,
+        "category_fit": 2
+      },
+      "scored_on": "2026-10-20",
+      "evidence_urls": [
+        "https://aident.ai",
+        "https://aident.ai/pricing",
+        "https://docs.aident.ai/documentation/mcp-server-setup",
+        "https://docs.aident.ai/loadout/mcp",
+        "https://github.com/Aident-AI/aident-skill",
+        "https://infrabase.ai/agents/aident-loadout",
+        "https://agentsindex.ai/aident"
+      ],
+      "reviewed_on": "2026-10-20",
+      "review_issue": "https://github.com/roboco-io/awesome-vibecoding/issues/55"
     }
   ]
 }

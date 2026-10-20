@@ -54,6 +54,7 @@
 
 | Resource | When to use it | Access / scope | Verified |
 |---|---|---|---|
+| <a id="resource-aident-loadout"></a>[**Aident Loadout**](https://aident.ai) · MCP | Hosted MCP server, CLI and Skill that connect coding agents such as Claude Code, Codex and Cursor to connected apps and 400+ expert-built Skills through one setup; credentials stay in an Aident Vault and every action is recorded in an audit log | Account required; proprietary hosted service with a free pay-as-you-go start plus paid Pro/Team plans; MIT Skill; agents receive action results rather than raw credentials; check pricing | [2026-10-20](https://github.com/roboco-io/awesome-vibecoding/issues/55) |
 | <a id="resource-anycrawl"></a>[**AnyCrawl**](https://github.com/any4ai/anycrawl-mcp-server) · MCP | Fetch website content for agent context | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-anycrawl) |
 | <a id="resource-breaking-coding-chaos"></a>[**breaking-coding-chaos**](https://github.com/bo-cao/breaking-coding-chaos) | Human-in-the-loop dual-loop control-plane skill suite | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-breaking-coding-chaos) |
 | <a id="resource-chroma"></a>[**Chroma**](https://github.com/chroma-core/chroma-mcp) · MCP | Retrieve context from a vector database | Check pricing | [2026-09-18](lifecycle-review-2026-09-18.md#resource-chroma) |
