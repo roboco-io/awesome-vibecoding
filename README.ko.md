@@ -27,6 +27,8 @@
 <!-- recent-updates:start -->
 | 검증일 | 업데이트 | 변경 사항 |
 |---|---|---|
+| 2026-10-20 | [Ralph Loop Model Benchmark](#resource-ralph-loop-model-benchmark) | 검토 후 추가: 22개 모델·하니스 조합이 사람 개입 없이 RealWorld 백엔드를 완성하는지 비교; 무료, 4개 언어. |
+| 2026-10-20 | [Language Benchmark](#resource-language-benchmark) | 검토 후 추가: Claude Code가 같은 백엔드를 10개 프로그래밍 언어로 구현한 결과를 24개 지표로 비교; 무료, 4개 언어. |
 | 2026-10-18 | [Preflight](#resource-preflight) | 검토 후 추가: 사용 중인 코딩 에이전트에 맞춘 보안 점검 프롬프트를 만들고 결과를 우선순위로 재정리; 월 2건 묣료, 추가 크레딧 유료; 코드 업로드 불필요. |
 | 2026-10-11 | [Massvai](#resource-massvai) | 검토 후 추가: 프롬프트를 Supabase 연동 풀스택 Next.js 앱으로 만들어 주는 빌더; 실시간 미리보기, GitHub 코드 낳출 및 Vercel 배포 지원; 묣료 시작 크레딧과 유료 요금제 제공. |
 | 2026-10-11 | [Coderblock](#resource-coderblock) | 검토 후 추가: 앱별 Supabase 백엔드를 갖춘 대화형 풀스택 웹 앱 빌더; 묣료 시작 크레딧, 유료 요금제 제공. |
@@ -218,6 +220,8 @@
 | <a id="resource-swe-agent-agent-computer-interfaces-enable-automated-software-engineering"></a>[**SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering**](https://arxiv.org/abs/2405.15793) · 논문 | Agent-Computer Interface를 사용하여 실제 버그를 수정하는 자율 에이전트 | 무료 열람; 재사용 조건 확인 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-swe-agent-agent-computer-interfaces-enable-automated-software-engineering) |
 | <a id="resource-swe-bench-can-language-models-resolve-real-world-github-issues"></a>[**SWE-bench: Can Language Models Resolve Real-World GitHub Issues?**](https://arxiv.org/abs/2310.06770) · 논문 | AI 코딩 에이전트 평가를 위한 표준 벤치마크 | 무료 열람; 재사용 조건 확인 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-swe-bench-can-language-models-resolve-real-world-github-issues) |
 | <a id="resource-vdlc"></a>[**VDLC — Vibe-Driven Development Lifecycle (Roboco)**](https://vdlc.roboco.io/) · 가이드 | 의도와 컨텍스트를 1차 산출물로 다루는 개발 생명주기 프레임워크; 계획 승인·최종 리뷰·배포 승인 관문을 사람이 지키는 6단계 구성; 영·한·일 삼중 언어 제공 | 물료 열림; 재사용 조건 확인 | 2026-10-04 |
+| <a id="resource-ralph-loop-model-benchmark"></a>[**Ralph Loop Model Benchmark (Roboco)**](https://roboco.io/coding-agent-benchmark/) · 벤치마크 | 22개 모델·하니스 조합(Claude Code, Codex CLI, pi, Antigravity CLI)이 사람 개입 없이 RealWorld 백엔드를 완성하는지 완료 여부·시간·토큰·추정 비용으로 비교; 단일 과제, 조건당 대부분 3회 실행; 영·한·일·중 제공 | 무료 열람, 가입 불필요; 라이선스 미표기 | 2026-10-20 |
+| <a id="resource-language-benchmark"></a>[**Language Benchmark (Roboco)**](https://roboco.io/language-benchmark/) · 벤치마크 | 바이브 코딩용 백엔드 언어 선택: Claude Code가 같은 RealWorld 백엔드를 10개 언어로 구현하고 빌드 비용·런타임 성능·유지보수의 24개 지표로 평가; 수치는 상대 비교용; 영·한·일·중 제공 | 무료 열람, 가입 불필요; 라이선스 미표기 | 2026-10-20 |
 
 <details>
 <summary>배경과 기원</summary>

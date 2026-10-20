@@ -27,6 +27,8 @@
 <!-- recent-updates:start -->
 | 確認日 | 更新項目 | 変更内容 |
 |---|---|---|
+| 2026-10-20 | [Ralph Loop Model Benchmark](#resource-ralph-loop-model-benchmark) | レビュー後に追加：22のモデル・ハーネスの組み合わせが人の介入なしにRealWorldバックエンドを完成できるかを比較。無料、4言語。 |
+| 2026-10-20 | [Language Benchmark](#resource-language-benchmark) | レビュー後に追加：Claude Codeが同じバックエンドを10のプログラミング言語で実装した結果を24の指標で比較。無料、4言語。 |
 | 2026-10-18 | [Preflight](#resource-preflight) | レビュー後に追加：利用中のコーディングエージェント向けのセキュリティチェック用プロンプトを生成し、結果を優先度別に再整理。月2件無料、追加クレジットは有料。コードアップロード不要。 |
 | 2026-10-11 | [Massvai](#resource-massvai) | レビュー後に追加：プロンプトからSupabase連携のフルスタックNext.jsアプリを生成するビルダー。ライブプレビュー、GitHubへのコードエクスポート、Vercelデプロイに対応。無料の開始クレジットと有料プランあり。 |
 | 2026-10-11 | [Coderblock](#resource-coderblock) | レビュー後に追加：アプリごとのSupabaseバックエンドを備えた対話型フルスタックWebアプリビルダー。無料の開始クレジットと有料プランあり。 |
@@ -218,6 +220,8 @@
 | <a id="resource-swe-agent-agent-computer-interfaces-enable-automated-software-engineering"></a>[**SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering**](https://arxiv.org/abs/2405.15793) · 論文 | Agent-Computer Interfaceで実際のバグを修正する自律型エージェント | 閲覧無料；再利用条件を要確認 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-swe-agent-agent-computer-interfaces-enable-automated-software-engineering) |
 | <a id="resource-swe-bench-can-language-models-resolve-real-world-github-issues"></a>[**SWE-bench: Can Language Models Resolve Real-World GitHub Issues?**](https://arxiv.org/abs/2310.06770) · 論文 | AIコーディングエージェントを評価する標準ベンチマーク | 閲覧無料；再利用条件を要確認 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-swe-bench-can-language-models-resolve-real-world-github-issues) |
 | <a id="resource-vdlc"></a>[**VDLC — Vibe-Driven Development Lifecycle (Roboco)**](https://vdlc.roboco.io/) · ガイド | 意図とコンテキストを一次成果物とする開発ライフサイクルの枠組み。計画承認・最終レビュー・デプロイ承認のゲートを人が守る6段階構成。英・韓・日の3言語で提供 | 閲覧無料；再利用条件を要確認 | 2026-10-04 |
+| <a id="resource-ralph-loop-model-benchmark"></a>[**Ralph Loop Model Benchmark (Roboco)**](https://roboco.io/coding-agent-benchmark/) · ベンチマーク | 22のモデル・ハーネスの組み合わせ（Claude Code、Codex CLI、pi、Antigravity CLI）が人の介入なしにRealWorldバックエンドを完成できるかを、完了・時間・トークン・推定コストで比較。単一タスク、条件ごとに主に3回実行。英・韓・日・中で提供 | 閲覧無料、登録不要；ライセンス表記なし | 2026-10-20 |
+| <a id="resource-language-benchmark"></a>[**Language Benchmark (Roboco)**](https://roboco.io/language-benchmark/) · ベンチマーク | バイブコーディング向けのバックエンド言語選び：Claude Codeが同じRealWorldバックエンドを10言語で実装し、ビルドコスト・実行性能・保守性の24指標で評価。数値は相対比較用。英・韓・日・中で提供 | 閲覧無料、登録不要；ライセンス表記なし | 2026-10-20 |
 
 <details>
 <summary>背景と起源</summary>

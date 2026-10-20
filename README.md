@@ -27,6 +27,8 @@ Recent reviews and material changes from the last 30 days, newest first. A revie
 <!-- recent-updates:start -->
 | Verified on | Update | What changed |
 |---|---|---|
+| 2026-10-20 | [Ralph Loop Model Benchmark](#resource-ralph-loop-model-benchmark) | Reviewed addition: compares 22 model and harness combinations on finishing a RealWorld backend without human help; free, four languages. |
+| 2026-10-20 | [Language Benchmark](#resource-language-benchmark) | Reviewed addition: compares how well Claude Code builds the same backend in 10 programming languages across 24 metrics; free, four languages. |
 | 2026-10-18 | [Preflight](#resource-preflight) | Reviewed addition: builds a tailored security-check prompt for the user's own coding agent and reprioritizes the findings; 2 free checks per month, paid credits; no code upload. |
 | 2026-10-11 | [Massvai](#resource-massvai) | Reviewed addition: prompt-to-full-stack Next.js app builder with Supabase, live preview, GitHub export and Vercel deploy; free starting credits, paid plans. |
 | 2026-10-11 | [Coderblock](#resource-coderblock) | Reviewed addition: conversational builder for full-stack web apps with per-app Supabase backends; free starting credits, paid tiers. |
@@ -218,6 +220,8 @@ Understand the tools after trying a small project, or go deeper into evaluation 
 | <a id="resource-swe-agent-agent-computer-interfaces-enable-automated-software-engineering"></a>[**SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering**](https://arxiv.org/abs/2405.15793) · Paper | Autonomous agent fixing real bugs using Agent-Computer Interface | Free reading; check reuse terms | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-swe-agent-agent-computer-interfaces-enable-automated-software-engineering) |
 | <a id="resource-swe-bench-can-language-models-resolve-real-world-github-issues"></a>[**SWE-bench: Can Language Models Resolve Real-World GitHub Issues?**](https://arxiv.org/abs/2310.06770) · Paper | Standard benchmark for evaluating AI coding agents | Free reading; check reuse terms | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-swe-bench-can-language-models-resolve-real-world-github-issues) |
 | <a id="resource-vdlc"></a>[**VDLC — Vibe-Driven Development Lifecycle (Roboco)**](https://vdlc.roboco.io/) · Guide | Development lifecycle framework treating intent and context as the primary artifacts; six stages with human gates at plan approval, final review and deploy; trilingual EN/KO/JA | Free reading; check reuse terms | 2026-10-04 |
+| <a id="resource-ralph-loop-model-benchmark"></a>[**Ralph Loop Model Benchmark (Roboco)**](https://roboco.io/coding-agent-benchmark/) · Benchmark | Compare 22 model and harness combinations (Claude Code, Codex CLI, pi, Antigravity CLI) on finishing a RealWorld backend without human help, by completion, time, tokens and estimated cost; single task, mostly 3 runs per condition; EN/KO/JA/ZH | Free reading, no signup; no license stated | 2026-10-20 |
+| <a id="resource-language-benchmark"></a>[**Language Benchmark (Roboco)**](https://roboco.io/language-benchmark/) · Benchmark | Choose a backend language for vibe coding: Claude Code builds the same RealWorld backend in 10 languages, scored on 24 metrics for build cost, runtime performance and maintenance; figures are relative; EN/KO/JA/ZH | Free reading, no signup; no license stated | 2026-10-20 |
 
 <details>
 <summary>Background and origin</summary>

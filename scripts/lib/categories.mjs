@@ -5,7 +5,7 @@ export const CATEGORIES = {
   quality: { title: "Testing, Review & Security", anchor: "quality", limit: 8, purpose: "Test generated software, review changes, and diagnose failures" },
   delivery: { title: "Deployment & Execution", anchor: "delivery", limit: 6, purpose: "Build, deploy, or run code in an isolated environment" },
   operations: { title: "Agent Workspaces & Usage", anchor: "operations", limit: 8, purpose: "Manage agent sessions, observe runs, and understand usage" },
-  learning: { title: "Learn & Practice", anchor: "learning", limit: 12, purpose: "Find a first project, practical workflow, or conceptual explanation" },
+  learning: { title: "Learn & Practice", anchor: "learning", limit: 14, purpose: "Find a first project, practical workflow, or conceptual explanation" },
 };
 
 export function categoryGuide() {
