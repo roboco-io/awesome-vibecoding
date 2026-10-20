@@ -30,7 +30,7 @@ function checkTables(text) {
   }
 }
 
-export function prepareUpdates(originals, proposal, { requiredUrl, removableUrls = [], readmeUnchanged = false } = {}) {
+export function prepareUpdates(originals, proposal, { requiredUrl, removableUrls = [], readmeUnchanged = false, files = README_FILES } = {}) {
   if (!proposal || !["processed", "rejected", "uncertain", "unchanged"].includes(proposal.status)) throw new Error("Missing or invalid result status");
   if (typeof proposal.reason !== "string" || !proposal.reason.trim() || proposal.reason.length > 1000) throw new Error("A concise result reason is required");
   if (!Array.isArray(proposal.edits) || proposal.edits.length > 60) throw new Error("Invalid edits");
@@ -38,7 +38,7 @@ export function prepareUpdates(originals, proposal, { requiredUrl, removableUrls
     if (proposal.edits.length) throw new Error("Non-processed results must not contain edits");
     return null;
   }
-  if (proposal.edits.some(edit => !EDITABLE_FILES.includes(edit.file))) throw new Error("Unsupported file in edit");
+  if (proposal.edits.some(edit => !files.includes(edit.file) || !EDITABLE_FILES.includes(edit.file))) throw new Error("Unsupported file in edit");
   const readmeEdits = new Set(proposal.edits.map(e => e.file).filter(file => README_FILES.includes(file))).size;
   if (readmeUnchanged ? readmeEdits : readmeEdits !== 3) throw new Error(readmeUnchanged ? "README files must not change for this placement" : "Update all three languages together");
   const updated = { ...originals };

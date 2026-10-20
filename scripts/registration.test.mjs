@@ -6,7 +6,7 @@ import { join } from "node:path";
 import { loadRegistrationPolicy, scoreTotal, isProtected, isScoreFresh, isIndependentSource } from "./lib/registration-policy.mjs";
 import { shortlistEntries } from "./lib/catalog-status.mjs";
 import { CATEGORIES } from "./lib/categories.mjs";
-import { README_FILES, readOriginals, persistUpdates } from "./lib/readme-updates.mjs";
+import { README_FILES, prepareUpdates, readOriginals, persistUpdates } from "./lib/readme-updates.mjs";
 import { prepareCatalogUpdates } from "./lib/catalog-updates.mjs";
 
 const policy = await loadRegistrationPolicy();
@@ -153,6 +153,23 @@ test("replacement must relocate the outgoing row", () => {
   const originals = catalogOriginals(LIMIT, { 3: { scores: low } });
   assert.throws(() => prepareCatalogUpdates(originals, catalogProposal({ replacement: superseded(), edits: replaceRow(3) }), ctx()), /verified-catalog/);
   assert.throws(() => prepareCatalogUpdates(originals, catalogProposal({ replacement: disqualified(), edits: replaceRow(3) }), ctx()), /catalog-history/);
+});
+
+test("a pre-existing link in the destination doc does not count as relocation", () => {
+  const originals = { ...catalogOriginals(LIMIT, { 3: { scores: low } }), "docs/catalog-history.md": `${HISTORY}- Source: [R3](https://r3.example/).\n`, "docs/verified-catalog.md": `${VERIFIED}| [**R3**](https://r3.example/) | old |\n` };
+  assert.throws(() => prepareCatalogUpdates(originals, catalogProposal({ replacement: disqualified(), edits: replaceRow(3) }), ctx()), /catalog-history/);
+  assert.throws(() => prepareCatalogUpdates(originals, catalogProposal({ replacement: superseded(), edits: replaceRow(3) }), ctx()), /verified-catalog/);
+});
+
+test("categoryScores must be valid scores for current rows of the category", () => {
+  const p = catalogProposal({ replacement: disqualified(), edits: [...replaceRow(3), toHistory("https://r3.example/")] });
+  assert.throws(() => prepareCatalogUpdates(catalogOriginals(LIMIT), { ...p, categoryScores: [{ url: "https://r5.example/", scores: { ...good, activity: 3 } }] }, ctx()), /0-2/);
+  assert.throws(() => prepareCatalogUpdates(catalogOriginals(LIMIT), { ...p, categoryScores: [{ url: "https://c.example/", scores: good }] }, ctx()), /current/);
+});
+
+test("default prepareUpdates edits README files only", () => {
+  const p = catalogProposal({ edits: [...addRow(), toVerified("https://x.example/")] });
+  assert.throws(() => prepareUpdates(catalogOriginals(LIMIT - 1), p, { requiredUrl: "https://new.example/" }), /Unsupported file/);
 });
 
 test("registry records listed_on, scores and review issue for the incoming entry", () => {
