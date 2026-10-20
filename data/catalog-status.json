@@ -5283,6 +5283,35 @@
       ],
       "reviewed_on": "2026-10-20",
       "review_issue": "https://github.com/roboco-io/awesome-vibecoding/issues/49"
+    },
+    {
+      "id": "resource-layerwise",
+      "name": "Layerwise",
+      "url": "https://layerwise.app",
+      "aliases": [
+        "https://layerwise.app"
+      ],
+      "category": "apps",
+      "status": "active",
+      "location": "extended",
+      "verified_on": "2026-10-20",
+      "scores": {
+        "activity": 2,
+        "documentation": 2,
+        "access": 1,
+        "independent_sources": 1,
+        "category_fit": 2
+      },
+      "scored_on": "2026-10-20",
+      "evidence_urls": [
+        "https://layerwise.app/docs",
+        "https://layerwise.app/pricing",
+        "https://github.com/layerwise-app/layerwise/releases/tag/v0.7.0",
+        "https://layerwise.app/",
+        "https://layerwise.app/docs/build-your-app/chat-and-preview"
+      ],
+      "reviewed_on": "2026-10-20",
+      "review_issue": "https://github.com/roboco-io/awesome-vibecoding/issues/59"
     }
   ]
 }
