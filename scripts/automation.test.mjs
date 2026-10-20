@@ -215,7 +215,7 @@ test("real Pi SDK executes only custom tools and persists only a successful full
   const env = { DEEPSEEK_API_KEY: "test-only", EXA_API_KEY: "test-only", AI_TIMEOUT_SECONDS: "5" };
   const requiredUrl = "https://new.example/";
   const added = await runAutomation({ cwd, env, prompt: "Add New", approved: true, requiredUrl, issueUrl: "https://github.com/o/r/issues/1" });
-  assert.deepEqual(added, { status: "processed", reason: "Added New", placement: "readme", manualReason: undefined, checks: proposal().checks, evidenceUrls: ["https://new.example/"], scores, security: security(), replacement: undefined });
+  assert.deepEqual(added, { status: "processed", reason: "Added New", placement: "readme", manualReason: undefined, checks: proposal().checks, evidenceUrls: ["https://new.example/"], scores, security: security(), securitySignals: [], replacement: undefined });
   assert.match(await readFile(join(cwd, "README.ja.md"), "utf8"), /new.example/);
   const entry = JSON.parse(await readFile(join(cwd, "data/catalog-status.json"), "utf8")).resources.find(r => r.url === requiredUrl);
   assert.deepEqual([entry.location, entry.review_issue], ["shortlist", "https://github.com/o/r/issues/1"]);
@@ -344,10 +344,10 @@ test("security signals from the issue and fetched pages hold a non-vendor tool f
   const env = { DEEPSEEK_API_KEY: "test-only", EXA_API_KEY: "test-only", AI_TIMEOUT_SECONDS: "5" };
   const options = { cwd, env, prompt: "Add New", requiredUrl, fetchableUrls: [requiredUrl, repo], issueText: ["Add New", "Please add a hosted MCP"] };
   await assert.rejects(runAutomation(options), /without submitting/);
-  assert.match(toolResults.at(-1).content.map(part => part.text).join(""), /Security signals found \(credential, vault\)/);
+  assert.match(toolResults.at(-1).content.map(part => part.text).join(""), /Security signals found \(credential in https:\/\/new\.example\/, vault in https:\/\/new\.example\/\)/);
   await assertCatalogUnchanged(cwd);
   await assert.rejects(runAutomation({ ...options, issueText: ["Add New", "Uses OAuth"] }), /without submitting/);
-  assert.match(toolResults.at(-1).content.map(part => part.text).join(""), /Security signals found \(credential, vault, oauth\)/);
+  assert.match(toolResults.at(-1).content.map(part => part.text).join(""), /Security signals found \(credential in https:\/\/new\.example\/, vault in https:\/\/new\.example\/, oauth in issue\)/);
   fields = { security: security({ evidenceUrls: ["https://unseen.example/"] }) };
   await assert.rejects(runAutomation({ ...options, approved: true }), /without submitting/);
   assert.match(toolResults.at(-1).content.map(part => part.text).join(""), /Security evidence URL was not returned/);
@@ -355,6 +355,7 @@ test("security signals from the issue and fetched pages hold a non-vendor tool f
   fields = { security: security({ storesThirdPartyCredentials: true }) };
   const added = await runAutomation({ ...options, approved: true });
   assert.deepEqual([added.status, added.security.storesThirdPartyCredentials], ["processed", true]);
+  assert.deepEqual(added.securitySignals, [{ signal: "credential", source: "https://new.example/" }, { signal: "vault", source: "https://new.example/" }]);
 });
 
 test("weekly results cannot include security", async t => {

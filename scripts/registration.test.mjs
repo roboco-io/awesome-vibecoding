@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { mkdtemp, mkdir, readFile, writeFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { loadRegistrationPolicy, scoreTotal, isProtected, isScoreFresh, isIndependentSource, checkSecurity } from "./lib/registration-policy.mjs";
+import { loadRegistrationPolicy, scoreTotal, isProtected, isScoreFresh, isIndependentSource, checkSecurity, isVerifiedVendor, findSecuritySignals } from "./lib/registration-policy.mjs";
 import { shortlistEntries } from "./lib/catalog-status.mjs";
 import { CATEGORIES } from "./lib/categories.mjs";
 import { README_FILES, prepareUpdates, readOriginals, persistUpdates } from "./lib/readme-updates.mjs";
@@ -266,17 +266,34 @@ test("weekly results cannot use placement or replacement", () => {
 });
 
 const observedUrls = new Set(["https://new.example/", "https://github.com/new/new"]);
-const securityCtx = (fields = {}) => ({ signals: policy.securitySignals, approved: false, observedUrls, texts: ["Add New", "A context tool"], ...fields });
+const issueSource = text => [{ source: "issue", text }];
+const securityCtx = (fields = {}) => ({ signals: policy.securitySignals, vendors: policy.verifiedVendors, resourceUrl: "https://new.example/", approved: false, observedUrls, sources: issueSource("Add New\nA context tool"), ...fields });
 
-test("policy lists lowercase security signals", () => {
+test("policy lists lowercase security signals and verified vendors", () => {
   for (const signal of ["credential", "vault", "oauth", "api key", "access token", "connected app", "payment", "billing", "remote command", "shell access"]) assert.ok(policy.securitySignals.includes(signal), signal);
   assert.ok(policy.securitySignals.every(signal => signal === signal.toLowerCase()));
+  assert.deepEqual(policy.verifiedVendors, ["prisma.io", "github.com/prisma"]);
+});
+
+test("isVerifiedVendor matches hosts with subdomains and code-host owners", () => {
+  const vendors = ["prisma.io", "github.com/prisma"];
+  for (const url of ["https://prisma.io/", "https://docs.prisma.io/mcp", "https://www.prisma.io", "https://github.com/prisma/mcp", "https://GitHub.com/Prisma/x"]) assert.equal(isVerifiedVendor(url, vendors), true, url);
+  for (const url of ["https://notprisma.io/", "https://github.com/prismax/y", "https://gitlab.com/prisma/x", "https://github.com/", "not a url"]) assert.equal(isVerifiedVendor(url, vendors), false, url);
+  assert.equal(isVerifiedVendor("https://prisma.io/", []), false);
+});
+
+test("findSecuritySignals matches whole words with plurals and separators", () => {
+  const hit = text => findSecuritySignals(policy.securitySignals, issueSource(text)).map(match => match.signal);
+  assert.deepEqual(hit("Your credentials; OAuth2 login; API Keys, api-key, api_key, apikey, api key"), ["credential", "oauth", "api key"]);
+  assert.deepEqual(hit("Stores Payments and billing, Vaults"), ["vault", "payment", "billing"]);
+  for (const text of ["credentialing", "vaulted", "prepayment", "rapid keys", "unoauth", "billingsgate", "a context tool"]) assert.deepEqual(hit(text), [], text);
+  assert.deepEqual(findSecuritySignals(["vault", "oauth"], [{ source: "https://a.example/", text: "OAuth vault" }, { source: "issue", text: "vault" }]), [{ signal: "vault", source: "https://a.example/" }, { signal: "vault", source: "issue" }, { signal: "oauth", source: "https://a.example/" }]);
 });
 
 test("security signals in issue or fetched text route a non-vendor tool to manual review", () => {
-  const texts = ["Add Aident Loadout", "Hosted MCP for your connected apps; your credentials stay in a vault."];
-  assert.throws(() => checkSecurity(security(), securityCtx({ texts })), /^Error: Security signals found \(credential, vault, connected app\); submit uncertain with manualReason security_sensitive unless the resource is an official vendor tool$/);
-  assert.throws(() => checkSecurity(security(), securityCtx({ texts: ["Supports OAUTH login"] })), /Security signals found \(oauth\)/);
+  const sources = [...issueSource("Add Aident Loadout"), { source: "https://new.example/", text: "Hosted MCP for your connected apps; your credentials stay in a vault." }];
+  assert.throws(() => checkSecurity(security(), securityCtx({ sources })), /^Error: Security signals found \(credential in https:\/\/new\.example\/, vault in https:\/\/new\.example\/, connected app in https:\/\/new\.example\/\); submit uncertain with manualReason security_sensitive unless the resource URL is a verified vendor$/);
+  assert.throws(() => checkSecurity(security(), securityCtx({ sources: issueSource("Supports OAUTH login") })), /Security signals found \(oauth in issue\)/);
   checkSecurity(security(), securityCtx());
 });
 
@@ -285,13 +302,16 @@ test("risk flags on a non-vendor tool require manual review unless the maintaine
     assert.throws(() => checkSecurity(security({ [flag]: true }), securityCtx()), /^Error: Security-sensitive third-party tool; submit uncertain with manualReason security_sensitive$/);
     checkSecurity(security({ [flag]: true }), securityCtx({ approved: true }));
   }
-  checkSecurity(security({ storesThirdPartyCredentials: true }), securityCtx({ approved: true, texts: ["credentials stay in a vault"] }));
+  checkSecurity(security({ storesThirdPartyCredentials: true }), securityCtx({ approved: true, sources: issueSource("credentials stay in a vault") }));
 });
 
-test("an unflagged official vendor tool passes security signals, but risk flags hold even official tools", () => {
-  checkSecurity(security({ officialVendor: true }), securityCtx({ texts: ["Prisma MCP server", "Sign in with OAuth to manage your databases"] }));
-  assert.throws(() => checkSecurity(security({ officialVendor: true, storesThirdPartyCredentials: true }), securityCtx({ texts: ["Aident Loadout by Aident", "Your credentials for connected apps stay in a vault"] })), /^Error: Security-sensitive third-party tool; submit uncertain with manualReason security_sensitive$/);
-  for (const flag of ["storesThirdPartyCredentials", "relaysCredentials", "handlesPayments", "executesRemoteCommands"]) assert.throws(() => checkSecurity(security({ officialVendor: true, [flag]: true }), securityCtx()), /Security-sensitive/);
+test("only a verified vendor resource URL passes security signals, and risk flags hold even verified vendors", () => {
+  const oauth = issueSource("Sign in with OAuth to manage your databases");
+  assert.throws(() => checkSecurity(security({ officialVendor: true }), securityCtx({ sources: oauth })), /Security signals found \(oauth in issue\)/);
+  checkSecurity(security(), securityCtx({ resourceUrl: "https://github.com/prisma/mcp", sources: oauth }));
+  checkSecurity(security({ officialVendor: true }), securityCtx({ resourceUrl: "https://docs.prisma.io/mcp", sources: oauth }));
+  assert.throws(() => checkSecurity(security({ officialVendor: false }), securityCtx({ resourceUrl: "https://notprisma.io/", sources: oauth })), /Security signals found/);
+  for (const flag of ["storesThirdPartyCredentials", "relaysCredentials", "handlesPayments", "executesRemoteCommands"]) assert.throws(() => checkSecurity(security({ officialVendor: true, [flag]: true }), securityCtx({ resourceUrl: "https://github.com/prisma/mcp" })), /^Error: Security-sensitive third-party tool/);
 });
 
 test("security evidence must be observed and the field must be well formed", () => {
@@ -339,6 +359,9 @@ test("issue comment names the placement, evidence and scores", () => {
   assert.match(secured, /\| storesThirdPartyCredentials \| yes \|/);
   assert.match(secured, /\| executesRemoteCommands \| no \|/);
   assert.match(secured, /\| officialVendor \| yes \|/);
+  assert.doesNotMatch(secured, /Security signal \|/);
+  const signalled = formatIssueComment({ status: "processed", placement: "readme", reason: "Free slot", checks: checksPassed, evidenceUrls, scores: good, security: security(), securitySignals: [{ signal: "oauth", source: "issue" }, { signal: "vault", source: "https://new.example/" }] }, { issueUrl });
+  assert.match(signalled, /\| Security signal \| Found in \|\n\|---\|---\|\n\| oauth \| issue \|\n\| vault \| https:\/\/new\.example\/ \|/);
   assert.doesNotMatch(formatIssueComment({ status: "uncertain", reason: "Unclear" }, { issueUrl }), /Security flag/);
   const rejected = formatIssueComment({ status: "rejected", reason: "Out of scope" }, { issueUrl });
   assert.match(rejected, /^## ❌ Rejected/);

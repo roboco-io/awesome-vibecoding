@@ -10,7 +10,7 @@ import { ResearchStore } from "./research-store.mjs";
 import { CURATION_CHECKS, validateEvidence } from "./curation.mjs";
 import { refreshRecentUpdates } from "./recent-updates.mjs";
 import { loadCatalogStatus, findResources, findRegistryEntry, assertNewResource, assertShortlistCapacity, normalizeResourceUrl } from "./catalog-status.mjs";
-import { loadRegistrationPolicy, scoreTotal, isScoreFresh, checkSecurity, SECURITY_FLAGS } from "./registration-policy.mjs";
+import { loadRegistrationPolicy, scoreTotal, isScoreFresh, checkSecurity, findSecuritySignals, SECURITY_FLAGS } from "./registration-policy.mjs";
 import { prepareCatalogUpdates } from "./catalog-updates.mjs";
 import { CATEGORIES } from "./categories.mjs";
 
@@ -83,6 +83,7 @@ export async function runAutomation({ prompt, cwd = process.cwd(), env = process
   const searchedUrls = new Set();
   const fetchedUrls = new Set();
   const fetchedTexts = [];
+  const securitySources = () => [{ source: "issue", text: issueText.join("\n") }, ...fetchedTexts];
   const fetchable = new Map((fetchableUrls || []).map(url => [normalizeResourceUrl(url), url]));
   try {
     if (weekly) {
@@ -148,7 +149,7 @@ export async function runAutomation({ prompt, cwd = process.cwd(), env = process
           if (submission) throw new Error("A result has already been accepted");
           checkResultFields(proposal, { weekly, approved, policy });
           validateEvidence(proposal, { searched: searchedUrls, fetched: fetchedUrls, submittedUrl: requiredUrl, policy, requireIndependent: !weekly && !approved });
-          if (!weekly && proposal.status === "processed") checkSecurity(proposal.security, { signals: policy.securitySignals, approved, observedUrls: new Set([...searchedUrls, ...fetchedUrls]), texts: [...issueText, ...fetchedTexts] });
+          if (!weekly && proposal.status === "processed") checkSecurity(proposal.security, { signals: policy.securitySignals, vendors: policy.verifiedVendors, resourceUrl: requiredUrl, approved, observedUrls: new Set([...searchedUrls, ...fetchedUrls]), sources: securitySources() });
           const changed = weekly
             ? prepareUpdates(originals, proposal, { requiredUrl })
             : prepareCatalogUpdates(originals, proposal, { requiredUrl, policy, today, approved, searchedUrls: [...searchedUrls], fetchedUrls: [...fetchedUrls], issueUrl });
@@ -192,7 +193,7 @@ export async function runAutomation({ prompt, cwd = process.cwd(), env = process
         if (++fetches > policy.maxFetches) throw new Error("Fetch limit exceeded");
         const page = await fetchPage(original, { apiKey: env.EXA_API_KEY, signal });
         fetchedUrls.add(original);
-        fetchedTexts.push(`${page.title || ""}\n${page.snippet || ""}`);
+        fetchedTexts.push({ source: original, text: `${page.title || ""}\n${page.snippet || ""}` });
         return result(page);
       },
     });
@@ -238,7 +239,8 @@ export async function runAutomation({ prompt, cwd = process.cwd(), env = process
       const added = updates ? [...links(updates["README.md"]).keys()].filter(url => !oldLinks.has(url)) : [];
       await store.commit(added);
     }
-    return { status, reason, placement, manualReason, checks, evidenceUrls, scores, security, replacement: status === "processed" && submission.replacement ? describeReplacement(submission, JSON.parse(originals["data/catalog-status.json"]).resources, policy, today) : undefined };
+    const securitySignals = weekly ? undefined : findSecuritySignals(policy.securitySignals, securitySources());
+    return { status, reason, placement, manualReason, checks, evidenceUrls, scores, security, securitySignals, replacement: status === "processed" && submission.replacement ? describeReplacement(submission, JSON.parse(originals["data/catalog-status.json"]).resources, policy, today) : undefined };
   } finally {
     store?.close();
     await rm(agentDir, { recursive: true, force: true });

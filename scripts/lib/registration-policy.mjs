@@ -8,7 +8,7 @@ export async function loadRegistrationPolicy() {
   const policy = JSON.parse(await readFile(new URL("../../data/registration-policy.json", import.meta.url), "utf8"));
   const bad = NUMBERS.some(key => !Number.isInteger(policy[key]) || policy[key] <= 0)
     || LISTS.some(key => !Array.isArray(policy[key]) || !policy[key].length || policy[key].some(item => typeof item !== "string" || !item));
-  if (bad) throw new Error("Invalid registration policy");
+  if (bad || !Array.isArray(policy.verifiedVendors) || policy.verifiedVendors.some(item => typeof item !== "string" || !item || item !== item.toLowerCase())) throw new Error("Invalid registration policy");
   return policy;
 }
 
@@ -36,8 +36,31 @@ export function isIndependentSource(url, submittedUrl, policy) {
 
 export const SECURITY_FLAGS = ["storesThirdPartyCredentials", "relaysCredentials", "handlesPayments", "executesRemoteCommands"];
 
-// Risk flags concern services other than the vendor's own, so they hold even official tools; signal words hold any tool that is not an unflagged official vendor tool.
-export function checkSecurity(security, { signals, approved, observedUrls, texts = [] }) {
+export function isVerifiedVendor(url, verifiedVendors = []) {
+  let parsed;
+  try { parsed = new URL(url); } catch { return false; }
+  const host = parsed.hostname.toLowerCase();
+  const owner = parsed.pathname.split("/")[1]?.toLowerCase();
+  return verifiedVendors.some(entry => {
+    const [vendorHost, vendorOwner] = entry.split("/");
+    return vendorOwner ? host === vendorHost && owner === vendorOwner : host === vendorHost || host.endsWith(`.${vendorHost}`);
+  });
+}
+
+const escapeRegex = value => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+// A signal matches as a whole word: not inside a longer word, with an optional plural and optional space, hyphen or underscore between its words.
+export function findSecuritySignals(signals, sources) {
+  const found = [];
+  for (const signal of signals) {
+    const pattern = new RegExp(`(?<![a-z0-9])${signal.split(/\s+/).map(escapeRegex).join("[\\s_-]?")}(?:e?s)?(?![a-z])`, "i");
+    for (const { source, text } of sources) if (pattern.test(text)) found.push({ signal, source });
+  }
+  return found;
+}
+
+// Risk flags concern services other than the vendor's own, so they hold even verified vendors; signal words hold any tool whose resource URL is not on the verified vendor list. The model's officialVendor flag is informational only.
+export function checkSecurity(security, { signals, vendors = [], resourceUrl, approved, observedUrls, sources = [] }) {
   const { evidenceUrls } = security || {};
   if (![...SECURITY_FLAGS, "officialVendor"].every(flag => typeof security?.[flag] === "boolean") || !Array.isArray(evidenceUrls) || !evidenceUrls.length || evidenceUrls.length > 5 || evidenceUrls.some(url => typeof url !== "string")) {
     throw new Error(`security requires boolean ${SECURITY_FLAGS.join(", ")}, officialVendor and 1-5 evidenceUrls`);
@@ -45,8 +68,7 @@ export function checkSecurity(security, { signals, approved, observedUrls, texts
   if (evidenceUrls.some(url => !observedUrls.has(url))) throw new Error("Security evidence URL was not returned by a search or page fetch in this run");
   if (approved) return;
   if (SECURITY_FLAGS.some(flag => security[flag])) throw new Error("Security-sensitive third-party tool; submit uncertain with manualReason security_sensitive");
-  if (security.officialVendor) return;
-  const text = texts.join("\n").toLowerCase();
-  const matched = signals.filter(signal => text.includes(signal));
-  if (matched.length) throw new Error(`Security signals found (${matched.join(", ")}); submit uncertain with manualReason security_sensitive unless the resource is an official vendor tool`);
+  if (isVerifiedVendor(resourceUrl, vendors)) return;
+  const matched = findSecuritySignals(signals, sources);
+  if (matched.length) throw new Error(`Security signals found (${matched.map(({ signal, source }) => `${signal} in ${source}`).join(", ")}); submit uncertain with manualReason security_sensitive unless the resource URL is a verified vendor`);
 }

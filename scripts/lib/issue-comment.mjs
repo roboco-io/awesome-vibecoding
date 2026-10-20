@@ -19,7 +19,7 @@ function headline({ status, placement, manualReason, replacement }) {
 }
 
 export function formatIssueComment(result, { issueUrl } = {}) {
-  const { status, placement, reason, checks, evidenceUrls = [], scores, replacement, security } = result;
+  const { status, placement, reason, checks, evidenceUrls = [], scores, replacement, security, securitySignals = [] } = result;
   const lines = [`## ${headline(result)}`, ""];
   if (status === "processed" && placement === "extended") lines.push("The resource was not added to the README because its category shortlist is full and no README entry met a replacement condition. The reason below names the condition that was not met.", "");
   lines.push(`**Reason:** ${reason}`, "");
@@ -34,6 +34,7 @@ export function formatIssueComment(result, { issueUrl } = {}) {
   if (urls.length) lines.push("**Evidence:**", ...urls.map(url => `- ${url}`), "");
   if (scores) lines.push("| Score item | Score |", "|---|---|", ...Object.entries(scores).map(([item, score]) => `| ${cell(item)} | ${cell(score)} |`), `| **Total** | **${total(scores)}** |`, "");
   if (security) lines.push("| Security flag | Value |", "|---|---|", ...[...SECURITY_FLAGS, "officialVendor"].map(flag => `| ${flag} | ${security[flag] === true ? "yes" : security[flag] === false ? "no" : "—"} |`), "");
+  if (securitySignals.length) lines.push("| Security signal | Found in |", "|---|---|", ...securitySignals.map(({ signal, source }) => `| ${cell(signal)} | ${cell(source)} |`), "");
   if (status === "processed" && issueUrl) lines.push(`The Verified date of the new entry links to this issue: ${issueUrl}`, "");
   if (status !== "processed" && status !== "rejected") lines.push("A maintainer can comment `/approve` to process this resource or `/reject [reason]` to close this issue.", "");
   return lines.join("\n");
