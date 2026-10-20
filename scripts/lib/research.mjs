@@ -28,5 +28,6 @@ export async function fetchPage(url, { apiKey, fetch: request = globalThis.fetch
   const data = await response.json();
   const [page] = Array.isArray(data.results) ? data.results : [];
   if (!page) throw new Error("Exa Contents returned no page");
+  if (data.statuses?.some(entry => entry.status === "error") || !String(page.text || "").trim()) throw new Error("Exa contents fetch failed for this URL");
   return { title: String(page.title || "").slice(0, 300), url: String(page.url || url), snippet: String(page.text || "").slice(0, 6000) };
 }

@@ -163,6 +163,9 @@ test("Exa contents fetch uses a fixed endpoint and rejects HTTP failures", async
   assert.deepEqual(page, { title: "A", url: "https://a.example/", snippet: "Body" });
   await assert.rejects(fetchPage("https://a.example/", { apiKey: "secret", fetch: async () => ({ ok: false, status: 429 }) }), /429/);
   await assert.rejects(fetchPage("https://a.example/", { apiKey: "secret", fetch: async () => ({ ok: true, json: async () => ({ results: [] }) }) }), /no page/);
+  const stub = body => ({ apiKey: "secret", fetch: async () => ({ ok: true, json: async () => body }) });
+  await assert.rejects(fetchPage("https://a.example/", stub({ results: [{ url: "https://a.example/", text: "Body" }], statuses: [{ id: "https://a.example/", status: "error" }] })), /failed for this URL/);
+  await assert.rejects(fetchPage("https://a.example/", stub({ results: [{ url: "https://a.example/", text: "  " }] })), /failed for this URL/);
 });
 
 test("real Pi SDK executes only custom tools and persists only a successful full result", async t => {
@@ -229,8 +232,8 @@ test("fetch_page only reads issue URLs", async t => {
     const url = step === 0 ? "https://other.example/" : "https://issue.example/";
     const message = {
       role: "assistant", api: model.api, provider: model.provider, model: model.id, timestamp: Date.now(),
-      content: step < 6 ? [{ type: "toolCall", id: `fetch-${step}`, name: "fetch_page", arguments: { url } }] : [{ type: "text", text: "Done" }],
-      stopReason: step < 6 ? "toolUse" : "stop",
+      content: step < 7 ? [{ type: "toolCall", id: `fetch-${step}`, name: "fetch_page", arguments: { url } }] : [{ type: "text", text: "Done" }],
+      stopReason: step < 7 ? "toolUse" : "stop",
       usage: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0, totalTokens: 0, cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0, total: 0 } },
     };
     const stream = createAssistantMessageEventStream();
@@ -241,11 +244,12 @@ test("fetch_page only reads issue URLs", async t => {
   const env = { DEEPSEEK_API_KEY: "test-only", EXA_API_KEY: "test-only", AI_TIMEOUT_SECONDS: "5" };
   await assert.rejects(runAutomation({ cwd, env, prompt: "Check", fetchableUrls: ["https://issue.example/"] }), /without submitting/);
   const texts = toolResults.map(message => message.content.map(part => part.text).join(""));
-  assert.equal(toolResults.length, 6);
+  assert.equal(toolResults.length, 7);
   assert.match(texts[0], /URL is not part of the issue/);
-  for (const text of texts.slice(1, 5)) assert.match(text, /Page/);
-  assert.match(texts[5], /Fetch limit exceeded/);
-  assert.equal(fetched.length, 4);
+  for (const text of texts.slice(1, 6)) assert.match(text, /Page/);
+  assert.match(texts[6], /Fetch limit exceeded/);
+  assert.equal(fetched.length, 5);
+  assert.equal(new Set(fetched).size, 1);
 });
 
 test("research cache handles quoted queries, force refresh, candidates and failed-run rollback", async t => {
