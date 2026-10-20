@@ -5251,6 +5251,38 @@
       ],
       "reviewed_on": "2026-10-20",
       "review_issue": "https://github.com/roboco-io/awesome-vibecoding/issues/58"
+    },
+    {
+      "id": "resource-lynxprompt",
+      "name": "LynxPrompt",
+      "url": "https://github.com/GeiserX/LynxPrompt",
+      "aliases": [
+        "https://github.com/GeiserX/LynxPrompt"
+      ],
+      "category": "context",
+      "status": "active",
+      "location": "extended",
+      "verified_on": "2026-10-20",
+      "scores": {
+        "activity": 2,
+        "documentation": 2,
+        "access": 2,
+        "independent_sources": 2,
+        "category_fit": 2
+      },
+      "scored_on": "2026-10-20",
+      "evidence_urls": [
+        "https://github.com/GeiserX/LynxPrompt",
+        "https://github.com/GeiserX/LynxPrompt/releases/tag/app-v2.1.39",
+        "https://github.com/GeiserX/lynxprompt-action",
+        "https://geiserx.github.io/LynxPrompt/",
+        "https://lynxprompt.com",
+        "https://lynxprompt.com/docs",
+        "https://lynxprompt.com/docs/platforms",
+        "https://lynxprompt.com/about"
+      ],
+      "reviewed_on": "2026-10-20",
+      "review_issue": "https://github.com/roboco-io/awesome-vibecoding/issues/49"
     }
   ]
 }
