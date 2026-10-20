@@ -44,7 +44,7 @@ awesome-vibecoding/
 Runs parallel agents to sync README.md changes to Korean and Japanese versions.
 
 ### GitHub Actions Workflows (Pi SDK)
-- **weekly-update.yml**: Runs every Sunday, uses Exa Search API with Pi and Kimi (default) or Qwen to find new tools, commits directly to main. Script: `scripts/weekly-update.mjs`
+- **weekly-update.yml**: Runs every Sunday, uses Exa Search API with Pi and DeepSeek (default; Kimi or Qwen selectable) to find new tools, commits directly to main. Script: `scripts/weekly-update.mjs`
 - **auto-process-issue.yml**: Triggers on issue creation with an `addition` label or URL, or when a human adds the label — validates URL, checks duplicates, then auto-processes and commits to main. Script: `scripts/auto-process-issue.mjs`
 - **issue-approval.yml**: Manual fallback — `/approve` retries an approved resource with duplicate/translation validation, `/reject` closes with reason. Script: `scripts/issue-approval.mjs`
 

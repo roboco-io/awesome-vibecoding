@@ -15,10 +15,10 @@ GitHub stars are context, not a minimum requirement and never sufficient evidenc
 ## Outcomes
 
 - **Accept:** All five conditions are supported by evidence. Add a concise, factual description to the correct section in English, Korean, and Japanese. Close the issue only after the change is pushed successfully.
-- **Needs review:** Evidence is inaccessible, incomplete, contradictory, or uncertain. Explain the missing information and leave the issue open. Temporary 403/429/5xx responses and timeouts are not proof that a resource is invalid.
+- **Needs review:** A request that passes all checks but falls into one of the four manual-review reasons in "Manual review" below, or whose evidence is inaccessible, incomplete, or contradictory. Explain the reason and the evidence, and leave the issue open. Temporary 403/429/5xx responses and timeouts are not proof that a resource is invalid.
 - **Reject:** The resource is clearly outside scope, a duplicate, deceptive, malicious, or unavailable with no usable alternative. Explain the specific criterion; paid status or self-submission alone is never a rejection reason. An author may provide new evidence for reconsideration.
 
-Maintainer `/approve` allows a retry after review; it does not waive these conditions, duplicate detection, or translation validation.
+Maintainer `/approve` allows a retry after review. It waives the four manual-review reasons below, so the retry must end in a placement or a rejection and is not held again for the same reason. It does not waive these conditions, duplicate detection, or translation validation. `/reject [reason]` closes the issue and records the reason.
 
 ## Automated checks and judgment
 
@@ -28,12 +28,65 @@ Code validates the structured result, observed citations, allowed files, unique 
 
 This policy applies to new submissions and future reviews. Older entries do not automatically establish an exception; they can be reviewed separately.
 
+## Evidence from the submitted URL
+
+Pi may read a URL from the issue directly (the `fetch_page` tool) in addition to Exa search results, because the search index can lag behind new sites. A page controlled by the submitter is not enough by itself. When the submitted URL is used as evidence, at least one independent source must also be confirmed. These count as independent: a public source repository (GitHub, GitLab and similar) with real code or releases, even the submitter's own; a package-registry listing (npm, PyPI, crates.io, VS Code Marketplace, MCP registry and similar); and a third-party page returned by an Exa search that mentions the resource. The test is whether the repository holds verifiable artifacts apart from marketing text, not only that it exists. Without an independent source the request goes to manual review. A failed read (403, 429, 5xx, timeout) is not evidence that the resource is invalid; it also goes to manual review.
+
+## Placement
+
+A request that passes the seven checks (the five conditions plus `available_to_new_users` and `not_sunsetting`) is placed in this order.
+
+1. If the category has fewer README rows than its limit, add the resource to the README.
+2. If the category is full, review a replacement (next section). If a replacement condition is met, replace the README row.
+3. Otherwise add the resource to the matching category of `docs/verified-catalog.md` and close the issue. The issue comment states that the resource was registered in the extended catalog and which replacement condition was not met.
+
+All three outcomes close the issue, and extended registration counts as a completed outcome. The bot comment records the seven check results, the evidence URLs, and the scores. The Verified cell of a newly registered row is `[YYYY-MM-DD](<issue URL>)` instead of a lifecycle-review anchor. There is no limit on the number of automatic additions or replacements; the protection period below prevents chain replacement.
+
+## Replacement
+
+The review compares the new resource with each README row of the same category. A replacement happens only by one of two paths.
+
+**Path A, explicit disqualification.** If this run confirms that an existing row is archived, has an announced shutdown or retirement, or is no longer available to new users, replace that row. Path A applies regardless of the protection period. More than 180 days without activity is not a Path A reason, because mature software and an abandoned project are hard to tell apart. That case needs manual review, except in a maintainer-approved run, where long inactivity (`inactive`) is treated as a disqualification.
+
+**Path B, superior new resource.** If no row is disqualified, replace a row only when all three conditions hold: the new resource covers the core function of the row and is broader or more actively maintained; its score total is higher than the row's total; and the model judges it the better starting point and records the reason with evidence URLs. If several rows qualify, replace the one with the lowest score.
+
+**Protection period.** A row that entered the README fewer than 90 days ago cannot be replaced by Path B. A row without a recorded listing date is treated as past the period.
+
+**Scoring.** Each item is scored 0-2, for a total of 0-10. The items and thresholds are in `data/registration-policy.json`.
+
+| Item | 0 | 1 | 2 |
+|---|---|---|---|
+| `activity` | No release, commit or documentation update for 180 days or more | Activity within 90-180 days | Activity within 90 days |
+| `documentation` | Marketing page only | Install and usage documentation | Usage plus reference or examples |
+| `access` | Waitlist or invite only | Sign-up required or paid only | Free to use or open source |
+| `independent_sources` | None | One | Two or more |
+| `category_fit` | Another category is the main use | Partly fits | Directly matches the category purpose |
+
+For a learning resource, `activity` measures currency of the content instead of release cadence: 0 if the tool or feature it covers is gone or changed greatly, 1 if some content differs from the current version, 2 if the content matches the current version or was updated within 90 days. Scores of existing rows are stored in `data/catalog-status.json` and reused; a stored score older than 90 days, or a missing one, is recalculated only when a replacement review needs it.
+
+**Where the outgoing row goes.** A row removed by Path A moves to `docs/catalog-history.md` with its status and evidence URL. A row removed by Path B is still valid and moves to the matching category of `docs/verified-catalog.md`. The three READMEs, the destination document, and `data/catalog-status.json` change in one commit.
+
+## Official and third-party tools
+
+A tool is official when its documentation is on the service operator's domain or its repository is under the operator's official organization account. An official MCP server or agent tool that an operator publishes for its own service is processed automatically, even if it can write to that service. A third-party tool that stores or relays credentials for several services, handles payment, or runs remote commands on the user's system goes to manual review.
+
+## Manual review
+
+A request that passes the seven checks still goes to manual review, with the `needs-review` label, for one of these reasons. The bot comment names the reason, the judgment, and the evidence URLs.
+
+- `security_sensitive`: a third-party tool that stores or relays credentials, handles payment, or runs remote commands.
+- `directory_or_affiliate`: a directory or awesome-list of other tools, or a site with affiliate links or sponsorship solicitation.
+- `ambiguous_replacement`: the only replacement ground is something like long inactivity.
+- `conflicting_evidence`: sources disagree, price, license or access terms cannot be confirmed, there is no independent source, or a page read failed temporarily.
+
+Clearly out-of-scope, duplicate, deceptive, malicious, or unavailable resources are still rejected, not sent to manual review.
+
 ## Lifecycle and list size
 
 The main README is a compact set of current starting points, not an exhaustive catalog. Additional positively verified alternatives belong in `docs/verified-catalog.md`. Excluded, replaced, adjacent and unverified identities are preserved in `docs/catalog-history.md` and the source-backed lifecycle registry at `data/catalog-status.json`.
 
 Known identities and aliases cannot be submitted again as new discoveries. A reactivation or changed scope requires an explicit editorial lifecycle re-review with fresh first-party evidence; holds are not permanent declarations of closure. One provider's discontinued consumer tier must not be confused with its continuing API or enterprise edition.
 
-Task shortlist limits are code 10, apps 8, context 8, quality 8, delivery 6, operations 8, and learning 12. These are navigation limits, not popularity thresholds. Promotion from the extended catalog or replacing a current choice is an editorial decision. Automated weekly work reviews lifecycle concerns first and adds at most one new resource; it does not fill every available slot.
+Task shortlist limits are code 10, apps 8, context 8, quality 8, delivery 6, operations 8, and learning 12. These are navigation limits, not popularity thresholds. Promotion of an extended entry to the README is an editorial decision; replacements in issue runs follow the rules above. Automated weekly work reviews lifecycle concerns first and adds at most one new resource; it does not fill every available slot.
 
 The automated writer remains conservative about destructive changes: it reports lifecycle contradictions as `uncertain` and fails the weekly publication step, leaving the evidence/reason in the Actions log. Maintainers update the registry and history before removing or replacing entries. It does not silently renew verification dates or claim perpetual validity.

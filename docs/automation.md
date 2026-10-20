@@ -2,7 +2,7 @@
 
 *[← Back to Main](../README.md)*
 
-GitHub Actions uses the [Pi SDK](https://pi.dev/docs/latest/sdk) to run Kimi or Qwen for resource curation and translation. [Exa Search](https://exa.ai/docs/reference/search) supplies current web evidence. The application validates proposed changes before writing files; GitHub Actions commits and pushes successful updates to main.
+GitHub Actions uses the [Pi SDK](https://pi.dev/docs/latest/sdk) to run DeepSeek (default), Kimi, or Qwen for resource curation and translation. [Exa Search](https://exa.ai/docs/reference/search) supplies current web evidence. The application validates proposed changes before writing files; GitHub Actions commits and pushes successful updates to main.
 
 ## Workflows
 
@@ -20,11 +20,12 @@ The scheduled run does not skip research because a recent issue modified README.
 
 ## Model and API configuration
 
-The defaults were verified against the official providers' authenticated model lists on 2026-09-18:
+The Kimi and Qwen defaults were verified against the official providers' authenticated model lists on 2026-09-18. The DeepSeek default comes from `scripts/lib/pi-config.mjs` and was not part of that check:
 
 | AI_PROVIDER | Default model | Default API base | GitHub Actions secret |
 |---|---|---|---|
-| `kimi` (default) | `kimi-k3` | `https://api.moonshot.ai/v1` | `KIMI_API_KEY` |
+| `deepseek` (default) | `deepseek-v4-flash` | `https://api.deepseek.com` | `DEEPSEEK_API_KEY` |
+| `kimi` | `kimi-k3` | `https://api.moonshot.ai/v1` | `KIMI_API_KEY` |
 | `qwen` | `qwen3.8-max` | `https://dashscope-intl.aliyuncs.com/compatible-mode/v1` | `DASHSCOPE_API_KEY` |
 
 Sources: [Kimi model list](https://platform.kimi.ai/docs/models), [Qwen model upgrade notice](https://www.alibabacloud.com/en/notice/alibaba_cloud_model_studio_model_upgrade_notice_81a?_p_lc=1). Pi packages are pinned to 0.85.1 in package.json and package-lock.json.
@@ -33,6 +34,7 @@ The model IDs are explicit defaults, not an alias that automatically discovers f
 
 Register these organization secrets and grant this repository access:
 
+- `DEEPSEEK_API_KEY`: DeepSeek Open Platform API key. Required for the default provider.
 - `KIMI_API_KEY`: Moonshot/Kimi Open Platform API key; this is not a Kimi Code subscription credential.
 - `DASHSCOPE_API_KEY`: Alibaba Cloud Model Studio pay-as-you-go API key for the chosen region.
 - `EXA_API_KEY`: Exa API key. Required for weekly research and for accepting an issue: each accepted resource must cite observed search evidence.
@@ -45,21 +47,21 @@ Repository Actions variables provide optional overrides:
 
 | Variable | Default | Purpose |
 |---|---|---|
-| `AI_PROVIDER` | `kimi` | Select `kimi` or `qwen` |
+| `AI_PROVIDER` | `deepseek` | Select `deepseek`, `kimi`, or `qwen` |
 | `AI_MODEL` | Provider-specific default | Model ID in the same compatible family |
 | `AI_BASE_URL` | Provider-specific official endpoint | HTTPS regional endpoint; must match the API key |
 | `AI_MAX_TURNS` | `30` | Maximum agent turns, up to 100 |
 | `AI_MAX_TOKENS` | `8192` | Per-response output-token limit, up to 32768 |
 | `AI_TIMEOUT_SECONDS` | `600` | Agent timeout, up to 1800 seconds |
 
-To switch to Qwen, set `AI_PROVIDER=qwen`. Leave `AI_MODEL` and `AI_BASE_URL` unset to use its defaults. When changing providers, clear incompatible overrides. These limits bound work; they are not a currency-denominated spending cap. GitHub jobs also have a 20-minute timeout.
+To switch to Kimi or Qwen, set `AI_PROVIDER=kimi` or `AI_PROVIDER=qwen`. Leave `AI_MODEL` and `AI_BASE_URL` unset to use its defaults. When changing providers, clear incompatible overrides. These limits bound work; they are not a currency-denominated spending cap. GitHub jobs also have a 20-minute timeout.
 
 ## Execution and validation
 
 ```mermaid
 flowchart LR
     TRIGGER[Schedule or issue] --> PI[Pi SDK]
-    PI --> MODEL[Kimi or Qwen]
+    PI --> MODEL[DeepSeek, Kimi or Qwen]
     PI --> EXA[Exa Search API]
     PI --> READ[Read README snapshots]
     PI --> PROPOSAL[Submit structured edits]
@@ -73,9 +75,10 @@ Pi runs with an in-memory session and private temporary configuration. It does n
 | Tool | Access |
 |---|---|
 | `lookup_resource` | Read known lifecycle decisions, renamed identities, and extended catalog membership |
-| `read_readme` | Read snapshots of the three allowed README files |
-| `search_web` | Query the fixed Exa endpoint, up to 12 searches per run |
-| `submit_result` | Propose exact text replacements and a structured status |
+| `read_readme` | Read snapshots of the three allowed README files; issue runs can also read `docs/verified-catalog.md` and `docs/catalog-history.md` |
+| `search_web` | Query the fixed Exa endpoint, up to 12 searches per run (20 in issue runs) |
+| `fetch_page` | Issue runs only: read one URL that appears in the issue through Exa, up to 5 fetches per run; the page counts as evidence |
+| `submit_result` | Propose exact text replacements and a structured status; issue runs also submit `placement`, `resource`, `scores`, and optionally `replacement`, `categoryScores`, or `manualReason` |
 | `read_candidates` | Weekly runs only: read pending candidates from the cache |
 | `queue_candidate` | Weekly runs only: save up to 20 candidates for later verification |
 | `review_candidate` | Weekly runs only: reject or defer pending candidates with a reason |
@@ -89,6 +92,14 @@ The [curation policy](curation-policy.md) also requires five curation checks plu
 The README uses six task catalogs and purpose-based learning sections. Resource tables contain four columns. New entries include explicit shared anchors, access conditions, and substantive verification dates. The recent-updates block uses local anchors; the application prunes it to ten rows within the last 30 dates, including successful weekly runs with no new resources. It never refreshes an entry's verification date merely because the page was regenerated.
 
 The runner checks the current change's URL additions rather than assuming all historical translations are already identical. Semantic translation quality still depends on the model; deterministic checks do not prove every factual statement or translation is correct.
+
+## Issue registration policy
+
+Issue runs follow the [curation policy](curation-policy.md): a request that passes the seven checks goes to the README when the category has room, replaces a README row by a disqualification or a superior-resource path, or is registered in `docs/verified-catalog.md`. The application checks the structured result in code (score totals, the 90-day protection period, observed evidence URLs, and the destination documents), then updates the three READMEs, the destination document, and `data/catalog-status.json` in one commit. A `manualReason` result (`security_sensitive`, `directory_or_affiliate`, `ambiguous_replacement`, `conflicting_evidence`) leaves the issue open with the `needs-review` label. A maintainer `/approve` waives those reasons, so the retry must place or reject the resource.
+
+### Reprocessing pending issues
+
+Run this only after the `DEEPSEEK_API_KEY` organization secret exists and this repository can read it. Without the key, do not process the issues with another provider, because a run commits to main and a replacement is hard to undo. For each pending issue, in ascending issue-number order, remove the `addition` label and add it again. The shared `readme-update` concurrency group queues the runs and runs them one at a time, so earlier results (and their 90-day protection periods) apply to later issues in the same category. Wait until the queued runs finish before checking the results.
 
 ## Cache and candidate queue
 
