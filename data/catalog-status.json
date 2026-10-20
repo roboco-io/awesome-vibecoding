@@ -5312,6 +5312,35 @@
       ],
       "reviewed_on": "2026-10-20",
       "review_issue": "https://github.com/roboco-io/awesome-vibecoding/issues/59"
+    },
+    {
+      "id": "resource-orkas",
+      "name": "Orkas",
+      "url": "https://github.com/Orkas-AI/Orkas",
+      "aliases": [
+        "https://github.com/Orkas-AI/Orkas"
+      ],
+      "category": "operations",
+      "status": "active",
+      "location": "extended",
+      "verified_on": "2026-10-20",
+      "scores": {
+        "activity": 2,
+        "documentation": 2,
+        "access": 2,
+        "independent_sources": 2,
+        "category_fit": 2
+      },
+      "scored_on": "2026-10-20",
+      "evidence_urls": [
+        "https://github.com/Orkas-AI/Orkas",
+        "https://github.com/Orkas-AI/Orkas/releases/tag/v2026.10.17",
+        "https://orkas.ai/download/?source=gh_roboco&download=1",
+        "https://orkas.ai/docs/",
+        "https://orkas.ai/multi-agent-desktop-app/"
+      ],
+      "reviewed_on": "2026-10-20",
+      "review_issue": "https://github.com/roboco-io/awesome-vibecoding/issues/60"
     }
   ]
 }
