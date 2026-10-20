@@ -15,3 +15,18 @@ export async function searchWeb(query, { apiKey, fetch: request = globalThis.fet
     snippet: String(text || highlights?.join("\n") || "").slice(0, 6000), date: publishedDate,
   }));
 }
+
+export async function fetchPage(url, { apiKey, fetch: request = globalThis.fetch, signal } = {}) {
+  if (!apiKey) throw new Error("Missing EXA_API_KEY");
+  const response = await request("https://api.exa.ai/contents", {
+    method: "POST", redirect: "error",
+    headers: { "x-api-key": apiKey, "Content-Type": "application/json" },
+    body: JSON.stringify({ urls: [url], text: { maxCharacters: 6000 } }),
+    signal: signal ? AbortSignal.any([signal, AbortSignal.timeout(30000)]) : AbortSignal.timeout(30000),
+  });
+  if (!response.ok) throw new Error(`Exa Contents failed (HTTP ${response.status})`);
+  const data = await response.json();
+  const [page] = Array.isArray(data.results) ? data.results : [];
+  if (!page) throw new Error("Exa Contents returned no page");
+  return { title: String(page.title || "").slice(0, 300), url: String(page.url || url), snippet: String(page.text || "").slice(0, 6000) };
+}

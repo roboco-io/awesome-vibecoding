@@ -6,9 +6,10 @@ import { join } from "node:path";
 import { resolveConfig, DEEPSEEK_DEFAULT_MODEL } from "./lib/pi-config.mjs";
 import { README_FILES, prepareUpdates, persistUpdates, outputRecord } from "./lib/readme-updates.mjs";
 import { runSession, runAutomation } from "./lib/pi-runner.mjs";
-import { searchWeb } from "./lib/research.mjs";
+import { searchWeb, fetchPage } from "./lib/research.mjs";
 import { ResearchStore } from "./lib/research-store.mjs";
 import { validateEvidence, CURATION_CHECKS } from "./lib/curation.mjs";
+import { loadRegistrationPolicy } from "./lib/registration-policy.mjs";
 import { ModelRuntime } from "@earendil-works/pi-coding-agent";
 import { createAssistantMessageEventStream } from "@earendil-works/pi-ai/utils/event-stream";
 
@@ -23,15 +24,28 @@ const proposal = () => ({
 });
 
 test("acceptance requires every curation gate and evidence from actual search results", () => {
-  const observed = new Set(["https://new.example/"]);
+  const observed = { searched: new Set(["https://new.example/"]), fetched: new Set(), requireIndependent: false };
+  const none = { searched: new Set(), fetched: new Set(), requireIndependent: false };
   validateEvidence(proposal(), observed);
   for (const check of CURATION_CHECKS) {
     const p = proposal(); p.checks[check] = false;
     assert.throws(() => validateEvidence(p, observed), new RegExp(check));
   }
-  assert.throws(() => validateEvidence(proposal(), new Set()), /not returned/);
+  assert.throws(() => validateEvidence(proposal(), none), /not returned/);
   assert.throws(() => validateEvidence({ ...proposal(), evidenceUrls: [] }, observed), /evidence/);
-  validateEvidence({ status: "uncertain" }, new Set());
+  validateEvidence({ status: "uncertain" }, none);
+});
+
+test("fetched URLs count as evidence but require an independent source", async () => {
+  const policy = await loadRegistrationPolicy();
+  const fetched = new Set(["https://learnmagic.ai/learn"]);
+  const p = { ...proposal(), evidenceUrls: ["https://learnmagic.ai/learn"] };
+  const options = { searched: new Set(), fetched, submittedUrl: "https://learnmagic.ai", policy, requireIndependent: true };
+  assert.throws(() => validateEvidence(p, options), /independent source/);
+  validateEvidence(p, { ...options, requireIndependent: false });
+  fetched.add("https://github.com/learnmagic-ai/skills");
+  validateEvidence({ ...p, evidenceUrls: [...p.evidenceUrls, "https://github.com/learnmagic-ai/skills"] }, options);
+  assert.throws(() => validateEvidence({ ...p, evidenceUrls: ["not a url"] }, { ...options, fetched: new Set(["not a url"]) }), /independent source/);
 });
 
 test("defaults to DeepSeek and requires only its key", () => {
@@ -138,6 +152,19 @@ test("Exa Search uses a fixed endpoint and rejects HTTP failures", async () => {
   await assert.rejects(searchWeb("AI coding", { apiKey: "secret", fetch: async () => ({ ok: false, status: 429 }) }), /429/);
 });
 
+test("Exa contents fetch uses a fixed endpoint and rejects HTTP failures", async () => {
+  let request;
+  const page = await fetchPage("https://a.example/", { apiKey: "secret", fetch: async (url, options) => {
+    request = { url, options }; return { ok: true, json: async () => ({ results: [{ title: "A", url: "https://a.example/", text: "Body" }] }) };
+  } });
+  assert.equal(request.url, "https://api.exa.ai/contents");
+  assert.deepEqual(JSON.parse(request.options.body), { urls: ["https://a.example/"], text: { maxCharacters: 6000 } });
+  assert.equal(request.options.headers["x-api-key"], "secret");
+  assert.deepEqual(page, { title: "A", url: "https://a.example/", snippet: "Body" });
+  await assert.rejects(fetchPage("https://a.example/", { apiKey: "secret", fetch: async () => ({ ok: false, status: 429 }) }), /429/);
+  await assert.rejects(fetchPage("https://a.example/", { apiKey: "secret", fetch: async () => ({ ok: true, json: async () => ({ results: [] }) }) }), /no page/);
+});
+
 test("real Pi SDK executes only custom tools and persists only a successful full result", async t => {
   const cwd = await mkdtemp(join(tmpdir(), "pi-sdk-test-"));
   t.after(() => rm(cwd, { recursive: true, force: true }));
@@ -168,20 +195,57 @@ test("real Pi SDK executes only custom tools and persists only a successful full
     return stream;
   });
   const env = { DEEPSEEK_API_KEY: "test-only", EXA_API_KEY: "test-only", AI_TIMEOUT_SECONDS: "5" };
-  assert.equal((await runAutomation({ cwd, env, prompt: "Add New" })).status, "processed");
+  assert.equal((await runAutomation({ cwd, env, prompt: "Add New", approved: true })).status, "processed");
   assert.match(await readFile(join(cwd, "README.ja.md"), "utf8"), /new.example/);
   for (const file of README_FILES) await writeFile(join(cwd, file), source);
   fail = true;
-  await assert.rejects(runAutomation({ cwd, env, prompt: "Add New" }), /failed/);
+  await assert.rejects(runAutomation({ cwd, env, prompt: "Add New", approved: true }), /failed/);
   for (const file of README_FILES) assert.equal(await readFile(join(cwd, file), "utf8"), source);
   fail = false;
   rejectCriteria = true;
-  await assert.rejects(runAutomation({ cwd, env, prompt: "Add unrelated resource" }), /criterion|without submitting/);
+  await assert.rejects(runAutomation({ cwd, env, prompt: "Add unrelated resource", approved: true }), /criterion|without submitting/);
   for (const file of README_FILES) assert.equal(await readFile(join(cwd, file), "utf8"), source);
   rejectCriteria = false;
   retiredResource = true;
-  await assert.rejects(runAutomation({ cwd, env, prompt: "Re-add a sunset product" }), /catalog decision|without submitting/);
+  await assert.rejects(runAutomation({ cwd, env, prompt: "Re-add a sunset product", approved: true }), /catalog decision|without submitting/);
   for (const file of README_FILES) assert.equal(await readFile(join(cwd, file), "utf8"), source);
+});
+
+test("fetch_page only reads issue URLs", async t => {
+  const cwd = await mkdtemp(join(tmpdir(), "pi-fetch-test-"));
+  t.after(() => rm(cwd, { recursive: true, force: true }));
+  for (const file of README_FILES) await writeFile(join(cwd, file), source);
+  const fetched = [];
+  t.mock.method(globalThis, "fetch", async (url, options) => {
+    fetched.push(url);
+    return { ok: true, json: async () => ({ results: [{ url: "https://issue.example/", title: "Issue", text: "Page" }] }) };
+  });
+  let call = 0;
+  let toolResults = [];
+  t.mock.method(ModelRuntime.prototype, "streamSimple", (model, context) => {
+    assert.ok(context.tools.some(tool => tool.name === "fetch_page"));
+    const step = call++;
+    toolResults = context.messages.filter(message => message.role === "toolResult");
+    const url = step === 0 ? "https://other.example/" : "https://issue.example/";
+    const message = {
+      role: "assistant", api: model.api, provider: model.provider, model: model.id, timestamp: Date.now(),
+      content: step < 6 ? [{ type: "toolCall", id: `fetch-${step}`, name: "fetch_page", arguments: { url } }] : [{ type: "text", text: "Done" }],
+      stopReason: step < 6 ? "toolUse" : "stop",
+      usage: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0, totalTokens: 0, cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0, total: 0 } },
+    };
+    const stream = createAssistantMessageEventStream();
+    stream.push({ type: "start", partial: message });
+    stream.push({ type: "done", reason: message.stopReason, message });
+    return stream;
+  });
+  const env = { DEEPSEEK_API_KEY: "test-only", EXA_API_KEY: "test-only", AI_TIMEOUT_SECONDS: "5" };
+  await assert.rejects(runAutomation({ cwd, env, prompt: "Check", fetchableUrls: ["https://issue.example/"] }), /without submitting/);
+  const texts = toolResults.map(message => message.content.map(part => part.text).join(""));
+  assert.equal(toolResults.length, 6);
+  assert.match(texts[0], /URL is not part of the issue/);
+  for (const text of texts.slice(1, 5)) assert.match(text, /Page/);
+  assert.match(texts[5], /Fetch limit exceeded/);
+  assert.equal(fetched.length, 4);
 });
 
 test("research cache handles quoted queries, force refresh, candidates and failed-run rollback", async t => {
