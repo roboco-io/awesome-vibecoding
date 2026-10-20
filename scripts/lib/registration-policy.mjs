@@ -36,15 +36,16 @@ export function isIndependentSource(url, submittedUrl, policy) {
 
 export const SECURITY_FLAGS = ["storesThirdPartyCredentials", "relaysCredentials", "handlesPayments", "executesRemoteCommands"];
 
-// The model declares the security flags; signal words in the issue and fetched pages hold non-vendor tools for review regardless.
+// Risk flags concern services other than the vendor's own, so they hold even official tools; signal words hold any tool that is not an unflagged official vendor tool.
 export function checkSecurity(security, { signals, approved, observedUrls, texts = [] }) {
   const { evidenceUrls } = security || {};
   if (![...SECURITY_FLAGS, "officialVendor"].every(flag => typeof security?.[flag] === "boolean") || !Array.isArray(evidenceUrls) || !evidenceUrls.length || evidenceUrls.length > 5 || evidenceUrls.some(url => typeof url !== "string")) {
     throw new Error(`security requires boolean ${SECURITY_FLAGS.join(", ")}, officialVendor and 1-5 evidenceUrls`);
   }
   if (evidenceUrls.some(url => !observedUrls.has(url))) throw new Error("Security evidence URL was not returned by a search or page fetch in this run");
-  if (approved || security.officialVendor) return;
+  if (approved) return;
   if (SECURITY_FLAGS.some(flag => security[flag])) throw new Error("Security-sensitive third-party tool; submit uncertain with manualReason security_sensitive");
+  if (security.officialVendor) return;
   const text = texts.join("\n").toLowerCase();
   const matched = signals.filter(signal => text.includes(signal));
   if (matched.length) throw new Error(`Security signals found (${matched.join(", ")}); submit uncertain with manualReason security_sensitive unless the resource is an official vendor tool`);

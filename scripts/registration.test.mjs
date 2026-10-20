@@ -288,8 +288,10 @@ test("risk flags on a non-vendor tool require manual review unless the maintaine
   checkSecurity(security({ storesThirdPartyCredentials: true }), securityCtx({ approved: true, texts: ["credentials stay in a vault"] }));
 });
 
-test("an official vendor tool passes security signals and risk flags", () => {
-  checkSecurity(security({ officialVendor: true, storesThirdPartyCredentials: true, executesRemoteCommands: true }), securityCtx({ texts: ["Prisma MCP server", "Sign in with OAuth to manage your databases"] }));
+test("an unflagged official vendor tool passes security signals, but risk flags hold even official tools", () => {
+  checkSecurity(security({ officialVendor: true }), securityCtx({ texts: ["Prisma MCP server", "Sign in with OAuth to manage your databases"] }));
+  assert.throws(() => checkSecurity(security({ officialVendor: true, storesThirdPartyCredentials: true }), securityCtx({ texts: ["Aident Loadout by Aident", "Your credentials for connected apps stay in a vault"] })), /^Error: Security-sensitive third-party tool; submit uncertain with manualReason security_sensitive$/);
+  for (const flag of ["storesThirdPartyCredentials", "relaysCredentials", "handlesPayments", "executesRemoteCommands"]) assert.throws(() => checkSecurity(security({ officialVendor: true, [flag]: true }), securityCtx()), /Security-sensitive/);
 });
 
 test("security evidence must be observed and the field must be well formed", () => {
