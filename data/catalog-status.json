@@ -5194,6 +5194,36 @@
       ],
       "reviewed_on": "2026-10-20",
       "review_issue": "https://github.com/roboco-io/awesome-vibecoding/issues/47"
+    },
+    {
+      "id": "resource-learn-magic",
+      "name": "Learn Magic",
+      "url": "https://learnmagic.ai",
+      "aliases": [
+        "https://learnmagic.ai"
+      ],
+      "category": "learning",
+      "status": "active",
+      "location": "extended",
+      "verified_on": "2026-10-20",
+      "scores": {
+        "activity": 2,
+        "documentation": 2,
+        "access": 2,
+        "independent_sources": 1,
+        "category_fit": 2
+      },
+      "scored_on": "2026-10-20",
+      "evidence_urls": [
+        "https://learnmagic.ai",
+        "https://learnmagic.ai/about",
+        "https://learnmagic.ai/learn/claude-code-for-beginners",
+        "https://learnmagic.ai/stuck",
+        "https://learnmagic.ai/library",
+        "https://github.com/learnmagic-ai/skills"
+      ],
+      "reviewed_on": "2026-10-20",
+      "review_issue": "https://github.com/roboco-io/awesome-vibecoding/issues/53"
     }
   ]
 }
