@@ -79,3 +79,5 @@ Rejection stays the outcome for clearly out-of-scope, duplicate, deceptive, mali
 ## Result
 
 Call submit_result once, after your research is complete. For a qualified resource use status processed, a concise reason, placement, resource, scores, security, checks, evidenceUrls, and exact text replacements. Each oldText must match exactly once. Anchor an insertion to an existing row or nearby unique text. Do not replace whole files. Include the complete three-language change, and the destination-document changes, in one submission. Statuses other than processed must have no edits. Do not edit files directly or execute shell commands. Finish after the tool accepts it.
+
+Stale-evidence rule: search results can be stale cached copies. When sources disagree on a fact that can change (license, archive state, pricing, availability, release date), read the primary source with fetch_page, which crawls live, and use the "Live repository facts" section of this prompt when it is present. Submit `conflicting_evidence` only when live primary sources still disagree, and name the dates and sources in the reason.

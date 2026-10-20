@@ -3,6 +3,8 @@ name: Auto Process Issue
 on:
   issues:
     types: [opened, labeled]
+  issue_comment:
+    types: [created]
 
 concurrency:
   group: readme-update
@@ -21,10 +23,21 @@ jobs:
     # on 'opened' removes that broken handoff. The bot-actor guard also
     # prevents re-runs when this workflow adds its own status labels
     # (invalid/duplicate/rejected/needs-review).
+    # An issue_comment event re-reviews a held issue only when the submitter
+    # (not a maintainer or bot) replies to an open issue labeled needs-review
+    # with a non-command comment; the 'followup' step caps these re-reviews.
     if: >-
       !endsWith(github.actor, '[bot]') && (
-        (github.event.action == 'opened' && (contains(github.event.issue.labels.*.name, 'addition') || contains(github.event.issue.body, 'http'))) ||
-        (github.event.action == 'labeled' && github.event.label.name == 'addition')
+        (github.event_name == 'issues' && (
+          (github.event.action == 'opened' && (contains(github.event.issue.labels.*.name, 'addition') || contains(github.event.issue.body, 'http'))) ||
+          (github.event.action == 'labeled' && github.event.label.name == 'addition')
+        )) ||
+        (github.event_name == 'issue_comment' &&
+          github.event.issue.pull_request == null &&
+          github.event.issue.state == 'open' &&
+          contains(github.event.issue.labels.*.name, 'needs-review') &&
+          github.event.comment.user.login == github.event.issue.user.login &&
+          !startsWith(github.event.comment.body, '/'))
       )
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -33,11 +46,34 @@ jobs:
       issues: write
 
     steps:
+      - name: Limit submitter follow-up re-reviews
+        id: followup
+        if: github.event_name == 'issue_comment'
+        uses: actions/github-script@v9
+        env:
+          FOLLOWUP_COMMENT: ${{ github.event.comment.body }}
+        with:
+          script: |
+            const marker = '<!-- followup-rerun -->';
+            const comments = await github.paginate(github.rest.issues.listComments, { ...context.repo, issue_number: context.issue.number, per_page: 100 });
+            const previous = comments.filter(comment => (comment.body || '').includes(marker)).length;
+            if (previous >= 2 || (process.env.FOLLOWUP_COMMENT || '').length > 2000) {
+              core.setOutput('proceed', 'false');
+              return;
+            }
+            await github.rest.issues.createComment({
+              ...context.repo, issue_number: context.issue.number,
+              body: `${marker}\nThe submitter replied, so this request is being reviewed again with the reply included.`
+            });
+            core.setOutput('proceed', 'true');
+
       - name: Checkout repository
+        if: steps.followup.outputs.proceed != 'false'
         uses: actions/checkout@v6
 
       - name: Validate URL
         id: validate
+        if: steps.followup.outputs.proceed != 'false'
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
         run: |
@@ -213,6 +249,8 @@ jobs:
           ISSUE_TITLE: ${{ github.event.issue.title }}
           ISSUE_BODY: ${{ github.event.issue.body }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
+          FOLLOWUP_COMMENT: ${{ github.event.comment.body }}
+          GITHUB_TOKEN: ${{ github.token }}
         run: node scripts/auto-process-issue.mjs
 
       - name: Reject - Quality check failed
@@ -337,7 +375,7 @@ jobs:
               body: '⚠️ **Needs manual review**: The automated system could not make changes.\n\n@serithemage Could you take a look? Use `/approve` to add or `/reject [reason]` to decline.'
             });
       - name: Request review after failure
-        if: failure()
+        if: failure() && steps.followup.outputs.proceed != 'false'
         uses: actions/github-script@v9
         with:
           script: |

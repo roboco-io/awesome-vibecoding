@@ -9,7 +9,7 @@ GitHub Actions uses the [Pi SDK](https://pi.dev/docs/latest/sdk) to run DeepSeek
 | Workflow | Trigger | Behavior |
 |---|---|---|
 | Weekly README Update | Sunday 00:00 UTC or manual dispatch | Research resources, process pending candidates, review lifecycle first and add at most one entry, update three languages |
-| Auto Process Issue | A human opens an issue with an addition label or URL, or adds the addition label | Validate the URL, assess quality, add and translate, commit and close |
+| Auto Process Issue | A human opens an issue with an addition label or URL, adds the addition label, or the submitter replies to an open `needs-review` issue | Validate the URL, assess quality, add and translate, commit and close |
 | Issue Manual Review Handler | Maintainer comments exactly `/approve`, or `/reject [reason]` | Retry an approved resource or reject it |
 | Test Automation | Changes to scripts, dependencies, prompts, or workflows | Run offline regression and Pi SDK integration tests |
 | Lint Workflows | Workflow changes | Check Actions syntax and shell scripts |
@@ -96,6 +96,12 @@ The runner checks the current change's URL additions rather than assuming all hi
 ## Issue registration policy
 
 Issue runs follow the [curation policy](curation-policy.md): a request that passes the seven checks goes to the README when the category has room, replaces a README row by a disqualification or a superior-resource path, or is registered in `docs/verified-catalog.md`. The application checks the structured result in code (score totals, the 90-day protection period, observed evidence URLs, and the destination documents), then updates the three READMEs, the destination document, and `data/catalog-status.json` in one commit. A `manualReason` result (`security_sensitive`, `directory_or_affiliate`, `ambiguous_replacement`, `conflicting_evidence`) leaves the issue open with the `needs-review` label. The security gate skips its signal-word check only for resource URLs on the `verifiedVendors` list in `data/registration-policy.json`. A maintainer `/approve` waives those reasons, so the retry must place or reject the resource.
+
+### Live evidence and submitter follow-up
+
+Search results can be stale cached copies. `fetch_page` asks Exa for `livecrawl: "preferred"`, so Exa crawls the page live and falls back to its cache only when the crawl fails. For a resource on `github.com`, the application also calls the GitHub API at run time (`GITHUB_TOKEN` from the workflow) and adds a "Live repository facts" section to the prompt with the license SPDX id, archived and disabled flags, last push, default branch and latest release. If the API call fails, the section holds `error: "unavailable"` and the run continues. The model must prefer these facts over search snippets and hold a request as `conflicting_evidence` only when live primary sources still disagree.
+
+When the submitter of an open issue labeled `needs-review` posts a comment that does not start with `/`, Auto Process Issue reviews the request again. Comments by maintainers, other users or bots do not trigger it, and a comment longer than 2000 characters is ignored. The workflow posts a comment with the marker `<!-- followup-rerun -->` before each re-review and stops without a re-review once two such comments exist, so one issue gets at most two re-reviews. The reply is passed as the `FOLLOWUP_COMMENT` environment variable, shown to the model as untrusted `followUp` data, its URLs become fetchable (the total stays capped at 10), and its text is included in the security-signal check. The validate step and duplicate check still use the issue body. A processed result removes `needs-review` and closes the issue, and a rejected result replaces the labels with `rejected`. Maintainers still use `/approve` or `/reject` at any time.
 
 ### Reprocessing pending issues
 

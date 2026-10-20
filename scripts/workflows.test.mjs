@@ -136,6 +136,52 @@ test("issue prompts describe placement, replacement and manual reasons", async (
   const policy = JSON.parse(await readFile(new URL("../data/registration-policy.json", import.meta.url), "utf8"));
   for (const name of ["issue-auto-process", "issue-approval"]) {
     const prompt = await readFile(new URL(`../.github/prompts/${name}.md`, import.meta.url), "utf8");
-    for (const word of [...policy.manualReasons, ...policy.scoreItems, "placement", "fetch_page", "90 days", "outgoingUrl", "categoryScores", "listed_on", "security", "storesThirdPartyCredentials", "relaysCredentials", "handlesPayments", "executesRemoteCommands", "officialVendor", "security signal", "verifiedVendors"]) assert.ok(prompt.includes(word), `${name} must mention ${word}`);
+    for (const word of [...policy.manualReasons, ...policy.scoreItems, "placement", "fetch_page", "90 days", "outgoingUrl", "categoryScores", "listed_on", "security", "storesThirdPartyCredentials", "relaysCredentials", "handlesPayments", "executesRemoteCommands", "officialVendor", "security signal", "verifiedVendors", "Live repository facts", "stale"]) assert.ok(prompt.includes(word), `${name} must mention ${word}`);
   }
+});
+
+test("a submitter reply to a held issue triggers a capped re-review through env data", async () => {
+  const data = await workflow("auto-process-issue");
+  assert.deepEqual(data.on.issue_comment.types, ["created"]);
+  const job = data.jobs["validate-and-process"];
+  const condition = job.if;
+  assert.match(condition, /github\.event_name == 'issues'/);
+  assert.match(condition, /github\.event_name == 'issue_comment'/);
+  assert.match(condition, /github\.event\.comment\.user\.login == github\.event\.issue\.user\.login/);
+  assert.match(condition, /contains\(github\.event\.issue\.labels\.\*\.name, 'needs-review'\)/);
+  assert.match(condition, /github\.event\.issue\.pull_request == null/);
+  assert.match(condition, /github\.event\.issue\.state == 'open'/);
+  assert.match(condition, /!startsWith\(github\.event\.comment\.body, '\/'\)/);
+  const gate = job.steps.find(step => step.id === "followup");
+  assert.ok(gate, "followup gate step");
+  assert.match(gate.if, /issue_comment/);
+  assert.match(gate.with.script, /<!-- followup-rerun -->/);
+  assert.match(gate.with.script, />= 2/);
+  const run = async (comments, body = "fixed") => {
+    const posted = [], outputs = {};
+    const context = vm.createContext({
+      process: { env: { FOLLOWUP_COMMENT: body } }, core: { setOutput: (key, value) => outputs[key] = value },
+      context: { repo: { owner: "o", repo: "r" }, issue: { number: 1 } },
+      github: { paginate: async () => comments.map(text => ({ body: text })), rest: { issues: { listComments: {}, createComment: async value => posted.push(value.body) } } },
+    });
+    await vm.runInContext(`(async () => {${gate.with.script}})()`, context);
+    return { posted, outputs };
+  };
+  const marker = "<!-- followup-rerun -->\nx";
+  let result = await run([marker]);
+  assert.equal(result.posted.length, 1);
+  assert.match(result.posted[0], /^<!-- followup-rerun -->\nThe submitter replied, so this request is being reviewed again with the reply included\./);
+  assert.equal(result.outputs.proceed, "true");
+  result = await run([marker, marker]);
+  assert.deepEqual(result.posted, []);
+  assert.equal(result.outputs.proceed, "false");
+  result = await run([], "x".repeat(2001));
+  assert.deepEqual(result.posted, []);
+  assert.equal(result.outputs.proceed, "false");
+  for (const step of job.steps.filter(item => item.name === "Checkout repository" || item.id === "validate" || item.name === "Request review after failure")) assert.match(step.if, /steps\.followup\.outputs\.proceed != 'false'/, step.name);
+  const pi = job.steps.find(step => step.id === "pi");
+  assert.equal(pi.env.FOLLOWUP_COMMENT, "${{ github.event.comment.body }}");
+  assert.equal(pi.env.GITHUB_TOKEN, "${{ github.token }}");
+  assert.doesNotMatch(job.steps.map(step => step.run || "").join("\n"), /github\.event\.comment\.body/);
+  assert.equal((await workflow("issue-approval")).jobs["handle-approve"].steps.find(step => step.id === "pi").env.GITHUB_TOKEN, "${{ github.token }}");
 });

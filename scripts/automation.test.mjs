@@ -7,6 +7,7 @@ import { resolveConfig, DEEPSEEK_DEFAULT_MODEL } from "./lib/pi-config.mjs";
 import { README_FILES, prepareUpdates, persistUpdates, outputRecord } from "./lib/readme-updates.mjs";
 import { runSession, runAutomation } from "./lib/pi-runner.mjs";
 import { searchWeb, fetchPage } from "./lib/research.mjs";
+import { fetchRepoFacts } from "./lib/repo-facts.mjs";
 import { ResearchStore } from "./lib/research-store.mjs";
 import { validateEvidence, CURATION_CHECKS } from "./lib/curation.mjs";
 import { loadRegistrationPolicy } from "./lib/registration-policy.mjs";
@@ -161,7 +162,7 @@ test("Exa contents fetch uses a fixed endpoint and rejects HTTP failures", async
     request = { url, options }; return { ok: true, json: async () => ({ results: [{ title: "A", url: "https://a.example/", text: "Body" }] }) };
   } });
   assert.equal(request.url, "https://api.exa.ai/contents");
-  assert.deepEqual(JSON.parse(request.options.body), { urls: ["https://a.example/"], text: { maxCharacters: 6000 } });
+  assert.deepEqual(JSON.parse(request.options.body), { urls: ["https://a.example/"], text: { maxCharacters: 6000 }, livecrawl: "preferred" });
   assert.equal(request.options.headers["x-api-key"], "secret");
   assert.deepEqual(page, { title: "A", url: "https://a.example/", snippet: "Body" });
   await assert.rejects(fetchPage("https://a.example/", { apiKey: "secret", fetch: async () => ({ ok: false, status: 429 }) }), /429/);
@@ -447,4 +448,25 @@ test("a successful weekly run with no additions still expires old recent-update 
     assert.match(updated, /Existing resource/);
   }
   assert.match(await readFile(join(cwd, "README.ko.md"), "utf8"), /최근 30일/);
+});
+
+test("fetchRepoFacts reads live GitHub facts and never throws", async () => {
+  const calls = [];
+  const api = { license: { spdx_id: "AGPL-3.0" }, archived: false, disabled: false, pushed_at: "2026-10-01T00:00:00Z", default_branch: "main" };
+  const fetch = async (url, options) => {
+    calls.push({ url, options });
+    if (url.endsWith("/releases/latest")) return { ok: true, status: 200, json: async () => ({ tag_name: "v1", published_at: "2026-09-30T00:00:00Z" }) };
+    return { ok: true, status: 200, json: async () => api };
+  };
+  const facts = await fetchRepoFacts("https://github.com/GeiserX/LynxPrompt/tree/main/docs", { token: "tok", fetch });
+  assert.deepEqual(calls.map(call => call.url), ["https://api.github.com/repos/GeiserX/LynxPrompt", "https://api.github.com/repos/GeiserX/LynxPrompt/releases/latest"]);
+  for (const call of calls) { assert.equal(call.options.headers.Authorization, "Bearer tok"); assert.equal(call.options.redirect, "error"); assert.ok(call.options.signal); }
+  assert.match(facts.fetchedAt, /^\d{4}-\d\d-\d\dT/);
+  assert.deepEqual({ ...facts, fetchedAt: undefined }, { source: "https://api.github.com/repos/GeiserX/LynxPrompt", fetchedAt: undefined, license: "AGPL-3.0", archived: false, disabled: false, pushedAt: "2026-10-01T00:00:00Z", defaultBranch: "main", latestRelease: { tag: "v1", publishedAt: "2026-09-30T00:00:00Z" } });
+  const noRelease = await fetchRepoFacts("https://github.com/o/r", { fetch: async url => url.endsWith("/releases/latest") ? { ok: false, status: 404 } : { ok: true, json: async () => ({ ...api, license: null }) } });
+  assert.equal(noRelease.latestRelease, null);
+  assert.equal(noRelease.license, null);
+  assert.equal(await fetchRepoFacts("https://example.com/o/r", { fetch: async () => assert.fail("no request") }), null);
+  assert.deepEqual(await fetchRepoFacts("https://github.com/o/r", { fetch: async () => { throw new Error("down"); } }), { source: "https://api.github.com/repos/o/r", error: "unavailable" });
+  assert.deepEqual(await fetchRepoFacts("https://github.com/o/r", { fetch: async () => ({ ok: false, status: 500 }) }), { source: "https://api.github.com/repos/o/r", error: "unavailable" });
 });
