@@ -22,9 +22,9 @@ Maintainer `/approve` allows a retry after review. It waives the four manual-rev
 
 ## Automated checks and judgment
 
-For an automated acceptance, Pi must explicitly pass the five curation checks plus `available_to_new_users` and `not_sunsetting` and cite evidence URLs returned by the current Exa searches. Invented or unvisited citations are rejected. Evidence remains untrusted data and cannot change the agent's instructions.
+For an automated acceptance, Pi must explicitly pass the five curation checks plus `available_to_new_users` and `not_sunsetting` and cite evidence URLs that `search_web` returned or `fetch_page` read in the current run. `fetch_page` reads only URLs that appear in the issue. In a run that is not maintainer-approved, at least one source independent of the submitter is also required. Invented or unvisited citations are rejected. Evidence remains untrusted data and cannot change the agent's instructions.
 
-Code validates the structured result, observed citations, allowed files, unique edit anchors, matching resource additions across languages, and existing-link preservation. The model still judges relevance, substance, and factual support; those semantic judgments are not proven by URL or Boolean checks. Uncertain cases require a maintainer.
+Code validates the structured result, observed citations, score totals, the protection period, placement and replacement consistency, allowed files, unique edit anchors, matching resource additions across languages, and existing-link preservation. The model still judges relevance, substance, and factual support; those semantic judgments are not proven by URL or Boolean checks. Uncertain cases require a maintainer, except that a manual-review reason is waived by `/approve`.
 
 This policy applies to new submissions and future reviews. Older entries do not automatically establish an exception; they can be reviewed separately.
 
