@@ -5,14 +5,23 @@ import { outputRecord } from "./readme-updates.mjs";
 import { categoryGuide } from "./categories.mjs";
 import { formatIssueComment } from "./issue-comment.mjs";
 
+// Issue text often ends a URL with sentence punctuation or a closing bracket that is not part of it.
+function trimUrl(value) {
+  let url = value;
+  const unmatched = (close, open) => url.endsWith(close) && url.split(close).length > url.split(open).length;
+  while (/[.,;:!?]$/.test(url) || unmatched(")", "(") || unmatched("]", "[")) url = url.slice(0, -1);
+  return url;
+}
+
 export async function processIssue({ approved = false, env = process.env, run = runAutomation } = {}) {
   const body = env.ISSUE_BODY || "";
   if (body.length > 5000) throw new Error("Issue body exceeds 5000 characters");
-  const url = env.ISSUE_URL || body.match(/https?:\/\/[^\s)>]+/i)?.[0];
+  const bodyUrls = (body.match(/https?:\/\/[^\s<>]+/gi) || []).flatMap(match => match.split("](")).filter(part => /^https?:\/\//i.test(part)).map(trimUrl);
+  const url = env.ISSUE_URL || bodyUrls[0];
   if (!url) throw new Error("Issue has no resource URL");
   const parsed = new URL(url);
   if (!["http:", "https:"].includes(parsed.protocol) || parsed.username || parsed.password) throw new Error("Invalid resource URL");
-  const fetchableUrls = [...new Set([url, ...body.match(/https?:\/\/[^\s)>]+/gi) || []])].slice(0, 10);
+  const fetchableUrls = [...new Set([url, ...bodyUrls])].slice(0, 10);
   const issueUrl = env.GITHUB_REPOSITORY && env.ISSUE_NUMBER ? `https://github.com/${env.GITHUB_REPOSITORY}/issues/${env.ISSUE_NUMBER}` : undefined;
   const instructions = await readFile(new URL(`../../.github/prompts/${approved ? "issue-approval" : "issue-auto-process"}.md`, import.meta.url), "utf8");
   const policy = await readFile(new URL("../../docs/curation-policy.md", import.meta.url), "utf8");
