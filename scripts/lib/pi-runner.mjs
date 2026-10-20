@@ -144,7 +144,7 @@ export async function runAutomation({ prompt, cwd = process.cwd(), env = process
           validateEvidence(proposal, { searched: searchedUrls, fetched: fetchedUrls, submittedUrl: requiredUrl, policy, requireIndependent: !weekly && !approved });
           const changed = weekly
             ? prepareUpdates(originals, proposal, { requiredUrl })
-            : prepareCatalogUpdates(originals, proposal, { requiredUrl, policy, today, approved, observedUrls: [...searchedUrls, ...fetchedUrls], issueUrl });
+            : prepareCatalogUpdates(originals, proposal, { requiredUrl, policy, today, approved, searchedUrls: [...searchedUrls], fetchedUrls: [...fetchedUrls], issueUrl });
           const prepared = changed && { ...originals, ...changed };
           if (prepared) {
             const skipped = [issueUrl, proposal.replacement?.outgoingUrl].filter(Boolean).map(identity);

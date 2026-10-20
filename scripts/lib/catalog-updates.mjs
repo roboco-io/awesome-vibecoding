@@ -1,7 +1,7 @@
 import { CATEGORIES } from "./categories.mjs";
 import { README_FILES, EDITABLE_FILES, MANAGED_FILES, prepareUpdates, links } from "./readme-updates.mjs";
 import { shortlistEntries, normalizeResourceUrl, findRegistryEntry, applyRegistryUpdate } from "./catalog-status.mjs";
-import { scoreTotal, isProtected, isScoreFresh } from "./registration-policy.mjs";
+import { scoreTotal, isProtected, isScoreFresh, sourceHost } from "./registration-policy.mjs";
 
 const VERIFIED = "docs/verified-catalog.md";
 const HISTORY = "docs/catalog-history.md";
@@ -28,11 +28,26 @@ function checkSuperseded(entries, outgoing, proposal, resources, { policy, today
   if (scoreTotal(proposal.scores, policy) <= outgoingTotal) throw new Error("The incoming score must be strictly higher than the outgoing score");
 }
 
-function checkDisqualified(replacement, { policy, approved, observedUrls = [] }) {
+// Fetched pages come from the issue, so they prove disqualification only on the outgoing entry's own host.
+function checkDisqualified(replacement, outgoing, { policy, approved, searchedUrls = [], fetchedUrls = [] }) {
   const allowed = [...policy.disqualifications, ...(approved ? policy.approvalOnlyDisqualifications : [])];
   if (!allowed.includes(replacement.disqualification)) throw new Error(`Unsupported disqualification without approval: ${replacement.disqualification}`);
   if (!Array.isArray(replacement.evidenceUrls) || !replacement.evidenceUrls.length) throw new Error("A disqualified replacement requires evidence URLs");
-  for (const url of replacement.evidenceUrls) if (!observedUrls.some(seen => sameUrl(seen, url))) throw new Error(`Disqualification evidence was not observed in this run: ${url}`);
+  const observed = url => searchedUrls.some(seen => sameUrl(seen, url)) || (fetchedUrls.some(seen => sameUrl(seen, url)) && sourceHost(url) === sourceHost(outgoing.url));
+  for (const url of replacement.evidenceUrls) if (!observed(url)) throw new Error(`Disqualification evidence was not searched in this run or fetched from the outgoing entry's host: ${url}`);
+}
+
+function checkDocEdits(originals, updated, { placement, replacement, requiredUrl, issueUrl }) {
+  const allowedFiles = { [VERIFIED]: placement === "extended" || replacement?.path === "superseded", [HISTORY]: replacement?.path === "disqualified" };
+  const allowedLinks = [requiredUrl, replacement?.outgoingUrl, issueUrl, ...(replacement?.evidenceUrls || [])].filter(Boolean);
+  for (const file of [VERIFIED, HISTORY]) {
+    if (updated[file] === originals[file]) continue;
+    if (!allowedFiles[file]) throw new Error(`${file} may not be edited for this placement`);
+    const existing = links(originals[file] || "");
+    for (const url of links(updated[file] || "").keys()) {
+      if (!existing.has(url) && !allowedLinks.some(allowed => sameUrl(allowed, url))) throw new Error(`${file} may not gain unrelated link: ${url}`);
+    }
+  }
 }
 
 export function prepareCatalogUpdates(originals, proposal, ctx) {
@@ -67,7 +82,7 @@ export function prepareCatalogUpdates(originals, proposal, ctx) {
       if (replacement.path === "superseded") {
         if (!full) throw new Error("A superseded replacement requires a full shortlist");
         checkSuperseded(entries, outgoing, proposal, registry.resources, ctx);
-      } else if (replacement.path === "disqualified") checkDisqualified(replacement, ctx);
+      } else if (replacement.path === "disqualified") checkDisqualified(replacement, outgoing, ctx);
       else throw new Error("Replacement path must be disqualified or superseded");
     } else if (full) throw new Error(`${category.title} shortlist is full (${category.limit}); use a replacement or extended placement`);
     updated = prepareUpdates(originals, proposal, { requiredUrl, removableUrls: outgoing ? [outgoing.url] : [], files: EDITABLE_FILES });
@@ -80,6 +95,7 @@ export function prepareCatalogUpdates(originals, proposal, ctx) {
     const destination = replacement?.path === "superseded" ? VERIFIED : HISTORY;
     if (outgoing && linkCount(updated[destination], outgoing.url) <= linkCount(originals[destination], outgoing.url)) throw new Error(`The outgoing URL must be moved to ${destination}`);
   }
+  checkDocEdits(originals, updated, { placement, replacement, requiredUrl, issueUrl });
   const data = applyRegistryUpdate(registry, {
     incoming: { id: resource.id, name: resource.name, url: requiredUrl, category: resource.category, location: placement === "readme" ? "shortlist" : "extended", scores: proposal.scores, evidenceUrls: proposal.evidenceUrls },
     outgoing: outgoing && { id: outgoing.id, url: outgoing.url, category: resource.category, disqualification: replacement.path === "disqualified" ? replacement.disqualification : undefined, reason: replacement.rationale, evidenceUrls: replacement.evidenceUrls },

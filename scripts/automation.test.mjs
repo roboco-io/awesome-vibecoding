@@ -46,6 +46,9 @@ test("fetched URLs count as evidence but require an independent source", async (
   fetched.add("https://github.com/learnmagic-ai/skills");
   validateEvidence({ ...p, evidenceUrls: [...p.evidenceUrls, "https://github.com/learnmagic-ai/skills"] }, options);
   assert.throws(() => validateEvidence({ ...p, evidenceUrls: ["not a url"] }, { ...options, fetched: new Set(["not a url"]) }), /independent source/);
+  const review = "https://review.example/learnmagic";
+  assert.throws(() => validateEvidence({ ...p, evidenceUrls: [...p.evidenceUrls, review] }, { ...options, fetched: new Set([...fetched, review]) }), /independent source/);
+  validateEvidence({ ...p, evidenceUrls: [...p.evidenceUrls, review] }, { ...options, searched: new Set([review]) });
 });
 
 test("defaults to DeepSeek and requires only its key", () => {
@@ -265,6 +268,46 @@ test("fetch_page only reads issue URLs", async t => {
   assert.match(texts[6], /Fetch limit exceeded/);
   assert.equal(fetched.length, 5);
   assert.deepEqual([...new Set(fetched)], ["https://issue.example/"]);
+});
+
+test("a fetched second-domain page is not independent evidence unless the maintainer approved", async t => {
+  const cwd = await mkdtemp(join(tmpdir(), "pi-independent-test-"));
+  t.after(() => rm(cwd, { recursive: true, force: true }));
+  await mkdir(join(cwd, "docs")); await mkdir(join(cwd, "data"));
+  await writeCatalog(cwd);
+  const requiredUrl = "https://new.example/";
+  const review = "https://review.example/new";
+  t.mock.method(globalThis, "fetch", async (url, options) => {
+    assert.equal(url, "https://api.exa.ai/contents");
+    const [page] = JSON.parse(options.body).urls;
+    return { ok: true, json: async () => ({ results: [{ url: page, title: "Page", text: "Great tool" }] }) };
+  });
+  let call = 0;
+  let toolResults = [];
+  t.mock.method(ModelRuntime.prototype, "streamSimple", (model, context) => {
+    const step = call++ % 4;
+    if (step === 3) toolResults = context.messages.filter(message => message.role === "toolResult");
+    const p = { ...proposal(), evidenceUrls: [requiredUrl, review], placement: "readme", resource: { id: "resource-new", name: "New", category: "context" }, scores };
+    const calls = [{ name: "fetch_page", arguments: { url: requiredUrl } }, { name: "fetch_page", arguments: { url: review } }, { name: "submit_result", arguments: p }];
+    const message = {
+      role: "assistant", api: model.api, provider: model.provider, model: model.id, timestamp: Date.now(),
+      content: step < 3 ? [{ type: "toolCall", id: `call-${step}`, ...calls[step] }] : [{ type: "text", text: "Done" }],
+      stopReason: step < 3 ? "toolUse" : "stop",
+      usage: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0, totalTokens: 0, cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0, total: 0 } },
+    };
+    const stream = createAssistantMessageEventStream();
+    stream.push({ type: "start", partial: message });
+    stream.push({ type: "done", reason: message.stopReason, message });
+    return stream;
+  });
+  const env = { DEEPSEEK_API_KEY: "test-only", EXA_API_KEY: "test-only", AI_TIMEOUT_SECONDS: "5" };
+  const options = { cwd, env, prompt: "Add New", requiredUrl, fetchableUrls: [requiredUrl, review] };
+  await assert.rejects(runAutomation(options), /without submitting/);
+  assert.match(toolResults.at(-1).content.map(part => part.text).join(""), /independent source/);
+  await assertCatalogUnchanged(cwd);
+  const added = await runAutomation({ ...options, approved: true });
+  assert.deepEqual([added.status, added.evidenceUrls], ["processed", [requiredUrl, review]]);
+  assert.match(await readFile(join(cwd, "README.md"), "utf8"), /new\.example/);
 });
 
 test("research cache handles quoted queries, force refresh, candidates and failed-run rollback", async t => {

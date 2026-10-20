@@ -25,9 +25,11 @@ const within = (from, today, days) => Boolean(from) && daysSince(from, today) < 
 export const isProtected = (entry, today, policy) => within(entry.listed_on, today, policy.protectionDays);
 export const isScoreFresh = (entry, today, policy) => within(entry.scored_on, today, policy.scoreTtlDays);
 
+export const sourceHost = value => new URL(value).hostname.toLowerCase().replace(/^www\./, "");
+export const isIndependentHost = (url, policy) => policy.independentHosts.includes(sourceHost(url));
+
 export function isIndependentSource(url, submittedUrl, policy) {
-  const host = value => new URL(value).hostname.toLowerCase().replace(/^www\./, "");
-  const [source, submitted] = [host(url), host(submittedUrl)];
+  const [source, submitted] = [sourceHost(url), sourceHost(submittedUrl)];
   if (policy.independentHosts.includes(source)) return true;
   return source !== submitted && !source.endsWith(`.${submitted}`) && !submitted.endsWith(`.${source}`);
 }

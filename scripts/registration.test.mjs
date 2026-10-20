@@ -72,7 +72,7 @@ const catalogProposal = (fields = {}) => ({
   status: "processed", reason: "Added New", evidenceUrls: ["https://new.example/"], placement: "readme",
   resource: { id: "resource-new", name: "New", category: "context" }, scores: good, edits: addRow(), ...fields,
 });
-const ctx = (fields = {}) => ({ requiredUrl: "https://new.example/", policy, today, approved: false, observedUrls: ["https://new.example/", "https://evidence.example/archived"], issueUrl: "https://github.com/o/r/issues/1", ...fields });
+const ctx = (fields = {}) => ({ requiredUrl: "https://new.example/", policy, today, approved: false, searchedUrls: ["https://new.example/", "https://evidence.example/archived"], fetchedUrls: [], issueUrl: "https://github.com/o/r/issues/1", ...fields });
 const disqualified = (fields = {}) => ({ outgoingUrl: "https://r3.example/", path: "disqualified", disqualification: "archived", covers: true, rationale: "Archived", evidenceUrls: ["https://evidence.example/archived"], ...fields });
 const superseded = (fields = {}) => ({ outgoingUrl: "https://r3.example/", path: "superseded", covers: true, rationale: "Broader and maintained", evidenceUrls: ["https://new.example/"], ...fields });
 
@@ -162,6 +162,30 @@ test("a pre-existing link in the destination doc does not count as relocation", 
   const originals = { ...catalogOriginals(LIMIT, { 3: { scores: low } }), "docs/catalog-history.md": `${HISTORY}- Source: [R3](https://r3.example/).\n`, "docs/verified-catalog.md": `${VERIFIED}| [**R3**](https://r3.example/) | old |\n` };
   assert.throws(() => prepareCatalogUpdates(originals, catalogProposal({ replacement: disqualified(), edits: replaceRow(3) }), ctx()), /catalog-history/);
   assert.throws(() => prepareCatalogUpdates(originals, catalogProposal({ replacement: superseded(), edits: replaceRow(3) }), ctx()), /verified-catalog/);
+});
+
+test("fetched disqualification evidence counts only on the outgoing entry's host", () => {
+  const originals = catalogOriginals(LIMIT);
+  const evidence = url => catalogProposal({ replacement: disqualified({ evidenceUrls: [url] }), edits: [...replaceRow(3), toHistory("https://r3.example/")] });
+  prepareCatalogUpdates(originals, evidence("https://www.r3.example/blog/sunset"), ctx({ searchedUrls: [], fetchedUrls: ["https://www.r3.example/blog/sunset"] }));
+  assert.throws(() => prepareCatalogUpdates(originals, evidence("https://rival.example/r3-archived"), ctx({ searchedUrls: [], fetchedUrls: ["https://rival.example/r3-archived"] })), /outgoing entry's host/);
+  prepareCatalogUpdates(originals, evidence("https://rival.example/r3-archived"), ctx({ searchedUrls: ["https://rival.example/r3-archived"] }));
+});
+
+test("catalog docs change only for their placement and gain only related links", () => {
+  const originals = catalogOriginals(LIMIT, { 3: { scores: low } });
+  const spam = "https://spam.example/";
+  assert.throws(() => prepareCatalogUpdates(catalogOriginals(LIMIT - 1), catalogProposal({ edits: [...addRow(), toVerified("https://new.example/")] }), ctx()), /verified-catalog\.md may not be edited/);
+  assert.throws(() => prepareCatalogUpdates(catalogOriginals(LIMIT - 1), catalogProposal({ edits: [...addRow(), toHistory("https://new.example/")] }), ctx()), /catalog-history\.md may not be edited/);
+  assert.throws(() => prepareCatalogUpdates(originals, catalogProposal({ placement: "extended", edits: [toVerified("https://new.example/"), toHistory("https://new.example/")] }), ctx()), /catalog-history\.md may not be edited/);
+  assert.throws(() => prepareCatalogUpdates(originals, catalogProposal({ replacement: disqualified(), edits: [...replaceRow(3), toHistory("https://r3.example/"), toVerified("https://r3.example/")] }), ctx()), /verified-catalog\.md may not be edited/);
+  assert.throws(() => prepareCatalogUpdates(originals, catalogProposal({ replacement: superseded(), edits: [...replaceRow(3), toVerified("https://r3.example/"), toHistory("https://r3.example/")] }), ctx()), /catalog-history\.md may not be edited/);
+  const extraLink = (edit, url) => ({ ...edit, newText: `${edit.newText}\n[More](${url})` });
+  assert.throws(() => prepareCatalogUpdates(originals, catalogProposal({ placement: "extended", edits: [extraLink(toVerified("https://new.example/"), spam)] }), ctx()), /unrelated link: https:\/\/spam\.example\//);
+  assert.throws(() => prepareCatalogUpdates(originals, catalogProposal({ replacement: superseded(), edits: [...replaceRow(3), extraLink(toVerified("https://r3.example/"), spam)] }), ctx()), /unrelated link/);
+  assert.throws(() => prepareCatalogUpdates(originals, catalogProposal({ replacement: disqualified(), edits: [...replaceRow(3), extraLink(toHistory("https://r3.example/"), spam)] }), ctx()), /unrelated link/);
+  const related = extraLink(extraLink(toHistory("https://r3.example/"), "https://evidence.example/archived"), "https://github.com/o/r/issues/1");
+  assert.match(prepareCatalogUpdates(originals, catalogProposal({ replacement: disqualified(), edits: [...replaceRow(3), related] }), ctx())["docs/catalog-history.md"], /evidence\.example/);
 });
 
 test("categoryScores must be valid scores for current rows of the category", () => {
@@ -300,4 +324,12 @@ test("processIssue writes outputs and a comment file", async t => {
   await writeFile(output, "");
   await processIssue({ approved: true, env: { ...env, RUNNER_TEMP: undefined }, run: async () => ({ status: "processed", reason: "Swapped", placement: "readme", scores: good, evidenceUrls: [], replacement: { outgoingUrl: "https://old.example/", path: "disqualified" } }) });
   assert.match(await readFile(output, "utf8"), /placement=readme\nmanual_reason=\nreplaced=true\n/);
+});
+
+test("processIssue strips trailing punctuation and unmatched brackets from issue URLs", async () => {
+  const body = "Add https://new.example/tool. See [docs](https://docs.new.example/start), (https://blog.example/post), https://wiki.example/A_(b)! and [https://repo.example/x]";
+  let options;
+  await processIssue({ env: { ISSUE_BODY: body }, run: async opts => { options = opts; return { status: "uncertain", reason: "Check" }; } });
+  assert.equal(options.requiredUrl, "https://new.example/tool");
+  assert.deepEqual(options.fetchableUrls, ["https://new.example/tool", "https://docs.new.example/start", "https://blog.example/post", "https://wiki.example/A_(b)", "https://repo.example/x"]);
 });
