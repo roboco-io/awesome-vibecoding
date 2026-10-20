@@ -5164,6 +5164,36 @@
         "https://zapier.com/"
       ],
       "successor": null
+    },
+    {
+      "id": "resource-prisma-mcp",
+      "name": "Prisma MCP",
+      "url": "https://www.prisma.io/docs/ai/tools/mcp-server",
+      "aliases": [
+        "https://www.prisma.io/docs/ai/tools/mcp-server"
+      ],
+      "category": "context",
+      "status": "active",
+      "location": "extended",
+      "verified_on": "2026-10-20",
+      "scores": {
+        "access": 1,
+        "activity": 2,
+        "category_fit": 2,
+        "documentation": 2,
+        "independent_sources": 2
+      },
+      "scored_on": "2026-10-20",
+      "evidence_urls": [
+        "https://www.prisma.io/docs/ai/tools/mcp-server",
+        "https://github.com/prisma/mcp/blob/main/README.md",
+        "https://www.prisma.io/mcp",
+        "https://www.prisma.io/compute",
+        "https://www.prisma.io/docs/compute/object-storage",
+        "https://www.prisma.io/docs/ai/tools/chatgpt"
+      ],
+      "reviewed_on": "2026-10-20",
+      "review_issue": "https://github.com/roboco-io/awesome-vibecoding/issues/47"
     }
   ]
 }
