@@ -220,7 +220,7 @@ test("fetch_page only reads issue URLs", async t => {
   for (const file of README_FILES) await writeFile(join(cwd, file), source);
   const fetched = [];
   t.mock.method(globalThis, "fetch", async (url, options) => {
-    fetched.push(url);
+    fetched.push(JSON.parse(options.body).urls[0]);
     return { ok: true, json: async () => ({ results: [{ url: "https://issue.example/", title: "Issue", text: "Page" }] }) };
   });
   let call = 0;
@@ -249,7 +249,7 @@ test("fetch_page only reads issue URLs", async t => {
   for (const text of texts.slice(1, 6)) assert.match(text, /Page/);
   assert.match(texts[6], /Fetch limit exceeded/);
   assert.equal(fetched.length, 5);
-  assert.equal(new Set(fetched).size, 1);
+  assert.deepEqual([...new Set(fetched)], ["https://issue.example/"]);
 });
 
 test("research cache handles quoted queries, force refresh, candidates and failed-run rollback", async t => {
