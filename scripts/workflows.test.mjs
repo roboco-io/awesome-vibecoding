@@ -136,6 +136,6 @@ test("issue prompts describe placement, replacement and manual reasons", async (
   const policy = JSON.parse(await readFile(new URL("../data/registration-policy.json", import.meta.url), "utf8"));
   for (const name of ["issue-auto-process", "issue-approval"]) {
     const prompt = await readFile(new URL(`../.github/prompts/${name}.md`, import.meta.url), "utf8");
-    for (const word of [...policy.manualReasons, ...policy.scoreItems, "placement", "fetch_page", "90 days"]) assert.ok(prompt.includes(word), `${name} must mention ${word}`);
+    for (const word of [...policy.manualReasons, ...policy.scoreItems, "placement", "fetch_page", "90 days", "outgoingUrl", "categoryScores"]) assert.ok(prompt.includes(word), `${name} must mention ${word}`);
   }
 });

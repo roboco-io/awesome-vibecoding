@@ -36,6 +36,8 @@ A replacement moves the outgoing row out of all three READMEs and into one desti
 
 ## Replacement
 
+`replacement.outgoingUrl` is the exact URL of the README row being replaced.
+
 Path A, `path: "disqualified"`: the outgoing README row is explicitly disqualified, with evidence from this run. Allowed `disqualification` values: archived (the repository is marked archived), sunset_announced (the operator announced a shutdown or retirement), unavailable_to_new_users (a new user cannot use the listed product or edition). List `evidenceUrls` that you obtained from search_web or fetch_page in this run. Path A applies regardless of the protection period. "More than 180 days without activity" is not a Path A disqualification, because mature software and abandoned projects are hard to tell apart.
 
 Path B, `path: "superseded"`: use it only when the category is full, no row is explicitly disqualified, and all of the following hold.
@@ -74,4 +76,4 @@ Rejection stays the outcome for clearly out-of-scope, duplicate, deceptive, mali
 
 ## Result
 
-Call submit_result once, after your research is complete. For a qualified resource use status processed, a concise reason, placement, resource, scores, checks, evidenceUrls, and exact text replacements. Each oldText must match exactly once. Anchor an insertion to an existing row or nearby unique text. Do not replace whole files. Include the complete three-language change, and the destination-document changes, in one submission. Statuses other than processed must have no edits. Finish after the tool accepts it.
+Call submit_result once, after your research is complete. For a qualified resource use status processed, a concise reason, placement, resource, scores, checks, evidenceUrls, and exact text replacements. Each oldText must match exactly once. Anchor an insertion to an existing row or nearby unique text. Do not replace whole files. Include the complete three-language change, and the destination-document changes, in one submission. Statuses other than processed must have no edits. Do not edit files directly or execute shell commands. Finish after the tool accepts it.
