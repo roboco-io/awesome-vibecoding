@@ -50,12 +50,24 @@ export function assertNewResource(url, resources) {
   throw new Error(`${known.name} is already reviewed in the ${known.location} catalog; do not rediscover or duplicate it.`);
 }
 
+function shortlistBlock(text, key) {
+  return key === "learning"
+    ? text.match(/<a id="learning"><\/a>[\s\S]*?(?=<a id="community"><\/a>)/)?.[0]
+    : text.match(new RegExp(`<!-- catalog:${key} -->\\n([\\s\\S]*?)<!-- /catalog:${key} -->`))?.[1];
+}
+
+const shortlistRows = block => block.split("\n").filter(line => line.startsWith("|") && /\]\(https?:\/\//i.test(line));
+
+export function shortlistEntries(text, category) {
+  return shortlistRows(shortlistBlock(text, category) || "").map(line => ({
+    id: line.match(/<a id="([^"]+)">/)?.[1] ?? null,
+    url: line.match(/\]\((https?:\/\/[^)\s]+)/i)[1],
+  }));
+}
+
 export function assertShortlistCapacity(text) {
-  const count = block => block.split("\n").filter(line => line.startsWith("|") && /\]\(https?:\/\//i.test(line)).length;
   for (const [key, category] of Object.entries(CATEGORIES)) {
-    const block = key === "learning"
-      ? text.match(/<a id="learning"><\/a>[\s\S]*?(?=<a id="community"><\/a>)/)?.[0]
-      : text.match(new RegExp(`<!-- catalog:${key} -->\\n([\\s\\S]*?)<!-- /catalog:${key} -->`))?.[1];
-    if (block && count(block) > category.limit) throw new Error(`${category.title} shortlist limit (${category.limit}) reached; request editorial review instead of growing the list.`);
+    const block = shortlistBlock(text, key);
+    if (block && shortlistRows(block).length > category.limit) throw new Error(`${category.title} shortlist limit (${category.limit}) reached; request editorial review instead of growing the list.`);
   }
 }

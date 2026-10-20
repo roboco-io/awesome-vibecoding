@@ -1,0 +1,12 @@
+{
+  "protectionDays": 90,
+  "scoreTtlDays": 90,
+  "maxSearches": 20,
+  "maxFetches": 5,
+  "scoreItems": ["activity", "documentation", "access", "independent_sources", "category_fit"],
+  "disqualifications": ["archived", "sunset_announced", "unavailable_to_new_users"],
+  "approvalOnlyDisqualifications": ["inactive"],
+  "manualReasons": ["security_sensitive", "directory_or_affiliate", "ambiguous_replacement", "conflicting_evidence"],
+  "independentHosts": ["github.com", "gitlab.com", "codeberg.org", "npmjs.com", "pypi.org", "crates.io", "marketplace.visualstudio.com", "open-vsx.org", "registry.modelcontextprotocol.io", "hub.docker.com"],
+  "officialVendorRule": "Official when documentation is on the operator's domain or the repository is under the operator's official organization account."
+}
