@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { mkdtemp, readFile, writeFile, rm } from "node:fs/promises";
+import { mkdtemp, mkdir, readFile, writeFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { resolveConfig, DEEPSEEK_DEFAULT_MODEL } from "./lib/pi-config.mjs";
@@ -168,10 +168,21 @@ test("Exa contents fetch uses a fixed endpoint and rejects HTTP failures", async
   await assert.rejects(fetchPage("https://a.example/", stub({ results: [{ url: "https://a.example/", text: "  " }] })), /failed for this URL/);
 });
 
+const catalogSource = source.replace("| Tool |", "<!-- catalog:context -->\n| Tool |") + "<!-- /catalog:context -->\n";
+const catalogFiles = {
+  ...Object.fromEntries(README_FILES.map(file => [file, catalogSource])),
+  "docs/verified-catalog.md": "# Verified\n", "docs/catalog-history.md": "# History\n",
+  "data/catalog-status.json": JSON.stringify({ resources: [{ id: "resource-old", name: "Old", url: "https://old.example/", aliases: ["https://old.example/"], category: "context", status: "active", location: "shortlist" }] }, null, 2) + "\n",
+};
+const writeCatalog = async cwd => { for (const [file, text] of Object.entries(catalogFiles)) await writeFile(join(cwd, file), text); };
+const assertCatalogUnchanged = async cwd => { for (const [file, text] of Object.entries(catalogFiles)) assert.equal(await readFile(join(cwd, file), "utf8"), text); };
+const scores = { activity: 2, documentation: 2, access: 1, independent_sources: 1, category_fit: 2 };
+
 test("real Pi SDK executes only custom tools and persists only a successful full result", async t => {
   const cwd = await mkdtemp(join(tmpdir(), "pi-sdk-test-"));
   t.after(() => rm(cwd, { recursive: true, force: true }));
-  for (const file of README_FILES) await writeFile(join(cwd, file), source);
+  await mkdir(join(cwd, "docs")); await mkdir(join(cwd, "data"));
+  await writeCatalog(cwd);
   let call = 0;
   let fail = false;
   let rejectCriteria = false;
@@ -183,7 +194,7 @@ test("real Pi SDK executes only custom tools and persists only a successful full
   t.mock.method(ModelRuntime.prototype, "streamSimple", (model, context) => {
     assert.deepEqual(context.tools.map(tool => tool.name).sort(), ["lookup_resource", "read_readme", "search_web", "submit_result"]);
     const step = call++ % 3;
-    const p = proposal();
+    const p = { ...proposal(), placement: "readme", resource: { id: "resource-new", name: "New", category: "context" }, scores };
     if (rejectCriteria) p.checks.relevant = false;
     if (retiredResource) p.edits.forEach(edit => { edit.newText = edit.newText.replaceAll("https://new.example/", "https://aws.amazon.com/q/developer/"); });
     const message = {
@@ -198,20 +209,24 @@ test("real Pi SDK executes only custom tools and persists only a successful full
     return stream;
   });
   const env = { DEEPSEEK_API_KEY: "test-only", EXA_API_KEY: "test-only", AI_TIMEOUT_SECONDS: "5" };
-  assert.equal((await runAutomation({ cwd, env, prompt: "Add New", approved: true })).status, "processed");
+  const requiredUrl = "https://new.example/";
+  const added = await runAutomation({ cwd, env, prompt: "Add New", approved: true, requiredUrl, issueUrl: "https://github.com/o/r/issues/1" });
+  assert.deepEqual(added, { status: "processed", reason: "Added New", placement: "readme", manualReason: undefined, checks: proposal().checks, evidenceUrls: ["https://new.example/"], scores, replacement: undefined });
   assert.match(await readFile(join(cwd, "README.ja.md"), "utf8"), /new.example/);
-  for (const file of README_FILES) await writeFile(join(cwd, file), source);
+  const entry = JSON.parse(await readFile(join(cwd, "data/catalog-status.json"), "utf8")).resources.find(r => r.url === requiredUrl);
+  assert.deepEqual([entry.location, entry.review_issue], ["shortlist", "https://github.com/o/r/issues/1"]);
+  await writeCatalog(cwd);
   fail = true;
-  await assert.rejects(runAutomation({ cwd, env, prompt: "Add New", approved: true }), /failed/);
-  for (const file of README_FILES) assert.equal(await readFile(join(cwd, file), "utf8"), source);
+  await assert.rejects(runAutomation({ cwd, env, prompt: "Add New", approved: true, requiredUrl }), /failed/);
+  await assertCatalogUnchanged(cwd);
   fail = false;
   rejectCriteria = true;
-  await assert.rejects(runAutomation({ cwd, env, prompt: "Add unrelated resource", approved: true }), /criterion|without submitting/);
-  for (const file of README_FILES) assert.equal(await readFile(join(cwd, file), "utf8"), source);
+  await assert.rejects(runAutomation({ cwd, env, prompt: "Add unrelated resource", approved: true, requiredUrl }), /criterion|without submitting/);
+  await assertCatalogUnchanged(cwd);
   rejectCriteria = false;
   retiredResource = true;
-  await assert.rejects(runAutomation({ cwd, env, prompt: "Re-add a sunset product", approved: true }), /catalog decision|without submitting/);
-  for (const file of README_FILES) assert.equal(await readFile(join(cwd, file), "utf8"), source);
+  await assert.rejects(runAutomation({ cwd, env, prompt: "Re-add a sunset product", approved: true, requiredUrl: "https://aws.amazon.com/q/developer/" }), /catalog decision|without submitting/);
+  await assertCatalogUnchanged(cwd);
 });
 
 test("fetch_page only reads issue URLs", async t => {

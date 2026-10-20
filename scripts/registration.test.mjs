@@ -8,6 +8,9 @@ import { shortlistEntries } from "./lib/catalog-status.mjs";
 import { CATEGORIES } from "./lib/categories.mjs";
 import { README_FILES, prepareUpdates, readOriginals, persistUpdates } from "./lib/readme-updates.mjs";
 import { prepareCatalogUpdates } from "./lib/catalog-updates.mjs";
+import { checkResultFields } from "./lib/pi-runner.mjs";
+import { formatIssueComment } from "./lib/issue-comment.mjs";
+import { processIssue } from "./lib/process-issue.mjs";
 
 const policy = await loadRegistrationPolicy();
 const today = "2026-10-20";
@@ -202,4 +205,96 @@ test("managed files are optional on read and written next to their target", asyn
   assert.match(await readFile(join(cwd, "README.ko.md"), "utf8"), /new\.example/);
   assert.match(await readFile(join(cwd, "data/catalog-status.json"), "utf8"), /resource-new/);
   assert.equal(await readFile(join(cwd, "docs/catalog-history.md"), "utf8"), HISTORY);
+});
+
+const uncertain = fields => ({ status: "uncertain", reason: "Holds third-party credentials", edits: [], ...fields });
+
+test("approval waives manual reasons", () => {
+  const p = uncertain({ manualReason: "security_sensitive" });
+  assert.throws(() => checkResultFields(p, { approved: true, policy }), /^Error: Maintainer approval waives manual-review reasons; decide placement or reject$/);
+  checkResultFields(p, { approved: false, policy });
+  assert.throws(() => checkResultFields(uncertain({ manualReason: "not_a_reason" }), { policy }), /manualReason/);
+});
+
+test("manualReason is only valid for uncertain results", () => {
+  for (const status of ["processed", "rejected", "unchanged"]) {
+    assert.throws(() => checkResultFields({ ...catalogProposal(), status, manualReason: "conflicting_evidence" }, { policy }), /only valid for uncertain/);
+  }
+});
+
+test("processed issue results require placement, resource and scores", () => {
+  checkResultFields(catalogProposal(), { policy });
+  for (const field of ["placement", "resource", "scores"]) {
+    const { [field]: _, ...p } = catalogProposal();
+    assert.throws(() => checkResultFields(p, { policy }), /placement, resource, and scores/);
+  }
+  checkResultFields({ status: "rejected", reason: "Out of scope", edits: [] }, { policy });
+});
+
+test("weekly results cannot use placement or replacement", () => {
+  for (const field of ["placement", "resource", "scores", "replacement", "categoryScores", "manualReason"]) {
+    assert.throws(() => checkResultFields({ status: "unchanged", reason: "None", edits: [], [field]: catalogProposal({ replacement: superseded(), categoryScores: [], manualReason: "security_sensitive" })[field] }, { weekly: true, policy }), /Weekly results/);
+  }
+  checkResultFields({ status: "unchanged", reason: "None", edits: [] }, { weekly: true, policy });
+});
+
+const checksPassed = { relevant: true, usable: true, distinct: true, transparent: true, maintained: true, available_to_new_users: true, not_sunsetting: true };
+const issueUrl = "https://github.com/o/r/issues/7";
+
+test("issue comment names the placement, evidence and scores", () => {
+  const evidenceUrls = ["https://new.example/", "https://github.com/new/new"];
+  const extended = formatIssueComment({ status: "processed", placement: "extended", reason: "Context is full and no row is disqualified or lower scored", checks: checksPassed, evidenceUrls, scores: low }, { issueUrl });
+  assert.match(extended, /^## ✅ Added to the extended catalog/);
+  assert.match(extended, /not added to the README/);
+  assert.match(extended, /no row is disqualified/);
+  for (const url of evidenceUrls) assert.ok(extended.includes(url));
+  assert.match(extended, /\| maintained \| ✅ \|/);
+  assert.match(extended, /\| activity \| 1 \|/);
+  assert.match(extended, /\*\*Total\*\* \| \*\*5\*\*/);
+  assert.doesNotMatch(extended, /\/approve/);
+  const replaced = formatIssueComment({
+    status: "processed", placement: "readme", reason: "Broader and maintained", checks: checksPassed, evidenceUrls, scores: { ...low, activity: 2, documentation: 2 },
+    replacement: { outgoingUrl: "https://r3.example/", outgoingName: "R3", outgoingTotal: 5, path: "superseded", evidenceUrls: ["https://compare.example/"] },
+  }, { issueUrl });
+  assert.match(replaced, /^## ✅ Added to the README, replacing R3/);
+  assert.match(replaced, /7 > 5/);
+  for (const url of [...evidenceUrls, "https://compare.example/", "https://r3.example/"]) assert.ok(replaced.includes(url));
+  assert.match(formatIssueComment({ status: "processed", placement: "readme", reason: "Free slot", checks: checksPassed, evidenceUrls, scores: good }, { issueUrl }), /^## ✅ Added to the README\n/);
+  const disqualifiedComment = formatIssueComment({ status: "processed", placement: "readme", reason: "Archived", checks: checksPassed, evidenceUrls, scores: good, replacement: { outgoingUrl: "https://r3.example/", path: "disqualified", disqualification: "archived", evidenceUrls: ["https://evidence.example/archived"] } }, { issueUrl });
+  assert.match(disqualifiedComment, /replacing https:\/\/r3\.example\//);
+  assert.match(disqualifiedComment, /archived/);
+  assert.ok(disqualifiedComment.includes("https://evidence.example/archived"));
+  const review = formatIssueComment({ status: "uncertain", manualReason: "security_sensitive", reason: "Stores third-party credentials", evidenceUrls: ["https://new.example/"] }, { issueUrl });
+  assert.match(review, /^## 🤔 Needs maintainer review — Security-sensitive third-party tool/);
+  assert.match(review, /`\/approve`/);
+  assert.match(review, /`\/reject \[reason\]`/);
+  assert.match(formatIssueComment({ status: "uncertain", reason: "Unclear" }, { issueUrl }), /^## 🤔 Needs maintainer review\n/);
+  const rejected = formatIssueComment({ status: "rejected", reason: "Out of scope" }, { issueUrl });
+  assert.match(rejected, /^## ❌ Rejected/);
+  assert.match(rejected, /Out of scope/);
+  assert.doesNotMatch(rejected, /\/approve/);
+});
+
+test("processIssue writes outputs and a comment file", async t => {
+  const dir = await mkdtemp(join(tmpdir(), "process-issue-test-"));
+  t.after(() => rm(dir, { recursive: true, force: true }));
+  const output = join(dir, "output");
+  const body = `Please add https://new.example/ (docs: https://docs.new.example/start).\n${Array.from({ length: 12 }, (_, i) => `https://more${i}.example/`).join("\n")}`;
+  const env = { ISSUE_BODY: body, ISSUE_NUMBER: "7", ISSUE_TITLE: "Add New", GITHUB_REPOSITORY: "o/r", GITHUB_OUTPUT: output, RUNNER_TEMP: dir };
+  let options;
+  const run = async opts => { options = opts; return { status: "unchanged", reason: "Holds\nthird-party credentials", manualReason: "security_sensitive", evidenceUrls: ["https://new.example/"] }; };
+  await processIssue({ approved: false, env, run });
+  assert.equal(options.requiredUrl, "https://new.example/");
+  assert.equal(options.approved, false);
+  assert.equal(options.issueUrl, issueUrl);
+  assert.equal(options.fetchableUrls.length, 10);
+  assert.deepEqual(options.fetchableUrls.slice(0, 3), ["https://new.example/", "https://docs.new.example/start", "https://more0.example/"]);
+  assert.match(options.prompt, /Maintainer approved: false/);
+  const commentFile = join(dir, "issue-comment.md");
+  assert.equal(await readFile(output, "utf8"), `result=uncertain\nreason=Holds third-party credentials\nplacement=\nmanual_reason=security_sensitive\ncomment_file=${commentFile}\n`);
+  assert.match(await readFile(commentFile, "utf8"), /Needs maintainer review — Security-sensitive third-party tool/);
+  await writeFile(output, "");
+  await processIssue({ approved: true, env: { ...env, RUNNER_TEMP: undefined }, run: async opts => { options = opts; return { status: "processed", reason: "Added", placement: "extended", scores: good, evidenceUrls: [] }; } });
+  assert.equal(options.approved, true);
+  assert.equal(await readFile(output, "utf8"), "result=processed\nreason=Added\nplacement=extended\nmanual_reason=\n");
 });
