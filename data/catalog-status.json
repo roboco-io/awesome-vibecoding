@@ -5255,6 +5255,33 @@
       ],
       "reviewed_on": "2026-10-20",
       "review_issue": "https://github.com/roboco-io/awesome-vibecoding/issues/55"
+    },
+    {
+      "id": "resource-vibe-coding-rules-vibekits",
+      "name": "Vibe Coding Rules (VibeKits)",
+      "url": "https://github.com/getvibekits/vibe-coding-rules",
+      "aliases": [
+        "https://github.com/getvibekits/vibe-coding-rules"
+      ],
+      "category": "context",
+      "status": "active",
+      "location": "extended",
+      "verified_on": "2026-10-20",
+      "scores": {
+        "activity": 2,
+        "documentation": 2,
+        "access": 2,
+        "independent_sources": 1,
+        "category_fit": 2
+      },
+      "scored_on": "2026-10-20",
+      "evidence_urls": [
+        "https://github.com/getvibekits/vibe-coding-rules",
+        "https://getvibekits.com/rules/discord-bot/",
+        "https://getvibekits.com/rules/"
+      ],
+      "reviewed_on": "2026-10-20",
+      "review_issue": "https://github.com/roboco-io/awesome-vibecoding/issues/58"
     }
   ]
 }
