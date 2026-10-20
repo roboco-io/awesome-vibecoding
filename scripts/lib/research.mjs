@@ -4,7 +4,7 @@ export async function searchWeb(query, { apiKey, fetch: request = globalThis.fet
   const response = await request("https://api.exa.ai/search", {
     method: "POST", redirect: "error",
     headers: { "x-api-key": apiKey, "Content-Type": "application/json" },
-    body: JSON.stringify({ query, type: "auto", numResults: 5, contents: { text: { maxCharacters: 6000 }, livecrawl: "preferred" } }),
+    body: JSON.stringify({ query, type: "auto", numResults: 5, contents: { text: { maxCharacters: 6000 } } }),
     signal: signal ? AbortSignal.any([signal, AbortSignal.timeout(30000)]) : AbortSignal.timeout(30000),
   });
   if (!response.ok) throw new Error(`Exa Search failed (HTTP ${response.status})`);
