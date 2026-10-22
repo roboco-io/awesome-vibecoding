@@ -5341,6 +5341,35 @@
       ],
       "reviewed_on": "2026-10-20",
       "review_issue": "https://github.com/roboco-io/awesome-vibecoding/issues/60"
+    },
+    {
+      "id": "resource-vibecraft",
+      "name": "VibeCraft",
+      "url": "https://github.com/Shugar86/vibecraft-manifest",
+      "aliases": [
+        "https://github.com/Shugar86/vibecraft-manifest"
+      ],
+      "category": "learning",
+      "status": "active",
+      "location": "extended",
+      "verified_on": "2026-10-22",
+      "scores": {
+        "activity": 2,
+        "documentation": 2,
+        "access": 2,
+        "independent_sources": 1,
+        "category_fit": 1
+      },
+      "scored_on": "2026-10-22",
+      "evidence_urls": [
+        "https://github.com/Shugar86/vibecraft-manifest",
+        "https://github.com/Shugar86/vibecraft-manifest/blob/main/README.en.md",
+        "https://github.com/Shugar86/vibecraft-manifest/blob/main/docs/en/cases.md",
+        "https://github.com/Shugar86/vibecraft-manifest/blob/main/LICENSE.md",
+        "https://github.com/Shugar86/vibecraft-manifest/releases/tag/v1.3.1"
+      ],
+      "reviewed_on": "2026-10-22",
+      "review_issue": "https://github.com/roboco-io/awesome-vibecoding/issues/61"
     }
   ]
 }
