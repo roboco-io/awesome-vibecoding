@@ -5401,6 +5401,37 @@
       ],
       "reviewed_on": "2026-10-28",
       "review_issue": "https://github.com/roboco-io/awesome-vibecoding/issues/69"
+    },
+    {
+      "id": "resource-newly",
+      "name": "Newly",
+      "url": "https://newly.app/",
+      "aliases": [
+        "https://newly.app/"
+      ],
+      "category": "apps",
+      "status": "active",
+      "location": "extended",
+      "verified_on": "2026-10-28",
+      "scores": {
+        "activity": 2,
+        "documentation": 2,
+        "access": 1,
+        "independent_sources": 2,
+        "category_fit": 2
+      },
+      "scored_on": "2026-10-28",
+      "evidence_urls": [
+        "https://newly.app/",
+        "https://docs.newly.app/",
+        "https://docs.newly.app/build/prompting-tips",
+        "https://tech.eu/2026/03/23/newly-secures-2m-in-funding-to-advance-native-app-creation-platform/",
+        "https://aibusinessweekly.net/p/newly-ai-no-code-mobile-app-platform-funding",
+        "https://www.koda.community/reviews/2026-10-12-newly-ai.html",
+        "https://websites2know.com/newly-app-review/"
+      ],
+      "reviewed_on": "2026-10-28",
+      "review_issue": "https://github.com/roboco-io/awesome-vibecoding/issues/70"
     }
   ]
 }
