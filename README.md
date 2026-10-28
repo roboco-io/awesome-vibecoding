@@ -27,6 +27,7 @@ Recent reviews and material changes from the last 30 days, newest first. A revie
 <!-- recent-updates:start -->
 | Verified on | Update | What changed |
 |---|---|---|
+| 2026-10-28 | [Nhost](#resource-nhost) | Reviewed addition: managed Postgres, GraphQL, auth, storage and functions backend whose CLI MCP server reads the schema, runs only the allowed queries and manages permissions and migrations; free Starter plan, Pro from $25/mo, MIT and self-hostable. |
 | 2026-10-20 | [Ralph Loop Model Benchmark](#resource-ralph-loop-model-benchmark) | Reviewed addition: compares 22 model and harness combinations on finishing a RealWorld backend without human help; free, four languages. |
 | 2026-10-20 | [Language Benchmark](#resource-language-benchmark) | Reviewed addition: compares how well Claude Code builds the same backend in 10 programming languages across 24 metrics; free, four languages. |
 | 2026-10-18 | [Preflight](#resource-preflight) | Reviewed addition: builds a tailored security-check prompt for the user's own coding agent and reprioritizes the findings; 2 free checks per month, paid credits; no code upload. |
@@ -35,8 +36,6 @@ Recent reviews and material changes from the last 30 days, newest first. A revie
 | 2026-10-11 | [Universal Modder Field Guide: Codex setup](#resource-universal-modder-field-guide-codex) | Reviewed addition: unofficial Codex installation and verification guide for the Universal Modder game-modding toolkit; free reading. |
 | 2026-10-10 | [DropTheHassle](#resource-dropthehassle) | Reviewed addition: agent publishes a built site to a free HTTPS link without an account; paid custom domains via a human payment link. |
 | 2026-10-04 | [VDLC](#resource-vdlc) | Reviewed addition: development lifecycle framework that treats intent and context as primary artifacts, with human gates at plan, review and deploy; trilingual guide. |
-| 2026-09-23 | [Prbl](#resource-prbl) | Reviewed addition: security scanner for flaws common in AI-generated code; free scan and GitHub Action, paid rewriter. |
-| 2026-09-20 | [Delta (Zed)](#resource-delta) | Reviewed addition: multiplayer agent-coding workspace with thread-based review; public beta, free during beta. |
 <!-- recent-updates:end -->
 
 </details>
@@ -146,6 +145,7 @@ Build, publish, or run code in an appropriate execution environment.
 | <a id="resource-cloudflare"></a>[**Cloudflare**](https://github.com/cloudflare/mcp-server-cloudflare) · MCP | Manage application deployment and cloud resources | Check pricing | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-cloudflare) |
 | <a id="resource-dropthehassle"></a>[**DropTheHassle**](https://dropthehassle.com) · CLI / MCP | Agent publishes a built site to a free HTTPS link with no account; human approves optional custom domain or email via a payment link | Free deploys; domains €12–€25/yr, email from €5/mo; MIT client; agent cannot pay | 2026-10-10 |
 | <a id="resource-e2b"></a>[**E2B**](https://github.com/e2b-dev/E2B) | Secure cloud sandbox environment for enterprise-grade AI agents | Check pricing | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-e2b) |
+| <a id="resource-nhost"></a>[**Nhost**](https://nhost.io) · CLI / MCP | Managed Postgres, GraphQL, auth, storage and functions backend for agent-built apps, with a CLI MCP server that reads the schema, runs only allowed queries, and manages permissions and migrations | Free Starter plan (1 active project, paused after 1 week inactive); Pro $25/mo; MIT open source and self-hostable; no model costs from Nhost | [2026-10-28](https://github.com/roboco-io/awesome-vibecoding/issues/69) |
 | <a id="resource-publish-my"></a>[**Publish.my**](https://publish.my/) · Web | Agent-driven static-site publishing with email activation | Free tier; static sites only; email activation | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-publish-my) |
 | <a id="resource-xcode-build-mcp"></a>[**XcodeBuildMCP**](https://github.com/getsentry/XcodeBuildMCP) · MCP | CLI and MCP tools for building, running and debugging Apple-platform projects | Check pricing | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-xcode-build-mcp) |
 <!-- /catalog:delivery -->

@@ -27,6 +27,7 @@
 <!-- recent-updates:start -->
 | 검증일 | 업데이트 | 변경 사항 |
 |---|---|---|
+| 2026-10-28 | [Nhost](#resource-nhost) | 검토 후 추가: 관리형 Postgres·GraphQL·인증·스토리지·함수 백엔드로, CLI MCP 서버가 스키마를 읽고 허용된 쿼리만 실행하며 권한과 마이그레이션을 관리; 무료 Starter 요금제, Pro 월 $25부터, MIT 및 자체 호스팅 가능. |
 | 2026-10-20 | [Ralph Loop Model Benchmark](#resource-ralph-loop-model-benchmark) | 검토 후 추가: 22개 모델·하니스 조합이 사람 개입 없이 RealWorld 백엔드를 완성하는지 비교; 무료, 4개 언어. |
 | 2026-10-20 | [Language Benchmark](#resource-language-benchmark) | 검토 후 추가: Claude Code가 같은 백엔드를 10개 프로그래밍 언어로 구현한 결과를 24개 지표로 비교; 무료, 4개 언어. |
 | 2026-10-18 | [Preflight](#resource-preflight) | 검토 후 추가: 사용 중인 코딩 에이전트에 맞춘 보안 점검 프롬프트를 만들고 결과를 우선순위로 재정리; 월 2건 묣료, 추가 크레딧 유료; 코드 업로드 불필요. |
@@ -35,8 +36,6 @@
 | 2026-10-11 | [Universal Modder Field Guide: Codex 설정](#resource-universal-modder-field-guide-codex) | 검토 후 추가: Universal Modder 게임 모딩 툴킷을 위한 비공식 Codex 설치·검증 가이드; 물료 열림. |
 | 2026-10-10 | [DropTheHassle](#resource-dropthehassle) | 검토 후 추가: 에이전트가 빌드된 사이트를 계정 없이 묣료 HTTPS 링크에 게시; 유료 커스텀 도메인은 사람의 결제 링크로 진행. |
 | 2026-10-04 | [VDLC](#resource-vdlc) | 검토 후 추가: 의도와 컨텍스트를 1차 산출물로 다루는 개발 생명주기 프레임워크; 계획·리뷰·배포 관문은 사람이 담당; 삼중 언어 가이드. |
-| 2026-09-23 | [Prbl](#resource-prbl) | 검토 후 추가: AI 생성 코드에 흔한 취약점을 검사하는 스캐너; 물료 검사와 GitHub Action, 재작성기는 유료. |
-| 2026-09-20 | [Delta (Zed)](#resource-delta) | 검토 후 추가: 스레드 기반 리뷰를 제공하는 멀티플레이어 에이전트 코딩 작업 공간; 공개 베타 기간 묵료. |
 <!-- recent-updates:end -->
 
 </details>
@@ -146,6 +145,7 @@
 | <a id="resource-cloudflare"></a>[**Cloudflare**](https://github.com/cloudflare/mcp-server-cloudflare) · MCP | 앱 배포 및 클라우드 리소스 관리 | 요금 확인 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-cloudflare) |
 | <a id="resource-dropthehassle"></a>[**DropTheHassle**](https://dropthehassle.com) · CLI / MCP | 에이전트가 빌드된 사이트를 계정 없이 묣료 HTTPS 링크에 게시; 커스텀 도메인이나 이메일은 사람이 결제 링크로 승인 | 묣료 배포; 도메인 연 €12–€25, 이메일 월 €5부터; MIT 클라이언트; 에이전트는 결제 불가 | 2026-10-10 |
 | <a id="resource-e2b"></a>[**E2B**](https://github.com/e2b-dev/E2B) | 엔터프라이즈급 AI 에이전트를 위한 안전한 클라우드 샌드박스 환경 | 요금 확인 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-e2b) |
+| <a id="resource-nhost"></a>[**Nhost**](https://nhost.io) · CLI / MCP | 에이전트가 만든 앱을 위한 관리형 Postgres·GraphQL·인증·스토리지·함수 백엔드; CLI MCP 서버로 스키마를 읽고 허용한 쿼리만 실행하며 권한과 마이그레이션을 관리 | 무료 Starter 요금제(활성 프로젝트 1개, 1주 비활성 시 일시 중지); Pro 월 $25; MIT 오픈소스 및 자체 호스팅 가능; Nhost의 모델 비용 없음 | [2026-10-28](https://github.com/roboco-io/awesome-vibecoding/issues/69) |
 | <a id="resource-publish-my"></a>[**Publish.my**](https://publish.my/) · Web | 이메일 활성화를 사용하는 에이전트 기반 정적 사이트 게시 서비스 | 무료 티어; 정적 사이트만 지원; 이메일 활성화 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-publish-my) |
 | <a id="resource-xcode-build-mcp"></a>[**XcodeBuildMCP**](https://github.com/getsentry/XcodeBuildMCP) · MCP | Apple 플랫폼 프로젝트의 빌드·실행·디버깅을 위한 CLI 및 MCP 도구 | 요금 확인 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-xcode-build-mcp) |
 <!-- /catalog:delivery -->

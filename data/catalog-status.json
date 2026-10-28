@@ -5370,6 +5370,37 @@
       ],
       "reviewed_on": "2026-10-22",
       "review_issue": "https://github.com/roboco-io/awesome-vibecoding/issues/61"
+    },
+    {
+      "id": "resource-nhost",
+      "name": "Nhost",
+      "url": "https://nhost.io",
+      "aliases": [
+        "https://nhost.io"
+      ],
+      "category": "delivery",
+      "status": "active",
+      "location": "shortlist",
+      "listed_on": "2026-10-28",
+      "verified_on": "2026-10-28",
+      "scores": {
+        "activity": 2,
+        "documentation": 2,
+        "access": 2,
+        "independent_sources": 2,
+        "category_fit": 2
+      },
+      "scored_on": "2026-10-28",
+      "evidence_urls": [
+        "https://nhost.io/",
+        "https://docs.nhost.io/platform/cli/mcp",
+        "https://github.com/nhost/nhost",
+        "https://nhost.io/pricing",
+        "https://github.com/nhost/nhost/releases",
+        "https://hub.docker.com/r/nhost/cli/tags"
+      ],
+      "reviewed_on": "2026-10-28",
+      "review_issue": "https://github.com/roboco-io/awesome-vibecoding/issues/69"
     }
   ]
 }

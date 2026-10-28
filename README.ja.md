@@ -27,6 +27,7 @@
 <!-- recent-updates:start -->
 | 確認日 | 更新項目 | 変更内容 |
 |---|---|---|
+| 2026-10-28 | [Nhost](#resource-nhost) | レビュー後に追加：CLIのMCPサーバーを備えたマネージドPostgres・GraphQL・認証・ストレージ・関数のバックエンド。スキーマを読み、許可されたクエリのみを実行し、権限とマイグレーションを管理できる。無料Starterプラン、Proは月$25から、MITでセルフホスト可能。 |
 | 2026-10-20 | [Ralph Loop Model Benchmark](#resource-ralph-loop-model-benchmark) | レビュー後に追加：22のモデル・ハーネスの組み合わせが人の介入なしにRealWorldバックエンドを完成できるかを比較。無料、4言語。 |
 | 2026-10-20 | [Language Benchmark](#resource-language-benchmark) | レビュー後に追加：Claude Codeが同じバックエンドを10のプログラミング言語で実装した結果を24の指標で比較。無料、4言語。 |
 | 2026-10-18 | [Preflight](#resource-preflight) | レビュー後に追加：利用中のコーディングエージェント向けのセキュリティチェック用プロンプトを生成し、結果を優先度別に再整理。月2件無料、追加クレジットは有料。コードアップロード不要。 |
@@ -35,8 +36,6 @@
 | 2026-10-11 | [Universal Modder Field Guide: Codexセットアップ](#resource-universal-modder-field-guide-codex) | レビュー後に追加：Universal ModderゲームMODツールキット向けの非公式Codexインストール・検証ガイド。閲覧無料。 |
 | 2026-10-10 | [DropTheHassle](#resource-dropthehassle) | レビュー後に追加：エージェントがビルド済みサイトをアカウント不要の無料HTTPSリンクに公開。有料カスタムドメインは人の支払いリンクで処理。 |
 | 2026-10-04 | [VDLC](#resource-vdlc) | レビュー後に追加：意図とコンテキストを一次成果物とする開発ライフサイクルの枠組み。計画・レビュー・デプロイのゲートは人が担当。3言語ガイド。 |
-| 2026-09-23 | [Prbl](#resource-prbl) | レビュー後に追加：AI生成コードに多い脆弱性を検出するスキャナー。無料スキャンとGitHub Action、リライターは有料。 |
-| 2026-09-20 | [Delta (Zed)](#resource-delta) | レビュー後に追加：スレッドベースのレビューを備えたマルチプレイヤーのエージェントコーディングワークスペース。公開ベータ期間は無料。 |
 <!-- recent-updates:end -->
 
 </details>
@@ -146,6 +145,7 @@
 | <a id="resource-cloudflare"></a>[**Cloudflare**](https://github.com/cloudflare/mcp-server-cloudflare) · MCP | アプリのデプロイとクラウドリソースを管理 | 料金を要確認 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-cloudflare) |
 | <a id="resource-dropthehassle"></a>[**DropTheHassle**](https://dropthehassle.com) · CLI / MCP | エージェントがビルド済みサイトをアカウント不要の無料HTTPSリンクに公開；カスタムドメインやメールは人が支払いリンクで承認 | 無料デプロイ；ドメイン年€12–€25、メール月€5～；MITクライアント；エージェントは支払い不可 | 2026-10-10 |
 | <a id="resource-e2b"></a>[**E2B**](https://github.com/e2b-dev/E2B) | エンタープライズグレードのAIエージェント向けセキュアなクラウドサンドボックス環境 | 料金を要確認 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-e2b) |
+| <a id="resource-nhost"></a>[**Nhost**](https://nhost.io) · CLI / MCP | エージェントが作るアプリ向けのマネージドPostgres・GraphQL・認証・ストレージ・関数バックエンド。CLIのMCPサーバーがスキーマを読み、許可されたクエリのみを実行し、権限とマイグレーションを管理 | 無料Starterプラン（有効プロジェクト1件、1週間未使用で一時停止）；Proは月$25；MITのオープンソースでセルフホスト可能；Nhost側のモデル費用なし | [2026-10-28](https://github.com/roboco-io/awesome-vibecoding/issues/69) |
 | <a id="resource-publish-my"></a>[**Publish.my**](https://publish.my/) · Web | メールによる利用開始手続きを備えた、エージェント主導の静的サイト公開サービス | 無料枠あり；静的サイトのみ；メールによる利用開始手続き | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-publish-my) |
 | <a id="resource-xcode-build-mcp"></a>[**XcodeBuildMCP**](https://github.com/getsentry/XcodeBuildMCP) · MCP | Appleプラットフォーム向けプロジェクトのビルド・実行・デバッグ用CLIとMCPツール | 料金を要確認 | [2026-09-18](docs/lifecycle-review-2026-09-18.md#resource-xcode-build-mcp) |
 <!-- /catalog:delivery -->
