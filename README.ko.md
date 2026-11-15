@@ -31,11 +31,6 @@
 | 2026-10-20 | [Ralph Loop Model Benchmark](#resource-ralph-loop-model-benchmark) | 검토 후 추가: 22개 모델·하니스 조합이 사람 개입 없이 RealWorld 백엔드를 완성하는지 비교; 무료, 4개 언어. |
 | 2026-10-20 | [Language Benchmark](#resource-language-benchmark) | 검토 후 추가: Claude Code가 같은 백엔드를 10개 프로그래밍 언어로 구현한 결과를 24개 지표로 비교; 무료, 4개 언어. |
 | 2026-10-18 | [Preflight](#resource-preflight) | 검토 후 추가: 사용 중인 코딩 에이전트에 맞춘 보안 점검 프롬프트를 만들고 결과를 우선순위로 재정리; 월 2건 묣료, 추가 크레딧 유료; 코드 업로드 불필요. |
-| 2026-10-11 | [Massvai](#resource-massvai) | 검토 후 추가: 프롬프트를 Supabase 연동 풀스택 Next.js 앱으로 만들어 주는 빌더; 실시간 미리보기, GitHub 코드 낳출 및 Vercel 배포 지원; 묣료 시작 크레딧과 유료 요금제 제공. |
-| 2026-10-11 | [Coderblock](#resource-coderblock) | 검토 후 추가: 앱별 Supabase 백엔드를 갖춘 대화형 풀스택 웹 앱 빌더; 묣료 시작 크레딧, 유료 요금제 제공. |
-| 2026-10-11 | [Universal Modder Field Guide: Codex 설정](#resource-universal-modder-field-guide-codex) | 검토 후 추가: Universal Modder 게임 모딩 툴킷을 위한 비공식 Codex 설치·검증 가이드; 물료 열림. |
-| 2026-10-10 | [DropTheHassle](#resource-dropthehassle) | 검토 후 추가: 에이전트가 빌드된 사이트를 계정 없이 묣료 HTTPS 링크에 게시; 유료 커스텀 도메인은 사람의 결제 링크로 진행. |
-| 2026-10-04 | [VDLC](#resource-vdlc) | 검토 후 추가: 의도와 컨텍스트를 1차 산출물로 다루는 개발 생명주기 프레임워크; 계획·리뷰·배포 관문은 사람이 담당; 삼중 언어 가이드. |
 <!-- recent-updates:end -->
 
 </details>

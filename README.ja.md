@@ -31,11 +31,6 @@
 | 2026-10-20 | [Ralph Loop Model Benchmark](#resource-ralph-loop-model-benchmark) | レビュー後に追加：22のモデル・ハーネスの組み合わせが人の介入なしにRealWorldバックエンドを完成できるかを比較。無料、4言語。 |
 | 2026-10-20 | [Language Benchmark](#resource-language-benchmark) | レビュー後に追加：Claude Codeが同じバックエンドを10のプログラミング言語で実装した結果を24の指標で比較。無料、4言語。 |
 | 2026-10-18 | [Preflight](#resource-preflight) | レビュー後に追加：利用中のコーディングエージェント向けのセキュリティチェック用プロンプトを生成し、結果を優先度別に再整理。月2件無料、追加クレジットは有料。コードアップロード不要。 |
-| 2026-10-11 | [Massvai](#resource-massvai) | レビュー後に追加：プロンプトからSupabase連携のフルスタックNext.jsアプリを生成するビルダー。ライブプレビュー、GitHubへのコードエクスポート、Vercelデプロイに対応。無料の開始クレジットと有料プランあり。 |
-| 2026-10-11 | [Coderblock](#resource-coderblock) | レビュー後に追加：アプリごとのSupabaseバックエンドを備えた対話型フルスタックWebアプリビルダー。無料の開始クレジットと有料プランあり。 |
-| 2026-10-11 | [Universal Modder Field Guide: Codexセットアップ](#resource-universal-modder-field-guide-codex) | レビュー後に追加：Universal ModderゲームMODツールキット向けの非公式Codexインストール・検証ガイド。閲覧無料。 |
-| 2026-10-10 | [DropTheHassle](#resource-dropthehassle) | レビュー後に追加：エージェントがビルド済みサイトをアカウント不要の無料HTTPSリンクに公開。有料カスタムドメインは人の支払いリンクで処理。 |
-| 2026-10-04 | [VDLC](#resource-vdlc) | レビュー後に追加：意図とコンテキストを一次成果物とする開発ライフサイクルの枠組み。計画・レビュー・デプロイのゲートは人が担当。3言語ガイド。 |
 <!-- recent-updates:end -->
 
 </details>

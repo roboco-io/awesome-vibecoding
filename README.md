@@ -31,11 +31,6 @@ Recent reviews and material changes from the last 30 days, newest first. A revie
 | 2026-10-20 | [Ralph Loop Model Benchmark](#resource-ralph-loop-model-benchmark) | Reviewed addition: compares 22 model and harness combinations on finishing a RealWorld backend without human help; free, four languages. |
 | 2026-10-20 | [Language Benchmark](#resource-language-benchmark) | Reviewed addition: compares how well Claude Code builds the same backend in 10 programming languages across 24 metrics; free, four languages. |
 | 2026-10-18 | [Preflight](#resource-preflight) | Reviewed addition: builds a tailored security-check prompt for the user's own coding agent and reprioritizes the findings; 2 free checks per month, paid credits; no code upload. |
-| 2026-10-11 | [Massvai](#resource-massvai) | Reviewed addition: prompt-to-full-stack Next.js app builder with Supabase, live preview, GitHub export and Vercel deploy; free starting credits, paid plans. |
-| 2026-10-11 | [Coderblock](#resource-coderblock) | Reviewed addition: conversational builder for full-stack web apps with per-app Supabase backends; free starting credits, paid tiers. |
-| 2026-10-11 | [Universal Modder Field Guide: Codex setup](#resource-universal-modder-field-guide-codex) | Reviewed addition: unofficial Codex installation and verification guide for the Universal Modder game-modding toolkit; free reading. |
-| 2026-10-10 | [DropTheHassle](#resource-dropthehassle) | Reviewed addition: agent publishes a built site to a free HTTPS link without an account; paid custom domains via a human payment link. |
-| 2026-10-04 | [VDLC](#resource-vdlc) | Reviewed addition: development lifecycle framework that treats intent and context as primary artifacts, with human gates at plan, review and deploy; trilingual guide. |
 <!-- recent-updates:end -->
 
 </details>
