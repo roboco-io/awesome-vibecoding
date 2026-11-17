@@ -103,6 +103,7 @@
 
 | Resource | When to use it | Access / scope | Verified |
 |---|---|---|---|
+| <a id="resource-artigram"></a>[**ArtiGram**](https://artigram.cafeboon.com) · Web / MCP | Publish an AI-built HTML page, React component, SVG, Markdown or Mermaid diagram as a live sandboxed page with a public link; post new versions under the same link, or search and post from Claude, ChatGPT or scripts through the hosted remote MCP server | Free to view; free account required to publish; artifacts run in an isolated sandbox on a separate domain | [2026-11-17](https://github.com/roboco-io/awesome-vibecoding/issues/82) |
 | <a id="resource-serverless-openclaw"></a>[**serverless-openclaw**](https://github.com/serithemage/serverless-openclaw) | Run OpenClaw AI agent on-demand on AWS serverless infrastructure with Web UI and Telegram interfaces | Check pricing; alpha for development/testing; AWS and model costs | [2026-09-18](lifecycle-review-2026-09-18.md#resource-serverless-openclaw) |
 
 ## Agent Workspaces & Usage

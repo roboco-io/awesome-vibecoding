@@ -5432,6 +5432,35 @@
       ],
       "reviewed_on": "2026-10-28",
       "review_issue": "https://github.com/roboco-io/awesome-vibecoding/issues/70"
+    },
+    {
+      "id": "resource-artigram",
+      "name": "ArtiGram",
+      "url": "https://artigram.cafeboon.com",
+      "aliases": [
+        "https://artigram.cafeboon.com"
+      ],
+      "category": "delivery",
+      "status": "active",
+      "location": "extended",
+      "verified_on": "2026-11-17",
+      "scores": {
+        "activity": 2,
+        "documentation": 2,
+        "access": 1,
+        "independent_sources": 2,
+        "category_fit": 2
+      },
+      "scored_on": "2026-11-17",
+      "evidence_urls": [
+        "https://artigram.cafeboon.com",
+        "https://github.com/huggingface/smolagents/discussions/3059",
+        "https://mcpservers.org/servers/artigram-cafeboon-com-connect",
+        "https://mcphq.org/servers/artigram/",
+        "https://fastdrop.dev/p/artigram"
+      ],
+      "reviewed_on": "2026-11-17",
+      "review_issue": "https://github.com/roboco-io/awesome-vibecoding/issues/82"
     }
   ]
 }
