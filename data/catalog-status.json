@@ -5488,6 +5488,35 @@
       ],
       "reviewed_on": "2026-11-20",
       "review_issue": "https://github.com/roboco-io/awesome-vibecoding/issues/83"
+    },
+    {
+      "id": "resource-viberaven",
+      "name": "VibeRaven",
+      "url": "https://github.com/ohad6k/VibeRaven",
+      "aliases": [
+        "https://github.com/ohad6k/VibeRaven"
+      ],
+      "category": "quality",
+      "status": "active",
+      "location": "extended",
+      "verified_on": "2026-11-22",
+      "scores": {
+        "activity": 2,
+        "documentation": 2,
+        "access": 2,
+        "independent_sources": 2,
+        "category_fit": 2
+      },
+      "scored_on": "2026-11-22",
+      "evidence_urls": [
+        "https://github.com/ohad6k/VibeRaven",
+        "https://viberaven.dev/engine",
+        "https://www.npmjs.com/package/@viberaven/sessions",
+        "https://aiindigo.com/blog/viberaven-deep-dive-technical-review",
+        "https://github.com/ohad6k/VibeRaven/releases"
+      ],
+      "reviewed_on": "2026-11-22",
+      "review_issue": "https://github.com/roboco-io/awesome-vibecoding/issues/86"
     }
   ]
 }
